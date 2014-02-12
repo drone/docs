@@ -1,23 +1,22 @@
-.. Drone documentation master file, created by
-   sphinx-quickstart on Fri Feb  7 00:04:40 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to Drone's documentation!
+Introduction
 =================================
+
+Drone is a Continuous Integration platform built on Docker.
 
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    install
    setup
 
-Indices and tables
-==================
+Need Help?
+----------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+There are several ways to get in touch:
 
+* `#drone <irc://irc.freenode.net/drone>`_ on irc.freenode.net
+* `twitter <https://twitter.com/droneio>`_
+* `github <https://github.com/drone/drone>`_
+* `stackoverflow <http://stackoverflow.com/search?q=drone.io>`_

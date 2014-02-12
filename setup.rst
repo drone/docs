@@ -1,7 +1,7 @@
 Setup
 =====
 
-This section assumes Drone is installed as a service and running on Port 80.
+This section assumes Drone is installed as a service and running on Port 80. 
 
 Admin
 -------------
@@ -13,7 +13,7 @@ where you will be prompted to create your account.
 GitHub
 ------
 
-Navigate to https://github.com/settings/applications and click the *Register New Application*
+Navigate to https://github.com/settings/applications and click the **Register New Application**
 button. Enter the following information into the form:
 
 Application Name
@@ -41,4 +41,4 @@ for the following:
 * team invitation emails
 * build result emails
 
-Navigate to http://localhost/account/admin/settings
+Navigate to http://localhost/account/admin/settings and enter your SMTP server details:

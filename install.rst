@@ -24,17 +24,10 @@ Drone is distributed a as debian package for easy installation:
 
 This will install the following files:
 
-Drone server
-  /usr/local/bin/droned
-  
-Drone client
-  /usr/local/bin/drone
-  
-Drone startup script
-  /etc/init/drone.conf
-
-Drone sqlite database
-  /var/lib/drone/drone.sqlite
+* Drone server `/usr/local/bin/droned`
+* Drone client `/usr/local/bin/drone`
+* Drone startup script `/etc/init/drone.conf`
+* Drone sqlite database `/var/lib/drone/drone.sqlite`
 
 We recommend running Drone on a 2GB `Digital Ocean Docker
 image <https://www.digitalocean.com/community/articles/how-to-use-the-digitalocean-docker-application>`_.

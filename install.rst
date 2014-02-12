@@ -22,9 +22,33 @@ Drone is distributed a as debian package for easy installation:
     $ sudo dpkg -i drone.deb
     $ sudo start drone
 
+This will install the following files:
+
+Drone server
+  /usr/local/bin/droned
+  
+Drone client
+  /usr/local/bin/drone
+  
+Drone startup script
+  /etc/init/drone.conf
+
+Drone sqlite database
+  /var/lib/drone/drone.sqlite
+
 We recommend running Drone on a 2GB `Digital Ocean Docker
 image <https://www.digitalocean.com/community/articles/how-to-use-the-digitalocean-docker-application>`_.
 This is the fastest, easiest way to get up and running with Drone. This is also how we test Drone internally.
+
+Running
+-------
+
+You can start and stop Drone with the following commands:
+
+.. code-block:: console
+
+    $ sudo start drone
+    $ sudo stop drone
 
 From Source
 -----------
@@ -43,3 +67,4 @@ software packages:
     $ cd drone
     $ make deps
     $ make
+

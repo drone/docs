@@ -6,7 +6,7 @@ Requirements
 
 Drone is tested on the following versions of Ubuntu:
 
-* Ubuntu Precise 12.04 (LTS) (64-bit)
+* Ubuntu Precise 12.04 (64-bit)
 * Ubuntu Raring 13.04 (64 bit)
 
 Drone requires the latest version of Docker (0.8)

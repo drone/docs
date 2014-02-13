@@ -20,7 +20,6 @@ Drone is distributed a as debian package for easy installation:
 
     $ wget http://downloads.drone.io/latest/drone.deb
     $ sudo dpkg -i drone.deb
-    $ sudo start drone
 
 This will install the following files:
 
@@ -36,7 +35,8 @@ This is the fastest, easiest way to get up and running with Drone. This is also 
 Running
 -------
 
-You can start and stop Drone with the following commands:
+Drone is started automatiaclly. You can start and stop Drone manually with
+the following commands:
 
 .. code-block:: console
 
@@ -60,4 +60,3 @@ software packages:
     $ cd drone
     $ make deps
     $ make
-

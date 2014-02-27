@@ -67,7 +67,7 @@ Proxy Server
 When using Nginx to proxy traffic to Drone, please ensure you have version 1.3.13
 or greater. You also need to configure nginx to proxy websocket connections:
 
-.. code-block:: console
+.. code-block:: bash
 
     # Proxy for websockets
     location = /feed {

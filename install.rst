@@ -60,3 +60,25 @@ software packages:
     $ cd drone
     $ make deps
     $ make
+
+Proxy Server
+------------
+
+When using Nginx to proxy traffic to Drone, please ensure you have version 1.3.13
+or greater. You also need to configure nginx to proxy websocket connections:
+
+.. code-block:: bash
+
+    # Proxy for websockets
+    location = /feed {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $http_host;
+
+        proxy_pass http://127.0.0.1:8080;
+        proxy_redirect off;
+
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }

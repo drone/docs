@@ -82,3 +82,5 @@ or greater. You also need to configure nginx to proxy websocket connections:
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
     }
+
+

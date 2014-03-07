@@ -27,8 +27,8 @@ direction, give feedback on your design, and maybe point out if someone
 else is working on the same thing.
 
 
-Creating Issues
----------------
+GitHub Issues
+-------------
 
 Any significant improvement should be documented as `a GitHub
 issue <https://github.com/drone/drone/issues>`_ before anybody
@@ -40,3 +40,4 @@ Please take a moment to check that an issue doesn't already exist
 documenting your bug report or improvement proposal. If it does, it
 never hurts to add a quick "+1" or "I have this problem too". This will
 help prioritize the most common problems and requests.
+

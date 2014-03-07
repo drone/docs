@@ -19,8 +19,8 @@ incorporating a new feature.
 Mailing List
 ------------
 
-We recommend discussing your plans [on the mailing
-list](https://groups.google.com/forum/?fromgroups#!forum/drone-dev)
+We recommend discussing your plans `on the mailing
+list <https://groups.google.com/forum/?fromgroups#!forum/drone-dev>`_
 before starting to code - especially for more ambitious contributions.
 This gives other contributors a chance to point you in the right
 direction, give feedback on your design, and maybe point out if someone
@@ -30,8 +30,8 @@ else is working on the same thing.
 Creating Issues
 ---------------
 
-Any significant improvement should be documented as [a GitHub
-issue](https://github.com/drone/drone/issues) before anybody
+Any significant improvement should be documented as `a GitHub
+issue <https://github.com/drone/drone/issues>`_ before anybody
 starts working on it.
 
 ...but check for existing issues first!

@@ -10,6 +10,7 @@ Contents:
 
    install
    setup
+   contribute
 
 Need Help?
 ----------

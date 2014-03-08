@@ -26,6 +26,11 @@ This gives other contributors a chance to point you in the right
 direction, give feedback on your design, and maybe point out if someone
 else is working on the same thing.
 
+We may close your pull request if not first discussed on the mailing
+list. We aren't doing this to be jerks. We are doing this to prevent
+people from spending large amounts of time on changes that may need
+to be designed or architected in a specific way, or may not align with
+the vision of the project.
 
 GitHub Issues
 -------------

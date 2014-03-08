@@ -64,10 +64,10 @@ software packages:
 Proxy Server
 ------------
 
-**NOTE:** using a proxy server is not recommended. Drone serves most static content from a CDN
+**NOTE:** using a proxy server is not really recommended. Drone serves most static content from a CDN
 and uses the Go standard library's high-performance ``net/http`` package to serve dynamic content.
 
-When using Nginx to proxy traffic to Drone, please ensure you have version 1.3.13
+If using Nginx to proxy traffic to Drone, please ensure you have version 1.3.13
 or greater. You also need to configure nginx to proxy websocket connections:
 
 .. code-block:: bash

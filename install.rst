@@ -64,7 +64,8 @@ software packages:
 Proxy Server
 ------------
 
-NOTE: using a proxy server is not required or recommended.
+**NOTE:** using a proxy server is not recommended. Drone serves most static content from a CDN
+and uses the Go standard library's high-performance ``net/http`` package to serve dynamic content.
 
 When using Nginx to proxy traffic to Drone, please ensure you have version 1.3.13
 or greater. You also need to configure nginx to proxy websocket connections:
@@ -85,4 +86,18 @@ or greater. You also need to configure nginx to proxy websocket connections:
         proxy_set_header Connection "upgrade";
     }
 
+You will also want to change the default port. You can pass the port as a command line argument ``--port=:8080``
+or you can change the default port in the ``/etc/default/drone`` file:
 
+.. code-block:: bash
+
+    # Upstart configuration file for droned.
+    
+    # Command line options:
+    #
+    #   -datasource="drone.sqlite":
+    #   -driver="sqlite3":
+    #   -path="":
+    #   -port=":8080":
+    #         
+    DRONED_OPTS="--port=:8080"

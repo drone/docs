@@ -41,7 +41,7 @@ force
 Heroku
 ------
 
-Deploy to the `Heroku <https://www.heroku.com>`_` hosting service.
+Deploy to the `Heroku <https://www.heroku.com>`_ hosting service.
 
 .. code-block:: console
 
@@ -60,7 +60,7 @@ force
 Modulus
 -------
 
-Deploy to the `modulus.io <https://modulus.io>`_` hosting service.
+Deploy to the `modulus.io <https://modulus.io>`_ hosting service.
 
 .. code-block:: console
 

@@ -29,10 +29,14 @@ Deploy code via ``git push`` to a remote server.
     deploy:
         git:
             target: git@foo.com/bar.git
+            branch: master
             force: false
 
 target
   name of the git remote server to push to
+
+branch
+  destination branch, optional, defaults to master
 
 force
   true | false to use the git --force flag

@@ -10,6 +10,7 @@ Contents:
 
    install
    setup
+   deployment
    contribute
 
 Need Help?

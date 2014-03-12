@@ -69,6 +69,12 @@ Deploy to the `modulus.io <https://modulus.io>`_` hosting service.
             project: my-modulus-app
             token: 5f05189c
 
+project
+  name of your modulus project
+
+token
+  your modulus api token
+
 
 Nodejitsu
 ---------

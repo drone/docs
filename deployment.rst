@@ -1,10 +1,10 @@
 Deployment
 ==========
 
-Drone can push deployments at the end of a successful build. Drone includes a number of deployment
-plugins that can be configured in the `deploy` section of the `.drone.yml` file.
+Drone can automate your deployment steps at the end of each successful build. Drone includes a
+number of deployment plugins that can be configured in the `deploy` section of the `.drone.yml` file.
 
-Deployments are skipped for:
+Deployments are **skipped** for:
 
 * Failed builds
 * Pull requests

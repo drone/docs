@@ -90,5 +90,20 @@ Open Shift
 
 We are looking for volunteers to add this plugin.
 
+Tsuru
+------
 
+Deploy to the `Tsuru <https://www.tsuru.io>`_ hosting service.
 
+.. code-block:: console
+
+    deploy:
+       tsuru: 
+            force: false
+            remote: git@git.tsuru.io:my-tsuruapp.git
+
+force
+  true | false to use the git --force flag (default: `false`).
+
+remote
+  git remote of your tsuru application

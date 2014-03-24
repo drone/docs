@@ -85,12 +85,19 @@ Nodejitsu
 
 Deploy to the `nodejitsu <https://www.nodejitsu.com>`_ hosting service.
 
-```
-deploy:
-    modulus:
-        user: my-nodejitsure-username
-        token: 5f05189c
-```
+.. code-block:: console
+
+    deploy:
+        nodejitsu:
+            user: my-nodejitsure-username
+            token: 5f05189c
+
+user
+  your nodejitsu username
+
+token
+  your nodejitsu api token
+
 
 Open Shift
 ----------

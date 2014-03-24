@@ -83,7 +83,14 @@ token
 Nodejitsu
 ---------
 
-We are looking for volunteers to add this plugin.
+Deploy to the `nodejitsu <https://www.nodejitsu.com>`_ hosting service.
+
+```
+deploy:
+    modulus:
+        user: my-nodejitsure-username
+        token: 5f05189c
+```
 
 Open Shift
 ----------

@@ -35,7 +35,7 @@ This is the fastest, easiest way to get up and running with Drone. This is also 
 Running
 -------
 
-Drone is started automatiaclly. You can start and stop Drone manually with
+Drone is started automatically. You can start and stop Drone manually with
 the following commands:
 
 .. code-block:: console

@@ -14,7 +14,7 @@ Drone requires the latest version of Docker (0.8)
 Installation
 ------------
 
-Drone is distributed a as debian package for easy installation:
+Drone is distributed as a debian package for easy installation:
 
 .. code-block:: console
 

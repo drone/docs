@@ -42,6 +42,35 @@ force
   true | false to use the git --force flag
 
 
+Bash
+---
+
+Deploy code via any bash command, for example with [Capistrano](https://github.com/capistrano/capistrano) or [Fabric](https://github.com/fabric/fabric)
+
+.. code-block:: console
+
+    deploy:
+        bash:
+            command: bundle exec cap production deploy
+            
+or
+
+.. code-block:: console
+
+    deploy:
+        bash:
+            script: 
+              - ./bin/prepare_for_deploy.sh
+              - ./bin/make_deploy.sh
+              - ./bin/finish_deploy.sh
+
+command
+  bash command that runs deploy
+
+script
+  array of bash commands that run deploy
+
+
 Heroku
 ------
 

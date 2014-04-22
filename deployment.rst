@@ -9,10 +9,12 @@ Deployments are **skipped** for:
 * Failed builds
 * Pull requests
 
-Cloudfoundry
-------------
+Cloud Foundry
+-------------
 
-Deploy to [CloudFoundry](http://www.cloudfoundry.org/index.html) hosted service over [cf tool](https://github.com/cloudfoundry/cli/releases) verion 6. it assumes your provide the application manifest file `manifest.yml` under project root directory if no application name provided.
+Deploy to [Cloud Foundry](http://www.cloudfoundry.org/index.html) hosted service over [cf tool](https://github.com/cloudfoundry/cli/releases) verion 6. it assumes your provide the application manifest file `manifest.yml` under project root directory if no application name provided.
+
+.. code-block:: console
 
     deploy:
       cloudfoundry:
@@ -24,7 +26,7 @@ Deploy to [CloudFoundry](http://www.cloudfoundry.org/index.html) hosted service 
         app: my-cloudfoundry-app
 
 target
-  the URL of the Cloud Controller in CloudFoundry instance
+  URL of the Cloud Controller in Cloud Foundry
 
 username
   your username
@@ -33,13 +35,13 @@ password
   your password
 
 organization
-  The organization where you want to deploy your application (optional)
+  organization name where you want to deploy your application (optional)
 
 space
-  The space in the organization where you want to deploy your application (optional)
+  space name in the organization where you want to deploy your application (optional)
 
 app
-  the name of the application to push (optional)
+  name of the application to push (optional)
 
 Engine Yard
 ------------

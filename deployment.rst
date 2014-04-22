@@ -12,7 +12,7 @@ Deployments are **skipped** for:
 Cloud Foundry
 -------------
 
-Deploy to [Cloud Foundry](http://www.cloudfoundry.org/index.html) hosted service over [cf tool](https://github.com/cloudfoundry/cli/releases) verion 6. it assumes your provide the application manifest file `manifest.yml` under project root directory if no application name provided.
+Deploy to `Cloud Foundry <http://www.cloudfoundry.org/index.html>`_ hosted service over `cf tool <https://github.com/cloudfoundry/cli/releases>`_ verion 6. it assumes your provide the application manifest file `manifest.yml` under project root directory if no application name provided.
 
 .. code-block:: console
 

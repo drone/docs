@@ -58,6 +58,7 @@ software packages:
 
     $ git clone git://github.com/drone/drone.git
     $ cd drone
+    $ git submodule update --init
     $ make deps
     $ make
 
@@ -92,12 +93,12 @@ or you can change the default port in the ``/etc/default/drone`` file:
 .. code-block:: bash
 
     # Upstart configuration file for droned.
-    
+
     # Command line options:
     #
     #   -datasource="drone.sqlite":
     #   -driver="sqlite3":
     #   -path="":
     #   -port=":8080":
-    #         
+    #
     DRONED_OPTS="--port=:8080"

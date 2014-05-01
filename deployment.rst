@@ -9,10 +9,39 @@ Deployments are **skipped** for:
 * Failed builds
 * Pull requests
 
-Cloudfoundry
-------------
+Cloud Foundry
+-------------
 
-We are looking for volunteers to add this plugin.
+Deploy to `Cloud Foundry <http://www.cloudfoundry.org/index.html>`_ hosted service over `cf tool <https://github.com/cloudfoundry/cli/releases>`_ verion 6. it assumes your provide the application manifest file `manifest.yml` under project root directory if no application name provided.
+
+.. code-block:: console
+
+    deploy:
+      cloudfoundry:
+        target: https://api.run.pivotal.io
+        username: my-cloudfoundry-username
+        password: my-password
+        organization: my-cloudfoundry-org
+        space: development
+        app: my-cloudfoundry-app
+
+target
+  URL of the Cloud Controller in Cloud Foundry
+
+username
+  your username
+
+password
+  your password
+
+organization
+  organization name where you want to deploy your application (optional)
+
+space
+  space name in the organization where you want to deploy your application (optional)
+
+app
+  name of the application to push (optional)
 
 Engine Yard
 ------------
@@ -43,7 +72,7 @@ force
 
 
 Bash
----
+----
 
 Deploy code via any bash command, for example with [Capistrano](https://github.com/capistrano/capistrano) or [Fabric](https://github.com/fabric/fabric)
 

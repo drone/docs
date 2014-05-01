@@ -11,6 +11,7 @@ Contents:
    install
    setup
    deployment
+   publish
    contribute
 
 Need Help?

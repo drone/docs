@@ -102,3 +102,37 @@ username
 
 password
   PyPI password to authenticate with
+
+NPM
+---
+
+Publish a Node.js package to npm registry
+
+.. code-block:: console
+
+    publish:
+        npm:
+            username: someuser
+            email: someuser@example.com
+            password: somepassword
+            registry: https://somereg.example.com/
+            folder: my-node-project/
+            tag: latest
+
+username
+  npm registry username to authenticate with
+
+email
+  npm registry email to authenticate with
+
+password
+  npm registry password to authenticate with
+
+registry
+  npm registry URL. default to http://registry.npmjs.org/ (optional)
+
+folder
+  a folder containing a package.json file (optional)
+
+tag
+  registers the published package with the given tag (optional)

@@ -83,7 +83,7 @@ source
   Source file to publish
 
 target
-  Destiantion publish location
+  Destination publish location (only required when source is a single file)
 
 PyPI
 ----

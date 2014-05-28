@@ -40,30 +40,17 @@ you may want to check the GitHub project at https://github.com/drone/drone.
 Example: Using Postgres
 -----------------------
 
-Here is an example that uses the Postgres database as a Drone service. It uses
-an existing tool (Goose) to connect to the database and run a SQL migration.
+Here is an example that uses the Postgres database as a Drone service.
 
 .. code-block:: yaml
 
     image: go1.2
-
     services:
       - postgres
-
     script:
-
-      # Make sure we have the client installed.
-      - sudo apt-get -y install postgresql-client
-
-      # Create a postgres database
       - createdb -h localhost -U postgres drone
+      - psql -U postgres -h localhost -c "SELECT 1" drone
 
-      # Get and install the Goose DB tool
-      - go get bitbucket.org/liamstask/goose/cmd/goose
-
-      # Have goose set up our DB. This will run all of
-      # the migrations in db/migrations
-      - $GOPATH/bin/goose --env=drone up
 
 
 The example above does the following:
@@ -72,36 +59,43 @@ The example above does the following:
 - Declares one service: ``postgres``, which will create a new Postgres container
   and map it to our build container.
 - Creates a new database called ``drone`` using the Postgres command ``createdb``.
-- Installs Goose, a simple database migration tool. We will use Goose as an
-  example. It is not, though, required.
-- Runs ``goose up`` to connect to the postgres service and execute some SQL.
+- Runs a very simple ``SELECT`` statement.
 
-Goose is a database migration tool. Its configuration file points it to a
-database, and it connects according to the rules therein. Here's an excerpt from
-Goose's ``db/dbconf.yml`` file:
 
-.. code-block:: yaml
+Importantly, from the examples above, we can see the primary
+information that we can use to connect application code to Postgres:
 
-    drone:
-        driver: postgres
-        open: user=postgres host=localhost dbname=drone sslmode=disable
-
-The above tells Goose to connect to a Postgres database using:
-
-- The user ``postgres`` (Postgres' default account)
-- The server is listening on ``localhost``.- The database ``drone``, which we 
-  created in the ``createdb`` clause above.
-- SSL disabled.
-
-Note that there is no password or port specified. Drone does not override
-the defaults.
+- Default user: ``postgres``
+- Default password: none
+- Host: ``localhost``
+- Port: ``5432``
+- SSL: disabled (Some clients default to enabling SSL).
 
 Why point to localhost when Postgres is running in a different container? This
-is a feature of Drone many of Drone's built-in images. They are configured to 
+is a feature of many of Drone's built-in images. They are configured to 
 proxy connections from the local host to the correct services containers.
 
-You can adapt the information above for your own application configuration
-and connect your builds to the Drone service.
+Once a project like this is pushed, the output should look something like this"
+
+.. code-block:: console
+
+    $ git clone --depth=50 --recursive --branch=master https://bitbucket.org/technosophos/drone-postgres-example.git /var/cache/drone/src/bitbucket.org/technosophos/drone-postgres-example
+    Cloning into '/var/cache/drone/src/bitbucket.org/technosophos/drone-postgres-example'...
+    $ git checkout -qf c7e9917648ebcd3f5f5e622bc3502f41caf7cd64
+    $ createdb -h localhost -U postgres drone
+    $ psql -U postgres -h localhost -c "SELECT 1" drone
+     ?column? 
+    ----------
+            1
+    (1 row)
+
+    $ exit 0
+
+
+Note that in the last few lines we can see the output of the query from Postgres.
+
+Using the same connection information presented above, you can configure your
+application to connect to the service instance and use it during the Drone run.
 
 Tips for Using Services
 -----------------------

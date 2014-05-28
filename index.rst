@@ -12,6 +12,7 @@ Contents:
    setup
    deployment
    publish
+   services
    contribute
 
 Need Help?

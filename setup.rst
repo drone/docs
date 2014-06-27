@@ -33,7 +33,7 @@ BitBucket
 ---------
 
 To allow Drone access to your BitBucket projects, you will need to authorize
-Drone as an "Integrated Application" within GitHub. This will generate OAuth keys
+Drone as an "Integrated Application" within Bitbucket. This will generate OAuth keys
 that Drone uses to authenticate itself to Drone.
 
 Navigate to your BitBucket account settings: https://bitbucket.org/account/user/USER_NAME/.

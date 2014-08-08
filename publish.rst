@@ -136,3 +136,190 @@ folder
 
 tag
   registers the published package with the given tag (optional)
+
+Docker
+------
+
+Publish a Docker image to a specified repo or registry. Supports the following configurations:
+
+ * Private Docker Registry (unauthenticated)
+
+ * Private Docker Registry (authenticated)
+   e.g. login with `username` + push to `docker.example.com/image:tag`
+ * Push to Docker Hub user ID 
+   e.g. `username/image:tag`
+ * Push to Docker Hub company or group 
+   e.g. login with `username` but push to `company/image:tag`
+
+.. code-block:: console
+
+    publish:
+        docker:
+            dockerfile: MyDockerFile
+            docker_host: docker.example.com
+            docker_port: 1000
+            docker_version: 1.0
+            registry_host: docker.example.com
+            registry_protocol: https
+            registry_login: true
+            registry_login_uri: /registry/v1/
+            username: myuser
+            password: mypassword
+            email: myuser@example.com
+            image_name: my-webapp
+            push_latest: true
+            keep_builds: false
+            tag: 0.1
+
+dockerfile
+  The Dockerfile you want to use to build your final image.
+  **Default:** `./Dockerfile` in the root of your codebase.
+
+docker_host
+  IP address or hostname for the Docker server that you want to connect to for building/pushing your image.
+  **Note:** This does not need to match the final destination/end-point for your image.
+
+docker_port
+  The TCP port on which the Docker daemon is listening for remote connections (configured by adding `-H tcp://{IP_ADDRESS}:{PORT}` to `DOCKER_OPTS` in `/etc/default/docker` on the server you want to use to build images).
+
+docker_version
+  The version of Docker Engine that is running on the remote Docker server (not the registry).
+
+registry_host (optional)
+  IP address or hostname for the private registry where the image is to be pushed to.
+
+registry_protocol (optional)
+  Specify the protocol used on the registry endpoint. Defaults to `http`. 
+  **Note:** This is only needed if you are pushing to a remote endpoint that requires login. It is used to construct the login URL (e.g. `http://docker.example.com/v1/`)
+
+registry_login (optional)
+  Does your custom registry endpoint require login? Defaults to `false`
+  **Note:** This is not applicable when pushing to Docker Hub, it will always require authentication.
+
+registry_login_uri (optional)
+  Some people might host their registries under a different URI structure which would require a different login URL to be constructed to login. Defaults to `/v1/` which should work on 90% of hosts.
+  e.g. `registry_login_uri: /staff/repo/v1/` would become `http://docker.example.com/staff/repo/v1/` as the login URL.
+
+repo_name (optional)
+  By default, when pushing to Docker Hub, the image will be set as `{username}/{image}:{tag}`. For privately hosted registries, you might have 20 people all commiting to one repository, so here is where you can configure the repository prefix.
+  e.g. `repo_name: company` would result in an image called `company/image:tag` being created, but pushed using the credentials specified in the yaml to do so.
+  **Note:** Not applicable for private registries. If set, builds will fail with an error message.
+
+image_name
+  The name you would like to give your image (excluding the image tag)
+
+tag (optional)
+  The tag you would like to set for this image build. Default is the short git commit ID `git rev-parse --short HEAD`
+
+username (optional for private repositories)
+  The username used to authenticate to the private registry or to Docker Hub
+
+password (optional for private repositories)
+  Your authentication password
+
+email (optional for private repositories)
+  Your email address
+
+keep_build (optional)
+  Set to `true` if you would like to leave the final image on the `docker_host` used to build it. Default is `false`, which cleans up the build after successfully pushing to the registry.
+
+Example Configs
++++++++++++++++
+
+**Private Registry, no authentication**
+
+.. code-block:: console
+
+    publish:
+        docker:
+            docker_host: docker.example.com
+            docker_port: 1000
+            docker_version: 1.0
+            registry_host: docker-registry.example.com
+            registry_login: false
+            image_name: my-webapp
+            push_latest: true
+            keep_builds: false
+            tag: 0.1
+
+Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without login.
+
+**Private Registry, Authenticated**
+
+.. code-block:: console
+
+    publish:
+        docker:
+            docker_host: docker.example.com
+            docker_port: 1000
+            docker_version: 1.0
+            registry_host: docker-registry.example.com
+            registry_protocol: https
+            registry_login: true
+            username: myuser
+            password: mypassword
+            email: myuser@example.com
+            image_name: my-webapp
+            push_latest: true
+            keep_builds: false
+
+Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account.
+
+**Private Registry, Custom URI**
+
+.. code-block:: console
+
+    publish:
+        docker:
+            docker_host: docker.example.com
+            docker_port: 1000
+            docker_version: 1.0
+            registry_host: docker.example.com
+            registry_protocol: https
+            registry_login: true
+            registry_uri: /registry
+            username: myuser
+            password: mypassword
+            email: myuser@example.com
+            image_name: my-webapp
+            push_latest: true
+            keep_builds: false
+
+Result: Image pushed to `docker.example.com/registry/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account.
+
+**Docker Hub, Push to Personal Account**
+.. code-block:: console
+
+    publish:
+        docker:
+            docker_host: docker.example.com
+            docker_port: 1000
+            docker_version: 1.0
+            username: myuser
+            password: mypassword
+            email: myuser@example.com
+            image_name: my-webapp
+            push_latest: true
+            keep_builds: false
+
+Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account.
+
+**Docker Hub, Push to Shared Repository**
+
+.. code-block:: console
+
+    publish:
+        docker:
+            docker_host: docker.example.com
+            docker_port: 1000
+            docker_version: 1.0
+            username: myuser
+            password: mypassword
+            email: myuser@example.com
+            repo_name: mycompany
+            image_name: my-webapp
+            push_latest: true
+            keep_builds: false
+            tag: 0.1
+
+Result: Image pushed to Docker Hub as `mycompany/image:0.1` using `myuser` account.

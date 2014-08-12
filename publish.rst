@@ -175,7 +175,7 @@ dockerfile
   The Dockerfile you want to use to build your final image.
   **Default:** `./Dockerfile` in the root of your codebase.
 
-docker_host
+docker_server
   IP address or hostname for the Docker server that you want to connect to for building/pushing your image.
   **Note:** This does not need to match the final destination/end-point for your image.
 
@@ -185,25 +185,12 @@ docker_port
 docker_version
   The version of Docker Engine that is running on the remote Docker server (not the registry).
 
-registry_host (optional)
-  IP address or hostname for the private registry where the image is to be pushed to.
-
-registry_protocol (optional)
-  Specify the protocol used on the registry endpoint. Defaults to `http`. 
-  **Note:** This is only needed if you are pushing to a remote endpoint that requires login. It is used to construct the login URL (e.g. `http://docker.example.com/v1/`)
+registry_login_url (optional)
+  The full login URI used to post authentication details (e.g. `https://docker.company.com/v1/`)
 
 registry_login (optional)
   Does your custom registry endpoint require login? Defaults to `false`
   **Note:** This is not applicable when pushing to Docker Hub, it will always require authentication.
-
-registry_login_uri (optional)
-  Some people might host their registries under a different URI structure which would require a different login URL to be constructed to login. Defaults to `/v1/` which should work on 90% of hosts.
-  e.g. `registry_login_uri: /staff/repo/v1/` would become `http://docker.example.com/staff/repo/v1/` as the login URL.
-
-repo_name (optional)
-  By default, when pushing to Docker Hub, the image will be set as `{username}/{image}:{tag}`. For privately hosted registries, you might have 20 people all commiting to one repository, so here is where you can configure the repository prefix.
-  e.g. `repo_name: company` would result in an image called `company/image:tag` being created, but pushed using the credentials specified in the yaml to do so.
-  **Note:** Not applicable for private registries. If set, builds will fail with an error message.
 
 image_name
   The name you would like to give your image (excluding the image tag)
@@ -223,6 +210,9 @@ email (optional for private repositories)
 keep_build (optional)
   Set to `true` if you would like to leave the final image on the `docker_host` used to build it. Default is `false`, which cleans up the build after successfully pushing to the registry.
 
+push_latest (optional)
+  In addition to tagging with either `custom_tag` or the git-ref of your code, should we tag an image as `:latest` before pushing it? Default behaviour is set to `true`.
+
 Example Configs
 +++++++++++++++
 
@@ -235,12 +225,11 @@ Example Configs
             docker_host: docker.example.com
             docker_port: 1000
             docker_version: 1.0
-            registry_host: docker-registry.example.com
             registry_login: false
-            image_name: my-webapp
-            push_latest: true
+            image_name: docker.example.com/my-webapp
+            push_latest: false
             keep_builds: false
-            tag: 0.1
+            custom_tag: 0.1
 
 Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without login.
 
@@ -253,39 +242,16 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without logi
             docker_host: docker.example.com
             docker_port: 1000
             docker_version: 1.0
-            registry_host: docker-registry.example.com
-            registry_protocol: https
+            registry_login_url: https://docker-registry.example.com/v1/
             registry_login: true
             username: myuser
             password: mypassword
             email: myuser@example.com
-            image_name: my-webapp
+            image_name: docker-registry.example.com/my-webapp
             push_latest: true
             keep_builds: false
 
-Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account.
-
-**Private Registry, Custom URI**
-
-.. code-block:: console
-
-    publish:
-        docker:
-            docker_host: docker.example.com
-            docker_port: 1000
-            docker_version: 1.0
-            registry_host: docker.example.com
-            registry_protocol: https
-            registry_login: true
-            registry_uri: /registry
-            username: myuser
-            password: mypassword
-            email: myuser@example.com
-            image_name: my-webapp
-            push_latest: true
-            keep_builds: false
-
-Result: Image pushed to `docker.example.com/registry/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account.
+Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account. `docker.example.com/my-app:latest` is also tagged.
 
 **Docker Hub, Push to Personal Account**
 .. code-block:: console
@@ -316,9 +282,8 @@ Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short 
             username: myuser
             password: mypassword
             email: myuser@example.com
-            repo_name: mycompany
-            image_name: my-webapp
-            push_latest: true
+            image_name: mycompany/my-webapp
+            push_latest: false
             keep_builds: false
             tag: 0.1
 

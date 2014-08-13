@@ -165,7 +165,7 @@ We are looking for volunteers to add this plugin.
 Tsuru
 ------
 
-Deploy to the `Tsuru <https://www.tsuru.io>`_ hosting service.
+Deploy to the `Tsuru <http://www.tsuru.io>`_ hosting service.
 
 .. code-block:: console
 

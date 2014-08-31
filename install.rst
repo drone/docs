@@ -76,6 +76,12 @@ You will need to change the ``DRONED_OPTS`` variable to have three things:
 **Note:** Your SSL key should be kept in a safe directory with restrictive
 permissions. On many Linux systems, ``/etc/ssl/private`` is used for this.
 
+**Note:** If your SSL certificate requires a bundle, it should be appended
+to the certificate file.  E.g. if you have "my-cert.crt" and "my-bundle.crt"
+then ``cat my-cert.crt my-bundle.crt >> my-cert-bundle.crt'`` with
+``--sslcert=/path/to/my-cert-bundle.crt``.  If you do not know where
+to place the certificate, ``/etc/ssl/certs/`` is a good candidate.
+
 Here is a complete example:
 
 .. code-block:: bash

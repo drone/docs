@@ -64,8 +64,8 @@ software packages:
 Enabling SSL
 ------------
 
-To enable SSL/TLS security on Drone you will need to edit the Upstart script.
-This is located in ``/etc/init/drone.conf``.
+To enable SSL/TLS security on Drone you will need to edit the Upstart script
+configuration. This file is located at ``/etc/default/drone``.
 
 You will need to change the ``DRONED_OPTS`` variable to have three things:
 
@@ -76,22 +76,26 @@ You will need to change the ``DRONED_OPTS`` variable to have three things:
 **Note:** Your SSL key should be kept in a safe directory with restrictive
 permissions. On many Linux systems, ``/etc/ssl/private`` is used for this.
 
+**Note:** If your SSL certificate requires a bundle, it should be appended
+to the certificate file.  E.g. if you have "my-cert.crt" and "my-bundle.crt"
+then ``cat my-cert.crt my-bundle.crt >> my-cert-bundle.crt'`` with
+``--sslcert=/path/to/my-cert-bundle.crt``.  If you do not know where
+to place the certificate, ``/etc/ssl/certs/`` is a good candidate.
+
 Here is a complete example:
 
 .. code-block:: bash
 
-    start on (filesystem and net-device-up)
-
-    chdir /var/lib/drone
-    console log
-
-    script
-        DRONED_OPTS="--port=:443 --sslkey=/path/to/my.key --sslcert=/path/to/my.crt"
-        if [ -f /etc/default/$UPSTART_JOB ]; then
-            . /etc/default/$UPSTART_JOB
-        fi
-        droned $DRONED_OPTS
-    end script
+    # Upstart configuration file for droned.
+    
+    # Command line options:
+    #
+    #   -datasource="drone.sqlite":
+    #   -driver="sqlite3":
+    #   -port=":8080":
+    #   -workers="4":
+    #
+    DRONED_OPTS="-port=:443 --sslkey=/path/to/my.key --sslcert=/path/to/my.crt"
 
 Once this file has been changed you will need to restart ``droned`` before these
 changes will take effect.

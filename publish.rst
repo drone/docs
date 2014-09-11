@@ -156,7 +156,7 @@ Publish a Docker image to a specified repo or registry. Supports the following c
     publish:
         docker:
             dockerfile: MyDockerFile
-            docker_host: docker.example.com
+            docker_server docker.example.com
             docker_port: 1000
             docker_version: 1.0
             registry_host: docker.example.com
@@ -208,7 +208,7 @@ email (optional for private repositories)
   Your email address
 
 keep_build (optional)
-  Set to `true` if you would like to leave the final image on the `docker_host` used to build it. Default is `false`, which cleans up the build after successfully pushing to the registry.
+  Set to `true` if you would like to leave the final image on the `docker_server` used to build it. Default is `false`, which cleans up the build after successfully pushing to the registry.
 
 push_latest (optional)
   In addition to tagging with either `custom_tag` or the git-ref of your code, should we tag an image as `:latest` before pushing it? Default behaviour is set to `true`.
@@ -222,7 +222,7 @@ Example Configs
 
     publish:
         docker:
-            docker_host: docker.example.com
+            docker_server docker.example.com
             docker_port: 1000
             docker_version: 1.0
             registry_login: false
@@ -239,7 +239,7 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without logi
 
     publish:
         docker:
-            docker_host: docker.example.com
+            docker_server docker.example.com
             docker_port: 1000
             docker_version: 1.0
             registry_login_url: https://docker-registry.example.com/v1/
@@ -258,7 +258,7 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse -
 
     publish:
         docker:
-            docker_host: docker.example.com
+            docker_server docker.example.com
             docker_port: 1000
             docker_version: 1.0
             username: myuser
@@ -276,7 +276,7 @@ Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short 
 
     publish:
         docker:
-            docker_host: docker.example.com
+            docker_server docker.example.com
             docker_port: 1000
             docker_version: 1.0
             username: myuser

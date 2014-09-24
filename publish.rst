@@ -288,3 +288,58 @@ Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short 
             tag: 0.1
 
 Result: Image pushed to Docker Hub as `mycompany/image:0.1` using `myuser` account.
+
+GitHub
+------
+
+Create a `GitHub release <https://github.com/blog/1547-release-your-software>`_.
+
+.. code-block:: console
+
+    publish:
+        github:
+            branch: master
+            script:
+              - make embed
+              - make release
+            artifacts:
+              - release/
+            tag: v$(cat VERSION)
+            token: {{github_token}}
+            user: drone
+            repo: drone
+
+script
+  Optional list of commands to run to prepare a release.
+
+artifacts
+  List of files or directories to release.
+
+tag
+  Required name of the tag to create for this release.
+  If the tag already exists, the plugin will do nothing.
+
+name
+  The name of the release. Defaults to tag.
+
+description
+  Description of the release. Defaults to empty.
+
+draft:
+  true/false identifier allowed on GitHub releases. Defaults to false.
+
+prerelease:
+  true/false identifier allowed on GitHub releases. Defaults to false.
+
+token:
+  Required OAuth token to use when interacting with the GitHub API.
+  The token must have "repo" access, and the user associated with the token must have read and write access to the repo.
+
+user:
+  The user or organization for the repository you'd like to publish to.
+
+repo:
+  The name of the respository to publish to.
+
+branch:
+  Restrict this plugin to only run on commits to this branch. Defaults to "master".

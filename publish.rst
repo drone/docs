@@ -169,7 +169,7 @@ Publish a Docker image to a specified repo or registry. Supports the following c
             image_name: my-webapp
             push_latest: true
             keep_builds: false
-            tag: 0.1
+            custom_tag: 0.1
 
 dockerfile
   The Dockerfile you want to use to build your final image.
@@ -195,7 +195,7 @@ registry_login (optional)
 image_name
   The name you would like to give your image (excluding the image tag)
 
-tag (optional)
+custom_tag (optional)
   The tag you would like to set for this image build. Default is the short git commit ID `git rev-parse --short HEAD`
 
 username (optional for private repositories)
@@ -285,7 +285,7 @@ Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short 
             image_name: mycompany/my-webapp
             push_latest: false
             keep_builds: false
-            tag: 0.1
+            custom_tag: 0.1
 
 Result: Image pushed to Docker Hub as `mycompany/image:0.1` using `myuser` account.
 

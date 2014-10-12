@@ -3,11 +3,11 @@ Setup
 
 This section assumes Drone is installed as a service and running on Port 80. 
 
-Admin
--------------
+Configure
+---------
 
-First you need to setup your administrative user. Navigate to http://localhost/install
-where you will be prompted to create your account.
+First you need to enable one of the OAuth services in ```config.toml``` or using ENV variables. Then you will be able to login as admin
+and add other authorized users if you have disabled open registration.
 
 
 GitHub
@@ -23,7 +23,7 @@ Homepage URL
   http://localhost
 
 Authorization Callback URL
-  http://localhost/auth/login/github
+  http://localhost/api/auth/github.com
 
 Click **Register Application**
 

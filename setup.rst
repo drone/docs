@@ -6,7 +6,7 @@ This section assumes Drone is installed as a service and running on Port 80.
 Configure
 ---------
 
-First you need to enable one of the OAuth services using then you will bea able to login as admin
+First you need to enable one of the OAuth services in ```config.toml``` or using ENV variables. Then you will be able to login as admin
 and add other authorized users if you have disabled open registration.
 
 

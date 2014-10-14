@@ -18,7 +18,7 @@ Drone is distributed as a debian package for easy installation:
 
 .. code-block:: console
 
-    $ wget http://downloads.drone.io/latest/drone.deb
+    $ wget http://downloads.drone.io/master/drone.deb
     $ sudo dpkg -i drone.deb
 
 This will install the following files:

@@ -156,9 +156,8 @@ Publish a Docker image to a specified repo or registry. Supports the following c
     publish:
         docker:
             dockerfile: MyDockerFile
-            docker_server docker.example.com
-            docker_port: 1000
-            docker_version: 1.0
+            docker_host tcp://docker.example.com:2375
+            docker_version: 1.3.0
             registry_host: docker.example.com
             registry_protocol: https
             registry_login: true
@@ -175,12 +174,10 @@ dockerfile
   The Dockerfile you want to use to build your final image.
   **Default:** `./Dockerfile` in the root of your codebase.
 
-docker_server
-  IP address or hostname for the Docker server that you want to connect to for building/pushing your image.
+docker_host
+  Docker server that you want to connect to for building/pushing your image.
+  It has the same format than `-H` flag of docker binary.
   **Note:** This does not need to match the final destination/end-point for your image.
-
-docker_port
-  The TCP port on which the Docker daemon is listening for remote connections (configured by adding `-H tcp://{IP_ADDRESS}:{PORT}` to `DOCKER_OPTS` in `/etc/default/docker` on the server you want to use to build images).
 
 docker_version
   The version of Docker Engine that is running on the remote Docker server (not the registry).

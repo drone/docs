@@ -166,9 +166,7 @@ Publish a Docker image to a specified repo or registry. Supports the following c
             password: mypassword
             email: myuser@example.com
             image_name: my-webapp
-            push_latest: true
-            keep_builds: false
-            custom_tag: 0.1
+            tags: [0.1, latest]
 
 dockerfile
   The Dockerfile you want to use to build your final image.
@@ -192,8 +190,11 @@ registry_login (optional)
 image_name
   The name you would like to give your image (excluding the image tag)
 
-custom_tag (optional)
-  The tag you would like to set for this image build. Default is the short git commit ID `git rev-parse --short HEAD`
+tag (optional)
+  A custom tag for this image. 
+
+tags (optional)
+  The tag(s) you would like to set for this image build. Will be combined with the "tag" field if both are specified. If no tags are specified in either field, the image will be tagged with the short git commit ID `git rev-parse --short HEAD`
 
 username (optional for private repositories)
   The username used to authenticate to the private registry or to Docker Hub
@@ -207,9 +208,6 @@ email (optional for private repositories)
 keep_build (optional)
   Set to `true` if you would like to leave the final image on the `docker_server` used to build it. Default is `false`, which cleans up the build after successfully pushing to the registry.
 
-push_latest (optional)
-  In addition to tagging with either `custom_tag` or the git-ref of your code, should we tag an image as `:latest` before pushing it? Default behaviour is set to `true`.
-
 Example Configs
 +++++++++++++++
 
@@ -219,14 +217,12 @@ Example Configs
 
     publish:
         docker:
-            docker_server docker.example.com
-            docker_port: 1000
+            docker_host: tcp://docker.example.com:1000
             docker_version: 1.0
             registry_login: false
             image_name: docker.example.com/my-webapp
-            push_latest: false
             keep_builds: false
-            custom_tag: 0.1
+            tag: 0.1
 
 Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without login.
 
@@ -236,8 +232,7 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without logi
 
     publish:
         docker:
-            docker_server docker.example.com
-            docker_port: 1000
+            docker_host: tcp://docker.example.com:1000
             docker_version: 1.0
             registry_login_url: https://docker-registry.example.com/v1/
             registry_login: true
@@ -245,24 +240,21 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without logi
             password: mypassword
             email: myuser@example.com
             image_name: docker-registry.example.com/my-webapp
-            push_latest: true
             keep_builds: false
 
-Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account. `docker.example.com/my-app:latest` is also tagged.
+Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account. 
 
 **Docker Hub, Push to Personal Account**
 .. code-block:: console
 
     publish:
         docker:
-            docker_server docker.example.com
-            docker_port: 1000
+            docker_host: tcp://docker.example.com:1000
             docker_version: 1.0
             username: myuser
             password: mypassword
             email: myuser@example.com
             image_name: my-webapp
-            push_latest: true
             keep_builds: false
 
 Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account.
@@ -273,18 +265,30 @@ Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short 
 
     publish:
         docker:
-            docker_server docker.example.com
-            docker_port: 1000
+            docker_host: tcp://docker.example.com:1000
             docker_version: 1.0
             username: myuser
             password: mypassword
             email: myuser@example.com
             image_name: mycompany/my-webapp
-            push_latest: false
             keep_builds: false
-            custom_tag: 0.1
+            tags: [0.1, 0.2]
 
-Result: Image pushed to Docker Hub as `mycompany/image:0.1` using `myuser` account.
+Result: Image pushed to Docker Hub as `mycompany/image:0.1` and  `mycompany/image:0.2` using `myuser` account.
+
+    publish:
+        docker:
+            docker_host: tcp://docker.example.com:1000
+            docker_version: 1.0
+            username: myuser
+            password: mypassword
+            email: myuser@example.com
+            image_name: mycompany/my-webapp
+            keep_builds: false
+            tag: 0.1-latest
+            tags: [0.1, dev-latest]
+
+Result: Image pushed to Docker Hub as `mycompany/image:0.1`, `mycompany/image:0.1-latest` and `mycompany/image:dev-latest` using `myuser` account.
 
 GitHub
 ------

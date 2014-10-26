@@ -178,7 +178,7 @@ docker_host
   **Note:** This does not need to match the final destination/end-point for your image.
 
 docker_version
-  The version of Docker Engine that is running on the remote Docker server (not the registry).
+  The version of docker client used to access the docker_host. Leave blank to set to "local" to use the docker client installed on the build image.
 
 registry_login_url (optional)
   The full login URI used to post authentication details (e.g. `https://docker.company.com/v1/`)

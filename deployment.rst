@@ -81,14 +81,14 @@ Deploy code via any bash command, for example with [Capistrano](https://github.c
     deploy:
         bash:
             command: bundle exec cap production deploy
-            
+
 or
 
 .. code-block:: console
 
     deploy:
         bash:
-            script: 
+            script:
               - ./bin/prepare_for_deploy.sh
               - ./bin/make_deploy.sh
               - ./bin/finish_deploy.sh
@@ -111,6 +111,7 @@ Deploy to the `Heroku <https://www.heroku.com>`_ hosting service.
         heroku:
             app: my-heroku-app
             force: false
+            token: my-heroku-api-key
 
 
 app
@@ -118,6 +119,9 @@ app
 
 force
   true | false to use the git --force flag
+
+token
+  API key of your heroku account
 
 Modulus
 -------
@@ -170,7 +174,7 @@ Deploy to the `Tsuru <http://www.tsuru.io>`_ hosting service.
 .. code-block:: console
 
     deploy:
-       tsuru: 
+       tsuru:
             force: false
             remote: git@git.tsuru.io:my-tsuruapp.git
 

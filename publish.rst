@@ -245,6 +245,7 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without logi
 Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account. 
 
 **Docker Hub, Push to Personal Account**
+
 .. code-block:: console
 
     publish:

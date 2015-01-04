@@ -95,13 +95,25 @@ or
 
 Stage Environment Deploy
 
+.. code-block:: bash
+
+    #!/bin/bash -i
+    # ./bin/ci-deploy.sh
+    if [ "$DRONE_BRANCH" ]
+    then
+        if [ $DRONE_BRANCH = "master" ]
+        then
+            bundle install --path vendor/bundle
+            bundle exec cap production deploy
+        fi
+    fi
+
 .. code-block:: console
 
     deploy:
         bash:
             script:
-                - [ $DRONE_BRANCH == 'master'  ] && bundle install --path vendor/bundle && bundle exec cap production deploy
-                - [ $DRONE_BRANCH == 'develop' ] && bundle install --path vendor/bundle && bundle exec cap staging deploy
+                - ./bin/ci-deploy.sh
 
 command
   bash command that runs deploy

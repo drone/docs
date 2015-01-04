@@ -93,6 +93,16 @@ or
               - ./bin/make_deploy.sh
               - ./bin/finish_deploy.sh
 
+Stage Environment Deploy
+
+.. code-block:: console
+
+    deploy:
+        bash:
+            script:
+                - [ $DRONE_BRANCH == 'master'  ] && bundle install --path vendor/bundle && bundle exec cap production deploy
+                - [ $DRONE_BRANCH == 'develop' ] && bundle install --path vendor/bundle && bundle exec cap staging deploy
+
 command
   bash command that runs deploy
 

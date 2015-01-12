@@ -1,0 +1,17 @@
+image: go
+script:
+  - go get github.com/spf13/hugo
+  - hugo -t drone
+
+publish:
+  s3:
+    acl: public-read
+    region: us-east-1
+    bucket: readme.drone.io
+    access_key: $$AWS_KEY
+    secret_key: $$AWS_SECRET
+    source: public/
+    target: /
+    recursive: true
+    when:
+      owner: drone

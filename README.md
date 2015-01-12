@@ -1,6 +1,8 @@
-This is the [Drone](https://github.com/drone/drone) documentation found at [readme.drone.io](http://readme.drone.io)
+[![Build Status](http://test.drone.io/api/badge/github.com/drone/docs/status.svg?branch=master)](http://test.drone.io/github.com/drone/docs) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/drone/drone?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-## Install Hugo
+Documentation for the [Drone](https://github.com/drone/drone) continuous integration server, found at [readme.drone.io](http://readme.drone.io)
+
+## Setup
 
 This website uses the [Hugo](https://github.com/spf13/hugo) static site generator. If you are planning to contribute you'll want to download and install Hugo on your local machine.
 
@@ -18,7 +20,7 @@ go get github.com/spf13/hugo
 
 Or follow these instructions for your platform: http://gohugo.io/overview/installing/
 
-## Generate Docs
+## Build
 
 Generate the website and output to `./public`
 

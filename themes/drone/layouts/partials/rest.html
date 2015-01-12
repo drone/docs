@@ -1,0 +1,20 @@
+<!--sidebar start-->
+<div id="sidebar"  class="nav-collapse ">
+
+	<!-- sidebar menu start-->
+	<ul class="sidebar-menu endpoint-menu">
+	{{ range (.Site.Pages.GroupByParam "resource").Reverse }}
+		<li>
+			<h4>{{ .Key }}</h4>
+		</li>
+		
+		{{ range .Pages }}	
+		<li>
+			<a href="{{ .Permalink }}" data-method="{{ .Params.method }}">{{ .Params.path }}</a>
+		</li>
+		{{ end }}
+	{{end}}
+	</ul>
+	<!-- sidebar menu end-->
+</div>
+<!--sidebar end-->

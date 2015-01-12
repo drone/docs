@@ -1,0 +1,30 @@
+<!--sidebar start-->
+<div id="sidebar"  class="nav-collapse ">
+
+	<!-- sidebar menu start-->
+	<ul class="sidebar-menu">
+		{{ range . }}
+			{{ if .HasChildren }}
+			<li>
+				<h4>{{ .Name }}</h4>
+			</li>
+			<li class="sub-menu">
+				<ul class="">
+					{{ range .Children }}
+					<li>
+						<a href="{{.Url}}">{{ .Name }}</a>
+					</li>
+					{{ end }}
+				</ul>
+			</li>
+			{{else}}
+			<li>
+				<a class="" href="{{.Url}}">{{ .Name }}</a>
+			</li>
+			{{end}}
+		{{end}}
+	</ul>
+	<!-- sidebar menu end-->
+
+</div>
+<!--sidebar end-->

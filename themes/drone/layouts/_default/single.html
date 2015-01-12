@@ -1,0 +1,21 @@
+{{ template "theme/partials/header.html" . }}
+
+<aside>
+	{{ template "theme/partials/menu.html" .Site.Menus.main }}
+	{{ template "theme/partials/gitter.html" . }}
+</aside>
+
+<article>
+	<div class="article-inner">
+		{{ if .Params.method }}
+		<h1 data-method="{{ .Params.method }}">{{ .Params.path }}</h1>
+		<div class="article-desc">{{ .Title }}</div>
+		{{ else }}
+		<h1>{{ .Title }}</h1>
+		{{ end }}
+		<section>
+			{{ .Content }}
+		</section>
+	</div>
+</article>
+{{ template "theme/partials/footer.html" . }}

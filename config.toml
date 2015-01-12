@@ -1,0 +1,26 @@
+baseurl = "http://readme.drone.io"
+languageCode = "en-us"
+title = "Drone"
+
+DisableRSS = true
+DisableSitemap = true
+
+[indexes]
+	tag = "tags"
+	group = "groups"
+
+[[menu.main]]
+	name = "Install"
+	weight = 1
+
+[[menu.main]]
+	name = "Configure"
+	weight = 2
+
+[[menu.main]]
+	name = "Database"
+	weight = 3
+
+[[menu.main]]
+	name = "Misc"
+	weight = 4

@@ -1,0 +1,7 @@
+author = "Brad Rydzewski"
+description = "Drone Theme"
+license = "MIT"
+name = "drone"
+source_repo = "github.com/drone/docs"
+tags = []
+

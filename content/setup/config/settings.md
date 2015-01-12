@@ -75,7 +75,7 @@ open = true
 Or by using environment variables:
 
 ```bash
-export DRONE_REGISTRATION_OPEN=true
+DRONE_REGISTRATION_OPEN=true
 ```
 
 Please note this has security implications. This setting should only be enabled if you are running Drone behind a firewall.

@@ -14,6 +14,7 @@ In order to run Drone you must setup at least one of the following integration p
 * [GitHub](../github/)
 * [GitHub Enterprise](../github)
 * [Gitlab](../gitlab)
+* [Gogs](../gogs)
 * [Bitbucket](../bitbucket)
 
 All other settings are options.

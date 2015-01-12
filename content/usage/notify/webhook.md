@@ -22,7 +22,7 @@ Below is an example payload that you can expect:
 
 ```json
 {
-  "html_url": "http://drone.foo.com/github.com/foo/bar/master/9f2849d5ad",
+  "from_url": "http://drone.foo.com",
   "repository": {
     "remote": "github.com",
     "host": "github.com",

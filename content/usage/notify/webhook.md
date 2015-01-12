@@ -22,14 +22,14 @@ Below is an example payload that you can expect:
 
 ```json
 {
-  "hostname": "http://drone.foo.com",
+  "html_url": "http://drone.foo.com/github.com/foo/bar/master/9f2849d5ad",
   "repository": {
     "remote": "github.com",
     "host": "github.com",
     "owner": "foo",
     "name": "bar",
     "url": "https:\/\/github.com\/foo\/bar",
-    "clone_url": "git@github.com:bradrydzewski\/ami-utils.git",
+    "clone_url": "git@github.com:foo\/bar.git",
     "git_url": "git:\/\/github.com\/foo\/bar.git",
     "ssh_url": "git@github.com:foo\/bar.git",
     "active": false,

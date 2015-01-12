@@ -7,7 +7,7 @@ title = "Gitter"
 parent = "Notify"
 +++
 
-Gitter.im notifications
+You may configure Drone to trigger a message on [Gitter](https://gitter.im) when your build completes. This can be configured in the notify section of the `.drone.yml` file. For example:
 
 ```coffeescript
 notify:
@@ -18,3 +18,7 @@ notify:
     on_success: true
     on_failure: true
 ```
+
+> ## Help Wanted
+> 
+> We could acheive better integration with Gitter by adding Drone as an official service. Please see [issue #569](https://github.com/drone/drone/issues/569) for more details. You will be our hero!

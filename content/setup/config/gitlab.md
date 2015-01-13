@@ -7,7 +7,14 @@ title = "Gitlab"
 parent = "Configure"
 +++
 
-You may configure Drone to integrate with GitLab. This can be configured in the `/etc/drone/drone.toml` configuration file:
+You may configure Drone to integrate with GitLab. This can be configured in the `/etc/drone/drone.toml` configuration file. You can use the GitLab service:
+
+```toml
+[gitlab]
+url = "https://gitlab.com"
+```
+
+Or you can use your own self-hosted install:
 
 ```toml
 [gitlab]
@@ -19,5 +26,5 @@ url = "http://gitlab.drone.io"
 You may also configure Gitlab using environment variables. This is useful when running Drone inside Docker containers, for example.
 
 ```bash
-DRONE_GILAB_URL="http://gitlab.drone.io"
+DRONE_GILAB_URL="https://gitlab.com"
 ```

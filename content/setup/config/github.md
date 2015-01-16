@@ -39,7 +39,7 @@ private_mode = false
 
 ## Organization Whitelists
 
-You may also provide a white list of organizations that are authorized to use Drone. Only users belonging to these accounts may login to the system. This means you can enable registration while still limiting access to the system.
+When specified, only users belonging to these organization may login to the system. Use this option to enable self-registration while still limiting access to the general public.
 
 ```toml
 [github]

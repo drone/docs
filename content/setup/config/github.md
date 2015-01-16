@@ -37,6 +37,15 @@ secret = "1ac1eae5ff1b490892f5546f837f306265032412"
 private_mode = false
 ```
 
+## Organization Whitelists
+
+You may also provide a white list of organizations that are authorized to use Drone. Only users belonging to these accounts may login to the system. This means you can enable registration while still limiting access to the system.
+
+```toml
+[github]
+orgs = [ "drone", "docker" ]
+```
+
 ---
 
 ## Generate Client and Secret

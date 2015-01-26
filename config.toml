@@ -22,5 +22,9 @@ DisableSitemap = true
 	weight = 3
 
 [[menu.main]]
-	name = "Misc"
+	name = "Workers"
 	weight = 4
+
+[[menu.main]]
+	name = "Misc"
+	weight = 5

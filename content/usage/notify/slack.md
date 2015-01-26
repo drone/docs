@@ -7,16 +7,17 @@ title = "Slack"
 parent = "Notify"
 +++
 
-Slack notifications
+To configure Slack Notifications, you first need to create a new Incoming WebHook.
+Once you have the WebHook URL, you add the following to your `drone.yml`
 
 ```coffeescript
 notify:
   slack:
-    username: foo
-    token: c90f0e53d4973302fe0b6159488423d6
-    team: bar
-    channel: baz
+    webhook_url: 'https://hooks.slack.com/services/...'
+    username: 'drone'
+    channel: '#general'
     on_started: false
     on_success: true
     on_failure: true
 ```
+> Note: `username` and `channel` will override the settings that you specified when creating the WebHook with Slack.

@@ -1,10 +1,10 @@
 +++
-weight = 1
+weight = 6
 date = "2014-11-08T12:50:08-08:00"
-title = "Overview"
+title = "Workers"
 
 [menu.main]
-parent = "Workers"
+parent = "Configure"
 +++
 
 Drone is configured to connect to the local Docker daemon. Drone will attempt to use the `DOCKER_HOST` environment variable to determine the daemon URL. If not set, Drone will attempt to use the default socket connection `unix:///var/run/docker.sock`.

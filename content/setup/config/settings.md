@@ -62,20 +62,3 @@ DRONE_SESSION_EXPIRES="72h"
 ```
 
 ---
-
-## User Registration
-
-User registration is closed by default and new accounts must be provisioned in the user interface. You may allow users to self-register with the following configuration flag:
-
-```toml
-[registration]
-open = true
-```
-
-Or by using environment variables:
-
-```bash
-DRONE_REGISTRATION_OPEN=true
-```
-
-Please note this has security implications. This setting should only be enabled if you are running Drone behind a firewall.

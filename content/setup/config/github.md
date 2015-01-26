@@ -37,6 +37,17 @@ secret = "1ac1eae5ff1b490892f5546f837f306265032412"
 private_mode = false
 ```
 
+## User Registration
+
+User registration is closed by default and new accounts must be provisioned in the user interface. You may allow users to self-register with the following configuration flag:
+
+```toml
+[github]
+open = true
+```
+
+Please note this has security implications. This setting should only be enabled if you are running Drone behind a firewall.
+
 ## Organization Whitelists
 
 When specified, only users belonging to these organization may login to the system. Use this option to enable self-registration while still limiting access to the general public.

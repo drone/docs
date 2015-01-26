@@ -15,6 +15,7 @@ url = "https://gitlab.com"
 client = "c0aaff74c060ff4a950d"
 secret = "1ac1eae5ff1b490892f5546f837f306265032412"
 skip_verify=false
+open=false
 ```
 
 Or a custom installation:
@@ -24,6 +25,8 @@ Or a custom installation:
 url = "http://gitlab.drone.io"
 client = "c0aaff74c060ff4a950d"
 secret = "1ac1eae5ff1b490892f5546f837f306265032412"
+skip_verify=false
+open=false
 ```
 
 ## Environment Variables
@@ -35,6 +38,17 @@ DRONE_GILAB_URL="https://gitlab.com"
 DRONE_GITHUB_CLIENT="c0aaff74c060ff4a950d"
 DRONE_GITHUB_SECRET="1ac1eae5ff1b490892f5546f837f306265032412"
 ```
+
+## User Registration
+
+User registration is closed by default and new accounts must be provisioned in the user interface. You may allow users to self-register with the following configuration flag:
+
+```toml
+[gitlab]
+open = true
+```
+
+Please note this has security implications. This setting should only be enabled if you are running Drone behind a firewall.
 
 ## Self-Signed Certs
 

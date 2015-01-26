@@ -58,3 +58,18 @@ If your Gitlab installation uses a self-signed certificate you may need to instr
 [gitlab]
 skip_verify=true
 ```
+
+---
+
+## Generate Client and Secret
+
+You must register your application with GitLab in order to generate a Client and Secret. 
+
+1. If you have admin rigths on your GitLab instance, you can create application from admin panel ( *Admin Panel* > *Applications* > *New Application* )
+	- Set Name field as *"Drone"*
+	- Set Redirect URI field as `https://ci.yourhost.com/api/auth/gitlab.com`
+2. If you not have admin rigths, you can create application from user profile ( *User profile* > *Edit Profile settings* > *Applications* > *New Application* )
+	- Set Name field as *"Drone"*
+	- Set Redirect URI field as `https://ci.yourhost.com/api/auth/gitlab.com`
+
+Please use `/api/auth/gitlab.com` as the Authorization callback URL path.

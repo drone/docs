@@ -27,11 +27,11 @@ sudo apt-get install docker.io
 
 ## Installation
 
-Once the environment is prepared you can install Drone from a debian file. Drone will automatically start on port `80`.
+Once the environment is prepared you can install Drone from a debian file. Drone will automatically start on port `80`. Edit `/etc/drone/drone.toml` to modify the port.
 
 ```bash
 wget downloads.drone.io/master/drone.deb
-sudo install -t drone.deb
+sudo dpkg --install drone.deb
 ```
 
 ## Start & Stop
@@ -46,4 +46,4 @@ sudo restart drone
 
 ## Logging
 
-The Drone service logs are written to the `/var/log/upstart/drone` directory.
+The Drone service logs are written to `/var/log/upstart/drone.log`.

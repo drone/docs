@@ -15,7 +15,7 @@ You can modify the Docker daemon URL in the Drone configuration file:
 [worker] 
 nodes=[ 
    "unix:///var/run/docker.sock",
-   "unix:///var/run/docker.sock",
+   "unix:///var/run/docker.sock"
 ]
 ```
 

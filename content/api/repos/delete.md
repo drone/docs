@@ -8,7 +8,8 @@ method = "DELETE"
 resource = "repos"
 +++
 
-Disables a repository and discards any future build requests. Note that this will only disable builds. The repository and build history will remain in tact.
+Disables a repository and discards any future build requests. The repository will be deleted and the 
+hooks and deployment keys will also be removed from the remote system.
 
 ### Example Request: 
 
@@ -25,5 +26,5 @@ Status: 204 No Content
 ### From the Command Line: 
 
 ```bash
-drone disable github.com/foo/bar
+drone delete github.com/foo/bar
 ```

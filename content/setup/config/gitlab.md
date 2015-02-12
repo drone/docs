@@ -34,9 +34,9 @@ open=false
 You may also configure Gitlab using environment variables. This is useful when running Drone inside Docker containers, for example.
 
 ```bash
-DRONE_GILAB_URL="https://gitlab.com"
-DRONE_GITHUB_CLIENT="c0aaff74c060ff4a950d"
-DRONE_GITHUB_SECRET="1ac1eae5ff1b490892f5546f837f306265032412"
+DRONE_GITLAB_URL="https://gitlab.com"
+DRONE_GITLAB_CLIENT="c0aaff74c060ff4a950d"
+DRONE_GITLAB_SECRET="1ac1eae5ff1b490892f5546f837f306265032412"
 ```
 
 ## User Registration

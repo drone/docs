@@ -26,4 +26,4 @@ interact with the API from client-side web applications.
 
 Here is a list of available API client libraries for working with the Drone API: 
 
-* [Go](https://github.com/drone/drone/tree/master/client) (official)
+* [drone-go (Go)](https://github.com/drone/drone-go/tree/master) (official)

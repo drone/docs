@@ -156,7 +156,7 @@ Publish a Docker image to a specified repo or registry. Supports the following c
     publish:
         docker:
             dockerfile: MyDockerFile
-            docker_host tcp://docker.example.com:2375
+            docker_host: tcp://docker.example.com:2375
             docker_version: 1.3.0
             registry_host: docker.example.com
             registry_protocol: https

@@ -221,7 +221,7 @@ Example Configs
             docker_version: 1.0
             registry_login: false
             image_name: docker.example.com/my-webapp
-            keep_builds: false
+            keep_build: false
             tag: 0.1
 
 Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without login.
@@ -240,7 +240,7 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:0.1` without logi
             password: mypassword
             email: myuser@example.com
             image_name: docker-registry.example.com/my-webapp
-            keep_builds: false
+            keep_build: false
 
 Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account. 
 
@@ -255,7 +255,7 @@ Result: Image pushed to `docker-registry.example.com/my-webapp:$(git rev-parse -
             password: mypassword
             email: myuser@example.com
             image_name: my-webapp
-            keep_builds: false
+            keep_build: false
 
 Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short HEAD)` using `myuser` account.
 
@@ -271,7 +271,7 @@ Result: Image pushed to Docker Hub as `myuser/my-webapp:$(git rev-parse --short 
             password: mypassword
             email: myuser@example.com
             image_name: mycompany/my-webapp
-            keep_builds: false
+            keep_build: false
             tags: [0.1, 0.2]
 
 Result: Image pushed to Docker Hub as `mycompany/image:0.1` and  `mycompany/image:0.2` using `myuser` account.
@@ -284,7 +284,7 @@ Result: Image pushed to Docker Hub as `mycompany/image:0.1` and  `mycompany/imag
             password: mypassword
             email: myuser@example.com
             image_name: mycompany/my-webapp
-            keep_builds: false
+            keep_build: false
             tag: 0.1-latest
             tags: [0.1, dev-latest]
 

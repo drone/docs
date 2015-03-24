@@ -12,9 +12,21 @@ Using a proxy server is not really necessary. Drone serves most static content f
 If using Nginx to proxy traffic to Drone, please ensure you have version 1.3.13 or greater. You also need to configure nginx to proxy websocket connections:
 
 ```nginx
+location / {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Host $http_host;
+    proxy_set_header Origin "";
+
+    proxy_pass http://127.0.0.1:8000;
+    proxy_redirect off;
+}
+
 location /api/stream {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header Host $http_host;
     proxy_set_header Origin "";
 

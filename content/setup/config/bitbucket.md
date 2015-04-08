@@ -44,8 +44,8 @@ You must register your application with Bitbucket in order to generate a Client 
 
 Please use `/api/auth/bitbucket.org` as the Authorization callback URL path:
 
-![Bitbucket Setup](/img/bitbucket_setup.png)
+![Bitbucket Setup](/static/img/bitbucket_setup.png)
 
 Copy the generated Client (key) and Secret into your Drone configuration file:
 
-![Bitbucket Setup](/img/bitbucket_setup_2.png)
+![Bitbucket Setup](/static/img/bitbucket_setup_2.png)

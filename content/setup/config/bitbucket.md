@@ -49,3 +49,7 @@ Please use `/api/auth/bitbucket.org` as the Authorization callback URL path:
 Copy the generated Client (key) and Secret into your Drone configuration file:
 
 ![Bitbucket Setup](/img/bitbucket_setup_2.png)
+
+In order to create the proper commit hooks Drone needs to be given admin access, make sure to check that option:
+
+![Bitbucket Setup](/img/bitbucket_setup_admin_access.png)

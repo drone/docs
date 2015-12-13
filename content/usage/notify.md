@@ -9,9 +9,33 @@ toc = true
 
 # Overview
 
+Notifications are triggered at the end of your entire build. If you are running a matrix build the notification is sent after all matrix jobs complete. Please note notifications are executed after your build has terminated and will not write any output to your build logs.
+
+Example Slack notification using the Slack plugin:
+
+```
+notify:
+  slack:
+    webhook_url: https://hooks.slack.com/services/...
+    channel: dev
+    username: drone
+```
+
 # Conditions
 
 Use the `when` block to limit notification step execution:
+
+```
+notify:
+  slack:
+    channel: foo
+    when:
+      success: false
+      failure: false
+      change: true
+```
+
+Execute a notification step if the branch is `master`:
 
 ```
 notify:

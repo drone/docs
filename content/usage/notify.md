@@ -11,7 +11,7 @@ toc = true
 
 # Conditions
 
-Use the `when` block to limit notification step execution. This first example executes a notification step when the branch is `master`:
+Use the `when` block to limit notification step execution:
 
 ```
 notify:
@@ -21,7 +21,7 @@ notify:
       branch: master
 ```
 
-Execute a notification step only the branch is `master` or `develop`:
+Execute a notification step if the branch is `master` or `develop`:
 
 ```
 notify:

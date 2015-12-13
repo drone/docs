@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-This document provides high-level instructions for configuring Drone to work with a corporate proxy server. This may be required when running Drone behind a corporate firewall.
+This document provides high-level instructions for configuring Drone to work with a corporate proxy server. This may be required when running Drone behind a **corporate firewall**.
 
 # Http Proxy
 

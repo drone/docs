@@ -17,7 +17,7 @@ Deployments are handled by plugins. We have multiple plugins for building and pu
 
 # Conditions
 
-Use the `when` block to limit deployment step execution. This first example executes a deployment step when the branch is `master`:
+Use the `when` block to limit deployment step execution:
 
 ```
 deploy:
@@ -27,7 +27,7 @@ deploy:
       branch: master
 ```
 
-Execute a deployment step only the branch is `master` or `develop`:
+Execute a deployment step if the branch is `master` or `develop`:
 
 ```
 deploy:

@@ -28,7 +28,7 @@ Generate the website and output to `./public`
 hugo
 ```
 
-Generate the website, serve on localhost:1313, and automatically refresh the browser when a change is detected:
+Generate the website, serve on localhost:1313/installation/overview, and automatically refresh the browser when a change is detected:
 
 ```
 hugo server -w

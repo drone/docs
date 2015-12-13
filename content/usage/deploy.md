@@ -7,13 +7,25 @@ menu = "usage"
 toc = true
 +++
 
-# Usage
+# Overview
 
-Deployments
+Deployments are triggered at the end of a successful build. Note that deployment steps are not executed for pull requests or failed builds.
+
+Example Heroku deployment using the Heroku plugin:
+
+```
+deploy:
+  heroku:
+    app: petstore
+```
+
+# Plugins
+
+Drone does not have any builtin deployment capabilities. Drone instead offers a large library of plugins for deploying to [Heroku](#), [Tutum](#), [Amazon](#) and more. Please see the [plugin documentation](#) for a complete list.
 
 # Docker
 
-Deployments are handled by plugins. We have multiple plugins for building and publishing Docker images to DockerHub, Google Container Engine, and more.
+Deployments are handled by plugins. We have multiple plugins for building and publishing Docker images to [DockerHub](#), [Google Container Registry](#), and more.
 
 # Conditions
 

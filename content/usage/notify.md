@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-Notifications are triggered at the end of your entire build. If you are running a matrix build the notification is sent after all matrix jobs complete. Please note notifications are executed after your build has terminated and will not write any output to your build logs.
+Notifications are triggered at the end of your entire build. If you are running a matrix build the notification is sent after all matrix jobs complete.
 
 Example Slack notification using the Slack plugin:
 
@@ -20,6 +20,12 @@ notify:
     channel: dev
     username: drone
 ```
+
+Please note notifications are executed after a build is already terminated and will not write any output to your build logs. For troubleshooting failed notifications please contact your system administrator to research errors in the Drone server logs.
+
+# Plugins
+
+Drone does not have any builtin notification capabilities. Drone instead offers a large library of plugins for sending [Slack](#), [Hipchat](#), [Email](#) notifications and more. Please see the [plugin documentation](#) for a complete list.
 
 # Conditions
 

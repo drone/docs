@@ -1,0 +1,10 @@
+<nav class="top-nav">
+	<div class="container">
+		<a href="#" class="brand"></a>
+		<ul class="list-unstyled list-inline tabs">
+			<li><a href="/installation/overview" {{if eq .Params.menu "installation"}} class="current-item"{{end}}>Installation</a></li>
+			<li><a href="/usage/overview"{{if eq .Params.menu "usage" }} class="current-item"{{end}}>Usage</a></li>
+			<li><a>Developers</a></li>
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,32 @@
+{{ template "partials/header.html" . }}
+{{ template "partials/nav.html" . }}
+
+		<main>
+			<article class="grid-flex-container container">
+					<div class="grid-flex-cell">
+						<h1>{{ .Title }}</h1>
+						<nav id="TableOfContents">
+						{{ if .Params.toc }}
+						{{ .TableOfContents }}
+						{{ end }}
+						</nav>
+						<section>{{ .Content }}</section>
+					</div>
+
+					<div class="grid-flex-cell grid-flex-cell-1of4">
+						<nav role='navigation'>
+							<ul class='list-unstyled side-nav'>
+								{{ $currentNode := . }}
+								{{ range .Site.Menus.usage }}
+								<li>
+									<a href="{{.URL}}" class="{{if or ($currentNode.IsMenuCurrent "usage" .) ($currentNode.HasMenuCurrent "main" .) }} current-item{{end}}">{{ .Name }}</a>
+								</li>
+								{{ end }}
+							</ul>
+						</nav>
+
+						{{ template "partials/contribute.html" . }}
+					</div>
+			</article>
+		</main>
+{{ template "partials/footer.html" . }}

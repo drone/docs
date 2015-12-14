@@ -1,12 +1,26 @@
+blockquote {
+    background-color: #ffeed7;
+    color: #f18902;
+    font-style: normal;
+    padding:30px;
+}
+blockquote a {
+    color: #c16e02;
+}
+
 pre > code,
 pre > code span {
     font-size: 14px !important;
     font-family: "Roboto Mono";
 }
+li > code,
 p > code {
     font-size: 13px;
     border: 1px solid #eee;
     padding:2px 5px;
+}
+li > code {
+    padding:0px 5px;
 }
 
 .token.comment,

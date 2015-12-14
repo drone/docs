@@ -202,7 +202,7 @@ Calculates a duration and returns a human readable string:
 Converts a timestamp to a human readable string:
 
 ```handlebars
-finished at {{ datetime build.finished_at "3:04PM" "UTC" }
+finished at {{ datetime build.finished_at "3:04PM" "UTC" }}
 ```
 
 Returns true if the build is successful:

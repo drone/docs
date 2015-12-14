@@ -165,4 +165,6 @@ drone exec
 
 Yes, we realize your build runs fine on your local machine but not in Drone. Remember that Drone is running every build in a pristine Linux container that is probably quite different from your local development environment.
 
-We recommend reading through the full Drone documentation and reading the guides for your technology stack. The documentation and guides provide working examples and address many common issues. If you are still experiencing issues please use our [chat room](https://gitter.im/drone/drone) for community support.
+For help troubleshooting **failed builds** please use [Stackoverflow](https://stackoverflow.com). The Stackoverflow community will be able to answer questions unique to your programming language and technology stack that the Drone maintainers are unqualified to answer.
+
+For all other questions or issues please use the community [chat room](https://gitter.im/drone/drone) for support.

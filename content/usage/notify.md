@@ -113,3 +113,110 @@ notify:
     when:
       branch: master
 ```
+
+# Templates
+
+Many of the Drone notifications support [handlebars](http://handlebarsjs.com/) templates for customizing notification messages. This example demonstrates a custom hipchat notification message:
+
+```yaml
+---
+notify:
+  hipchat:
+    template: |
+      {{ repo.full_name }} finished build {{ build.number }}
+      with a status of {{ build.status }}
+```
+
+Example template that generates a different message based on build status:
+
+```yaml
+---
+notify:
+  hipchat:
+    template: |
+      {{#success build.status}}
+        {{ build.author }} successfully pushed to {{ build.branch}}
+      {{else}}
+        {{ build.author }} broke the build. Hang your head in shame.
+      {{/success}}
+```
+
+# Template Data
+
+This is an example data structure passed to the template engine. Any of the below variables may be referenced in your template:
+
+```js
+{
+    "build": {
+        "number": 22,
+        "status": "success",
+        "started_at": 1421029603,
+        "finished_at": 1421029813,
+        "event": "push",
+        "commit": "7fd1a60",
+        "branch": "master",
+        "message": "Update README",
+        "author": "octocat",
+        "author_email": "octocat@github.com",
+        "link_url": "https://github.com/octocat/Hello-World/commit/7fd1a60"
+    },
+    "repo": {
+        "owner": "octocat",
+        "name": "hello-world",
+        "full_name": "octocat/hello-world",
+        "link_url": "https://github.com/octocat/hello-world",
+        "clone_url": "https://github.com/octocat/hello-world.git"
+    },
+    "system": {
+        "link_url": "https://drone.mycompany.com"
+    }
+}
+```
+
+# Template Builtins
+
+Drone includes a number of builtin handlebars functions to help format your messages. This is an example builtin function that converts a string to all uppercase characters:
+
+```handlebars
+{{uppercase build.status}}
+```
+
+Converts a string to all lowercase characters:
+
+```handlebars
+{{uppercase build.author}}
+```
+
+Truncates a string to N characters:
+
+```handlebars
+{{ truncate build.commit 8 }}
+```
+
+Calculates a duration and returns a human readable string:
+
+```handlebars
+{{ duration build.started_at build.finished_at }}
+```
+
+Converts a timestamp to a human readable string:
+
+```handlebars
+finished at {{ datetime build.finished_at "3:04PM" "UTC" }
+```
+
+Returns true if the build is successful:
+
+```handlebars
+{{#success build.status}}
+  It works
+{{/success}}
+```
+
+Returns true if the build failed:
+
+```handlebars
+{{#failure build.status}}
+  Something is busted
+{{/failure}}
+```

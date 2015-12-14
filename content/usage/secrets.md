@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file.
+Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file. This document assumes you have installed the Drone [command line tools](#).
 
 Start with a plaintext Yaml file that defines your secrets. For demonstration purposes let's assume this file is stored on disk and named `secrets.yml`. Secrets are defined in the `environment` section of this file:
 
@@ -88,23 +88,22 @@ build:
 
 # Checksums
 
-Drone automatically calculates and stores a checksum of your `.drone.yml` file inside your `.drone.sec` file. Secrets are not injected into your build if the checksum cannot be verified. This prevents an individual from tampering with your yaml file in an attempt to expose your secrets.
+Drone automatically calculates and stores a checksum of your `.drone.yml` file inside your `.drone.sec` file. Secrets are not injected into your build if the checksum cannot be verified. This means you must re-generate your `.drone.sec` file every time you `.drone.yml` changes (yes security is inconvenient).
 
-The downside is when your `.drone.yml` file changes you need to re-generate a new `.drone.sec` file. Like most security practices you will likely find this inconvenient at first.
-
-The checksum can be disabled, against our recommended, using the `--checksum` flag:
+Invalid checksums result in the following error at the top of your build logs:
 
 ```
-drone secure --repo octocat/hello-world --in secrets.yml --checksum false
+Unable to validate Yaml checksum.
+2ca66eb7be89f31afdebb197174abfa6dd14866ecbf9e552f44be5bd3244d08a
 ```
 
 # Pull Requests
 
 Secret variables are not injected into to the `build` section of the `.drone.yml` if your repository is public and the build is a pull request. This is for security purposes to prevent a malicious pull request from leaking your secrets.
 
-# Globals
+# Global Secrets
 
-Global secrets are stored in the `PLUGIN_PARAMS` environment variable declared in your Drone server configuration file. Note that global secrets are passed to every single build and should not be considered secure.
+Global secrets are stored in the `PLUGIN_PARAMS` environment variable declared in your Drone server configuration file. Global secrets are passed to every single build and should therefore only be used in trusted environments with trusted developers.
 
 Example global secret declaration:
 
@@ -124,7 +123,7 @@ deploy:
 
 # Common Issues
 
-Secrets are not injected into your build if the checksum cannot be validated. This happens when you change your `.drone.yml` file without re-generating a `.drone.sec` file. If the checksum cannot be validated you will seen an error message at the top of your build logs that looks like this:
+Secrets are not injected into your build if the checksum cannot be validated. This happens when you change your `.drone.yml` file without re-generating a `.drone.sec` file resulting in the following error message at the top of your build logs:
 
 ```
 Unable to validate Yaml checksum.

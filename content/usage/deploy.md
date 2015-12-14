@@ -26,7 +26,7 @@ Drone does not have any builtin deployment capabilities. Drone instead offers a 
 
 # Docker
 
-Building and deploying a Docker image to the is handled by plugins. We have multiple plugins for building and publishing Docker images to [DockerHub](#), [Google Container Registry](#), and more.
+Building and deploying a Docker image to the registry is handled by plugins. We have multiple plugins for building and publishing Docker images to [DockerHub](#), [Google Container Registry](#), and more.
 
 # Conditions
 

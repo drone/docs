@@ -34,7 +34,7 @@ pre > code span {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #690;
+	color: #d14;
 }
 
 .token.operator,
@@ -49,7 +49,7 @@ pre > code span {
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-	color: #07a;
+	color: navy;
 }
 
 .token.function {
@@ -72,4 +72,13 @@ pre > code span {
 
 .token.entity {
 	cursor: help;
+}
+
+.language-yaml,
+.language-yaml .token.string {
+    color: #905;
+}
+.language-yaml .token.boolean,
+.language-yaml .token.boolean.important {
+    color: #099;
 }

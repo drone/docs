@@ -13,7 +13,8 @@ Deployments are triggered at the end of a successful build. Note that deployment
 
 Example Heroku deployment using the Heroku plugin:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: petstore
@@ -31,7 +32,8 @@ Building and deploying a Docker image to the is handled by plugins. We have mult
 
 Use the `when` block to limit deployment step execution:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: mycompany.com
@@ -41,7 +43,8 @@ deploy:
 
 Execute a deployment step if the branch is `master` or `develop`:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: mycompany.com
@@ -51,7 +54,8 @@ deploy:
 
 Execute a deployment step if the branch is _not_ `master`:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: mycompany.com
@@ -61,7 +65,8 @@ deploy:
 
 Execute a deployment step if the branch is starts with `prefix/*`:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: mycompany.com
@@ -71,7 +76,8 @@ deploy:
 
 Execute a deployment step when the commit is a `tag`:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: mycompany.com
@@ -81,7 +87,8 @@ deploy:
 
 Execute a deployment step for a single matrix permutation:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: mycompany.com
@@ -93,7 +100,8 @@ deploy:
 
 Define the same deployment step multiple times, using different configuration based on branch:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: test.mycompany.com

@@ -11,7 +11,8 @@ toc = true
 
 Drone uses the `build` section of the `.drone.yml` to define your Docker build environment and your build and test instructions. The following is an example build definition:
 
-```
+```yaml
+---
 build:
   image: golang
   commands:
@@ -26,7 +27,8 @@ This example downloads and runs a `golang` container and executes the specified 
 
 Drone supports any valid Docker image from any Docker registry:
 
-```
+```yaml
+---
 image: golang
 image: golang:1.5
 image: library/golang:1.5
@@ -35,7 +37,8 @@ image: index.docker.io/library/golang:1.5
 
 Provide your registry credentials if your build image is private:
 
-```
+```yaml
+---
 build:
   image: foo/bar
   auth_config:
@@ -45,7 +48,8 @@ build:
 
 Use the `pull` attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:
 
-```
+```yaml
+---
 build:
   image: golang
   pull: true
@@ -56,7 +60,9 @@ build:
 The build workspace is located in the `/drone/src/<repository>` directory inside the `/drone` volume. You cannot change the volume location, however, you can change the subdirectory.
 
 The below example overrides the default workspace to `/drone/src/github.com/octocat/hello-world`:
-```
+
+```yaml
+---
 clone:
   path: github.com/octocat/hello-world
 ```
@@ -65,7 +71,8 @@ clone:
 
 Use the environment section to inject environment variables into your build environment:
 
-```
+```yaml
+---
 build:
   image: golang:1.5
   environment:
@@ -77,7 +84,8 @@ build:
 
 Variable expansion is not supported. The following example __will not work__:
 
-```
+```yaml
+---
 environment:
   - PATH=$PATH:/go
 ```
@@ -86,7 +94,8 @@ environment:
 
 Build commands execute sequentially in a shell environment with the `-x` flag. The `-x` flag instructs the shell environment to exit immediately if a command returns a non-zero exit code.
 
-```
+```yaml
+---
 build:
   image: golang:1.5
   commands:
@@ -103,7 +112,7 @@ Cloning private submodules or private dependencies (using `npm` or `go get`) req
 
 Instead of using the `git+ssh` url in your `package.json` file:
 
-```
+```js
 {
     "library": "git+ssh://git@github.com:octocat/library.git"
 }
@@ -111,7 +120,7 @@ Instead of using the `git+ssh` url in your `package.json` file:
 
 Use the `git+https` url in your `package.json` file:
 
-```
+```js
 {
     "library": "https://github.com/octocat/library.git"
 }
@@ -121,7 +130,8 @@ Use the `git+https` url in your `package.json` file:
 
 Use the `volumes` attribute to mount folders on your host machine into your build container. These are [Docker volumes](https://docs.docker.com/engine/userguide/dockervolumes/) and therefore use the same `<host>:<container>` declaration conventions:
 
-```
+```yaml
+---
 build:
   image: golang
   volumes:
@@ -134,7 +144,8 @@ For security reasons this option is only available to trusted repositories. Trus
 
 Use the `privileged` attribute to run your build in a privileged Docker container:
 
-```
+```yaml
+---
 build:
   image: golang
   privileged: true
@@ -162,7 +173,8 @@ Instruct Drone to skip builds by adding `[ci skip]` to your commit message.
 
 Instruct Drone to skip branches by including a branch white-list in your `.drone.yml`
 
-```
+```yaml
+---
 branches:
   - master
   - develop

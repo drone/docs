@@ -11,7 +11,8 @@ toc = true
 
 Drone uses the `compose` section of the `.drone.yml` to specify supporting containers (ie service containers) that should be started and linked to your build container. The `compose` section of the `.drone.yml` is modeled the after `docker-compose.yml`:
 
-```
+```yaml
+---
 compose:
   [container_name:]
     image: [image_name]
@@ -21,6 +22,7 @@ compose:
 Example configuration that composes a Postgres and Redis container:
 
 ```yaml
+---
 compose:
   cache:
     image: redis
@@ -35,7 +37,8 @@ compose:
 
 Drone supports any valid Docker image from any Docker registry:
 
-```
+```yaml
+---
 image: postgres
 image: postgres:9.2
 image: library/postgres:9.2
@@ -44,7 +47,8 @@ image: index.docker.io/library/postgres:9.2
 
 Use the pull attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:
 
-```
+```yaml
+---
 compose:
   database:
     image: postgres
@@ -65,7 +69,8 @@ Please see the above networking section -- because your build and service contai
 
 Use the environment section to pass environment variables to you service containers. Many database images, including the official postgres and mysql images, use environment variables to configure the database on startup.
 
-```
+```yaml
+---
 compose:
   database:
     image: postgres
@@ -78,7 +83,8 @@ compose:
 
 Use the `volumes` attribute to mount folders on your host machine into your service container. These are [Docker volumes](https://docs.docker.com/engine/userguide/dockervolumes/) and therefore use the same `<host>:<container>` declaration conventions:
 
-```
+```yaml
+---
 compose:
   database:
     image: postgres
@@ -92,7 +98,8 @@ For security reasons this option is only available to trusted repositories. Trus
 
 Use the privileged attribute to run your service in a privileged Docker container:
 
-```
+```yaml
+---
 compose:
   dind:
     image: docker:dind

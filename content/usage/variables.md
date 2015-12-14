@@ -48,7 +48,8 @@ A subset of variables may be substituted directly into the Yaml at runtime using
 
 This is useful when you need to dynamically configure your plugin based on the current build. For example, we can alter an artifact name to include the branch:
 
-```
+```yaml
+---
 publish:
   s3:
     source: ./foo.tar.gz

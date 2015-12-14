@@ -14,7 +14,8 @@ Publishing files or build artifacts is triggered at the end of a successful buil
 
 Example to publish a Node package to the [npmjs.com](https://npmjs.com) registry using the NPM plugin:
 
-```
+```yaml
+---
 publish:
   npm:
     username: octocat
@@ -34,7 +35,8 @@ Building and publishing a Docker image to the registry is handled by plugins. We
 
 Use the `when` block to limit publish step execution:
 
-```
+```yaml
+---
 publish:
   heroku:
     app: mycompany.com
@@ -44,7 +46,8 @@ publish:
 
 Execute a publish step if the branch is `master` or `release`:
 
-```
+```yaml
+---
 publish:
   rubygems:
     api_key: e123f83113f79eb17308bbf1ca8885bb
@@ -54,7 +57,8 @@ publish:
 
 Execute a publish step when the commit is a `tag`:
 
-```
+```yaml
+---
 publish:
   rubygems:
     api_key: e123f83113f79eb17308bbf1ca8885bb
@@ -64,7 +68,8 @@ publish:
 
 Execute a publish step for a single matrix permutation:
 
-```
+```yaml
+---
 publish:
   rubygems:
     api_key: e123f83113f79eb17308bbf1ca8885bb

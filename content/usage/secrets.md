@@ -18,7 +18,8 @@ toc = true
 
 Secrets are injected directly into the Yaml at runtime using the `$$` notation:
 
-```
+```yaml
+---
 deploy:
   heroku:
     app: foo
@@ -31,7 +32,8 @@ where to inject secrets.
 
 This example demonstrates explicitly injecting a secret as an environment variable:
 
-```
+```yaml
+---
 build:
   image: golang
   commands:
@@ -45,7 +47,8 @@ Secrets that are multiple lines or contain special characters should be escaped 
 avoid Yaml parsing errors post-interpolation. You can escape strings by wrapping
 the variable in quotes as shown below:
 
-```
+```yaml
+---
 build:
   image: golang
   commands:
@@ -65,13 +68,14 @@ Global secrets are stored in the `PLUGIN_PARAMS` environment variable declared i
 
 Example global secret declaration:
 
-```
+```bash
 PLUGIN_PARAMS=SMTP_PASSWORD=foo SLACK_TOKEN=bar
 ```
 
 Example injecting global secrets into your `.drone.yml` file:
 
-```
+```yaml
+---
 deploy:
   slack:
     channel: foo

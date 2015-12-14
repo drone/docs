@@ -13,7 +13,8 @@ Notifications are triggered at the end of your entire build. If you are running 
 
 Example Slack notification using the Slack plugin:
 
-```
+```yaml
+---
 notify:
   slack:
     webhook_url: https://hooks.slack.com/services/...
@@ -31,7 +32,8 @@ Drone does not have any builtin notification capabilities. Drone instead offers 
 
 Use the `when` block to limit notification step execution:
 
-```
+```yaml
+---
 notify:
   slack:
     channel: foo
@@ -43,7 +45,8 @@ notify:
 
 Execute a notification step if the branch is `master`:
 
-```
+```yaml
+---
 notify:
   slack:
     channel: foo
@@ -53,7 +56,8 @@ notify:
 
 Execute a notification step if the branch is `master` or `develop`:
 
-```
+```yaml
+---
 notify:
   slack:
     channel: foo
@@ -63,7 +67,8 @@ notify:
 
 Execute a notification step if the branch is _not_ `develop`:
 
-```
+```yaml
+---
 notify:
   slack:
     channel: foo
@@ -73,7 +78,8 @@ notify:
 
 Execute a notification step if the branch is starts with `prefix/*`:
 
-```
+```yaml
+---
 notify:
   slack:
     channel: foo
@@ -83,7 +89,8 @@ notify:
 
 Execute a notification step when the commit is a `pull_request`, `push` or `tag`:
 
-```
+```yaml
+---
 notify:
   slack:
     channel: foo
@@ -93,7 +100,8 @@ notify:
 
 Define the same notification step multiple times, using different configuration based on branch:
 
-```
+```yaml
+---
 notify:
   slack:
     channel: foo

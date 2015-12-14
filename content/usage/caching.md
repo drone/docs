@@ -13,7 +13,8 @@ Drone allows you to cache directories within the build workspace (inside the `/d
 
 Example configuration to cache the `.git` and the `node_modules` directory:
 
-```
+```yaml
+---
 cache:
   mount:
     - node_modules
@@ -41,7 +42,8 @@ This is outside the scope of Drone. You may, for example, use a distributed file
 
 The most common issue occurs when you try to cache files or folders that are not children of the `/drone` volume. The below example **will not work**:
 
-```
+```yaml
+---
 cache:
   mount:
     - /root/node_modules
@@ -51,7 +53,8 @@ cache:
 You should instead only cache directories in `/drone`:
 
 
-```
+```yaml
+---
 cache:
   mount:
     - /drone/node_modules
@@ -60,7 +63,8 @@ cache:
 
 To work around this limitation we can cache files or folders in `/drone` and copy they to the expected location at the start of the build, and then copy them back to `/drone` at the end fo the build:
 
-```
+```yaml
+---
 build:
   image: node
   commands:

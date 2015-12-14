@@ -14,6 +14,7 @@ Drone uses the `matrix` section of the `.drone.yml` to define the build matrix. 
 Example matrix definition for testing multiple Go and Redis versions. This matrix results in a total of 6 different build permutations:
 
 ```yaml
+---
 matrix:
   GO_VERSION:
     - 1.4
@@ -31,6 +32,7 @@ Matrix variables are injected into the `.drone.yml` file using the `$$` syntax, 
 Example `.drone.yml` file before injecting the matrix parameters:
 
 ```yaml
+---
 build:
   image: golang:$$GO_VERSION
   commands:
@@ -55,6 +57,7 @@ matrix:
 Example `.drone.yml` file after injecting the matrix parameters:
 
 ```yaml
+---
 build:
   image: golang:1.4
   environment:
@@ -75,6 +78,7 @@ compose:
 Matrix builds execute the same `.drone.yml` multiple times, but with different parameters. This means that publish and deployment steps are executed multiple times as well, which is typically undesired. To restrict a publish or deployment step to a single permutation you can add the following condition:
 
 ```yaml
+---
 deploy:
   heroku:
     app: foo

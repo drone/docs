@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-Drone uses the `compose` section of the `.drone.yml` to specify supporting containers (ie service containers) that should be started and linked to your build container. The `compose` section of the `.drone.yml` is modeled after `docker-compose`:
+Drone uses the `compose` section of the `.drone.yml` to specify supporting containers (ie service containers) that should be started and linked to your build container. The `compose` section of the `.drone.yml` is modeled the after `docker-compose.yml`:
 
 ```
 compose:
@@ -33,7 +33,23 @@ compose:
 
 # Images
 
-TODO document `pull` variables. if true, will always attempt to pull the latest image
+Drone supports any valid Docker image from any Docker registry:
+
+```
+image: postgres
+image: postgres:9.2
+image: library/postgres:9.2
+image: index.docker.io/library/postgres:9.2
+```
+
+Use the pull attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:
+
+```
+compose:
+  database:
+    image: postgres
+    pull: true
+```
 
 # Networking
 
@@ -73,6 +89,17 @@ compose:
 For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
 
 # Privileged Mode
+
+Use the privileged attribute to run your service in a privileged Docker container:
+
+```
+compose:
+  dind:
+    image: docker:dind
+    privileged: true
+```
+
+For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
 
 # Docker Compose
 

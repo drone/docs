@@ -3,6 +3,12 @@ pre > code span {
     font-size: 14px !important;
     font-family: "Roboto Mono";
 }
+p > code {
+    font-size: 13px;
+    border: 1px solid #eee;
+    padding:2px 5px;
+}
+
 .token.comment,
 .token.prolog,
 .token.doctype,

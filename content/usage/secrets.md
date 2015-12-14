@@ -9,10 +9,38 @@ toc = true
 
 # Overview
 
+Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file.
 
-# Encryption
+Start with a plaintext Yaml file that defines your secrets. For demonstration purposes let's assume this file is stored on disk and named `secrets.yml`. Secrets are defined in the `environment` section of this file:
 
-# Checksum
+```yaml
+---
+environment:
+  HEROKU_TOKEN: pa$$word
+```
+
+Reference secrets in your `.drone.yml` file using the `$$` notation:
+
+```yaml
+---
+deploy:
+  heroku:
+    app: petstore
+    token: $$HEROKU_TOKEN
+```
+
+Encrypt the `secrets.yml` file and generate a `.drone.sec` file:
+
+```
+drone secure --repo octocat/hello-world --in secrets.yml
+```
+
+Commit the encrypted `.drone.sec` file to the root of your repository:
+
+```
+git add .drone.sec
+git commit -m "added .drone.sec file"
+```
 
 # Interpolation
 
@@ -58,6 +86,18 @@ build:
     - PRIVATE_KEY="$$PRIVATE_KEY"
 ```
 
+# Checksums
+
+Drone automatically calculates and stores a checksum of your `.drone.yml` file inside your `.drone.sec` file. Secrets are not injected into your build if the checksum cannot be verified. This prevents an individual from tampering with your yaml file in an attempt to expose your secrets.
+
+The downside is when your `.drone.yml` file changes you need to re-generate a new `.drone.sec` file. Like most security practices you will likely find this inconvenient at first.
+
+The checksum can be disabled, against our recommended, using the `--checksum` flag:
+
+```
+drone secure --repo octocat/hello-world --in secrets.yml --checksum false
+```
+
 # Pull Requests
 
 Secret variables are not injected into to the `build` section of the `.drone.yml` if your repository is public and the build is a pull request. This is for security purposes to prevent a malicious pull request from leaking your secrets.
@@ -80,4 +120,13 @@ deploy:
   slack:
     channel: foo
     token: $$SLACK_TOKEN
+```
+
+# Common Issues
+
+Secrets are not injected into your build if the checksum cannot be validated. This happens when you change your `.drone.yml` file without re-generating a `.drone.sec` file. If the checksum cannot be validated you will seen an error message at the top of your build logs that looks like this:
+
+```
+Unable to validate Yaml checksum.
+2ca66eb7be89f31afdebb197174abfa6dd14866ecbf9e552f44be5bd3244d08a
 ```

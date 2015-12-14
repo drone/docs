@@ -153,7 +153,7 @@ publish:
 
 # Local Testing
 
-Download the [command line tools](#) to build and test your code locally inside a Docker environment using the exact same build process as Drone. You should think of your `.drone.yml` file as the `docker-compose.yml` equivalent for repeatable, local testing.
+Download the [command line tools](#) to build and test your code locally inside a Docker environment using the exact same build process as Drone. You should think of your `.drone.yml` file as a `docker-compose.yml` alternative that is optimized for repeatable, local testing.
 
 Command to execute a local build from the command line:
 

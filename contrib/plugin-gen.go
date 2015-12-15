@@ -54,7 +54,7 @@ func main() {
 	}
 	client := github.NewClient(t.Client())
 
-	dst := fmt.Sprintf("static/logos/%s.svg", *repo)
+	dst := fmt.Sprintf("static/logos/%s.svg", strings.Replace(*repo, "drone-", "", -1))
 	err := download(client, "logo.svg", dst)
 	if err != nil {
 		log.Fatal(err)
@@ -84,7 +84,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	post := strings.TrimLeft(*repo, "drone-")
+	post := strings.Replace(*repo, "drone-", "", -1)
 	post = strings.Replace(post, "-", "_", -1)
 	post = fmt.Sprintf("content/plugins/%s.md", post)
 	f, err := os.Create(post)

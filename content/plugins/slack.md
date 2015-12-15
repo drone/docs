@@ -1,13 +1,18 @@
 +++
-date = "2015-12-05T16:00:21-08:00"
-draft = false
 title = "Slack"
 description = "Send build status notifications to your Slack channel."
-weight = 1
-menu = "plugins"
+user = "drone-plugins"
 repo = "drone-slack"
+image = "plugins/drone-slack"
+tags = ["chat", "messaging"]
 categories = "notify"
+draft = false
+date = 2015-12-15T06:50:46Z
+menu = ""
+weight = 1
+
 +++
+
 
 Use the Slack plugin to send a message to your Slack channel when a build completes. You will need to supply Drone with an [Incoming Webhook URL](https://my.slack.com/services/new/incoming-webhook).
 
@@ -43,3 +48,4 @@ notify:
     template: >
       build #{{ build.number }} finished with a {{ build.status }} status
 ```
+

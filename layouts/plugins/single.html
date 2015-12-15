@@ -4,7 +4,7 @@
 		<main class="plugins">
 			<article class="grid-flex-container container">
 					<div class="grid-flex-cell">
-						<h1 class="plugin-header"><img src="/logos/{{ .Params.repo }}.svg" /> {{ .Title }} Plugin</h1>
+						<h1 class="plugin-header"><img src="/logos/{{ substr .Params.repo 6 }}.svg" /> {{ .Title }} Plugin</h1>
 						<section>{{ .Content }}</section>
 					</div>
 

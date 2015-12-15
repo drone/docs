@@ -1,0 +1,29 @@
++++
+title = "Campfire"
+description = "Send build status notifications via Campfire"
+user = "drone-plugins"
+repo = "drone-campfire"
+image = "plugins/drone-campfire"
+tags = ["campfire"]
+categories = "notify"
+draft = false
+date = 2015-12-15T06:53:18Z
+menu = ""
+weight = 1
+
++++
+
+Use this plugin for sending build status notifications via Campfire. You can
+override the default configuration with the following parameters:
+
+* `` -
+
+## Example
+
+The following is a sample configuration in your .drone.yml file:
+
+```yaml
+notify:
+  campfire:
+```
+

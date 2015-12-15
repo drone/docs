@@ -39,8 +39,9 @@ table code {
 .list-unstyled.list-plugins li:last-child {
     border-bottom-width: 0px;
 }
-.list-plugins li {
+.list-plugins a {
     display:flex;
+    text-decoration: none;
 }
 .list-plugins div {
     flex: 1 1 auto;
@@ -53,6 +54,8 @@ table code {
 .list-plugins p {
     margin:0px;
     padding:0px;
+    color:#999;
+    font-weight:300;
 }
 .list-plugins h2 {
     font-size:22px;

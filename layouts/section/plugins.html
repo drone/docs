@@ -7,13 +7,15 @@
 						<h1>Plugin List <small>({{len .Data.Pages}})</small></h1>
 						<section>
 							<ul class="list-unstyled list-plugins">
-							{{ range .Data.Pages }}
+							{{ range .Data.Pages.ByTitle }}
 								<li>
-									<img src="/logos/{{ .Params.repo }}.svg" />
-									<div>
-										<h2>{{ .Title }}</h2>
-										<p>{{ .Description }}</p>
-									</div>
+									<a href="{{ .Permalink }}">
+										<img src="/logos/{{ substr .Params.repo 6 }}.svg" />
+										<div>
+											<h2>{{ .Title }}</h2>
+											<p>{{ .Description }}</p>
+										</div>
+									</a>
 								</li>
 							{{ end }}
 							</ul>

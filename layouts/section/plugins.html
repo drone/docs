@@ -6,9 +6,9 @@
 					<div class="grid-flex-cell">
 						<h1>Plugin List <small>({{len .Data.Pages}})</small></h1>
 						<section>
-							<ul class="list-unstyled list-plugins">
+							<ul class="list-unstyled list-plugins x-grid-flex-container">
 							{{ range .Data.Pages.ByTitle }}
-								<li>
+								<li class="x-grid-flex-cell-1of3">
 									<a href="{{ .Permalink }}">
 										<img src="/logos/{{ substr .Params.repo 6 }}.svg" />
 										<div>

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Tutum"
 description = "Deploys or updates a Tutum service."
 user = "drone-plugins"
@@ -38,4 +41,3 @@ deploy:
 ```
 
 Note that if your `service` is part of a stack, you should use the notation `servicename.stackname` as this will make sure that the found service is part of the correct stack.
-

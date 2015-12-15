@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Slack Blame"
 description = "Send Slack messages directly to the author of the commit."
 user = "drone-plugins"
@@ -56,4 +59,3 @@ notify:
       image_attachments:
         - "http://cdn.meme.am/instances/51000361.jpg"
 ```
-

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "AWS OpsWorks"
 description = "Deploys or updates a project on AWS OpsWorks"
 user = "drone-plugins"
@@ -31,4 +34,3 @@ deploy:
     secret_access_key:
     region:
 ```
-

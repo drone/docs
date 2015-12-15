@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Anynines"
 description = "Deploys or updates a project on Anynines"
 user = "drone-plugins"
@@ -36,4 +39,3 @@ deploy:
     when:
       branch: master
 ```
-

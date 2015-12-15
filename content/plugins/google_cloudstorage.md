@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Google Cloud Storage"
 description = "Publish files and artifacts to Google Cloud Storage"
 user = "drone-plugins"
@@ -65,4 +68,3 @@ environment:
     "token_uri": "https://accounts.google.com/o/oauth2/token",
     }
 ```
-

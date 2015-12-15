@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Pypi"
 description = "Publish a package to the Python package index."
 user = "drone-plugins"
@@ -32,4 +35,3 @@ publish:
       - sdist
       - bdist_wheel
 ```
-

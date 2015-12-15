@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "S3 Sync"
 description = "Syncs a directory with an Amazon S3 Bucket"
 user = "drone-plugins"
@@ -41,4 +44,3 @@ publish:
     target: /target/location
     delete: true
 ```
-

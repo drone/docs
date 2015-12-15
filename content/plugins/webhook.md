@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Webhook"
 description = "Send build status notifications via Webhook"
 user = "drone-plugins"
@@ -132,4 +135,3 @@ Example of a debug print result:
   RESPONSE STATUS: 202 ACCEPTED
   RESPONSE BODY: {"job": 406}
 ```
-

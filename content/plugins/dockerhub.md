@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "DockerHub"
 description = "Triggers a DockerHub remote build."
 user = "drone-plugins"
@@ -27,4 +30,3 @@ publish:
     token: be579c82-7c0e-11e4-81c4-0242ac110020
     repo: foo/bar
 ```
-

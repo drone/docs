@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Azure Web Apps"
 description = "Deploys or updates a project on Azure Web Apps"
 user = "drone-plugins"
@@ -35,4 +38,3 @@ deploy:
     site: awesome
     force: true
 ```
-

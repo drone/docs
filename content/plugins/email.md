@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Email"
 description = "Send build status notifications via Email"
 user = "drone-plugins"
@@ -37,4 +40,3 @@ notify:
     recipients:
       - octocat@github.com
 ```
-

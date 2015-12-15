@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Rsync"
 description = "Uses rsync to upload files to a remote server"
 user = "drone-plugins"
@@ -58,4 +61,3 @@ The below error message may be encountered when rsync is unable to connect to yo
 rsync: connection unexpectedly closed (0 bytes received so far) [sender]
 rsync error: unexplained error (code 255) at io.c(226) [sender=3.1.1]
 ```
-

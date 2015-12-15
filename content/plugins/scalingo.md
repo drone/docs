@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Scalingo"
 description = "Deploys or updates a project on Scalingo"
 user = "drone-plugins"
@@ -30,4 +33,3 @@ deploy:
     app: awesomeness
     force: true
 ```
-

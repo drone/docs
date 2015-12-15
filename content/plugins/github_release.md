@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "GitHub Release"
 description = "Publish files and artifacts to GitHub releases"
 user = "drone-plugins"
@@ -30,4 +33,3 @@ publish:
     files:
       - dist/*
 ```
-

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="app" lang="en">
 	<head>
-		<title>{{ .Site.Title }}</title>
+		<title>{{ .Title }} · {{ .Site.Title }}</title>
 
 		<meta charset="utf-8" />
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<meta content="ie=edge" http-equiv="x-ua-compatible" />
-		<meta name="Description" content="User documentation for drone.io" />
+		<meta name="Description" content="{{ if .Description }}{{ .Description }}{{ else }}Documentation for the Drone Continuous Integration Server{{ end }}" />
 
 		<link href="//fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
 		<link href="//fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" type="text/css">

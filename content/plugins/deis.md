@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Deis"
 description = "Deploys or updates a project on Deis"
 user = "drone-plugins"
@@ -32,4 +35,3 @@ deploy:
     app: awesomeness
     force: true
 ```
-

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Bintray"
 description = "Upload one or more artifacts to Bintray on build completion."
 user = "drone-plugins"
@@ -30,7 +33,7 @@ Artifact Parameter | Description
 --------- | -----------
 file | Path to the file to upload within the build directory (the original build directory, not the current working directory)
 owner | Bintray repository owner (called subject in Bintray API documentation)
-type | Artifact type.  Specify "Debian" for a Debian artifact or "Maven" for a Maven artifact.  Any other value indicates a generic artifact. 
+type | Artifact type.  Specify "Debian" for a Debian artifact or "Maven" for a Maven artifact.  Any other value indicates a generic artifact.
 repository | Name of the repository where the file should be uploaded
 package | Name of the package within the repository
 version | Version to upload.  Required for non-Maven artifacts and ignored for Maven.
@@ -51,7 +54,7 @@ publish:
     username: $$BINTRAY_USERNAME
     password: $$BINTRAY_PASSWORD
     branch: $$BRANCH
-    artifacts: 
+    artifacts:
       - file: dist/myfile
         owner: mycompany
         type: executable
@@ -75,4 +78,3 @@ publish:
         publish: true
         override: true
 ```
-

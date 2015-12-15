@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "IRC"
 description = "Send build status notifications via IRC"
 user = "drone-plugins"
@@ -40,4 +43,3 @@ notify:
       host: chat.freenode.net
       port: 6667
 ```
-

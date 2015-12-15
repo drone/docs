@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Mercurial"
 description = "Clones a mercurial repository."
 user = "drone-plugins"
@@ -26,4 +29,3 @@ clone:
   image: hg
   path: bitbucket.org/foo/bar
 ```
-

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "NPM"
 description = "Publish a node package to the npm registry."
 user = "drone-plugins"
@@ -49,4 +52,3 @@ publish:
     registry: "http://myregistry:4873"
     always_auth: true
 ```
-

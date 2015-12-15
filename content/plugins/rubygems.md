@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Rubygems"
 description = "Publish gems to a Rubygems server"
 user = "drone-plugins"
@@ -35,4 +38,3 @@ deploy:
     when:
       branch: master
 ```
-

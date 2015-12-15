@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Campfire"
 description = "Send build status notifications via Campfire"
 user = "drone-plugins"
@@ -26,4 +29,3 @@ The following is a sample configuration in your .drone.yml file:
 notify:
   campfire:
 ```
-

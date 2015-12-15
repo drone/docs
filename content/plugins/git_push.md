@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Git Push"
 description = "Deploys or updates a project via Git"
 user = "drone-plugins"
@@ -34,4 +37,3 @@ deploy:
     remote: git@git.heroku.com:falling-wind-1624.git
     force: false
 ```
-

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Trigger"
 description = "Trigger builds for downstream repositories"
 user = "drone-plugins"
@@ -48,4 +51,3 @@ Please be sure to include the `when` section in your `.drone.yml` to avoid trigg
 ## Caveats
 
 This plugin triggers the lastest build for a repository. It will not create a new build. This behavior may change in future versions of the plugin.
-

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Slack"
 description = "Send build status notifications to your Slack channel."
 user = "drone-plugins"
@@ -48,4 +51,3 @@ notify:
     template: >
       build #{{ build.number }} finished with a {{ build.status }} status
 ```
-

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Git"
 description = "Clones a git repository."
 user = "drone-plugins"
@@ -78,4 +81,3 @@ clone:
 ```
 
 Overriding the submodule url to force `git+https` allows us to take advantage of the `netrc` file and automatically authenticate to the submodule repository.
-

@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "Gitter"
 description = "Send build status notifications via Gitter"
 user = "drone-plugins"
@@ -43,4 +46,3 @@ notify:
      - https://webhooks.gitter.im/e/91e06797227ae5dbe6ec
      - https://webhooks.gitter.im/e/27a2e6ece5db91e06797
 ```
-

@@ -125,6 +125,9 @@ func downloadStr(client *github.Client, source string) ([]byte, error) {
 }
 
 var tmpl = `+++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 %s
 +++
 

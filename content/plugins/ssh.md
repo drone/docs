@@ -1,4 +1,7 @@
 +++
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
 title = "SSH"
 description = "Use SSH to execute commands on a remote host"
 user = "drone-plugins"

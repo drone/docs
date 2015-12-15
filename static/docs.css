@@ -1,3 +1,67 @@
+.plugin-header {
+
+    vertical-align: middle;
+    line-height: 36px;
+    border-bottom: 1px solid #e6eaed;
+    padding-bottom: 60px;
+    margin-bottom:40px;
+}
+
+.plugin-header img {
+    width: 36px;
+    height: 36px;
+    margin-right:15px;
+    vertical-align: middle;
+}
+
+table {
+    border: 1px solid #e6eaed;
+    border-radius:3px;
+    margin-bottom:60px;
+}
+table td,
+table th {
+    font-size:15px;
+    border-right: 1px solid #e6eaed;
+    padding:10px;
+}
+table code {
+    background:transparent;
+    font-size:14px;
+}
+
+.list-unstyled {
+}
+.list-unstyled.list-plugins li {
+    border-width: 0px;
+    border-top-width: 1px;
+}
+.list-unstyled.list-plugins li:last-child {
+    border-bottom-width: 0px;
+}
+.list-plugins li {
+    display:flex;
+}
+.list-plugins div {
+    flex: 1 1 auto;
+}
+.list-plugins img {
+    width:32px;
+    height:32px;
+    margin-right:20px;
+}
+.list-plugins p {
+    margin:0px;
+    padding:0px;
+}
+.list-plugins h2 {
+    font-size:22px;
+    margin:0px;
+}
+h1 small {
+    font-size:18px;
+    margin-left:5px;
+}
 /*@media screen and (min-width: 1201px) {
     .container {
         width: 70%;

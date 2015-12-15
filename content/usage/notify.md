@@ -26,7 +26,7 @@ Please note notifications are executed after a build is already terminated and w
 
 # Plugins
 
-Drone does not have any builtin notification capabilities. Drone instead offers a large library of plugins for sending [Slack](#), [Hipchat](#), [Email](#) notifications and more. Please see the [plugin documentation](#) for a complete list.
+Drone does not have any builtin notification capabilities. Drone instead offers a large library of plugins for sending [Slack](/plugins/slack/), [Hipchat](/plugins/hipchat/), [Email](/plugins/email/) notifications and more. Please see the [plugin documentation](/plugins/) for a complete list.
 
 # Conditions
 

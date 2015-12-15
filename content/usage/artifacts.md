@@ -12,7 +12,7 @@ toc = true
 
 Publishing files or build artifacts is triggered at the end of a successful build. Note that publish steps are not executed for pull requests or failed builds.
 
-Example to publish a Node package to the [npmjs.com](https://npmjs.com) registry using the NPM plugin:
+Example to publish a Node package to the [npmjs.com](/plugins/npm/) registry using the NPM plugin:
 
 ```yaml
 ---
@@ -25,11 +25,11 @@ publish:
 
 # Plugins
 
-Drone does not have any builtin publishing or artifact capabilities. Drone instead offers a large library of plugins for publish to [DockerHub](#), [S3](#), [Goolge Storage](#) and more. Please see the [plugin documentation](#) for a complete list.
+Drone does not have any builtin publishing or artifact capabilities. Drone instead offers a large library of plugins for publish to [DockerHub](/plugins/docker/), [S3](/plugins/s3/), [Goolge Storage](/plugins/google_cloudstorage/) and more. Please see the [plugin documentation](#) for a complete list.
 
 # Docker
 
-Building and publishing a Docker image to the registry is handled by plugins. We have multiple plugins for building and publishing Docker images to [DockerHub](#), [Google Container Registry](#), and more.
+Building and publishing a Docker image to the registry is handled by plugins. We have multiple plugins for building and publishing Docker images to [DockerHub](/plugins/docker/), [Google Container Registry](/plugins/gcr/), and more.
 
 # Conditions
 

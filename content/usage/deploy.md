@@ -22,11 +22,11 @@ deploy:
 
 # Plugins
 
-Drone does not have any builtin deployment capabilities. Drone instead offers a large library of plugins for deploying to [Heroku](#), [Tutum](#), [Amazon](#) and more. Please see the [plugin documentation](#) for a complete list.
+Drone does not have any builtin deployment capabilities. Drone instead offers a large library of plugins for deploying to [Heroku](/plugins/heroku/), [Tutum](/plugins/tutum/), [Amazon](/plugins/aws_codedeploy/) and more. Please see the [plugin documentation](/plugins/) for a complete list.
 
 # Docker
 
-Building and deploying a Docker image to the registry is handled by plugins. We have multiple plugins for building and publishing Docker images to [DockerHub](#), [Google Container Registry](#), and more.
+Building and deploying a Docker image to the registry is handled by plugins. We have multiple plugins for building and publishing Docker images to [DockerHub](/plugins/docker/), [Google Container Registry](/plugins/gcr/), and more.
 
 # Conditions
 

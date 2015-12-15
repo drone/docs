@@ -159,7 +159,7 @@ There is a default 60 minute timeout for your build. This can be increased by a 
 
 # Triggers
 
-Builds are triggered primarily by `push` and `pull_request` hooks from your remote system (ie GitHub). Sometimes changes to an upstream project have a cascading impact on downstream projects. You can trigger cascading builds using the [trigger](#) plugin.
+Builds are triggered primarily by `push` and `pull_request` hooks from your remote system (ie GitHub). Sometimes changes to an upstream project have a cascading impact on downstream projects. You can trigger cascading builds using the [trigger](/plugins/downstream/) plugin.
 
 # Scheduling
 

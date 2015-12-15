@@ -17,10 +17,9 @@
 						<nav role='navigation'>
 							<ul class='list-unstyled side-nav'>
 								{{ $currentNode := . }}
-								{{ $menu := .Params.menu }}
-								{{ range .Site.Menus.installation }}
+								{{ range .Site.Menus.developers }}
 								<li>
-									<a href="{{.URL}}" class="{{if or ($currentNode.IsMenuCurrent $menu .) ($currentNode.HasMenuCurrent "main" .) }} current-item{{end}}">{{ .Name }}</a>
+									<a href="{{.URL}}" class="{{if or ($currentNode.IsMenuCurrent "developers" .) ($currentNode.HasMenuCurrent "main" .) }} current-item{{end}}">{{ .Name }}</a>
 								</li>
 								{{ end }}
 							</ul>

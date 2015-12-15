@@ -25,7 +25,7 @@ publish:
 
 # Plugins
 
-Drone does not have any builtin publishing or artifact capabilities. Drone instead offers a large library of plugins for publish to [DockerHub](/plugins/docker/), [S3](/plugins/s3/), [Goolge Storage](/plugins/google_cloudstorage/) and more. Please see the [plugin documentation](#) for a complete list.
+Drone does not have any builtin publishing or artifact capabilities. Drone instead offers a large library of plugins for publish to [DockerHub](/plugins/docker/), [S3](/plugins/s3/), [Goolge Storage](/plugins/google_cloudstorage/) and more. Please see the [plugin documentation](/plugins/) for a complete list.
 
 # Docker
 

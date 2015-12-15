@@ -1,12 +1,13 @@
 <nav class="top-nav">
 	<div class="container">
-		<a href="#" class="brand"></a>
+		<a href="{{.Site.BaseURL}}" class="brand"></a>
 		<ul class="list-unstyled list-inline tabs">
 			<li><a href="{{.Site.BaseURL}}setup/overview" {{if eq .Params.menu "installation"}} class="current-item"{{end}}>Installation</a></li>
 			<li><a href="{{.Site.BaseURL}}usage/overview"{{if eq .Params.menu "usage" }} class="current-item"{{end}}>Usage</a></li>
 			<!-- <li><a>Guides</a></li> -->
 			<li><a href="{{.Site.BaseURL}}plugins"{{if or (.Params.repo) (eq .URL "/plugins/")}} class="current-item"{{end}}>Plugins</a></li>
-			<!-- <li><a>Developers</a></li> -->
+			<li><a href="{{.Site.BaseURL}}devs"{{if eq .Params.menu "developers" }} class="current-item"{{end}}>Developers</a></li>
+
 		</ul>
 	</div>
 </nav>

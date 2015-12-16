@@ -40,5 +40,12 @@ hugo server -w
 Generate plugin documentation:
 
 ```
-go run contrib/plugins.go --repo drone-s3
+go run contrib/plugin-gen.go --repo drone-s3
+```
+
+Generate the swagger documentation:
+
+
+```
+go run contrib/swagger-gen.go --input $GOPATH/src/github.com/drone/drone/docs/swagger.yml
 ```

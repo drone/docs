@@ -84,6 +84,81 @@ h1 small {
     font-size:18px;
     margin-left:5px;
 }
+
+
+section h2 {
+    font-size:28px;
+}
+
+.api ul {
+    margin-left:0px;
+    padding-left:0px;
+}
+.api #TableOfContents ul ul {
+    margin: 10px 0px;
+    margin-left:30px;
+    margin-bottom:30px;
+}
+.api ul li {
+    list-style: none;
+}
+.api ul li a {
+    color: #222;
+}
+.api pre,
+.api pre code {
+    font-size:13px !important;
+}
+.api pre.language-js code.language-js,
+.api pre.language-js code.language-js span {
+    font-size:13px !important;
+}
+
+a .operation {
+    border-width:1px;
+    border-style: solid;
+    padding:2px 5px;
+    font-size:10px;
+    border-radius:3px;
+    margin-right:5px;
+    vertical-align: middle;
+    min-width:60px !IMPORTANT;
+    text-align:center;
+    display:inline-block;
+}
+h2 .operation {
+    border-width:1px;
+    border-style: solid;
+    padding:3px 10px;
+    font-size:12px;
+    border-radius:3px;
+    margin-right:5px;
+    vertical-align: middle;
+    min-width:60px !IMPORTANT;
+    text-align:center;
+    display:inline-block;
+}
+.operation-GET {
+    color: #1ABC9C;
+    border-color: #1ABC9C;
+}
+.operation-PUT {
+    color: #1ABC9C;
+    border-color: #1ABC9C;
+}
+.operation-POST {
+    color: #3498DB;
+    border-color: #3498DB;
+}
+.operation-PATCH {
+    color: #E67E22;
+    border-color: #E67E22;
+}
+
+.operation-DELETE {
+    color: #E74C3C;
+    border-color: #E74C3C;
+}
 /*@media screen and (min-width: 1201px) {
     .container {
         width: 70%;

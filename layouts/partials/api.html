@@ -1,0 +1,52 @@
++++
+title = "API Reference"
+menu = "developers"
+weight = 5
+toc = true
+class = "api"
++++
+
+{{ range .Swagger.Tags }}
+# {{ .Name }}
+
+{{ range .Ops }}
+## <span class="operation operation-{{ .Method }}">{{ .Method }}</span> <span>{{ .Summary }}</span>
+
+{{ .Desc }}
+
+```
+{{ .Method }} /api{{ .Path }}
+```
+
+	{{ range .Params}}
+        {{ if .Example }}
+            {{ if .IsObject }}
+Example Request Body:
+
+```js
+{{ .Example }}
+```
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+	{{ range .Results}}
+		{{ if .Example }}
+			{{ if .IsArray }}
+Example Response Body:
+
+```js
+[{{ .Example }}]
+```
+			{{ else if .IsObject }}
+Example Response Body:
+
+```js
+{{ .Example }}
+```
+			{{ end }}
+		{{ end }}
+	{{ end }}
+
+{{ end }}
+{{ end }}

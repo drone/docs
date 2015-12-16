@@ -1,7 +1,7 @@
 {{ template "partials/header.html" . }}
 {{ template "partials/nav.html" . }}
 
-		<main>
+		<main class="{{ .Params.class }}">
 			<article class="grid-flex-container container">
 					<div class="grid-flex-cell">
 						<h1>{{ .Title }}</h1>

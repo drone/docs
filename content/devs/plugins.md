@@ -109,19 +109,7 @@ Plugin logos should be stored in a `logo.svg` file in the root of your plugin's 
 
 # Plugin Manifest
 
-Plugin details should be stored in the `.drone.yml` file in the `plugin` section. The plugin details are used by the Drone plugin website. This is an example manifest file:
-
-```yaml
----
-plugin:
-  name: Slack
-  desc: Sends build status notifications to your Slack channel.
-  type: notify
-  image: plugins/drone-slack
-  labels:
-    - chat
-    - messaging
-```
+Plugin details should be stored in the `.drone.yml` file. These plugin details are used by the Drone plugin website. Please use the [slack](https://github.com/drone-plugins/drone-slack/blob/master/.drone.yml) yaml file for reference.
 
 # Plugin Tutorials
 

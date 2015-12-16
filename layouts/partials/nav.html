@@ -6,7 +6,7 @@
 			<li><a href="{{.Site.BaseURL}}usage/overview"{{if eq .Params.menu "usage" }} class="current-item"{{end}}>Usage</a></li>
 			<!-- <li><a>Guides</a></li> -->
 			<li><a href="{{.Site.BaseURL}}plugins"{{if or (.Params.repo) (eq .URL "/plugins/")}} class="current-item"{{end}}>Plugins</a></li>
-			<li><a href="{{.Site.BaseURL}}devs"{{if eq .Params.menu "developers" }} class="current-item"{{end}}>Developers</a></li>
+			<li><a href="{{.Site.BaseURL}}devs"{{if or (in .Params.menu "developers") (in .Params.menu "api") }} class="current-item"{{end}}>Developers</a></li>
 
 		</ul>
 	</div>

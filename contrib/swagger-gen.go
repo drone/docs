@@ -9,10 +9,11 @@ import (
 	"crypto/md5"
 	"flag"
 	"fmt"
-	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"sort"
+	"strings"
 	"text/template"
 
 	"github.com/go-swagger/go-swagger/spec"
@@ -20,7 +21,7 @@ import (
 
 var (
 	input  = flag.String("input", "swagger.json", "")
-	output = flag.String("output", "content/devs/api.md", "")
+	output = flag.String("output", "content/devs/api/", "")
 	templ  = flag.String("template", "layouts/partials/api.html", "")
 )
 
@@ -34,29 +35,21 @@ func main() {
 	}
 	swag := spec.Spec()
 
-	// create output source for file. defaults to
-	// stdout but may be file.
-	var w io.WriteCloser = os.Stdout
-	if *output != "" {
-		w, err = os.Create(*output)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "%v\n", err)
-			return
-		}
-		defer w.Close()
-	}
-
 	// we wrap the swagger file in a map, otherwise it
 	// won't work with our existing templates, which expect
 	// a map as the root parameter.
-	var data = map[string]interface{}{
-		"Swagger": normalize(swag),
-	}
+	var swag_ = normalize(swag)
+	for _, tag := range swag_.Tags {
+		w, _ := os.Create(
+			filepath.Join(*output, strings.ToLower(tag.Name)) + ".md",
+		)
+		defer w.Close()
 
-	t := template.Must(template.ParseFiles(*templ))
-	err = t.Execute(w, data)
-	if err != nil {
-		log.Fatal(err)
+		t := template.Must(template.ParseFiles(*templ))
+		err = t.Execute(w, tag)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 }
 

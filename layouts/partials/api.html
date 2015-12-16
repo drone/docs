@@ -1,16 +1,15 @@
 +++
-title = "API Reference"
-menu = "developers"
+
+# THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
+
+title = "{{ .Name }}"
+menu = "api"
 weight = 5
 toc = true
-class = "api"
 +++
 
-{{ range .Swagger.Tags }}
-# {{ .Name }}
-
 {{ range .Ops }}
-## <span class="operation operation-{{ .Method }}">{{ .Method }}</span> <span>{{ .Summary }}</span>
+# {{ .Summary }}
 
 {{ .Desc }}
 
@@ -18,35 +17,34 @@ class = "api"
 {{ .Method }} /api{{ .Path }}
 ```
 
-	{{ range .Params}}
-        {{ if .Example }}
-            {{ if .IsObject }}
+{{ range .Params}}
+	{{ if .Example }}
+		{{ if .IsObject }}
 Example Request Body:
 
 ```js
 {{ .Example }}
 ```
-            {{ end }}
-        {{ end }}
-    {{ end }}
+		{{ end }}
+	{{ end }}
+{{ end }}
 
-	{{ range .Results}}
-		{{ if .Example }}
-			{{ if .IsArray }}
+{{ range .Results}}
+	{{ if .Example }}
+		{{ if .IsArray }}
 Example Response Body:
 
 ```js
 [{{ .Example }}]
 ```
-			{{ else if .IsObject }}
+		{{ else if .IsObject }}
 Example Response Body:
 
 ```js
 {{ .Example }}
 ```
-			{{ end }}
 		{{ end }}
 	{{ end }}
-
 {{ end }}
+
 {{ end }}

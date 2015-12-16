@@ -22,6 +22,22 @@
 									<a href="{{.URL}}" class="{{if or ($currentNode.IsMenuCurrent "developers" .) ($currentNode.HasMenuCurrent "main" .) }} current-item{{end}}">{{ .Name }}</a>
 								</li>
 								{{ end }}
+								<li>
+									{{ range .Site.Menus.api }}
+									{{ if .HasChildren }}
+									<a href="/devs/api/builds">{{ .Name }}</a>
+									{{ end }}
+									{{ end }}
+									<ul>
+										{{ range .Site.Menus.api }}
+										{{ if eq .HasChildren false }}
+										<li>
+											<a href="{{.URL}}" class="{{if $currentNode.IsMenuCurrent "api" . }} current-item{{end}}">{{ .Name }}</a>
+										</li>
+										{{ end }}
+										{{ end }}
+									</ul>
+								</li>
 							</ul>
 						</nav>
 

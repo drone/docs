@@ -26,7 +26,7 @@ Plugins receive a JSON payload as a commend line argument that includes reposito
 
 Example plugin input:
 
-```
+```js
 {
     "system": {
         "link": "http://drone.mycompany.com"
@@ -72,14 +72,14 @@ Please note plugins run in __isolated__ Docker container. This means, aside from
 
 # Official Plugins
 
-Official plugins are found in the [drone-plugins](https://github.com/drone-plugins) GitHub organization. These plugins are vetted by the community and are considered trusted.
+Official plugins are found in the [drone-plugins](https://github.com/drone-plugins) GitHub organization. These plugins are vetted by the community and are considered trusted. Requirements of official plugins include:
 
 * Plugin is useful to the broader community
 * Plugin is documented
 * Plugin is written in Go, Node or Python
 * Plugin has manifest file
 * Plugin uses Apache2 license
-* Plugin uses `gliderlabs/apline` base image (unless technical limitations prohibit)
+* Plugin uses `apline` base image (unless technical limitations prohibit)
 
 # Custom Plugins
 

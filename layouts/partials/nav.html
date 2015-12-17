@@ -7,7 +7,7 @@
 			<!-- <li><a>Guides</a></li> -->
 			<li><a href="{{.Site.BaseURL}}plugins"{{if or (.Params.repo) (eq .URL "/plugins/")}} class="current-item"{{end}}>Plugins</a></li>
 			<li><a href="{{.Site.BaseURL}}devs"{{if or (in .Params.menu "developers") (in .Params.menu "api") }} class="current-item"{{end}}>Developers</a></li>
-
+			<li><a href="{{.Site.BaseURL}}community/overview"{{if eq .Params.menu "community" }} class="current-item"{{end}}>Community</a></li>
 		</ul>
 	</div>
 </nav>

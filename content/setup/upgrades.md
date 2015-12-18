@@ -34,3 +34,5 @@ sudo docker run \
 	--name=drone \
 	drone/drone:0.4
 ```
+
+Database schema updates are applied automatically when Drone is starting.

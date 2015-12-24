@@ -65,7 +65,7 @@ build:
 
 # Commands
 
-Drone previously cloned your source code into the build workspace. The build workspace is mounted into your Docker container at runtime as a volume. This means your code is cloned **outside** of the build container but your build commands and run **inside** of the build container.
+Drone previously cloned your source code into the build workspace. The build workspace is mounted into your Docker container at runtime as a volume. This means your code is cloned **outside** of the build container but your build commands are run **inside** of the build container.
 
 Drone executes the following bash commands inside your build container:
 

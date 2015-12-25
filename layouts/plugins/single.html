@@ -9,17 +9,27 @@
 					</div>
 
 					<div class="grid-flex-cell grid-flex-cell-1of4">
-						<nav role='navigation' class="hidden">
+						<nav role='navigation'>
+							<h3>Plugin Links</h3>
+							{{ $currentNode := . }}
 							<ul class='list-unstyled side-nav'>
-								{{ $currentNode := . }}
-								{{ range .Site.Menus.usage }}
 								<li>
-									<a href="{{.URL}}" class="{{if ($currentNode.IsMenuCurrent "plugins" .) }} current-item{{end}}">{{ .Name }}</a>
+									<a href="http://discuss.drone.io/c/help">
+										Get Help
+									</a>
 								</li>
-								{{ end }}
+								<li>
+									<a href="https://github.com/{{.Params.user}}/{{.Params.repo}}/">
+										Source Code
+									</a>
+								</li>
+								<li>
+									<a href="https://hub.docker.com/r/plugins/{{.Params.repo}}/">
+										Docker Image
+									</a>
+								</li>
 							</ul>
 						</nav>
-
 						{{ template "partials/contribute.html" . }}
 					</div>
 			</article>

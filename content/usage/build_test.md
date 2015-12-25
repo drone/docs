@@ -106,6 +106,67 @@ build:
 
 Please be aware that chaining commands together with `&&` may result in the build not exiting on failure. This is not a bug with Drone. This is the default bash `-e` behavior. See [this stackoverflow](http://stackoverflow.com/questions/25794905/why-does-set-e-true-false-true-not-exit#25795239) for more details.
 
+# Multiple Steps
+
+Build commands can be split into multiple named steps. The below example let's us split our frontend build (node) and our backend build (go). Each step executes in its own isolated container environment while sharing the same build workspace.
+
+```yaml
+---
+build:
+  frontend:
+    image: node:5.3.0
+    commands:
+      - npm install
+      - npm test
+  backend:
+    image: golang:1.5
+    commands:
+      - go get
+      - go build
+      - go test
+```
+
+# Conditions
+
+Limit when a build step should is executed using conditional logic. The below example splits our build into two steps. The second build step, building the distribution, is only executed when we tag a release. This reduces the build time for `push` and `pull_request` events by removing un-necessary steps:
+
+```yaml
+---
+build:
+  test:
+    image: golang:1.5
+    commands:
+      - go get
+      - go test
+  bundle:
+    image: golang:1.5
+    commands:
+      - go build
+      - tar -cvf bundle.tar myapp
+    when:
+      event: tag
+```
+
+Only execute a step when building a `push` or `tag` event:
+
+```yaml
+---
+build:
+  bundle:
+    when:
+      event: [push, tag]
+```
+
+Only executes a step when building the `master` branch:
+
+```yaml
+---
+build:
+  bundle:
+    when:
+      branch: master
+```
+
 # Dependencies
 
 Cloning private submodules or private dependencies (using `npm` or `go get`) requires remote authentication. We recommend using `git+https` for submodules or dependencies, allowing Drone to authenticate to your remote repository using a `.netrc` file injected by default into your build environment.

@@ -167,7 +167,7 @@ Drone does not have any builtin scheduling capabilities. For scheduled builds (i
 
 # Skip Commits
 
-Instruct Drone to skip builds by adding `[ci skip]` to your commit message.
+Instruct Drone to skip builds by by including any combination of `ci` and `skip` wrapped in square brackets in your commit message. Examples: `[skip CI]` `[ci skip]`
 
 # Skip Branches
 

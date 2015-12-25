@@ -179,11 +179,3 @@ branches:
   - master
   - develop
 ```
-
-# Known Issues
-
-Drone expects the container to execute with `UID 0` (root) inside the container. If your image defines an alternate `USER` your build will fail with the following error message:
-
-```
-/bin/sh: 49: cannot create /etc/apt/apt.conf.d/90forceyes: Permission denied
-```

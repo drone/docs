@@ -28,15 +28,6 @@ trouble getting started or figuring something out, stop by the
 
 # Contributing to Drone
 
-We welcome and encourage contributions to Drone. Depending on your
-strengths and interests, we are always in need of help with:
-
-* [Drone](https://github.com/drone/drone) 
-* [Plugins](https://github.com/drone-plugins) 
-* [Documentation](https://github.com/drone/docs)
-* [Demos](https://github.com/drone-demos)
-
-If you'd like help getting started or would like to talk to other users
-and contributors, stop by our [Gitter room](https://gitter.im/drone/drone)
-or introduce yourself in the [Development](http://discuss.drone.io/c/development)
-section of the [Drone Discussion](http://discuss.drone.io/) site.
+We welcome and encourage contributions to Drone. Regardless of your strengths
+ or interests, we can use your help! See our [Contributor's Guide]
+ (../contributors_guide) for more details.

@@ -24,7 +24,7 @@ REMOTE_DRIVER=github
 REMOTE_CONFIG=https://github.com?client_id=....&client_secret=....
 ```
 
-Please configure your [GitHub](../github) integration (or GitLab, Bitbucket, Gogs) before your proceed. Drone will not start until you have configured your version control integration.
+Please configure your [GitHub](../github) integration (or [GitLab](../gitlab), [Bitbucket](../bitbucket), [Gogs](../gogs)) before your proceed. Drone will not start until you have configured your version control integration.
 
 # Create and Run
 

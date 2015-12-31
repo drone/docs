@@ -83,7 +83,7 @@ Official plugins are found in the [drone-plugins](https://github.com/drone-plugi
 
 # Custom Plugins
 
-Plugins can be easily forked or created from scratch. Use the `image` attribute to provide Drone with your custo plugin's fully qualified image name:
+Plugins can be easily forked or created from scratch. Use the `image` attribute to provide Drone with your custom plugin's fully qualified image name:
 
 ```yaml
 ---

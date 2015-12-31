@@ -79,7 +79,7 @@ Official plugins are found in the [drone-plugins](https://github.com/drone-plugi
 * Plugin is written in Go, Node or Python
 * Plugin has manifest file
 * Plugin uses Apache2 license
-* Plugin uses `apline` base image (unless technical limitations prohibit)
+* Plugin uses `alpine` base image (unless technical limitations prohibit)
 
 # Custom Plugins
 

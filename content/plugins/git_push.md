@@ -10,7 +10,7 @@ image = "plugins/drone-git-push"
 tags = ["git"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:51:24Z
+date = 2016-01-14T18:44:51Z
 menu = ""
 weight = 1
 
@@ -37,3 +37,4 @@ deploy:
     remote: git@git.heroku.com:falling-wind-1624.git
     force: false
 ```
+

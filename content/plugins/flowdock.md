@@ -10,7 +10,7 @@ image = "plugins/drone-flowdock"
 tags = ["flowdock"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:50:56Z
+date = 2016-01-14T18:44:24Z
 menu = ""
 weight = 1
 
@@ -29,3 +29,4 @@ The following is a sample configuration in your .drone.yml file:
 notify:
   flowdock:
 ```
+

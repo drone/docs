@@ -10,7 +10,7 @@ image = "plugins/drone-docker"
 tags = ["docker", "image", "container"]
 categories = "publish"
 draft = false
-date = 2015-12-15T06:51:03Z
+date = 2016-01-14T18:44:30Z
 menu = ""
 weight = 1
 
@@ -25,15 +25,20 @@ The following parameters are used to configure this plugin:
 * `email` - authenticates with this email
 * `repo` - repository name for the image
 * `tag` - repository tag for the image
+* `file` - dockerfile to be used, defaults to Dockerfile
+* `auth` - auth token for the registry
+* `context` - the context path to use, defaults to root of the git repo
 * `force_tag` - replace existing matched image tags
 * `insecure` - enable insecure communication to this registry
 * `mirror` - use a mirror registry instead of pulling images directly from the central Hub
 * `bip` - use for pass bridge ip
+* `dns` - set custom dns servers for the container
 * `storage_driver` - use `aufs`, `devicemapper`, `btrfs` or `overlay` driver
 * `save` - save image layers to the specified tar file (see [docker save](https://docs.docker.com/engine/reference/commandline/save/))
     * `destination` - absolute / relative destination path
     * `tag` - cherry-pick tags to save (optional)
 * `load` - restore image layers from the specified tar file
+* `build_args` - [build arguments](https://docs.docker.com/engine/reference/commandline/build/#set-build-time-variables-build-arg) to pass to `docker build`
 
 The following is a sample Docker configuration in your .drone.yml file:
 
@@ -41,7 +46,7 @@ The following is a sample Docker configuration in your .drone.yml file:
 publish:
   docker:
     username: kevinbacon
-    password: $$DOCKER_PASSWORD
+    password: pa55word
     email: kevin.bacon@mail.com
     repo: foo/bar
     tag: latest
@@ -55,7 +60,7 @@ You may want to dynamically tag your image. Use the `$$BRANCH`, `$$COMMIT` and `
 publish:
   docker:
     username: kevinbacon
-    password: $$DOCKER_PASSWORD
+    password: pa55word
     email: kevin.bacon@mail.com
     repo: foo/bar
     tag: $$BRANCH
@@ -67,7 +72,7 @@ Or you may prefer to build an image with multiple tags:
 publish:
   docker:
     username: kevinbacon
-    password: $$DOCKER_PASSWORD
+    password: pa55word
     email: kevin.bacon@mail.com
     repo: foo/bar
     tag:
@@ -78,6 +83,19 @@ publish:
 
 Note that in the above example we quote the version numbers. If the yaml parser interprets the value as a number it will cause a parsing error.
 
+It's also possible to pass build arguments to docker:
+
+```yaml
+publish:
+  docker:
+    username: kevinbacon
+    password: pa55word
+    email: kevin.bacon@mail.com
+    repo: foo/bar
+    build_args:
+      - HTTP_PROXY=http://yourproxy.com
+```
+ 
 ## Layer Caching
 
 The Drone build environment is, by default, ephemeral meaning that you layers are not saved between builds. The below example combines Drone's caching feature and Docker's `save` and `load` capabilities to cache and restore image layers between builds:
@@ -86,7 +104,7 @@ The Drone build environment is, by default, ephemeral meaning that you layers ar
 publish:
   docker:
     username: kevinbacon
-    password: $$DOCKER_PASSWORD
+    password: pa55word
     email: kevin.bacon@mail.com
     repo: foo/bar
     tag:
@@ -148,3 +166,4 @@ Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
 ```
 
 The above issue can be resolved by setting `storage_driver: vfs` in the `.drone.yml` file. This may work, but will have very poor performance as discussed [here](https://github.com/rancher/docker-from-scratch/issues/20).
+

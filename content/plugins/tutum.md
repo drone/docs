@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Tutum"
-description = "Deploys or updates a Tutum service."
+description = "Deploys or updates a project on Tutum"
 user = "drone-plugins"
 repo = "drone-tutum"
 image = "plugins/drone-tutum"
 tags = ["docker", "image", "container"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:52:06Z
+date = 2016-01-14T18:45:27Z
 menu = ""
 weight = 1
 
@@ -41,3 +41,4 @@ deploy:
 ```
 
 Note that if your `service` is part of a stack, you should use the notation `servicename.stackname` as this will make sure that the found service is part of the correct stack.
+

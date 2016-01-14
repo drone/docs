@@ -10,7 +10,7 @@ image = "plugins/drone-s3-sync"
 tags = ["publish", "artifacts", "amazon", "aws", "s3"]
 categories = "publish"
 draft = false
-date = 2015-12-15T06:51:45Z
+date = 2016-01-14T18:45:09Z
 menu = ""
 weight = 1
 
@@ -44,3 +44,4 @@ publish:
     target: /target/location
     delete: true
 ```
+

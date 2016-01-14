@@ -10,7 +10,7 @@ image = "plugins/drone-heroku"
 tags = ["heroku"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:51:21Z
+date = 2016-01-14T18:44:48Z
 menu = ""
 weight = 1
 
@@ -33,3 +33,4 @@ deploy:
     app: awesomeness
     force: true
 ```
+

@@ -10,7 +10,7 @@ image = "plugins/drone-email"
 tags = ["email"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:51:17Z
+date = 2016-01-14T18:44:44Z
 menu = ""
 weight = 1
 
@@ -40,3 +40,4 @@ notify:
     recipients:
       - octocat@github.com
 ```
+

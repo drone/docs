@@ -10,7 +10,7 @@ image = "plugins/drone-slack"
 tags = ["chat", "messaging"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:51:32Z
+date = 2016-01-14T18:44:57Z
 menu = ""
 weight = 1
 
@@ -59,3 +59,4 @@ notify:
       image_attachments:
         - "http://cdn.meme.am/instances/51000361.jpg"
 ```
+

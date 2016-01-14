@@ -10,7 +10,7 @@ image = "plugins/drone-pypi"
 tags = ["publish", "python"]
 categories = "publish"
 draft = false
-date = 2015-12-15T06:52:10Z
+date = 2016-01-14T18:45:30Z
 menu = ""
 weight = 1
 
@@ -35,3 +35,4 @@ publish:
       - sdist
       - bdist_wheel
 ```
+

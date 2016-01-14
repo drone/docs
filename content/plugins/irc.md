@@ -10,7 +10,7 @@ image = "plugins/drone-irc"
 tags = ["chat", "messaging", "irc"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:50:53Z
+date = 2016-01-14T18:44:21Z
 menu = ""
 weight = 1
 
@@ -43,3 +43,4 @@ notify:
       host: chat.freenode.net
       port: 6667
 ```
+

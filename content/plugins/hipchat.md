@@ -10,7 +10,7 @@ image = "plugins/drone-hipchat"
 tags = ["chat", "messaging", "hipchat"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:50:50Z
+date = 2016-01-14T18:44:18Z
 menu = ""
 weight = 1
 
@@ -35,7 +35,7 @@ The following is a sample configuration in your .drone.yml file:
 ```yaml
 notify:
   hipchat:
-    auth_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    auth_token: xxxxxxxxxxxxxxx
     room_id_or_name: 1234567
     notify: true
 ```
@@ -53,11 +53,12 @@ Example configuration that generate a custom message:
 
 ```yaml
 notify:
-  slack:
-    auth_token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  hipchat:
+    auth_token: xxxxxxxxxxxxxxx
     room_id_or_name: 1234567
     from: drone
     notify: true
     template: >
       <strong>{{ uppercasefirst build.status }}</strong> <a href=\"{{ system.link_url }}/{{ repo.owner }}/{{ repo.name }}/{{ build.number }}\">{{ repo.owner }}/{{ repo.name }}#{{ truncate build.commit 8 }}</a> ({{ build.branch }}) by {{ build.author }} in {{ duration build.started_at build.finished_at }} </br> - {{ build.message }}
 ```
+

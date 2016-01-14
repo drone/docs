@@ -10,7 +10,7 @@ image = "plugins/drone-scalingo"
 tags = ["scalingo"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:53:30Z
+date = 2016-01-14T18:47:04Z
 menu = ""
 weight = 1
 
@@ -33,3 +33,4 @@ deploy:
     app: awesomeness
     force: true
 ```
+

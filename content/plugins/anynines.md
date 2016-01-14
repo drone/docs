@@ -10,7 +10,7 @@ image = "plugins/drone-anynines"
 tags = ["anynines", "paas"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:52:13Z
+date = 2016-01-14T18:45:34Z
 menu = ""
 weight = 1
 
@@ -39,3 +39,4 @@ deploy:
     when:
       branch: master
 ```
+

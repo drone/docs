@@ -10,7 +10,7 @@ image = "plugins/drone-rsync"
 tags = ["deploy", "ssh", "rsync"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:51:07Z
+date = 2016-01-14T18:44:33Z
 menu = ""
 weight = 1
 
@@ -61,3 +61,4 @@ The below error message may be encountered when rsync is unable to connect to yo
 rsync: connection unexpectedly closed (0 bytes received so far) [sender]
 rsync error: unexplained error (code 255) at io.c(226) [sender=3.1.1]
 ```
+

@@ -10,7 +10,7 @@ image = "plugins/drone-deis"
 tags = ["deis"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:52:33Z
+date = 2016-01-14T18:45:58Z
 menu = ""
 weight = 1
 
@@ -35,3 +35,4 @@ deploy:
     app: awesomeness
     force: true
 ```
+

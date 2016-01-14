@@ -10,7 +10,7 @@ image = "plugins/drone-git"
 tags = ["scm", "vcs", "git"]
 categories = "clone"
 draft = false
-date = 2015-12-15T06:50:43Z
+date = 2016-01-14T18:44:11Z
 menu = ""
 weight = 1
 
@@ -81,3 +81,4 @@ clone:
 ```
 
 Overriding the submodule url to force `git+https` allows us to take advantage of the `netrc` file and automatically authenticate to the submodule repository.
+

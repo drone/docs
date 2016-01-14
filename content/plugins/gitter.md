@@ -10,7 +10,7 @@ image = "plugins/drone-gitter"
 tags = ["chat", "messaging", "gitter"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:51:41Z
+date = 2016-01-14T18:45:06Z
 menu = ""
 weight = 1
 
@@ -46,3 +46,4 @@ notify:
      - https://webhooks.gitter.im/e/91e06797227ae5dbe6ec
      - https://webhooks.gitter.im/e/27a2e6ece5db91e06797
 ```
+

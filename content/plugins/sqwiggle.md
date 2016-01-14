@@ -10,7 +10,7 @@ image = "plugins/drone-sqwiggle"
 tags = ["sqwiggle"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:53:13Z
+date = 2016-01-14T18:46:49Z
 menu = ""
 weight = 1
 
@@ -29,3 +29,4 @@ The following is a sample configuration in your .drone.yml file:
 notify:
   sqwiggle:
 ```
+

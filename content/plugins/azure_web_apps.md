@@ -10,7 +10,7 @@ image = "plugins/drone-azure-web-apps"
 tags = ["azure", "web", "apps"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:52:18Z
+date = 2016-01-14T18:45:39Z
 menu = ""
 weight = 1
 
@@ -38,3 +38,4 @@ deploy:
     site: awesome
     force: true
 ```
+

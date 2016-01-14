@@ -10,7 +10,7 @@ image = "plugins/drone-slack"
 tags = ["chat", "messaging"]
 categories = "notify"
 draft = false
-date = 2015-12-15T06:50:46Z
+date = 2016-01-14T18:44:14Z
 menu = ""
 weight = 1
 
@@ -51,3 +51,4 @@ notify:
     template: >
       build #{{ build.number }} finished with a {{ build.status }} status
 ```
+

@@ -10,7 +10,7 @@ image = "plugins/drone-rancher"
 tags = ["rancher", "docker"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:53:26Z
+date = 2016-01-14T18:47:01Z
 menu = ""
 weight = 1
 
@@ -26,6 +26,7 @@ The following parameters are used to configure this plugin:
 - `service` - name of rancher service to act on
 - `docker_image` - new image to assign to service, including tag (`drone/drone:latest`)
 - `start_first` - start the new container before stopping the old one, defaults to `true`
+- `confirm` - auto confirm the service upgrade if successful, defaults to `false`
 
 The following is a sample Rancher configuration in your `.drone.yml` file:
 
@@ -40,3 +41,4 @@ deploy:
 ```
 
 Note that if your `service` is part of a stack, you should use the notation `stackname/servicename` as this will make sure that the found service is part of the correct stack. If no stack is specified, this plugin will update the first service with a matching name which may not be what you want.
+

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "SSH"
-description = "Use SSH to execute commands on a remote host"
+description = "Execute commands on a remote host through SSH"
 user = "drone-plugins"
 repo = "drone-ssh"
 image = "plugins/drone-ssh"
 tags = ["deploy", "ssh"]
 categories = "deploy"
 draft = false
-date = 2015-12-15T06:51:49Z
+date = 2016-01-14T18:45:13Z
 menu = ""
 weight = 1
 

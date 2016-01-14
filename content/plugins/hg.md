@@ -10,7 +10,7 @@ image = "plugins/drone-hg"
 tags = ["scm", "vcs", "hg"]
 categories = "clone"
 draft = false
-date = 2015-12-15T06:51:00Z
+date = 2016-01-14T18:44:27Z
 menu = ""
 weight = 1
 
@@ -29,3 +29,4 @@ clone:
   image: hg
   path: bitbucket.org/foo/bar
 ```
+

@@ -10,7 +10,7 @@ image = "plugins/drone-gcr"
 tags = ["docker", "image", "container"]
 categories = "publish"
 draft = false
-date = 2015-12-15T06:51:58Z
+date = 2016-01-14T18:45:21Z
 menu = ""
 weight = 1
 
@@ -137,16 +137,17 @@ This error occurs when trying to use the `overlay` storage Driver but overlay is
 
 ```
 level=error msg="'overlay' not found as a supported filesystem on this host.
-Please ensure kernel is new enough and has overlay support loaded."
+Please ensure kernel is new enough and has overlay support loaded." 
 level=fatal msg="Error starting daemon: error initializing graphdriver: driver not supported"
 ```
 
 This error occurs when using CentOS or RedHat which default to the `devicemapper` storage driver:
 
 ```
-level=error msg="There are no more loopback devices available."
-level=fatal msg="Error starting daemon: error initializing graphdriver: loopback mounting failed"
+level=error msg="There are no more loopback devices available." 
+level=fatal msg="Error starting daemon: error initializing graphdriver: loopback mounting failed" 
 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
 ```
 
 The above issue can be resolved by setting `storage_driver: vfs` in the `.drone.yml` file. This may work, but will have very poor performance as discussed [here](https://github.com/rancher/docker-from-scratch/issues/20).
+

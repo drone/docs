@@ -10,7 +10,7 @@ image = "plugins/drone-bintray"
 tags = ["publish", "bintray", "artifacts"]
 categories = "publish"
 draft = false
-date = 2015-12-15T06:53:22Z
+date = 2016-01-14T18:46:58Z
 menu = ""
 weight = 1
 
@@ -22,6 +22,7 @@ Parameter | Description
 --------- | -----------
 username  | A Bintray username
 api_key | The API key associated with the username (obtain from Bintray settings)
+host | Optional host of the bintray api server with scheme. Example: https://bin.company.com
 branch | The GitHub branch of the commit.  A non-empty value other than "master" causes the plugin to upload artifacts to test/branchname/target instead of just target
 debug | If true, causes the plugin to write additional output to stdout, including its invocation arguments and output curl command.
 insecure | Enable insecure connections
@@ -78,3 +79,4 @@ publish:
         publish: true
         override: true
 ```
+

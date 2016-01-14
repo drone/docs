@@ -22,7 +22,7 @@ notify:
 
 # Plugin Input
 
-Plugins receive a JSON payload as a commend line argument that includes repository and build details. Plugin configuration parameters from the Yaml file are stored in the `vargs` section of the document.
+Plugins receive a JSON payload as a command line argument that includes repository and build details. Plugin configuration parameters from the Yaml file are stored in the `vargs` section of the document.
 
 Example plugin input:
 
@@ -79,11 +79,11 @@ Official plugins are found in the [drone-plugins](https://github.com/drone-plugi
 * Plugin is written in Go, Node or Python
 * Plugin has manifest file
 * Plugin uses Apache2 license
-* Plugin uses `apline` base image (unless technical limitations prohibit)
+* Plugin uses `alpine` base image (unless technical limitations prohibit)
 
 # Custom Plugins
 
-Plugins can be easily forked or created from scratch. Use the `image` attribute to provide Drone with your custo plugin's fully qualified image name:
+Plugins can be easily forked or created from scratch. Use the `image` attribute to provide Drone with your custom plugin's fully qualified image name:
 
 ```yaml
 ---

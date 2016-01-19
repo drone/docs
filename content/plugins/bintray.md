@@ -10,7 +10,7 @@ image = "plugins/drone-bintray"
 tags = ["publish", "bintray", "artifacts"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:46:58Z
+date = 2016-01-19T23:03:30Z
 menu = ""
 weight = 1
 

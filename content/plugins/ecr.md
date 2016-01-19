@@ -10,7 +10,7 @@ image = "plugins/drone-ecr"
 tags = ["docker", "image", "container", "ecr", "aws"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:47:13Z
+date = 2016-01-19T23:03:45Z
 menu = ""
 weight = 1
 

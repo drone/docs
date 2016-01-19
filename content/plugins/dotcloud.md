@@ -10,7 +10,7 @@ image = "plugins/drone-dotcloud"
 tags = ["dotcloud"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:45Z
+date = 2016-01-19T23:02:23Z
 menu = ""
 weight = 1
 

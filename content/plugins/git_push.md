@@ -10,7 +10,7 @@ image = "plugins/drone-git-push"
 tags = ["git"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:44:51Z
+date = 2016-01-19T23:01:28Z
 menu = ""
 weight = 1
 

@@ -10,7 +10,7 @@ image = "plugins/drone-node"
 tags = ["publish", "node"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:45:00Z
+date = 2016-01-19T23:01:37Z
 menu = ""
 weight = 1
 

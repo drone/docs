@@ -10,7 +10,7 @@ image = "plugins/drone-dockerhub"
 tags = ["docker"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:44:54Z
+date = 2016-01-19T23:01:31Z
 menu = ""
 weight = 1
 

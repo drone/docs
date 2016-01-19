@@ -10,7 +10,7 @@ image = "plugins/drone-bitballoon"
 tags = ["bitballoon", "html5"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:46:08Z
+date = 2016-01-19T23:02:45Z
 menu = ""
 weight = 1
 

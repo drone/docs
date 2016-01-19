@@ -10,7 +10,7 @@ image = "plugins/drone-elastic-beanstalk"
 tags = ["aws", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:46:05Z
+date = 2016-01-19T23:02:42Z
 menu = ""
 weight = 1
 
@@ -19,9 +19,16 @@ weight = 1
 Use this plugin for deplying an application to AWS Elastic Beanstalk. You can
 override the default configuration with the following parameters:
 
-* `access_key_id` - AWS access key ID
-* `secret_access_key` - AWS secret access key
+* `access_key` - AWS access key ID
+* `secret_key` - AWS secret access key
 * `region` - AWS availability zone
+* `version_label` - A label identifying this version
+* `application` - Application name, defaults to repo name
+* `description` - A description about the deployment, optional
+* `auto_create` - Automatically create the application, defaults to `false`
+* `process` - Preprocess and validate the manifest, defaults to `false`
+* `bucket_name` - Bucket for `S3` source bundle
+* `bucket_key` - Key for `S3` source bundle
 
 ## Example
 
@@ -30,8 +37,13 @@ The following is a sample configuration in your .drone.yml file:
 ```yaml
 deploy:
   elastic_beanstalk:
-    access_key_id:
-    secret_access_key:
-    region:
+    access_key: 970d28f4dd477bc184fbd10b376de753
+    secret_key: 9c5785d3ece6a9cdefa42eb99b58986f9095ff1c
+    region: us-east-1
+    version_label: v1
+    description: Deployed with DroneCI
+    auto_create: true
+    bucket_name: my-bucket-name
+    bucket_key: 970d28f4dd477bc184fbd10b376de753
 ```
 

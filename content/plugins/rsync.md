@@ -10,7 +10,7 @@ image = "plugins/drone-rsync"
 tags = ["deploy", "ssh", "rsync"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:44:33Z
+date = 2016-01-19T23:01:12Z
 menu = ""
 weight = 1
 

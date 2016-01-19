@@ -10,7 +10,7 @@ image = "plugins/drone-cloudfoundry"
 tags = ["paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:42Z
+date = 2016-01-19T23:02:20Z
 menu = ""
 weight = 1
 

@@ -10,7 +10,7 @@ image = "plugins/drone-capistrano"
 tags = ["ruby", "capistrano"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:47:07Z
+date = 2016-01-19T23:03:39Z
 menu = ""
 weight = 1
 

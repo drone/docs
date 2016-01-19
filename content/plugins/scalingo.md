@@ -10,7 +10,7 @@ image = "plugins/drone-scalingo"
 tags = ["scalingo"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:47:04Z
+date = 2016-01-19T23:03:36Z
 menu = ""
 weight = 1
 

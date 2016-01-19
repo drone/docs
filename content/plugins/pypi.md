@@ -10,7 +10,7 @@ image = "plugins/drone-pypi"
 tags = ["publish", "python"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:45:30Z
+date = 2016-01-19T23:02:09Z
 menu = ""
 weight = 1
 

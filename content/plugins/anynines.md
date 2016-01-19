@@ -10,7 +10,7 @@ image = "plugins/drone-anynines"
 tags = ["anynines", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:34Z
+date = 2016-01-19T23:02:12Z
 menu = ""
 weight = 1
 

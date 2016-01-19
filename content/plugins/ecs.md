@@ -10,7 +10,7 @@ image = "plugins/drone-ecs"
 tags = ["aws", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:47:10Z
+date = 2016-01-19T23:03:42Z
 menu = ""
 weight = 1
 

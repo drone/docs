@@ -10,7 +10,7 @@ image = "plugins/drone-cloud66"
 tags = ["cloud66"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:53Z
+date = 2016-01-19T23:02:31Z
 menu = ""
 weight = 1
 

@@ -10,7 +10,7 @@ image = "plugins/drone-slack"
 tags = ["chat", "messaging"]
 categories = "notify"
 draft = false
-date = 2016-01-14T18:44:57Z
+date = 2016-01-19T23:01:34Z
 menu = ""
 weight = 1
 

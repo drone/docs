@@ -10,7 +10,7 @@ image = "plugins/drone-gcr"
 tags = ["docker", "image", "container"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:45:21Z
+date = 2016-01-19T23:02:00Z
 menu = ""
 weight = 1
 

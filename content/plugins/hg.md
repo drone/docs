@@ -10,7 +10,7 @@ image = "plugins/drone-hg"
 tags = ["scm", "vcs", "hg"]
 categories = "clone"
 draft = false
-date = 2016-01-14T18:44:27Z
+date = 2016-01-19T23:01:05Z
 menu = ""
 weight = 1
 

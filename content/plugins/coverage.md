@@ -10,7 +10,7 @@ image = "plugins/drone-coverage"
 tags = ["coverage", "reporting", "lcov", "simplecov"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:47:17Z
+date = 2016-01-19T23:03:49Z
 menu = ""
 weight = 1
 

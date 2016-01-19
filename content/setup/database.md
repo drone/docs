@@ -2,10 +2,12 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Database"
-weight = 7
+weight = 3
 menu = "installation"
 toc = true
 +++
+
+Drone supports several relational databases. If you don't have a strong preference, SQLite is a great starting point. Once you have configured your database, continue onward to [Create and Run a Drone Container]({{< relref "setup/overview.md#create-and-run-a-drone-container" >}}) 
 
 # SQLite
 

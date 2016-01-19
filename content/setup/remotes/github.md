@@ -2,8 +2,8 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "GitHub"
-weight = 3
-menu = "installation"
+weight = 2
+menu = "remotes"
 +++
 
 Drone comes with built-in support for GitHub and GitHub Enterprise. To enable GitHub you should configure the GitHub driver using the following environment variables:

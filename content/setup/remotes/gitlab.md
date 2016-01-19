@@ -2,8 +2,8 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "GitLab"
-weight = 5
-menu = "installation"
+weight = 3
+menu = "remotes"
 +++
 
 > GitLab support is experimental and unstable due to high variation in GitLab configurations and versions. We highly recommend using [Gogs](https://github.com/gogits/gogs) as an alternative to GitLab.

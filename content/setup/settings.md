@@ -2,7 +2,7 @@
 date = "2016-02-05T18:20:44-06:00"
 draft = false
 title = "Settings Reference"
-weight = 10
+weight = 4
 menu = "installation"
 toc = true
 +++
@@ -83,4 +83,4 @@ Set this to whichever remote driver you're using. Drone will use your remote for
 
 # REMOTE_CONFIG
 
-The value of this setting is highly dependent upon the remote driver chosen. See [GitHub](../github), [GitLab](../gitlab), [Bitbucket](../bitbucket), or [Gogs](../gogs) for more details.
+The value of this setting is highly dependent upon the remote driver chosen. See [Remote Drivers]({{< relref "remotes.md" >}}) for more details.

@@ -2,8 +2,8 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Gogs"
-weight = 5
-menu = "installation"
+weight = 4
+menu = "remotes"
 +++
 
 Drone comes with built-in support for Gogs version `0.6.16.1022` and higher. Please ensure you are running the latest version of Gogs to avoid compatibility issues. To enable Gogs you should configure the Gogs driver using the following environment variables:

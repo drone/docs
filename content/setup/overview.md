@@ -7,21 +7,6 @@ menu = "installation"
 toc = true
 +++
 
-# Features support
-
-| Feature/Remote            | GitHub  | GitLab  | BitBucket           | Gogs    |
-|---------------------------|---------|---------|---------------------|---------|
-| Supported version         | --/--   | 8.2+    | --/--               | --/--   |
-| VCS                       | **git** | **git** | **git ( only )**    | **git** |
-| Auth method               | ouath2  | oauth2  | oauth2              | manual  |
-| Push events               | **yes** | **yes** | **yes**             | **yes** |
-| Push tags events          | **yes** | **yes** | **yes**             | no      |
-| Merge requests            | **yes** | **yes** | **partially**       | no      |
-| Commit statuses           | **yes** | **yes** | **yes**             | no      |
-| Restrict by organizations | **yes** | no      | **yes**             | no      |
-
-*partially* - Drone can fetch merge requests direct from source repository, from BitBucket, but if user who activates drone on target repo has no access to source repo, git clone fails
-
 # Download
 
 Drone ships as a single binary file and is distributed as a minimalist 20 MB Docker image. Download the official Drone image from DockerHub:
@@ -30,18 +15,28 @@ Drone ships as a single binary file and is distributed as a minimalist 20 MB Doc
 sudo docker pull drone/drone:0.4
 ```
 
+For a full list of available tags, see the [drone/drone](https://hub.docker.com/r/drone/drone/) Docker Hub repo.
+
 # Configure
 
-Create a `/etc/drone/dronerc` file to store configuration variables in `KEY=VALUE` format. Docker will use this file to load environment variables from disk. Please note these variables should never be quoted:
+Create a `/etc/drone/dronerc` file to store configuration variables in `KEY=VALUE` format. Docker will use this file to load environment variables from disk. Please note these variables should never be quoted. For example:
 
 ```
 REMOTE_DRIVER=github
 REMOTE_CONFIG=https://github.com?client_id=....&client_secret=....
 ```
 
-Please configure your [GitHub](../github) integration (or [GitLab](../gitlab), [Bitbucket](../bitbucket), [Gogs](../gogs)) before your proceed. Drone will not start until you have configured your version control integration.
+For a full list of possible settings, see our [Settings Reference]({{< relref "settings.md" >}}). You may want to come back to this after completing your initial setup process.
 
-# Create and Run
+# Select and Configure a Remote Driver
+
+With your `dronerc` file created, refer to the [Remote Drivers]({{< relref "remotes.md" >}}) page for configuring Drone to work with your code hosting system of choice.
+
+# Select and Configure a Database
+
+Now that you have configured your Remote Driver, you are ready to set up the Database that Drone will use for storing state. See the [Databases]({{< relref "database.md" >}}) article for a walkthrough.
+
+# Create and Run a Drone Container
 
 Create and run your container:
 
@@ -64,6 +59,16 @@ sudo docker stop drone
 sudo docker rm drone
 sudo docker run ...
 ```
+
+At this point, you should have a running Drone instance. If you are running into issues, read the following *Troubleshooting* and *Common Errors* sections. If that fails, see [Getting Help]({{< relref "community/overview.md#getting-help" >}}).
+
+Assuming everything went well, you are ready to look at our [Usage]({{< relref "usage/overview.md" >}}) documentation and get some builds going.
+
+# Advanced Configuration
+
+* For a full list of configuration options for Drone itself, see [Settings Reference]({{< relref "settings.md" >}}).
+* If your Drone instance needs to go through a proxy server, see [Network Proxy]({{< relref "proxy_network.md" >}}).
+* If you'd like to park Drone behind a reverse proxy, see [Reverse Proxy]({{< relref "proxy_reverse.md" >}}).
 
 # Troubleshooting
 

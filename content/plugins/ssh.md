@@ -10,7 +10,7 @@ image = "plugins/drone-ssh"
 tags = ["deploy", "ssh"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:01:52Z
+date = 2016-01-27T02:33:04Z
 menu = ""
 weight = 1
 

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "cloudControl"
-description = "Deploys or updates a project on cloudControl"
+description = "Deploy or update a project on cloudControl"
 user = "drone-plugins"
 repo = "drone-cloudcontrol"
 image = "plugins/drone-cloudcontrol"
 tags = ["cloud", "control"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:03:00Z
+date = 2016-01-27T02:34:12Z
 menu = ""
 weight = 1
 

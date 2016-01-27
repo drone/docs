@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Boxfuse"
-description = "Deploys or updates a project on Boxfuse"
+description = "Deploy or update a project on Boxfuse"
 user = "drone-plugins"
 repo = "drone-boxfuse"
 image = "plugins/drone-boxfuse"
 tags = ["boxfuse", "aws", "jvm"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:02:56Z
+date = 2016-01-27T02:34:07Z
 menu = ""
 weight = 1
 

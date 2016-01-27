@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "ECR"
-description = "Build and Publish images to a AWS ECR."
+description = "Build and publish images to a AWS ECR"
 user = "drone-plugins"
 repo = "drone-ecr"
 image = "plugins/drone-ecr"
 tags = ["docker", "image", "container", "ecr", "aws"]
 categories = "publish"
 draft = false
-date = 2016-01-19T23:03:45Z
+date = 2016-01-27T02:34:55Z
 menu = ""
 weight = 1
 

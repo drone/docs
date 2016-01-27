@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Azure Storage"
-description = "Publishs files and artifacts to Azure Storage"
+description = "Publish files and artifacts to Azure Storage"
 user = "drone-plugins"
 repo = "drone-azure-storage"
 image = "plugins/drone-azure-storage"
 tags = ["azure", "storage"]
 categories = "publish"
 draft = false
-date = 2016-01-19T23:01:18Z
+date = 2016-01-27T02:32:33Z
 menu = ""
 weight = 1
 

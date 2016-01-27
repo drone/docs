@@ -10,7 +10,7 @@ image = "plugins/drone-opsworks"
 tags = ["aws", "opsworks"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:03:17Z
+date = 2016-01-27T02:34:30Z
 menu = ""
 weight = 1
 

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "ECS"
-description = "Deploys or updates a project on AWS ECS"
+description = "Deploy or update a project on AWS ECS"
 user = "drone-plugins"
 repo = "drone-ecs"
 image = "plugins/drone-ecs"
 tags = ["aws", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:03:42Z
+date = 2016-01-27T02:34:52Z
 menu = ""
 weight = 1
 

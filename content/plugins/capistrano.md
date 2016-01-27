@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Capistrano"
-description = "Deploy software with Capistrano"
+description = "Execute commands on a remote host through Capistrano"
 user = "drone-plugins"
 repo = "drone-capistrano"
 image = "plugins/drone-capistrano"
 tags = ["ruby", "capistrano"]
-categories = "publish"
+categories = "deploy"
 draft = false
-date = 2016-01-19T23:03:39Z
+date = 2016-01-27T02:34:49Z
 menu = ""
 weight = 1
 

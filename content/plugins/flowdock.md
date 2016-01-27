@@ -10,7 +10,7 @@ image = "plugins/drone-flowdock"
 tags = ["flowdock"]
 categories = "notify"
 draft = false
-date = 2016-01-19T23:01:02Z
+date = 2016-01-27T02:32:14Z
 menu = ""
 weight = 1
 

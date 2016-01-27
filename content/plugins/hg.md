@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Mercurial"
-description = "Clones a mercurial repository."
+description = "Clones a mercurial repository"
 user = "drone-plugins"
 repo = "drone-hg"
 image = "plugins/drone-hg"
 tags = ["scm", "vcs", "hg"]
 categories = "clone"
 draft = false
-date = 2016-01-19T23:01:05Z
+date = 2016-01-27T02:32:18Z
 menu = ""
 weight = 1
 

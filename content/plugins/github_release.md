@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "GitHub Release"
-description = "Publishs files and artifacts to GitHub Releases"
+description = "Publish files and artifacts to GitHub Releases"
 user = "drone-plugins"
 repo = "drone-github-release"
 image = "plugins/drone-github-release"
 tags = ["github", "release"]
 categories = "publish"
 draft = false
-date = 2016-01-19T23:02:28Z
+date = 2016-01-27T02:33:38Z
 menu = ""
 weight = 1
 

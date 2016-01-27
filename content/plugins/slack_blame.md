@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Slack Blame"
-description = "Send Slack messages directly to the author of the commit."
+description = "Send build status blame messages via Slack"
 user = "drone-plugins"
 repo = "drone-slack-blame"
 image = "plugins/drone-slack"
 tags = ["chat", "messaging"]
 categories = "notify"
 draft = false
-date = 2016-01-19T23:01:34Z
+date = 2016-01-27T02:32:50Z
 menu = ""
 weight = 1
 
@@ -20,6 +20,21 @@ Use the Slack Blame plugin to send a message to a Slack channel or through
 direct message when a build completes. You will need to supply Drone with an
 access token to the Slack API. You can create a new access token here:
 https://api.slack.com/web
+
+
+
+
+## Overview
+
+This plugin is responsible for sending build notifications to developers when
+they break the build, either directly through slackbot messages, or to the
+designated channel. This lets developers get feedback on their own feature
+branches without bombarding the main development channel as well as notifying
+the channel on important branches such as release or master.
+
+
+
+
 
 The following parameters are used to configure the notification
 

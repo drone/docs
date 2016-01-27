@@ -10,7 +10,7 @@ image = "plugins/drone-sqwiggle"
 tags = ["sqwiggle"]
 categories = "notify"
 draft = false
-date = 2016-01-19T23:03:23Z
+date = 2016-01-27T02:34:35Z
 menu = ""
 weight = 1
 

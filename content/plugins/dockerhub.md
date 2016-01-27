@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "DockerHub"
-description = "Triggers a DockerHub remote build."
+description = "Trigger a DockerHub remote build"
 user = "drone-plugins"
 repo = "drone-dockerhub"
 image = "plugins/drone-dockerhub"
 tags = ["docker"]
 categories = "publish"
 draft = false
-date = 2016-01-19T23:01:31Z
+date = 2016-01-27T02:32:47Z
 menu = ""
 weight = 1
 

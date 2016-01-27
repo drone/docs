@@ -10,7 +10,7 @@ image = "plugins/drone-elastic-beanstalk"
 tags = ["aws", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:02:42Z
+date = 2016-01-27T02:33:53Z
 menu = ""
 weight = 1
 

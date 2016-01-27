@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Scalingo"
-description = "Deploys or updates a project on Scalingo"
+description = "Deploy or update a project on Scalingo"
 user = "drone-plugins"
 repo = "drone-scalingo"
 image = "plugins/drone-scalingo"
 tags = ["scalingo"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:03:36Z
+date = 2016-01-27T02:34:47Z
 menu = ""
 weight = 1
 

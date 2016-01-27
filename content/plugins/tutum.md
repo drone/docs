@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Tutum"
-description = "Deploys or updates a project on Tutum"
+description = "Deploy or update a project on Tutum"
 user = "drone-plugins"
 repo = "drone-tutum"
 image = "plugins/drone-tutum"
 tags = ["docker", "image", "container"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:02:06Z
+date = 2016-01-27T02:33:17Z
 menu = ""
 weight = 1
 

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Rsync"
-description = "Uses rsync to upload files to a remote server"
+description = "Deploy or update a project via Rsync"
 user = "drone-plugins"
 repo = "drone-rsync"
 image = "plugins/drone-rsync"
 tags = ["deploy", "ssh", "rsync"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:01:12Z
+date = 2016-01-27T02:32:26Z
 menu = ""
 weight = 1
 

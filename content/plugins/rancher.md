@@ -10,7 +10,7 @@ image = "plugins/drone-rancher"
 tags = ["rancher", "docker"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:03:33Z
+date = 2016-01-27T02:34:44Z
 menu = ""
 weight = 1
 

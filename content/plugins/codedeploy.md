@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "CodeDeploy"
-description = "Deploys or updates a project on CodeDeploy"
+description = "Deploy or update a project on AWS CodeDeploy"
 user = "drone-plugins"
 repo = "drone-codedeploy"
 image = "plugins/drone-codedeploy"
 tags = ["aws", "codedeploy"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:03:20Z
+date = 2016-01-27T02:34:32Z
 menu = ""
 weight = 1
 

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Deis"
-description = "Deploys or updates a project on Deis"
+description = "Deploy or update a project on Deis"
 user = "drone-plugins"
 repo = "drone-deis"
 image = "plugins/drone-deis"
 tags = ["deis"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:02:36Z
+date = 2016-01-27T02:33:46Z
 menu = ""
 weight = 1
 

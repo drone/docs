@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Rubygems"
-description = "Publish gems to a Rubygems server"
+description = "Publish ruby gems to a Rubygems server"
 user = "drone-plugins"
 repo = "drone-rubygems"
 image = "plugins/drone-rubygems"
 tags = ["ruby", "gem", "rubygems"]
 categories = "publish"
 draft = false
-date = 2016-01-19T23:03:10Z
+date = 2016-01-27T02:34:23Z
 menu = ""
 weight = 1
 

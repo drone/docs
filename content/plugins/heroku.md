@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Heroku"
-description = "Deploys or updates a project on Heroku"
+description = "Deploy or update a project on Heroku"
 user = "drone-plugins"
 repo = "drone-heroku"
 image = "plugins/drone-heroku"
 tags = ["heroku"]
 categories = "deploy"
 draft = false
-date = 2016-01-19T23:01:25Z
+date = 2016-01-27T02:32:41Z
 menu = ""
 weight = 1
 

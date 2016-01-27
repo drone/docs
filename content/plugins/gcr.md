@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Google Container Registry"
-description = "Build and Publish images to the Google Container Registry."
+description = "Build and publish images to Google Container Registry"
 user = "drone-plugins"
 repo = "drone-gcr"
 image = "plugins/drone-gcr"
-tags = ["docker", "image", "container"]
+tags = ["docker", "image", "container", "google"]
 categories = "publish"
 draft = false
-date = 2016-01-19T23:02:00Z
+date = 2016-01-27T02:33:11Z
 menu = ""
 weight = 1
 

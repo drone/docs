@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Azure Web Apps"
-description = "Deploys or updates a project on Azure Web Apps"
+description = "Deploy or update a project on Azure Web Apps"
 user = "drone-plugins"
 repo = "drone-azure-web-apps"
 image = "plugins/drone-azure-web-apps"
 tags = ["azure", "web", "apps"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:39Z
+date = 2016-01-27T02:33:28Z
 menu = ""
 weight = 1
 

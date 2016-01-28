@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Trigger"
-description = "Trigger builds for downstream repositories"
+description = "Trigger downstream repository builds"
 user = "drone-plugins"
 repo = "drone-downstream"
 image = "plugins/drone-downstream"
 tags = ["trigger", "drone"]
 categories = "clone"
 draft = false
-date = 2016-01-14T18:45:18Z
+date = 2016-01-27T02:33:09Z
 menu = ""
 weight = 1
 

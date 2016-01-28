@@ -10,7 +10,7 @@ image = "plugins/drone-hipchat"
 tags = ["chat", "messaging", "hipchat"]
 categories = "notify"
 draft = false
-date = 2016-01-14T18:44:18Z
+date = 2016-01-27T02:32:08Z
 menu = ""
 weight = 1
 

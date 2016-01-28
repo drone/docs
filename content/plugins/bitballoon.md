@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "BitBalloon"
-description = "Deploys or updates a project on BitBalloon"
+description = "Deploy or update a project on BitBalloon"
 user = "drone-plugins"
 repo = "drone-bitballoon"
 image = "plugins/drone-bitballoon"
 tags = ["bitballoon", "html5"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:46:08Z
+date = 2016-01-27T02:33:56Z
 menu = ""
 weight = 1
 

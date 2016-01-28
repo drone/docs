@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Slack"
-description = "Send build status notifications to your Slack channel."
+description = "Send build status notifications via Slack"
 user = "drone-plugins"
 repo = "drone-slack"
 image = "plugins/drone-slack"
 tags = ["chat", "messaging"]
 categories = "notify"
 draft = false
-date = 2016-01-14T18:44:14Z
+date = 2016-01-27T02:32:05Z
 menu = ""
 weight = 1
 

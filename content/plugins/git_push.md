@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Git Push"
-description = "Deploys or updates a project via Git"
+description = "Deploy or update a project via Git"
 user = "drone-plugins"
 repo = "drone-git-push"
 image = "plugins/drone-git-push"
 tags = ["git"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:44:51Z
+date = 2016-01-27T02:32:44Z
 menu = ""
 weight = 1
 

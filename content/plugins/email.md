@@ -10,7 +10,7 @@ image = "plugins/drone-email"
 tags = ["email"]
 categories = "notify"
 draft = false
-date = 2016-01-14T18:44:44Z
+date = 2016-01-27T02:32:38Z
 menu = ""
 weight = 1
 

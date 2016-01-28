@@ -22,7 +22,7 @@ Configure a Postgres database backend:
 
 ```
 DATABASE_DRIVER=postgres
-DATABASE_CONFIG=postgres://root:pa55word@127.0.0.1:5432/postgres
+DATABASE_CONFIG=postgres://root:pa55word@127.0.0.1:5432/postgres?sslmode=disable
 ```
 
 See the official postgres connection string [documentation](http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING) for a complete set of configuration options and examples.

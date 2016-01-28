@@ -10,7 +10,7 @@ image = "plugins/drone-campfire"
 tags = ["campfire"]
 categories = "notify"
 draft = false
-date = 2016-01-14T18:46:54Z
+date = 2016-01-19T23:03:27Z
 menu = ""
 weight = 1
 

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Cloud 66"
-description = "Deploys or updates a project on Cloud 66"
+description = "Deploy or update a project on Cloud 66"
 user = "drone-plugins"
 repo = "drone-cloud66"
 image = "plugins/drone-cloud66"
 tags = ["cloud66"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:53Z
+date = 2016-01-27T02:33:41Z
 menu = ""
 weight = 1
 

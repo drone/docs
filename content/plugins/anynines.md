@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Anynines"
-description = "Deploys or updates a project on Anynines"
+description = "Deploy or update a project on Anynines"
 user = "drone-plugins"
 repo = "drone-anynines"
 image = "plugins/drone-anynines"
 tags = ["anynines", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:34Z
+date = 2016-01-27T02:33:23Z
 menu = ""
 weight = 1
 

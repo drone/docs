@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Git"
-description = "Clones a git repository."
+description = "Clones a git repository"
 user = "drone-plugins"
 repo = "drone-git"
 image = "plugins/drone-git"
 tags = ["scm", "vcs", "git"]
 categories = "clone"
 draft = false
-date = 2016-01-14T18:44:11Z
+date = 2016-01-27T02:32:02Z
 menu = ""
 weight = 1
 

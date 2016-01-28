@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "dotCloud"
-description = "Deploys or updates a project on dotCloud"
+description = "Deploy or update a project on dotCloud"
 user = "drone-plugins"
 repo = "drone-dotcloud"
 image = "plugins/drone-dotcloud"
 tags = ["dotcloud"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:45Z
+date = 2016-01-27T02:33:34Z
 menu = ""
 weight = 1
 

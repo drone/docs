@@ -10,7 +10,7 @@ image = "plugins/drone-gitter"
 tags = ["chat", "messaging", "gitter"]
 categories = "notify"
 draft = false
-date = 2016-01-14T18:45:06Z
+date = 2016-01-27T02:32:58Z
 menu = ""
 weight = 1
 

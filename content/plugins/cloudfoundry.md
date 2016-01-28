@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Cloud Foundry"
-description = "Deploys or updates a project on Cloud Foundry"
+description = "Deploy or update a project on Cloud Foundry"
 user = "drone-plugins"
 repo = "drone-cloudfoundry"
 image = "plugins/drone-cloudfoundry"
 tags = ["paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:45:42Z
+date = 2016-01-27T02:33:31Z
 menu = ""
 weight = 1
 

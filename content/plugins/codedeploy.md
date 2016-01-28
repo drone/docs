@@ -2,22 +2,22 @@
 
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
-title = "AWS CodeDeploy"
-description = "Deploys or updates a project on AWS CodeDeploy"
+title = "CodeDeploy"
+description = "Deploy or update a project on AWS CodeDeploy"
 user = "drone-plugins"
 repo = "drone-codedeploy"
-image = "plugins/drone-aws-codedeploy"
+image = "plugins/drone-codedeploy"
 tags = ["aws", "codedeploy"]
 categories = "deploy"
 draft = false
-date = 2016-01-14T18:46:46Z
+date = 2016-01-27T02:34:32Z
 menu = ""
 weight = 1
 
 +++
 
-Use this plugin for deplying an application to AWS CodeDeploy. You can override
-the default configuration with the following parameters:
+Use this plugin for deplying an application to CodeDeploy. You can override the
+default configuration with the following parameters:
 
 * `access_key` - AWS access key ID
 * `secret_key` - AWS secret access key
@@ -41,7 +41,7 @@ The following is a sample configuration in your .drone.yml file:
 
 ```yaml
 deploy:
-  aws_codedeploy:
+  codedeploy:
     access_key: 970d28f4dd477bc184fbd10b376de753
     secret_key: 9c5785d3ece6a9cdefa42eb99b58986f9095ff1c
     region: us-east-1

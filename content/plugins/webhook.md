@@ -10,7 +10,7 @@ image = "plugins/drone-webhook"
 tags = ["notify", "webhook", "rest", "json", "hook"]
 categories = "notify"
 draft = false
-date = 2016-01-14T18:45:24Z
+date = 2016-01-27T02:33:14Z
 menu = ""
 weight = 1
 

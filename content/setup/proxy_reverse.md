@@ -13,7 +13,7 @@ Using a reverse proxy with Drone is entirely optional. When using a reverse prox
 
 # Caddy
 
-Example [caddy server](caddyserver.com/docs) reverse proxy configuration:
+Example [caddy server](https://caddyserver.com/) reverse proxy configuration:
 
 ```
 drone.mycomopany.com {

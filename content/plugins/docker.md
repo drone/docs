@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Docker"
-description = "Build and Publish images to a Docker registry."
+description = "Build and publish images to a Docker registry"
 user = "drone-plugins"
 repo = "drone-docker"
 image = "plugins/drone-docker"
 tags = ["docker", "image", "container"]
 categories = "publish"
 draft = false
-date = 2016-01-14T18:44:30Z
+date = 2016-01-27T02:32:22Z
 menu = ""
 weight = 1
 

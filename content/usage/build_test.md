@@ -92,7 +92,7 @@ environment:
 
 # Commands
 
-Build commands execute sequentially in a shell environment with the `-x` flag. The `-x` flag instructs the shell environment to exit immediately if a command returns a non-zero exit code.
+Build commands execute sequentially in a shell environment with the `-e` flag. The `-e` flag instructs the shell environment to exit immediately if a command returns a non-zero exit code.
 
 ```yaml
 ---

@@ -11,7 +11,7 @@ toc = true
 
 This document provides high-level instructions for configuring Drone to work with a corporate proxy server. This may be required when running Drone behind a **corporate firewall**.
 
-# Http Proxy
+# HTTP Proxy
 
 The HTTP_PROXY environment variable holds the hostname or IP address of your proxy server. You can specify the HTTP_PROXY variables in your server configuration file or as an environment variable.
 

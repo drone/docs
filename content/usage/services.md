@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-Drone uses the `compose` section of the `.drone.yml` to specify supporting containers (ie service containers) that should be started and linked to your build container. The `compose` section of the `.drone.yml` is modeled the after `docker-compose.yml`:
+Drone uses the `compose` section of the `.drone.yml` to specify supporting containers (ie service containers) that should be started and linked to your build container. The `compose` section of the `.drone.yml` is modeled after the `docker-compose.yml`:
 
 ```yaml
 ---

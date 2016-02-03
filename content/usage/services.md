@@ -55,6 +55,17 @@ compose:
     pull: true
 ```
 
+# Workspace
+
+The build workspace is automatically mounted into each service container in the ```/drone/src/<repository>``` directory inside the ```/drone``` volume.
+If needed, this provides access to the source code and build artifacts.
+
+Here is an example when using Github:
+
+      /drone/src/github.com/octocat/hello-world
+
+See also: [Build & Test](../build_test/#workspace:fb92aa3346185c57f15afda861d465a3)
+
 # Networking
 
 Service containers are available at the `localhost` or `127.0.0.1` address.

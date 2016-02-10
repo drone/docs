@@ -45,7 +45,19 @@ image: library/postgres:9.2
 image: index.docker.io/library/postgres:9.2
 ```
 
-Use the pull attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:
+Provide your registry credentials if your service container image is private:
+
+```yaml
+---
+compose:
+  database:
+    image: myrepo/customdb:latest
+    auth_config:
+      username: octocat
+      password: password
+```
+
+Use the `pull` attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:
 
 ```yaml
 ---

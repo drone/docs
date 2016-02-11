@@ -106,7 +106,7 @@ drone build last octocat/hello-world
 Restart a previously executed build by build number:
 
 ```
-drone start octocat/hello-world 35
+drone build start octocat/hello-world 35
 ```
 
 # User Commands

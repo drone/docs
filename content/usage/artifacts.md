@@ -55,6 +55,17 @@ publish:
       branch: [master, release]
 ```
 
+Execute a publish step if the branch is _not_ `master`:
+
+```yaml
+---
+publish:
+  rubygems:
+    api_key: e123f83113f79eb17308bbf1ca8885bb
+    when:
+      branch: "!master"
+```
+
 Execute a publish step when the commit is a `tag`:
 
 ```yaml

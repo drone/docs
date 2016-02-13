@@ -10,7 +10,7 @@ image = "plugins/drone-git"
 tags = ["scm", "vcs", "git"]
 categories = "clone"
 draft = false
-date = 2016-01-27T02:32:02Z
+date = 2016-02-13T08:58:07Z
 menu = ""
 weight = 1
 

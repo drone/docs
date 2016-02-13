@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "NPM"
-description = "Publish a node package to the npm registry."
+description = "Publish files and artifacts to a NPM registry"
 user = "drone-plugins"
 repo = "drone-npm"
 image = "plugins/drone-node"
 tags = ["publish", "node"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:32:53Z
+date = 2016-02-13T08:59:09Z
 menu = ""
 weight = 1
 

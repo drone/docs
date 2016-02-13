@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Artifactory"
-description = "Publish Artifacts to Artifactory"
+description = "Publish files and artifacts to Artifactory"
 user = "drone-plugins"
 repo = "drone-artifactory"
 image = "plugins/drone-artifactory"
-tags = ["publish", "artifactory"]
+tags = ["artifactory"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:35:01Z
+date = 2016-02-13T09:01:55Z
 menu = ""
 weight = 1
 
@@ -45,12 +45,14 @@ publish:
     pom: pom.xml 
     repo_key: libs-snapshot-local
     files: 
-      - pom.xml
       - target/*.jar
       - target/*.war
 ```
 
 ## pom.xml deployment
 
-In the example above, pom.xml will be deployed as '<groupId>-<artifactId>-<version>.pom'
+If a pom parameter is specified it will be automatically deployed. It is not necessary to specify the pom under the files parameter. 
+
+In the example above, pom.xml will be deployed as ```<groupId>-<artifactId>-<version>.pom```
+
 

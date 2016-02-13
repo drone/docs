@@ -10,7 +10,7 @@ image = "plugins/drone-codedeploy"
 tags = ["aws", "codedeploy"]
 categories = "deploy"
 draft = false
-date = 2016-01-27T02:34:32Z
+date = 2016-02-13T09:01:13Z
 menu = ""
 weight = 1
 

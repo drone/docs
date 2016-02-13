@@ -10,7 +10,7 @@ image = "plugins/drone-rubygems"
 tags = ["ruby", "gem", "rubygems"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:34:23Z
+date = 2016-02-13T09:00:59Z
 menu = ""
 weight = 1
 

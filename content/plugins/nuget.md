@@ -2,15 +2,15 @@
 
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
-title = "Nuget"
-description = "Publish Artifacts to a NuGet repository"
+title = "NuGet"
+description = "Publish files and artifacts to NuGet repository"
 user = "drone-plugins"
 repo = "drone-nuget"
 image = "plugins/drone-nuget"
-tags = ["publish", "nuget"]
+tags = ["nuget"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:35:05Z
+date = 2016-02-13T09:01:59Z
 menu = ""
 weight = 1
 

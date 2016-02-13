@@ -10,7 +10,7 @@ image = "plugins/drone-irc"
 tags = ["chat", "messaging", "irc"]
 categories = "notify"
 draft = false
-date = 2016-01-27T02:32:11Z
+date = 2016-02-13T08:58:18Z
 menu = ""
 weight = 1
 

@@ -10,7 +10,7 @@ image = "plugins/drone-gcs"
 tags = ["publish", "artifacts", "google compute"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:33:50Z
+date = 2016-02-13T09:00:21Z
 menu = ""
 weight = 1
 

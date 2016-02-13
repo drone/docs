@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Rancher"
-description = "Trigger a Rancher deployment."
+description = "Deploy or update a project on Rancher"
 user = "drone-plugins"
 repo = "drone-rancher"
 image = "plugins/drone-rancher"
 tags = ["rancher", "docker"]
 categories = "deploy"
 draft = false
-date = 2016-01-27T02:34:44Z
+date = 2016-02-13T09:01:32Z
 menu = ""
 weight = 1
 
@@ -27,6 +27,7 @@ The following parameters are used to configure this plugin:
 - `docker_image` - new image to assign to service, including tag (`drone/drone:latest`)
 - `start_first` - start the new container before stopping the old one, defaults to `true`
 - `confirm` - auto confirm the service upgrade if successful, defaults to `false`
+- `timeout` - the maximum wait time in seconds for the service to upgrade, default to `30`
 
 The following is a sample Rancher configuration in your `.drone.yml` file:
 

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "OpsWorks"
-description = "Deploys or updates a project on OpsWorks"
+description = "Deploy or update a project on AWS OpsWorks"
 user = "drone-plugins"
 repo = "drone-opsworks"
 image = "plugins/drone-opsworks"
 tags = ["aws", "opsworks"]
 categories = "deploy"
 draft = false
-date = 2016-01-27T02:34:30Z
+date = 2016-02-13T09:01:09Z
 menu = ""
 weight = 1
 

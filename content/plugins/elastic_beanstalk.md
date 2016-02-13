@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Elastic Beanstalk"
-description = "Deploys or updates a project on AWS Elastic Beanstalk"
+description = "Deploy or update a project on AWS Elastic Beanstalk"
 user = "drone-plugins"
 repo = "drone-elastic-beanstalk"
 image = "plugins/drone-elastic-beanstalk"
 tags = ["aws", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-01-27T02:33:53Z
+date = 2016-02-13T09:00:25Z
 menu = ""
 weight = 1
 
@@ -29,6 +29,8 @@ override the default configuration with the following parameters:
 * `process` - Preprocess and validate the manifest, defaults to `false`
 * `bucket_name` - Bucket for `S3` source bundle
 * `bucket_key` - Key for `S3` source bundle
+* `environment_update` - Flag whether to update ElasticBeansTalk environment with the new version
+* `environment_name` - Environment Name (optional), if update_environment true
 
 ## Example
 

@@ -3,14 +3,14 @@
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
 title = "Bintray"
-description = "Upload one or more artifacts to Bintray on build completion."
+description = "Publish files and artifacts to Bintray"
 user = "drone-plugins"
 repo = "drone-bintray"
 image = "plugins/drone-bintray"
 tags = ["publish", "bintray", "artifacts"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:34:41Z
+date = 2016-02-13T09:01:27Z
 menu = ""
 weight = 1
 

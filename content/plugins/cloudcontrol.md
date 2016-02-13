@@ -10,7 +10,7 @@ image = "plugins/drone-cloudcontrol"
 tags = ["cloud", "control"]
 categories = "deploy"
 draft = false
-date = 2016-01-27T02:34:12Z
+date = 2016-02-13T09:00:48Z
 menu = ""
 weight = 1
 

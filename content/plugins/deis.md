@@ -10,7 +10,7 @@ image = "plugins/drone-deis"
 tags = ["deis"]
 categories = "deploy"
 draft = false
-date = 2016-01-27T02:33:46Z
+date = 2016-02-13T09:00:18Z
 menu = ""
 weight = 1
 

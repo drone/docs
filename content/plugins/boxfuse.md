@@ -10,7 +10,7 @@ image = "plugins/drone-boxfuse"
 tags = ["boxfuse", "aws", "jvm"]
 categories = "deploy"
 draft = false
-date = 2016-01-27T02:34:07Z
+date = 2016-02-13T09:00:42Z
 menu = ""
 weight = 1
 

@@ -10,7 +10,7 @@ image = "plugins/drone-downstream"
 tags = ["trigger", "drone"]
 categories = "clone"
 draft = false
-date = 2016-01-27T02:33:09Z
+date = 2016-02-13T08:59:29Z
 menu = ""
 weight = 1
 

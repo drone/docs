@@ -10,7 +10,7 @@ image = "plugins/drone-hipchat"
 tags = ["chat", "messaging", "hipchat"]
 categories = "notify"
 draft = false
-date = 2016-01-27T02:32:08Z
+date = 2016-02-13T08:58:14Z
 menu = ""
 weight = 1
 
@@ -21,6 +21,7 @@ need to supply Drone with a HipChat authentication token. You can learn more
 about authentication tokens [here](https://www.hipchat.com/docs/apiv2/auth). You
 can override the default configuration with the following parameters:
 
+* `url` - HipChat server URL, defaults to `https://api.hipchat.com`
 * `auth_token` - HipChat API token
 * `room_id_or_name` - ID or URL encoded name of the room
 * `from` - A label to be shown, defaults to `drone`

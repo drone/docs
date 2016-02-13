@@ -2,15 +2,15 @@
 
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
-title = "Sftp"
-description = "Publish files to an SFTP server"
+title = "SFTP"
+description = "Publish files and artifacts via SFTP"
 user = "drone-plugins"
 repo = "drone-sftp"
 image = "plugins/drone-sftp"
-tags = ["publish", "sftp"]
+tags = ["sftp", "server"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:35:08Z
+date = 2016-02-13T09:02:03Z
 menu = ""
 weight = 1
 

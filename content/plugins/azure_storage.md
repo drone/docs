@@ -10,7 +10,7 @@ image = "plugins/drone-azure-storage"
 tags = ["azure", "storage"]
 categories = "publish"
 draft = false
-date = 2016-01-27T02:32:33Z
+date = 2016-02-13T08:58:43Z
 menu = ""
 weight = 1
 

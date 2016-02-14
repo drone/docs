@@ -9,6 +9,8 @@ toc = true
 
 # Overview
 
+> Warning: drone does not prevent you from inadvertently exposing your secrets to the world. Please read this section of the documentation carefully to ensure you follow best practices and avoid exposing sensitive data.
+
 Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file. This document assumes you have installed the Drone [command line tools](/devs/cli).
 
 Start with a plaintext Yaml file that defines your secrets. For demonstration purposes let's assume this file is stored on disk and named `secrets.yml`. Secrets are defined in the `environment` section of this file:
@@ -99,7 +101,9 @@ Unable to validate Yaml checksum.
 
 # Pull Requests
 
-Secret variables are not injected into to the `build` section of the `.drone.yml` if your repository is public and the build is a pull request. This is for security purposes to prevent a malicious pull request from leaking your secrets.
+Secret variables are also injected into to the `build` and `compose` sections of the `.drone.yml` for pull requests by default if the `.drone.sec` checksum matches. If you need pull requests to exhibit different behavior for security purposes, utilize the [conditions]({{< relref "build_test.md#conditions" >}}) `pull_request` event. This can prevent a malicious pull request from leaking your secrets.
+
+Secrets will also be injected into the notify section as well, and could in theory be injected into the clone and cache sections if custom plugins are used.
 
 # Global Secrets
 

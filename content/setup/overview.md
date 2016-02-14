@@ -7,6 +7,21 @@ menu = "installation"
 toc = true
 +++
 
+# Features support
+
+| Feature/Remote            | GitHub  | GitLab  | BitBucket           | Gogs    |
+|---------------------------|---------|---------|---------------------|---------|
+| Supported version         | --/--   | 8.2+    | --/--               | --/--   |
+| VCS                       | **git** | **git** | **git ( only )**    | **git** |
+| Auth method               | ouath2  | oauth2  | oauth2              | manual  |
+| Push events               | **yes** | **yes** | **yes**             | **yes** |
+| Push tags events          | **yes** | **yes** | **yes**             | no      |
+| Merge requests            | **yes** | **yes** | **partially**       | no      |
+| Commit statuses           | **yes** | **yes** | **yes**             | no      |
+| Restrict by organizations | **yes** | no      | **yes**             | no      |
+
+*partially* - Drone can fetch merge requests direct from source repository, from BitBucket, but if user who activates drone on target repo has no access to source repo, git clone fails
+
 # Download
 
 Drone ships as a single binary file and is distributed as a minimalist 20 MB Docker image. Download the official Drone image from DockerHub:

@@ -13,7 +13,7 @@ toc = true
 
 Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file. This document assumes you have installed the Drone [command line tools](/devs/cli).
 
-Start with a plaintext Yaml file that defines your secrets. For demonstration purposes let's assume this file is stored on disk and named `secrets.yml`. Secrets are defined in the `environment` section of this file:
+Start with a plaintext YAML file that defines your secrets. For demonstration purposes let's assume this file is stored on disk and named `secrets.yml`. Secrets are defined in the `environment` section of this file:
 
 ```yaml
 ---
@@ -46,7 +46,7 @@ git commit -m "added .drone.sec file"
 
 # Interpolation
 
-Secrets are injected directly into the Yaml at runtime using the `$$` notation:
+Secrets are injected directly into the YAML at runtime using the `$$` notation:
 
 ```yaml
 ---
@@ -74,7 +74,7 @@ build:
 ```
 
 Secrets that are multiple lines or contain special characters should be escaped to
-avoid Yaml parsing errors post-interpolation. You can escape strings by wrapping
+avoid YAML parsing errors post-interpolation. You can escape strings by wrapping
 the variable in quotes as shown below:
 
 ```yaml
@@ -95,7 +95,7 @@ Drone automatically calculates and stores a checksum of your `.drone.yml` file i
 Invalid checksums result in the following error at the top of your build logs:
 
 ```
-Unable to validate Yaml checksum.
+Unable to validate YAML checksum.
 2ca66eb7be89f31afdebb197174abfa6dd14866ecbf9e552f44be5bd3244d08a
 ```
 
@@ -130,6 +130,6 @@ deploy:
 Secrets are not injected into your build if the checksum cannot be validated. This happens when you change your `.drone.yml` file without re-generating a `.drone.sec` file resulting in the following error message at the top of your build logs:
 
 ```
-Unable to validate Yaml checksum.
+Unable to validate YAML checksum.
 2ca66eb7be89f31afdebb197174abfa6dd14866ecbf9e552f44be5bd3244d08a
 ```

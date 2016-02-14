@@ -46,7 +46,7 @@ For the use case we expose the following additional parameters:
 * `template` - Handlebars template to create a custom payload body. See [docs](http://handlebarsjs.com/)
 * `content_type` - HTTP request content type
 
-Example configuration that generate a custom Yaml payload:
+Example configuration that generate a custom YAML payload:
 
 ```yaml
 notify:

@@ -22,7 +22,7 @@ notify:
 
 # Plugin Input
 
-Plugins receive a JSON payload as a command line argument that includes repository and build details. Plugin configuration parameters from the Yaml file are stored in the `vargs` section of the document.
+Plugins receive a JSON payload as a command line argument that includes repository and build details. Plugin configuration parameters from the YAML file are stored in the `vargs` section of the document.
 
 Example plugin input:
 

@@ -206,7 +206,7 @@ DELETE /api/repos/{owner}/{name}
 
 # Encrypt repo secrets
 
-Encryptes a Yaml file with secret environment variables for secure public storage.
+Encryptes a YAML file with secret environment variables for secure public storage.
 
 ```
 POST /api/repos/{owner}/{name}/encrypt

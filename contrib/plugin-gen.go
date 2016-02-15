@@ -27,7 +27,7 @@ var (
 	repo  = flag.String("repo", "drone-slack", "github repository")
 )
 
-type Yaml struct {
+type YAML struct {
 	Plugin Plugin `yaml:"plugin"`
 }
 
@@ -64,7 +64,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	conf := Yaml{}
+	conf := YAML{}
 	err = yaml.Unmarshal(raw, &conf)
 	if err != nil {
 		log.Fatal(err)

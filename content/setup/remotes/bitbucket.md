@@ -1,12 +1,12 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Bitbucket"
+title = "Bitbucket Cloud"
 weight = 1
 menu = "remotes"
 +++
 
-Drone comes with built-in support for Bitbucket. To enable Bitbucket you should configure the Bitbucket driver using the following environment variables:
+Drone comes with built-in support for Bitbucket Cloud. Bitbucket Server is not yet supported. To enable Bitbucket Cloud you should configure the Bitbucket driver using the following environment variables:
 
 ```bash
 REMOTE_DRIVER=bitbucket

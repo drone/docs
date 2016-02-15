@@ -17,7 +17,7 @@ Drone uses Remote Drivers to integrate and execute builds against your code host
 
 While the majority of user and developer scrutiny has been directed at our GitHub driver, the experience with our other supported services is solid. Here is where each of the remote drivers currently stands:
 
-| Feature/Remote            | GitHub  | GitLab  | BitBucket           | Gogs    |
+| Feature/Remote            | GitHub  | GitLab  | BitBucket Cloud     | Gogs    |
 |---------------------------|---------|---------|---------------------|---------|
 | Supported version         | --/--   | 8.2+    | --/--               | --/--   |
 | VCS                       | **git** | **git** | **git ( only )**    | **git** |

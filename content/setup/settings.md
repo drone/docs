@@ -9,6 +9,16 @@ toc = true
 
 Unless otherwise specified, the settings described below are all environment variables.
 
+# Remote Driver Settings
+
+## REMOTE_DRIVER
+
+Set this to whichever remote driver you're using. Drone will use your remote for authentication, and will add webhooks to your projects to facilitate the build process. See [Remote Drivers]({{< relref "remotes.md" >}}) for possible values.
+
+## REMOTE_CONFIG
+
+The value of this setting is highly dependent upon the remote driver chosen. See [Remote Drivers]({{< relref "remotes.md" >}}) for more details.
+
 # Database Settings
 
 See the [Database]({{< relref "database.md" >}}) page for more details on selecting and configuring a database engine for Drone.
@@ -71,16 +81,3 @@ PUBLIC_MODE=true
 ```
 
 Enabling this feature on a public network will leak sensitive information in the build logs.
-
-# REMOTE_DRIVER
-
-Set this to whichever remote driver you're using. Drone will use your remote for authentication, and will add webhooks to your projects to facilitate the build process. Here are the possible choices:
-
-* `bitbucket`
-* `github`
-* `gitlab`
-* `gogs`
-
-# REMOTE_CONFIG
-
-The value of this setting is highly dependent upon the remote driver chosen. See [Remote Drivers]({{< relref "remotes.md" >}}) for more details.

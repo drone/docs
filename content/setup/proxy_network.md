@@ -2,7 +2,7 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Network Proxy"
-weight = 9
+weight = 10
 menu = "installation"
 toc = true
 +++

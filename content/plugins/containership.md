@@ -2,7 +2,7 @@
 
 # THIS DOCUMENT IS AUTOMATICALLY GENERATED. PLEASE DO NOT EDIT
 
-title = "Anynines"
+title = "ContainerShip"
 description = "Deploy or update a project on ContainerShip"
 user = "drone-plugins"
 repo = "drone-containership"
@@ -10,7 +10,7 @@ image = "plugins/drone-containership"
 tags = ["containership", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-02-13T09:02:13Z
+date = 2016-02-16T06:51:45Z
 menu = ""
 weight = 1
 

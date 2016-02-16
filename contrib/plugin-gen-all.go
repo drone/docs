@@ -10,7 +10,7 @@ import (
 	"os"
 	"os/exec"
 
-	"code.google.com/p/goauth2/oauth"
+	"golang.org/x/oauth2"
 	"github.com/google/go-github/github"
 )
 
@@ -22,10 +22,9 @@ var (
 func main() {
 	flag.Parse()
 
-	t := &oauth.Transport{
-		Token: &oauth.Token{AccessToken: *token},
-	}
-	client := github.NewClient(t.Client())
+	tokenSource := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: *token})
+	httpClient := oauth2.NewClient(oauth2.NoContext, tokenSource)
+	client := github.NewClient(httpClient)
 
 	opts := &github.RepositoryListByOrgOptions{}
 	opts.PerPage = 100

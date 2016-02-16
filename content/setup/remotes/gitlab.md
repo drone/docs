@@ -42,6 +42,7 @@ This section lists all connection options used in the connection string format. 
 * `skip_verify=false` skip ca verification if self-signed certificate. Defaults to false for security reasons.
 * `hide_archives=false` hide projects archived in GitLab from the listing.
 * `clone_mode=token` a strategy for clone authorization, by default use repo token, but can be changed to `oauth` ( This is not secure, because your user token, with full access to your gitlab account will be written to .netrc, and it can be read by all who have access to project builds )
+* `search=true` a strategy for search project, by default `false`, use if you have apache without `AllowEncodedSlashes NoDecode` option
 
 # Gitlab registration
 

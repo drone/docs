@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"code.google.com/p/goauth2/oauth"
+	"golang.org/x/oauth2"
 	"github.com/BurntSushi/toml"
 	"github.com/google/go-github/github"
 	"gopkg.in/yaml.v2"
@@ -49,10 +49,9 @@ type Plugin struct {
 func main() {
 	flag.Parse()
 
-	t := &oauth.Transport{
-		Token: &oauth.Token{AccessToken: *token},
-	}
-	client := github.NewClient(t.Client())
+	tokenSource := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: *token})
+	httpClient := oauth2.NewClient(oauth2.NoContext, tokenSource)
+	client := github.NewClient(httpClient)
 
 	dst := fmt.Sprintf("static/logos/%s.svg", strings.Replace(*repo, "drone-", "", -1))
 	err := download(client, "logo.svg", dst)

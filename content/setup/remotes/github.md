@@ -4,6 +4,7 @@ draft = false
 title = "GitHub"
 weight = 2
 menu = "remotes"
+toc = true
 +++
 
 Drone comes with built-in support for GitHub and GitHub Enterprise. To enable GitHub you should configure the GitHub driver using the following environment variables:
@@ -44,3 +45,25 @@ This section lists all connection options used in the connection string format. 
 You must register your application with GitHub in order to generate a Client and Secret. Navigate to your account settings and choose Applications from the menu, and click Register new application.
 
 Please use `http://drone.mycompany.com/authorize` as the Authorization callback URL.
+
+# Remote Driver Feature Chart
+
+Since the majority of our users (including Drone itself) use GitHub, the 
+GitHub remote is in great shape. At any given time, Drone should work well 
+with both GitHub and GitHub Enterprise.
+
+| Feature/Remote            | GitHub                       |
+|---------------------------|------------------------------|
+| Supported versions        | GitHub and GitHub Enterprise |
+| VCS                       | git                          |
+| Auth method               | ouath2                       |
+| Push events               | yes                          |
+| Push tags events          | yes                          |
+| Merge requests            | yes                          |
+| Commit statuses           | yes                          |
+| Restrict by organizations | yes                          |
+
+# Next Steps
+
+Once you have configured your Remote Driver, it's time to [Select and 
+Configure a Database]({{< relref "setup/overview.md#select-and-configure-a-database" >}}).

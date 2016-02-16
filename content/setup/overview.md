@@ -26,11 +26,11 @@ REMOTE_DRIVER=github
 REMOTE_CONFIG=https://github.com?client_id=....&client_secret=....
 ```
 
-For a full list of possible settings, see our [Settings Reference]({{< relref "settings.md" >}}). You may want to come back to this after completing your initial setup process.
+We'll be adding to this file as we progress through the setup process. 
 
 # Select and Configure a Remote Driver
 
-With your `dronerc` file created, refer to the [Remote Drivers]({{< relref "remotes.md" >}}) page for configuring Drone to work with your code hosting system of choice.
+With your `dronerc` file created, it's time to configure your [Remote Drivers] ({{< relref "remotes.md" >}}). We currently have support for [GitHub]({{< relref "github.md" >}}), [Bitbucket]({{< relref "bitbucket.md" >}}), [GitLab]({{< relref "gitlab.md" >}}), and [Gogs]({{< relref "gogs.md" >}}).
 
 # Select and Configure a Database
 

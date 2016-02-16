@@ -4,6 +4,7 @@ draft = false
 title = "GitLab"
 weight = 3
 menu = "remotes"
+toc = true
 +++
 
 > GitLab support is experimental and unstable due to high variation in GitLab configurations and versions. We highly recommend using [Gogs](https://github.com/gogits/gogs) as an alternative to GitLab.
@@ -46,3 +47,24 @@ This section lists all connection options used in the connection string format. 
 You must register your application with GitLab in order to generate a Client and Secret. Navigate to your account settings and choose Applications from the menu, and click New Application.
 
 Please use `http://drone.mycompany.com/authorize` as the Authorization callback URL.
+
+# Remote Driver Feature Chart
+
+Drone is relatively well-supported on GitLab, though compatibility is is 
+sometimes broken due to changes in GitLab from version to version.
+
+| Feature/Remote            | GitLab  |
+|---------------------------|---------|
+| Supported version         | 8.2+    |
+| VCS                       | git     |
+| Auth method               | oauth2  |
+| Push events               | yes     |
+| Push tags events          | yes     |
+| Merge requests            | yes     |
+| Commit statuses           | yes     |
+| Restrict by organizations | **no**  |
+
+# Next Steps
+
+Once you have configured your Remote Driver, it's time to [Select and 
+Configure a Database]({{< relref "setup/overview.md#select-and-configure-a-database" >}}).

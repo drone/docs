@@ -44,6 +44,7 @@ build:
   auth_config:
     username: octocat
     password: password
+    email: octocat@github.com
 ```
 
 Use the `pull` attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:

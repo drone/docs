@@ -7,9 +7,10 @@ menu = "usage"
 toc = true
 +++
 
-# Overview
+> WARNING: drone does not prevent you from inadvertently exposing your secrets to the world. Please read this section of the documentation carefully to ensure you follow best practices and avoid exposing sensitive data.
 
-> Warning: drone does not prevent you from inadvertently exposing your secrets to the world. Please read this section of the documentation carefully to ensure you follow best practices and avoid exposing sensitive data.
+
+# Overview
 
 Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file. This document assumes you have installed the Drone [command line tools](/devs/cli).
 
@@ -101,9 +102,43 @@ Unable to validate YAML checksum.
 
 # Pull Requests
 
-Secret variables are also injected into to the `build` and `compose` sections of the `.drone.yml` for pull requests by default if the `.drone.sec` checksum matches. If you need pull requests to exhibit different behavior for security purposes, utilize the [conditions]({{< relref "build_test.md#conditions" >}}) `pull_request` event. This can prevent a malicious pull request from leaking your secrets.
+Drone injects secrets for all build types, including pull requests, as long as the checksum validation passes. You should avoid injecting secrets into the build section of the YAML and inadvertently exposing your secrets to malicious pull requests.
 
-Secrets will also be injected into the notify section as well, and could in theory be injected into the clone and cache sections if custom plugins are used.
+**This is bad** because a malicious pull request could gain access to your secrets:
+
+```yaml
+---
+build:
+  image: node
+  environment:
+    PASSWORD: $$PASSWORD
+  commands:
+    - npm install
+    - npm run tests
+    - npm run integration
+```
+
+**This is better** because the build is split into sections. Secrets are injected into a section of the build that is not executed for pull requests:
+
+```yaml
+---
+build:
+  unit_tests:
+    image: node
+    commands:
+      - npm install
+      - npm run tests
+
+  integration_tests:
+    image: node
+    environment:
+      PASSWORD: $$PASSWORD
+    commands:
+      - npm run integration
+    when:
+      event: push
+```
+
 
 # Global Secrets
 
@@ -124,6 +159,7 @@ deploy:
     channel: foo
     token: $$SLACK_TOKEN
 ```
+
 
 # Common Issues
 

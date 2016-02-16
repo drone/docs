@@ -62,7 +62,7 @@ sometimes broken due to changes in GitLab from version to version.
 | Push tags events          | yes     |
 | Merge requests            | yes     |
 | Commit statuses           | yes     |
-| Restrict by organizations | **no**  |
+| Restrict by organizations | yes     |
 
 # Next Steps
 

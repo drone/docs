@@ -117,6 +117,21 @@ compose:
 
 For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
 
+# Devices
+
+Use the `devices` attribute to map devices from your host machine into your service container. These are [Docker devices](https://docs.docker.com/compose/compose-file/#devices) and therefore use the same declaration conventions:
+
+```yaml
+---
+compose:
+  database:
+    image: postgres
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+```
+
+For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
+
 # Privileged Mode
 
 Use the privileged attribute to run your service in a privileged Docker container:

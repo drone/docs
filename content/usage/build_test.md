@@ -204,7 +204,7 @@ For security reasons this option is only available to trusted repositories. Trus
 
 # Devices
 
-Use the `devices` attribute to map devices from your host machine into your service container. These are [Docker devices](https://docs.docker.com/compose/compose-file/#devices) and therefore use the same declaration conventions:
+Use the `devices` attribute to map devices from your host machine into your build container. These are [Docker devices](https://docs.docker.com/compose/compose-file/#devices) and therefore use the same declaration conventions:
 
 ```yaml
 ---

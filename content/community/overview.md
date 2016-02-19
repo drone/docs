@@ -15,16 +15,25 @@ To stay current with the latest releases and other announcement, see our
 
 # Get Engaged
 
-We maintain a [Drone Discussion](http://discuss.drone.io/) site for the
-community to interact, get help, and plan future development.
+There are two primary ways to interact with other Drone users and developer:
+
+* We have Gitter rooms for [users](https://gitter.im/drone/drone) and Drone 
+  [developers](https://gitter.im/drone/drone-dev). These are great when you
+  want to talk in real-time.
+* We also have a [Drone Discussion](http://discuss.drone.io/) site, which
+  we use to for [general discussion](https://discuss.drone.io/c/user-discussion), 
+  [support](https://discuss.drone.io/c/help), and sharing 
+  [Tips and How-To's](https://discuss.drone.io/c/how-tos).
 
 # Getting Help
 
+If you are having trouble getting started or figuring something out, stop by 
+the [Drone Discussion](http://discuss.drone.io/) site (in particular, the
+[Help!](http://discuss.drone.io/c/help) section) or our
+[drone/drone](https://gitter.im/drone/drone) Gitter room.
+
 If you suspect that you have found a bug, file an issue on the Drone 
-[issue tracker](https://github.com/drone/drone/issues). If you are having
-trouble getting started or figuring something out, stop by the 
-[Drone Discussion](http://discuss.drone.io/) site (in particular, the
-[Help!](http://discuss.drone.io/c/help) section).
+[issue tracker](https://github.com/drone/drone/issues).
 
 # Contributing to Drone
 

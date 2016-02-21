@@ -9,3 +9,4 @@ Drone provides a simple and hackable continuous integration platform. Use the of
 * [drone-go](https://github.com/drone/drone-go)
 * [drone-python](https://github.com/drone/drone-python)
 * [drone-node](https://github.com/drone/drone-node)
+* [drone-ruby](https://github.com/drone/drone-ruby)

@@ -10,7 +10,7 @@ image = "plugins/drone-downstream"
 tags = ["trigger", "drone"]
 categories = "clone"
 draft = false
-date = 2016-02-13T08:59:29Z
+date = 2016-02-21T08:35:06Z
 menu = ""
 weight = 1
 
@@ -58,6 +58,23 @@ notify:
       - octocat/Spoon-Knife
     token: e3b0c44298fc1c149afbf4
     fork: true
+    when:
+      event: push
+      branch: master
+      success: true
+```
+
+If you want to trigger a drone build on a custom server, you can use the `server` argument. Do not forget to include the protocol for it to work.
+
+```yaml
+notify:
+  downstream:
+    repositories:
+      - octocat/Hello-World
+      - octocat/Spoon-Knife
+    token: e3b0c44298fc1c149afbf4
+    fork: true
+    server: https://ci.exmaple.com
     when:
       event: push
       branch: master

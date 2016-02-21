@@ -10,7 +10,7 @@ image = "plugins/drone-webhook"
 tags = ["notify", "webhook", "rest", "json", "hook"]
 categories = "notify"
 draft = false
-date = 2016-02-13T08:59:37Z
+date = 2016-02-21T08:35:14Z
 menu = ""
 weight = 1
 
@@ -46,7 +46,7 @@ For the use case we expose the following additional parameters:
 * `template` - Handlebars template to create a custom payload body. See [docs](http://handlebarsjs.com/)
 * `content_type` - HTTP request content type
 
-Example configuration that generate a custom YAML payload:
+Example configuration that generate a custom Yaml payload:
 
 ```yaml
 notify:

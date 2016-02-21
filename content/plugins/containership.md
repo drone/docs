@@ -10,13 +10,13 @@ image = "plugins/drone-containership"
 tags = ["containership", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-02-16T06:51:45Z
+date = 2016-02-21T08:37:52Z
 menu = ""
 weight = 1
 
 +++
 
-Use this plugin for deplying an application to [ContainerShip](https://containership.io).
+Use this plugin for deploying an application to [ContainerShip](https://containership.io).
 You can override the default configuration with the following parameters:
 
 - `organization` - Your ContainerShip organization

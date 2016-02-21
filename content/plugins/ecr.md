@@ -10,7 +10,7 @@ image = "plugins/drone-ecr"
 tags = ["docker", "image", "container", "ecr", "aws"]
 categories = "publish"
 draft = false
-date = 2016-02-13T09:01:48Z
+date = 2016-02-21T08:37:26Z
 menu = ""
 weight = 1
 
@@ -25,6 +25,7 @@ The following parameters are used to configure this plugin:
 * `repo` - repository name for the image
 * `tag` - repository tag for the image
 * `force_tag` - replace existing matched image tags
+* `create_repository` - automatically create repository in ECR
 * `mirror` - use a mirror registry instead of pulling images directly from the central Hub
 * `bip` - use for pass bridge ip
 * `storage_driver` - use `aufs`, `devicemapper`, `btrfs` or `overlay` driver

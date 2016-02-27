@@ -168,6 +168,19 @@ build:
       branch: master
 ```
 
+There are a number of other conditions which can be used in whens (`repo`, `success`, `failure`, `change`)
+
+```yaml
+---
+build:
+  bundle:
+    when:
+      repo: drone/drone
+      success: true
+      failure: true
+      change: true
+```
+
 # Dependencies
 
 Cloning private submodules or private dependencies (using `npm` or `go get`) requires remote authentication. We recommend using `git+https` for submodules or dependencies, allowing Drone to authenticate to your remote repository using a `.netrc` file injected by default into your build environment.

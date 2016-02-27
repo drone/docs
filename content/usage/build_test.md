@@ -168,7 +168,7 @@ build:
       branch: master
 ```
 
-There are a number of other conditions which can be used in whens (`repo`, `success`, `failure`, `change`)
+There are a number of other conditions which can be used in whens: `repo` (a full repo path) and `success`, `failure` and `change` (all booleans based on the previous job status).
 
 ```yaml
 ---

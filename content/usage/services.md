@@ -90,7 +90,7 @@ Please see the above networking section -- because your build and service contai
 
 # Environment
 
-Use the environment section to pass environment variables to you service containers. Many database images, including the official postgres and mysql images, use environment variables to configure the database on startup.
+Use the environment section to pass environment variables to your service containers. Many database images, including the official postgres and mysql images, use environment variables to configure the database on startup.
 
 ```yaml
 ---

@@ -39,6 +39,7 @@ This section lists all connection options used in the connection string format. 
 * `orgs=drone&orgs=docker` restricts access to these GitHub organizations. **Optional**
 * `private_mode=false` indicates GitHub Enterprise is running in private mode.
 * `skip_verify=false` skip ca verification if self-signed certificate. Defaults to false.
+* `merge_ref=merge` configure pull requests to use head vs merge ref. Defaults to merge.
 
 # GitHub registration
 

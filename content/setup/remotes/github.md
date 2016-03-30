@@ -57,7 +57,7 @@ with both GitHub and GitHub Enterprise.
 |---------------------------|------------------------------|
 | Supported versions        | GitHub and GitHub Enterprise |
 | VCS                       | git                          |
-| Auth method               | ouath2                       |
+| Auth method               | oauth2                       |
 | Push events               | yes                          |
 | Push tags events          | yes                          |
 | Merge requests            | yes                          |

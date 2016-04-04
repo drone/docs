@@ -185,13 +185,13 @@ OPTIONS:
 
 To generate a `.drone.sec` file for a repository:
 
-```Bash
+```bash
 drone secure --repo octocat/hello-world
 ```
 
 To use a file other than the default `.drone.sec.yml` use the `--in` option:
 
-```Bash
+```bash
 drone secure --repo octocat/hello-world --in filename.yml
 ```
 

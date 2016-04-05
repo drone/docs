@@ -32,6 +32,8 @@ export DRONE_SERVER=<http://>
 export DRONE_TOKEN=<token>
 ```
 
+*Note that the Drone server URL must __not__ contain a trailing slash.*
+
 # Repo Commands
 
 The `drone repo` commands help you manage repositories, including activation and de-activation. Run `drone build help` for the usage documentation:

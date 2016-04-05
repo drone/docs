@@ -28,7 +28,7 @@ sudo cp drone /usr/local/bin
 You will need to provide the Drone command line tools with the location of your Drone installation as well as an access token for authentication. You can retrieve a Drone personal access token from your user profile screen.
 
 ```bash
-export DRONE_SERVER=http://myserver.com
+export DRONE_SERVER=<http://>
 export DRONE_TOKEN=<token>
 ```
 

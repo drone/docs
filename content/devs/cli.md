@@ -164,7 +164,7 @@ TODO
 
 Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your YAML file.
 
-The `drone secure` command takes the plaintext YAML file containing your secret variables and generates the encrypted `.drone.sec` file. Details of the format of the plaintext YAML file and example usage can be found in the [secrets usage documentation](/usage/secrets).
+The `drone secure` command takes the plaintext YAML file containing your secret variables and generates the encrypted `.drone.sec` file. Details of the format of the plaintext YAML file and example usage can be found in the [secrets usage documentation]({{< ref "usage/secrets.md" >}}).
 
 Run `drone help secure` for usage information:
 

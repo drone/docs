@@ -41,7 +41,7 @@ Differs based on the selected database engine. See See the [Database]({{< relref
 
 Default: `plugins/*`
 
-This setting contains a space-separated list of patterns for determining which plugins can be pulled an ran. By disallowing open season on plugins, we prevent some classes of malicious plugins sneaking into builds.
+This setting contains a space-separated list of patterns for determining which plugins can be pulled and ran. By disallowing open season on plugins, we prevent some classes of malicious plugins sneaking into builds.
 
 To use an example, let's say you've created an organization on Docker
 Hub called `myorg`. Here's a REMOTE_DRIVER setting value that would allow the standard Drone plugins plus your org:

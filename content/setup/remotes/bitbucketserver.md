@@ -38,6 +38,11 @@ This section lists all connection options used in the connection string format. 
 * `consumer_rsa` Path to the private key for oauth1 (will need to copy into a customer docker image or map the volume to the correct location).
 * `open=false` not currently used but will be added later
 
+# Why do we need the service account?
+
+Unforunately Bitbucket server doesn't support oauth http cloning of repos. This means we need a service account that can clone repos for us. Please please go [here](https://jira.atlassian.com/browse/BSERV-2722) to vote for this feature and we can move to not need service accounts
+
+
 # Bitbucket Server registration
 
 You must register your application with Bitbucket in order to allow for auth1. Navigate to admin choose application links and add a new application link

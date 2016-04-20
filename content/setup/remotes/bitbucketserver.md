@@ -35,13 +35,26 @@ This section lists all connection options used in the connection string format. 
 * `consumer_key` oauth client id for registered application (must add in application links incoming auth in Bitbucket server).
 * `git_username` Service account that can http clone the projects.
 * `git_password` password for the service account that can http clone the projects.
-* `consumer_rsa` Path to the private key for oauth1 (will need to copy into a customer docker image or map the volume to the correct location).
+* `consumer_rsa` Path to the private key for oauth1 (must mount the private key file into the container using volumes).
 * `open=false` not currently used but will be added later
 
-# Why do we need the service account?
+# Service Account
 
 Unforunately Bitbucket server doesn't support oauth http cloning of repos. This means we need a service account that can clone repos for us. Please please go [here](https://jira.atlassian.com/browse/BSERV-2722) to vote for this feature and we can move to not need service accounts
 
+# Private Key File
+
+The oauth private key file needs to be mounted into your Drone container at runtime. You can mount the key into the container using the `--volume` command line parameter:
+
+```
+docker run --volume=/host/path/to/key.pem:/container/path/to/key.pem
+```
+
+The path to your oauth private key file should be included in your configuration string:
+
+```
+consumer_rsa=/container/path/to/key.pem
+```
 
 # Bitbucket Server registration
 
@@ -66,7 +79,7 @@ love to see pull requests for this as well.
 | Feature/Remote            | BitBucket Server     |
 |---------------------------|----------------------|
 | Supported version         | 4.5 (ymwv on others) |
-| VCS                       | **git ( only )**     |
+| VCS                       | git                  |
 | Auth method               | oauth1               |
 | Push events               | yes                  |
 | Push tags events          | no                   |

@@ -18,6 +18,7 @@ Drone uses Remote Drivers to integrate and execute builds against your code host
 Depending on which service or system you are hosting your code on, you'll want to refer to the corresponding Remote Driver sub-page for details on configuration:
 
 * [Bitbucket]({{< relref "bitbucket.md" >}})
+* [Bitbucket Server(Stash)]({{< relref "bitbucketserver.md" >}})
 * [GitHub]({{< relref "github.md" >}})
 * [GitLab]({{< relref "gitlab.md" >}})
 * [Gogs]({{< relref "gogs.md" >}})

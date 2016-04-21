@@ -30,7 +30,7 @@ We'll be adding to this file as we progress through the setup process.
 
 # Select and Configure a Remote Driver
 
-With your `dronerc` file created, it's time to configure your [Remote Drivers] ({{< relref "remotes.md" >}}). We currently have support for [GitHub]({{< relref "github.md" >}}), [Bitbucket]({{< relref "bitbucket.md" >}}), [GitLab]({{< relref "gitlab.md" >}}), and [Gogs]({{< relref "gogs.md" >}}).
+With your `dronerc` file created, it's time to configure your [Remote Drivers] ({{< relref "remotes.md" >}}). We currently have support for [GitHub]({{< relref "github.md" >}}), [Bitbucket]({{< relref "bitbucket.md" >}}), [Bitbucket Server(Stash)]({{< relref "bitbucketserver.md" >}}), [GitLab]({{< relref "gitlab.md" >}}), and [Gogs]({{< relref "gogs.md" >}}).
 
 # Select and Configure a Database
 

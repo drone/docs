@@ -7,7 +7,7 @@ menu = "remotes"
 toc = true
 +++
 
-Drone comes with built-in support for Bitbucket Cloud. Bitbucket Server is not yet supported. To enable Bitbucket Cloud you should configure the Bitbucket driver using the following environment variables:
+Drone comes with built-in support for Bitbucket Cloud. To enable Bitbucket Cloud you should configure the Bitbucket driver using the following environment variables:
 
 ```bash
 REMOTE_DRIVER=bitbucket
@@ -50,9 +50,6 @@ Please use `http://drone.mycompany.com/authorize` as the Authorization callback 
 * Webhooks:Read and Write
 
 # Remote Driver Feature Chart
-
-Drone currently only supports BitBucket Cloud (hosted BitBucket).
-Contributions for BitBucket Server are welcomed.
 
 Also, we only support git on BitBucket Cloud. While we do have a Mercurial
 Drone Plugin, the webhook output is slightly different for Hg projects. We'd

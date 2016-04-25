@@ -45,3 +45,41 @@ location / {
     chunked_transfer_encoding off;
 }
 ```
+
+# Apache
+
+Example apache reverse proxy configuration:
+
+```
+<VirtualHost *:80>
+    ServerName drone.mycompany.com
+    Redirect permanent / https://drone.mycompany.com/
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName drone.mycompany.com
+
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/drone.mycompany.com/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/drone.mycompany.com/privkey.pem
+    SSLCertificateChainFile /etc/letsencrypt/live/drone.mycompany.com/fullchain.pem
+    SetEnvIf User-Agent ".*MSIE.*" nokeedroneive ssl-unclean-shutdown
+
+    RequestHeader set X-Forwarded-Proto "https"
+    RemoteIPHeader X-Forwarded-For
+
+    ProxyPreserveHost on
+    ProxyRequests Off
+    <Proxy *>
+        Order deny,allow
+        Allow from all
+    </Proxy>
+
+    ProxyPass / http://127.0.1.1:8000/
+    ProxyPassReverse / http://127.0.1.1:8000/
+    <Location />
+        Order allow,deny
+        Allow from all
+    </Location>
+</VirtualHost>
+```

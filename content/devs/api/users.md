@@ -80,7 +80,7 @@ Example Response Body:
 Creates a new user account with the specified external login.
 
 ```
-POST /api/users/{login}
+POST /api/users
 ```
 
 

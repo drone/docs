@@ -5,6 +5,7 @@ title = "Secrets"
 weight = 3
 menu = "usage"
 toc = true
+break = true
 +++
 
 # Overview
@@ -157,7 +158,75 @@ deploy:
     token: $$SLACK_TOKEN
 ```
 
+---
 
+# Overview
+
+
+
+# Manage Secrets
+
+
+Example command adds the secret for the Heroku plugin:
+
+```
+drone secret add --image heroku octocat/hello-world HEROKU_TOKEN f1d2d2f924e986a
+```
+
+Example command adds the secret for multiple images:
+
+```
+drone secret add --image heroku --image golang:1.6 \
+    octocat/hello-world HEROKU_TOKEN f1d2d2f924e986a
+```
+
+Example command adds the secret for push and pull requests:
+
+```
+drone secret add --image slack --event push --event pull_request \
+    octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
+```
+
+Example command removes the secret:
+
+```
+drone secret remove octocat/hello-world HEROKU_TOKEN
+```
+
+# Signatures
+
+Secrets are not provided to your build unless the Yaml signature can be verified. This means every time you change the Yaml it needs to be cryptographically signed, otherwise secrets are not made available. The Yaml is signed using the command line utility and generates a `.drone.yml.sig` file that gets checked-in to your repository.
+
+```
+drone sign octocat/hello-world
+```
+
+# Pull Requests
+
+Providing secrets to build steps is not recommend for pull requests. This is because a malicious pull request could alter your code to expose your secrets:
+
+```
+script:
+  test:
+    image: golang
+    command:
+      - go build
+      - go test
+```
+
+Providing secrets to trusted plugins steps that do not execute arbitrary code, such as Slack notifications, is perfectly safe. This is because the Slack plugin runs in a separate Docker container and is isolated from containers running untrusted code:
+
+```
+script:
+  slack:
+    channel: dev
+    user: drone
+```
+
+If you are coming from Travis you probably assume secrets cannot be safely provided to pull requests. Please remember Travis and Drone are architected differently and the same rules do not universally apply.
+
+
+<!--
 # Common Issues
 
 Secrets are not injected into your build if the checksum cannot be validated. This happens when you change your `.drone.yml` file without re-generating a `.drone.sec` file resulting in the following error message at the top of your build logs:
@@ -165,4 +234,4 @@ Secrets are not injected into your build if the checksum cannot be validated. Th
 ```
 Unable to validate YAML checksum.
 2ca66eb7be89f31afdebb197174abfa6dd14866ecbf9e552f44be5bd3244d08a
-```
+``` -->

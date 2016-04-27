@@ -80,7 +80,7 @@ script:
       - go test
 ```
 
-There is no magic here. Drone converts the above Yaml into a simple shell script that gets executed as the entrypoint to your build container. The above Yaml file gets translated into the below shell script:
+There is no magic here. Drone converts the above Yaml into a simple shell script that gets executed as the entrypoint to your build container. The above Yaml file is roughly translated into the below shell script:
 
 ```sh
 #!/bin/sh
@@ -93,7 +93,7 @@ go test
 
 # Services
 
-Drone supports launching service containers as part of the build process. This can be very helpful when your unit tests require database access, for example. Service containers share the same network (ie localhost) as your build containers. 
+Drone supports launching service containers as part of the build process. This can be very helpful when your unit tests require database access, for example. Service containers share the same network (ie localhost) as your build containers.
 
 Example Yaml configuration using a Postgres database:
 

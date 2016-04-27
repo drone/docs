@@ -7,9 +7,6 @@ menu = "usage"
 toc = true
 +++
 
-> WARNING: drone does not prevent you from inadvertently exposing your secrets to the world. Please read this section of the documentation carefully to ensure you follow best practices and avoid exposing sensitive data.
-
-
 # Overview
 
 Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file. This document assumes you have installed the Drone [command line tools](/devs/cli).

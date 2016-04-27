@@ -14,7 +14,6 @@ Drone uses the `matrix` section of the `.drone.yml` to define the build matrix. 
 Example matrix definition for testing multiple Go and Redis versions. This matrix results in a total of 6 different build permutations:
 
 ```yaml
----
 matrix:
   GO_VERSION:
     - 1.4
@@ -27,22 +26,22 @@ matrix:
 
 # Interpolation
 
-Matrix variables are injected into the `.drone.yml` file using the `$$` syntax, performing a simple find / replace. Matrix variables are also injected into your build container as environment variables.
+Matrix variables are injected into the `.drone.yml` file using the `${PARAM}` syntax, performing a simple find / replace. Matrix variables are also injected into your build container as environment variables.
 
-Example `.drone.yml` file before injecting the matrix parameters:
+Example Yaml file before injecting the matrix parameters:
 
 ```yaml
----
-build:
-  image: golang:$$GO_VERSION
-  commands:
-    - go get
-    - go build
-    - go test
+script:
+  build:
+    image: golang:${GO_VERSION}
+    commands:
+      - go get
+      - go build
+      - go test
 
-compose:
+services:
   redis:
-    image: redis:$$REDIS_VERSION
+    image: redis:${REDIS_VERSION}
 
 matrix:
   GO_VERSION:
@@ -54,36 +53,35 @@ matrix:
     - 3.0
 ```
 
-Example `.drone.yml` file after injecting the matrix parameters:
+Example Yaml file after injecting the matrix parameters:
 
 ```yaml
----
-build:
-  image: golang:1.4
-  environment:
-    - GO_VERSION=1.4
-    - REDIS_VERSION=3.0
-  commands:
-    - go get
-    - go build
-    - go test
+script:
+  build:
+    image: golang:1.4
+    environment:
+      - GO_VERSION=1.4
+      - REDIS_VERSION=3.0
+    commands:
+      - go get
+      - go build
+      - go test
 
-compose:
+services:
   redis:
     image: redis:3.0
 ```
 
 # Deployments
 
-Matrix builds execute the same `.drone.yml` multiple times, but with different parameters. This means that publish and deployment steps are executed multiple times as well, which is typically undesired. To restrict a publish or deployment step to a single permutation you can add the following condition:
+Matrix builds execute the same Yaml multiple times, but with different parameters. This means that publish and deployment steps are executed multiple times as well, which is typically undesired. To restrict a publish or deployment step to a single permutation you can add the following condition:
 
 ```yaml
----
-deploy:
-  heroku:
-    app: foo
-    when:
-      matrix:
-        GO_VERSION: 1.4
-        REDIS_VERSION: 3.0
+heroku:
+  app: octokit
+  force: false
+  when:
+    matrix:
+      GO_VERSION: 1.4
+      REDIS_VERSION: 3.0
 ```

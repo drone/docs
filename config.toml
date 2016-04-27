@@ -1,6 +1,14 @@
-baseurl = "http://readme.drone.io/"
-languageCode = "en-us"
+baseurl = "http://readme.drone.io/0.5/"
+theme = "default"
 title = "Drone"
+
+[params]
+	index = "manage/server"
+	github = "https://github.com/drone/drone"
+
+[params.google_analytics]
+	hostname = "readme.drone.io"
+	token = "UA-XXXXXXXX-1"
 
 [[menu.api]]
 	parent = "API Reference"

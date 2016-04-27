@@ -1,47 +1,62 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Quick Start"
+title = "Overview"
 weight = 1
 menu = "usage"
 toc = true
+break = true
 +++
 
 # Overview
 
-In order to configure your build you must include a `.drone.yml` file in the root of your repository. This section provides a brief overview of the configuration file and build process.
-
-Example .drone.yml configuration:
+In order to configure your build you must include a `.drone.yml` file in the root of your repository. This section provides a brief overview of the Yaml configuration file and build process. This is a simple Yaml configuration file with a single step:
 
 ```yaml
----
-build:
-  image: golang
-  commands:
-    - go get
-    - go build
-    - go test
+script:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
 ```
 
-# Hooks
-
-Once activated, every commit and pull request automatically send a hook from your version control system (ie GitHub) to Drone. These hooks instruct Drone to execute a new build.
-
-When Drone receives a hook it fetches the `.drone.yml` from your repository and uses this as a blueprint for build execution. For the purposes of this tutorial let's assume your repository uses the following configuration:
+You can break your build into multiple named steps (see below example). Each step executes in a separate Docker container with shared disk access to your project workspace.
 
 ```yaml
----
-build:
-  image: golang
-  commands:
-    - go get
-    - go build
-    - go test
+script:
+  backend:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
+
+  frontend:
+    image: node:6
+    commands:
+      - npm install
+      - npm test
+```
+
+# Activate
+
+Before we get started you need to login to Drone and activate your repository. When you activate your repository Drone automatically adds post-commit hooks with your version control system (ie GitHub) to trigger builds when you push code or open pull requests.
+
+# Images
+
+Drone executes your build inside an ephemeral Docker image. This means you don't have to setup or install any repository dependencies on your host machine. Use any valid Docker image in any Docker registry as your build environment.
+
+```yaml
+script:
+  build:
+    image: golang:1.6
 ```
 
 # Cloning
 
-Hooks specify commit details including branch and commit hash. Drone will automatically clone and checkout the commit into the build workspace:
+Drone automatically clones your repository into a local volume that is mounted into each Docker container. This workspace is available to all steps in your build process, including plugins and service containers.
 
 ```
 git clone --depth=50 --recusive=true \
@@ -51,50 +66,47 @@ git clone --depth=50 --recusive=true \
 git checkout 7fd1a60
 ```
 
-# Images
+# Scripts
 
-Drone executes your build inside an ephemeral Docker image. This means you don't have to setup or install any repository dependencies on your host machine. Use any valid Docker image in any Docker registry as your build environment.
-
-Example .drone.yml configuration uses the official Go Docker image:
+Drone previously cloned your source code into the project workspace. Drone mounts the build workspace into your build containers (golang) and executes bash commands inside your build container.
 
 ```yaml
----
-build:
-  image: golang
+script:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
 ```
 
-# Commands
+There is no magic here. Drone converts the above Yaml into a simple shell script that gets executed as the entrypoint to your build container. The above Yaml file gets translated into the below shell script:
 
-Drone previously cloned your source code into the build workspace. The build workspace is mounted into your Docker container at runtime as a volume. This means your code is cloned **outside** of the build container but your build commands are run **inside** of the build container.
+```sh
+#!/bin/sh
+set -e
 
-Drone executes the following bash commands inside your build container:
-
-```yaml
----
-build:
-  image: golang
-  commands:
-    - go get
-    - go build
-    - go test
+go get
+go build
+go test
 ```
 
 # Services
 
-Drone supports launching separate, ephemeral Docker containers as part of the build process. This is useful, for example, if you require a database for running your unit tests.
+Drone supports launching service containers as part of the build process. This can be very helpful when your unit tests require database access, for example. Service containers share the same network (ie localhost) as your build containers. 
 
-Example .drone.yml configuration with a Postgres database:
+Example Yaml configuration using a Postgres database:
 
 ```yaml
----
-build:
-  image: golang
-  commands:
-    - go get
-    - go build
-    - go test
+script:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
 
-compose:
+services:
   database:
     image: postgres
     environment:
@@ -104,65 +116,48 @@ compose:
 
 # Deployments
 
-Drone supports a large number of publish and deployment capabilities through external plugins. Plugins are Docker containers that are automatically downloaded, attach to your build, and execute a very specific publish or deployment task.
+Drone supports a large number of publish and deployment capabilities through external plugins. Plugins are Docker containers that are automatically downloaded, attach to your build, and automatically execute publish or deployment tasks.
 
-Example .drone.yml configuration with the Docker publish plugin:
-
-```yaml
----
-build:
-  image: golang
-  commands:
-    - go get
-    - go build
-    - go test
-
-publish:
-  docker:
-    username: octocat
-    password: password
-    email: octocat@github.com
-    repo: octocat/hello-world
-```
-
-First Drone runs your build commands inside the Golang container:
+Example Yaml configuration triggers a Heroku deployment:
 
 ```yaml
----
-build:
-  image: golang
-  commands:
-    - go get
-    - go build
-    - go test
+script:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
+  heroku:
+    app: octokit
+    force: false
+    when:
+      branch: master
 ```
 
-Drone executes publish and deployment plugins upon successful completion of the build step. Plugins are executed in separate Docker containers but have access to your build workspace. This means any files created and stored in the `/drone` workspace are available to plugins.
+# Notifications
 
-The Docker plugin in our example runs `docker build` and `docker publish` after the build step successfully completes using the configuration parameters in the .drone.yml file:
+Drone also supports notification options through external plugins. Notification plugins are Docker containers that are automatically downloaded, attach to your build, and automatically trigger notifications.
+
+Example Yaml configuration triggers a Slack notification:
 
 ```yaml
----
-publish:
-  docker:
-    username: octocat
-    password: password
-    email: octocat@github.com
-    repo: octocat/hello-world
-```
-
-# Local Testing
-
-Download the [command line tools](/devs/cli) to build and test your code locally inside a Docker environment using the exact same build process as Drone. You should think of your `.drone.yml` file as a `docker-compose.yml` alternative that is optimized for repeatable, local testing.
-
-Command to execute a local build from the command line:
-
-```
-drone exec
+script:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
+  slack:
+    channel: dev
+    username: drone
+    when:
+      status: [ success, failure ]
 ```
 
 # Getting Help
 
-For help troubleshooting **failed builds** please use [Stackoverflow](https://stackoverflow.com). The Stackoverflow community will be able to answer questions unique to your programming language and technology stack that the Drone maintainers are unqualified to answer.
+For help troubleshooting failed builds please use [Stackoverflow](https://stackoverflow.com). The Stackoverflow community will be able to answer questions unique to your programming language and technology stack that the Drone maintainers are unqualified to answer.
 
 For all other questions or issues please use the community [chat room](https://gitter.im/drone/drone) for support.

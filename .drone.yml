@@ -16,7 +16,7 @@ publish:
     access_key: $$AWS_KEY
     secret_key: $$AWS_SECRET
     source: public/
-    target: /
+    target: /0.5/
     delete: true
     content_type:
       ".svg": image/svg+xml

@@ -10,7 +10,7 @@ break = true
 
 # Overview
 
-In order to configure your build you must include a `.drone.yml` file in the root of your repository. This section provides a brief overview of the Yaml configuration file and build process. This is a simple Yaml configuration file with a single step:
+In order to configure your build you must include a `.drone.yml` file in the root of your repository. The Yaml is a superset of the Docker compose file format. Below is an example Yaml configuration file with a single build step:
 
 ```yaml
 script:
@@ -22,7 +22,7 @@ script:
       - go test
 ```
 
-You can break your build into multiple named steps (see below example). Each step executes in a separate Docker container with shared disk access to your project workspace.
+You can break your build into multiple named steps (see below example). Each step executes in a separate Docker container with shared disk access to your project workspace. Note that you can mix custom command and plugin steps.
 
 ```yaml
 script:
@@ -38,7 +38,14 @@ script:
     commands:
       - npm install
       - npm test
+
+  notify:
+    image: slack
+    channel: developers
+    username: drone
 ```
+
+Note that the above step names are completely arbitrary. You can call them whatever you like.
 
 # Activate
 
@@ -66,7 +73,7 @@ git clone --depth=50 --recusive=true \
 git checkout 7fd1a60
 ```
 
-# Scripts
+# Commands
 
 Drone previously cloned your source code into the workspace. Drone mounts the workspace into your build containers (golang) and executes bash commands inside your build container, using the root of your repository as the working directory.
 
@@ -128,19 +135,56 @@ script:
       - go get
       - go build
       - go test
-  heroku:
+
+  deploy:
+    image: heroku
     app: octokit
-    force: false
-    when:
-      branch: master
 ```
 
 Example Yaml configuration triggers a Slack notification:
 
 ```yaml
+script:
+  ...
+
+  notify:
+    image: slack
+    channel: developers
+    username: drone
+```
+
+# Filters
+
+Drone supports limiting execution of steps at runtime using filters. You can define filters using the `when` clause. This can be useful when you want to limit deployment steps to specific branches or notification steps to specific build statuses.
+
+Example Yaml triggers a Heroku deployment based on branch:
+
+```yaml
+script:
+  ...
+
+  prod:
+    image: heroku
+    app: octokit
+    when:
+      branch: master
+
+  stage:
+    image: heroku
+    app: octokit
+    when:
+      branch: feature/*
+```
+
+Example Yaml triggers a Slack notification for failures only:
+
+```yaml
+script:
+  ...
+
   slack:
     channel: dev
     username: drone
     when:
-      status: [ success, failure ]
+      status: [ failure ]
 ```

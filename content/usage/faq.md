@@ -9,7 +9,7 @@ toc = true
 
 # Why does my build fail?
 
-There is no easy way to answer this question. There are a number of reasons your build could pass locally and fail when running in Drone. Most people _incorrectly_ assume there must be a bug with Drone. The most common reason for build failure is incorrect configuration.
+There is no easy way to answer this question. There are a number of reasons your build could pass locally and fail when running in Drone. Most people _incorrectly_ assume there must be a bug with Drone. The most common reasons for build failure are incorrect configuration and missing dependencies in Docker images.
 
 We recommend using the Drone command line utility for local testing and debugging. If you are unable to resolve the issue locally you can use the community [support forums](https://gitter.im/drone/drone) to ask for help. If you engage the community for help please provide sample Yaml configurations and build output.
 

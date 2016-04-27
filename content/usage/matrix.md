@@ -73,6 +73,21 @@ services:
     image: redis:3.0
 ```
 
+# Includes
+
+In some cases you may need more control over matrix permutations. You can use the `include` attribute to enumerate the available matrix permutations instead of having them calculated automatically.
+
+```
+matrix:
+  include:
+    - GO_VERSION: 1.4
+      REDIS_VERSION: 2.8
+    - GO_VERSION: 1.5
+      REDIS_VERSION: 2.8
+    - GO_VERSION: 1.6
+      REDIS_VERSION: 3.0
+```
+
 # Plugins
 
 Matrix builds execute the same Yaml multiple times, but with different parameters. If you are using notification or deployment plugins you probabaly want to prevent multiple executions. To restrict a step to a single permutation you can add the following condition:

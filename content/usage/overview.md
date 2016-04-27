@@ -114,9 +114,9 @@ services:
       - POSTGRES_PASSWORD=mysecretpassword
 ```
 
-# Deployments
+# Plugins
 
-Drone supports a large number of publish and deployment capabilities through external plugins. Plugins are Docker containers that are automatically downloaded, attach to your build, and automatically execute publish or deployment tasks.
+Drone supports a publish, deployment and notification capabilities through external plugins. Plugins are Docker containers that are automatically downloaded, attach to your build, and perform a specific task.
 
 Example Yaml configuration triggers a Heroku deployment:
 
@@ -135,20 +135,9 @@ script:
       branch: master
 ```
 
-# Notifications
-
-Drone also supports notification options through external plugins. Notification plugins are Docker containers that are automatically downloaded, attach to your build, and automatically trigger notifications. It is worth mentioning that there is no fundamental difference between a notification or deployment plugin. A plugin is merely a Docker container that is intended to execute a specific task.
-
 Example Yaml configuration triggers a Slack notification:
 
 ```yaml
-script:
-  build:
-    image: golang
-    commands:
-      - go get
-      - go build
-      - go test
   slack:
     channel: dev
     username: drone

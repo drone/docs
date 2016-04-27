@@ -2,7 +2,7 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Matrix"
-weight = 11
+weight = 29
 menu = "usage"
 toc = true
 +++
@@ -74,7 +74,7 @@ services:
 
 # Plugins
 
-Matrix builds execute the same Yaml multiple times, but with different parameters. This means plugins are executed multiple times as well which may not be desired. To restrict a step to a single permutation you can add the following condition:
+Matrix builds execute the same Yaml multiple times, but with different parameters. If you are using notification or deployment plugins you probabaly want to prevent multiple executions. To restrict a step to a single permutation you can add the following condition:
 
 ```yaml
 heroku:

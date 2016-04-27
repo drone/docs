@@ -53,9 +53,9 @@ Note the above example mounts a volume on the host machine. The default configur
 Note the above example uses the `--env-file` flag to provide Docker with configuration parameters. Changes to this file require you to stop, remove and re-create the container:
 
 ```
-sudo docker stop drone
-sudo docker rm drone
-sudo docker run ...
+docker stop drone
+docker rm drone
+docker run ...
 ```
 
 # Troubleshooting

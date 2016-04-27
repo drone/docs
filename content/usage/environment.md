@@ -2,7 +2,7 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Environment"
-weight = 2
+weight = 3
 menu = "usage"
 toc = true
 +++
@@ -41,6 +41,9 @@ NAME                               | DESC
 `DRONE_BUILD_CREATED`              | build created unix timestamp
 `DRONE_BUILD_STARTED`              | build started unix timestamp
 `DRONE_BUILD_FINISHED`             | build finished unix timestamp
+`DRONE_PREV_BUILD_STATUS`          | prior build status
+`DRONE_PREV_BUILD_NUMBER`          | prior build number
+`DRONE_PREV_COMMIT_SHA`            | prior build commit sha
 `DRONE_YAML_SIGNED`                | yaml is signed
 `DRONE_YAML_VERIFIED`              | yaml is signed and verified
 `DRONE_BRANCH`                     | commit branch
@@ -48,17 +51,13 @@ NAME                               | DESC
 `DRONE_TAG`                        | commit tag
 `DRONE_PULL_REQUEST`               | pull request number
 `DRONE_DEPLOY_TO`                  | deployment target (ie production)
-`DRONE_PREV_BUILD_STATUS`          | prior build status
-`DRONE_PREV_BUILD_NUMBER`          | prior build number
-`DRONE_PREV_COMMIT_SHA`            | prior build commit sha
 
 
 # String Interpolation
 
-Environment variables may be interpolated in the Yaml before being parsed using `${VARIABLE}` syntax. This enables dynamic plugin configuration using build and commit information. This examples embeds the commit sha in the S3 artifact file name:
+Environment variables may be interpolated in the Yaml before parsing using the `${VARIABLE}` syntax. This enables dynamic plugin configuration using build and commit information. This example embeds the commit sha in the S3 artifact file name:
 
 ```yaml
-publish:
   s3:
     source: archive.tar.gz
     target: archive_${DRONE_COMMIT}.tar.gz
@@ -70,7 +69,7 @@ Environment variable interpolation supports emulated bash string operations, all
 
 
 OPERATION             | DESC
-----------------------|--------------------------------------------
+----------------------|---------------------------------------------------------
 `${param}`            | parameter substitution
 `"${param}"`          | parameter substitution with escaping
 `${param:pos}`        | parameter substitution with substring

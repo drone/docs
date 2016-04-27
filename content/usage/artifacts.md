@@ -2,7 +2,7 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Artifacts"
-weight = 8
+weight = 26
 menu = "usage"
 toc = true
 categories_weight = 2

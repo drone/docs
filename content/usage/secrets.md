@@ -2,7 +2,7 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Secrets"
-weight = 3
+weight = 4
 menu = "usage"
 toc = true
 break = true
@@ -214,7 +214,12 @@ script:
       - go test
 ```
 
-Providing secrets to trusted plugins steps that do not execute arbitrary code, such as Slack notifications, is perfectly safe. This is because the Slack plugin runs in a separate Docker container and is isolated from containers running untrusted code:
+Providing secrets to trusted plugins steps that do not execute arbitrary code, such as Slack notifications, is perfectly safe. This is because the Slack plugin runs in a separate Docker container and its environment is isolated from containers running untrusted code.
+
+```
+drone secret add --image slack --event push --event pull_request \
+    octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
+```
 
 ```
 script:

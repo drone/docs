@@ -56,7 +56,7 @@ script:
 
 # Cloning
 
-Drone automatically clones your repository into a local volume that is mounted into each Docker container. This workspace is available to all steps in your build process, including plugins and service containers.
+Drone automatically clones your repository into a local volume that is mounted into each Docker container. This volume is generally referred to as the workspace. The workspace is available to all steps in your build process, including plugins and service containers.
 
 ```
 git clone --depth=50 --recusive=true \
@@ -68,7 +68,7 @@ git checkout 7fd1a60
 
 # Scripts
 
-Drone previously cloned your source code into the project workspace. Drone mounts the build workspace into your build containers (golang) and executes bash commands inside your build container.
+Drone previously cloned your source code into the workspace. Drone mounts the workspace into your build containers (golang) and executes bash commands inside your build container, using the root of your repository as the working directory.
 
 ```yaml
 script:
@@ -137,7 +137,7 @@ script:
 
 # Notifications
 
-Drone also supports notification options through external plugins. Notification plugins are Docker containers that are automatically downloaded, attach to your build, and automatically trigger notifications.
+Drone also supports notification options through external plugins. Notification plugins are Docker containers that are automatically downloaded, attach to your build, and automatically trigger notifications. It is worth mentioning that there is no fundamental difference between a notification or deployment plugin. A plugin is merely a Docker container that is intended to execute a specific task.
 
 Example Yaml configuration triggers a Slack notification:
 
@@ -155,9 +155,3 @@ script:
     when:
       status: [ success, failure ]
 ```
-
-# Getting Help
-
-For help troubleshooting failed builds please use [Stackoverflow](https://stackoverflow.com). The Stackoverflow community will be able to answer questions unique to your programming language and technology stack that the Drone maintainers are unqualified to answer.
-
-For all other questions or issues please use the community [chat room](https://gitter.im/drone/drone) for support.

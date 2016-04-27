@@ -72,9 +72,9 @@ services:
     image: redis:3.0
 ```
 
-# Deployments
+# Plugins
 
-Matrix builds execute the same Yaml multiple times, but with different parameters. This means that publish and deployment steps are executed multiple times as well, which is typically undesired. To restrict a publish or deployment step to a single permutation you can add the following condition:
+Matrix builds execute the same Yaml multiple times, but with different parameters. This means plugins are executed multiple times as well which may not be desired. To restrict a step to a single permutation you can add the following condition:
 
 ```yaml
 heroku:

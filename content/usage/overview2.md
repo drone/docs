@@ -1,7 +1,7 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
-draft = false
-title = "Overview"
+draft = true
+title = "Overview2"
 weight = 1
 menu = "usage"
 toc = true
@@ -123,7 +123,7 @@ services:
 
 # Plugins
 
-Drone supports publish, deployment and notification capabilities through external plugins. Plugins are Docker containers that are automatically downloaded, attach to your build, and perform a specific task.
+Drone supports a publish, deployment and notification capabilities through external plugins. Plugins are Docker containers that are automatically downloaded, attach to your build, and perform a specific task.
 
 Example Yaml configuration triggers a Heroku deployment:
 
@@ -155,7 +155,7 @@ script:
 
 # Conditions
 
-Drone gives you the ability to conditionally limit the execution of build steps at runtime. The below example limits execution of heroku plugin steps based on branch:
+You can use the `when` block to limit the execution of any step in the build process. This includes command execution steps and plugin steps. The below example demonstrates filter logic based on branch:
 
 ```yaml
 script:
@@ -174,82 +174,15 @@ script:
       branch: feature/*
 ```
 
-Execute a step if the branch is `master` or `develop`:
+Example Yaml triggers a Slack notification for failures only:
 
 ```yaml
-when:
-  branch: [master, develop]
-```
+script:
+  ...
 
-Execute a step if the branch is starts with `prefix/*`:
-
-```yaml
-when:
-  branch: prefix/*
-```
-
-Execute a step if the build event is a `tag`:
-
-```yaml
-when:
-  event: tag
-```
-
-Execute a step for all non-pull request events (default):
-
-```yaml
-when:
-  event: [push, tag, deployment]
-```
-
-Execute a step for all events:
-
-```yaml
-when:
-  event: [push, pull_request, tag, deployment]
-```
-
-Execute a step when the build status changes:
-
-```yaml
-when:
-  status: changed
-```
-
-Execute a step when the build is passing or failing:
-
-```yaml
-when:
-  status:  [ failure, success ]
-```
-
-Execute a step for a specific matrix combination:
-
-```yaml
-when:
-  matrix:
-    GO_VERSION: 1.4
-    REDIS_VERSION: 3.0
-```
-
-Execute a step for a specific platform:
-
-```yaml
-when:
-  platform: [ linux/amd64, linux/arm ]
-```
-
-Execute a step for a specific platform using wildcards:
-
-```yaml
-when:
-  platform:  linux/*
-```
-
-Execute a step for deployment events matching the target environment:
-
-```yaml
-when:
-  environment: production
-  event: deployment
+  slack:
+    channel: dev
+    username: drone
+    when:
+      status: [ failure ]
 ```

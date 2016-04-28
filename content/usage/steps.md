@@ -1,6 +1,6 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
-draft = false
+draft = true
 title = "Steps"
 weight = 20
 menu = "usage"
@@ -171,7 +171,7 @@ build:
 
 For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
 
-# Devices
+<!-- # Devices
 
 Use the `devices` attribute to map devices from your host machine into your build container. These are [Docker devices](https://docs.docker.com/compose/compose-file/#devices) and therefore use the same declaration conventions:
 
@@ -183,7 +183,7 @@ build:
     - "/dev/ttyUSB0:/dev/ttyUSB0"
 ```
 
-For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
+For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen. -->
 
 # Privileged
 
@@ -197,18 +197,6 @@ build:
 ```
 
 For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
-
-# Timeouts
-
-There is a default 60 minute timeout for your build. This can be increased by a Drone administrator from your repository settings screen.
-
-# Triggers
-
-Builds are triggered primarily by `push` and `pull_request` hooks from your remote system (ie GitHub). Sometimes changes to an upstream project have a cascading impact on downstream projects. You can trigger cascading builds using the [trigger](/plugins/downstream/) plugin.
-
-# Scheduling
-
-Drone does not have any builtin scheduling capabilities. For scheduled builds (ie nightly builds) we recommend using the Drone command line tools with cron to trigger builds at scheduled intervals.
 
 # Skip Commits
 

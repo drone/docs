@@ -17,7 +17,7 @@ DRONE_GITHUB_CLIENT=...
 DRONE_GITHUB_SECRET=...
 ```
 
-# Options
+# Configuration
 
 This is a full list of configuration options. Please note that many of these options use default configuration value that should work for the majority of installations.
 
@@ -36,7 +36,7 @@ You must register your application with GitHub in order to generate a Client and
 
 Please use `http://drone.mycompany.com/authorize` as the Authorization callback URL.
 
-# Permissions
+<!-- # Permissions
 
 You may have issues if your organization limits third party organizations:
 
@@ -44,4 +44,4 @@ You may have issues if your organization limits third party organizations:
 
 You may need to grant access to individual organizations during authorization:
 
-![third_party_restrictions](https://cloud.githubusercontent.com/assets/865/5805312/5701e842-9fd3-11e4-8f7b-a2bad994eb0a.gif)
+![third_party_restrictions](https://cloud.githubusercontent.com/assets/865/5805312/5701e842-9fd3-11e4-8f7b-a2bad994eb0a.gif) -->

@@ -60,6 +60,10 @@ script:
       - ...
 ```
 
+# How do I increase my build timeout?
+
+The default timeout is 60 minutes and can be increased in your repository settings screen. Please note that only a system administrator can increase the build timeout duration for security reasons.
+
 # Cannot connect to a database.
 
 The most common issue is that databases take time to start and accept connections. We recommend adding `sleep` to your build script to give the database enough time to start. You should also make sure you are connecting to your database using `localhost`.

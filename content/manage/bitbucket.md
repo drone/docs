@@ -41,7 +41,4 @@ Please use `http://drone.mycompany.com/authorize` as the Authorization callback 
 
 # Missing Features
 
-Please note that Drone does not currently support the features listed below. We are absolutely open to pull requests to include this functionality. If you are interested in contributing to Drone and adding these capabilities please [get in touch](https://gitter.im/drone/drone).
-
-* Merge request events are not supported due to lack of merge ref
-* Mercurial repositories are not supported out-of-the box
+Merge requests and mercurial repositories are not currently supported. We are interested in patches to include this functionality. If you are interested in contributing to Drone and submitting a patch please [contact us](https://gitter.im/drone/drone).

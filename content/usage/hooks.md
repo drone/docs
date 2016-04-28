@@ -10,7 +10,7 @@ break = true
 
 # Overview
 
-Drone adds hooks to your repository upon activation. These hooks automatically trigger builds for specific for repository push, pull request and tag events. This section of the documents describes available hook events and configurations.
+Drone adds hooks to your repository upon activation. These hooks automatically trigger builds for repository push, pull request and tag events. This section of the documents describes available hook events and configurations.
 
 # Hook Events
 

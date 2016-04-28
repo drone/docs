@@ -25,8 +25,8 @@ This is a full list of configuration options. Please note that many of these opt
 NAME                          | DESC
 ------------------------------|--------------------------------------------------------
 `DRONE_GITLAB_URL`            | gitlab server address
-`DRONE_GITLAB_CLIENT`
-`DRONE_GITLAB_SECRET`
+`DRONE_GITLAB_CLIENT`         | gitlab oauth client id
+`DRONE_GITLAB_SECRET`         | gitlab oauth client secret
 `DRONE_GITLAB_HIDE_ARCHIVES`  | gitlab repositories are excluded if archived
 `DRONE_GITLAB_CLONE_AUTH`     | gitlab repositories clone with oauth token (false)
 `DRONE_GITLAB_SKIP_VERIFY`    | gitlab certificate is self-signed

@@ -55,12 +55,20 @@ NAME                               | DESC
 
 # String Interpolation
 
-Environment variables are interpolated in the yaml using the `${VARIABLE}` syntax.
+Environment variables are interpolated in the yaml using the `${VARIABLE}` syntax, before the yaml is parsed. This is an example yaml file before interpolating environment variable:
 
 ```yaml
   s3:
     source: archive.tar.gz
     target: archive_${DRONE_COMMIT}.tar.gz
+```
+
+Example after interpolating the environment variable:
+
+```yaml
+  s3:
+    source: archive.tar.gz
+    target: archive_74475490bbad029da60cc96f1b6e6ab68436cb50.tar.gz
 ```
 
 # String Operations

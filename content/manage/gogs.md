@@ -30,8 +30,8 @@ NAME                        | DESC
 
 # Missing Features
 
-Please note that Drone does not currently support Pull Request or Tag events. We are absolutely open to pull requests to include this functionality. If you are interested in contributing to Drone and adding these capabilities please [get in touch](https://gitter.im/drone/drone).
+Pull Request and Tag events are not supported. We are interested in patches to include this functionality. If you are interested in contributing to Drone and submitting a patch please [contact us](https://gitter.im/drone/drone).
 
 # Common Issues
 
-When running Drone and Gogs inside separate Docker containers you may exerpience inter-container network and communication issues. You should configure Drone and Gogs to use fully qualified domain names and not custom hostnames.
+When running Drone and Gogs inside separate Docker containers you may experience inter-container network and communication issues. You should configure Drone and Gogs to use fully qualified domain names and not custom hostnames.

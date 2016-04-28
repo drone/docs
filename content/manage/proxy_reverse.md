@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-Using a reverse proxy with Drone is entirely optional. When using a reverse proxy with Drone it is important to  configure the `X-Forwarded-Proto` and `X-Forwarded-For` header variables. Drone will not function properly without these header variables.
+This section of the documentation provides sample configurations for using Drone with reverse proxy servers such as nginx. When using a reverse proxy it is imperative you set the `X-Forwarded-Proto` and `X-Forwarded-For` header variables. You will also need to run the Drone container using an alternate exposed port, for example `--port-8000:8000`.
 
 # Nginx
 

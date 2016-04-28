@@ -10,9 +10,9 @@ break = true
 
 # Overview
 
-Drone supports parallel matrix execution. Drone executes a separate build for each permutation in the matrix, allowing you to build and test a single commit against many configurations.
+Drone has first class support for matrix builds. Drone executes a separate build task for each combination in the matrix, allowing you to build and test a single commit against multiple configurations.
 
-Example matrix configuration for testing multiple Go and Redis versions resulting:
+Example matrix definition:
 
 ```yaml
 matrix:
@@ -25,11 +25,22 @@ matrix:
     - 3.0
 ```
 
+Example matrix definition containing only specific combinations:
+
+```yaml
+matrix:
+  include:
+    - GO_VERSION: 1.4
+      REDIS_VERSION: 2.8
+    - GO_VERSION: 1.5
+      REDIS_VERSION: 2.8
+    - GO_VERSION: 1.6
+      REDIS_VERSION: 3.0
+```
+
 # Interpolation
 
-Matrix variables are injected into the yaml using the `${VARIABLE}` syntax. Matrix variables are also available to your build container as environment variables.
-
-Example Yaml file before interpolating matrix parameters:
+Matrix variables are interpolated in the yaml using the `${VARIABLE}` syntax, before the yaml is parsed. This is an example yaml file before interpolating matrix parameters:
 
 ```yaml
 script:
@@ -41,17 +52,17 @@ script:
       - go test
 
 services:
-  redis:
-    image: redis:${REDIS_VERSION}
+  database:
+    image: ${DATABASE}
 
 matrix:
   GO_VERSION:
     - 1.4
     - 1.3
-  REDIS_VERSION:
-    - 2.6
-    - 2.8
-    - 3.0
+  DATABASE:
+    - mysql:5.5
+    - mysql:6.5
+    - mariadb:10.1
 ```
 
 Example Yaml file after injecting the matrix parameters:
@@ -62,35 +73,20 @@ script:
     image: golang:1.4
     environment:
       - GO_VERSION=1.4
-      - REDIS_VERSION=3.0
+      - DATABASE=mysql:5.5
     commands:
       - go get
       - go build
       - go test
 
 services:
-  redis:
-    image: redis:3.0
-```
-
-# Includes
-
-In some cases you may need more control over matrix permutations. You can use the `include` attribute to enumerate the available matrix permutations instead of having them calculated automatically.
-
-```
-matrix:
-  include:
-    - GO_VERSION: 1.4
-      REDIS_VERSION: 2.8
-    - GO_VERSION: 1.5
-      REDIS_VERSION: 2.8
-    - GO_VERSION: 1.6
-      REDIS_VERSION: 3.0
+  database:
+    image: mysql:5.5
 ```
 
 # Conditions
 
-Matrix builds execute the same Yaml multiple times, but with different parameters. If you are using notification or deployment plugins you probabaly want to prevent multiple executions. To restrict a step to a single permutation you can add the following condition:
+Matrix builds execute the same Yaml multiple times but with different parameters. If you are using notification or deployment plugins you probably want to prevent multiple executions. Add the following condition to restrict a step to a single permutation:
 
 ```yaml
 heroku:

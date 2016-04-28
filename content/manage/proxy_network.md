@@ -13,7 +13,7 @@ This section of the documentation provides high-level instructions for configuri
 
 # HTTP Proxy
 
-The HTTP_PROXY environment variable holds the hostname or IP address of your proxy server. You can specify the HTTP_PROXY variables in your server configuration file or as an environment variable.
+The HTTP_PROXY environment variable holds the hostname or IP address of your proxy server. You can specify the HTTP_PROXY variables in your server and agent configuration.
 
 ```bash
 HTTPS_PROXY=https://proxy.example.com

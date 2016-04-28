@@ -10,9 +10,9 @@ break = true
 
 # Overview
 
-Drone uses the `matrix` section of the `.drone.yml` to define the build matrix. Drone executes a build for each permutation in the matrix, allowing you to build and test a single commit against many configurations.
+Drone supports parallel matrix execution. Drone executes a separate build for each permutation in the matrix, allowing you to build and test a single commit against many configurations.
 
-Example matrix definition for testing multiple Go and Redis versions. This matrix results in a total of 6 different build permutations:
+Example matrix configuration for testing multiple Go and Redis versions resulting:
 
 ```yaml
 matrix:
@@ -27,9 +27,9 @@ matrix:
 
 # Interpolation
 
-Matrix variables are injected into the `.drone.yml` file using the `${PARAM}` syntax, performing a simple find / replace. Matrix variables are also injected into your build container as environment variables.
+Matrix variables are injected into the yaml using the `${VARIABLE}` syntax. Matrix variables are also available to your build container as environment variables.
 
-Example Yaml file before injecting the matrix parameters:
+Example Yaml file before interpolating matrix parameters:
 
 ```yaml
 script:
@@ -88,7 +88,7 @@ matrix:
       REDIS_VERSION: 3.0
 ```
 
-# Plugins
+# Conditions
 
 Matrix builds execute the same Yaml multiple times, but with different parameters. If you are using notification or deployment plugins you probabaly want to prevent multiple executions. To restrict a step to a single permutation you can add the following condition:
 

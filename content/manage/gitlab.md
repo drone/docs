@@ -12,6 +12,7 @@ toc = true
 Drone comes with built-in support for GitLab version 8.2 and higher. To enable Gitlab you should configure the driver using the following environment variables:
 
 ```bash
+DRONE_GITLAB=true
 DRONE_GITLAB_URL=http://gitlab.mycompany.com
 DRONE_GITLAB_CLIENT=...
 DRONE_GITLAB_SECRET=...

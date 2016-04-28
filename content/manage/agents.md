@@ -67,6 +67,9 @@ NAME                        | DESC
 `DOCKER_MAX_PROCS`          | docker concurrent build processes
 `DOCKER_OS`                 | docker operating system (linux)
 `DOKCER_ARCH`               | docker architecture (amd64)
+`HTTP_PROXY`                | http proxy server
+`HTTPS_PROXY`               | https proxy server
+`NO_PROXY`                  | proxy server exceptions
 
 # Connectivity
 
@@ -77,7 +80,7 @@ WARN[0000] Attempting to reconnect in 15s
 WARN[0000] Attempting to reconnect in 15s
 ```
 
-If the server connection is interrupted while builds are running this will impact live-streaming logs. Agents will still use exponential backoff to send build updates and completed logs. You can therefore, in most cases, safely restart the Drone server with limited impact to your users.
+If the server connection is interrupted existing live-streaming logs may not resume. Agents will use exponential backoff to send build updates and completed logs when the connection resumes. You can therefore, in most cases, safely restart the Drone server with limited impact to your users.
 
 # Troubleshooting
 

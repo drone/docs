@@ -12,8 +12,9 @@ toc = true
 Drone comes with built-in support for Bitbucket Cloud. To enable Bitbucket Cloud you should configure the driver using the following environment variables:
 
 ```bash
-BITBUCKET_CLIENT=...
-BITBUCKET_SECRET=...
+DRONE_BITBUCKET=true
+DRONE_BITBUCKET_CLIENT=...
+DRONE_BITBUCKET_SECRET=...
 ```
 
 # Configuration
@@ -21,9 +22,9 @@ BITBUCKET_SECRET=...
 This is a full list of configuration options. Please note that many of these options use default configuration value that should work for the majority of installations.
 
 NAME                        | DESC
-----------------------------|--------------------------------------------------------
-`DRONE_STASH_CONSUMER_KEY`  | bitbucket consumer key
-`DRONE_STASH_CONSUMER_RSA`  | bitbucket consumer secret
+----------------------------|---------------------------------------------------
+`DRONE_BITBUCKET_CLIENT`    | bitbucket consumer key
+`DRONE_BITBUCKET_SECRET`    | bitbucket consumer secret
 
 
 # Registration

@@ -20,5 +20,3 @@ Please reserve the GitHub issue tracker for confirmed issues. In the past we hav
 # Security
 
 Please notify the project maintainers privately to discuss security concerns or disclose potential vulnerabilities. Please direct message [bradrydzewski](https://gitter.im/bradrydzewski) with questions or concerns.
-
-Please note this is an open source project and is not corporate sponsored or venture backed. We do not have the financial means to offer rewards for confirmed vulnerabilities. If any of our corporate users are interested in funding a rewards program please get in touch.

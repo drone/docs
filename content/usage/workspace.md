@@ -13,7 +13,7 @@ The project workspace refers to the location of your source code on disk, mounte
 
 # Defaults
 
-The default workspace configuration mounts the `/drone` volume into your containers. The workspace path, where your source repository is cloned, defaults to `src/{project}` relative to the base directory.
+The default workspace configuration mounts the `/drone` volume into your containers. The workspace path, where your source repository is cloned, defaults to `src/<repository>` relative to the base directory.
 
 # Configuration
 
@@ -25,7 +25,7 @@ Example custom base directory with default path:
 workspace:
   base: /go
 
-  # source code cloned to /go/src/{project}
+  # source code cloned to /go/src/<repository>
 ```
 
 Example default base directory with custom path:

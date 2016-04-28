@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-This document provides high-level instructions for configuring Drone to work with a corporate proxy server. This may be required when running Drone behind a corporate firewall.
+This section of the documentation provides high-level instructions for configuring Drone to work with a corporate proxy server. This may be required when running Drone behind a corporate firewall.
 
 # HTTP Proxy
 
@@ -31,7 +31,7 @@ http_proxy=http://proxy.example.com
 
 # No Proxy
 
-The `NO_PROXY` variable should contain a comma-separated list of domain extensions the proxy should not be used for. This typically includes resources inside your network, such as your GitHub Enterprise server.
+The NO_PROXY variable should contain a comma-separated list of domain extensions the proxy should not be used for. This typically includes resources inside your network, such as your GitHub Enterprise server.
 
 ```bash
 NO_PROXY=.example.com, *.docker.example.com

@@ -12,6 +12,7 @@ toc = true
 Drone comes with built-in support for Gogs the latest stable version of Gogs. To enable Gogs you should configure the driver using following required environment variables:
 
 ```
+DRONE_GOGS=true
 DRONE_GOGS_URL=http://gogs.mycompany.com
 ```
 

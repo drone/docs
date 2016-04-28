@@ -9,7 +9,7 @@ toc = true
 
 # Environment
 
-Environment variables are used to provide repository, commit and build details to the running build. The below list of environment variables are available to all running containers during the build process.
+Environment variables available to your build and plugin containers:
 
 NAME                               | DESC
 -----------------------------------|--------------------------------------------
@@ -55,7 +55,7 @@ NAME                               | DESC
 
 # String Interpolation
 
-Environment variables may be interpolated in the Yaml before parsing using the `${VARIABLE}` syntax. This enables dynamic plugin configuration using build and commit information. This example embeds the commit sha in the S3 artifact file name:
+Environment variables are interpolated in the yaml using the `${VARIABLE}` syntax.
 
 ```yaml
   s3:
@@ -65,7 +65,7 @@ Environment variables may be interpolated in the Yaml before parsing using the `
 
 # String Operations
 
-Environment variable interpolation supports emulated bash string operations, allowing us to transform the values of environment variable before interpolating. The following is a list of emulated operations:
+Environment variable interpolation supports emulated bash string operations:
 
 
 OPERATION             | DESC

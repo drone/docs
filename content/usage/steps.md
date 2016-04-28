@@ -1,7 +1,7 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Pipeline"
+title = "Steps"
 weight = 20
 menu = "usage"
 toc = true
@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-Drone uses the `build` section of the `.drone.yml` to define your Docker build environment and your build and test instructions. The following is an example build definition:
+Drone uses the `script` section of the `.drone.yml` to define your Docker build environment and your build and test instructions. The following is an example build definition:
 
 ```yaml
 ---
@@ -35,37 +35,11 @@ image: library/golang:1.5
 image: index.docker.io/library/golang:1.5
 ```
 
-Provide your registry credentials if your build image is private:
-
-```yaml
----
-build:
-  image: foo/bar
-  auth_config:
-    username: octocat
-    password: password
-    email: octocat@github.com
-```
-
 Use the `pull` attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:
 
 ```yaml
----
-build:
-  image: golang
-  pull: true
-```
-
-# Workspace
-
-The build workspace is located in the `/drone/src/<repository>` directory inside the `/drone` volume. You cannot change the volume location, however, you can change the subdirectory.
-
-The below example overrides the default workspace to `/drone/src/github.com/octocat/hello-world`:
-
-```yaml
----
-clone:
-  path: github.com/octocat/hello-world
+image: golang
+pull: true
 ```
 
 # Environment
@@ -73,20 +47,18 @@ clone:
 Use the environment section to inject environment variables into your build environment:
 
 ```yaml
----
-build:
-  image: golang:1.5
-  environment:
-    - GO15VENDOREXPERIMENT=0
-    - GOOS=linux
-    - GOARCH=amd64
-    - CGO_ENABLED=0
+script:
+  build:
+    image: golang
+    environment:
+      - GOOS=linux
+      - GOARCH=amd64
+      - CGO_ENABLED=0
 ```
 
 Variable expansion is not supported. The following example __will not work__:
 
 ```yaml
----
 environment:
   - PATH=$PATH:/go
 ```
@@ -96,24 +68,21 @@ environment:
 Build commands execute sequentially in a shell environment with the `-e` flag. The `-e` flag instructs the shell environment to exit immediately if a command returns a non-zero exit code.
 
 ```yaml
----
-build:
-  image: golang:1.5
-  commands:
-    - go get
-    - go build
-    - go test
+script:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test
 ```
-
-Please be aware that chaining commands together with `&&` may result in the build not exiting on failure. This is not a bug with Drone. This is the default bash `-e` behavior. See [this stackoverflow](http://stackoverflow.com/questions/25794905/why-does-set-e-true-false-true-not-exit#25795239) for more details.
 
 # Multiple Steps
 
 Build commands can be split into multiple named steps. The below example let's us split our frontend build (node) and our backend build (go). Each step executes in its own isolated container environment while sharing the same build workspace.
 
 ```yaml
----
-build:
+script:
   frontend:
     image: node:5.3.0
     commands:
@@ -127,9 +96,9 @@ build:
       - go test
 ```
 
-# Conditions
+# Filters
 
-Limit when a build step should is executed using conditional logic. The below example splits our build into two steps. The second build step, building the distribution, is only executed when we tag a release. This reduces the build time for `push` and `pull_request` events by removing un-necessary steps:
+Limit when a build step should is executed using filters. The below example splits our build into two steps. The second build step, building the distribution, is only executed when we tag a release. This reduces the build time for `push` and `pull_request` events by removing un-necessary steps:
 
 ```yaml
 ---
@@ -151,9 +120,9 @@ build:
 Only execute a step when building a `push` or `tag` event:
 
 ```yaml
----
-build:
-  bundle:
+script:
+  build:
+    image: golang
     when:
       event: [push, tag]
 ```
@@ -161,24 +130,11 @@ build:
 Only executes a step when building the `master` branch:
 
 ```yaml
----
-build:
-  bundle:
+script:
+  build:
+    image: golang
     when:
       branch: master
-```
-
-There are a number of other conditions which can be used in whens: `repo` (a full repo path) and `success`, `failure` and `change` (all booleans based on the previous job status).
-
-```yaml
----
-build:
-  bundle:
-    when:
-      repo: drone/drone
-      success: true
-      failure: true
-      change: true
 ```
 
 # Dependencies

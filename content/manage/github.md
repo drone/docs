@@ -12,6 +12,7 @@ toc = true
 Drone comes with built-in support for GitHub and GitHub Enterprise. To enable GitHub you should configure the driver using the following required environment variables:
 
 ```
+DRONE_GITHUB=true
 DRONE_GITHUB_CLIENT=...
 DRONE_GITHUB_SECRET=...
 ```

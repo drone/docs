@@ -10,7 +10,7 @@ break = true
 
 # SQLite
 
-Drone uses an embedded SQLite as the **default** database with zero configuration required. In order to customize the SQLite database configuration you should specify the following environment variables:
+Drone uses an embedded SQLite as the default database with zero configuration required. Override the default SQLite database configuration use the following environment variables:
 
 ```
 DATABASE_DRIVER=sqlite3

@@ -22,7 +22,7 @@ script:
       - go test
 ```
 
-You can break your build into multiple named steps (see below example). Each step executes in a separate Docker container with shared disk access to your project workspace. Note that you can mix custom command and plugin steps.
+You can break your build into multiple named steps (see below example). Each step executes in a separate Docker container with shared disk access to your project workspace. Note that you can mix command execution and plugin steps.
 
 ```yaml
 script:
@@ -153,11 +153,9 @@ script:
     username: drone
 ```
 
-# Filters
+# Conditions
 
-Drone supports limiting execution of steps at runtime using filters. You can define filters using the `when` clause. This can be useful when you want to limit deployment steps to specific branches or notification steps to specific build statuses.
-
-Example Yaml triggers a Heroku deployment based on branch:
+You can use the `when` block to limit the execution of any step in the build process. This includes command execution steps and plugin steps. The below example demonstrates filter logic based on branch:
 
 ```yaml
 script:

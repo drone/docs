@@ -1,8 +1,8 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Clone"
-weight = 25
+title = "Cloning"
+weight = 21
 menu = "usage"
 toc = true
 +++

@@ -17,6 +17,14 @@ We recommend using the Drone command line utility for local testing and debuggin
 
 Builds are automatically triggered by post-commit hooks from your version control system. You can use the API or command line tools to re-start or re-run existing builds with an auto-incremented build number.
 
+# How can I trigger downstream builds?
+
+Downstream or cascading builds can be configured using the downstream plugin. This plugin lets you define downstream dependencies and trigger downstream builds from the Yaml file.
+
+# How can I trigger upstream builds?
+
+Upstream triggers are not currently supported and are not currently planned. This functionality can be achieved, however, by creating a custom script or cron task using the API or command line tools.
+
 # How can I schedule builds?
 
 There are no built-in scheduling capabilities (nor or any planned). External scheduling tools such as cron can be used in conjunction with the official API or command line tools to execute nightly builds.
@@ -58,8 +66,28 @@ The most common issue is that databases take time to start and accept connection
 
 # Cannot create a database.
 
-Most official docker images use environment variables to create databases and users at runtime. Please see the official image documentation for more details.
+Most official docker images use environment variables to create databases and users at runtime. See the below example for reference. Please also check the official image documentation for more details.
+
+```
+services:
+  database:
+    image: mysql:5.6.27
+    environment:
+      - MYSQL_DATABASE=test
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes  
+```
 
 # Cannot provide a database user or password.
 
- Most official docker images use environment variables to create the default user and password. This includes the ability to authenticate with no password. Please see the official image documentation for more details.
+ Most official docker images use environment variables to create the default user and password. This includes the ability to authenticate with no password. See the below example for reference. Please also check the official image documentation for more details.
+
+```
+ services:
+   database:
+     image: mysql:5.6.27
+     environment:
+       - MYSQL_DATABASE=test
+       - MYSQL_ROOT_PASSWORD=password
+       - MYSQL_USER=foo
+       - MYSQL_PASSWORD=bar  
+ ```

@@ -1,7 +1,7 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Filters"
+title = "Conditions"
 weight = 28
 menu = "usage"
 toc = true
@@ -9,8 +9,7 @@ toc = true
 
 # Overview
 
-You can use the `when` block to limit the execution of any step in the build process. This includes command execution steps and plugin steps. The below example demonstrates filter logic based on branch:
-
+Limit the execution of build steps at runtime using the `when` block:
 
 ```yaml
 script:
@@ -47,14 +46,14 @@ when:
   event: tag
 ```
 
-Execute a step if the build event matches one of the values:
+Execute a step for all non-pull request events (default):
 
 ```yaml
 when:
-  event: [push, pull_request, tag, deployment]
+  event: [push, tag, deployment]
 ```
 
-Execute a step if the build event matches one of the values:
+Execute a step for all build events:
 
 ```yaml
 when:
@@ -75,16 +74,6 @@ Execute a step when the build is passing or failing:
 ```yaml
 when:
   status:  [ failure, success ]
-```
-
-# Matrix
-
-Execute a step for specific matrix steps:
-
-```yaml
-when:
-  environment: production
-  event: deployment
 ```
 
 # Platform

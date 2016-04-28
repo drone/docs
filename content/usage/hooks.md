@@ -10,7 +10,7 @@ break = true
 
 # Overview
 
-When you activate your repository, hooks are automatically registered with your version control system (ie GitHub). These hooks are used to automatically trigger builds for specific repository events. This section of the documents describes available hook events and configurations.
+Drone adds hooks to your repository upon activation. These hooks automatically trigger builds for specific for repository push, pull request and tag events. This section of the documents describes available hook events and configurations.
 
 # Hook Events
 
@@ -27,12 +27,12 @@ EVENT             | DESC
 
 # Skip Events
 
-You can enable or disable hooks for event types using the toggles in your repository settings. The deployment and tag hooks are disabled and skipped by default, and need to be manually enabled.
+You can disable hooks for event types using the toggles in your repository settings. The deployment and tag hooks are disabled and skipped by default, and need to be manually enabled.
 
 
 # Skip Branches
 
-You can skip specific branches using the `branches` section in your `.drone.yml` file. When a hook is received the branch is compared to the below list. If the branch matches the hook is processed, otherwise ignored.
+You can skip specific branches using the `branches` section in your yaml file:
 
 ```
 branches:

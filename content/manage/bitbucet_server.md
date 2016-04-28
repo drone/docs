@@ -13,6 +13,7 @@ break = true
 Drone comes with experimental support for Bitbucket Server (Atlassian Stash) and should be considered highly unstable. Now that you've been warned, and if you aren't scared away, you can enable Bitbucket Server using the following required environment variables:
 
 ```bash
+DRONE_STASH=true
 DRONE_STASH_URL=http://stash.mycompany.com
 DRONE_STASH_GIT_USERNAME=...
 DRONE_STASH_GIT_PASSWORD=...

@@ -52,22 +52,17 @@ Example Apache2 reverse proxy configuration:
 
 ```
 <VirtualHost *:80>
-
 	ServerName drone.example.com
 	ServerAlias drone
-
 	ServerAdmin webmaster@localhost
-
 	ErrorLog ${APACHE_LOG_DIR}/drone-error.log
 	CustomLog ${APACHE_LOG_DIR}/drone-access.log vhost_combined
-
 	ProxyPass         / http://localhost:8080/ nocanon
 	ProxyPassReverse  / http://localhost:8080/
 	RequestHeader set X-Forwarded-Proto "http"
 	RequestHeader set X-Forwarded-Port "80"
 	ProxyRequests     Off
 	ProxyPreserveHost On
-
 	AllowEncodedSlashes NoDecode
 	SetOutputFilter INFLATE;proxy-html;DEFLATE
 	ProxyHTMLURLMap http://drone.example.com/ /

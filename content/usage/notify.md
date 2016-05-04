@@ -43,6 +43,8 @@ notify:
       change: true
 ```
 
+While `success` and `failure` will trigger a notification when a build finishes with that outcome, `change` will notify regardless of outcome.
+
 Execute a notification step if the branch is `master`:
 
 ```yaml

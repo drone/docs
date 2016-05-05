@@ -12,7 +12,7 @@ toc = true
 Limit the execution of build steps at runtime using the `when` block:
 
 ```yaml
-script:
+pipeline:
   ...
 
   heroku:

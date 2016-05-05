@@ -2,3 +2,4 @@ public
 
 # IDE/Editor stuff
 .idea
+*.txt

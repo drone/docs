@@ -43,7 +43,7 @@ matrix:
 Matrix variables are interpolated in the yaml using the `${VARIABLE}` syntax, before the yaml is parsed. This is an example yaml file before interpolating matrix parameters:
 
 ```yaml
-script:
+pipeline:
   build:
     image: golang:${GO_VERSION}
     commands:
@@ -68,7 +68,7 @@ matrix:
 Example Yaml file after injecting the matrix parameters:
 
 ```yaml
-script:
+pipeline:
   build:
     image: golang:1.4
     environment:

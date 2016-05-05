@@ -13,7 +13,7 @@ break = true
 Configure your build by placing a `.drone.yml` file in the root of your repository. The `.drone.yml` is a superset of the Docker compose file format. Below is an example configuration file with a single build step.
 
 ```yaml
-script:
+pipeline:
   build:
     image: golang
     commands:
@@ -25,7 +25,7 @@ script:
 You can break your build into multiple named steps (see below example). Each step executes in a separate Docker container with shared disk access to your project workspace. Note that you can mix command execution and plugin steps.
 
 ```yaml
-script:
+pipeline:
   backend:
     image: golang
     commands:
@@ -56,7 +56,7 @@ Before we get started you need to login to Drone and activate your repository. W
 Drone executes your build inside an ephemeral Docker image. This means you don't have to setup or install any repository dependencies on your host machine. Use any valid Docker image in any Docker registry as your build environment.
 
 ```yaml
-script:
+pipeline:
   build:
     image: golang:1.6
 ```
@@ -78,7 +78,7 @@ git checkout 7fd1a60
 Drone previously cloned your source code into the workspace. Drone mounts the workspace into your build containers (golang) and executes bash commands inside your build container, using the root of your repository as the working directory.
 
 ```yaml
-script:
+pipeline:
   build:
     image: golang
     commands:
@@ -105,7 +105,7 @@ Drone supports launching service containers as part of the build process. This c
 Example Yaml configuration using a Postgres database:
 
 ```yaml
-script:
+pipeline:
   build:
     image: golang
     commands:
@@ -128,7 +128,7 @@ Drone supports publish, deployment and notification capabilities through externa
 Example Yaml configuration triggers a Heroku deployment:
 
 ```yaml
-script:
+pipeline:
   build:
     image: golang
     commands:
@@ -144,7 +144,7 @@ script:
 Example Yaml configuration triggers a Slack notification:
 
 ```yaml
-script:
+pipeline:
   ...
 
   notify:
@@ -158,7 +158,7 @@ script:
 Drone gives you the ability to conditionally limit the execution of build steps at runtime. The below example limits execution of heroku plugin steps based on branch:
 
 ```yaml
-script:
+pipeline:
   ...
 
   prod:

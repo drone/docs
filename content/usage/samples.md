@@ -16,7 +16,7 @@ This section of the documentation provides sample Yaml files for common configur
 Example configuration that starts a mysql container. The mysql container is available to the golang container at 127.0.0.1:3306. Please note that environment variables are used to create the default database, username and password.
 
 ```
-script:
+pipeline:
   test:
     image: golang
     commands:
@@ -38,7 +38,7 @@ services:
 Example configuration that starts a postgres container. The postgres container is available to the golang container at 127.0.0.1:5432. Please note that environment variables are used to create the default database, username and password.
 
 ```
-script:
+pipeline:
   test:
     image: golang
     commands:
@@ -59,7 +59,7 @@ services:
 Example configuration that uses the `docker` plugin to build and publish an image to DockerHub. Please note that you will need to provide the plugin with your DockerHub credentials.
 
 ```
-script:
+pipeline:
   test:
     image: golang
     commands:
@@ -76,7 +76,7 @@ script:
 Example configuration that uses the `gh_pages` plugin to publish your website. You can use this plugin in conjunction with static site generators like jekyll or hugo. Please note that you will need to provide the plugin with your repository credentials.
 
 ```
-script:
+pipeline:
   build:
     image: publysher/hugo
     commands:
@@ -91,7 +91,7 @@ script:
 Example configuration that starts a selenium container. The selenium container is available to the golang container at 127.0.0.1:4444, with the executor available at http://127.0.0.1:4444/wd/hub
 
 ```
-script:
+pipeline:
   build:
     image: golang
     commands:

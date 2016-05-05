@@ -18,7 +18,7 @@ clone:
   depth: 50
   recursive: true
 
-script:
+pipeline:
   ...
 ```
 

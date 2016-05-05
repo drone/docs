@@ -56,7 +56,7 @@ workspace:
   base: /go
   path: src/github.com/octocat/hello-world
 
-script:
+pipeline:
   build:
     image: golang:1.6
 ```
@@ -64,7 +64,7 @@ script:
 An alternative to the above workspace customization would be to override the default image configuration. Using the official Go image as an example, we can alter the GOPATH to use the default base directory.
 
 ```
-script:
+pipeline:
   build:
     image: golang:1.6
     environment:

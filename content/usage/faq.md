@@ -34,7 +34,7 @@ There are no built-in scheduling capabilities (nor or any planned). External sch
 You can use the Docker plugin to build and publish images. If you need to build and _test_ your image you can mount the Docker socket into your build environment to work directly with the host machines Docker daemon.
 
 ```
-script:
+pipeline:
   build:
     image: docker
     volumes:
@@ -50,7 +50,7 @@ script:
 The `service` section of the `.drone.yml` is the official approach for composing service containers. You can alternatively mount the Docker socket into your build environment to work directly with the host machines Docker daemon and Docker compose.
 
 ```
-script:
+pipeline:
   build:
     image: ...
     volumes:
@@ -63,6 +63,10 @@ script:
 # How do I increase my build timeout?
 
 The default timeout is 60 minutes and can be increased in your repository settings screen. Please note that only a system administrator can increase the build timeout duration for security reasons.
+
+# How can I get colored output?
+
+Drone supports basic ansi terminal characters and colored output. It is important to note colored output is controlled by the program generating the output. It is common for programs to disable colored output when the terminal is non-interactive (closed stdin). Drone runs a non-interactive terminal to prevent things like command line prompts from hanging the build.
 
 # Cannot connect to a database.
 

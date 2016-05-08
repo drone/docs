@@ -19,7 +19,8 @@ Example [caddy server](https://caddyserver.com/) reverse proxy configuration:
 drone.mycomopany.com {
     proxy / localhost:8000 {
         proxy_header X-Forwarded-Proto {scheme}
-        proxy_header X-Forwarded-For {host}
+        proxy_header X-Forwarded-For {remote}
+        proxy_header X-Real-IP {remote}
         proxy_header Host {host}
     }
 }

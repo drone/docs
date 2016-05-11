@@ -260,7 +260,7 @@ GET /api/repos/{owner}/{name}/logs/{number}/{job}
 Cancel the a build job by number.
 
 ```
-DELETE /api/repos/{owner}/{name}/logs/{number}/{job}
+DELETE /api/repos/{owner}/{name}/builds/{number}/{job}
 ```
 
 

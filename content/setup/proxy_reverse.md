@@ -42,6 +42,9 @@ location / {
     proxy_redirect off;
     proxy_http_version 1.1;
     proxy_buffering off;
+    proxy_request_buffering off;
+    # build agents will timeout after whatever value is set for the proxy_read_timeout
+    proxy_read_timeout 12h;
 
     chunked_transfer_encoding off;
 }

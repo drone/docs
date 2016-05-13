@@ -31,6 +31,13 @@ Create a secret passcode used to generate authentication tokens for your builds 
 DRONE_AGENT_SECRET=...
 ```
 
+Choose a strategy for authorizing and registering users. See the user section of the documentation for more details. This example enables open registration and grants administrative access:
+
+```
+DRONE_OPEN=true
+DRONE_ADMIN=bradrydzewski,octocat
+```
+
 Create and run your container:
 
 ```

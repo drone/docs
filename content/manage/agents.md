@@ -23,7 +23,7 @@ msg="agents can connect with token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
 Get started by downloading the Docker image from:
 
 ```
-docker pull drone/drone:0.5
+docker pull drone/drone:0.5.0
 ```
 
 Create a `/etc/dronerc` file to hold your configuration parameters. The only two required parameters are the server address and server token. Please see the prior section of this document for instructions retrieving your server token.

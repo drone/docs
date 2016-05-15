@@ -15,7 +15,7 @@ Drone ships as a single binary file inside a minimalist 20 MB Docker image. Dock
 Get started by downloading the Docker image:
 
 ```
-docker pull drone/drone:0.5
+docker pull drone/drone:0.5.0
 ```
 
 Create an `/etc/dronerc` file to hold your configuration parameters. Please read the documentation to configure your remote system (ie GitHub) before completing this step. Please also note that parameter values must not be quoted.
@@ -48,7 +48,7 @@ docker run \
 	--publish=80:8000 \
 	--detach=true \
 	--name=drone \
-	drone/drone:0.5
+	drone/drone:0.5.0
 ```
 
 Note the above example mounts a volume on the host machine. The default configuration uses a sqlite database and should therefore be mounted on the host machine as a volume to avoid data loss.

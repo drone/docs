@@ -161,6 +161,10 @@ Command to execute a local build from the command line:
 drone exec
 ```
 
+# Example Configurations
+
+Full Drone CI project configuration examples are available from the [drone-demos](https://github.com/drone-demos) github organization.
+
 # Getting Help
 
 For help troubleshooting **failed builds** please use [Stackoverflow](https://stackoverflow.com). The Stackoverflow community will be able to answer questions unique to your programming language and technology stack that the Drone maintainers are unqualified to answer.

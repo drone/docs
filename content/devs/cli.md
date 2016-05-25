@@ -18,10 +18,19 @@ sudo install -t /usr/local/bin drone
 
 __OSX__ binary installation instructions:
 
-```bash
-curl http://downloads.drone.io/drone-cli/drone_darwin_amd64.tar.gz | tar zx
-sudo cp drone /usr/local/bin
-```
+* Download and install using [Homebrew](http://brew.sh/):
+
+    ```bash
+    brew tap drone/drone
+    brew install drone
+    ```
+
+* Or manually download and install the binary:
+
+    ```bash
+    curl http://downloads.drone.io/drone-cli/drone_darwin_amd64.tar.gz | tar zx
+    sudo cp drone /usr/local/bin
+    ```
 
 # Setup
 
@@ -153,7 +162,38 @@ TODO
 
 # Secret Management
 
-TODO
+Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your YAML file.
+
+The `drone secure` command takes the plaintext YAML file containing your secret variables and generates the encrypted `.drone.sec` file. Details of the format of the plaintext YAML file and example usage can be found in the [secrets usage documentation]({{< ref "usage/secrets.md" >}}).
+
+Run `drone help secure` for usage information:
+
+```
+NAME:
+   drone secure - creates a secure yaml file
+
+USAGE:
+   drone secure [command options] [arguments...]
+
+OPTIONS:
+   --in ".drone.sec.yml"	input path to the plaintext secret file (use - for stdin)
+   --out ".drone.sec"		output path for the encrypted secret file (use - for stdout)
+   --repo 			name of the repository
+   --yaml ".drone.yml"		path to .drone.yml file
+   --checksum			calculate and encrypt the yaml checksum
+```
+
+To generate a `.drone.sec` file for a repository:
+
+```bash
+drone secure --repo octocat/hello-world
+```
+
+To use a file other than the default `.drone.sec.yml` use the `--in` option:
+
+```bash
+drone secure --repo octocat/hello-world --in filename.yml
+```
 
 # Local Testing
 

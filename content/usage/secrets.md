@@ -14,7 +14,7 @@ toc = true
 
 Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file. This document assumes you have installed the Drone [command line tools](/devs/cli).
 
-Start with a plaintext YAML file that defines your secrets. For demonstration purposes let's assume this file is stored on disk and named `secrets.yml`. Secrets are defined in the `environment` section of this file:
+Start with a plaintext YAML file that defines your secrets. By default, the command line tool expects a file named `.drone.sec.yml`, so we'll use that here. Secrets are defined in the `environment` section of this file:
 
 ```yaml
 ---
@@ -35,7 +35,7 @@ deploy:
 Encrypt the `secrets.yml` file and generate a `.drone.sec` file:
 
 ```
-drone secure --repo octocat/hello-world --in secrets.yml
+drone secure --repo octocat/hello-world
 ```
 
 Commit the encrypted `.drone.sec` file to the root of your repository:

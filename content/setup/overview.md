@@ -100,3 +100,9 @@ INFO[0000] using database config /var/lib/drone/drone.sqlite
 ERRO[0000] unable to open database file
 FATA[0000] migration failed
 ```
+
+The below error indicates drone cannot resolve your remote driver DNS. You can either set the enable the Go DNS resolver by setting up the environment variable `-e GODEBUG=netdns=go` per the above installation guide, or by adding `-flags netgo` when building drone from source.
+
+```
+ERRO[0000] cannot authenticate user. Error exchanging token. Post http://remote.company.local/oauth/token: dial tcp: lookup remote.company.local: no such host"
+```

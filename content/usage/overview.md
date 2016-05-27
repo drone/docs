@@ -1,11 +1,14 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Overview"
+title = "Quick Start"
 weight = 1
-menu = "usage"
 toc = true
 break = true
+
+[menu.main]
+	parent="usage"
+
 +++
 
 # Overview
@@ -138,7 +141,7 @@ pipeline:
 
   deploy:
     image: heroku
-    app: octokit
+    app: foo.com
 ```
 
 Example Yaml configuration triggers a Slack notification:
@@ -153,9 +156,9 @@ pipeline:
     username: drone
 ```
 
-# Conditions
+# Constraints
 
-Drone gives you the ability to conditionally limit the execution of build steps at runtime. The below example limits execution of heroku plugin steps based on branch:
+Drone gives you the ability to conditionally limit the execution of build steps at runtime. The below example limits execution of Heroku plugin steps based on branch:
 
 ```yaml
 pipeline:
@@ -163,93 +166,30 @@ pipeline:
 
   prod:
     image: heroku
-    app: octokit
+    app: foo.com
     when:
       branch: master
 
   stage:
     image: heroku
-    app: octokit
+    app: dev.foo.com
     when:
       branch: feature/*
 ```
 
-Execute a step if the branch is `master` or `develop`:
+# Failures
 
-```yaml
-when:
-  branch: [master, develop]
+Drone uses the container exit code to determine the success or failure status of a build. Non-zero exit codes fail the build and cause the pipeline to immediately exit.
+
+There are use cases for executing pipeline steps on failure, such as sending notifications for failed builds. Use the status constraint to override the default behavior and execute steps even when the build status is failure:
+
 ```
+pipeline:
+  build:
+    ...
 
-Execute a step if the branch is starts with `prefix/*`:
-
-```yaml
-when:
-  branch: prefix/*
-```
-
-Execute a step if the build event is a `tag`:
-
-```yaml
-when:
-  event: tag
-```
-
-Execute a step for all non-pull request events (default):
-
-```yaml
-when:
-  event: [push, tag, deployment]
-```
-
-Execute a step for all events:
-
-```yaml
-when:
-  event: [push, pull_request, tag, deployment]
-```
-
-Execute a step when the build status changes:
-
-```yaml
-when:
-  status: changed
-```
-
-Execute a step when the build is passing or failing:
-
-```yaml
-when:
-  status:  [ failure, success ]
-```
-
-Execute a step for a specific matrix combination:
-
-```yaml
-when:
-  matrix:
-    GO_VERSION: 1.4
-    REDIS_VERSION: 3.0
-```
-
-Execute a step for a specific platform:
-
-```yaml
-when:
-  platform: [ linux/amd64, linux/arm ]
-```
-
-Execute a step for a specific platform using wildcards:
-
-```yaml
-when:
-  platform:  linux/*
-```
-
-Execute a step for deployment events matching the target environment:
-
-```yaml
-when:
-  environment: production
-  event: deployment
+  notify:
+    image: slack
+    when:
+      status: [ success, failure ]
 ```

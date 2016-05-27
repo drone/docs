@@ -3,23 +3,23 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Cloning"
 weight = 21
-menu = "usage"
 toc = true
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview
 
-Drone will automatically clone your repository during the build lifecycle. You can customize this behavior in the `clone` section of the yaml file. This section is entirely optional.
+Drone will automatically clone your repository during the build lifecycle. You can customize this behavior by adding a `clone` step to the pipeline section of your Yaml file. This is entirely optional.
 
 This is an example Yaml configuration:
 
 ```yaml
-clone:
-  depth: 50
-  recursive: true
-
 pipeline:
-  ...
+  clone:
+    depth: 50
+    recursive: true
 ```
 
 Which results in the following command:
@@ -37,37 +37,50 @@ Drone uses `git+https` combined with a `.netrc` file to authenticate and clone p
 Limit the amount of git history that is fetched from the remote repository:
 
 ```yaml
-clone:
-  depth: 50
+pipeline:
+  clone:
+    depth: 50
 ```
 
 Fetch all tags from the remote repository:
 
 ```yaml
-clone:
-  tags: true
+pipeline:
+  clone:
+    tags: true
 ```
 
 Disable tls verification when cloning the remote repository:
 
 ```yaml
-clone:
-  skip_verify: true
+pipeline:
+  clone:
+    skip_verify: true
 ```
 
 Recursively clone all submodules:
 
 ```yaml
-clone:
-  recursive: true
+pipeline:
+  clone:
+    recursive: true
 ```
 
 Recursively clone and update all submodules:
 
 ```yaml
-clone:
-  recursive: true
-  submodule_update_remote: true
+pipeline:
+  clone:
+    recursive: true
+    submodule_update_remote: true
+```
+
+Use your own custom clone plugin:
+
+```yaml
+pipeline:
+  clone:
+    image: custom/git
 ```
 
 # Private Submodules
@@ -91,10 +104,11 @@ This happens when a private submodule uses a git+ssh url:
 This can be mitigated by overriding the submodule url to use git+https:
 
 ```yaml
-clone:
-  recursive: true
-  submodule_override:
-    hello-world: https://github.com/octocat/hello-world.git
+pipeline:
+  clone:
+    recursive: true
+    submodule_override:
+      hello-world: https://github.com/octocat/hello-world.git
 ```
 
 This gives us the ability to authenticate using the `.netrc` file when cloning private submodules.

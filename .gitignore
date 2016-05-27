@@ -3,3 +3,4 @@ public
 # IDE/Editor stuff
 .idea
 *.txt
+.DS_Store

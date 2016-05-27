@@ -3,8 +3,11 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Samples"
 weight = 31
-menu = "usage"
 toc = true
+
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview
@@ -33,7 +36,6 @@ services:
 ```
 
 # Postgres database
-
 
 Example configuration that starts a postgres container. The postgres container is available to the golang container at 127.0.0.1:5432. Please note that environment variables are used to create the default database, username and password.
 

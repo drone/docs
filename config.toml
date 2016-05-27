@@ -10,5 +10,58 @@ title = "Drone"
 	hostname = "readme.drone.io"
 	token = "UA-XXXXXXXX-1"
 
-[[menu.api]]
-	parent = "API Reference"
+
+
+[[menu.main]]
+	name = "Usage"
+	identifier = "usage"
+	weight = 1
+
+[[menu.main]]
+	name = "Installation"
+	identifier = "installation"
+	weight = 2
+
+	[[menu.main]]
+		name = "Services"
+		identifier = "remotes"
+		parent = "installation"
+		weight = 3
+
+	[[menu.main]]
+		name = "Networks"
+		identifier = "proxy"
+		parent = "installation"
+		weight = 4
+
+[[menu.main]]
+	name = "Reference"
+	identifier = "reference"
+	weight = 3
+
+	[[menu.main]]
+		name = "Drone CLI"
+		identifier = "cli"
+		parent = "reference"
+		weight = 1
+
+	[[menu.main]]
+		name = "Drone API"
+		identifier = "api"
+		parent = "reference"
+		weight = 2
+
+# [[menu.main]]
+# 	name = "Plugins"
+# 	identifier = "plugins"
+# 	weight = 4
+#
+# [[menu.main]]
+# 	name = "Samples"
+# 	identifier = "samples"
+# 	weight = 5
+#
+# [[menu.main]]
+# 	name = "Support"
+# 	identifier = "support"
+# 	weight = 6

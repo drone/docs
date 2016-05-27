@@ -1,10 +1,12 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Conditions"
+title = "Constraints"
 weight = 28
-menu = "usage"
 toc = true
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview
@@ -36,6 +38,15 @@ Execute a step if the branch is starts with `prefix/*`:
 when:
   branch: prefix/*
 ```
+
+Execute a step using custom include and exclude logic:
+
+```yaml
+when:
+  branch:
+    include: [ master, release/* ]
+    exclude: [ release/1.0.0, release/1.1.* ]
+```   
 
 # Events
 

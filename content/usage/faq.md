@@ -3,8 +3,11 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "FAQ"
 weight = 33
-menu = "usage"
 toc = true
+
+
+[menu.main]
+	parent="usage"
 +++
 
 # Why does my build fail?
@@ -27,7 +30,7 @@ Upstream triggers are not currently supported and are not currently planned. Thi
 
 # How can I schedule builds?
 
-There are no built-in scheduling capabilities (nor or any planned). External scheduling tools such as cron can be used in conjunction with the official API or command line tools to execute nightly builds.
+There are no built-in scheduling capabilities. External scheduling tools such as cron can be used in conjunction with the official API or command line tools to execute nightly builds.
 
 # How do I test Docker images?
 
@@ -47,7 +50,7 @@ pipeline:
 
 # How do I use Docker compose?
 
-The `service` section of the `.drone.yml` is the official approach for composing service containers. You can alternatively mount the Docker socket into your build environment to work directly with the host machines Docker daemon and Docker compose.
+The `services` section of the `.drone.yml` is the official approach for composing service containers. You can alternatively mount the Docker socket into your build environment to work directly with the host machines Docker daemon and Docker compose.
 
 ```
 pipeline:

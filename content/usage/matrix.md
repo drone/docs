@@ -3,14 +3,16 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Matrix"
 weight = 29
-menu = "usage"
 toc = true
 break = true
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview
 
-Drone has first class support for matrix builds. Drone executes a separate build task for each combination in the matrix, allowing you to build and test a single commit against multiple configurations.
+Drone has integrated support for matrix builds. Drone executes a separate build task for each combination in the matrix, allowing you to build and test a single commit against multiple configurations.
 
 Example matrix definition:
 

@@ -1,28 +1,22 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
-draft = true
+draft = false
 title = "Services"
-weight = 21
-menu = "usage"
+weight = 20
 toc = true
+
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview
 
-Drone uses the `service` section of the `.drone.yml` to specify supporting containers (ie service containers) that should be started and linked to your build container. The `service` section of the `.drone.yml` is modeled after the `docker-compose.yml`:
-
-```yaml
----
-compose:
-  [container_name:]
-    image: [image_name]
-    [options]
-```
+Drone provides a `services` section in the Yaml file used for defining service containers, such as databases. Service containers share the same `localhost` network as your build containers.
 
 Example configuration that composes a Postgres and Redis container:
 
 ```yaml
----
 services:
   cache:
     image: redis
@@ -38,7 +32,6 @@ services:
 Drone supports any valid Docker image from any Docker registry:
 
 ```yaml
----
 image: postgres
 image: postgres:9.2
 image: library/postgres:9.2
@@ -48,11 +41,32 @@ image: index.docker.io/library/postgres:9.2
 Use the `pull` attribute to instruct Drone to always pull the latest Docker image. This helps ensure you are always testing your code against the latest image:
 
 ```yaml
----
 services:
   database:
     image: postgres
     pull: true
+```
+
+# Authorization
+
+Drone supports private images that require password authentication. You can use the command line utility to register authentication credentials:
+
+```
+drone secrets add octocat/hello-world REGISTRY_USERNAME octocat
+drone secrets add octocat/hello-world REGISTRY_PASSWORD pa55word
+drone secrets add octocat/hello-world REGISTRY_EMAIL octocat@github.com
+```
+
+You can alternatively specify the authentication credentials directly in the Yaml:
+
+```yaml
+services:
+  database:
+    image: postgres
+    auth_config:
+      username: octocat
+      password: pa55word
+      email: octocat@github.com
 ```
 
 # Networking
@@ -92,26 +106,11 @@ services:
 
 For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
 
-# Devices
-
-Use the `devices` attribute to map devices from your host machine into your service container. These are [Docker devices](https://docs.docker.com/compose/compose-file/#devices) and therefore use the same declaration conventions:
-
-```yaml
-services:
-  database:
-    image: postgres
-    devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0"
-```
-
-For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
-
-# Privileged Mode
+# Privileged
 
 Use the privileged attribute to run your service in a privileged Docker container:
 
 ```yaml
----
 compose:
   dind:
     image: docker:dind
@@ -119,9 +118,3 @@ compose:
 ```
 
 For security reasons this option is only available to trusted repositories. Trusted repositories are enabled on a per-repository basis by a Drone administrator from your repository settings screen.
-
-# Docker Compose
-
-You should think of the `.drone.yml` as a competing format to the `docker-compose.yml` that specializes in testing and build pipelines. We encourage you to embrace the `.drone.yml` for testing instead of trying to hack together a homegrown solution with a `docker-compose.yml`.
-
-Using a `docker-compose.yml` is possible but will require direct access to a Docker daemon. Drone does not expose a Docker daemon to your build by default for security reasons. You can provide access to a Docker daemon by mounting the host machines Docker socket as a [volume](#volumes:bfc9941b6b6fd7b4ef09dd0ccd08af0c) or by running [Docker in Docker](#docker-in-docker:bfc9941b6b6fd7b4ef09dd0ccd08af0c) as a service container.

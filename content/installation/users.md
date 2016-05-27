@@ -2,9 +2,11 @@
 date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Users"
-weight = 3
-menu = "installation"
+weight = 5
 toc = true
+
+[menu.main]
+	parent="installation"
 +++
 
 # Overview
@@ -66,8 +68,10 @@ You can configure administrative using the below settings. Note that you can con
 DRONE_ADMIN=octocat,bradrydzewski
 ```
 
+<!--
 You can grant all users administrative access using the below setting. Please note that that should only be enabled when you trust all Drone users with root access to your servers.
 
 ```
 DRONE_ADMIN_ALL=true
 ```
+-->

@@ -1,10 +1,12 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
 draft = false
-title = "Network Proxy"
+title = "Firewalls"
 weight = 30
-menu = "installation"
 toc = true
+
+[menu.main]
+	parent="proxy"
 +++
 
 # Overview

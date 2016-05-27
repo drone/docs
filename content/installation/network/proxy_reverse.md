@@ -3,8 +3,11 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Reverse Proxy"
 weight = 31
-menu = "installation"
 toc = true
+
+
+[menu.main]
+	parent="proxy"
 +++
 
 # Overview

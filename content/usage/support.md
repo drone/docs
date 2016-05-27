@@ -3,8 +3,11 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Support"
 weight = 32
-menu = "usage"
 toc = true
+
+
+[menu.main]
+	parent="usage"
 +++
 
 # Support
@@ -15,7 +18,7 @@ For all other questions please use the community [chat room](https://gitter.im/d
 
 # Issues
 
-Please reserve the GitHub issue tracker for confirmed issues. In the past we have received a large number of questions and false positive issues which reduce the effectiveness of the issue tracker. If you have a question or think you have found a bug please discuss in the community [chat room](https://gitter.im/drone/drone) before opening an issue.
+Please reserve the GitHub issue tracker for confirmed issues. In the past we have received a large number of questions and false positive issues which reduce the effectiveness of the issue tracker. If you have a question or think you have found a bug please discuss in the community [chat room](https://gitter.im/drone/drone) before creating an issue.
 
 # Security
 

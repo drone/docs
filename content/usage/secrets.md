@@ -1,189 +1,24 @@
 +++
 date = "2015-12-05T16:00:21-08:00"
-draft = true
+draft = false
 title = "Secrets"
 weight = 4
-menu = "usage"
 toc = true
+
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview
 
-Drone lets you store secret variables in an encrypted `.drone.sec` file in the root of your repository. This is useful when your build requires sensitive information that should not be stored in plaintext in your yaml file. This document assumes you have installed the Drone [command line tools](/devs/cli).
-
-Start with a plaintext YAML file that defines your secrets. For demonstration purposes let's assume this file is stored on disk and named `secrets.yml`. Secrets are defined in the `environment` section of this file:
-
-```yaml
----
-environment:
-  HEROKU_TOKEN: pa$$word
-```
-
-Reference secrets in your `.drone.yml` file using the `$$` notation:
-
-```yaml
----
-deploy:
-  heroku:
-    app: petstore
-    token: $$HEROKU_TOKEN
-```
-
-Encrypt the `secrets.yml` file and generate a `.drone.sec` file:
-
-```
-drone secure --repo octocat/hello-world --in secrets.yml
-```
-
-Commit the encrypted `.drone.sec` file to the root of your repository:
-
-```
-git add .drone.sec
-git commit -m "added .drone.sec file"
-```
-
-# Interpolation
-
-Secrets are injected directly into the YAML at runtime using the `$$` notation:
-
-```yaml
----
-deploy:
-  heroku:
-    app: foo
-    token: $$HEROKU_TOKEN
-```
-
-Note that secrets are not automatically exposed to your build environment as
-environment variables. For security purposes, you be must explicit when and
-where to inject secrets.
-
-This example demonstrates explicitly injecting a secret as an environment variable:
-
-```yaml
----
-build:
-  image: golang
-  commands:
-    - go build
-    - go test
-  environment:
-    - PRIVATE_KEY=$$PRIVATE_KEY
-```
-
-Secrets that are multiple lines or contain special characters should be escaped to
-avoid YAML parsing errors post-interpolation. You can escape strings by wrapping
-the variable in quotes as shown below:
-
-```yaml
----
-build:
-  image: golang
-  commands:
-    - go build
-    - go test
-  environment:
-    - PRIVATE_KEY="$$PRIVATE_KEY"
-```
-
-# Checksums
-
-Drone automatically calculates and stores a checksum of your `.drone.yml` file inside your `.drone.sec` file. Secrets are not injected into your build if the checksum cannot be verified. This means you must re-generate your `.drone.sec` file every time you `.drone.yml` changes (yes security is inconvenient).
-
-Invalid checksums result in the following error at the top of your build logs:
-
-```
-Unable to validate YAML checksum.
-2ca66eb7be89f31afdebb197174abfa6dd14866ecbf9e552f44be5bd3244d08a
-```
-
-# Pull Requests
-
-Drone injects secrets for all build types, including pull requests, as long as the checksum validation passes. You should avoid injecting secrets into the build section of the YAML and inadvertently exposing your secrets to malicious pull requests.
-
-**This is bad** because a malicious pull request could gain access to your secrets:
-
-```yaml
----
-build:
-  image: node
-  environment:
-    PASSWORD: $$PASSWORD
-  commands:
-    - npm install
-    - npm run tests
-    - npm run integration
-```
-
-**This is better** because the build is split into sections. Secrets are injected into a section of the build that is not executed for pull requests:
-
-```yaml
----
-build:
-  unit_tests:
-    image: node
-    commands:
-      - npm install
-      - npm run tests
-
-  integration_tests:
-    image: node
-    environment:
-      PASSWORD: $$PASSWORD
-    commands:
-      - npm run integration
-    when:
-      event: push
-```
-
-
-# Global Secrets
-
-Global secrets are stored in the `PLUGIN_PARAMS` environment variable declared in your Drone server configuration file. Global secrets are passed to every single build and should therefore only be used in trusted environments with trusted developers.
-
-Example global secret declaration:
-
-```bash
-PLUGIN_PARAMS=SMTP_PASSWORD=foo SLACK_TOKEN=bar
-```
-
-Example injecting global secrets into your `.drone.yml` file:
-
-```yaml
----
-deploy:
-  slack:
-    channel: foo
-    token: $$SLACK_TOKEN
-```
-
----
-
-# Overview
-
-
-
-# Manage Secrets
-
+Drone gives the ability to safely inject passwords, tokens, keys and sensitive information into your build as environment variables. Secrets are managed from the command line and stored in the central Drone server.
 
 Example command adds the secret for the Heroku plugin:
 
 ```
-drone secret add --image heroku octocat/hello-world HEROKU_TOKEN f1d2d2f924e986a
-```
-
-Example command adds the secret for multiple images:
-
-```
-drone secret add --image heroku --image golang:1.6 \
+drone secret add --image=heroku \
     octocat/hello-world HEROKU_TOKEN f1d2d2f924e986a
-```
-
-Example command adds the secret for push and pull requests:
-
-```
-drone secret add --image slack --event push --event pull_request \
-    octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```
 
 Example command removes the secret:
@@ -192,50 +27,64 @@ Example command removes the secret:
 drone secret remove octocat/hello-world HEROKU_TOKEN
 ```
 
-# Signatures
-
-Secrets are not provided to your build unless the Yaml signature can be verified. This means every time you change the Yaml it needs to be cryptographically signed, otherwise secrets are not made available. The Yaml is signed using the command line utility and generates a `.drone.yml.sig` file that gets checked-in to your repository.
+Example command signs the Yaml file:
 
 ```
 drone sign octocat/hello-world
 ```
 
+# Signature
+
+Drone does not expose secrets to your build unless the Yaml file is signed and verified. You can sign the Yaml using the command line utility and committing the `.drone.yml.sig` file to your repository.
+
+Example command to sign your Yaml:
+
+```
+drone sign octocat/hello-world
+```
+
+# Skip Verification
+
+Drone gives the option to skip signature verification. This disables import security checks and should only be used in trusted environments where your source code is not publicly accessible.
+
+Example command adds secrets without signature verification:
+
+```
+drone secret add --image slack --skip-verify --insecure \
+    octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
+```
+
+# Limit Images
+
+Drone gives the option to limit secrets to specific images or plugins. This limits the possible attack surface when using untrusted or public images in your build process.
+
+Example command adds secrets to specific images:
+
+```
+drone secret add --image s3 --image ecr \
+    octocat/hello-world AWS_CLIENT_SECRET f1d2d2f924e986a
+```
+
+# Limit Events
+
+Drone gives the option to limit secrets to specific events, including `push`, `pull_request`, `tag` and `deployment`.
+
+Example command adds secret to specific events:
+
+```
+drone secret add --image slack --event push --event tag \
+    octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
+```
+
 # Pull Requests
 
-Providing secrets to build steps is not recommend for pull requests. This is because a malicious pull request could alter your code to expose your secrets:
+Drone gives the option to expose secrets to pull requests, however, if your repository is public you should understand the potential risks. If your repository is public an attacker could submit a pull request that attempts to expose your secrets.
 
-```
-script:
-  test:
-    image: golang
-    command:
-      - go build
-      - go test
-```
+This attack vector is mitigated by signing your Yaml and only exposing secrets to plugins that do not execute arbitrary code. The official notification plugins meet this criteria and can be used safely with pull requests.
 
-Providing secrets to trusted plugins steps that do not execute arbitrary code, such as Slack notifications, is perfectly safe. This is because the Slack plugin runs in a separate Docker container and its environment is isolated from containers running untrusted code.
+Example command adds secrets for push and pull request events:
 
 ```
 drone secret add --image slack --event push --event pull_request \
     octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```
-
-```
-script:
-  slack:
-    channel: dev
-    user: drone
-```
-
-If you are coming from Travis you probably assume secrets cannot be safely provided to pull requests. Please remember Travis and Drone are architected differently and the same rules do not universally apply.
-
-
-<!--
-# Common Issues
-
-Secrets are not injected into your build if the checksum cannot be validated. This happens when you change your `.drone.yml` file without re-generating a `.drone.sec` file resulting in the following error message at the top of your build logs:
-
-```
-Unable to validate YAML checksum.
-2ca66eb7be89f31afdebb197174abfa6dd14866ecbf9e552f44be5bd3244d08a
-``` -->

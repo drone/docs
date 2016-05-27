@@ -3,9 +3,12 @@ date = "2015-12-05T16:00:21-08:00"
 draft = true
 title = "Pipelines"
 weight = 29
-menu = "usage"
 toc = true
 break = true
+
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview

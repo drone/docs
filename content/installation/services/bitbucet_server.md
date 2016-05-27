@@ -3,9 +3,11 @@ date = "2016-04-20T16:00:21-08:00"
 draft = false
 title = "Bitbucket Server"
 weight = 25
-menu = "installation"
 toc = true
 break = true
+
+[menu.main]
+	parent="remotes"
 +++
 
 # Overview

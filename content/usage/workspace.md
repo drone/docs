@@ -3,13 +3,16 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Workspace"
 weight = 2
-menu = "usage"
 toc = true
+
+
+[menu.main]
+	parent="usage"
 +++
 
 # Overview
 
-The project workspace refers to the location of your source code on disk, mounted into all containers that are part of your build process. All containers and plugins are started with the workspace and the working directory. This section of the documentation describes the default workspace configuration and customization options.
+The project workspace refers to the location of your source code on disk, mounted into all containers that are part of your build process. All containers and plugins are started with the workspace as the working directory. This section of the documentation describes the default workspace configuration and customization options.
 
 # Defaults
 

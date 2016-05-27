@@ -46,6 +46,7 @@
 			.mdl-layout__header,
 			.mdl-layout__header.is-casting-shadow {
 				background: #2b303b;
+				background: #222;
 				box-shadow: none;
 				border-bottom: 1px solid #EEE;
 			}
@@ -78,6 +79,45 @@
 				color: #FFF;
 				font-size:22px;
 			}
+			summary{
+				outline:none;
+				cursor: pointer;
+				-webkit-user-select: none;
+				user-select: none;
+				font-weight: normal;
+			}
+			nav > details {
+				padding-top:10px;
+				padding-bottom:10px;
+			}
+			nav > details[open] {
+				border-bottom: 1px solid #EEE;
+				border-top: 1px solid #EEE;
+			}
+			details > summary:after {
+				content: "keyboard_arrow_down";
+				float: right;
+				font-family: 'Material Icons';
+				font-weight: 400;
+				font-size:22px;
+			}
+			details summary {
+				padding: 5px 20px;
+				color: #222;
+    		font-size: 15px;
+			}
+			details[open] > summary {
+				/*font-weight: bold;*/
+			}
+			details[open] > summary:after {
+				content: "keyboard_arrow_up";
+			}
+			details summary::-webkit-details-marker { display:none; }
+
+			details > details > summary,
+			details > a { padding-left: 45px !important; }
+			details > details > a { padding-left: 70px !important; }
+
 			pre {
 				background: #f2f2f2;
 				padding: 20px;
@@ -103,6 +143,7 @@
 			#TableOfContents {
 				border-left: solid 3px #C0EbF1;
 				border-left: solid 3px #2b303b;
+				border-left: solid 3px #222;
 			}
 			#TableOfContents ul {
 				list-style:none;
@@ -113,6 +154,7 @@
 				text-decoration: none;
 				color: #00BCD4;
 				color: #2b303b;
+				color: #222;
 				font-size: 16px;
 				padding:3px 0px;
 				display:inline-block;
@@ -132,17 +174,7 @@
 				<div class="mdl-layout-spacer"></div>
 				<!-- Navigation. We hide it in small screens. -->
 				<nav class="mdl-navigation">
-
-					{{ range $key , $value := .Site.Sections }}
-					<!-- <a class="mdl-navigation__link" href="">{{ title $key }}</a> -->
-					{{ end }}
 					<a class="mdl-navigation__link" href="{{ .Site.Params.github }}"><i class="material-icons material-icons-rounded">link</i> GitHub</a>
-
-				  <!-- <a class="mdl-navigation__link" href="">Installation</a>
-				  <a class="mdl-navigation__link" href="">Usage</a>
-				  <a class="mdl-navigation__link" href="">Reference</a>
-				  <a class="mdl-navigation__link" href="">Samples</a>
-				  <a class="mdl-navigation__link" href="">GitHub</a> -->
 				</nav>
 
 			  </div>
@@ -151,23 +183,26 @@
 		  <div class="mdl-layout__drawer">
 			<span class="mdl-layout-title">&nbsp;</span>
 			<nav class="mdl-navigation">
-
-				{{ $root := . }}
-				{{ $rootMenu := .Params.menu }}
-
-				{{ range $menuKey, $menuValue := .Site.Menus }}
-					{{ if eq $menuKey $rootMenu }}
-						{{ range $menuItem := $menuValue }}
-						<a class="mdl-navigation__link {{ if eq $root.Title $menuItem.Name }} is-active{{ end }}" href="{{$menuItem.URL}}">{{ .Name }}</a>
-							{{ range $root.Site.Pages }}
-								{{ if and (eq .RelPermalink $menuItem.URL) (eq .Params.break true) }}
-								<hr />
+					{{ $currentNode := . }}
+					{{ range .Site.Menus.main }}
+					<details{{if $currentNode.HasMenuCurrent "main" . }} open{{end}}>
+						<summary>{{ .Name }}</summary>
+						{{ if .HasChildren }}
+							{{ range .Children }}
+								{{ if .HasChildren }}
+								<details{{if $currentNode.HasMenuCurrent "main" . }} open{{end}}>
+									<summary>{{ .Name }}</summary>
+									{{ range .Children }}
+									<a class="mdl-navigation__link {{ if $currentNode.IsMenuCurrent "main" .  }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+									{{ end }}
+								</details>
+								{{ else }}
+								<a class="mdl-navigation__link {{ if $currentNode.IsMenuCurrent "main" .  }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
 								{{ end }}
 							{{ end }}
 						{{ end }}
+					</details>
 					{{ end }}
-				{{ end }}
-			</nav>
 		  </div>
 		  <main class="mdl-layout__content">
 			<div class="page-content">

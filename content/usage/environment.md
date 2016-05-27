@@ -3,8 +3,10 @@ date = "2015-12-05T16:00:21-08:00"
 draft = false
 title = "Environment"
 weight = 3
-menu = "usage"
 toc = true
+
+[menu.main]
+	parent="usage"
 +++
 
 # Environment

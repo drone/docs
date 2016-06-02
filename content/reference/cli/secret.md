@@ -18,8 +18,8 @@ Register the password with your repository for a specific images or plugins:
 
 ```
 $ drone secret add \
-	--image=s3 \
-	octocat/hello-world AWS_ACCESS_KEY_ID AKIAIOSFODNN7EXAMPLE
+    --image=s3 \
+    octocat/hello-world AWS_ACCESS_KEY_ID AKIAIOSFODNN7EXAMPLE
 ```
 
 Register the password for multiple images or plugins:
@@ -51,7 +51,7 @@ In some cases you may need to upload an SSH key or token that is stored in a fil
 ```
 $ drone secret add \
     --image ssh \
-		octocat/hello-world SSH_KEY @/root/.ssh/id_rsa
+    octocat/hello-world SSH_KEY @/root/.ssh/id_rsa
 ```
 
 # Secret Remove

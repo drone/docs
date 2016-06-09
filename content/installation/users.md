@@ -23,7 +23,7 @@ DRONE_OPEN=true
 
 # Restricted Registration
 
-Restricted registration is the recommended configuration. This configuration allows users of white-listed organizations to self-register and login to the system.
+Restricted registration is the recommended configuration. This configuration allows members of white-listed organizations to self-register and login to the system.
 
 ```
 DRONE_ORGS=drone,github
@@ -32,10 +32,11 @@ DRONE_OPEN=true
 
 # Closed Registration
 
-Closed registration is enabled by default. Closed registration requires an administrator to manually register users using the command line utilities. See the next section of this guide for more details.
+Closed registration is enabled by default. Closed registration requires an administrator to manually register users using the command line utility. When using closed registration it is __imperative__ you provide a list of administrators that are able to login and manage accounts.
 
 ```
 DRONE_OPEN=false
+DRONE_ADMIN=octocat,bradrydzewski
 ```
 
 # User Management

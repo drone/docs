@@ -42,8 +42,7 @@ sudo cp drone /usr/local/bin
 Download and install the x64 windows binary:
 
 ```
-curl http://downloads.drone.io/release/windows/amd64/drone.tar.gz | tar zx
-sudo install -t /usr/local/bin drone
+Start-BitsTransfer -Source http://downloads.drone.io/release/windows/amd64/drone.zip | Expand-Archive -DestinationPath drone
 ```
 
 # Authentication

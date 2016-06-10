@@ -16,17 +16,25 @@ This section of the documentation provides sample configurations for using Drone
 
 # Nginx
 
-Example nginx reverse proxy configuration:
+Example [nginx](http://nginx.org) reverse proxy configuration:
 
 ```
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    ''      close;
+}
+
 location / {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $remote_addr;
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header Host $http_host;
     proxy_set_header Origin "";
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
 
     proxy_pass http://127.0.0.1:8000;
+    proxy_http_version 1.1;
     proxy_redirect off;
     proxy_http_version 1.1;
     proxy_buffering off;

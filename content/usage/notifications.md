@@ -39,8 +39,8 @@ pipeline:
     channel: dev
     username: drone
     template: |
-      {{ repo.name }} finished build {{ build.number }}
-      with a status of {{ build.status }}
+      {{repo.name}} finished build {{build.number}}
+      with a status of {{build.status}}
 ```
 
 Example template that generates a different message based on build status:
@@ -52,9 +52,9 @@ pipeline:
     username: drone
     template: |
       {{#success build.status}}
-        {{ build.author }} successfully pushed to {{ build.branch}}
+        {{build.author}} successfully pushed to {{build.branch}}
       {{else}}
-        {{ build.author }} broke the build. Hang your head in shame.
+        {{build.author}} broke the build. Hang your head in shame.
       {{/success}}
 ```
 
@@ -103,19 +103,19 @@ Converts a string to all lowercase characters:
 Truncates a string to N characters:
 
 ```handlebars
-{{ truncate build.commit 8 }}
+{{truncate build.commit 8}}
 ```
 
 Calculates a duration and returns a human readable string:
 
 ```handlebars
-{{ duration build.started build.finished }}
+{{duration build.started build.finished}}
 ```
 
 Converts a timestamp to a human readable string:
 
 ```handlebars
-finished at {{ datetime build.finished "3:04PM" "UTC" }}
+finished at {{datetime build.finished "3:04PM" "UTC"}}
 ```
 
 Returns true if the build is successful:

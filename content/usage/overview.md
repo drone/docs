@@ -13,7 +13,7 @@ break = true
 
 # Overview
 
-Configure your build by placing a `.drone.yml` file in the root of your repository. The `.drone.yml` is a superset of the Docker compose file format. Below is an example configuration file with a single build step.
+Configure your build by placing a `.drone.yml` file in the root of your repository. The `.drone.yml` is a superset of the [Docker Compose](https://docs.docker.com/compose/) file format. Below is an example configuration file with a single build step that runs tests against a Postgres service container.
 
 ```yaml
 pipeline:
@@ -23,6 +23,12 @@ pipeline:
       - go get
       - go build
       - go test
+
+services:
+  postgres:
+    image: postgres:9.4.5
+    environment:
+      - POSTGRES_USER=myapp
 ```
 
 You can break your build into multiple named steps (see below example). Each step executes in a separate Docker container with shared disk access to your project workspace. Note that you can mix command execution and plugin steps.

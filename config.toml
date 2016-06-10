@@ -10,12 +10,11 @@ title = "Drone"
 	hostname = "readme.drone.io"
 	token = "UA-XXXXXXXX-1"
 
-
-
 [[menu.main]]
-	name = "Usage"
-	identifier = "usage"
+	name = "Introduction"
+	identifier = "introduction"
 	weight = 1
+	url = "/introduction/"
 
 [[menu.main]]
 	name = "Installation"
@@ -26,18 +25,23 @@ title = "Drone"
 		name = "Services"
 		identifier = "remotes"
 		parent = "installation"
-		weight = 3
+		weight = 1
 
 	[[menu.main]]
 		name = "Networks"
 		identifier = "proxy"
 		parent = "installation"
-		weight = 4
+		weight = 2
+
+[[menu.main]]
+	name = "Usage"
+	identifier = "usage"
+	weight = 3
 
 [[menu.main]]
 	name = "Reference"
 	identifier = "reference"
-	weight = 3
+	weight = 4
 
 	[[menu.main]]
 		name = "Drone CLI"
@@ -54,19 +58,19 @@ title = "Drone"
 [[menu.main]]
 	name = "Community"
 	identifier = "community"
-	weight = 4
+	weight = 5
 
 # [[menu.main]]
 # 	name = "Plugins"
 # 	identifier = "plugins"
-# 	weight = 4
+# 	weight = 6
 #
 # [[menu.main]]
 # 	name = "Samples"
 # 	identifier = "samples"
-# 	weight = 5
+# 	weight = 7
 #
 # [[menu.main]]
 # 	name = "Support"
 # 	identifier = "support"
-# 	weight = 6
+# 	weight = 8

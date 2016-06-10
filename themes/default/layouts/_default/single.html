@@ -183,26 +183,28 @@
 		  <div class="mdl-layout__drawer">
 			<span class="mdl-layout-title">&nbsp;</span>
 			<nav class="mdl-navigation">
-					{{ $currentNode := . }}
-					{{ range .Site.Menus.main }}
+				{{ $currentNode := . }}
+				{{ range .Site.Menus.main }}
+					{{ if .HasChildren }}
 					<details{{if $currentNode.HasMenuCurrent "main" . }} open{{end}}>
 						<summary>{{ .Name }}</summary>
-						{{ if .HasChildren }}
-							{{ range .Children }}
-								{{ if .HasChildren }}
-								<details{{if $currentNode.HasMenuCurrent "main" . }} open{{end}}>
-									<summary>{{ .Name }}</summary>
-									{{ range .Children }}
-									<a class="mdl-navigation__link {{ if $currentNode.IsMenuCurrent "main" .  }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-									{{ end }}
-								</details>
-								{{ else }}
+						{{ range .Children }}
+							{{ if .HasChildren }}
+							<details{{if $currentNode.HasMenuCurrent "main" . }} open{{end}}>
+								<summary>{{ .Name }}</summary>
+								{{ range .Children }}
 								<a class="mdl-navigation__link {{ if $currentNode.IsMenuCurrent "main" .  }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
 								{{ end }}
+							</details>
+							{{ else }}
+							<a class="mdl-navigation__link {{ if $currentNode.IsMenuCurrent "main" .  }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
 							{{ end }}
 						{{ end }}
-					</details>
+					{{ else }}
+					<a class="mdl-navigation__link {{ if $currentNode.IsMenuCurrent "main" .  }} is-active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
 					{{ end }}
+				</details>
+				{{ end }}
 		  </div>
 		  <main class="mdl-layout__content">
 			<div class="page-content">

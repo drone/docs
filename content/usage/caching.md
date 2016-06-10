@@ -69,7 +69,7 @@ pipeline:
     mount: /drone/node_modules
 ```
 
-To work around this limitation, we can cache files or folders in our workspace and copy they to the expected location at the start of the build, and then copy them back to workspace at the end of the build:
+To work around this limitation, we can cache files or folders in our workspace and copy them to the expected location at the start of the build, and then copy them back to workspace at the end of the build:
 
 ```yaml
 pipeline:

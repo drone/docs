@@ -51,6 +51,11 @@ title = "Drone"
 		parent = "reference"
 		weight = 2
 
+[[menu.main]]
+	name = "Community"
+	identifier = "community"
+	weight = 4
+
 # [[menu.main]]
 # 	name = "Plugins"
 # 	identifier = "plugins"

@@ -1,10 +1,13 @@
 +++
 date = "2015-12-16T16:00:21-08:00"
 draft = false
-title = "Community"
+title = "Overview"
 weight = 1
-menu = "community"
 toc = false
+
+[menu.main]
+	parent="community"
+
 +++
 
 # News and Announcements

@@ -3,8 +3,11 @@ date = "2015-12-28T16:00:21-08:00"
 draft = false
 title = "Contributor's Guide"
 weight = 2
-menu = "community"
 toc = true
+
+[menu.main]
+	parent="community"
+
 +++
 
 If you'd like to contribute to Drone, there is much to be done, regardless of

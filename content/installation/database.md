@@ -32,7 +32,7 @@ See the official postgres connection string [documentation](http://www.postgresq
 
 # MySQL
 
-Configure a Mysql database backend:
+Configure a MySQL database backend:
 
 ```
 DATABASE_DRIVER="mysql"
@@ -40,7 +40,7 @@ DATABASE_CONFIG="root:pa55word@tcp(localhost:3306)/drone?parseTime=true"
 ```
 See the driver [documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name) for a complete set of configuration options and examples.
 
-Note that Drone does not automatically create the mysql database. You should use the mysql command line utility or your preferred management console to create the database:
+Note that Drone does not automatically create the `mysql` database. You should use the `mysql` command line utility or your preferred management console to create the database:
 
 ```
 mysql -P 3306 --protocol=tcp -u root -e 'create database if not exists drone;'

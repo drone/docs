@@ -55,6 +55,12 @@ title = "Drone"
 		parent = "reference"
 		weight = 2
 
+    [[menu.main]]
+		name = "Configuration"
+		identifier = "configuration"
+		parent = "reference"
+		weight = 3
+
 [[menu.main]]
 	name = "Community"
 	identifier = "community"

@@ -63,6 +63,10 @@ Note the above example mounts a volume on the host machine. The default configur
 --volume /var/lib/drone:/var/lib/drone
 ```
 
+# Configuration
+
+For a full list of configuration options, see the [Drone Server Configuration Reference](../../reference/configuration/server).
+
 # Logging
 
 Please use the Drone logs troubleshoot issues:

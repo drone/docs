@@ -40,32 +40,9 @@ docker run \
 	drone/drone:0.5 agent
 ```
 
-
 # Configuration
 
-This is a full list of configuration options. Please note that many of these options use default configuration value that should work for the majority of installations.
-
-NAME                        | DESC
-----------------------------|--------------------------------------------------------
-`DRONE_SERVER`              | drone server address
-`DRONE_SECRET`              | drone server secret token
-`DRONE_DEBUG`               | drone started in debug mode
-`DRONE_PING`                | drone server ping frequency
-`DRONE_BACKOFF`             | drone server backoff duration
-`DRONE_TIMEOUT`             | build timeout for console inactivity
-`DRONE_MAX_LOGS`            | build log size limit, defaults to 5mb
-`DRONE_PLUGIN_PULL`         | plugin updates are pull automatically
-`DRONE_PLUGIN_NAMESPACE`    | plugin namespace in dockerhub, defaults to `plugins`
-`DRONE_PLUGIN_PRIVILEGED`   | plugins automatically granted privileged mode
-`DOCKER_HOST`               | docker host address
-`DOCKER_TLS_VERIFY`         | docker requires tls verification
-`DOCKER_CERT_PATH`          | docker certificate path
-`DOCKER_MAX_PROCS`          | docker concurrent build processes
-`DOCKER_OS`                 | docker operating system (linux)
-`DOCKER_ARCH`               | docker architecture (amd64)
-`HTTP_PROXY`                | http proxy server
-`HTTPS_PROXY`               | https proxy server
-`NO_PROXY`                  | proxy server exceptions
+For a full list of configuration options, see the [Drone Agent Configuration Reference](../../reference/configuration/agent).
 
 # Connectivity
 

@@ -10,7 +10,7 @@ image = "plugins/drone-terraform"
 tags = ["terraform"]
 categories = "deploy"
 draft = false
-date = 2016-02-21T08:37:46Z
+date = 2016-04-05T14:28:36Z
 menu = ""
 weight = 1
 
@@ -26,6 +26,7 @@ Use the Terraform plugin to apply the infrastructure configuration contained wit
  <key>=<value>` option.
 * `ca_cert` - ca cert to add to your environment to allow terraform to use internal/private resources
 * `sensitive` (default: `false`) - Whether or not to suppress terraform commands to stdout.
+* `role_arn_to_assume` - A role to assume before running the terraform commands
 
 The following is a sample Terraform configuration in your .drone.yml file:
 
@@ -90,5 +91,24 @@ deploy:
       vars:
         app_name: my-project
         app_version: 1.0.0
+```
+
+## Assume Role ARN
+You may want to assume another role before running the terraform commands. This is useful for cross account access, where a central account ahs privileges to assume roles in other accounts. Using the current credentials, this role will be assumed and exported to environment variables.  See [the discussion](https://github.com/hashicorp/terraform/issues/1275) in the Terraform issues.
+
+```yaml
+deploy:
+  terraform:
+    plan: false
+    remote:
+      backend: S3
+      config:
+        bucket: my-terraform-config-bucket
+        key: tf-states/my-project
+        region: us-east-1
+    vars:
+      app_name: my-project
+      app_version: 1.0.0
+    role_arn_to_assume: arn:aws:iam::account-of-role-to-assume:role/name-of-role
 ```
 

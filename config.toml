@@ -70,12 +70,12 @@ title = "Drone"
 # 	name = "Plugins"
 # 	identifier = "plugins"
 # 	weight = 6
-#
-# [[menu.main]]
-# 	name = "Samples"
-# 	identifier = "samples"
-# 	weight = 7
-#
+
+[[menu.main]]
+	name = "Samples"
+	identifier = "samples"
+	weight = 7
+
 # [[menu.main]]
 # 	name = "Support"
 # 	identifier = "support"

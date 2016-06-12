@@ -82,6 +82,8 @@ git clone --depth=50 --recusive=true \
 git checkout 7fd1a60
 ```
 
+See [Cloning](../cloning) for more details.
+
 # Commands
 
 Drone previously cloned your source code into the workspace. Drone mounts the workspace into your build containers (golang) and executes bash commands inside your build container, using the root of your repository as the working directory.
@@ -129,6 +131,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mysecretpassword
 ```
+
+See [Services](../services) for more details.
 
 # Plugins
 
@@ -182,6 +186,8 @@ pipeline:
     when:
       branch: feature/*
 ```
+
+See [Constraints](../constraints) for a more detailed overview of how this works.
 
 # Failures
 

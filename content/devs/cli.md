@@ -23,6 +23,13 @@ curl http://downloads.drone.io/drone-cli/drone_darwin_amd64.tar.gz | tar zx
 sudo cp drone /usr/local/bin
 ```
 
+__Windows__ binary installation instructions:
+
+```bash
+mkdir -p $HOME/bin && cd $HOME/bin
+curl http://downloads.drone.io/drone-cli/drone_windows_amd64.tar.gz | tar zx
+```
+
 # Setup
 
 You will need to provide the Drone command line tools with the location of your Drone installation as well as an access token for authentication. You can retrieve a Drone personal access token from your user profile screen.

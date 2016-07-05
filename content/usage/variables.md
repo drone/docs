@@ -62,7 +62,7 @@ A subset of bash string substitution operations are also emulated:
 * `$$param` parameter substitution
 * `$${param}` parameter substitution (same as above)
 * `"$$param"` parameter substitution with escaping
-* `$${param:pos}` parameter substition with substring
+* `$${param:len}` parameter substitution with prefix of length `len`.  Note that this behavior is different from bash's behavior 
 * `$${param:pos:len}` parameter substition with substring
 * `$${param=default}` parameter substition with default
 * `$${param##prefix}` parameter substition with prefix removal

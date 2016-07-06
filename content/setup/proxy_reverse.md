@@ -46,3 +46,36 @@ location / {
     chunked_transfer_encoding off;
 }
 ```
+
+# Apache
+
+Example Apache reverse proxy configuration:
+
+```
+  ProxyPreserveHost On
+  RequestHeader set X-Forwarded-Proto "https"
+
+  # Websocket endpoints
+
+  ProxyPass /api/queue/logs ws://127.0.0.1:8000/api/queue/logs
+  ProxyPassReverse /api/queue/logs ws://127.0.0.1:8000/api/queue/logs
+
+  ProxyPass /api/queue/pull ws://127.0.0.1:8000/api/queue/pull
+  ProxyPassReverse /api/queue/pull ws://127.0.0.1:8000/api/queue/pull
+
+  ProxyPass /api/stream ws://127.0.0.1:8000/api/stream
+  ProxyPassReverse /api/stream ws://127.0.0.1:8000/api/stream
+
+  # All the rest (not websockets)
+
+  ProxyPass / http://127.0.0.1:8000/
+  ProxyPassReverse / http://127.0.0.1:8000/
+
+```
+
+Do not forget to to install proxy modules:
+```
+a2enmod proxy
+a2enmod proxy_http
+a2enmod proxy_wstunnel
+```

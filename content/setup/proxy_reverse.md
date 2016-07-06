@@ -46,3 +46,16 @@ location / {
     chunked_transfer_encoding off;
 }
 ```
+
+# Apache
+
+Example Apache reverse proxy configuration:
+
+```
+<Location />
+  ProxyPass / http://127.0.0.1:8000/
+  ProxyPassReverse / http://127.0.0.1:8000/
+  ProxyPreserveHost On
+  RequestHeader set X-Forwarded-Proto "https"
+</Location>
+```

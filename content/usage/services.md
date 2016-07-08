@@ -62,7 +62,7 @@ You can alternatively specify the authentication credentials directly in the Yam
 ```yaml
 services:
   database:
-    image: postgres
+    image: registry.yourcompany.com/your/image:tag
     auth_config:
       username: octocat
       password: pa55word
@@ -111,7 +111,7 @@ For security reasons this option is only available to trusted repositories. Trus
 Use the privileged attribute to run your service in a privileged Docker container:
 
 ```yaml
-compose:
+services:
   dind:
     image: docker:dind
     privileged: true

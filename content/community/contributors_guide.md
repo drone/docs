@@ -2,7 +2,7 @@
 date = "2015-12-28T16:00:21-08:00"
 draft = false
 title = "Contributor's Guide"
-weight = 2
+weight = 6
 toc = true
 
 [menu.main]
@@ -20,9 +20,11 @@ The core Drone daemon is written in Go and developed in the open on GitHub. Head
 
 Since we push most of the build logic out into plugins, the vast majority of our work ends up being focused here. Everything from cloning the source before a build to sending a Slack notification afterwards is done with a plugin.
  
-All of our official plugins reside in the [drone-plugins](https://github.com/drone-plugins) GitHub organization. Feel free to look through what we have there (or on our [plugins list](../../plugins)) and fork/PR away.
+All of our official plugins reside in the [drone-plugins](https://github.com/drone-plugins) GitHub organization. This is a minimal set of what we've deemed to be critical plugins that are owned and maintained by Drone.
 
-If you have a plugin of your own that you'd like to contribute, toss a post up on our [Development category](https://discuss.drone.io/c/development) on the Drone Discussion site and let us know what you've got.
+The vast majority of plugins are maintained by the community, outside of drone-plugins.
+
+If you'd like to help improve the core plugins or would like to share some of your own, visit our [Development category](https://discuss.drone.io/c/development) on the Drone Discussion site and let us know what you've got.
 
 # Drone UI and Design
 

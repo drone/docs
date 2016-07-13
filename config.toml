@@ -72,6 +72,41 @@ title = "Drone"
 	identifier = "community"
 	weight = 5
 
+	[[menu.main]]
+		name = "Blog"
+		identifier = "blog"
+		parent = "community"
+		url = "http://blog.drone.io/"
+		weight = 1
+
+	[[menu.main]]
+		name = "Twitter"
+		identifier = "twitter"
+		parent = "community"
+		url = "https://twitter.com/droneio/"
+		weight = 2
+
+    [[menu.main]]
+		name = "Gitter Room"
+		identifier = "gitter"
+		parent = "community"
+		url = "https://gitter.im/drone/drone"
+		weight = 3
+
+	[[menu.main]]
+		name = "Discussion Site"
+		identifier = "discussion"
+		parent = "community"
+		url = "http://discuss.drone.io/"
+		weight = 4
+
+    [[menu.main]]
+		name = "Source Code"
+		identifier = "source"
+		parent = "community"
+		url = "https://github.com/drone/drone"
+		weight = 5
+
 # [[menu.main]]
 # 	name = "Plugins"
 # 	identifier = "plugins"

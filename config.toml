@@ -47,25 +47,25 @@ title = "Drone"
 		name = "Drone CLI"
 		identifier = "cli"
 		parent = "reference"
-		weight = 1
+		weight = 2
 
 	[[menu.main]]
 		name = "Drone API"
 		identifier = "api"
 		parent = "reference"
-		weight = 2
+		weight = 3
 
     [[menu.main]]
 		name = "Configuration"
 		identifier = "configuration"
 		parent = "reference"
-		weight = 3
+		weight = 4
 
 	[[menu.main]]
 		name = "Releases"
 		identifier = "releases"
 		parent = "reference"
-		weight = 4
+		weight = 5
 
 [[menu.main]]
 	name = "Community"

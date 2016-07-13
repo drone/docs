@@ -117,7 +117,21 @@ title = "Drone"
 	identifier = "samples"
 	weight = 7
 
-# [[menu.main]]
-# 	name = "Support"
-# 	identifier = "support"
-# 	weight = 8
+[[menu.main]]
+ 	name = "Support"
+ 	identifier = "support"
+ 	weight = 8
+
+    [[menu.main]]
+		name = "Gitter Room"
+		identifier = "gitter-help"
+		parent = "support"
+		url = "https://gitter.im/drone/drone"
+		weight = 2
+
+    [[menu.main]]
+		name = "Discussion Site"
+		identifier = "discussion-help"
+		parent = "support"
+		url = "https://discuss.drone.io/c/help"
+		weight = 3

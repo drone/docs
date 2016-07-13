@@ -113,14 +113,9 @@ title = "Drone"
 # 	weight = 6
 
 [[menu.main]]
-	name = "Samples"
-	identifier = "samples"
-	weight = 7
-
-[[menu.main]]
  	name = "Support"
  	identifier = "support"
- 	weight = 8
+ 	weight = 7
 
     [[menu.main]]
 		name = "Gitter Room"
@@ -135,3 +130,8 @@ title = "Drone"
 		parent = "support"
 		url = "https://discuss.drone.io/c/help"
 		weight = 3
+
+[[menu.main]]
+	name = "Samples"
+	identifier = "samples"
+	weight = 8

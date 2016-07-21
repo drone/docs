@@ -17,7 +17,7 @@ Drone agents poll the Drone server queue for pending builds. You can install one
 Get started by downloading the Docker image from:
 
 ```
-docker pull drone/agent:0.5
+docker pull drone/drone:0.5
 ```
 
 The only two required parameters are the server address and secret token. We will provide these parameters to Docker as environment variables using the `--env` flag. Please see the prior section of this document for instructions retrieving your secret token.

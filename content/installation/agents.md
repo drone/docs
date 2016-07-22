@@ -32,7 +32,7 @@ Create and run your container with Docker mounted as a volume:
 ```
 docker run \
   --env DRONE_SERVER=... \
-  --env DRONE_SECRET=... \
+  --env DRONE_TOKEN=... \
 	--volume /var/run/docker.sock:/var/run/docker.sock \
 	--restart=always \
 	--detach=true \

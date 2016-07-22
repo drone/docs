@@ -24,7 +24,7 @@ The only two required parameters are the server address and secret token. We wil
 
 ```
 DRONE_SERVER=http://drone.server.com
-DRONE_SECRET=...
+DRONE_TOKEN=...
 ```
 
 Create and run your container with Docker mounted as a volume:

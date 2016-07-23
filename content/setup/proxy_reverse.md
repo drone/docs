@@ -9,7 +9,7 @@ toc = true
 
 # Overview
 
-Using a reverse proxy with Drone is entirely optional. When using a reverse proxy with Drone it is extremely important to properly configure the `X-Forwarded-Proto` and `X-Forwarded-For` header variables. You must also change the Drone container's port mapping from `--publish=80:8000` to `--publish=8000:8000`.
+Using a reverse proxy with Drone is entirely optional. When using a reverse proxy with Drone it is extremely important to properly configure the `X-Forwarded-Proto` and `X-Forwarded-For` header variables, as well as the `Upgrade` and `Connection` header variables to get correct proxy behavior for websockets. You must also change the Drone container's port mapping from `--publish=80:8000` to `--publish=8000:8000`.
 
 # Caddy
 
@@ -31,12 +31,19 @@ drone.mycomopany.com {
 Example nginx reverse proxy configuration:
 
 ```
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
 location / {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $remote_addr;
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header Host $http_host;
     proxy_set_header Origin "";
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
 
     proxy_pass http://127.0.0.1:8000;
     proxy_redirect off;

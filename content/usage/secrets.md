@@ -58,7 +58,7 @@ drone secret add --image slack --skip-verify --insecure \
 
 # Limit Images
 
-Drone gives the option to limit secrets to specific images or plugins. This limits the possible attack surface when using untrusted or public images in your build process.
+Drone requires an `--image` option to limit secrets to specific images or plugins. This limits the possible attack surface when using untrusted or public images in your build process.
 
 Example command adds secrets to specific images:
 

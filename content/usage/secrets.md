@@ -37,6 +37,8 @@ drone sign octocat/hello-world
 
 Drone does not expose secrets to your build unless the Yaml file is signed and verified. You can sign the Yaml using the command line utility and committing the `.drone.yml.sig` file to your repository.
 
+Any time you update your repository's `.drone.yml`, you must re-sign it. This prevents someone from opening a PR that prints your secrets.
+
 Example command to sign your Yaml:
 
 ```

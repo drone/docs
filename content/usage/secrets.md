@@ -58,7 +58,7 @@ drone secret add --image slack --skip-verify --insecure \
 
 # Limit Images
 
-Drone gives the option to limit secrets to specific images or plugins. This limits the possible attack surface when using untrusted or public images in your build process.
+Drone requires an `--image` option to limit secrets to specific images or plugins. This limits the possible attack surface when using untrusted or public images in your build process.
 
 Example command adds secrets to specific images:
 
@@ -77,6 +77,14 @@ Example command adds secret to specific events:
 drone secret add --image slack --event push --event tag \
     octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```
+
+# Globbing
+
+The secret implementation allows patterns and prefixes. It uses the glob package for matching. For example:
+
+- `--image='*'` would match all images
+- `--image=foo/*:latest` would match images with tag `latest` from the `foo` organization
+- `--image=foo/*:*` would match images of any tag from the `foo` organization
 
 # Pull Requests
 

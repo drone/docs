@@ -37,6 +37,7 @@ NAME                               | DESC
 `DRONE_COMMIT_AUTHOR_EMAIL`        | commit author email address
 `DRONE_COMMIT_AUTHOR_AVATAR`       | commit author avatar
 `DRONE_BUILD_NUMBER`               | build number
+`DRONE_BUILD_JOB_NUMBER`           | build job number (0)
 `DRONE_BUILD_EVENT`                | build event (push, pull_request, tag)
 `DRONE_BUILD_STATUS`               | build status (success, failure)
 `DRONE_BUILD_LINK`                 | build result link

@@ -78,6 +78,14 @@ drone secret add --image slack --event push --event tag \
     octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```
 
+# Globbing
+
+The secret implementation allows patterns and prefixes. It uses the glob package for matching. For example:
+
+- `--image='*'` would match all images
+- `--image=foo/*:latest` would match images with tag `latest` from the `foo` organization
+- `--image=foo/*:*` would match images of any tag from the `foo` organization
+
 # Pull Requests
 
 Drone gives the option to expose secrets to pull requests, however, if your repository is public you should understand the potential risks. If your repository is public an attacker could submit a pull request that attempts to expose your secrets.

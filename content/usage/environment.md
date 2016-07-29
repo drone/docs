@@ -46,6 +46,11 @@ NAME                               | DESC
 `DRONE_PREV_BUILD_STATUS`          | prior build status
 `DRONE_PREV_BUILD_NUMBER`          | prior build number
 `DRONE_PREV_COMMIT_SHA`            | prior build commit sha
+`DRONE_JOB_NUMBER`                 | job number
+`DRONE_JOB_STATUS`                 | job status
+`DRONE_JOB_EXIT_CODE`              | job exit code
+`DRONE_JOB_STARTED`                | job started
+`DRONE_JOB_FINISHED`               | job finished
 `DRONE_YAML_SIGNED`                | yaml is signed
 `DRONE_YAML_VERIFIED`              | yaml is signed and verified
 `DRONE_BRANCH`                     | commit branch

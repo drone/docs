@@ -24,7 +24,7 @@ The only two required parameters are the server address and secret token. We wil
 
 ```
 DRONE_SERVER=http://drone.server.com
-DRONE_SECRET=...
+DRONE_TOKEN=...
 ```
 
 Create and run your container with Docker mounted as a volume:
@@ -32,7 +32,7 @@ Create and run your container with Docker mounted as a volume:
 ```
 docker run \
   --env DRONE_SERVER=... \
-  --env DRONE_SECRET=... \
+  --env DRONE_TOKEN=... \
 	--volume /var/run/docker.sock:/var/run/docker.sock \
 	--restart=always \
 	--detach=true \

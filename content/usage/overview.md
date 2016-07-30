@@ -139,7 +139,7 @@ build:
 
 Drone executes publish and deployment plugins upon successful completion of the build step. Plugins are executed in separate Docker containers but have access to your build workspace. This means any files created and stored in the `/drone` workspace are available to plugins.
 
-The Docker plugin in our example runs `docker build` and `docker publish` after the build step successfully completes using the configuration parameters in the .drone.yml file:
+The Docker plugin in our example runs `docker build` and `docker push` after the build step successfully completes using the configuration parameters in the .drone.yml file:
 
 ```yaml
 ---

@@ -43,6 +43,12 @@ NAME                               | DESC
 `DRONE_BUILD_CREATED`              | build created unix timestamp
 `DRONE_BUILD_STARTED`              | build started unix timestamp
 `DRONE_BUILD_FINISHED`             | build finished unix timestamp
+`DRONE_JOB_NUMBER`                 | job number (0)
+`DRONE_JOB_STATUS`                 | job status (success, failure)
+`DRONE_JOB_ERROR`                  | job error code
+`DRONE_JOB_EXIT_CODE`              | job exit code
+`DRONE_JOB_STARTED`                | job started unix timestamp
+`DRONE_JOB_FINISHED`               | job finished unix timestamp
 `DRONE_PREV_BUILD_STATUS`          | prior build status
 `DRONE_PREV_BUILD_NUMBER`          | prior build number
 `DRONE_PREV_COMMIT_SHA`            | prior build commit sha

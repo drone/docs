@@ -6,11 +6,11 @@ title = "Gitter"
 description = "Send build status notifications via Gitter"
 user = "drone-plugins"
 repo = "drone-gitter"
-image = "plugins/drone-gitter"
+image = "plugins/gitter"
 tags = ["chat", "messaging", "gitter"]
 categories = "notify"
 draft = false
-date = 2016-02-13T08:59:15Z
+date = 2016-07-30T23:48:03Z
 menu = ""
 weight = 1
 

@@ -10,7 +10,7 @@ image = "plugins/drone-ecs"
 tags = ["aws", "paas"]
 categories = "deploy"
 draft = false
-date = 2016-02-13T09:01:44Z
+date = 2016-07-30T23:49:23Z
 menu = ""
 weight = 1
 
@@ -24,6 +24,7 @@ Use this plugin for deploying a docker container application to AWS EC2 Containe
 * `secret_key` - AWS secret access key
 * `region` - AWS availability zone
 * `service` - Name of the service in the cluster, **MUST** be created already in ECS
+* `cluster` - Name of the cluster. Optional. Default cluster is used if not specified
 * `family` - Family name of the task definition to create or update with a new revision
 * `image_name`, Container image to use, do not include the tag here
 * `image_tag` - Tag of the image to use, defaults to latest

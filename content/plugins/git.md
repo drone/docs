@@ -6,11 +6,11 @@ title = "Git"
 description = "Clones a git repository"
 user = "drone-plugins"
 repo = "drone-git"
-image = "plugins/drone-git"
+image = "plugins/git"
 tags = ["scm", "vcs", "git"]
 categories = "clone"
 draft = false
-date = 2016-02-13T08:58:07Z
+date = 2016-07-30T23:47:18Z
 menu = ""
 weight = 1
 

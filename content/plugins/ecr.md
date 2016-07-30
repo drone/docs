@@ -10,7 +10,7 @@ image = "plugins/drone-ecr"
 tags = ["docker", "image", "container", "ecr", "aws"]
 categories = "publish"
 draft = false
-date = 2016-02-21T08:37:26Z
+date = 2016-07-30T23:49:26Z
 menu = ""
 weight = 1
 
@@ -19,9 +19,9 @@ weight = 1
 Use the Docker plugin to build and push Docker images to an AWS Elastic Container Registry.
 The following parameters are used to configure this plugin:
 
-* `access_key` - authenticates with this username
-* `secret_key` - authenticates with this password
-* `region` - authenticates with this email
+* `access_key` - authenticates with this key
+* `secret_key` - authenticates with this secret
+* `region` - uses this region
 * `repo` - repository name for the image
 * `tag` - repository tag for the image
 * `force_tag` - replace existing matched image tags
@@ -90,9 +90,35 @@ publish:
       - HTTP_PROXY=http://yourproxy.com
 ```
 
-## Layer Caching
+## Caching
 
-The Drone build environment is, by default, ephemeral meaning that you layers are not saved between builds. The below example combines Drone's caching feature and Docker's `save` and `load` capabilities to cache and restore image layers between builds:
+The Drone build environment is, by default, ephemeral meaning that you layers are not saved between builds. There are two methods for caching your layers.
+
+### Graph directory caching
+
+This is the preferred method when using the `overlay` or `aufs` storage drivers. Just use Drone's caching feature to backup and restore the directory `/drone/docker`, as shown in the following example:
+
+```yaml
+publish:
+  docker:
+    username: kevinbacon
+    password: pa55word
+    email: kevin.bacon@mail.com
+    repo: foo/bar
+    tag:
+      - latest
+      - "1.0.1"
+
+cache:
+  mount:
+    - /drone/docker
+```
+
+NOTE: This probably won't work correctly with the `btrfs` driver, and it will be very inefficient with the `devicemapper` driver. Please make sure to use the `overlay` or `aufs` storage driver with this method.
+
+### Layer Caching
+
+The below example combines Drone's caching feature and Docker's `save` and `load` capabilities to cache and restore image layers between builds:
 
 ```yaml
 publish:
@@ -128,7 +154,7 @@ For detailed output you can set the `DOCKER_LAUNCH_DEBUG` environment variable i
 
 ```yaml
 publish:
-  docker:
+  ecr:
     environment:
       - DOCKER_LAUNCH_DEBUG=true
 ```

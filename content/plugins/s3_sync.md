@@ -10,7 +10,7 @@ image = "plugins/drone-s3-sync"
 tags = ["publish", "artifacts", "amazon", "aws", "s3"]
 categories = "publish"
 draft = false
-date = 2016-02-13T08:59:18Z
+date = 2016-07-30T23:48:06Z
 menu = ""
 weight = 1
 
@@ -27,8 +27,10 @@ Use the S3 sync plugin to synchronize files and folders with an Amazon S3 bucket
 * `target` - target folder in your S3 bucket
 * `delete` - deletes files in the target not found in the source
 * `content_type` - override default mime-types to use this value
+* `content_encoding` - override default content encoding header for files
 * `metadata` - set custom metadata
 * `redirects` - targets that should redirect elsewhere
+* `cloudfront_distribution_id` - (optional) the cloudfront distribution id to invalidate after syncing
 
 The following is a sample S3 configuration in your .drone.yml file:
 
@@ -43,9 +45,10 @@ publish:
     source: folder/to/archive
     target: /target/location
     delete: true
+    cloudfront_distribution_id: "9c5785d3ece6a9cdefa4"
 ```
 
-Both `acl` and `content_type` can be passed as a string value to apply to all files, or as a map to apply to a subset of files.
+The `acl`, `content_type`, and `content_encoding` parameters can be passed as a string value to apply to all files, or as a map to apply to a subset of files.
 
 For example:
 
@@ -57,6 +60,9 @@ publish:
       "private/*": private
     content_type:
       ".svg": image/svg+xml
+    content_encoding:
+      ".js": gzip
+      ".css": gzip
     region: "us-east-1"
     bucket: "my-bucket.s3-website-us-east-1.amazonaws.com"
     access_key: "970d28f4dd477bc184fbd10b376de753"
@@ -69,6 +75,9 @@ publish:
 In the case of `acl` the key of the map is a glob. If there are no matches in your settings for a given file, the default is `"private"`.
 
 The `content_type` field the key is an extension including the leading dot `.`. If you want to set a content type for files with no extension, set the key to the empty string `""`. If there are no matches for the `content_type` of any file, one will automatically be determined for you.
+
+In the  `content_encoding` field the key is an extension including the leading dot `.`. If you want to set a encoding type for files with no extension, set the key
+to th empty string `""`. If there are no matches for the `content_encoding` of a file, no content-encoding header will be added.
 
 The `metadata` field can be set as either an object where the keys are the metadata headers:
 

@@ -10,7 +10,7 @@ image = "plugins/drone-terraform"
 tags = ["terraform"]
 categories = "deploy"
 draft = false
-date = 2016-02-21T08:37:46Z
+date = 2016-07-30T23:49:50Z
 menu = ""
 weight = 1
 
@@ -26,6 +26,9 @@ Use the Terraform plugin to apply the infrastructure configuration contained wit
  <key>=<value>` option.
 * `ca_cert` - ca cert to add to your environment to allow terraform to use internal/private resources
 * `sensitive` (default: `false`) - Whether or not to suppress terraform commands to stdout.
+* `role_arn_to_assume` - A role to assume before running the terraform commands.
+* `root_dir` - The root directory where the terraform files live. When unset, the top level directory will be assumed.
+* `parallelism` - The number of concurrent operations as Terraform walks its graph.
 
 The following is a sample Terraform configuration in your .drone.yml file:
 
@@ -90,5 +93,63 @@ deploy:
       vars:
         app_name: my-project
         app_version: 1.0.0
+```
+
+## Assume Role ARN
+You may want to assume another role before running the terraform commands. This is useful for cross account access, where a central account ahs privileges to assume roles in other accounts. Using the current credentials, this role will be assumed and exported to environment variables.  See [the discussion](https://github.com/hashicorp/terraform/issues/1275) in the Terraform issues.
+
+```yaml
+deploy:
+  terraform:
+    plan: false
+    remote:
+      backend: S3
+      config:
+        bucket: my-terraform-config-bucket
+        key: tf-states/my-project
+        region: us-east-1
+    vars:
+      app_name: my-project
+      app_version: 1.0.0
+    role_arn_to_assume: arn:aws:iam::account-of-role-to-assume:role/name-of-role
+```
+
+## Root dir
+You may want to change directories before applying the terraform commands.  This parameter is useful if you have multiple environments in different folders and you want to use different drone configurations to apply different environments.
+
+```yaml
+deploy:
+  terraform:
+    plan: false
+    remote:
+      backend: S3
+      config:
+        bucket: my-terraform-config-bucket
+        key: tf-states/my-project
+        region: us-east-1
+    vars:
+      app_name: my-project
+      app_version: 1.0.0
+    root_dir: some/path/here
+```
+
+## Parallelism
+You may want to limit the number of concurrent operations as Terraform walks its graph.
+If you want to change Terraform's default parallelism (currently equal to 10) then set the `parallelism` parameter.
+
+```yaml
+deploy:
+  terraform:
+    plan: false
+    remote:
+      backend: S3
+      config:
+        bucket: my-terraform-config-bucket
+        key: tf-states/my-project
+        region: us-east-1
+    vars:
+      app_name: my-project
+      app_version: 1.0.0
+    parallelism: 2
 ```
 

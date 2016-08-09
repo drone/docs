@@ -15,7 +15,7 @@ Plugins are declared in the `.drone.yml` file. Drone automatically downloads plu
 ---
 notify:
   slack:
-    webhook_url: https://hooks.slack.com/services/...
+    webhook: https://hooks.slack.com/services/...
     username: captain_freedom
     channel: ics
 ```

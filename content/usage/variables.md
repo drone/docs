@@ -17,7 +17,7 @@ Drone injects the following namespaced environment variables into every build:
 * `DRONE_COMMIT` - git sha for the current build
 * `DRONE_DIR` - working directory for the current build
 * `DRONE_BUILD_NUMBER` - build number for the current build
-* `DRONE_PULL_REQUEST` - pull request number fo the current build
+* `DRONE_PULL_REQUEST` - pull request number for the current build
 * `DRONE_JOB_NUMBER` - job number for the current build
 * `DRONE_TAG` - tag name for the current build
 
@@ -29,7 +29,7 @@ Drone also injects `CI_` prefixed variables for compatibility with other systems
 * `CI_BRANCH` - branch name for the current build
 * `CI_COMMIT` - git sha for the current build
 * `CI_BUILD_NUMBER` - build number for the current build
-* `CI_PULL_REQUEST` - pull request number fo the current build
+* `CI_PULL_REQUEST` - pull request number for the current build
 * `CI_JOB_NUMBER` - job number for the current build
 * `CI_BUILD_DIR` - working directory for the current build
 * `CI_BUILD_URL` - url for the current build

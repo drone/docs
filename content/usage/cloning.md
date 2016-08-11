@@ -18,6 +18,7 @@ This is an example Yaml configuration:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     depth: 50
     recursive: true
 ```
@@ -39,6 +40,7 @@ Limit the amount of git history that is fetched from the remote repository:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     depth: 50
 ```
 
@@ -47,6 +49,7 @@ Fetch all tags from the remote repository:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     tags: true
 ```
 
@@ -55,6 +58,7 @@ Disable tls verification when cloning the remote repository:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     skip_verify: true
 ```
 
@@ -63,6 +67,7 @@ Recursively clone all submodules:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     recursive: true
 ```
 
@@ -71,6 +76,7 @@ Recursively clone and update all submodules:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     recursive: true
     submodule_update_remote: true
 ```
@@ -80,6 +86,7 @@ Use your own custom clone plugin:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     image: custom/git
 ```
 
@@ -106,6 +113,7 @@ This can be mitigated by overriding the submodule url to use git+https:
 ```yaml
 pipeline:
   clone:
+    image: plugins/git
     recursive: true
     submodule_override:
       hello-world: https://github.com/octocat/hello-world.git

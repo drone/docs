@@ -37,6 +37,18 @@ NAME                        | DESC
 
 # Private Key File
 
+The OAuth process in Bitbucket server requires a private and a public RSA certificate. This is how you create the private RSA certificate.
+
+```
+openssl genrsa -out mykey.pem 1024
+```
+
+This stores the private RSA certificate in `mykey.pem`. The next command generates the public RSA certificate and stores it in `key.pem`.
+
+```
+openssl rsa -in mykey.pem -pubout >> /etc/bitbucket/key.pem
+```
+
 Please note that the private key file needs to be mounted into your Drone container at runtime as a volume:
 
 ```

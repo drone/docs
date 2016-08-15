@@ -23,6 +23,7 @@ docker pull drone/drone:0.5
 Configuration parameters are provided to Drone as environment variables. Please read the documentation to configure your service integrations (ie GitHub) before completing this step.
 
 ```
+DRONE_GITHUB=true
 DRONE_GITHUB_CLIENT=...
 DRONE_GITHUB_SECRET=...
 ```
@@ -44,6 +45,7 @@ Create and run your container:
 
 ```
 docker run \
+  --env DRONE_GITHUB=true \
   --env DRONE_GITHUB_CLIENT=... \
   --env DRONE_GITHUB_SECRET=... \
   --env DRONE_SECRET=... \

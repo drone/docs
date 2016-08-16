@@ -37,6 +37,18 @@ NAME                        | DESC
 
 # Private Key File
 
+The OAuth process in Bitbucket server requires a private and a public RSA certificate. This is how you create the private RSA certificate.
+
+```
+openssl genrsa -out mykey.pem 1024
+```
+
+This stores the private RSA certificate in `mykey.pem`. The next command generates the public RSA certificate and stores it in `key.pem`.
+
+```
+openssl rsa -in mykey.pem -pubout >> /etc/bitbucket/key.pem
+```
+
 Please note that the private key file needs to be mounted into your Drone container at runtime as a volume:
 
 ```
@@ -55,6 +67,6 @@ Drone users `git+https` to clone repositories, however, Bitbucket Server does no
 
 # Registration
 
-You must register your application with Bitbucket Server in order to generate a consumer key and key file. Navigate to your account settings and choose Applications from the menu, and click Register new application.
+You must register your application with Bitbucket Server in order to generate a consumer key. Navigate to your account settings and choose Applications from the menu, and click Register new application. Now copy & paste the text value from `/etc/bitbucket/key.pem` into the `Public Key` in the incoming link part of the application registration.
 
 Please use http://drone.mycompany.com/authorize as the Authorization callback URL.

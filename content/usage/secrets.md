@@ -24,7 +24,7 @@ drone secret add --image=heroku \
 Example command removes the secret:
 
 ```
-drone secret remove octocat/hello-world HEROKU_TOKEN
+drone secret rm octocat/hello-world HEROKU_TOKEN
 ```
 
 Example command signs the Yaml file:

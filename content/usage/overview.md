@@ -70,6 +70,15 @@ pipeline:
     image: golang:1.6
 ```
 
+For private repositories credentials can be configured by secrets
+`REGISTRY_USERNAME`, `REGISTRY_PASSWORD` and `REGISTRY_EMAIL`, example:
+
+```
+# following adds contents of password.txt to secret REGISTRY_PASSWORD
+# and REGISTRY_PASSWORD will be when pulling gcr.io/me/repo:tag
+$ drone secret add --image=gcr.io/me/repo:tag my/repo REGISTRY_PASSWORD @password.txt
+```
+
 # Cloning
 
 Drone automatically clones your repository into a local volume that is mounted into each Docker container. This volume is generally referred to as the workspace. The workspace is available to all steps in your build process, including plugins and service containers.

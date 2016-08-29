@@ -52,9 +52,9 @@ services:
 Drone supports private images that require password authentication. You can use the command line utility to register authentication credentials:
 
 ```
-drone secrets add octocat/hello-world REGISTRY_USERNAME octocat
-drone secrets add octocat/hello-world REGISTRY_PASSWORD pa55word
-drone secrets add octocat/hello-world REGISTRY_EMAIL octocat@github.com
+drone secret add octocat/hello-world REGISTRY_USERNAME octocat
+drone secret add octocat/hello-world REGISTRY_PASSWORD pa55word
+drone secret add octocat/hello-world REGISTRY_EMAIL octocat@github.com
 ```
 
 You can alternatively specify the authentication credentials directly in the Yaml:

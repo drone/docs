@@ -86,6 +86,9 @@ notify:
     urls:
       - https://tower.example.com/...
 ```
+### SSL
+
+In some cases, you might want to skip SSL verification. To do so please use the `skip_verify` parameter that accepts a boolean value
 
 ### Debugging Webhooks
 

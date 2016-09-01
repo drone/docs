@@ -86,6 +86,15 @@ The secret implementation allows patterns and prefixes. It uses the glob package
 - `--image=foo/*:latest` would match images with tag `latest` from the `foo` organization
 - `--image=foo/*:*` would match images of any tag from the `foo` organization
 
+# Multiline Secrets
+
+You can add a multiline secret (or any secret really) by reading it from a local file.  For example:
+
+```
+drone secret add --image=heroku \
+    octocat/hello-world HEROKU_TOKEN @/file/path/to/secret
+```
+
 # Pull Requests
 
 Drone gives the option to expose secrets to pull requests, however, if your repository is public you should understand the potential risks. If your repository is public an attacker could submit a pull request that attempts to expose your secrets.

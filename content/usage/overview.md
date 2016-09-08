@@ -49,7 +49,7 @@ pipeline:
       - npm test
 
   notify:
-    image: slack
+    image: plugins/slack
     channel: developers
     username: drone
 ```
@@ -161,7 +161,7 @@ pipeline:
   ...
 
   notify:
-    image: slack
+    image: plugins/slack
     channel: developers
     username: drone
 ```
@@ -201,7 +201,7 @@ pipeline:
     ...
 
   notify:
-    image: slack
+    image: plugins/slack
     when:
       status: [ success, failure ]
 ```

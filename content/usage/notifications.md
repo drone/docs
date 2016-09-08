@@ -25,6 +25,7 @@ pipeline:
       - npm run tests
 
   slack:
+    image: plugins/slack
     channel: dev
     username: drone
 ```
@@ -36,6 +37,7 @@ Many notification plugins support [handlebars](http://handlebarsjs.com/) templat
 ```yaml
 pipeline:
   slack:
+    image: plugins/slack
     channel: dev
     username: drone
     template: |
@@ -48,6 +50,7 @@ Example template that generates a different message based on build status:
 ```yaml
 pipeline:
   slack:
+    image: plugins/slack
     channel: dev
     username: drone
     template: |

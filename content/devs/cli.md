@@ -12,14 +12,14 @@ This tool requires Docker 1.6 or higher. If you are using Windows or Mac we reco
 __Linux__ binary installation instructions:
 
 ```bash
-curl http://downloads.drone.io/drone-cli/drone_linux_amd64.tar.gz | tar zx
+curl http://downloads.drone.io/release/linux/amd64/drone.tar.gz | tar zx
 sudo install -t /usr/local/bin drone
 ```
 
 __OSX__ binary installation instructions:
 
 ```bash
-curl http://downloads.drone.io/drone-cli/drone_darwin_amd64.tar.gz | tar zx
+curl http://downloads.drone.io/release/darwin/amd64/drone.tar.gz | tar zx
 sudo cp drone /usr/local/bin
 ```
 

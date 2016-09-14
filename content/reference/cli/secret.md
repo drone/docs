@@ -61,3 +61,15 @@ Remove the password from your repository:
 ```
 $ drone secret remove octocat/hello-world DOCKER_PASSWORD
 ```
+
+# Organization Secrets
+
+You may want to share a secret across repos in an Organization.  You can use `drone org secret` with same syntax as `drone secret` above to do so.
+
+Register the password with your organization (e.g. `octocat`) for specific images or plugins:
+
+```
+$ drone org secret add \
+    --image=plugins/drone-s3:latest \
+    octocat AWS_ACCESS_KEY_ID AKIAIOSFODNN7EXAMPLE
+```

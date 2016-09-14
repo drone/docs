@@ -29,7 +29,7 @@ NAME                        | DESC
 `DRONE_GITHUB_CLIENT`       | github oauth client id
 `DRONE_GITHUB_SECRET`       | github oauth client secret
 `DRONE_GITHUB_SCOPE`        | github oauth scopes
-`DRONE_GITHUB_PRIVATE_MODE` | github enterprise is running in private mode
+`DRONE_GITHUB_PRIVATE_MODE` | github enterprise is running in [private mode](https://help.github.com/enterprise/2.1/admin/articles/private-mode/)
 `DRONE_GITHUB_SKIP_VERIFY`  | github certificate is self-signed
 
 # Registration

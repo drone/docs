@@ -184,7 +184,7 @@ Drone includes a number of builtin handlebars functions to help format your mess
 Converts a string to all lowercase characters:
 
 ```handlebars
-{{uppercase build.author}}
+{{lowercase build.author}}
 ```
 
 Truncates a string to N characters:

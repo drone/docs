@@ -21,6 +21,7 @@ NAME                        | DESC
 `DRONE_PLUGIN_PULL`         | If `true`, plugin updates are pull automatically.
 `DRONE_PLUGIN_NAMESPACE`    | Plugin namespace in dockerhub, defaults to `plugins`.
 `DRONE_PLUGIN_PRIVILEGED`   | Space-separated list of plugins automatically granted privileged mode.
+`DRONE_CONCEAL_SECRETS`     | If `true`, secrets will be concealed in build logs.
 `DOCKER_HOST`               | Docker host address.
 `DOCKER_TLS_VERIFY`         | Docker requires tls verification.
 `DOCKER_CERT_PATH`          | Docker certificate path.

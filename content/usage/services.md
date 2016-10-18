@@ -94,7 +94,7 @@ services:
 
 # Entrypoint & command arguments
 
-Use the entrypoint and command section to specify a different binary and its arguments.
+With entrypoint and command you can override the entrypoint or cmd directives of the service image. You don't need to set both and you can also call the binary from the command section.
 
 ```yaml
 ---

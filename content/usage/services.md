@@ -92,6 +92,18 @@ services:
       - POSTGRES_PASSWORD=mysecretpassword
 ```
 
+# Entrypoint & command arguments
+
+Use the entrypoint and command section to specify a different binary and its arguments.
+
+```yaml
+---
+services:
+  some-service:
+    entrypoint: [ "/bin/some-binary" ]
+    command: [ "--arg1", "--arg2", "--arg3" ]
+```
+
 # Volumes
 
 Use the `volumes` attribute to mount folders on your host machine into your service container. These are [Docker volumes](https://docs.docker.com/engine/userguide/dockervolumes/) and therefore use the same `<host>:<container>` declaration conventions:

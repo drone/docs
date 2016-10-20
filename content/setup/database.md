@@ -34,7 +34,7 @@ See the official postgres connection string [documentation](http://www.postgresq
 Configure a Mysql database backend:
 
 ```
-DATABASE_DRIVER="mysql"
+DATABASE_DRIVER=mysql
 DATABASE_CONFIG="root:pa55word@tcp(localhost:3306)/drone?parseTime=true"
 ```
 See the driver [documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name) for a complete set of configuration options and examples.

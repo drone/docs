@@ -71,15 +71,6 @@ Example [apache](http://httpd.apache.org) reverse proxy configuration:
   ProxyPass /ws/ ws://localhost:8000/ws/
   ProxyPassReverse /ws/ ws://localhost:8000/ws/
 
-  ProxyPass /api/queue/logs ws://127.0.0.1:8000/api/queue/logs
-  ProxyPassReverse /api/queue/logs ws://127.0.0.1:8000/api/queue/logs
-
-  ProxyPass /api/queue/pull ws://127.0.0.1:8000/api/queue/pull
-  ProxyPassReverse /api/queue/pull ws://127.0.0.1:8000/api/queue/pull
-
-  ProxyPass /api/stream ws://127.0.0.1:8000/api/stream
-  ProxyPassReverse /api/stream ws://127.0.0.1:8000/api/stream
-
   # All the rest (not websockets)
 
   ProxyPass / http://127.0.0.1:8000/

@@ -14,9 +14,9 @@ NAME                        | DESC
 `DRONE_SERVER`              | Full URL (with protocol) to the Drone Server.
 `DRONE_SECRET`              | Shared secret. Must match the value on Drone Server.
 `DRONE_DEBUG`               | Set to `true` to see verbose debugging log output.
-`DRONE_PING`                | Drone Server ping frequency (in seconds).
-`DRONE_BACKOFF`             | Drone Server reconnect backoff duration.
-`DRONE_TIMEOUT`             | Build timeout for console inactivity.
+`DRONE_PING`                | Drone Server ping frequency ([duration string][ParseDuration]).
+`DRONE_BACKOFF`             | Drone Server reconnect backoff duration ([duration string][ParseDuration]).
+`DRONE_TIMEOUT`             | Build timeout for console inactivity ([duration string][ParseDuration]).
 `DRONE_MAX_LOGS`            | Build log size limit, defaults to 5mb.
 `DRONE_PLUGIN_PULL`         | If `true`, plugin updates are pull automatically.
 `DRONE_PLUGIN_NAMESPACE`    | Plugin namespace in dockerhub, defaults to `plugins`.
@@ -30,3 +30,5 @@ NAME                        | DESC
 `HTTP_PROXY`                | HTTP proxy server.
 `HTTPS_PROXY`               | HTTPS proxy server.
 `NO_PROXY`                  | Proxy server exceptions.
+
+[ParseDuration]: https://golang.org/pkg/time/#ParseDuration

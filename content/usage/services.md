@@ -94,7 +94,7 @@ services:
 
 # Entrypoint and command arguments
 
-With entrypoint and command you can override the entrypoint or cmd directives of the service image. You don't need to set both and you can also call the binary from the command section.
+Use `entrypoint` and/or `cmd` on a service container to override its [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#/entrypoint) and [CMD](https://docs.docker.com/engine/reference/builder/#/cmd). You may specify one or both as needed.
 
 ```yaml
 ---

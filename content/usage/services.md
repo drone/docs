@@ -92,7 +92,7 @@ services:
       - POSTGRES_PASSWORD=mysecretpassword
 ```
 
-# Entrypoint & command arguments
+# Entrypoint and command arguments
 
 With entrypoint and command you can override the entrypoint or cmd directives of the service image. You don't need to set both and you can also call the binary from the command section.
 

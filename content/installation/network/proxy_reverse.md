@@ -18,9 +18,13 @@ This section of the documentation provides sample configurations for using Drone
 
 If you opt to use a different exposed port, be sure to adjust `upstream drone` accordingly.
 
+If SSL is not to be used, change the listening port from `443` to `80`
+and comment out the SSL configuration block.
+
 Example [nginx](http://nginx.org) reverse proxy configuration:
 
 ```
+# Handle connection upgrading.
 map $http_upgrade $connection_upgrade {
     default upgrade;
     ''      close;
@@ -51,7 +55,7 @@ server {
         chunked_transfer_encoding off;
     }
 
-    # Handle WebSockets by Catch all /ws (case-insensitive) and upgrade the connection.
+    # Handle WebSockets by catching all /ws (case-insensitive) and upgrade the connection.
     location ~* /ws {
         access_log off;
         proxy_pass http://drone;
@@ -64,6 +68,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
+	# SSL Configuration
     ssl on;
     ssl_certificate /etc/nginx/ssl/example.com.crt;
     ssl_certificate_key /etc/nginx/ssl/example.com.key;

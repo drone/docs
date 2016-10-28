@@ -92,6 +92,18 @@ services:
       - POSTGRES_PASSWORD=mysecretpassword
 ```
 
+# Entrypoint and command arguments
+
+Use `entrypoint` and/or `cmd` on a service container to override its [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#/entrypoint) and [CMD](https://docs.docker.com/engine/reference/builder/#/cmd). You may specify one or both as needed.
+
+```yaml
+---
+services:
+  some-service:
+    entrypoint: [ "/bin/some-binary" ]
+    command: [ "--arg1", "--arg2", "--arg3" ]
+```
+
 # Volumes
 
 Use the `volumes` attribute to mount folders on your host machine into your service container. These are [Docker volumes](https://docs.docker.com/engine/userguide/dockervolumes/) and therefore use the same `<host>:<container>` declaration conventions:

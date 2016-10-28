@@ -23,7 +23,7 @@ docker pull drone/drone:0.5
 The only two required parameters are the server address and secret token. We will provide these parameters to Docker as environment variables using the `--env` flag. Please see the prior section of this document for instructions retrieving your secret token.
 
 ```
-DRONE_SERVER=http://drone.server.com
+DRONE_SERVER=ws://drone.server.com/ws/broker
 DRONE_SECRET=...
 ```
 

@@ -16,29 +16,63 @@ This section of the documentation provides sample configurations for using Drone
 
 # Nginx
 
+If you opt to use a different exposed port, be sure to adjust `upstream drone` accordingly.
+
+If SSL is not to be used, change the listening port from `443` to `80`
+and comment out the SSL configuration block.
+
 Example [nginx](http://nginx.org) reverse proxy configuration:
 
 ```
+# Handle connection upgrading.
 map $http_upgrade $connection_upgrade {
     default upgrade;
     ''      close;
 }
 
-location / {
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $remote_addr;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header Host $http_host;
-    proxy_set_header Origin "";
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection $connection_upgrade;
+# Establish the upstream to Drone.
+upstream drone {
+    server 127.0.0.1:8000;
+}
 
-    proxy_pass http://127.0.0.1:8000;
-    proxy_http_version 1.1;
-    proxy_redirect off;
-    proxy_buffering off;
+server {
+    listen 443 ssl;
+    server_name drone.example.com;
 
-    chunked_transfer_encoding off;
+    # Proxy all requests to the Drone application.
+    location / {
+        access_log off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host $http_host;
+
+        proxy_pass http://drone;
+        proxy_redirect off;
+        proxy_http_version 1.1;
+        proxy_buffering off;
+
+        chunked_transfer_encoding off;
+    }
+
+    # Handle WebSockets by catching all /ws (case-insensitive) and upgrade the connection.
+    location ~* /ws {
+        access_log off;
+        proxy_pass http://drone;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 86400;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # SSL Configuration
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/example.com.crt;
+    ssl_certificate_key /etc/nginx/ssl/example.com.key;
+    ssl_trusted_certificate /etc/nginx/ssl/ca-certs.pem;
 }
 ```
 

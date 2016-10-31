@@ -35,6 +35,14 @@ Drone uses `git+https` combined with a `.netrc` file to authenticate and clone p
 
 # Customization
 
+To begin customization provide the clone plugin image name:
+
+```yaml
+---
+clone:
+  image: plugins/git
+```
+
 Limit the amount of git history that is fetched from the remote repository:
 
 ```yaml

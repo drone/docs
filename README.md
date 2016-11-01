@@ -1,6 +1,6 @@
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/drone/drone?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Documentation for the [Drone](https://github.com/drone/drone) continuous integration server, found at [readme.drone.io](http://readme.drone.io)
+Documentation for the [Drone](https://github.com/drone/drone) continuous integration server, found at [readme.drone.io/0.5](http://readme.drone.io/0.5)
 
 ## Setup
 

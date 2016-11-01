@@ -52,7 +52,7 @@ Drone gives the option to skip signature verification. This disables import secu
 Example command adds secrets without signature verification:
 
 ```
-drone secret add --image slack --skip-verify --insecure \
+drone secret add --image slack --skip-verify \
     octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```
 

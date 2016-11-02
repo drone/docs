@@ -17,7 +17,7 @@ Drone gives the ability to safely inject passwords, tokens, keys and sensitive i
 Example command adds the secret for the Heroku plugin:
 
 ```
-drone secret add --image=heroku \
+drone secret add --image=plugins/heroku \
     octocat/hello-world HEROKU_TOKEN f1d2d2f924e986a
 ```
 
@@ -52,7 +52,7 @@ Drone gives the option to skip signature verification. This disables import secu
 Example command adds secrets without signature verification:
 
 ```
-drone secret add --image slack --skip-verify \
+drone secret add --image plugins/slack --skip-verify \
     octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```
 
@@ -63,7 +63,7 @@ Drone requires an `--image` option to limit secrets to specific images or plugin
 Example command adds secrets to specific images:
 
 ```
-drone secret add --image s3 --image ecr \
+drone secret add --image plugins/s3 --image plugins/ecr \
     octocat/hello-world AWS_CLIENT_SECRET f1d2d2f924e986a
 ```
 
@@ -74,7 +74,7 @@ Drone gives the option to limit secrets to specific events, including `push`, `p
 Example command adds secret to specific events:
 
 ```
-drone secret add --image slack --event push --event tag \
+drone secret add --image plugins/slack --event push --event tag \
     octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```
 
@@ -91,7 +91,7 @@ The secret implementation allows patterns and prefixes. It uses the glob package
 You can add a multiline secret (or any secret really) by reading it from a local file.  For example:
 
 ```
-drone secret add --image=heroku \
+drone secret add --image=plugins/heroku \
     octocat/hello-world HEROKU_TOKEN @/file/path/to/secret
 ```
 
@@ -104,6 +104,6 @@ This attack vector is mitigated by signing your Yaml and only exposing secrets t
 Example command adds secrets for push and pull request events:
 
 ```
-drone secret add --image slack --event push --event pull_request \
+drone secret add --image plugins/slack --event push --event pull_request \
     octocat/hello-world SLACK_TOKEN f1d2d2f924e986a
 ```

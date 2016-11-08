@@ -16,6 +16,7 @@ This is an example yaml configuration:
 ```yaml
 ---
 clone:
+  image: plugins/git
   depth: 50
   recursive: true
   path: github.com/drone/drone
@@ -35,11 +36,20 @@ Drone uses `git+https` combined with a `.netrc` file to authenticate and clone p
 
 # Customization
 
+To begin customization provide the clone plugin image name:
+
+```yaml
+---
+clone:
+  image: plugins/git
+```
+
 Limit the amount of git history that is fetched from the remote repository:
 
 ```yaml
 ---
 clone:
+  image: plugins/git
   depth: 50
 ```
 
@@ -48,6 +58,7 @@ Fetch all tags from the remote repository:
 ```yaml
 ---
 clone:
+  image: plugins/git
   tags: true
 ```
 
@@ -56,6 +67,7 @@ Disable tls verification when cloning the remote repository:
 ```yaml
 ---
 clone:
+  image: plugins/git
   skip_verify: true
 ```
 
@@ -64,6 +76,7 @@ Recursively clone all submodules:
 ```yaml
 ---
 clone:
+  image: plugins/git
   recursive: true
 ```
 
@@ -72,6 +85,7 @@ Recursively clone and update all submodules:
 ```yaml
 ---
 clone:
+  image: plugins/git
   recursive: true
   submodule_update_remote: true
 ```
@@ -99,6 +113,7 @@ This can be mitigated by overriding the submodule url to use git+https:
 ```yaml
 ---
 clone:
+  image: plugins/git
   recursive: true
   submodule_override:
     hello-world: https://github.com/octocat/hello-world.git

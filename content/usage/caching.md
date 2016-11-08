@@ -61,7 +61,7 @@ cache:
     - /drone/site-packages
 ```
 
-To work around this limitation we can cache files or folders in `/drone` and copy they to the expected location at the start of the build, and then copy them back to `/drone` at the end fo the build:
+To work around this limitation we can cache files or folders in `/drone` and copy they to the expected location at the start of the build, and then copy them back to `/drone` at the end of the build:
 
 ```yaml
 ---

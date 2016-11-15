@@ -45,7 +45,7 @@ location / {
 
     # Connection upgrade for WebSockets
     proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "upgrade;
+    proxy_set_header Connection "upgrade";
 
     chunked_transfer_encoding off;
 }

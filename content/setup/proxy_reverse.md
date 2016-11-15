@@ -46,6 +46,11 @@ location / {
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection "upgrade";
 
+    # WebSockets are affected by proxy_read_timeout (default 60s)
+    # Current websocket implementation does not perform heartbeat/ping
+    # within these 60s, causing connection to close.
+    proxy_read_timeout 3600s;
+
     chunked_transfer_encoding off;
 }
 ```

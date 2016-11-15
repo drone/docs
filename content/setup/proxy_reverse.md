@@ -36,12 +36,20 @@ location / {
     proxy_set_header X-Forwarded-For $remote_addr;
     proxy_set_header X-Forwarded-Proto $scheme;
     proxy_set_header Host $http_host;
-    proxy_set_header Origin "";
 
     proxy_pass http://127.0.0.1:8000;
     proxy_redirect off;
     proxy_http_version 1.1;
     proxy_buffering off;
+
+    # Connection upgrade for WebSockets
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+
+    # WebSockets are affected by proxy_read_timeout (default 60s)
+    # Current websocket implementation does not perform heartbeat/ping
+    # within these 60s, causing connection to close.
+    proxy_read_timeout 3600s;
 
     chunked_transfer_encoding off;
 }

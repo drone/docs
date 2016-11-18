@@ -27,7 +27,7 @@ Download and install using Homebrew:
 
 ```
 brew tap drone/drone
-brew install drone
+brew install drone --devel
 ```
 
 Or manually download and install the binary:

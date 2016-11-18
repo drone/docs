@@ -67,7 +67,7 @@ Note the above example mounts a volume on the host machine. The default configur
 
 # Configuration
 
-For a full list of configuration options, see the [Drone Server Configuration Reference](../../reference/configuration/server).
+For a full list of configuration options, see the [Drone Server Configuration Reference](../reference/configuration/server.md).
 
 # Logging
 

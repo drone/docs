@@ -22,7 +22,7 @@ Builds are automatically triggered by post-commit hooks from your version contro
 
 # How can I trigger downstream builds?
 
-Downstream or cascading builds can be configured using the downstream plugin. This plugin lets you define downstream dependencies and trigger downstream builds from the Yaml file.
+Downstream or cascading builds can be configured using the [downstream plugin](https://github.com/drone-plugins/drone-downstream). This plugin lets you define downstream dependencies and trigger downstream builds from the Yaml file.
 
 # How can I trigger upstream builds?
 

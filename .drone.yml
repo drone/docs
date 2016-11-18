@@ -1,24 +1,22 @@
-build:
-  image: golang:1.5
-  environment:
-    - HUGO=0.15_linux_amd64
-  commands:
-    - curl -L -o /tmp/hugo_$HUGO.tar.gz https://github.com/spf13/hugo/releases/download/v0.15/hugo_$HUGO.tar.gz
-    - tar xvf /tmp/hugo_$HUGO.tar.gz -C /tmp/
-    - mv /tmp/hugo_$HUGO/hugo_$HUGO /usr/bin/hugo
-    - hugo
+workspace:
+  path: src
 
-publish:
-  s3_sync:native:
+pipeline:
+  build:
+    image: webhippie/hugo:latest
+    commands:
+      - hugo
+
+  upload:
+    image: plugins/s3-sync
     acl: public-read
     region: us-east-1
     bucket: readme.drone.io
-    access_key: $$AWS_KEY
-    secret_key: $$AWS_SECRET
     source: public/
     target: /0.5/
     delete: true
     content_type:
       ".svg": image/svg+xml
     when:
-      branch: master
+      event: push
+      branch: release/0.5

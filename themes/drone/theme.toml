@@ -1,0 +1,7 @@
+name = "drone-theme"
+license = "BSD"
+min_version = "0.20"
+
+[author]
+  name = "bradrydzewski"
+  homepage = "https://github.com/bradrydzewski"

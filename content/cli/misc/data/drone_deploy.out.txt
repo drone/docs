@@ -1,0 +1,13 @@
+NAME:
+   drone deploy - deploy code
+
+USAGE:
+   drone deploy [command options] [arguments...]
+
+OPTIONS:
+   --format value           format output (default: "Number: {{ .Number }}\nStatus: {{ .Status }}\nCommit: {{ .Commit }}\nBranch: {{ .Branch }}\nRef: {{ .Ref }}\nMessage: {{ .Message }}\nAuthor: {{ .Author }}\nTarget: {{ .Deploy }}\n")
+   --branch value           branch filter (default: "master")
+   --event value            event filter (default: "push")
+   --status value           status filter (default: "success")
+   --param value, -p value  custom parameters to be injected into the job environment. Format: KEY=value
+   

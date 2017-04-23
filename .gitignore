@@ -1,4 +1,2 @@
 public
-
-# IDE/Editor stuff
-.idea
+public/**

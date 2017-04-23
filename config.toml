@@ -1,6 +1,0 @@
-baseurl = "http://readme.drone.io/0.4/"
-languageCode = "en-us"
-title = "Drone"
-
-[[menu.api]]
-	parent = "API Reference"

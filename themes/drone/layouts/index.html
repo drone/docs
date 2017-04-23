@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<base href="{{ .Site.BaseURL }}">
+	{{ .Hugo.Generator }}
+	<title>{{ .Title }}</title>
+
+	{{ partial "style_reset.html" . }}
+	{{ partial "style.html" . }}
+</head>
+<body>
+
+<aside>
+	<a href='{{ relLangURL "/" }}' class="logo"></a>
+	{{ range .Site.Menus.index }}
+	<a href='{{ relLangURL .URL }}' class="section">{{ .Name }}</a>
+	{{ end }}
+</aside>
+
+<header>
+	<input type="text" id="search" placeholder="Search Documentation..." />
+	{{ partial "languages.html" . }}
+</header>
+
+<main>
+	<h1>{{.Title}}</h1>
+	<article>
+		<p>This is the draft documentation for the upcoming <a href="release-0.6.0-rc-1">0.6.0-rc.1</a>
+		release. This is a pre-release of the release candidate. Proceed with caution and don't complain
+		when things don't work perfectly. You have been warned.</p>
+	</article>
+</main>
+</body>
+</html>

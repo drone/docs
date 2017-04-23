@@ -1,0 +1,5 @@
+NAME:
+   drone build logs - show build logs
+
+USAGE:
+   drone build logs [arguments...]

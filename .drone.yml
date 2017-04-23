@@ -1,22 +1,30 @@
-workspace:
-  path: src
+# workspace:
+#   path: src
 
 pipeline:
   build:
-    image: webhippie/hugo:latest
+    image: golang
     commands:
+      - curl -sL https://github.com/spf13/hugo/releases/download/v0.20.2/hugo_0.20.2_Linux-64bit.tar.gz | tar xz
+      - mv hugo_0.20.2_linux_amd64/hugo_0.20.2_linux_amd64 hugo
+      - mv hugo /usr/local/bin
+      - rm -rf hugo_0.20.2_linux_amd64
+      - ls -la
+      - hugo version
       - hugo
 
   upload:
     image: plugins/s3-sync:1.1
     access: public-read
     region: us-east-1
-    bucket: readme.drone.io
+    bucket: docs.drone.io
     source: public/
-    target: /0.4/
+    target: /
     delete: false
     content_type:
       ".svg": image/svg+xml
+    secrets:
+      - aws_access_key_id
+      - aws_secret_access_key
     when:
       event: push
-

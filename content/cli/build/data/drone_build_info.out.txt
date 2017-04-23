@@ -1,0 +1,9 @@
+NAME:
+   drone build info - show build details
+
+USAGE:
+   drone build info [command options] [arguments...]
+
+OPTIONS:
+   --format value  format output (default: "Number: {{ .Number }}\nStatus: {{ .Status }}\nEvent: {{ .Event }}\nCommit: {{ .Commit }}\nBranch: {{ .Branch }}\nRef: {{ .Ref }}\nMessage: {{ .Message }}\nAuthor: {{ .Author }}\n")
+   

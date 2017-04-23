@@ -1,0 +1,9 @@
+NAME:
+   drone user ls - list all users
+
+USAGE:
+   drone user ls [command options] [arguments...]
+
+OPTIONS:
+   --format value  format output (default: "{{ .Login }}")
+   

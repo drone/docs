@@ -1,0 +1,12 @@
+NAME:
+   drone repo update - update a repository
+
+USAGE:
+   drone repo update [command options] [arguments...]
+
+OPTIONS:
+   --trusted        repository is trusted
+   --gated          repository is gated
+   --timeout value  repository timeout (default: 0s)
+   --config value   repository configuration path (e.g. .drone.yml)
+   

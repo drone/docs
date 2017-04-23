@@ -1,0 +1,143 @@
+baseurl: http://docs.drone.io
+title: Drone Continuous Delivery
+theme: drone
+
+copyright: Copyright © 2016 Drone.IO Inc.
+
+params:
+  algolia_key: 745aeaa8be75dc0c4de55030703ed3f4
+  algolia_index: drone_io
+
+disableRSS: true
+disableSitemap: true
+disable404: true
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: true
+
+languages:
+  en:
+    weight: 1
+    languageName: English
+    menu:
+      main:
+        - identifier: overview
+          name: Overview
+          weight: 101
+        - identifier: integrations
+          name: Integrations
+          weight: 102
+          weight: 103
+        - identifier: users
+          name: Security & Access Control
+          weight: 104
+        - identifier: server
+          name: Server Setup
+          weight: 105
+        - identifier: release
+          name: Releases
+          weight: 106
+      usage:
+        - identifier: overview
+          name: Overview
+          weight: 101
+        - identifier: concepts
+          name: Concepts
+          weight: 102
+        - identifier: config
+          name: Configuration
+          weight: 103
+        - identifier: secrets
+          name: Secrets & Credentials
+          weight: 104
+        - identifier: publishing
+          name: Publishing
+          weight: 105
+        - identifier: deployments
+          name: Deployments
+          weight: 106
+        - identifier: notifications
+          name: Notifications
+          weight: 107
+        - identifier: reports
+          name: Reporting & Badges
+          weight: 108
+        - identifier: examples
+          name: Examples
+          weight: 109
+        - identifier: reference
+          name: Reference
+          weight: 110
+      api:
+        - identifier: overview
+          name: Overview
+          weight: 101
+        - identifier: users
+          name: /users
+          weight: 103
+        - identifier: user
+          name: /user
+          weight: 102
+        - identifier: repo
+          name: /repos
+          weight: 104
+        - identifier: build
+          name: /builds
+          weight: 105
+        - identifier: registry
+          name: /registry
+          weight: 106
+        - identifier: secret
+          name: /secret
+          weight: 107
+      cli:
+        - identifier: overview
+          name: Overview
+          weight: 101
+        - identifier: user
+          name: User Commands
+          weight: 102
+        - identifier: repo
+          name: Repo Commands
+          weight: 103
+        - identifier: build
+          name: Build Commands
+          weight: 104
+        - identifier: registry
+          name: Registry Commands
+          weight: 105
+        - identifier: secret
+          name: Secret Commands
+          weight: 106
+        - identifier: misc
+          name: Misc Commands
+          weight: 107
+      index:
+        - name: Install
+          weight: 101
+          url: /installation/
+        - name: Usage
+          weight: 102
+          url: /getting-started/
+        - name: Plugin Reference
+          weight: 103
+          url: /getting-started/
+        - name: Plugin Marketplace
+          weight: 104
+          url: http://plugins.drone.io
+        - name: CLI Reference
+          weight: 105
+          url: /cli-installation/
+        - name: API Reference
+          weight: 106
+          url: /api-overview/
+  es:
+    weight: 2
+    languageName: Español
+  zh:
+    weight: 3
+    languageName: 中文(简体)
+  ru:
+    weight: 4
+    languageName: pусский

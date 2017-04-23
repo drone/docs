@@ -1,0 +1,15 @@
+{{- $lang := .Lang }}
+{{- $base := .Site.BaseURL }}
+<div class="languages">
+  <input type="checkbox" id="language-menu"/>
+  <label class="selected" for="language-menu">{{ .Lang }}</label>
+  <div class="drawer">
+    <ul>
+      {{ range .Site.Languages }}
+      <li>
+        <a href="{{ $base }}/{{ .Lang }}">{{ .LanguageName }}</a>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</div>

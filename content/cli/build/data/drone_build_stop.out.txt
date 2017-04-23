@@ -1,0 +1,5 @@
+NAME:
+   drone build stop - stop a build
+
+USAGE:
+   drone build stop [arguments...]

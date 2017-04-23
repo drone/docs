@@ -1,0 +1,10 @@
+NAME:
+   drone build last - show latest build details
+
+USAGE:
+   drone build last [command options] [arguments...]
+
+OPTIONS:
+   --format value  format output (default: "Number: {{ .Number }}\nStatus: {{ .Status }}\nEvent: {{ .Event }}\nCommit: {{ .Commit }}\nBranch: {{ .Branch }}\nRef: {{ .Ref }}\nMessage: {{ .Message }}\nAuthor: {{ .Author }}\n")
+   --branch value  branch name (default: "master")
+   

@@ -1,0 +1,10 @@
+NAME:
+   drone registry info - display registry info
+
+USAGE:
+   drone registry info [command options] [arguments...]
+
+OPTIONS:
+   --repository value  repository name (e.g. octocat/hello-world)
+   --hostname value    registry hostname (default: "docker.io")
+   

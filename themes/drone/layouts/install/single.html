@@ -1,15 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-	<base href="{{ .Site.BaseURL }}">
-
-	{{ .Hugo.Generator }}
-	<title>{{ .Title }}</title>
-
-	{{ partial "style_reset.html" . }}
-	{{ partial "style.html" . }}
+{{ partial "header.html" . }}
 </head>
 <body>
 
@@ -38,5 +30,6 @@
 	{{ partial "next_prev.html" . }}
 </main>
 {{ partial "hljs.html" . }}
+{{ partial "algolia.html" . }}
 </body>
 </html>

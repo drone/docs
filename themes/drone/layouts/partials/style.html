@@ -81,7 +81,7 @@ header {
 header input {
 	display:block;
 	box-sizing: border-box;
-  width: 100%;
+	width: calc(100% - 70px);
 	padding:0px 20px;
 	border:none;
 	font-size:13px;
@@ -90,6 +90,11 @@ header input {
 	line-height: 52px;
 	line-height: 62px;
 	position:relative;
+	margin-right:40px;
+}
+
+.algolia-autocomplete {
+	width: 100%;
 }
 
 /*header input + div {
@@ -110,6 +115,7 @@ header input {
 header input:focus {
 	box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
 	z-index: 2;
+	width: 100%;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: rgba(0,0,0,0.3);
@@ -317,8 +323,8 @@ article .alert p code {
 	list-style: none;
 	padding:0px;
 	margin:0px;
-	border: 1px solid #B3E5FC;
-	background:#E1F5FE;
+	border: 1px solid rgba(179, 229, 252, 0.44);
+	background: rgba(225, 245, 254, 0.3);
 }
 
 .next_steps li {
@@ -327,10 +333,10 @@ article .alert p code {
 }
 
 .next_steps li a {
-	color: #039BE5 !important;
 	padding: 20px 20px;
 	display:block;
-	border-bottom: 1px solid #B3E5FC;
+	border-bottom: 1px solid rgba(179, 229, 252, 0.44);
+	font-size: 16px;
 }
 
 .next_steps li:last-child a {
@@ -352,11 +358,13 @@ article .alert p code {
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
 	content: "arrow_forward";
-	border:2px solid #039BE5;
+	border:2px solid #2962FF;
 	border-radius: 50%;
   vertical-align: middle;
 	margin-right:15px;
 	padding: 4px;
+	width:20px;
+	height:20px;
 }
 
 /*--- markdown ---------------------------------------------------------------*/

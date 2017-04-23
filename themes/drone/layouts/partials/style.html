@@ -1,5 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto|Roboto+Mono|Droid+Sans|Noto+Sans:400,700" rel="stylesheet">
 <link href="{{ .Site.BaseURL }}/css/highlight.css" rel="stylesheet">
+<link href="{{ .Site.BaseURL }}/css/docsearch.css" rel="stylesheet">
 
 <style>
 aside {
@@ -113,8 +114,9 @@ header input {
 }*/
 
 header input:focus {
-	box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-	z-index: 2;
+	/*box-shadow: 2px 2px 8px rgba(0,0,0,0.1);*/
+	box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.1);
+	z-index: 9999;
 	width: 100%;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -405,6 +407,34 @@ label.app-drawer:before {
  to {right: -220px;}
 }
 
+/*--- search -----------------------------------------------------------------*/
+
+
+
+/*.algolia-autocomplete.algolia-autocomplete-right {
+
+}
+
+.ds-dropdown-menu {
+	background:#FFF;
+	display:block;
+}
+
+.ds-dropdown-menu.ds-with-1 {
+	background:#FFF !important;
+	right:0px !important;
+	bottom:0px !important;
+	height:100%;
+	display:block;
+}
+
+.ds-dataset-1 {
+	background:#FFF !important;
+	width:100%;
+	padding:20px;
+	min-height:100%;
+	display:block;
+}*/
 
 /*--- next steps -------------------------------------------------------------*/
 

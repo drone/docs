@@ -1,14 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-	<base href="{{ .Site.BaseURL }}">
-	{{ .Hugo.Generator }}
-	<title>{{ .Title }}</title>
-
-	{{ partial "style_reset.html" . }}
-	{{ partial "style.html" . }}
+{{ partial "header.html" . }}
 </head>
 <body>
 
@@ -38,5 +31,6 @@
 		when things don't work perfectly. You have been warned.</p>
 	</article>
 </main>
+{{ partial "algolia.html" . }}
 </body>
 </html>

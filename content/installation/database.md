@@ -36,12 +36,12 @@ Configure a MySQL database backend:
 
 ```
 DATABASE_DRIVER="mysql"
-DATABASE_CONFIG="root:pa55word@tcp(localhost:3306)/drone?parseTime=true"
+DATABASE_CONFIG="root:pa55word@tcp(localhost:3306)/drone?parseTime=true&charset=utf8mb4"
 ```
 See the driver [documentation](https://github.com/go-sql-driver/mysql#dsn-data-source-name) for a complete set of configuration options and examples.
 
 Note that Drone does not automatically create the `mysql` database. You should use the `mysql` command line utility or your preferred management console to create the database:
 
 ```
-mysql -P 3306 --protocol=tcp -u root -e 'create database if not exists drone;'
+mysql -P 3306 --protocol=tcp -u root -e 'create database if not exists drone character set utf8mb4 collate utf8mb4_unicode_ci;'
 ```

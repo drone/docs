@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Setup with Apache"
 url = "setup-with-apache"
 
-[menu.main]
+[menu.install]
   identifier = "setup-with-apache"
   parent = "install_server"
   weight = 5

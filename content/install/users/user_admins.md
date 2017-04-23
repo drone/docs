@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "User Admins"
 url = "user-admins"
 
-[menu.main]
+[menu.install]
   weight = 3
   identifier = "user-admins"
   parent = "install_access"

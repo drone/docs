@@ -4,7 +4,7 @@ title = "Installation Reference"
 url = "installation-reference"
 draft = true
 
-[menu.main]
+[menu.install]
   weight = 2
   identifier = "installation-reference"
   parent = "install_overview"

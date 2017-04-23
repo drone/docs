@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Configure SSL"
 url = "configure-ssl"
 
-[menu.main]
+[menu.install]
   identifier = "configure-ssl"
   parent = "install_server"
   weight = 7

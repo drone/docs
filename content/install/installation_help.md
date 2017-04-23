@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Installation Help"
 url = "installation-help"
 
-[menu.main]
+[menu.install]
   weight = 3
   identifier = "installation-help"
   parent = "install_overview"

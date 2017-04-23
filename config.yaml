@@ -36,10 +36,8 @@ languages:
     weight: 6
     languageName: pусский
 
-
-
 menu:
-  main:
+  install:
     - identifier: install_overview
       weight: 101
     - identifier: install_integrations
@@ -74,41 +72,40 @@ menu:
       weight: 210
 
   plugin:
-    - identifier: pipeline
-      name: Pipeline Plugins
-      weight: 100
-
-  api:
-    - identifier: api_overview
-      weight: 101
-    - identifier: api_users
-      weight: 103
-    - identifier: api_user
-      weight: 102
-    - identifier: api_repo
-      weight: 104
-    - identifier: api_build
-      weight: 105
-    - identifier: api_registry
-      weight: 106
-    - identifier: api_secret
-      weight: 107
+    - identifier: plugin_pipeline
+      weight: 300
 
   cli:
     - identifier: cli_overview
-      weight: 101
+      weight: 501
     - identifier: cli_user
-      weight: 102
+      weight: 502
     - identifier: cli_repo
-      weight: 103
+      weight: 503
     - identifier: cli_build
-      weight: 104
+      weight: 504
     - identifier: cli_registry
-      weight: 105
+      weight: 505
     - identifier: cli_secret
-      weight: 106
+      weight: 506
     - identifier: cli_misc
-      weight: 107
+      weight: 507
+
+  api:
+    - identifier: api_overview
+      weight: 601
+    - identifier: api_users
+      weight: 603
+    - identifier: api_user
+      weight: 602
+    - identifier: api_repo
+      weight: 604
+    - identifier: api_build
+      weight: 605
+    - identifier: api_registry
+      weight: 606
+    - identifier: api_secret
+      weight: 607
 
   index:
     - identifier: section_install

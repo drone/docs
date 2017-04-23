@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Gogs"
 url = "install-for-gogs"
 
-[menu.main]
+[menu.install]
   parent = "install_integrations"
   identifier = "install-for-gogs"
   weight = 3

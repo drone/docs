@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "GitHub"
 url = "install-for-github"
 
-[menu.main]
+[menu.install]
   parent = "install_integrations"
   identifier = "install-for-github"
   weight = 1

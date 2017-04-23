@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "User Registration"
 url = "user-registration"
 
-[menu.main]
+[menu.install]
   weight = 1
   identifier = "user-registration"
   parent = "install_access"

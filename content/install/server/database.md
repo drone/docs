@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Database Settings"
 url = "database-settings"
 
-[menu.main]
+[menu.install]
   identifier = "database-settings"
   parent = "install_server"
   weight = 1

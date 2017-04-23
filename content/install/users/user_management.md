@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "User Management"
 url = "user-management"
 
-[menu.main]
+[menu.install]
   weight = 2
   identifier = "user-management"
   parent = "install_access"

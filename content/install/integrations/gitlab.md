@@ -3,7 +3,7 @@ date = "2017-04-15T14:39:04+02:00"
 title = "GitLab"
 url = "install-for-gitlab"
 
-[menu.main]
+[menu.install]
   parent = "install_integrations"
   identifier = "install-for-gitlab"
   weight = 2

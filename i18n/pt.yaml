@@ -54,6 +54,17 @@
   translation: Release Notes
 
 #
+# plugin menu
+#
+
+- id: plugin_pipeline
+  translation: Pipeline Plugins
+- id: plugin_secrets
+  translation: Secret Backends
+- id: plugin_registry
+  translation: Registry Backends
+
+#
 # api menu
 #
 

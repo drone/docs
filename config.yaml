@@ -135,9 +135,15 @@ languages:
   es:
     weight: 2
     languageName: Español
-  zh:
+  pt:
     weight: 3
-    languageName: 中文(简体)
-  ru:
+    languageName: Português
+  zh:
     weight: 4
+    languageName: 中文(简体)
+  zh-tw:
+    weight: 5
+    languageName: 中文(台灣)
+  ru:
+    weight: 6
     languageName: pусский

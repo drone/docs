@@ -5,7 +5,7 @@ url = "manage-secrets"
 
 [menu.usage]
   weight = 1
-  parent = "secrets"
+  parent = "usage_secrets"
   identifier = "manage-secrets"
 +++
 

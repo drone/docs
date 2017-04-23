@@ -5,7 +5,7 @@ url = "publish-unit-test-results"
 
 [menu.usage]
   weight = 1
-  parent = "reports"
+  parent = "usage_reports"
   identifier = "publish-unit-test-results"
 +++
 

@@ -6,7 +6,7 @@ url = "publishing-to-github-pages"
 [menu.usage]
   weight = 6
   identifier = "publishing-to-github-pages"
-  parent = "publishing"
+  parent = "usage_publishing"
 +++
 
 {{% alert warn %}}

@@ -6,7 +6,7 @@ url = "installation-help"
 [menu.main]
   weight = 3
   identifier = "installation-help"
-  parent = "overview"
+  parent = "install_overview"
 +++
 
 If you are experiencing installation issues please be sure to read the documentation and search for existing issues and error messages using the site search. We monitor [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) for questions and answers.

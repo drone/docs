@@ -6,7 +6,7 @@ url = "workspace"
 [menu.usage]
   weight = 2
   identifier = "workspace"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 The workspace defines the shared volume and working directory shared by all pipeline steps. The default workspace matches the below pattern, based on your repository url.

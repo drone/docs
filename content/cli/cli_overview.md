@@ -6,7 +6,7 @@ url = "cli-installation"
 [menu.cli]
   weight = 1
   identifier = "cli-installation"
-  parent = "overview"
+  parent = "cli_overview"
 +++
 
 The Drone command line tools are used to interact with the Drone from the command line, and provides important utilities for managing users and repository settings.

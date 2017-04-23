@@ -6,7 +6,7 @@ url = "cli-build-last"
 [menu.cli]
   weight = 25
   identifier = "cli-build-last"
-  parent = "build"
+  parent = "cli_build"
 +++
 
 ```text

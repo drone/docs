@@ -6,5 +6,5 @@ url = "api-repo-chown"
 [menu.api]
   weight = 4
   identifier = "api-repo-chown"
-  parent = "repo"
+  parent = "api_repo"
 +++

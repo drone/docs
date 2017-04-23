@@ -6,7 +6,7 @@ url = "matrix-builds"
 [menu.usage]
   weight = 10
   identifier = "matrix-builds"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 

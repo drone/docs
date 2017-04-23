@@ -6,7 +6,7 @@ url = "trigger-hipchat-notifications"
 [menu.usage]
   weight = 1
   identifier = "trigger-hipchat-notifications"
-  parent = "notifications"
+  parent = "usage_notifications"
 +++
 
 {{% alert warn %}}

@@ -9,7 +9,7 @@
   {{ if .HasChildren }}
     <li>
       <span>
-        {{ .Name }}
+        {{ default .Name (i18n .Identifier) }}
       </span>
         <!-- If the menu item has children, include this partial template again (recursively) -->
         {{ partial "menu.html" (dict "menu" .Children "page" $page "site" $site) }}
@@ -17,7 +17,7 @@
   {{ else }}
     <li>
       <a href="{{ .URL }}" class="{{ if $is }}active{{ end }}" data-title="{{ .Name }}">
-        {{ .Name }}
+        {{ default .Name (i18n .Identifier) }}
       </a>
     </li>
   {{ end }}

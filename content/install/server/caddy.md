@@ -5,7 +5,7 @@ url = "setup-with-caddy"
 
 [menu.main]
   identifier = "setup-with-caddy"
-  parent = "server"
+  parent = "install_server"
   weight = 4
 +++
 

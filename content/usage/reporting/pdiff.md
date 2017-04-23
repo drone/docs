@@ -5,7 +5,7 @@ url = "publish-pdiff-results"
 
 [menu.usage]
   weight = 1
-  parent = "reports"
+  parent = "usage_reports"
   identifier = "publish-pdiff-results"
 +++
 

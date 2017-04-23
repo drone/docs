@@ -6,7 +6,7 @@ url = "environment"
 [menu.usage]
   weight = 3
   identifier = "environment"
-  parent = "config"
+  parent = "usage_config"
 +++
 
 Drone provides the ability to define environment variables scoped to individual build steps. Example pipeline step with custom environment variables:

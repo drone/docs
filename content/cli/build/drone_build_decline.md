@@ -6,7 +6,7 @@ url = "cli-build-decline"
 [menu.cli]
   weight = 29
   identifier = "cli-build-decline"
-  parent = "build"
+  parent = "cli_build"
 +++
 
 ```text

@@ -6,7 +6,7 @@ url = "cli-secret-info"
 [menu.cli]
   weight = 12
   identifier = "cli-secret-info"
-  parent = "secret"
+  parent = "cli_secret"
 +++
 
 This subcommand prints the named secret details. Please note this command requires administrative privilege to the repository.

@@ -1,0 +1,92 @@
+#
+# main menu
+#
+
+- id: section_install
+  translation: Installation
+- id: section_usage
+  translation: Usage
+- id: section_plugin_reference
+  translation: Plugin Reference
+- id: section_plugin_marketplace
+  translation: Plugin Marketplace
+- id: section_cli_reference
+  translation: CLI Reference
+- id: section_api_reference
+  translation: API Reference
+
+#
+# usage manu
+#
+
+- id: usage_overview
+  translation: Overview
+- id: usage_concepts
+  translation: Concepts
+- id: usage_config
+  translation: Configuration
+- id: usage_secrets
+  translation: Secrets & Credentials
+- id: usage_publishing
+  translation: Publishing
+- id: usage_deployments
+  translation: Deployments
+- id: usage_notifications
+  translation: Notifications
+- id: usage_reports
+  translation: Reporting & Badges
+- id: usage_examples
+  translation: Examples
+- id: usage_reference
+  translation: Reference
+
+#
+# install menu
+#
+
+- id: install_integrations
+  translation: Integrations
+- id: install_access
+  translation: Security & Access Control
+- id: install_server
+  translation: Server Setup
+- id: install_release
+  translation: Release Notes
+
+#
+# api menu
+#
+
+- id: api_overview
+  translation: Overview
+- id: api_users
+  translation: Users Endpoint
+- id: api_user
+  translation: User Endpoint
+- id: api_repo
+  translation: Repo Endpoint
+- id: api_build
+  translation: Build Endpoint
+- id: api_registry
+  translation: Registry Endpoint
+- id: api_secret
+  translation: Secret Endpoint
+
+#
+# cli menu
+#
+
+- id: cli_overview
+  translation: Overview
+- id: cli_user
+  translation: User Commands
+- id: cli_repo
+  translation: Repo Commands
+- id: cli_build
+  translation: Build Commands
+- id: cli_registry
+  translation: Registry Commands
+- id: cli_secret
+  translation: Secret Commands
+- id: cli_misc
+  translation: Misc Commands

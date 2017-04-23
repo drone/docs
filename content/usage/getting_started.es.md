@@ -6,7 +6,7 @@ url = "es/getting-started"
 [menu.usage]
   weight = 1
   identifier = "getting-started-es"
-  parent = "overview"
+  parent = "usage_overview"
 +++
 
 Welcome to the Drone community. This document briefly explains the process for activating and configuring a continuous delivery pipeline.

@@ -6,7 +6,7 @@ url = "cli-repository-remove"
 [menu.cli]
   weight = 9
   identifier = "cli-repository-remove"
-  parent = "repo"
+  parent = "cli_repo"
 +++
 
 This subcommand deletes the named repository from the system. Please note this command requires administrative access to the repository.

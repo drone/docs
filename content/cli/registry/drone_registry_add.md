@@ -6,7 +6,7 @@ url = "cli-registry-add"
 [menu.cli]
   weight = 20
   identifier = "cli-registry-add"
-  parent = "registry"
+  parent = "cli_registry"
 +++
 
 This subcommand adds registry credentials to your repository. Please note this command requires authentication and administrative privilege to the repository.

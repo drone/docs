@@ -7,7 +7,7 @@ weight = 4
 [menu.cli]
   weight = 43
   identifier = "cli-user-ls"
-  parent = "user"
+  parent = "cli_user"
 +++
 
 This subcommand prints a list of all registered users. Please note this command requires administrative privileges.

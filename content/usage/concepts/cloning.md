@@ -6,7 +6,7 @@ url = "cloning"
 [menu.usage]
   weight = 3
   identifier = "cloning"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 Drone automatically configures a default clone step if not explicitly defined. You can manually configure the clone step in your pipeline for customization:

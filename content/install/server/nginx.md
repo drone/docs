@@ -5,7 +5,7 @@ url = "setup-with-nginx"
 
 [menu.main]
   identifier = "setup-with-nginx"
-  parent = "server"
+  parent = "install_server"
   weight = 3
 +++
 

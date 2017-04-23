@@ -6,5 +6,5 @@ url = "api-authentication"
 [menu.api]
   weight = 2
   identifier = "api-authentication"
-  parent = "overview"
+  parent = "api_overview"
 +++

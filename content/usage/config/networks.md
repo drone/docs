@@ -7,5 +7,5 @@ draft = true
 [menu.usage]
   weight = 6
   identifier = "networks"
-  parent = "config"
+  parent = "usage_config"
 +++

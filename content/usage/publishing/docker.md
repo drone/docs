@@ -6,7 +6,7 @@ url = "publish-docker-images"
 [menu.usage]
   weight = 1
   identifier = "publish-docker-images"
-  parent = "publishing"
+  parent = "usage_publishing"
 +++
 
 {{% alert warn %}}

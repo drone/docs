@@ -6,7 +6,7 @@ url = "publish-node-modules"
 [menu.usage]
   weight = 2
   identifier = "publish-node-modules"
-  parent = "publishing"
+  parent = "usage_publishing"
 +++
 
 {{% alert warn %}}

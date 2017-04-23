@@ -4,7 +4,7 @@ title = "Gogs"
 url = "install-for-gogs"
 
 [menu.main]
-  parent = "integrations"
+  parent = "install_integrations"
   identifier = "install-for-gogs"
   weight = 3
 +++

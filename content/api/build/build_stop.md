@@ -6,5 +6,5 @@ url = "api-build-stop"
 [menu.api]
   weight = 2
   identifier = "api-build-stop"
-  parent = "build"
+  parent = "api_build"
 +++

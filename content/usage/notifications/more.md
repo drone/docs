@@ -6,7 +6,7 @@ url = "other-notification-types"
 [menu.usage]
   weight = 4
   identifier = "other-notification-types"
-  parent = "notifications"
+  parent = "usage_notifications"
 +++
 
 {{% alert warn %}}

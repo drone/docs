@@ -6,7 +6,7 @@ url = "cli-registry-ls"
 [menu.cli]
   weight = 24
   identifier = "cli-registry-ls"
-  parent = "registry"
+  parent = "cli_registry"
 +++
 
 This subcommand returns a list of registry credentials for the named repository. Please note this command requires authentication and administrative privilege to the repository.

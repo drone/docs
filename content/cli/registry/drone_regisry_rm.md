@@ -6,7 +6,7 @@ url = "cli-registry-rm"
 [menu.cli]
   weight = 23
   identifier = "cli-registry-rm"
-  parent = "registry"
+  parent = "cli_registry"
 +++
 
 This subcommand deletes a named registry credentials. Please note this command requires authentication and administrative privilege to the repository.

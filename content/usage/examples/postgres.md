@@ -4,7 +4,7 @@ title = "Example using Postgres"
 url = "postgres-example"
 
 [menu.usage]
-  Parent = "examples"
+  Parent = "usage_examples"
   weight = 5
   identifier = "postgres-example"
 +++

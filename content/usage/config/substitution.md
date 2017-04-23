@@ -6,7 +6,7 @@ url = "substitution"
 [menu.usage]
   weight = 4
   identifier = "substitution"
-  parent = "config"
+  parent = "usage_config"
 +++
 
 Drone provides the ability to substitute repository and build metadata to facilitate dynamic pipeline configurations.

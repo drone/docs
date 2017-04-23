@@ -6,7 +6,7 @@ url = "cli-registry-info"
 [menu.cli]
   weight = 22
   identifier = "cli-registry-info"
-  parent = "registry"
+  parent = "cli_registry"
 +++
 
 This subcommand prints the named registry details. Please note this command requires authentication and administrative privilege to the repository.

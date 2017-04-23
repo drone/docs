@@ -6,5 +6,5 @@ url = "api-registry-update"
 [menu.api]
   weight = 2
   identifier = "api-registry-update"
-  parent = "registry"
+  parent = "api_registry"
 +++

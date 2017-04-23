@@ -7,5 +7,5 @@ draft = true
 [menu.usage]
   weight = 5
   identifier = "devices"
-  parent = "config"
+  parent = "usage_config"
 +++

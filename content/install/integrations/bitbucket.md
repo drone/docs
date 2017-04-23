@@ -4,7 +4,7 @@ title = "Bitbucket Cloud"
 url = "install-for-bitbucket-cloud"
 
 [menu.main]
-  parent = "integrations"
+  parent = "install_integrations"
   identifier = "install-for-bitucket-cloud"
   weight = 5
 +++

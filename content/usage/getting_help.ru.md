@@ -6,7 +6,7 @@ url = "ru/getting-help"
 [menu.usage]
   weight = 2
   identifier = "getting-help-ru"
-  parent = "overview"
+  parent = "usage_overview"
 +++
 
 If you are experiencing issues please be sure to read the documentation and search for existing issues and error messages using site search. We monitor [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) for questions and answers.

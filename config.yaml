@@ -14,124 +14,12 @@ disable404: true
 
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
-enableMissingTranslationPlaceholders: true
+enableMissingTranslationPlaceholders: false
 
 languages:
   en:
     weight: 1
     languageName: English
-    menu:
-      main:
-        - identifier: overview
-          name: Overview
-          weight: 101
-        - identifier: integrations
-          name: Integrations
-          weight: 102
-          weight: 103
-        - identifier: users
-          name: Security & Access Control
-          weight: 104
-        - identifier: server
-          name: Server Setup
-          weight: 105
-        - identifier: release
-          name: Releases
-          weight: 106
-      usage:
-        - identifier: overview
-          name: Overview
-          weight: 101
-        - identifier: concepts
-          name: Concepts
-          weight: 102
-        - identifier: config
-          name: Configuration
-          weight: 103
-        - identifier: secrets
-          name: Secrets & Credentials
-          weight: 104
-        - identifier: publishing
-          name: Publishing
-          weight: 105
-        - identifier: deployments
-          name: Deployments
-          weight: 106
-        - identifier: notifications
-          name: Notifications
-          weight: 107
-        - identifier: reports
-          name: Reporting & Badges
-          weight: 108
-        - identifier: examples
-          name: Examples
-          weight: 109
-        - identifier: reference
-          name: Reference
-          weight: 110
-      api:
-        - identifier: overview
-          name: Overview
-          weight: 101
-        - identifier: users
-          name: /users
-          weight: 103
-        - identifier: user
-          name: /user
-          weight: 102
-        - identifier: repo
-          name: /repos
-          weight: 104
-        - identifier: build
-          name: /builds
-          weight: 105
-        - identifier: registry
-          name: /registry
-          weight: 106
-        - identifier: secret
-          name: /secret
-          weight: 107
-      cli:
-        - identifier: overview
-          name: Overview
-          weight: 101
-        - identifier: user
-          name: User Commands
-          weight: 102
-        - identifier: repo
-          name: Repo Commands
-          weight: 103
-        - identifier: build
-          name: Build Commands
-          weight: 104
-        - identifier: registry
-          name: Registry Commands
-          weight: 105
-        - identifier: secret
-          name: Secret Commands
-          weight: 106
-        - identifier: misc
-          name: Misc Commands
-          weight: 107
-      index:
-        - name: Install
-          weight: 101
-          url: /installation/
-        - name: Usage
-          weight: 102
-          url: /getting-started/
-        - name: Plugin Reference
-          weight: 103
-          url: /getting-started/
-        - name: Plugin Marketplace
-          weight: 104
-          url: http://plugins.drone.io
-        - name: CLI Reference
-          weight: 105
-          url: /cli-installation/
-        - name: API Reference
-          weight: 106
-          url: /api-overview/
   es:
     weight: 2
     languageName: Español
@@ -147,3 +35,97 @@ languages:
   ru:
     weight: 6
     languageName: pусский
+
+
+
+menu:
+  main:
+    - identifier: install_overview
+      weight: 101
+    - identifier: install_integrations
+      weight: 102
+    - identifier: install_access
+      weight: 104
+    - identifier: install_server
+      weight: 105
+    - identifier: install_release
+      weight: 106
+
+  usage:
+    - identifier: usage_overview
+      weight: 201
+    - identifier: usage_concepts
+      weight: 202
+    - identifier: usage_config
+      weight: 203
+    - identifier: usage_secrets
+      weight: 204
+    - identifier: usage_publishing
+      weight: 205
+    - identifier: usage_deployments
+      weight: 206
+    - identifier: usage_notifications
+      weight: 207
+    - identifier: usage_reports
+      weight: 208
+    - identifier: usage_examples
+      weight: 209
+    - identifier: usage_reference
+      weight: 210
+
+  plugin:
+    - identifier: pipeline
+      name: Pipeline Plugins
+      weight: 100
+
+  api:
+    - identifier: api_overview
+      weight: 101
+    - identifier: api_users
+      weight: 103
+    - identifier: api_user
+      weight: 102
+    - identifier: api_repo
+      weight: 104
+    - identifier: api_build
+      weight: 105
+    - identifier: api_registry
+      weight: 106
+    - identifier: api_secret
+      weight: 107
+
+  cli:
+    - identifier: cli_overview
+      weight: 101
+    - identifier: cli_user
+      weight: 102
+    - identifier: cli_repo
+      weight: 103
+    - identifier: cli_build
+      weight: 104
+    - identifier: cli_registry
+      weight: 105
+    - identifier: cli_secret
+      weight: 106
+    - identifier: cli_misc
+      weight: 107
+
+  index:
+    - identifier: section_install
+      url: /installation/
+      weight: 101
+    - identifier: section_usage
+      url: /getting-started/
+      weight: 102
+    - identifier: section_plugin_reference
+      url: /plugin-overview/
+      weight: 103
+    - identifier: section_plugin_marketplace
+      url: http://plugins.drone.io
+      weight: 104
+    - identifier: section_cli_reference
+      url: /cli-installation/
+      weight: 105
+    - identifier: section_api_reference
+      url: /api-overview/
+      weight: 106

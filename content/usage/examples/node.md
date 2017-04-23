@@ -4,7 +4,7 @@ title = "Example Node project"
 url = "node-example"
 
 [menu.usage]
-  Parent = "examples"
+  Parent = "usage_examples"
   weight = 2
   identifier = "node-example"
 +++

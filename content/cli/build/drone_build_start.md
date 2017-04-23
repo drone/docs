@@ -6,7 +6,7 @@ url = "cli-build-start"
 [menu.cli]
   weight = 22
   identifier = "cli-build-start"
-  parent = "build"
+  parent = "cli_build"
 +++
 
 ```text

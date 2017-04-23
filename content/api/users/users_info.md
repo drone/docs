@@ -6,5 +6,5 @@ url = "api-users-info"
 [menu.api]
   weight = 4
   identifier = "api-users-info"
-  parent = "users"
+  parent = "api_users"
 +++

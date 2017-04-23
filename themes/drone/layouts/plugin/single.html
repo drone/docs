@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<base href="{{ .Site.BaseURL }}">
+
+	{{ .Hugo.Generator }}
+	<title>{{ .Title }}</title>
+
+	{{ partial "style_reset.html" . }}
+	{{ partial "style.html" . }}
+</head>
+<body>
+
+<aside>
+	<a href='{{ relLangURL "/" }}' class="logo"></a>
+	<nav>
+	{{ partial "menu_plugin.html" . }}
+	</nav>
+	{{ range .Site.Menus.index }}
+	<a href='{{ relLangURL .URL }}' class="section">
+		{{ default .Name (i18n .Identifier) }}
+	</a>
+	{{ end }}
+</aside>
+
+<header>
+	<input type="text" id="search" placeholder="Search Documentation..." />
+	{{ partial "languages.html" . }}
+</header>
+
+<main>
+	<h1>{{.Title}}</h1>
+	<article>
+		{{ .Content }}
+	</article>
+	{{ partial "next_prev.html" . }}
+</main>
+{{ partial "hljs.html" . }}
+</body>
+</html>

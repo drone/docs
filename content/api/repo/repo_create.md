@@ -6,5 +6,5 @@ url = "api-repo-create"
 [menu.api]
   weight = 1
   identifier = "api-repo-create"
-  parent = "repo"
+  parent = "api_repo"
 +++

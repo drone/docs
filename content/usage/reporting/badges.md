@@ -6,7 +6,7 @@ url = "badges"
 [menu.usage]
   weight = 5
   identifier = "badges"
-  parent = "reports"
+  parent = "usage_reports"
 +++
 
 Drone has integrated support for repository status badges. These badges can be added to your website or project readme file to display the status of your code.

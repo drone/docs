@@ -6,7 +6,7 @@ url = "deployments"
 [menu.usage]
   weight = 8
   identifier = "deployment"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 Drone provides the ability to trigger deployments. When you trigger a deployment your pipeline is executed with event type `deployment`. You can use the event type and target environment to limit step execution.

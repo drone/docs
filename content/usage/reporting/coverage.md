@@ -5,7 +5,7 @@ url = "publish-coverage-reports"
 
 [menu.usage]
   weight = 1
-  parent = "reports"
+  parent = "usage_reports"
   identifier = "publish-coverage-reports"
 +++
 

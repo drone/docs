@@ -6,7 +6,7 @@ url = "cli-registry-update"
 [menu.cli]
   weight = 21
   identifier = "cli-registry-update"
-  parent = "registry"
+  parent = "cli_registry"
 +++
 
 This subcommand updates the named registry credentials. Please note this command requires authentication and administrative privilege to the repository.

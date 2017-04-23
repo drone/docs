@@ -6,7 +6,7 @@ url = "pipelines"
 [menu.usage]
   weight = 4
   identifier = "pipelines"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 The pipeline section defines a list of steps to build, test and deploy your code. Pipeline steps are executed serially, in the order in which they are defined. If a step returns a non-zero exit code, the pipeline immediately aborts and returns a failure status.

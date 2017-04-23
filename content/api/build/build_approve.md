@@ -6,5 +6,5 @@ url = "api-build-approve"
 [menu.api]
   weight = 7
   identifier = "api-build-approve"
-  parent = "build"
+  parent = "api_build"
 +++

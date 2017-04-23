@@ -6,7 +6,7 @@ url = "cli-secret-rm"
 [menu.cli]
   weight = 13
   identifier = "cli-secret-rm"
-  parent = "secret"
+  parent = "cli_secret"
 +++
 
 This subcommand deletes a named repository secret. Please note this command requires administrative privilege to the repository.

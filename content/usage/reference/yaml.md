@@ -5,7 +5,7 @@ url = "yaml-reference"
 
 [menu.usage]
   weight = 1
-  parent = "reference"
+  parent = "usage_reference"
   identifier = "yaml-reference"
 +++
 

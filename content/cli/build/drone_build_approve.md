@@ -6,7 +6,7 @@ url = "cli-build-approve"
 [menu.cli]
   weight = 28
   identifier = "cli-build-approve"
-  parent = "build"
+  parent = "cli_build"
 +++
 
 ```text

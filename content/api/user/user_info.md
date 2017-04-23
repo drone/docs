@@ -6,7 +6,7 @@ url = "api-user-info"
 [menu.api]
   weight = 1
   identifier = "api-user-info"
-  parent = "user"
+  parent = "api_user"
 +++
 
 Returns the currently authenticated user.

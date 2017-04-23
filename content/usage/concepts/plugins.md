@@ -6,7 +6,7 @@ url = "using-plugins"
 [menu.usage]
   weight = 7
   identifier = "plugins"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 Plugins are Docker containers that perform pre-defined tasks and are configured as steps in your pipeline. Plugins can be used to deploy code, publish artifacts, send notification, and more.

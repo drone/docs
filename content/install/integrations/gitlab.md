@@ -4,7 +4,7 @@ title = "GitLab"
 url = "install-for-gitlab"
 
 [menu.main]
-  parent = "integrations"
+  parent = "install_integrations"
   identifier = "install-for-gitlab"
   weight = 2
 +++

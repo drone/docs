@@ -6,7 +6,7 @@ url = "other-deployment-types"
 [menu.usage]
   weight = 4
   identifier = "other-deployment-types"
-  parent = "deployments"
+  parent = "usage_deployments"
 +++
 
 {{% alert warn %}}

@@ -17,12 +17,11 @@
 	<nav>
 	{{ partial "menu_api.html" . }}
 	</nav>
-	<a href='{{ relLangURL "/installation" }}'        class="section">Installation</a>
-	<a href='{{ relLangURL "/getting-started" }}'     class="section">Usage</a>
-	<a href='{{ relLangURL "/plugin-overview" }}'     class="section">Plugin Reference</a>
-	<a href='http://plugins.drone.io' target="_blank" class="section">Plugin Marketplace</a>
-	<a href='{{ relLangURL "/cli-installation" }}'    class="section">CLI Reference</a>
-	<a href='{{ relLangURL "/api-overview" }}'        class="section">API Reference</a>
+	{{ range .Site.Menus.index }}
+	<a href='{{ relLangURL .URL }}' class="section">
+		{{ default .Name (i18n .Identifier) }}
+	</a>
+	{{ end }}
 </aside>
 
 <header>

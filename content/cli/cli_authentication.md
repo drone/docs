@@ -6,7 +6,7 @@ url = "cli-authentication"
 [menu.cli]
   weight = 2
   identifier = "cli-authentication"
-  parent = "overview"
+  parent = "cli_overview"
 +++
 
 You will need to provide the Drone command line tools with your server address and personal access token. You can retrieve a Drone personal access token from your user profile screen. Click the show token button.

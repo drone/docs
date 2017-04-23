@@ -4,7 +4,7 @@ title = "Example Golang project"
 url = "golang-example"
 
 [menu.usage]
-  Parent = "examples"
+  Parent = "usage_examples"
   weight = 1
   identifier = "golang-example"
 +++

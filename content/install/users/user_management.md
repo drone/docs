@@ -6,7 +6,7 @@ url = "user-management"
 [menu.main]
   weight = 2
   identifier = "user-management"
-  parent = "users"
+  parent = "install_access"
 +++
 
 You can manually manage user registration using the command line utility. Please see the command line documentation for installing and configuring the command line utility.

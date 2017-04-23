@@ -6,5 +6,5 @@ url = "api-overview"
 [menu.api]
   weight = 1
   identifier = "api-overview"
-  parent = "overview"
+  parent = "api_overview"
 +++

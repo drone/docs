@@ -6,7 +6,7 @@ url = "privileged-mode"
 [menu.usage]
   weight = 5
   identifier = "privileged-mode"
-  parent = "config"
+  parent = "usage_config"
 +++
 
 Drone gives the ability to configure privileged mode in the Yaml. You can use this parameter to launch containers with escalated capabilities.

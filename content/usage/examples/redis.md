@@ -4,7 +4,7 @@ title = "Example using Redis"
 url = "redis-example"
 
 [menu.usage]
-  Parent = "examples"
+  Parent = "usage_examples"
   weight = 3
   identifier = "redis-example"
 +++

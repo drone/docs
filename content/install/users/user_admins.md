@@ -6,7 +6,7 @@ url = "user-admins"
 [menu.main]
   weight = 3
   identifier = "user-admins"
-  parent = "users"
+  parent = "install_access"
 +++
 
 You can grant administrative privileges to users by providing an enumerated user list, separated by a comma, using the designated environment variable.

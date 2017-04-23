@@ -6,5 +6,5 @@ url = "api-registry-delete"
 [menu.api]
   weight = 3
   identifier = "api-registry-delete"
-  parent = "registry"
+  parent = "api_registry"
 +++

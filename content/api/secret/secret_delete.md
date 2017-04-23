@@ -6,5 +6,5 @@ url = "api-secret-delete"
 [menu.api]
   weight = 3
   identifier = "api-secret-delete"
-  parent = "secret"
+  parent = "api_secret"
 +++

@@ -6,7 +6,7 @@ url = "installation"
 [menu.main]
   weight = 1
   identifier = "installation"
-  parent = "overview"
+  parent = "install_overview"
 +++
 
 Drone is a lightweight, powerful continuous delivery platform built for containers. Drone is packaged and distributed as a Docker image and can be downloaded from Dockerhub.

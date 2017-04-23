@@ -6,7 +6,7 @@ url = "hooks"
 [menu.usage]
   weight = 1
   identifier = "hooks"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 When you activate your repository Drone automatically add webhooks to your version control system (e.g. GitHub). There is no manual configuration required.

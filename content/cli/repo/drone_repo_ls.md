@@ -6,7 +6,7 @@ url = "cli-repository-list"
 [menu.cli]
   weight = 8
   identifier = "cli-repository-list"
-  parent = "repo"
+  parent = "cli_repo"
 +++
 
 This subcommand returns a full list of user repositories.

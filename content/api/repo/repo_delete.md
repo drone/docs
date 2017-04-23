@@ -6,5 +6,5 @@ url = "api-repo-delete"
 [menu.api]
   weight = 3
   identifier = "api-repo-delete"
-  parent = "repo"
+  parent = "api_repo"
 +++

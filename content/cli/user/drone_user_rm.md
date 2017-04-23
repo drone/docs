@@ -7,7 +7,7 @@ weight = 3
 [menu.cli]
   weight = 42
   identifier = "cli-user-rm"
-  parent = "user"
+  parent = "cli_user"
 +++
 
 This subcommand deletes a registered user from the system. Please note this command requires administrative privileges.

@@ -6,7 +6,7 @@ url = "cli-exec"
 [menu.cli]
   weight = 50
   identifier = "cli-exec"
-  parent = "misc"
+  parent = "cli_misc"
 +++
 
 ```text

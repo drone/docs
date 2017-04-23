@@ -6,5 +6,5 @@ url = "api-users-create"
 [menu.api]
   weight = 1
   identifier = "api-users-create"
-  parent = "users"
+  parent = "api_users"
 +++

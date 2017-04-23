@@ -4,7 +4,7 @@ title = "Example using Selenium"
 url = "selenium-example"
 
 [menu.usage]
-  Parent = "examples"
+  Parent = "usage_examples"
   weight = 6
   identifier = "selenium-example"
 +++

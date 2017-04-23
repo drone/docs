@@ -6,7 +6,7 @@ url = "cli-build-stop"
 [menu.cli]
   weight = 23
   identifier = "cli-build-stop"
-  parent = "build"
+  parent = "cli_build"
 +++
 
 ```text

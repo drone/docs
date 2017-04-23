@@ -6,7 +6,7 @@ url = "deploy-to-kubernetes"
 [menu.usage]
   weight = 2
   identifier = "deploy-to-kubernetes"
-  parent = "deployments"
+  parent = "usage_deployments"
 +++
 
 {{% alert warn %}}

@@ -6,7 +6,7 @@ url = "publish-artifacts-to-gcs"
 [menu.usage]
   weight = 4
   identifier = "publish-artifacts-to-gcs"
-  parent = "publishing"
+  parent = "usage_publishing"
 +++
 
 {{% alert warn %}}

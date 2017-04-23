@@ -5,7 +5,7 @@ url = "setup-with-apache"
 
 [menu.main]
   identifier = "setup-with-apache"
-  parent = "server"
+  parent = "install_server"
   weight = 5
 +++
 

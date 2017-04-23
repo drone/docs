@@ -6,7 +6,7 @@ url = "user-registration"
 [menu.main]
   weight = 1
   identifier = "user-registration"
-  parent = "users"
+  parent = "install_access"
 +++
 
 Drone provides multiple configurations for open or limited access to the system. This section describes different options for user registration and access.

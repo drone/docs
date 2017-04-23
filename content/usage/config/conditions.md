@@ -6,7 +6,7 @@ url = "conditional-steps"
 [menu.usage]
   weight = 2
   identifier = "conditions"
-  parent = "config"
+  parent = "usage_config"
 +++
 
 Drone support defining condition pipeline steps in the `when` block. If all conditions in the `when` block evaluate to true the step is executed, otherwise it is skipped.

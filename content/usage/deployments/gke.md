@@ -6,7 +6,7 @@ url = "deploy-to-google-gke"
 [menu.usage]
   weight = 3
   identifier = "deploy-to-gke"
-  parent = "deployments"
+  parent = "usage_deployments"
 +++
 
 {{% alert warn %}}

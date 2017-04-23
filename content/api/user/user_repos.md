@@ -6,7 +6,7 @@ url = "api-user-repos"
 [menu.api]
   weight = 3
   identifier = "api-user-repos"
-  parent = "user"
+  parent = "api_user"
 +++
 
 Returns the currently authenticated user's repository list.

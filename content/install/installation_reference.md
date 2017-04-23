@@ -7,5 +7,5 @@ draft = true
 [menu.main]
   weight = 2
   identifier = "installation-reference"
-  parent = "overview"
+  parent = "install_overview"
 +++

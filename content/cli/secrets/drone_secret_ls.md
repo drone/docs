@@ -6,7 +6,7 @@ url = "cli-secret-ls"
 [menu.cli]
   weight = 14
   identifier = "cli-secret-ls"
-  parent = "secret"
+  parent = "cli_secret"
 +++
 
 This subcommand returns a list of secrets for the named repository. Please note this command requires administrative privilege to the repository.

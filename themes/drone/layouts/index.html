@@ -15,7 +15,9 @@
 <aside>
 	<a href='{{ relLangURL "/" }}' class="logo"></a>
 	{{ range .Site.Menus.index }}
-	<a href='{{ relLangURL .URL }}' class="section">{{ .Name }}</a>
+	<a href='{{ relLangURL .URL }}' class="section">
+		{{ default .Name (i18n .Identifier) }}
+	</a>
 	{{ end }}
 </aside>
 

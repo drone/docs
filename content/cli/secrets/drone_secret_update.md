@@ -6,7 +6,7 @@ url = "cli-secret-update"
 [menu.cli]
   weight = 11
   identifier = "cli-secret-update"
-  parent = "secret"
+  parent = "cli_secret"
 +++
 
 This subcommand updates a secret in your repository secret store. Please note this command requires administrative privilege to the repository.

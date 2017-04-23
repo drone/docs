@@ -6,7 +6,7 @@ url = "trigger-slack-notifications"
 [menu.usage]
   weight = 1
   identifier = "trigger-slack-notifications"
-  parent = "notifications"
+  parent = "usage_notifications"
 +++
 
 This guide provides instructions for integrating slack plugins into your build pipeline using the slack plugin. Please see the plugin registry for a list of all notification plugins and detailed documentation.

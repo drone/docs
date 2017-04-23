@@ -6,7 +6,7 @@ url = "images"
 [menu.usage]
   weight = 1
   identifier = "images"
-  parent = "config"
+  parent = "usage_config"
 +++
 
 Drone uses Docker images for the build environment, for plugins and for service containers. The image field is exposed in the container blocks in the Yaml:

@@ -6,5 +6,5 @@ url = "api-users-delete"
 [menu.api]
   weight = 3
   identifier = "api-users-delete"
-  parent = "users"
+  parent = "api_users"
 +++

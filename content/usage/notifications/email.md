@@ -6,7 +6,7 @@ url = "trigger-email-notifications"
 [menu.usage]
   weight = 1
   identifier = "trigger-email-notifications"
-  parent = "notifications"
+  parent = "usage_notifications"
 +++
 
 {{% alert warn %}}

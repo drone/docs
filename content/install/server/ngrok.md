@@ -5,7 +5,7 @@ url = "setup-with-ngrok"
 
 [menu.main]
   identifier = "setup-with-ngrok"
-  parent = "server"
+  parent = "install_server"
   weight = 6
 +++
 

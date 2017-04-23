@@ -6,5 +6,5 @@ url = "api-secret-list"
 [menu.api]
   weight = 5
   identifier = "api-secret-list"
-  parent = "secret"
+  parent = "api_secret"
 +++

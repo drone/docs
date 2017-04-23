@@ -6,7 +6,7 @@ url = "deploy-to-heroku"
 [menu.usage]
   weight = 1
   identifier = "deploy-to-heroku"
-  parent = "deployments"
+  parent = "usage_deployments"
 +++
 
 {{% alert warn %}}

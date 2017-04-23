@@ -6,7 +6,7 @@ url = "ccmenu"
 [menu.usage]
   weight = 4
   identifier = "ccmenu"
-  parent = "reports"
+  parent = "usage_reports"
 +++
 
 Drone has integrated support for [ccmenu](http://ccmenu.org/) monitoring to display the status of your repository in osx or windows menu bar.

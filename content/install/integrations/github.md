@@ -4,7 +4,7 @@ title = "GitHub"
 url = "install-for-github"
 
 [menu.main]
-  parent = "integrations"
+  parent = "install_integrations"
   identifier = "install-for-github"
   weight = 1
 +++

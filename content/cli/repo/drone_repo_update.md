@@ -6,7 +6,7 @@ url = "cli-repository-update"
 [menu.cli]
   weight = 4
   identifier = "cli-repository-update"
-  parent = "repo"
+  parent = "cli_repo"
 +++
 
 This subcommand updates a named repository. Please note this command requires write access to the repository.

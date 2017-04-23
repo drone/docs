@@ -6,7 +6,7 @@ url = "api-user-feed"
 [menu.api]
   weight = 2
   identifier = "api-user-feed"
-  parent = "user"
+  parent = "api_user"
 +++
 
 Returns the currently authenticated user's activity feed.

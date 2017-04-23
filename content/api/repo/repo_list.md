@@ -6,5 +6,5 @@ url = "api-repo-list"
 [menu.api]
   weight = 7
   identifier = "api-repo-list"
-  parent = "repo"
+  parent = "api_repo"
 +++

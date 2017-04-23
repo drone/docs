@@ -7,7 +7,7 @@ weight = 1
 [menu.cli]
   weight = 40
   identifier = "cli-user-add"
-  parent = "user"
+  parent = "cli_user"
 +++
 
 This subcommand registers a new user with the system. Please note this command requires administrative privileges.

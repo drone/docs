@@ -6,7 +6,7 @@ url = "cli-secret-add"
 [menu.cli]
   weight = 10
   identifier = "cli-secret-add"
-  parent = "secret"
+  parent = "cli_secret"
 +++
 
 This subcommand adds a secret to your repository secret store. Please note this command requires administrative privilege to the repository.

@@ -6,7 +6,7 @@ url = "docker-volumes"
 [menu.usage]
   weight = 6
   identifier = "volumes"
-  parent = "config"
+  parent = "usage_config"
 +++
 
 Drone gives the ability to define Docker volumes in the Yaml. You can use this parameter to mount files or folders on the host machine into your containers.

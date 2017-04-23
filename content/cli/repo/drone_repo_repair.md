@@ -6,7 +6,7 @@ url = "cli-repository-repair"
 [menu.cli]
   weight = 3
   identifier = "cli-repository-repair"
-  parent = "repo"
+  parent = "cli_repo"
 +++
 
 This subcommand re-creates webhooks for your repository in your version control system (e.g GitHub). This can be used if you accidentally delete your webhooks.

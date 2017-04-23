@@ -7,7 +7,7 @@ weight = 2
 [menu.cli]
   weight = 41
   identifier = "cli-user-info"
-  parent = "user"
+  parent = "cli_user"
 +++
 
 This subcommand prints information about the named registered user. Please note this command requires administrative privileges.

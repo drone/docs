@@ -4,7 +4,7 @@ title = "Bitbucket Server"
 url = "install-for-bitbucket-server"
 
 [menu.main]
-  parent = "integrations"
+  parent = "install_integrations"
   identifier = "install-for-bitucket-server"
   weight = 6
 +++

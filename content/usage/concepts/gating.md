@@ -6,7 +6,7 @@ url = "gated-builds"
 [menu.usage]
   weight = 11
   identifier = "gated-builds"
-  parent = "concepts"
+  parent = "usage_concepts"
 +++
 
 {{% alert warn %}}

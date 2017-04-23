@@ -4,7 +4,7 @@ title = "Example using Mysql"
 url = "mysql-example"
 
 [menu.usage]
-  Parent = "examples"
+  Parent = "usage_examples"
   weight = 4
   identifier = "mysql-example"
 +++

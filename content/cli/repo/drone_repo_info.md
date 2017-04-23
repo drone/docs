@@ -6,7 +6,7 @@ url = "cli-repository-info"
 [menu.cli]
   weight = 5
   identifier = "cli-repository-info"
-  parent = "repo"
+  parent = "cli_repo"
 +++
 
 This subcommand prints the named repository details.

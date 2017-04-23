@@ -6,7 +6,7 @@ url = "cli-repository-chown"
 [menu.cli]
   weight = 2
   identifier = "cli-repository-chown"
-  parent = "repo"
+  parent = "cli_repo"
 +++
 
 This subcommand lets a user assume ownership of a named repository. Please note this command requires administrative access to the repository.

@@ -5,7 +5,7 @@ url = "database-settings"
 
 [menu.main]
   identifier = "database-settings"
-  parent = "server"
+  parent = "install_server"
   weight = 1
 +++
 

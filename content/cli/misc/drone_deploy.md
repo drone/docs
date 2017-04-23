@@ -6,7 +6,7 @@ url = "cli-deploy"
 [menu.cli]
   weight = 70
   identifier = "cli-deploy"
-  parent = "misc"
+  parent = "cli_misc"
 +++
 
 

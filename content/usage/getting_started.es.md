@@ -9,23 +9,23 @@ url = "es/getting-started"
   parent = "usage_overview"
 +++
 
-Welcome to the Drone community. This document briefly explains the process for activating and configuring a continuous delivery pipeline.
+Bienvenido a la comunidad de Drone. este documento explica brevenemte el proceso para activar y configurar un flujo de integración continua.
 
-# Activation
+# Activación
 
-To activate your project navigate to your account settings. You will see a list of repositories which can be activated with a simple toggle. When you activate your repository, Drone automatically adds webhooks to your version control system (e.g. GitHub).
+Para activar nuestro proyecto, navega a la configuración de tu cuenta. Verás  una lista de repositorios que pueden ser activados con un simple botón. Cuando activas un repositorio, Drone automáticamente agrega los Webhooks a tu sistema de control de veersiones (Ej: GitHub).
 
-Webhooks are used to trigger pipeline executions. When you push code to your repository, open a pull request, or create a tag, your version control system will automatically send a webhook to Drone which will in turn trigger pipeline execution.
+Los Webhooks son usados para ejecutar el flujo de ejecuciones. Cuando realizas un push a tu repositorio, abres un pull request, o creas una etiqueta, tu sistema de control de versiones automáticamente enviará un Webhook a Drone el cual ejecutará el flujo de ejecución.
 
-![repository list](/images/drone_repo_list.png)
+![Lista de repositorios](/images/drone_repo_list.png)
 
-# Configuration
+# Configuración
 
-To configure you pipeline you should place a `.drone.yml` file in the root of your repository. The .drone.yml file is used to define your pipeline steps. It is a superset of the widely used docker-compose file format.
+Para configurar tu flujo de ejecución debes crear un archivo `.drone.yml` en la raiz de tu repositorio. El archivo `drone.yml` es usado para definir los pasos del flujo de ejecución. Es un super conjunto del muy conocido archivo `docker-compose`.
 
-Example pipeline configuration:
+Ejemplo de una configuración de flujo de ejecución.
 
-```yaml
+```
 pipeline:
   build:
     image: golang
@@ -41,9 +41,9 @@ services:
       - POSTGRES_USER=myapp
 ```
 
-Example pipeline configuration with multiple, serial steps:
+Ejemplo de la configuración de un flujo de ejecución con múltiples pasos sucesivos:
 
-```yaml
+```
 pipeline:
   backend:
     image: golang
@@ -64,10 +64,10 @@ pipeline:
     username: drone
 ```
 
-# Execution
+# Ejecución
 
-To trigger your first pipeline execution you can push code to your repository, open a pull request, or push a tag. Any of these events triggers a webhook from your version control system and execute your pipeline.
+Para ejecutar tu primer flujo de ejecución puedes ejecutar un push a tu repositorio, abrir un pull request, o crear una etiqueta. Cualquiera de estos eventos lanza un Webhook desde tu sistema de control de versiones y ejecuta el flujo de ejecución.
 
-You can view your pipeline execution in realtime in the user interface.
+Puedes revisar el flujo de ejecución en tiempo real usando la interfaz de usuario.
 
 ![running build](/images/drone_build_running.png)

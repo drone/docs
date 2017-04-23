@@ -11,10 +11,10 @@ questions_off = true
   parent = "usage_overview"
 +++
 
-If you are experiencing issues please be sure to read the documentation and search for existing issues and error messages using site search. We monitor [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) for questions and answers.
+Si estás teniendo problemas, por favor asegúrate de leer la documentación y buscar problemas existentes y mensajes relacionados usando la búsqueda en el sitio. Nosotros monitoreamos [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) para preguntas y respuestas.
 
-You can also chat live with project maintainers and community members in our [gitter channel](gitter.im/drone/drone). Please do not use live chat as a replacement for this documentation.
+También puedes chatear con los mantenedores del proyecto y miembros de la comunidad en nuestro [canal de gitter](gitter.im/drone/drone). Por favor no uses el chat en vivo como reemplazo de esta documentación.
 
-# Reporting Issues
+# Reportar problemáticas
 
-We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [gitter channel](gitter.im/drone/drone) before creating github issues.
+Desafortunadamente recibimos un gran número de problemáticas falsas positivas. Te pedimos que discutas los potenciales problemas en nuestro [canal de gitter](gitter.im/drone/drone) antes de crear las incidencias en github.

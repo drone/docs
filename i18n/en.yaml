@@ -44,6 +44,8 @@
 # install menu
 #
 
+- id: install_overview
+  translation: Overview
 - id: install_integrations
   translation: Integrations
 - id: install_access

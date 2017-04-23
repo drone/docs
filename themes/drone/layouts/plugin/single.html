@@ -14,15 +14,19 @@
 <body>
 
 <aside>
+	<input type="checkbox" id="app-drawer"/>
 	<a href='{{ relLangURL "/" }}' class="logo"></a>
-	<nav>
-	{{ partial "menu_plugin.html" . }}
-	</nav>
-	{{ range .Site.Menus.index }}
-	<a href='{{ relLangURL .URL }}' class="section">
-		{{ default .Name (i18n .Identifier) }}
-	</a>
-	{{ end }}
+	<label class="app-drawer" for="app-drawer"></label>
+	<div>
+		<nav>
+		{{ partial "menu_plugin.html" . }}
+		</nav>
+		{{ range .Site.Menus.index }}
+		<a href='{{ relLangURL .URL }}' class="section">
+			{{ default .Name (i18n .Identifier) }}
+		</a>
+		{{ end }}
+	</div>
 </aside>
 
 <header>

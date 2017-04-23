@@ -144,9 +144,12 @@ a.section {
 	padding-left:30px;
 	border-top:1px solid #EEE;
 }
-a.section:nth-child(2) {
+aside div > a:first-child {
 	border-top:0px;
 }
+/*a.section:nth-child(2) {
+	border-top:0px;
+}*/
 a.section:last-child {
 border-top:1px solid #EEE;
 }
@@ -251,6 +254,63 @@ article .alert p code {
 }
 
 
+/*--- dropdown menu ----------------------------------------------------------*/
+
+#app-drawer {
+	display:none;
+}
+
+label.app-drawer {
+	position:absolute;
+	top:0px;
+	right:0px;
+	width:80px;
+	height:60px;
+	cursor: pointer;
+	display:block;
+	text-align: center;
+}
+
+label.app-drawer:before {
+	font-family: 'Material Icons';
+	font-weight: 400;
+	font-style: normal;
+	font-size: 32px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: block;
+	word-wrap: normal;
+	-moz-font-feature-settings: 'liga';
+	font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+	content: "menu";
+	display:block;
+	line-height:60px;
+}
+
+@media (min-width: 800px) {
+	label.app-drawer {
+		display:none;
+	}
+}
+
+@media (max-width: 800px) {
+	#app-drawer ~ div {
+		display:none;
+	}
+
+	#app-drawer:checked ~ div {
+		display:block;
+		border-bottom:1px solid #EEE;
+	}
+
+	#app-drawer:checked ~ .logo {
+		border-bottom:none;
+	}
+}
+
 /*--- languages --------------------------------------------------------------*/
 
 #language-menu {
@@ -274,6 +334,18 @@ article .alert p code {
 	color: #212121;
 	cursor: pointer;
 	font-size:13px;
+	user-select: none;
+}
+
+#language-menu:checked ~ .selected {
+	position:fixed;
+	top:0px;left:0px;
+	right:0px;bottom:0px;
+	z-index:1;
+	background:rgba(255,255,255,0.8);
+	border:none;
+	color:transparent;
+	animation: fade-in 0.5s ease;
 }
 
 .languages .drawer {
@@ -284,7 +356,7 @@ article .alert p code {
 	width:220px;
 	display: none;
 	background:#FFF;
-	z-index:1;
+	z-index:2;
 	border-left:1px solid #eee;
 	padding:20px;
 }
@@ -303,7 +375,24 @@ article .alert p code {
  animation: slide-in 0.5s ease;
  animation-fill-mode: forwards;
  display:block;
- /*box-shadow: -4px 0px 8px 0px rgba(0,0,0,0.05);*/
+}
+
+@keyframes fade-in {
+	from {
+		background:rgba(255,255,255,0);
+	}
+	to {
+		background:rgba(255,255,255,0.8);
+	}
+}
+
+@keyframes fade-out {
+	to {
+		background:rgba(255,255,255,0);
+	}
+	from {
+		background:rgba(255,255,255,0.8);
+	}
 }
 
 @keyframes slide-in {
@@ -480,4 +569,42 @@ article img[alt="github oauth setup"] {
 	padding: 20px;
 }
 
+
+
+
+
+
+@media (max-width: 800px) {
+  header {
+		display:none;
+	}
+	main {
+		padding-left:50px;
+	}
+	aside {
+		position:relative;
+		border:none;
+		padding:0px;
+		width: auto;
+		border-bottom:none;
+	}
+	/*aside nav > ul > li > span {
+		font-size:14px;
+		padding-left:20px;
+	}
+	aside nav > ul > li > ul > li > a {
+		font-size:16px;
+		padding: 10px 20px;
+	}
+	aside a.section {
+		font-size: 16px;
+		padding-left:50px;
+	}*/
+	/*aside a.section {
+		display: none;
+	}
+	aside nav {
+		display:none;
+	}*/
+}
 </style>

@@ -3,6 +3,22 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Getting Started"
 url = "getting-started"
 
+[[related]]
+  ref = "usage/concepts/pipelines.md"
+  name = "Pipeline Configuration"
+
+[[related]]
+  ref = "usage/concepts/services.md"
+  name = "Services Configuration"
+
+[[related]]
+  ref = "usage/publishing/docker.md"
+  name = "Publish to Dockerhub"
+
+[[related]]
+  ref = "usage/deployments/kubernetes.md"
+  name = "Deploy to Kubernetes"
+
 [menu.usage]
   weight = 1
   identifier = "getting-started"

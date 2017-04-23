@@ -3,6 +3,8 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Installation Help"
 url = "installation-help"
 
+questions_off = true
+
 [menu.install]
   weight = 3
   identifier = "installation-help"

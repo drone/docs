@@ -3,6 +3,8 @@ date = "2017-04-15T14:39:04+02:00"
 title = "Obteniendo ayuda"
 url = "es/getting-help"
 
+questions_off = true
+
 [menu.usage]
   weight = 2
   identifier = "getting-help-es"

@@ -1,0 +1,11 @@
+{{ if .Params.related }}
+<h1>{{ i18n "next_steps" }}</h1>
+<ul class="next_steps">
+{{ $page := . }}
+{{ range .Params.related }}
+  <li>
+    <a href="{{ ref $page .ref }}">{{ .name }}</a>
+  </li>
+{{ end }}
+</ul>
+{{ end }}

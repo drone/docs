@@ -40,6 +40,9 @@
 	<h1>{{.Title}}</h1>
 	<article>
 		{{ .Content }}
+
+		{{ partial "next_steps.html" . }}
+		{{ partial "questions.html" . }}
 	</article>
 	{{ partial "next_prev.html" . }}
 </main>

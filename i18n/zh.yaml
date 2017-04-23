@@ -101,3 +101,23 @@
   translation: Secret Commands
 - id: cli_misc
   translation: Misc Commands
+
+#
+# next steps
+#
+
+- id: next_steps
+  translation: Next Steps
+
+#
+# questions
+#
+
+- id: questions
+  translation: Questions?
+- id: questions_text
+  translation: |
+    We are always happy to help with questions you might have.
+    Search our documentation or check out answers to common questions. You
+    can even chat live with other developers in our
+    [gitter channel](https://gitter.im/drone/drone).

@@ -1,13 +1,13 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Example Node project"
-url = "node-example"
+---
+title: Example using Node
+url: node-example
 
-[menu.usage]
-  Parent = "usage_examples"
-  weight = 2
-  identifier = "node-example"
-+++
+menu:
+  usage:
+    weight: 2
+    identifier: node_example
+    parent: usage_examples
+---
 
 Example Yaml configuration for a project written in JavaScript using Node:
 

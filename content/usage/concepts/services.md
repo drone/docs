@@ -1,13 +1,22 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Services"
-url = "services"
+---
+date: 2017-04-15T14:39:04+02:00
+title: Services
+url: services
 
-[menu.usage]
-  weight = 6
-  identifier = "services"
-  parent = "usage_concepts"
-+++
+next_steps:
+  - file: mysql.md
+    name: Example using MySQL
+  - file: postgres.md
+    name: Example using Postgres
+  - file: redis.md
+    name: Example using Redis
+
+menu:
+  usage:
+    weight: 6
+    identifier: services
+    parent: usage_concepts
+---
 
 Drone provides a services section in the Yaml file used for defining service containers. The below configuration composes database and cache containers.
 

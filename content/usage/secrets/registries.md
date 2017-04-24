@@ -1,14 +1,13 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Manage Registry Credentials"
-url = "manage-registry-credentials"
+---
+title: Manage Registry Credentials
+url: manage-registry-credentials
 
-[menu.usage]
-  weight = 1
-  parent = "usage_secrets"
-  identifier = "manage-registry-credentials"
-+++
-
+menu:
+  usage:
+    weight: 1
+    identifier: manage_registry_credentials
+    parent: usage_secrets
+---
 
 Drone provides the ability to store registry credentials. These credentials can be used to download private pipeline images defined in your Yaml configuration file.
 
@@ -27,7 +26,7 @@ Registries are added to your repository using the command line utility:
 
 ```diff
 drone registry add \
-  --repository <registry> \
+  --repository <repository> \
   --hostname <image> \
   --username <name> \
   --password <value>
@@ -37,10 +36,20 @@ Example command:
 
 ```diff
 drone registry add \
-  --repository <registry> \
+  --repository <repository> \
   --hostname gcr.io \
   --username <name> \
   --password <value>
+```
+
+Example commands loads the password from file:
+
+```diff
+drone registry add \
+  --repository <repository> \
+  --hostname gcr.io \
+  --username _json_key \
+  --password @/absolute/path/to/keyfile.json
 ```
 
 # Matching

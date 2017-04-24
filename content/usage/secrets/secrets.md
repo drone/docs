@@ -1,13 +1,13 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Manage Secrets"
-url = "manage-secrets"
+---
+title: Manage Secrets
+url: manage-secrets
 
-[menu.usage]
-  weight = 1
-  parent = "usage_secrets"
-  identifier = "manage-secrets"
-+++
+menu:
+  usage:
+    weight: 2
+    identifier: manage_secrets
+    parent: usage_secrets
+---
 
 Drone provides the ability to store named parameters external to the Yaml configuration file, in a central secret store. Individual steps in the yaml can request access to these named parameters at runtime.
 

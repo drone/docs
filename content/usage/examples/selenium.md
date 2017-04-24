@@ -1,13 +1,13 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Example using Selenium"
-url = "selenium-example"
+---
+title: Example using Selenium
+url: selenium-example
 
-[menu.usage]
-  Parent = "usage_examples"
-  weight = 6
-  identifier = "selenium-example"
-+++
+menu:
+  usage:
+    weight: 6
+    identifier: selenium_example
+    parent: usage_examples
+---
 
 Example Yaml configuration for a project with a Selenium service dependency. Note the selenium service will be available to at `http://selenium:4444/wd/hub`
 

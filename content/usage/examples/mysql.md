@@ -1,15 +1,15 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Example using Mysql"
-url = "mysql-example"
+---
+title: Example using Mysql
+url: mysql-example
 
-[menu.usage]
-  Parent = "usage_examples"
-  weight = 4
-  identifier = "mysql-example"
-+++
+menu:
+  usage:
+    weight: 4
+    identifier: mysql_example
+    parent: usage_examples
+---
 
-Example Yaml configuration for a project with a MySQL service dependency. Note that the postgres service will be accessiable at `database:3306`.
+Example Yaml configuration for a project with a MySQL service dependency. Note that the postgres service will be accessible at `database:3306`.
 
 ```yaml
 pipeline:

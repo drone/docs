@@ -1,13 +1,13 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Example using Redis"
-url = "redis-example"
+---
+title: Example using Redis
+url: redis-example
 
-[menu.usage]
-  Parent = "usage_examples"
-  weight = 3
-  identifier = "redis-example"
-+++
+menu:
+  usage:
+    weight: 3
+    identifier: redis_example
+    parent: usage_examples
+---
 
 Example Yaml configuration for a project with a Redis service dependency. Note that the redis service will be available at `cache:6379`.
 

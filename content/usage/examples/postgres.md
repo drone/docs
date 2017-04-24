@@ -1,15 +1,15 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Example using Postgres"
-url = "postgres-example"
+---
+title: Example using Postgres
+url: postgres-example
 
-[menu.usage]
-  Parent = "usage_examples"
-  weight = 5
-  identifier = "postgres-example"
-+++
+menu:
+  usage:
+    weight: 5
+    identifier: postgres_example
+    parent: usage_examples
+---
 
-Example Yaml configuration for a project with a Postgres service dependency. Note that the postgres service will be accessiable at `database:5432`.
+Example Yaml configuration for a project with a Postgres service dependency. Note that the postgres service will be accessible at `database:5432`.
 
 ```yaml
 pipeline:

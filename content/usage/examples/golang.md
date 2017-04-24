@@ -1,13 +1,13 @@
-+++
-date = "2017-04-15T14:39:04+02:00"
-title = "Example Golang project"
-url = "golang-example"
+---
+title: Example Golang project
+url: golang-example
 
-[menu.usage]
-  Parent = "usage_examples"
-  weight = 1
-  identifier = "golang-example"
-+++
+menu:
+  usage:
+    weight: 1
+    identifier: golang_example
+    parent: usage_examples
+---
 
 Example Yaml configuration for a project written in the Go programming language:
 

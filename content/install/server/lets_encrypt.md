@@ -31,7 +31,9 @@ services:
 +     - DRONE_LETS_ENCRYPT=true
 ```
 
-Note that Drone uses the hostname from the `DRONE_HOST` environment variable when requesting certificates. For example if `DRONE_HOST=https://foo.com` the certificates are requested for the `foo.com` hostname.
+Note that Drone uses the hostname from the `DRONE_HOST` environment variable when requesting certificates. For example, if `DRONE_HOST=https://foo.com` the certificate is requested for `foo.com`.
+
+<!-- Once enabled you can visit your website at both the http and the https address. There are no immediate plans to redirect from http to https, but it may be considered for a future release. -->
 
 # Certificate Cache
 

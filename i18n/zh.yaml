@@ -58,7 +58,7 @@
 #
 
 - id: plugin_pipeline
-  translation: Pipeline 插件
+  translation: 工作流 插件
 - id: plugin_secrets
   translation: 密钥 后端服务
 - id: plugin_registry

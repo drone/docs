@@ -17,10 +17,10 @@ questions_off = true
 
 <!--You can also chat live with project maintainers and community members in our [gitter channel](gitter.im/drone/drone). Please do not use live chat as a replacement for this documentation.-->
 
-你还可以在 [gitter 频道](gitter.im/drone/drone) 里和项目维护者和社区成员们实时交流。请不要把实时聊天（live chat）当作这个文档的替代品。
+你还可以在 [gitter 频道](gitter.im/drone/drone) 与项目维护者和社区成员们实时交流。请不要把实时聊天（live chat）当作这个文档的替代品。
 
-# Reporting Issues
+# 报告问题
 
 <!--We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [gitter channel](gitter.im/drone/drone) before creating github issues.-->
 
-很不幸的是，我们接到了很多假阳性的报告。我们希望您在提交 GitHub 工单（issues）前，先在 [gitter 频道](gitter.im/drone/drone) 与我们交流。
+很不幸的是，我们接到了很多假阳性的报告。我们希望您在提交 GitHub 工单（issues）前，请先在 [gitter 频道](gitter.im/drone/drone) 与我们交流。

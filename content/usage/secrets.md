@@ -12,7 +12,7 @@ toc = true
 
 # Overview
 
-Drone gives the ability to safely inject passwords, tokens, keys and sensitive information into your build as environment variables. Secrets are managed from the command line and stored in the central Drone server.
+Drone gives the ability to safely inject passwords, tokens, keys and sensitive information into your build as environment variables. Secrets are managed from the command line and stored in the central Drone server. Keep in mind PLUGIN gets appended to most variables for plugins. This means you may need to use PLUGIN_HEROKU_TOKEN.
 
 Example command adds the secret for the Heroku plugin:
 

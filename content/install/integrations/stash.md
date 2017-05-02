@@ -57,7 +57,9 @@ This stores the private RSA certificate in `key.pem`. The next command generates
 openssl rsa -in /etc/bitbucket/key.pem -pubout >> /etc/bitbucket/key.pub
 ```
 
-Please note that the private key file needs to be mounted into your Drone container at runtime as a volume.
+Please note that the private key file can be mounted into your Drone conatiner at runtime or as an environment variable
+
+Private key file mounted into your Drone container at runtime as a volume.
 
 ```diff
 version: '2'
@@ -77,6 +79,26 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 +  volumes:
 +     - /etc/bitbucket/key.pem:/etc/bitbucket/key.pem
+```
+
+Private key as environment variable
+
+```diff
+version: '2'
+
+services:
+  drone-server:
+    image: drone/drone:0.6
+    environment:
+    - DRONE_OPEN=true
+    - DRONE_HOST=${DRONE_HOST}
+      - DRONE_STASH=true
+      - DRONE_STASH_GIT_USERNAME=foo
+      - DRONE_STASH_GIT_PASSWORD=bar
+      - DRONE_STASH_CONSUMER_KEY=95c0282573633eb25e82
++     - DRONE_STASH_CONSUMER_RSA_STRING=contentOfPemKeyAsString
+      - DRONE_STASH_URL=http://stash.mycompany.com
+      - DRONE_SECRET=${DRONE_SECRET}
 ```
 
 # Service Account
@@ -106,6 +128,9 @@ DRONE_STASH_CONSUMER_KEY
 
 DRONE_STASH_CONSUMER_RSA
 : Bitbucket Server oauth1 private key file
+
+DRONE_STASH_CONSUMER_RSA_STRING
+: Bibucket Server oauth1 private key as a string
 
 DRONE_STASH_GIT_USERNAME
 : Machine account username used to clone repositories.

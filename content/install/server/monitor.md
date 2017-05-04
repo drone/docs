@@ -9,7 +9,7 @@ url = "configure-prometheus"
   weight = 7
 +++
 
-{{% alert warn %}}
+{{% alert enterprise %}}
 This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
 {{% /alert %}}
 
@@ -27,3 +27,21 @@ scrape_configs:
     static_configs:
        - targets: ['drone.domain.com']
 ```
+
+# Authorization
+
+```diff
+global:
+  scrape_interval: 60s
+
+scrape_configs:
+  - job_name: 'drone'
++   bearer_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+    static_configs:
+       - targets: ['drone.domain.com']
+```
+
+# Metric Reference
+
+Below is a list of available prometheus metrics:

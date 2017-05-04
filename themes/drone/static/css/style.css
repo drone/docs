@@ -208,6 +208,7 @@ border-top:1px solid #EEE;
 	padding-top: 0px;
 	padding-left:40px;
 	font-weight:400;
+	line-height: 24px;
 }
 .alert:before {
 	font-family: 'Material Icons';
@@ -242,6 +243,20 @@ border-top:1px solid #EEE;
 .alert.alert-error:before {
 	content: 'error_outline';
 }
+
+.alert.alert-enterprise {
+	background: #69F0AE;
+	color: #1B5E20;
+}
+.alert.alert-enterprise:before {
+	content: "local_atm";
+}
+.alert.alert-enterprise p a {
+	color: #1B5E20;
+	text-decoration: underline;
+}
+
+
 
 .alert.alert-warn p a {
 	color: #FF8F00;

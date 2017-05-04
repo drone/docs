@@ -9,7 +9,7 @@ url = "configure-lets-encrypt"
   weight = 7
 +++
 
-Drone support automated ssl configuration and updates using let's encrypt. You can enable let's encrypt by making the following modifications to your server configuration:
+Drone supports automated ssl configuration and updates using let's encrypt. You can enable let's encrypt by making the following modifications to your server configuration:
 
 ```diff
 services:

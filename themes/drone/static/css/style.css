@@ -243,6 +243,20 @@ border-top:1px solid #EEE;
 	content: 'error_outline';
 }
 
+.alert.alert-warn p a {
+	color: #FF8F00;
+	text-decoration: underline;
+}
+.alert.alert-error p a {
+	color: #e80044;
+	text-decoration: underline;
+}
+.alert.alert-info p a {
+	color: #00b0e9;
+	text-decoration: underline;
+}
+
+
 article .alert p code {
 	border: none;
 	font-size: 13px;

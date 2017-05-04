@@ -6,7 +6,7 @@ url = "configure-lets-encrypt"
 [menu.install]
   identifier = "configure-lets-encrypt"
   parent = "install_server"
-  weight = 7
+  weight = 8
 +++
 
 Drone supports automated ssl configuration and updates using let's encrypt. You can enable let's encrypt by making the following modifications to your server configuration:

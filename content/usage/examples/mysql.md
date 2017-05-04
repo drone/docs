@@ -9,7 +9,7 @@ menu:
     parent: usage_examples
 ---
 
-Example Yaml configuration for a project with a MySQL service dependency. Note that the postgres service will be accessible at `database:3306`.
+Example Yaml configuration for a project with a MySQL service dependency. Note that the mysql service will be accessible at `database:3306`.
 
 ```yaml
 pipeline:

@@ -31,7 +31,7 @@ services:
 
 Example secrets file:
 
-```
+```nohighlight
 - name: docker_username
   value: octocat
 - name: docker_password

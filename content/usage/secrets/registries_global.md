@@ -31,11 +31,11 @@ services:
 
 Example registry credentials file:
 
-```
+```nohighlight
 - address: docker.io
   username: octocat
   password: correct-horse-batter-staple
-- name: gcr.io
+- address: gcr.io
   username: _json_key
   password: |
     {

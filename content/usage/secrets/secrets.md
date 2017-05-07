@@ -44,6 +44,20 @@ drone secret add \
   -value <value>
 ```
 
+Example configuration using named secrets with different environment variables
+```diff
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: octocat/hello-world
+    tags: latest
+-   username: <username>
+-   password: <password>
++   secrets:
++     - source: docker_prod_password
+        target: docker_password
+```
+
 # Pull Requests
 
 {{% alert error %}}

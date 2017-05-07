@@ -44,18 +44,21 @@ drone secret add \
   -value <value>
 ```
 
-Example configuration using named secrets with different environment variables
+In the above examples we see `docker_username` and `docker_password` secrets. The names of these secret variables are dictated by the plugin. You should therefore consult the individual plugin documentation to determine the exact secret name that should be used.
+
+# Alternate Names
+
+There may be scenarios where you are required to store secrets using alternate names. You can map the alternate secret name to the expected name using the below syntax:
+
 ```diff
 pipeline:
   docker:
     image: plugins/docker
     repo: octocat/hello-world
     tags: latest
--   username: <username>
--   password: <password>
 +   secrets:
 +     - source: docker_prod_password
-        target: docker_password
++       target: docker_password
 ```
 
 # Pull Requests
@@ -124,6 +127,8 @@ drone secret add \
   -name aws_access_key_id \
   -value <value>
 ```
+
+# Example From File
 
 Loading secrets from file using curl `@` syntax. This is the recommended approach for loading secrets from file to preserve newlines:
 

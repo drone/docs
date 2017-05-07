@@ -9,6 +9,8 @@ url = "publish-coverage-reports"
   identifier = "publish-coverage-reports"
 +++
 
-{{% alert warn %}}
-Coming Soon
+{{% alert enterprise %}}
+This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
 {{% /alert %}}
+
+This feature is not yet available for general use. Check back soon.

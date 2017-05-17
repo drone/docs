@@ -24,8 +24,8 @@ pipeline:
       - docker run --rm octocat/hello-world --test
       - docker push octocat/hello-world
       - docker rmi octocat/hello-world
-  volumes:
-+   - /var/run/docker.sock:/var/run/docker.sock
+    volumes:
++     - /var/run/docker.sock:/var/run/docker.sock
 ```
 
 Please note that Drone mounts volumes on the host machine. This means you must use absolute paths when you configure volumes. Attempting to use relative paths will result in an error.

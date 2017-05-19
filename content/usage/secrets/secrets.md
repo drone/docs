@@ -24,6 +24,20 @@ pipeline:
 +   secrets: [ docker_username, docker_password ]
 ```
 
+Secrets are exposed to your pipeline steps and plugins as uppercase environment variables and can be referenced in your build scripts:
+
+```diff
+pipeline:
+  docker:
+    image: docker
+    commands:
++     - echo $docker_username
++     - echo $docker_password
+    secrets: [ docker_username, docker_password ]
+```
+
+# Add Secrets
+
 Secrets are added to the Drone secret store using the command line utility:
 
 ```diff

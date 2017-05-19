@@ -30,11 +30,10 @@ pipeline:
     secrets: [ docker_username, docker_password ]
 
 secrets:
-  default:
-    driver: vault
-    driver_opts:
-      - secret/docker_username
-      - secret/docker_password
+  docker_username:
+    path: secret/docker_username
+  docker_password:
+    path: secret/docker_password
 ```
 
 Secrets are added to vault using the vault command line utility. Secrets can be written to any valid path. See the below example:
@@ -48,28 +47,32 @@ The secrets paths can then be included in your yaml configuration:
 
 ```diff
 secrets:
-  default:
-    driver: vault
-    driver_opts:
-+     - secret/docker_username
-+     - secret/docker_password
+  docker_username:
+    path: secret/docker_username
+  docker_password:
+    path: secret/docker_password
 ```
 
 The vault secrets are passed to your pipeline steps by name. The below example requests the named secrets are passed to the pipeline step:
 
 ```diff
 pipeline:
+  build:
+    image: golang
+    commands:
+      - go test
+      - go build
   publish:
     image: plugins/docker
     repo: octocat/app
 +   secrets: [ docker_username, docker_password ]
+
+secrets:
+  docker_username:
+    path: secret/docker_username
+  docker_password:
+    path: secret/docker_password
 ```
-
-The vault secret names are derived from the [base path](https://golang.org/pkg/path/#Base), which is the last element in the path. For example:
-
-* `secret/docker_username` has secret name `docker_username`
-* `secret/docker/username` has secret name `username`
-
 
 # Alternate Names
 
@@ -92,11 +95,10 @@ pipeline:
 +       target: docker_password
 
 secrets:
-  default:
-    driver: vault
-    driver_opts:
-      - secret/docker/username
-      - secret/docker/password
+  docker_username:
+    path: secret/docker_username
+  docker_password:
+    path: secret/docker_password
 ```
 
 # Restricting Access

@@ -31,8 +31,8 @@ pipeline:
   docker:
     image: docker
     commands:
-+     - echo $docker_username
-+     - echo $docker_password
++     - echo $DOCKER_USERNAME
++     - echo $DOCKER_PASSWORD
     secrets: [ docker_username, docker_password ]
 ```
 

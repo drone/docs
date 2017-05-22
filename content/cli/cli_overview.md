@@ -17,18 +17,18 @@ Download and install the raw binaries by platform:
 
 Platform    | Download
 ------------|---------
-Linux x64   | [tarball](http://downloads.drone.io/0.6.0/release/linux/amd64/drone.tar.gz), [sha256](http://downloads.drone.io/0.6.0/release/linux/amd64/drone.sha256)
-Linux arm64 | [tarball](http://downloads.drone.io/0.6.0/release/linux/arm64/drone.tar.gz), [sha256](http://downloads.drone.io/0.6.0/release/linux/arm64/drone.sha256)
-Linux arm   | [tarball](http://downloads.drone.io/0.6.0/release/linux/arm/drone.tar.gz), [sha256](http://downloads.drone.io/0.6.0/release/linux/arm/drone.sha256)
-Windows x64 | [tarball](http://downloads.drone.io/0.6.0/release/windows/amd64/drone.tar.gz), [sha256](http://downloads.drone.io/0.6.0/release/windows/amd64/drone.sha256)
-Darwin x64  | [tarball](http://downloads.drone.io/0.6.0/release/darwin/amd64/drone.tar.gz), [sha256](http://downloads.drone.io/0.6.0/release/darwin/amd64/drone.sha256)
+Linux x64   | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_amd64.tar.gz)
+Linux arm64 | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_arm64.tar.gz)
+Linux arm   | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_arm.tar.gz)
+Windows x64 | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_windows_amd64.tar.gz)
+Darwin x64  | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_darwin_amd64.tar.gz)
 
 # Install on Linux
 
 Download and install on Linux:
 
 ```nohighlight
-curl http://downloads.drone.io/0.6.0/release/linux/amd64/drone.tar.gz | tar zx
+curl https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_amd64.tar.gz | tar zx
 sudo install -t /usr/local/bin drone
 ```
 
@@ -37,7 +37,7 @@ sudo install -t /usr/local/bin drone
 Download and install on OSX:
 
 ```nohighlight
-curl http://downloads.drone.io/0.6.0/release/darwin/amd64/drone.tar.gz | tar zx
+curl https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_darwin_amd64.tar.gz | tar zx
 sudo cp drone /usr/local/bin
 ```
 

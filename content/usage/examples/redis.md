@@ -13,14 +13,15 @@ Example Yaml configuration for a project with a Redis service dependency. Note t
 
 ```yaml
 pipeline:
-  test:
-    image: golang
+  build:
+    image: redis
     commands:
-      - go get
-      - go test
+      - redis-cli -h redis ping
+      - redis-cli -h redis set FOO bar
+      - redis-cli -h redis get FOO
 
 services:
-  cache:
+  redis:
     image: redis
 ```
 
@@ -28,14 +29,15 @@ If you are unable to connect to the redis container please make sure you are giv
 
 ```diff
 pipeline:
-  test:
-    image: golang
+  build:
+    image: redis:3.0
     commands:
-+     - sleep 15
-      - go get
-      - go test
++     - sleep 5
+      - redis-cli -h redis ping
+      - redis-cli -h redis set HELLO hello
+      - redis-cli -h redis get HELLO
 
 services:
-  cache:
-    image: redis
+  redis:
+    image: redis:3.0
 ```

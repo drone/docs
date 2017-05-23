@@ -28,7 +28,7 @@ Darwin x64  | [tarball](https://github.com/drone/drone-cli/releases/download/v0.
 Download and install on Linux:
 
 ```nohighlight
-curl https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_amd64.tar.gz | tar zx
+curl -L https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_amd64.tar.gz | tar zx
 sudo install -t /usr/local/bin drone
 ```
 
@@ -37,7 +37,7 @@ sudo install -t /usr/local/bin drone
 Download and install on OSX:
 
 ```nohighlight
-curl https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_darwin_amd64.tar.gz | tar zx
+curl -L https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_darwin_amd64.tar.gz | tar zx
 sudo cp drone /usr/local/bin
 ```
 

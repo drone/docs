@@ -23,6 +23,7 @@ OPTIONS:
    --repo-remote-url value             [$DRONE_REPO_REMOTE]
    --repo-private value                [$DRONE_REPO_PRIVATE]
    --build-number value               (default: 0) [$DRONE_BUILD_NUMBER]
+   --parent-build-number value        (default: 0) [$DRONE_PARENT_BUILD_NUMBER]
    --build-created value              (default: 0) [$DRONE_BUILD_CREATED]
    --build-started value              (default: 0) [$DRONE_BUILD_STARTED]
    --build-finished value             (default: 0) [$DRONE_BUILD_FINISHED]

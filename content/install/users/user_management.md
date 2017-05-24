@@ -34,7 +34,7 @@ Please note that only drone administrators can manage users. Please see the belo
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
 +     - DRONE_ADMIN=janedoe,johnsmith
 ```

@@ -18,7 +18,7 @@ Open registration is only recommended for secure installations on a private netw
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
 +     - DRONE_OPEN= true
 ```
@@ -30,7 +30,7 @@ Restricted registration is the recommended configuration. This configuration all
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
 +     DRONE_OPEN: true
 +     DRONE_ORGS: dogpatch,dolores
@@ -43,7 +43,7 @@ Closed registration is enabled by default. Closed registration requires an admin
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
 -     - DRONE_OPEN=true
 +     - DRONE_OPEN=false

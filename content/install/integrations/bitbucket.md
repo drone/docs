@@ -17,7 +17,7 @@ version: '2'
 
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
       - DRONE_OPEN=true
       - DRONE_HOST=${DRONE_HOST}
@@ -27,7 +27,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     command: agent
     restart: always
     depends_on:

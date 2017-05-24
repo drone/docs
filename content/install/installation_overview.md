@@ -12,7 +12,7 @@ url = "installation"
 Drone is a lightweight, powerful continuous delivery platform built for containers. Drone is packaged and distributed as a Docker image and can be downloaded from Dockerhub.
 
 ```text
-docker pull drone/drone:0.6
+docker pull drone/drone:{{% version %}}
 ```
 
 # Docker Compose
@@ -24,7 +24,7 @@ version: '2'
 
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     ports:
       - 80:8000
     volumes:
@@ -39,7 +39,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     command: agent
     restart: always
     depends_on:
@@ -60,7 +60,7 @@ You must register Drone with GitHub to obtain the client and secret. The authori
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
       - DRONE_OPEN=true
       - DRONE_ORGS=dolores,dogpatch
@@ -76,7 +76,7 @@ Drone mounts a volume on the host machine to persist the sqlite database.
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     ports:
       - 80:8000
 +   volumes:
@@ -89,7 +89,7 @@ Drone needs to know its own address. You must therefore provide the address in `
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
       - DRONE_OPEN=true
 +     - DRONE_HOST=${DRONE_HOST}
@@ -104,7 +104,7 @@ Drone agents require access to the host machine Docker daemon.
 ```diff
 services:
   drone-agent:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     command: agent
     restart: always
     depends_on: [ drone-server ]
@@ -117,7 +117,7 @@ Drone agents require the server address for agent-to-server communication.
 ```diff
 services:
   drone-agent:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     command: agent
     restart: always
     depends_on: [ drone-server ]
@@ -133,7 +133,7 @@ Drone server and agents use a shared secret to authenticate communication. This 
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
       - DRONE_OPEN=true
       - DRONE_HOST=${DRONE_HOST}
@@ -142,7 +142,7 @@ services:
       - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
 +     - DRONE_SECRET=${DRONE_SECRET}
   drone-agent:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
       - DRONE_SERVER=ws://drone-server:8000/ws/broker
       - DRONE_DEBUG: true
@@ -154,7 +154,7 @@ Drone registration is closed by default. This example enables open registration 
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
 +     - DRONE_OPEN=true
 +     - DRONE_ORGS=dolores,dogpatch
@@ -170,7 +170,7 @@ Drone administrators should also be enumerated in your configuration.
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     environment:
       - DRONE_OPEN=true
       - DRONE_ORGS=dolores,dogpatch

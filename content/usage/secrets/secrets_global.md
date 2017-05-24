@@ -18,7 +18,7 @@ The enterprise edition supports global secrets, sourced from a yaml file on your
 ```diff
 services:
   drone-server:
-    image: drone/drone:0.6
+    image: drone/drone:{{% version %}}
     ports:
       - 80:8000
     volumes:

@@ -17,18 +17,18 @@ Download and install the raw binaries by platform:
 
 Platform    | Download
 ------------|---------
-Linux x64   | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_amd64.tar.gz)
-Linux arm64 | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_arm64.tar.gz)
-Linux arm   | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_arm.tar.gz)
-Windows x64 | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_windows_amd64.tar.gz)
-Darwin x64  | [tarball](https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_darwin_amd64.tar.gz)
+Linux x64   | [tarball](https://github.com/drone/drone-cli/releases/download/v0.7.0/drone_linux_amd64.tar.gz)
+Linux arm64 | [tarball](https://github.com/drone/drone-cli/releases/download/v0.7.0/drone_linux_arm64.tar.gz)
+Linux arm   | [tarball](https://github.com/drone/drone-cli/releases/download/v0.7.0/drone_linux_arm.tar.gz)
+Windows x64 | [tarball](https://github.com/drone/drone-cli/releases/download/v0.7.0/drone_windows_amd64.tar.gz)
+Darwin x64  | [tarball](https://github.com/drone/drone-cli/releases/download/v0.7.0/drone_darwin_amd64.tar.gz)
 
 # Install on Linux
 
 Download and install on Linux:
 
 ```nohighlight
-curl -L https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_linux_amd64.tar.gz | tar zx
+curl -L https://github.com/drone/drone-cli/releases/download/v0.7.0/drone_linux_amd64.tar.gz | tar zx
 sudo install -t /usr/local/bin drone
 ```
 
@@ -37,7 +37,7 @@ sudo install -t /usr/local/bin drone
 Download and install on OSX:
 
 ```nohighlight
-curl -L https://github.com/drone/drone-cli/releases/download/v0.6.0/drone_darwin_amd64.tar.gz | tar zx
+curl -L https://github.com/drone/drone-cli/releases/download/v0.7.0/drone_darwin_amd64.tar.gz | tar zx
 sudo cp drone /usr/local/bin
 ```
 

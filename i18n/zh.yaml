@@ -3,17 +3,17 @@
 #
 
 - id: section_install
-  translation: 安裝
+  translation: 安装
 - id: section_usage
-  translation: Usage
+  translation: 使用
 - id: section_plugin_reference
-  translation: Plugin Reference
+  translation: 插件 参考文档
 - id: section_plugin_marketplace
-  translation: Plugin Marketplace
+  translation: 插件市场
 - id: section_cli_reference
-  translation: CLI Reference
+  translation: 命令行 参考文档
 - id: section_api_reference
-  translation: API Reference
+  translation: API 参考文档
 
 #
 # usage manu
@@ -22,66 +22,66 @@
 - id: usage_overview
   translation: 概述
 - id: usage_concepts
-  translation: Concepts
+  translation: 概念
 - id: usage_config
-  translation: Configuration
+  translation: 配置
 - id: usage_secrets
-  translation: Secrets & Credentials
+  translation: 密钥和凭证
 - id: usage_publishing
-  translation: Publishing
+  translation: 发布
 - id: usage_deployments
-  translation: Deployments
+  translation: 部署
 - id: usage_notifications
-  translation: Notifications
+  translation: 通知
 - id: usage_reports
-  translation: Reporting & Badges
+  translation: 报告和标签
 - id: usage_examples
-  translation: Examples
+  translation: 示例
 - id: usage_reference
-  translation: 參考
+  translation: 参考文档
 
 #
 # install menu
 #
 
 - id: install_integrations
-  translation: Integrations
+  translation: 集成服务
 - id: install_access
-  translation: Security & Access Control
+  translation: 安全和访问控制
 - id: install_server
-  translation: Server Setup
+  translation: 服务器配置
 - id: install_release
-  translation: Release Notes
+  translation: 发布日志
 
 #
 # plugin menu
 #
 
 - id: plugin_pipeline
-  translation: Pipeline Plugins
+  translation: 工作流 插件
 - id: plugin_secrets
-  translation: Secret Backends
+  translation: 密钥 后端服务
 - id: plugin_registry
-  translation: Registry Backends
+  translation: Registry 后端服务
 
 #
 # api menu
 #
 
 - id: api_overview
-  translation: Overview
+  translation: 概述
 - id: api_users
-  translation: Users Endpoint
+  translation: 用户
 - id: api_user
-  translation: User Endpoint
+  translation: 当前用户
 - id: api_repo
-  translation: Repo Endpoint
+  translation: 仓库
 - id: api_build
-  translation: Build Endpoint
+  translation: 构建
 - id: api_registry
-  translation: Registry Endpoint
+  translation: Registry
 - id: api_secret
-  translation: Secret Endpoint
+  translation: 密钥
 
 #
 # cli menu
@@ -90,34 +90,33 @@
 - id: cli_overview
   translation: 概述
 - id: cli_user
-  translation: User Commands
+  translation: 用户 命令行
 - id: cli_repo
-  translation: Repo Commands
+  translation: 仓库 命令行
 - id: cli_build
-  translation: Build Commands
+  translation: 构建 命令行
 - id: cli_registry
-  translation: Registry Commands
+  translation: Registry 命令行
 - id: cli_secret
-  translation: Secret Commands
+  translation: 密钥 命令行
 - id: cli_misc
-  translation: Misc Commands
+  translation: 其他 命令行
 
 #
 # next steps
 #
 
 - id: next_steps
-  translation: Next Steps
+  translation: 进一步了解更多内容
 
 #
 # questions
 #
 
 - id: questions
-  translation: Questions?
+  translation: 遇到了问题?
 - id: questions_text
   translation: |
-    We are always happy to help with questions you might have.
-    Search our documentation or check out answers to common questions. You
-    can even chat live with other developers in our
-    [gitter channel](https://gitter.im/drone/drone).
+    我们非常乐意帮助您解决遇到的问题。
+    您可以先搜索对应文档，查看一些常见的问题。
+    您还可以实时地在 [gitter 频道](https://gitter.im/drone/drone) 和其他开发者一起交流。

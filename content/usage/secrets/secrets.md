@@ -24,17 +24,7 @@ pipeline:
 +   secrets: [ docker_username, docker_password ]
 ```
 
-Secrets are exposed to your pipeline steps and plugins as uppercase environment variables and can be referenced in your build scripts:
-
-```diff
-pipeline:
-  docker:
-    image: docker
-    commands:
-+     - echo $DOCKER_USERNAME
-+     - echo $DOCKER_PASSWORD
-    secrets: [ docker_username, docker_password ]
-```
+The secrets in the above are exposed to the plugin as uppercase environment variables. The plugin will look for the named environment variables at runtime. The variable names are therefore important.
 
 # Add Secrets
 
@@ -151,4 +141,18 @@ drone secret add \
   -repository octocat/hello-world \
   -name ssh_key \
 + -value @/root/ssh/id_rsa
+```
+
+# Example in Commands
+
+Secrets are exposed to your pipeline steps and plugins as uppercase environment variables and can therefore be referenced in the commands section of your pipeline.
+
+```diff
+pipeline:
+  docker:
+    image: docker
+    commands:
++     - echo $DOCKER_USERNAME
++     - echo $DOCKER_PASSWORD
+    secrets: [ docker_username, docker_password ]
 ```

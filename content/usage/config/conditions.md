@@ -56,7 +56,7 @@ when:
   event: tag
 ```
 
-Execute a step for all non-pull request events (default):
+Execute a step for all non-pull request events:
 
 ```diff
 when:

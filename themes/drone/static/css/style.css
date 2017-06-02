@@ -609,6 +609,14 @@ article dl dd {
 	font-size: 15px;
 	padding-left: 5px;
 }
+article blockquote {
+	border-left: 5px solid #EEE;
+	padding-left: 20px;
+	color: #999;
+}
+article blockquote p {
+	margin: 20px auto;
+}
 
 /*--- image formatting -------------------------------------------------------*/
 

@@ -36,7 +36,7 @@ Example command:
 
 ```diff
 drone registry add \
-  --repository <repository> \
+  --repository octocat/hello-world \
   --hostname gcr.io \
   --username <name> \
   --password <value>
@@ -46,11 +46,13 @@ Example commands loads the password from file:
 
 ```diff
 drone registry add \
-  --repository <repository> \
+  --repository octocat/hello-world \
   --hostname gcr.io \
   --username _json_key \
   --password @/absolute/path/to/keyfile.json
 ```
+
+Please note that in the above examples the `--repository` flag should be set to your version control repository name (e.g. your github repository name).
 
 # Matching
 

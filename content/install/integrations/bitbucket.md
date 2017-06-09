@@ -50,7 +50,7 @@ DRONE_BITBUCKET_CLIENT
 : Bitbucket oauth2 client id
 
 DRONE_BITBUCKET_SECRET
-: Bitbucket oauth2 client secre
+: Bitbucket oauth2 client secret
 
 # Registration
 

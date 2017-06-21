@@ -9,7 +9,7 @@ menu:
     parent: usage_examples
 ---
 
-Example Yaml configuration for a project with a Redis service dependency. Note that the redis service will be available at `cache:6379`.
+Example Yaml configuration for a project with a Redis service dependency. Note that the redis service will be available at `redis:6379`.
 
 ```yaml
 pipeline:

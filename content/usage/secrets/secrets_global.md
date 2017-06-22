@@ -42,14 +42,10 @@ Example secrets file:
 
 You can restrict access to vault secrets based on repository name using the `repos` attribute. This is defined as an array list with glob support.
 
-{{% alert info %}}
-This feature is only available in the latest image tag
-{{% /alert %}}
-
-```diff
+```
 - name: docker_username
   value: octocat
-+ repos: [ octocat/hello-world, github/* ]
+  repos: [ octocat/hello-world, github/* ]
 - name: docker_password
   value: correct-horse-batter-staple
   repos: [ octocat/hello-world, github/* ]

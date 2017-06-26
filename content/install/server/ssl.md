@@ -6,7 +6,7 @@ url = "configure-ssl"
 [menu.install]
   identifier = "configure-ssl"
   parent = "install_server"
-  weight = 9
+  weight = 10
 +++
 
 {{% alert warn %}}

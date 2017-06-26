@@ -40,7 +40,7 @@ Example secrets file:
 
 # Restricting Access
 
-You can restrict access to vault secrets based on repository name using the `repos` attribute. This is defined as an array list with glob support.
+You can restrict access to global secrets based on repository name using the `repos` attribute. This is defined as an array list with glob support.
 
 ```
 - name: docker_username

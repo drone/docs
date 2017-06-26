@@ -6,7 +6,7 @@ url = "configure-prometheus"
 [menu.install]
   identifier = "configure-prometheus"
   parent = "install_server"
-  weight = 7
+  weight = 8
 +++
 
 {{% alert enterprise %}}

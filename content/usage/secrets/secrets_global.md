@@ -47,6 +47,6 @@ You can restrict access to global secrets based on repository name using the `re
   value: octocat
   repos: [ octocat/hello-world, github/* ]
 - name: docker_password
-  value: correct-horse-batter-staple
+  value: correct-horse-battery-staple
   repos: [ octocat/hello-world, github/* ]
 ```

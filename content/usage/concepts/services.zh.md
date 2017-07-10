@@ -3,7 +3,7 @@ date: 2017-04-15T14:39:04+02:00
 title: Services 服务
 url: zh/services
 
-next_steps:
+xnext_steps:
   - file: mysql.zh.md
     name: MySQL 示例项目
   - file: postgres.zh.md

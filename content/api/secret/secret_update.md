@@ -8,3 +8,35 @@ url = "api-secret-update"
   identifier = "api-secret-update"
   parent = "api_secret"
 +++
+
+
+Update a repository secret.
+
+```text
+PATCH /api/repos/{owner}/{repo}/secrets/{secret}
+```
+
+Example Request Body:
+
+```json
+{
+  "value": "octocat",
+  "event": [
+    "push",
+    "pull_request"
+  ]
+}
+```
+
+Example Response Body:
+
+```json
+{
+  "id": 1,
+  "name": "docker_username",
+  "event": [
+    "push",
+    "pull_request"
+  ]
+}
+```

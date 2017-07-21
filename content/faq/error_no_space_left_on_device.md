@@ -31,3 +31,5 @@ services:
     restart: always
     command: [ dcgc, --max-image-age, 30days ]
 ```
+
+Note the above configuration is a sample and should be tuned for your environment, with pattern matching configured to prevent pruning commonly used images.

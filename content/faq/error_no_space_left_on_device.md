@@ -12,7 +12,7 @@ no space left on device
 
 The most common root cause for this error message is that your docker daemon is caching a large number of images and has exhausted disk space. We recommend regularly [pruning](https://docs.docker.com/engine/reference/commandline/image_prune/) cached images.
 
-```
+```nohighlight
 docker images prune
 ```
 

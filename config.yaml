@@ -9,7 +9,6 @@ params:
   algolia_index: drone_io
 
 disableRSS: true
-disableSitemap: true
 disable404: true
 
 defaultContentLanguage: en

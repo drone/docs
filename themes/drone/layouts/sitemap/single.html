@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <style>
+    li {
+      font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    }
+    a:visited {
+      color: rgb(0,0,238);
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <span>Install</span>
+      {{ partial "menu.html" (dict "menu" .Site.Menus.install "page" . "site" .Site) }}
+    </li>
+    <li>
+      <span>Usage</span>
+      {{ partial "menu.html" (dict "menu" .Site.Menus.usage "page" . "site" .Site) }}
+    </li>
+    <li>
+      <span>CLI Reference</span>
+      {{ partial "menu.html" (dict "menu" .Site.Menus.cli "page" . "site" .Site) }}
+    </li>
+
+    <li>
+      <span>API Reference</span>
+      {{ partial "menu.html" (dict "menu" .Site.Menus.cli "page" . "site" .Site) }}
+    </li>
+  </ul>
+</body>
+</html>

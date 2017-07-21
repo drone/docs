@@ -32,4 +32,4 @@ services:
     command: [ dcgc, --max-image-age, 30days ]
 ```
 
-Note the above configuration is a sample and should be tuned for your environment, with pattern matching configured to prevent pruning commonly used images.
+Note the above configuration is a sample and should be tuned for your environment, with [pattern matching](https://github.com/Yelp/docker-custodian#prevent-images-from-being-removed) configured to prevent pruning commonly used images.

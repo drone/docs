@@ -19,7 +19,7 @@ This subcommand updates a named repository. Please note this command requires wr
 Example command updates the trusted flag:
 
 ```text
-$ drone repo update octocat/hello-world --truted=true
+$ drone repo update octocat/hello-world --trusted=true
 ```
 
 Example command updates the gated flag:

@@ -48,6 +48,9 @@ scrape_configs:
 List of prometheus metrics specific to Drone:
 
 ```
+# HELP drone_build_count Total number of builds.
+# TYPE drone_build_count gauge
+drone_build_count 7275
 # HELP drone_pending_jobs Total number of pending build processes.
 # TYPE drone_pending_jobs gauge
 drone_pending_jobs 0

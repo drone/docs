@@ -20,6 +20,7 @@ services:
     ports:
 +     - 80:80
 +     - 443:443
+      - 9000:9000
     volumes:
       - /var/lib/drone:/var/lib/drone/
     restart: always

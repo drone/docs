@@ -156,3 +156,17 @@ pipeline:
 +     - echo $DOCKER_PASSWORD
     secrets: [ docker_username, docker_password ]
 ```
+
+Please note parameter expressions are subject to pre-processing. When using secrets in parameter expressions they should be escaped.
+
+```diff
+pipeline:
+  docker:
+    image: docker
+    commands:
+-     - echo ${DOCKER_USERNAME}
+-     - echo ${DOCKER_PASSWORD}
++     - echo $${DOCKER_USERNAME}
++     - echo $${DOCKER_PASSWORD}
+    secrets: [ docker_username, docker_password ]
+```

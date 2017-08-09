@@ -9,7 +9,7 @@ url = "hooks"
   parent = "usage_concepts"
 +++
 
-When you activate your repository Drone automatically add webhooks to your version control system (e.g. GitHub). There is no manual configuration required. 
+When you activate your repository Drone automatically add webhooks to your version control system (e.g. GitHub). There is no manual configuration required.
 
 Webhooks are used to trigger pipeline executions. When you push code to your repository, open a pull request, or create a tag, your version control system will automatically send a webhook to Drone which will in turn trigger pipeline execution.
 

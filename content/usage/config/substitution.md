@@ -39,7 +39,7 @@ Example variable substitution with substring:
 pipeline:
   docker:
     image: plugins/docker
-+   tags: ${DRONE_COMMIT_SHA:0:8}
++   tags: "${DRONE_COMMIT_SHA:0:8}"
 ```
 
 Example variable substitution strips `v` prefix from `v.1.0.0`:

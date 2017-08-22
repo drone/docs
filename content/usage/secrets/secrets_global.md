@@ -40,7 +40,7 @@ Example secrets file:
 
 # Restricting Access
 
-You can restrict access to global secrets based on repository name using the `repos` attribute. This is defined as an array list with glob support.
+Restrict access to global secrets based on repository name using the `repos` attribute. This is defined as an array list with glob support.
 
 ```
 - name: docker_username
@@ -49,4 +49,28 @@ You can restrict access to global secrets based on repository name using the `re
 - name: docker_password
   value: correct-horse-battery-staple
   repos: [ octocat/hello-world, github/* ]
+```
+
+Restrict access to global secrets based on image name using the `images` attribute. This is defined as an array list with glob support.
+
+```
+- name: docker_username
+  value: octocat
+  images: [ plugins/docker, plugins/* ]
+- name: docker_password
+  value: correct-horse-battery-staple
+  images: [ plugins/docker:latest, plugins/ecr:* ]
+```
+
+Both restrictions can be combined.
+
+```
+- name: docker_username
+  value: octocat
+  repos: [ octocat/hello-world, github/* ]
+  images: [ plugins/* ]
+- name: docker_password
+  value: correct-horse-battery-staple
+  repos: [ octocat/hello-world, github/* ]
+  images: [ plugins/docker ]
 ```

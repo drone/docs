@@ -2,7 +2,7 @@ NAME:
    drone build start - start a build
 
 USAGE:
-   drone build start [command options] [arguments...]
+   drone build start [command options] {repo} {build}
 
 OPTIONS:
    --fork                   fork the build

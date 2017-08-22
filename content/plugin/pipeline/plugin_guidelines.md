@@ -9,3 +9,5 @@ menu:
     parent: pipeline
     identifier: plugin-guidelines
 ---
+
+Take a look and fork this [example Plugin Starter project](https://github.com/drone/drone-plugin-starter) to create a plugin in Go.

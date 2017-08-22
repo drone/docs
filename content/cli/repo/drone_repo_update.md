@@ -39,3 +39,9 @@ Example command updates the drone.yml file path
 ```text
 $ drone repo update octocat/hello-world --config=.github/.drone.yml
 ```
+
+Example command updates the current build number
+
+```text
+$ drone repo update octocat/hello-world --build-counter=10 --unsafe
+```

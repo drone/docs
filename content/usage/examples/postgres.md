@@ -70,11 +70,10 @@ pipeline:
   ping:
     image: postgres
     commands:
-      - sleep 15
-      - psql -U postgres -d test -h database -p 5432 -c "CREATE TABLE person( NAME TEXT );"
-      - psql -U postgres -d test -h database -p 5432 -c "INSERT INTO person VALUES('john smith');"
-      - psql -U postgres -d test -h database -p 5432 -c "INSERT INTO person VALUES('jane doe');"
-      - psql -U postgres -d test -h database -p 5432 -c "SELECT * FROM person;"
+      - sleep 10
+      - |
+        psql -U postgres -d test -h database \
+          -c "SELECT * FROM pg_catalog.pg_tables;"
 
 services:
   database:

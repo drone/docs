@@ -54,7 +54,7 @@ services:
     image: postgres
 ```
 
-If you are still unable to connect to the Postgres container, please make sure you using container name as the address.
+If you are still unable to connect to the Postgres container, please make sure you are using the service name as the hostname.
 
 ```diff
 - psql -U root -d test -h 127.0.0.1:5432

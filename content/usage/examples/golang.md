@@ -1,5 +1,5 @@
 ---
-title: Example Golang project
+title: Example using Go
 url: golang-example
 
 menu:

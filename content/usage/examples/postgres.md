@@ -54,9 +54,32 @@ services:
     image: postgres
 ```
 
-If you are still unable to connect to the mysql container, please make sure you using container name as the address.
+If you are still unable to connect to the Postgres container, please make sure you using container name as the address.
 
 ```diff
 - psql -U root -d test -h 127.0.0.1:5432
 + psql -U root -d test -h tcp://database:5432
+```
+
+# Working Example
+
+This is a fully functioning example that demonstrates launching the Postgres service and then connecting with the service from the pipeline.
+
+```yaml
+pipeline:
+  ping:
+    image: postgres
+    commands:
+      - sleep 15
+      - psql -U postgres -d test -h database -p 5432 -c "CREATE TABLE person( NAME TEXT );"
+      - psql -U postgres -d test -h database -p 5432 -c "INSERT INTO person VALUES('john smith');"
+      - psql -U postgres -d test -h database -p 5432 -c "INSERT INTO person VALUES('jane doe');"
+      - psql -U postgres -d test -h database -p 5432 -c "SELECT * FROM person;"
+
+services:
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=test
 ```

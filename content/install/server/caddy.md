@@ -13,6 +13,22 @@ This guide provides a brief overview for installing Drone server behind the [Cad
 
 ```nohighlight
 drone.mycomopany.com {
+    gzip {
+        not /stream/
+    }
+    proxy / localhost:8000 {
+        websocket
+        transparent
+    }
+}
+```
+You must disable gzip compression for streamed data otherwise the live updates won't be instant:
+
+```diff
+drone.mycomopany.com {
++   gzip {
++       not /stream/
++   }
     proxy / localhost:8000 {
         websocket
         transparent
@@ -24,6 +40,9 @@ You must configure the proxy to enable websocket upgrades:
 
 ```diff
 drone.mycomopany.com {
+    gzip {
+        not /stream/
+    }
     proxy / localhost:8000 {
 +       websocket
         transparent
@@ -35,6 +54,9 @@ You must configure the proxy to include `X-Forwarded` headers using the `transpa
 
 ```diff
 drone.mycomopany.com {
+    gzip {
+        not /stream/
+    }
     proxy / localhost:8000 {
         websocket
 +       transparent

@@ -42,7 +42,7 @@ pipeline:
 +   tags: ${DRONE_COMMIT_SHA:0:8}
 ```
 
-Example variable substitution strips `v` prefix from `v.1.0.0`:
+Example variable substitution strips `v` prefix from `v1.0.0`:
 
 ```diff
 pipeline:
@@ -50,6 +50,16 @@ pipeline:
     image: plugins/docker
 +   tags: ${DRONE_TAG##v}
 ```
+
+Example variable substitution replaces `/` with `-`:
+
+```diff
+pipeline:
+  docker:
+    image: plugins/docker
++   tags: ${DRONE_BRANCH/\//-}
+```
+
 
 List of emulated string operations:
 

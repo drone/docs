@@ -38,7 +38,7 @@ image: index.docker.io/library/golang
 image: index.docker.io/library/golang:1.7
 ```
 
-Drone does not automatically upgrade docker images. You can configure Drone to explicitly check for updates and automatically pull newer images with the following configuration:
+Drone does not automatically upgrade docker images. Example configuration to always pull the latest image when updates are available:
 
 ```diff
 pipeline:

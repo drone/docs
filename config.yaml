@@ -45,8 +45,10 @@ menu:
       weight: 104
     - identifier: install_server
       weight: 105
-    - identifier: install_release
+    - identifier: install_globals
       weight: 106
+    - identifier: install_release
+      weight: 107
 
   usage:
     - identifier: usage_overview

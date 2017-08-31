@@ -52,6 +52,8 @@
   translation: Security & Access Control
 - id: install_server
   translation: Server Setup
+- id: install_globals
+  translation: Global Variables
 - id: install_release
   translation: Release Notes
 

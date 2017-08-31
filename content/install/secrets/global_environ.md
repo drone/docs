@@ -5,7 +5,7 @@ url = "configure-global-environment"
 
 [menu.install]
   identifier = "configure-global-environment"
-  parent = "install_server"
+  parent = "install_globals"
   weight = 7
 +++
 

@@ -25,7 +25,7 @@ services:
       - /var/lib/drone:/var/lib/drone/
     restart: always
     environment:
-+     VAULT_ADDR=http://vault.company.com:8200
++     VAULT_ADDR=https://vault.mycompany.com:8200
 +     VAULT_TOKEN=adb0c2b6-246f-10b3-bd9e-c23a0982043e
 ```
 
@@ -35,6 +35,16 @@ https://www.vaultproject.io/docs/commands/environment.html
 # Token
 
 Please note that you must provide drone with the root token at this time. We are actively working to provide support for periodic tokens and automatic token renewal in a future release.
+
+<!--
+# Periodic Tokens
+
+# Root Tokens
+
+# Google IAM
+
+# Amazon IAM
+-->
 
 # Usage
 

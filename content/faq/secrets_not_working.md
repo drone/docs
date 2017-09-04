@@ -8,7 +8,7 @@ The purpose of this guide is to help troubleshoot common root causes for secrets
 
 The most common root cause is forgetting to include the `secrets` block in your pipeline step configuration.
 
-```
+```diff
 pipeline:
   publish:
     image: plugins/docker
@@ -18,7 +18,7 @@ pipeline:
 
 The second most common root cause is using incorrect variable names. Plugins look for specific variable names. It is therefore required that you provide secrets to the plugin using the expected name.
 
-```
+```diff
 pipeline:
   publish:
     image: plugins/docker
@@ -33,14 +33,14 @@ Please consult the respective plugin documentation, or contact the plugin author
 
 Please note that variable expansion of secrets is not supported. The following yaml configuration __will not work__.
 
-```
+```diff
 pipeline:
   publish:
     image: plugins/docker
     repo: octocat/hello-world
     build_args:
-      - npm_username=${npm_username}
-      - npm_password=${npm_password}
+-     - npm_username=${npm_username}
+-     - npm_password=${npm_password}
     secrets: [ docker_username , docker_password, npm_username, npm_password ]
 ```
 

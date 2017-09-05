@@ -23,6 +23,6 @@ You can also post questions or comments to our [community forum](https://discour
 
 # 报告问题
 
-<!--We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [gitter channel](https://gitter.im/drone/drone) before creating github issues.-->
+<!--We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [community forum](discourse.drone.io) before creating github issues.-->
 
-很不幸的是，我们接到了很多假阳性的报告。我们希望您在提交 GitHub issues 前，请先在 [gitter](gitter.im/drone/drone) 上与我们交流。
+很不幸的是，我们接到了很多假阳性的报告。我们希望您在提交 GitHub issues 前，请先在 [discourse](discourse.drone.io) 上与我们交流。

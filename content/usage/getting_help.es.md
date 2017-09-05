@@ -19,4 +19,4 @@ You can also post questions or comments to our [community forum](https://discour
 
 # Reportar problemáticas
 
-Desafortunadamente recibimos un gran número de problemáticas falsas positivas. Te pedimos que discutas los potenciales problemas en nuestro [canal de gitter](https://gitter.im/drone/drone) antes de crear las incidencias en github.
+Desafortunadamente recibimos un gran número de problemáticas falsas positivas. Te pedimos que discutas los potenciales problemas en nuestro [canal de discourse](https://discourse.drone.io) antes de crear las incidencias en github.

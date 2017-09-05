@@ -17,4 +17,4 @@ You can also post questions or comments to our [community forum](https://discour
 
 # Reporting Issues
 
-We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [gitter channel](https://gitter.im/drone/drone) before creating github issues.
+We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [community forum](https://discourse.drone.io) before creating github issues.

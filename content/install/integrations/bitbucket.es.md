@@ -70,7 +70,3 @@ Team Membership:Read
 Repositories:Read
 Webhooks:Read and Write
 ```
-
-# Características faltantes.
-
-Peticiones de mezcla con repositorios mercurial no están actualmente soportadas. Estamos interesados en parches para incluir esta funcionalidad. Si estás interesado en contribuir a Drone, y subir un parche, por favor [contactanos](https://gitter.im/drone/drone).

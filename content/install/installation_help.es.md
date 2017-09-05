@@ -13,8 +13,9 @@ questions_off = true
 
 Si estás experimentando problemas con la instalación, por favor asegúrate de leer la documentación y de buscar por reportes similares usando la búsqueda del sitio. Nosotros monitoreamos [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) para preguntas y respuestas.
 
-Puedes también chatear con los mantenedores del proyecto y los miembros de la comunidad en nuestro [canal de gitter](https://gitter.im/drone/drone). Por favor no uses este canal como reemplazo para la documentación.
-
+<!--
+You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to directly interact with the project maintainers and community members.
+-->
 
 # Reporte de problemáticas.
 

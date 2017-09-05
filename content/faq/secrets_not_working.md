@@ -68,7 +68,7 @@ pipeline:
 +      - echo -n "$SSH_KEY" > /root/.ssh/id_rsa
 ```
 
-# Getting Help
+# Still Having Trouble?
 
 If you continue to experience issues you can engage the community for support. Please include the  following information in your support request:
 

@@ -21,6 +21,6 @@ We unfortunately receive a large number of false positive issues. We ask that yo
 
 # IRC channel 
 
-The community provides an unofficial IRC channel which is available on Freenode at #drone.io .
+The community provides an unofficial IRC channel which is available on Freenode at [#drone.io](https://webchat.freenode.net/?channels=drone.io).
 
 While the community will be happy to discuss any topic related to Drone, remember to create a topic in discourse if you need support. This has the advantage to benefit to everyone and not answer the same questions over and over again.

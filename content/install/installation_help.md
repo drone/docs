@@ -13,7 +13,7 @@ questions_off = true
 
 If you are experiencing installation issues please be sure to read the documentation and search for existing issues and error messages using the site search. We monitor [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) for questions and answers.
 
-You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to directly interact with the project maintainers and community members.
+You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to interact directly with the project maintainers and community members.
 
 # Reporting Issues
 

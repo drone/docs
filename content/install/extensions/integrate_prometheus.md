@@ -1,16 +1,16 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
-title = "Configure Prometheus"
+title = "Integrate Prometheus"
 url = "configure-prometheus"
 
 [menu.install]
   identifier = "configure-prometheus"
-  parent = "install_server"
-  weight = 8
+  parent = "install_enterprise"
+  weight = 9
 +++
 
 {{% alert enterprise %}}
-This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
 Drone is compatible with Prometheus and exposes a `/metrics` endpoint. Please note that access to the metrics endpoint is restricted and requires an authorization token with administrative privileges.

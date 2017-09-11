@@ -249,7 +249,7 @@ border-top:1px solid #EEE;
 	color: #1B5E20;
 }
 .alert.alert-enterprise:before {
-	content: "local_atm";
+	content: "info_outline";
 }
 .alert.alert-enterprise p a {
 	color: #1B5E20;
@@ -525,6 +525,12 @@ article h1 {
 	margin: 30px 0px;
 	padding-top:30px;
 	border-top: 1px solid #EEE;
+}
+
+article h1 code {
+	line-height: inherit;
+	background: #FFF;
+	font-size:18px;
 }
 
 article p {

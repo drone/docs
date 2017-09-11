@@ -1,19 +1,19 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
-title = "Configure Webhooks"
+title = "Global Webhooks"
 url = "configure-system-webhooks"
 
 [menu.install]
   identifier = "configure-system-webhooks"
-  parent = "install_server"
-  weight = 14
+  parent = "install_enterprise"
+  weight = 8
 +++
 
 {{% alert enterprise %}}
-This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
-Drone provides the ability to sent notification for internal system events. Notification are sent as HTTP POST requests to an endpoint of your choosing.
+The enterprise expansion pack provides support for global webhooks for internal system events. Notification are sent as HTTP POST requests to an endpoint of your choosing.
 
 Example server configuration:
 

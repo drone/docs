@@ -20,10 +20,10 @@ This feature is experimental and should be considered unstable
 The enterprise expansion pack will include support for advanced access control policies to limit access and usage.
 
 
-# `DRONE_REPOSITORY_WHITELIST`
+# `DRONE_REPO_WHITELIST`
 
 The repository whitelist is an optional parameter used to limit which repositories can be activated within the system. In order to activate a repository it must match at least one pattern in the whitelist.
 
 ```
-DRONE_REPOSITORY_WHITELIST=Microsoct/*,twitter/*
+DRONE_REPO_WHITELIST=Microsoct/*,twitter/*
 ```

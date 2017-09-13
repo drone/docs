@@ -12,4 +12,4 @@ menu:
 
 [View the index of currently available plugins](http://plugins.drone.io/) for documentation and examples.
 
-[Submit your own plugin](https://github.com/drone/drone-plugin-index) to be included in the index.
+[Submit or update the documentation for a plugin](https://github.com/drone/drone-plugin-index) to the index.

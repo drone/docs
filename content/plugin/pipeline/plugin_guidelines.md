@@ -10,4 +10,6 @@ menu:
     identifier: plugin-guidelines
 ---
 
-Take a look and fork this [example Plugin Starter project](https://github.com/drone/drone-plugin-starter) to create a plugin in Go.
+Take a look and fork this [example plugin starter project](https://github.com/drone/drone-plugin-starter) to create a plugin in Go.
+
+[Submit or update the documentation for a plugin](https://github.com/drone/drone-plugin-index) to the plugin marketplace.

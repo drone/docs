@@ -1,12 +1,12 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
-title = "Global Secrets"
+title = "Global Secrets File"
 url = "setup-global-secrets"
 
 [menu.install]
   parent = "install_enterprise"
   identifier = "setup-global-secrets"
-  weight = 2
+  weight = 1
 +++
 
 {{% alert enterprise %}}

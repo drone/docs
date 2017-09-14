@@ -1,6 +1,6 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
-title = "Global Registries"
+title = "Global Registries File"
 url = "setup-global-registry-credentials"
 
 [menu.install]

@@ -7,20 +7,20 @@
 - id: section_usage
   translation: Uso
 - id: section_plugin_reference
-  translation: Referencia de Plugins
+  translation: Documentación para Plugins
 - id: section_plugin_marketplace
-  translation: Mercado de Plugins
+  translation: Plugins para Drone
 - id: section_cli_reference
-  translation: Referencia de la línea de comandos
+  translation: Documentación de la Línea de Comandos
 - id: section_api_reference
-  translation: Referencia del API
+  translation: Documentación del API
 
 #
-# usage manu
+# usage menu
 #
 
 - id: usage_overview
-  translation: Uso
+  translation: Descripción general
 - id: usage_concepts
   translation: Conceptos
 - id: usage_config
@@ -28,13 +28,13 @@
 - id: usage_secrets
   translation: Secretos y Credenciales
 - id: usage_publishing
-  translation: Publicar
+  translation: Publicando
 - id: usage_deployments
-  translation: Despliegues
+  translation: Deployments
 - id: usage_notifications
   translation: Notificaciones
 - id: usage_reports
-  translation: Reportes y Distintivos
+  translation: Reportes e Íconos de Estado
 - id: usage_examples
   translation: Ejemplos
 - id: usage_reference
@@ -44,21 +44,25 @@
 # install menu
 #
 
+- id: install_overview
+  translation: Descripción general
 - id: install_integrations
   translation: Integraciones
 - id: install_access
   translation: Seguridad y Control de Acceso
 - id: install_server
-  translation: Configuración del servidor
+  translation: Configuración del Servidor
 - id: install_release
-  translation: Notas de lanzamiento
+  translation: Notas de la Versión
+- id: install_enterprise
+  translation: Extensiones Empresariales
 
 #
 # plugin menu
 #
 
 - id: plugin_pipeline
-  translation: Plugins del Flujo de Ejecución
+  translation: Plugins para el Flujo de Trabajo
 - id: plugin_secrets
   translation: Backend de Secretos
 - id: plugin_registry
@@ -69,9 +73,9 @@
 #
 
 - id: api_overview
-  translation: API
+  translation: Descripción General
 - id: api_users
-  translation: Endpoint de ususarios
+  translation: Endpoint de usuarios
 - id: api_user
   translation: Endpoint de usuario
 - id: api_repo
@@ -88,19 +92,19 @@
 #
 
 - id: cli_overview
-  translation: CLI
+  translation: Descripción General
 - id: cli_user
-  translation: Comandos de usuario
+  translation: Comandos para usuarios
 - id: cli_repo
-  translation: Comandos de repositorio
+  translation: Comandos para repositorios
 - id: cli_build
-  translation: Comandos de compilación
+  translation: Comandos para compilación
 - id: cli_registry
-  translation: Comandos de registro
+  translation: Comandos para registro
 - id: cli_secret
-  translation: Comandos de secretos
+  translation: Comandos para secretos
 - id: cli_misc
-  translation: Miscelanea de comandos
+  translation: Otros comandos
 
 #
 # next steps
@@ -117,6 +121,6 @@
   translation: ¿Preguntas?
 - id: questions_text
   translation: |
-    Siempre estamos felices de ayudarte con preguntas que puedas tener.
-    Busca en nuestra documentación o verifica nuestras respuestas a preguntas comunes. Tu
-    puedes incluso chatear con otros desarrolladores en nuestro [canal de gitter](https://discourse.drone.io).
+    Estaremos felices de ayudarte con las preguntas que puedas tener.
+    Busca en nuestra documentación o revisa las respuestas a las preguntas más comunes. También
+    puedes publicar tus preguntas o comentarios en nuestro [foro de la comunidad](https://discourse.drone.io).

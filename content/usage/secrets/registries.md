@@ -9,7 +9,11 @@ menu:
     parent: usage_secrets
 ---
 
-Drone provides the ability to store registry credentials. These credentials can be used to download private pipeline images defined in your Yaml configuration file.
+Drone provides the ability to store registry credentials. These credentials can be used to pull private pipeline images defined in your Yaml configuration file.
+
+{{% alert info %}}
+These credentials are never exposed to your pipeline, which means they cannot be used to push, and are safe to use with pull requests, for example.
+{{% /alert %}}
 
 Example configuration using a private image:
 

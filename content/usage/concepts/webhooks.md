@@ -13,6 +13,12 @@ When you activate your repository Drone automatically add webhooks to your versi
 
 Webhooks are used to trigger pipeline executions. When you push code to your repository, open a pull request, or create a tag, your version control system will automatically send a webhook to Drone which will in turn trigger pipeline execution.
 
+# Required Permissions
+
+The user who enables a repo in Drone must have `Admin` rights on that repo, so that Drone can add the webhook.  
+
+Note that manually creating webhooks yourself is not possible. This is because webhooks are signed using a per-repository secret key which is not exposed to end users. 
+
 <!-- # Recreate Webhooks
 
 Drone provides the ability to recreate webhooks, in case they were accidentally removed or altered, using the command line utility.

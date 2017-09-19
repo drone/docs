@@ -56,7 +56,7 @@ when:
   event: tag
 ```
 
-Execute a step if the build event is a `tag` created out of a branch:
+Execute a step if the build event is a `tag` created from the specified branch:
 
 ```diff
 when:

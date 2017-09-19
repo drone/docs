@@ -2,7 +2,7 @@ baseurl: http://docs.drone.io
 title: Drone Continuous Delivery
 theme: drone
 
-copyright: Copyright © 2016 Drone.IO Inc.
+copyright: Copyright © 2017 Drone.IO Inc.
 
 params:
   algolia_key: 745aeaa8be75dc0c4de55030703ed3f4
@@ -45,8 +45,10 @@ menu:
       weight: 104
     - identifier: install_server
       weight: 105
-    - identifier: install_release
+    - identifier: install_enterprise
       weight: 106
+    - identifier: install_release
+      weight: 107
 
   usage:
     - identifier: usage_overview

@@ -49,7 +49,7 @@ services:
 
 下面是所有的配置选项。一般来说，使用默认配置可以满足绝大部分的安装需求：
 
-DRONE_BITBUCKET=true 
+DRONE_BITBUCKET=true
 : true 使用 Bitbucket
 
 <!--: Set to true to enable the Bitbucket driver.-->-->
@@ -87,11 +87,3 @@ Team Membership:Read
 Repositories:Read
 Webhooks:Read and Write
 ```
-
-<!--# Missing Features-->
-
-# 暂缺的特性
-
-<!--Merge requests and mercurial repositories are not currently supported. We are interested in patches to include this functionality. If you are interested in contributing to Drone and submitting a patch please [contact us](https://gitter.im/drone/drone).-->
-
-目前不支持 合并请求（Merge requests） and mercurial 仓库 。如果您对 Drone 感兴趣，并贡献这方面的补丁，[请在 Gitter 上与我们联系](https://gitter.im/drone/drone)。

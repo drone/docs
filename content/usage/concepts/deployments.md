@@ -1,7 +1,7 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
-title = "Deployments"
-url = "deployments"
+title = "Promoting"
+url = "promoting-builds"
 
 [menu.usage]
   weight = 8
@@ -9,7 +9,7 @@ url = "deployments"
   parent = "usage_concepts"
 +++
 
-Drone provides the ability to trigger deployments. When you trigger a deployment your pipeline is executed with event type `deployment`. You can use the event type and target environment to limit step execution.
+Drone provides the ability to promote individual commits or tags (e.g. promote to production). When you promote a commit or tag it triggers a new pipeline execution with event type `deployment`. You can use the event type and target environment to limit step execution.
 
 ```diff
 pipeline:

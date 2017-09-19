@@ -13,8 +13,8 @@ questions_off = true
 
 If you are experiencing issues please be sure to read the documentation and search for existing issues and error messages using site search. We monitor [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) for questions and answers.
 
-You can also chat live with project maintainers and community members in our [gitter channel](https://gitter.im/drone/drone). Please do not use live chat as a replacement for this documentation.
+You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to directly interact with the project maintainers and community members.
 
 # Reporting Issues
 
-We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [gitter channel](https://gitter.im/drone/drone) before creating github issues.
+We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [community forum](https://discourse.drone.io) before creating github issues.

@@ -17,7 +17,7 @@ Example commit substitution:
 pipeline:
   docker:
     image: plugins/docker
-+   tags: ${DRONE_COMMIT_SHA}
++   tags: "${DRONE_COMMIT_SHA}"
 ```
 
 Example tag substitution:
@@ -26,7 +26,7 @@ Example tag substitution:
 pipeline:
   docker:
     image: plugins/docker
-+   tags: ${DRONE_TAG}
++   tags: "${DRONE_TAG}"
 ```
 
 # String Operations
@@ -39,7 +39,7 @@ Example variable substitution with substring:
 pipeline:
   docker:
     image: plugins/docker
-+   tags: ${DRONE_COMMIT_SHA:0:8}
++   tags: "${DRONE_COMMIT_SHA:0:8}"
 ```
 
 Example variable substitution strips `v` prefix from `v1.0.0`:
@@ -48,7 +48,7 @@ Example variable substitution strips `v` prefix from `v1.0.0`:
 pipeline:
   docker:
     image: plugins/docker
-+   tags: ${DRONE_TAG##v}
++   tags: "${DRONE_TAG##v}"
 ```
 
 Example variable substitution replaces `/` with `-`:

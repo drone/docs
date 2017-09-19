@@ -40,3 +40,12 @@ clone:
   git:
 +   image: octocat/custom-git-plugin
 ```
+
+Example configuration to clone Mercurial repository:
+
+```diff
+clone:
+  hg:
++   image: pluins/hg
++   path: bitbucket.org/foo/bar
+```

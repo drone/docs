@@ -27,7 +27,6 @@ pipeline:
     image: plugins/docker
     username: kevinbacon
     password: pa55word
-    email: kevin.bacon@mail.com
     repo: foo/bar
     tags: latest
 

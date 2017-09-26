@@ -59,7 +59,6 @@ pipeline:
 #!/bin/sh
 set -e
 
-go get
 go build
 go test
 ```

@@ -49,7 +49,6 @@ There is no magic here. The above commands are converted to a simple shell scrip
 #!/bin/sh
 set -e
 
-go get
 go build
 go test
 ```

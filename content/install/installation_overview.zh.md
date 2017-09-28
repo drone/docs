@@ -165,7 +165,7 @@ services:
     image: drone/drone:{{% version %}}
     environment:
       - DRONE_SERVER=ws://drone-server:8000/ws/broker
-      - DRONE_DEBUG: true
+      - DRONE_DEBUG=true
 +     - DRONE_SECRET=${DRONE_SECRET}
 ```
 

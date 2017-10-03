@@ -15,6 +15,21 @@ Drone provides the ability to store registry credentials. These credentials can 
 These credentials are never exposed to your pipeline, which means they cannot be used to push, and are safe to use with pull requests, for example. Pushing to a registry still require setting credentials for the appropriate plugin.
 {{% /alert %}}
 
+# Image Caching Behavior
+
+{{% alert error %}}
+Pull private images with caution.
+{{% /alert %}}
+
+All images (including private images) are pulled and cached by the Docker daemon.
+Drone assumes that any image in the local cache can be used as a build image.
+
+It is possible for one repository to have credentials and pull a private image that is cached by Docker, and used by another repository that does not have registry credentials configured.
+
+Keep this in mind when running Drone and jobs in a shared or public environment.
+
+# Configuration
+
 Example configuration using a private image:
 
 ```diff

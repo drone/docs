@@ -18,6 +18,11 @@ version: '2'
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+    ports:
+      - 80:8000
+    volumes:
+      - /var/lib/drone:/var/lib/drone/
+    restart: always
     environment:
       - DRONE_OPEN=true
       - DRONE_HOST=${DRONE_HOST}

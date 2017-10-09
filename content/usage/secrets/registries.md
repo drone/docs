@@ -22,7 +22,8 @@ Pull private images with caution.
 {{% /alert %}}
 
 All images (including private images) are pulled and cached by the Docker daemon.
-Drone assumes that any image in the local cache can be used as a build image.
+Neither Docker nor Drone restrict the use of cached images.
+An image already in the local cache can be used by any pipeline.
 
 It is possible for one repository to have credentials and pull a private image that is cached by Docker, and used by another repository that does not have registry credentials configured.
 

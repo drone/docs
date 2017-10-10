@@ -43,7 +43,7 @@ services:
 
 # Creación de la base de datos
 
-Drone no crea la base de datos automáticamente. Si estas usando el controlador de mysql o postgres es necesario crear la base de datos usando el comando `CREATE DATABASE`
+Drone no crea la base de datos automáticamente. Si estas usando el controlador de MySQL o Postgres es necesario crear la base de datos usando el comando `CREATE DATABASE`
 
 # Migración de la base de datos
 

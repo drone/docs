@@ -23,7 +23,7 @@ ProxyPass / http://127.0.0.1:8000/
 ProxyPassReverse / http://127.0.0.1:8000/
 ```
 
-Debes tener los siguientes módules de Apache instalados:
+Debes tener los siguientes módulos de Apache instalados:
 
 ```nohighlight
 a2enmod proxy

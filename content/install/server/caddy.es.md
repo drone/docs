@@ -9,7 +9,7 @@ url = "setup-with-caddy"
   weight = 4
 +++
 
-Esta guía provee un vistazo corto a la instalación de un servidor de Drone detrás de un servidor web Caddy. Éste es un archivo de configuración de proxy en caddy:
+Esta guía provee un vistazo rápido a la instalación de un servidor de Drone detrás de un servidor web Caddy. Éste es un archivo de configuración de proxy en Caddy:
 
 ```nohighlight
 drone.mycompany.com {
@@ -23,7 +23,7 @@ drone.mycompany.com {
 }
 ```
 
-Debe deshabilitar la compresión gzip para datos contínuos de lo contrario las actualizaciones en vivo no serán instantáneas:
+Debe deshabilitar la compresión gzip para datos en stream, de lo contrario las actualizaciones en tiempo real no serán instantáneas:
 
 ```diff
 drone.mycomopany.com {

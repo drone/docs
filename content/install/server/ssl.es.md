@@ -9,7 +9,7 @@ url = "configure-ssl"
   weight = 10
 +++
 
-Drone soporta configuración ssl montando certificados en tu contenedor. Nota que también existe soporte para [Lets Encrypt]({{< relref "lets_encrypt.md" >}}) automatizado.
+Drone soporta configuración SSL montando certificados en tu contenedor. Nota que también existe soporte para [Let's Encrypt]({{< relref "lets_encrypt.md" >}}) automatizado.
 
 ```diff
 services:
@@ -79,10 +79,10 @@ services:
 
 # Cadena de certificados
 
-El problema más común es proveer un certificado sin la cadena intermedia.
+El problema más común es proveer un certificado sin la cadena intermediaria.
 
-> LoadX509KeyPair lee y analiza un par de llaves públicas/privadas de un par de archivos. Los archivos deben contener datos codificados en PEM. El archivo de certificado puede contener certificados intermedios después del certificado hoja formando una cadena de certificados.
+> LoadX509KeyPair lee y analiza un par de llaves públicas/privadas de un par de archivos. Los archivos deben contener datos codificados en PEM. El archivo de certificado puede contener certificados intermedios después del certificado hoja resultando en una cadena de certificados.
 
 # Errores de certificado
 
-El soporte SSL es proveído usando la función [ListenAndServeTLS](https://golang.org/pkg/net/http/#ListenAndServeTLS) de la librería estándas de Go. Si recibes error o advertencias de certificado por favor examina tu configuración con más detalle. Por favor no crea issues mencionando que SSL está roto.
+El soporte SSL es proveído usando la función [ListenAndServeTLS](https://golang.org/pkg/net/http/#ListenAndServeTLS) de la librería estándar de Go. Si recibes errores o advertencias de certificado por favor examina tu configuración a más detalle. Por favor no crees issues mencionando que SSL está roto.

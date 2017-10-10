@@ -1,6 +1,6 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
-title = "Configuración con nginx"
+title = "Configuración con Nginx"
 url = "setup-with-nginx"
 
 [menu.install]
@@ -9,7 +9,7 @@ url = "setup-with-nginx"
   weight = 3
 +++
 
-Esta guía provee un vistazo básico para instalar un servidor de Drone detrás de un servidor web nginx. Para obtener opciones de configuración más avanzadas por favor consulta la [documentación oficial](https://www.nginx.com/resources/admin-guide/) de nginx.
+Esta guía provee un vistazo básico para instalar un servidor de Drone detrás de un servidor web Nginx. Para obtener opciones de configuración más avanzadas por favor consulta la [documentación oficial](https://www.nginx.com/resources/admin-guide/) de Nginx.
 
 Configuración de ejemplo:
 

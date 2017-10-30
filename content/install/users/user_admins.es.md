@@ -9,7 +9,7 @@ url = "es/user-admins"
   parent = "install_access"
 +++
 
-Puedes conceder privilegios administrativos a usuarios proveyedo una lista separada por comas de usuarios, usando la variable de ambiente designada.
+Puedes conceder privilegios administrativos a usuarios proveyendo una lista separada por comas de usuarios, usando la variable de ambiente designada.
 
 ```diff
 services:
@@ -19,4 +19,4 @@ services:
 +     - DRONE_ADMIN=janedoe,johnsmith
 ```
 
-Por favor nota que los nombre de usuarios son sensibles entre mayúsuculas y minúsculas, y deben coincidir exactamente con los valores retornados con tu sistema de control de versiones (Ej Github).
+Por favor nota que los nombre de usuarios son sensibles entre mayúsculas y minúsculas, y deben coincidir exactamente con los valores retornados con tu sistema de control de versiones (Ej Github).

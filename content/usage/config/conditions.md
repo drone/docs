@@ -56,6 +56,14 @@ when:
   event: tag
 ```
 
+Execute a step if the build event is a `tag` created from the specified branch:
+
+```diff
+when:
+  event: tag
++ branch: master
+```
+
 Execute a step for all non-pull request events:
 
 ```diff

@@ -9,6 +9,14 @@ url = "cli-exec"
   parent = "cli_misc"
 +++
 
+This subcommand executes a local build.
+
 ```text
 {{< cat "content/cli/misc/data/drone_exec.out.txt" >}}
+```
+
+If your pipeline uses secrets, these can be injected locally simply by passing environment variables:
+
+```text
+$ MY_SECRET=mybigsecret drone exec
 ```

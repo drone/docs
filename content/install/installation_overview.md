@@ -39,8 +39,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:{{% version %}}
-    command: agent
+    image: drone/agent:{{% version %}}
     restart: always
     depends_on:
       - drone-server
@@ -104,8 +103,7 @@ Drone agents require access to the host machine Docker daemon.
 ```diff
 services:
   drone-agent:
-    image: drone/drone:{{% version %}}
-    command: agent
+    image: drone/agent:{{% version %}}
     restart: always
     depends_on: [ drone-server ]
 +   volumes:
@@ -117,8 +115,7 @@ Drone agents require the server address for agent-to-server communication.
 ```diff
 services:
   drone-agent:
-    image: drone/drone:{{% version %}}
-    command: agent
+    image: drone/agent:{{% version %}}
     restart: always
     depends_on: [ drone-server ]
     volumes:
@@ -142,7 +139,7 @@ services:
       - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
 +     - DRONE_SECRET=${DRONE_SECRET}
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     environment:
       - DRONE_SERVER=ws://drone-server:8000/ws/broker
       - DRONE_DEBUG=true

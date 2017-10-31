@@ -1,10 +1,10 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
 title = "Configurar Lets Encrypt"
-url = "configure-lets-encrypt"
+url = "es/configure-lets-encrypt"
 
 [menu.install]
-  identifier = "configure-lets-encrypt"
+  identifier = "configure-lets-encrypt-es"
   parent = "install_server"
   weight = 9
 +++

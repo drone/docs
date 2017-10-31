@@ -1,10 +1,10 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
 title = "Configuraciones de base de datos"
-url = "database-settings"
+url = "es/database-settings"
 
 [menu.install]
-  identifier = "database-settings"
+  identifier = "database-settings-es"
   parent = "install_server"
   weight = 1
 +++

@@ -1,10 +1,10 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
 title = "Configuración con Apache"
-url = "setup-with-apache"
+url = "es/setup-with-apache"
 
 [menu.install]
-  identifier = "setup-with-apache"
+  identifier = "setup-with-apache-es"
   parent = "install_server"
   weight = 5
 +++

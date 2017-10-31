@@ -1,10 +1,10 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
 title = "Configuración con Nginx"
-url = "setup-with-nginx"
+url = "es/setup-with-nginx"
 
 [menu.install]
-  identifier = "setup-with-nginx"
+  identifier = "setup-with-nginx-es"
   parent = "install_server"
   weight = 3
 +++

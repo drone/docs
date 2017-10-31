@@ -1,10 +1,10 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
 title = "Configuración con Caddy"
-url = "setup-with-caddy"
+url = "es/setup-with-caddy"
 
 [menu.install]
-  identifier = "setup-with-caddy"
+  identifier = "setup-with-caddy-es"
   parent = "install_server"
   weight = 4
 +++

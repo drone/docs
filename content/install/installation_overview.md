@@ -1,5 +1,5 @@
 +++
-date = "2017-04-15T14:39:04+02:00"
+date = "2017-11-03T15:01:25+02:00"
 title = "Installation Overview"
 url = "installation"
 
@@ -27,6 +27,7 @@ services:
     image: drone/drone:{{% version %}}
     ports:
       - 80:8000
+      - 9000
     volumes:
       - /var/lib/drone:/var/lib/drone/
     restart: always
@@ -39,7 +40,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     command: agent
     restart: always
     depends_on:
@@ -47,7 +48,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
@@ -79,6 +80,7 @@ services:
     image: drone/drone:{{% version %}}
     ports:
       - 80:8000
+      - 9000
 +   volumes:
 +     - ./drone:/var/lib/drone/
     restart: always
@@ -104,7 +106,7 @@ Drone agents require access to the host machine Docker daemon.
 ```diff
 services:
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     command: agent
     restart: always
     depends_on: [ drone-server ]
@@ -117,14 +119,14 @@ Drone agents require the server address for agent-to-server communication.
 ```diff
 services:
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     command: agent
     restart: always
     depends_on: [ drone-server ]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-+     - DRONE_SERVER=ws://drone-server:8000/ws/broker
++     - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
@@ -142,9 +144,9 @@ services:
       - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
 +     - DRONE_SECRET=${DRONE_SECRET}
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_DEBUG=true
 +     - DRONE_SECRET=${DRONE_SECRET}
 ```

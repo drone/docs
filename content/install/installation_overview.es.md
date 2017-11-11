@@ -9,7 +9,7 @@ url = "es/installation"
   parent = "install_overview"
 +++
 
-Drone es una plataforma de despliegue continuo liviana y poderosa  construida para contenedores. Drone está enpaquetado y distribuido como una imagen de Docker y puede ser descargado desde Dockerhub.
+Drone es una plataforma de despliegue continuo liviana y poderosa  construida para contenedores. Drone está empaquetado y distribuido como una imagen de Docker y puede ser descargado desde Dockerhub.
 
 ```text
 docker pull drone/drone:{{% version %}}
@@ -17,7 +17,7 @@ docker pull drone/drone:{{% version %}}
 
 # Docker Compose
 
-Esta sección provee instrucciones básicas para la instalación de Drone usando [docker-compose](https://docs.docker.com/compose/). La configuración que mostraremos acontinuación puede ser usada para iniciar un servidor de docker con un único agente.
+Esta sección provee instrucciones básicas para la instalación de Drone usando [docker-compose](https://docs.docker.com/compose/). La configuración que mostraremos a continuación puede ser usada para iniciar un servidor de docker con un único agente.
 
 ```yaml
 version: '2'
@@ -25,8 +25,10 @@ version: '2'
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+
     ports:
       - 80:8000
+      - 9000
     volumes:
       - /var/lib/drone:/var/lib/drone/
     restart: always
@@ -39,7 +41,8 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
+
     command: agent
     restart: always
     depends_on:
@@ -47,11 +50,11 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
-Drone se integra con múltiples proveedores de control de versiones, configurables usando variables de entorno. Este ejemplo muestra la integración básica con Github.
+Drone se integra con múltiples proveedores de control de versiones, que pueden ser configurados usando variables de entorno. Este ejemplo muestra la integración básica con Github.
 
 {{% alert %}}
 Debes registrar Drone con Github para obtener las llaves de cliente y secreta. El callback de autorización debe coincidir con  `<scheme>://<host>/authorize`
@@ -61,6 +64,7 @@ Debes registrar Drone con Github para obtener las llaves de cliente y secreta. E
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+
     environment:
       - DRONE_OPEN=true
       - DRONE_ORGS=dolores,dogpatch
@@ -71,14 +75,16 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
-Drone monta volúmenes con la máquina anfitrión para almacenar la base de datos sqlite.
+Drone monta volúmenes desde la máquina anfitrión para almacenar la base de datos sqlite.
 
 ```diff
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+
     ports:
       - 80:8000
+      - 9000
 +   volumes:
 +     - ./drone:/var/lib/drone/
     restart: always
@@ -91,6 +97,7 @@ Drone necesita saber su propia dirección. Por esta razón debes proveeder la di
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+
     environment:
       - DRONE_OPEN=true
 +     - DRONE_HOST=${DRONE_HOST}
@@ -106,6 +113,7 @@ El agente Drone requiere acceso al demonio Docker en la máquina anfitrión.
 services:
   drone-agent:
     image: drone/drone:{{% version %}}
+
     command: agent
     restart: always
     depends_on: [ drone-server ]
@@ -119,13 +127,14 @@ Los agentes Drone requieren la dirección del servidor para comunicación agente
 services:
   drone-agent:
     image: drone/drone:{{% version %}}
+
     command: agent
     restart: always
     depends_on: [ drone-server ]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-+     - DRONE_SERVER=ws://drone-server:8000/ws/broker
++     - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
@@ -135,6 +144,7 @@ El servidor y los agentes Drone usan una clave secreta para autenticar su comuni
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+
     environment:
       - DRONE_OPEN=true
       - DRONE_HOST=${DRONE_HOST}
@@ -143,9 +153,10 @@ services:
       - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
 +     - DRONE_SECRET=${DRONE_SECRET}
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
+
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_DEBUG=true
 +     - DRONE_SECRET=${DRONE_SECRET}
 ```
@@ -156,6 +167,7 @@ El registro a Drone está cerrado por defecto. Este ejemplo habilita el registro
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+
     environment:
 +     - DRONE_OPEN=true
 +     - DRONE_ORGS=dolores,dogpatch
@@ -172,6 +184,7 @@ Los administradores de Drone pueden ser enumerados en tu configucación.
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+
     environment:
       - DRONE_OPEN=true
       - DRONE_ORGS=dolores,dogpatch

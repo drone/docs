@@ -56,7 +56,7 @@ services:
 
 # Initialization
 
-Service containers require time to initialize and begin accept connections. If you are unable to connect to a service you may need to wait a few seconds or implement a backoff.
+Service containers require time to initialize and begin to accept connections. If you are unable to connect to a service you may need to wait a few seconds or implement a backoff.
 
 ```diff
 pipeline:

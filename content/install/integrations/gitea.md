@@ -18,6 +18,12 @@ version: '2'
 services:
   drone-server:
     image: drone/drone:{{% version %}}
+    ports:
+      - 80:8000
+      - 9000
+    volumes:
+      - /var/lib/drone:/var/lib/drone/
+    restart: always
     environment:
       - DRONE_OPEN=true
       - DRONE_HOST=${DRONE_HOST}
@@ -34,7 +40,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 

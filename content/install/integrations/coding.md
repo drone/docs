@@ -32,8 +32,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:{{% version %}}
-    command: agent
+    image: drone/agent:{{% version %}}
     restart: always
     depends_on:
       - drone-server

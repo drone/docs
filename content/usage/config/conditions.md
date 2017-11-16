@@ -31,7 +31,7 @@ when:
   branch: [master, develop]
 ```
 
-Execute a step if the branch is starts with `prefix/*`:
+Execute a step if the branch starts with `prefix/*`:
 
 ```diff
 when:

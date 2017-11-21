@@ -68,6 +68,21 @@ pipeline:
 +      - echo -n "$SSH_KEY" > /root/.ssh/id_rsa
 ```
 
+# Pull Requests
+
+If you create secrets using the default settings, they will not be available to pull requests for security reasons. When you create a secret you can override the default behavior and provide a list of event types that are granted access to the secret:
+
+```diff
+drone secret add \
+  -repository octocat/hello-world \
+  -image plugins/docker \
++ -event pull_request \
++ -event push \
++ -event tag \
+  -name docker_username \
+  -value <value>
+```
+
 # Still Having Trouble?
 
 If you continue to experience issues you can engage the community for support. Please include the  following information in your support request:
@@ -76,3 +91,4 @@ If you continue to experience issues you can engage the community for support. P
 * the relevant logs from your build
 * the results of `drone secrets ls <repo>`
 * the results of `drone repo info <repo>`
+* the results of `drone build info <repo> <build_number>`

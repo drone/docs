@@ -17,7 +17,7 @@ version: '2'
 
 services:
   drone-server:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     ports:
       - 80:8000
       - 9000

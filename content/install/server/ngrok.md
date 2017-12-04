@@ -9,6 +9,9 @@ url = "setup-with-ngrok"
   weight = 6
 +++
 
-{{% alert warn %}}
-Instructions Coming Soon
-{{% /alert %}}
+After installed [ngrok](https://ngrok.com/), open a new console and run
+```
+ngrok http 80
+```
+
+Copy the ngrok url (usually xxx.ngrok.io) on `DRONE_HOST` in `docker-compose.yml` and start the server.

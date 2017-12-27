@@ -21,17 +21,3 @@ Go       | https://github.com/drone/drone-go
 Node     | https://github.com/drone/drone-node
 Python   | https://github.com/drone/drone-python
 Ruby     | https://github.com/drone/drone-ruby
-
-# Authentication
-
-Drone uses tokens for authentication. You can retrieve your user token from your user profile screen in the Drone user interface. You can provide your token using the http `Authorization` header:
-
-```
-Authorization: Bearer AKIAIOSFODNN7EXAMPLE
-```
-
-Or using the `access_token` query parameters:
-
-```
-http://drone.mycompany.com/api/user?access_token=AKIAIOSFODNN7EXAMPLE
-```

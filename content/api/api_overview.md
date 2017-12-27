@@ -19,6 +19,8 @@ Language | Repository
 -------- | ----------
 Go       | https://github.com/drone/drone-go
 Node     | https://github.com/drone/drone-node
+Python   | https://github.com/drone/drone-python
+Ruby     | https://github.com/drone/drone-ruby
 
 # Authentication
 

@@ -17,7 +17,7 @@ docker pull drone/drone:{{% version %}}
 
 # Docker Compose
 
-This section provides basic instructions for installing Drone using [docker-compose](https://docs.docker.com/compose/). The below configuration can be used to start the Drone server with a single agent.
+This section provides basic instructions for installing Drone using [docker-compose](https://docs.docker.com/compose/). The below configuration (save it as `docker-compose.yaml`) can be used to start the Drone server with a single agent. It relies on a number of environment variables that you must set before running `docker-compose up`. The variables are described below.
 
 ```yaml
 version: '2'

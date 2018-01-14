@@ -46,6 +46,6 @@ Example configuration to clone Mercurial repository:
 ```diff
 clone:
   hg:
-+   image: pluins/hg
++   image: plugins/hg
 +   path: bitbucket.org/foo/bar
 ```

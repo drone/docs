@@ -130,3 +130,12 @@ when:
     GO_VERSION: 1.5
     REDIS_VERSION: 2.8
 ```
+
+# Instance
+
+Execute a step only on certain Drone instance:
+
+```diff
+when:
+  instance: stage.drone.company.com
+```

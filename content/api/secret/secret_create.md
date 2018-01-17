@@ -10,6 +10,7 @@ url = "api-secret-create"
 +++
 
 Create a new repository secret.
+Please note this api requires write access to the repository.
 
 ```text
 POST /api/repos/{owner}/{repo}/secrets
@@ -34,6 +35,7 @@ Example Response Body:
 {
   "id": 1,
   "name": "docker_username",
+  "image": null,
   "event": [
     "push",
     "tags"

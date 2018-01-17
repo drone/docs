@@ -8,3 +8,11 @@ url = "api-secret-delete"
   identifier = "api-secret-delete"
   parent = "api_secret"
 +++
+
+Deletes a repository secret.
+Please note this api requires write access to the repository,
+and the request parameter `{secret}` is not the secret's id but secret name.
+
+```text
+DELETE /api/repos/{owner}/{repo}/secrets/{secret}
+```

@@ -8,3 +8,10 @@ url = "api-repo-chown"
   identifier = "api-repo-chown"
   parent = "api_repo"
 +++
+
+Lets a user assume ownership of a named repository.
+Please note this api requires administrative access to the repository.
+
+```text
+POST /api/repos/{owner}/{repo}/chown
+```

@@ -27,7 +27,6 @@ services:
     image: drone/drone:{{% version %}}
     ports:
       - 80:8000
-      - 9000
     volumes:
       - /var/lib/drone:/var/lib/drone/
     restart: always
@@ -44,6 +43,8 @@ services:
     command: agent
     restart: always
     depends_on:
+      - drone-server
+    links:
       - drone-server
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -80,7 +81,6 @@ services:
     image: drone/drone:{{% version %}}
     ports:
       - 80:8000
-      - 9000
 +   volumes:
 +     - ./drone:/var/lib/drone/
     restart: always
@@ -110,6 +110,7 @@ services:
     command: agent
     restart: always
     depends_on: [ drone-server ]
+    links: [ drone-server ]
 +   volumes:
 +     - /var/run/docker.sock:/var/run/docker.sock
 ```
@@ -123,6 +124,7 @@ services:
     command: agent
     restart: always
     depends_on: [ drone-server ]
+    links: [ drone-server ]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:

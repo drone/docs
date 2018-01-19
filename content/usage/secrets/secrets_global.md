@@ -38,6 +38,10 @@ Example secrets file:
   value: correct-horse-batter-staple
 ```
 
+{{% alert info %}}
+Secrets configured via global secrets take precedence over secrets configured in individual repositories.
+{{% /alert %}}
+
 # Restricting Access
 
 Restrict access to global secrets based on repository name using the `repos` attribute. This is defined as an array list with glob support.

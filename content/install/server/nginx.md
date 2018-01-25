@@ -11,16 +11,9 @@ url = "setup-with-nginx"
 
 This guide provides a basic overview for installing Drone server behind the nginx webserver. For more advanced configuration options please consult the official nginx [documentation](https://www.nginx.com/resources/admin-guide/).
 
-**Note**: If you're using drone 0.8 or higher, the websocket configuration below are not needed. See [this thread](https://github.com/drone/drone/issues/2076) for more details.
-
 Example configuration:
 
 ```nginx
-map $http_upgrade $connection_upgrade {
-    default upgrade;
-    ''      close;
-}
-
 server {
     listen 80;
     server_name drone.example.com;
@@ -36,17 +29,6 @@ server {
         proxy_buffering off;
 
         chunked_transfer_encoding off;
-    }
-
-    location ~* /ws {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_read_timeout 86400;
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header Host $http_host;
     }
 }
 ```
@@ -54,11 +36,6 @@ server {
 You must configure the proxy to set `X-Forwarded` proxy headers:
 
 ```diff
-map $http_upgrade $connection_upgrade {
-    default upgrade;
-    ''      close;
-}
-
 server {
     listen 80;
     server_name drone.example.com;
@@ -73,52 +50,6 @@ server {
         proxy_buffering off;
 
         chunked_transfer_encoding off;
-    }
-
-    location ~* /ws {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "upgrade";
-        proxy_read_timeout 86400;
-+       proxy_set_header X-Forwarded-For $remote_addr;
-+       proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-```
-
-You must configure Nginx to upgrade websockets.
-
-```diff
-+map $http_upgrade $connection_upgrade {
-+    default upgrade;
-+    ''      close;
-+}
-
-server {
-    listen 80;
-    server_name drone.example.com;
-
-    location / {
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_set_header X-Forwarded-Proto $scheme;
-
-        proxy_pass http://127.0.0.1:8000;
-        proxy_redirect off;
-        proxy_http_version 1.1;
-        proxy_buffering off;
-
-        chunked_transfer_encoding off;
-    }
-
-    location ~* /ws {
-        proxy_pass http://127.0.0.1:8000;
-        proxy_http_version 1.1;
-+       proxy_set_header Upgrade $http_upgrade;
-+       proxy_set_header Connection "upgrade";
-        proxy_read_timeout 86400;
-        proxy_set_header X-Forwarded-For $remote_addr;
-        proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
 ```

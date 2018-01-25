@@ -11,6 +11,8 @@ url = "setup-with-nginx"
 
 This guide provides a basic overview for installing Drone server behind the nginx webserver. For more advanced configuration options please consult the official nginx [documentation](https://www.nginx.com/resources/admin-guide/).
 
+**Note**: If you're using drone 0.8 or higher, the websocket configuration below are not needed. See [this thread](https://github.com/drone/drone/issues/2076) for more details.
+
 Example configuration:
 
 ```nginx

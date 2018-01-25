@@ -16,9 +16,6 @@ ProxyPreserveHost On
 
 RequestHeader set X-Forwarded-Proto "https"
 
-ProxyPass /ws/ ws://localhost:8000/ws/
-ProxyPassReverse /ws/ ws://localhost:8000/ws/
-
 ProxyPass / http://127.0.0.1:8000/
 ProxyPassReverse / http://127.0.0.1:8000/
 ```
@@ -28,7 +25,6 @@ Debes tener los siguientes módulos de Apache instalados:
 ```nohighlight
 a2enmod proxy
 a2enmod proxy_http
-a2enmod proxy_wstunnel
 ```
 
 Debes configurar Apache con `X-Forwarded-Proto` cuando se use https.
@@ -37,23 +33,6 @@ Debes configurar Apache con `X-Forwarded-Proto` cuando se use https.
 ProxyPreserveHost On
 
 +RequestHeader set X-Forwarded-Proto "https"
-
-ProxyPass /ws/ ws://localhost:8000/ws/
-ProxyPassReverse /ws/ ws://localhost:8000/ws/
-
-ProxyPass / http://127.0.0.1:8000/
-ProxyPassReverse / http://127.0.0.1:8000/
-```
-
-Debes configurar Apache para habilitar actualizaciones de sockets web.
-
-```diff
-ProxyPreserveHost On
-
-RequestHeader set X-Forwarded-Proto "https"
-
-+ProxyPass /ws/ ws://localhost:8000/ws/
-+ProxyPassReverse /ws/ ws://localhost:8000/ws/
 
 ProxyPass / http://127.0.0.1:8000/
 ProxyPassReverse / http://127.0.0.1:8000/

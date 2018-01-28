@@ -46,3 +46,9 @@ Example registry credentials file:
       "type": "..."
     }
 ```
+
+# Restricting Access
+
+Currently, global registry credentials do not support any attribute-based usage restriction (repo, images, events).
+
+This is because registry credentials are internal-only to drone, and unlike secrets, are never exposed to the build.

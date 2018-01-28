@@ -67,6 +67,6 @@ services:
 If you are still unable to connect to the mysql container, please make sure you are using the service name as the hostname.
 
 ```diff
-- mysql -u root -h 127.0.0.1:3306
-+ mysql -u root -h tcp://database:3306
+- mysql -u root -h 127.0.0.1
++ mysql -u root -h database
 ```

@@ -52,3 +52,9 @@ Credentials configured via global registries take precedence over credentials co
 
 * This is expected to reverse in Drone 0.8.4.
 {{% /alert %}}
+
+# Restricting Access
+
+Currently, global registry credentials do not support any attribute-based usage restriction (repo, images, events).
+
+This is because registry credentials are internal-only to Drone, and unlike secrets, are never exposed to the build.

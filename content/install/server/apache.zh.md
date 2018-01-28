@@ -18,9 +18,6 @@ ProxyPreserveHost On
 
 RequestHeader set X-Forwarded-Proto "https"
 
-ProxyPass /ws/ ws://localhost:8000/ws/
-ProxyPassReverse /ws/ ws://localhost:8000/ws/
-
 ProxyPass / http://127.0.0.1:8000/
 ProxyPassReverse / http://127.0.0.1:8000/
 ```
@@ -32,7 +29,6 @@ ProxyPassReverse / http://127.0.0.1:8000/
 ```nohighlight
 a2enmod proxy
 a2enmod proxy_http
-a2enmod proxy_wstunnel
 ```
 
 <!--You must configure Apache to set `X-Forwarded-Proto` when using https.-->
@@ -43,25 +39,6 @@ a2enmod proxy_wstunnel
 ProxyPreserveHost On
 
 +RequestHeader set X-Forwarded-Proto "https"
-
-ProxyPass /ws/ ws://localhost:8000/ws/
-ProxyPassReverse /ws/ ws://localhost:8000/ws/
-
-ProxyPass / http://127.0.0.1:8000/
-ProxyPassReverse / http://127.0.0.1:8000/
-```
-
-<!--You must configure Apache to enable websocket upgrades.-->
-
-您需要配置 Apache 启用 websocket upgrade 。
-
-```diff
-ProxyPreserveHost On
-
-RequestHeader set X-Forwarded-Proto "https"
-
-+ProxyPass /ws/ ws://localhost:8000/ws/
-+ProxyPassReverse /ws/ ws://localhost:8000/ws/
 
 ProxyPass / http://127.0.0.1:8000/
 ProxyPassReverse / http://127.0.0.1:8000/

@@ -66,15 +66,29 @@ Restrict access to global secrets based on image name using the `images` attribu
   images: [ plugins/docker:latest, plugins/ecr:* ]
 ```
 
-Both restrictions can be combined.
+Restrict access to global secrets based on event name using the `events` attribute.
+
+```
+- name: docker_username
+  value: octocat
+  events: [ push, pull_request ]
+- name: docker_password
+  value: correct-horse-battery-staple
+  events: [ push, tag ]
+```
+
+Any combination of restrictions can be combined.
 
 ```
 - name: docker_username
   value: octocat
   repos: [ octocat/hello-world, github/* ]
+  events: [ push, tag ]
   images: [ plugins/* ]
 - name: docker_password
   value: correct-horse-battery-staple
   repos: [ octocat/hello-world, github/* ]
   images: [ plugins/docker ]
 ```
+
+Currently, global secrets does not support `status` as an attribute-based usage restriction.

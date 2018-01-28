@@ -9,7 +9,7 @@ url = "api-users-info"
   parent = "api_users"
 +++
 
-Returns an information about the named registered user.
+Returns information about the named registered user.
 Please note this api requires administrative privileges.
 
 ```text

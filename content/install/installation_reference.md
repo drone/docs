@@ -9,13 +9,15 @@ url = "installation-reference"
   parent = "install_overview"
 +++
 
+{{% alert warn %}}
+Some of these options may be experimental.
+
+Options are auto-generated from the source code: https://github.com/drone/drone/tree/master/cmd
+{{% /alert %}}
+
 # Drone Server
 
 This is the reference list of all environment variables available to configure Drone Server.
-
-{{% alert warn %}}
-Some of these options may be experimental.
-{{% /alert %}}
 
 CLI FLAG <br><br> ENV VAR | DESCRIPTION <br><br> DEFAULT
 --- | ---
@@ -113,10 +115,6 @@ CLI FLAG <br><br> ENV VAR | DESCRIPTION <br><br> DEFAULT
 # Drone Agent
 
 This is the reference list of all environment variables available to configure Drone Agent.
-
-{{% alert warn %}}
-Some of these options may be experimental.
-{{% /alert %}}
 
 CLI FLAG <br><br> ENV VAR | DESCRIPTION <br><br> DEFAULT
 --- | ---

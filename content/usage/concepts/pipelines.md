@@ -91,6 +91,28 @@ pipeline:
 
 In the above example, the `frontend` and `backend` steps are executed in parallel. The pipeline runner will not execute the `publish` step until the group completes.
 
+# Detachment
+
+Long running steps can start in the pipeline without blocking other steps.
+
+```diff
+pipeline:
+  backend:
+    image: golang
++   detach: true
+    commands:
+      - go build
+      - go test
+  frontend:
+    image: node
+    commands:
+      - npm install
+      - npm run test
+      - npm run build
+```
+
+Containers from detached steps will terminate when the pipeline ends.
+
 # Conditional Execution
 
 Drone gives you the ability to conditionally limit the execution of steps at runtime. The below example limits execution of Slack plugin steps based on branch:

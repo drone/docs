@@ -121,7 +121,7 @@ pipeline:
 +     branch: master
 ```
 
-Please see the conditions [documentation]({{< ref "usage/config/step-conditions.md" >}}) for more options and details.
+Please see the step conditions [documentation]({{< ref "usage/config/step-conditions.md" >}}) for more options and details.
 
 # Failure Execution
 
@@ -138,4 +138,4 @@ pipeline:
 +     status: [ success, failure ]
 ```
 
-Please see the conditions [documentation]({{< ref "usage/config/step-conditions.md" >}}) for more options and details.
+Please see the step conditions [documentation]({{< ref "usage/config/step-conditions.md" >}}) for more options and details.

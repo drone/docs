@@ -39,7 +39,7 @@ Example secrets file:
 ```
 
 {{% alert info %}}
-Secrets configured via global secrets take precedence over secrets configured in individual repositories.
+Secrets configured via *global secrets* take precedence over secrets configured in individual repositories.
 {{% /alert %}}
 
 # Restricting Access

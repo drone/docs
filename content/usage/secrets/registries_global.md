@@ -48,9 +48,10 @@ Example registry credentials file:
 ```
 
 {{% alert info %}}
-Credentials configured via global registries take precedence over credentials configured in individual repositories.
+Credentials configured via *individual repositories* take precedence over credentials configured in global registries.
 
-* This is expected to reverse in Drone 0.8.4.
+In versions < `0.8.4`, credentials configured via *global registries* take precedence over credentials configured in individual repositories.
+
 {{% /alert %}}
 
 # Restricting Access

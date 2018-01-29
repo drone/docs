@@ -104,6 +104,8 @@ pipeline:
 +     branch: master
 ```
 
+Please see the conditions [documentation]({{< ref "usage/config/conditions.md" >}}) for more options and details.
+
 # Failure Execution
 
 Drone uses the container exit code to determine the success or failure status of a build. Non-zero exit codes fail the build and cause the pipeline to immediately exit.
@@ -118,3 +120,5 @@ pipeline:
 +   when:
 +     status: [ success, failure ]
 ```
+
+Please see the conditions [documentation]({{< ref "usage/config/conditions.md" >}}) for more options and details.

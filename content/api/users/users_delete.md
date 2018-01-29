@@ -8,3 +8,10 @@ url = "api-users-delete"
   identifier = "api-users-delete"
   parent = "api_users"
 +++
+
+Deletes a user.
+Please note this api requires administrative privileges.
+
+```text
+DELETE /api/users/{login}
+```

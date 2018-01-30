@@ -91,9 +91,26 @@ pipeline:
 
 In the above example, the `frontend` and `backend` steps are executed in parallel. The pipeline runner will not execute the `publish` step until the group completes.
 
-# Conditional Execution
+# Conditional Pipeline Execution
 
-Drone gives you the ability to conditionally limit the execution of steps at runtime. The below example limits execution of Slack plugin steps based on branch:
+Drone gives the ability to skip commits based on the target branch. The below example will skip a commit when the target branch is not master.
+
+```diff
+pipeline:
+  build:
+    image: golang
+    commands:
+      - go build
+      - go test
+
++branches: master
+```
+
+Please see the pipeline conditions [documentation]({{< ref "usage/config/pipeline-conditions.md" >}}) for more options and details.
+
+# Conditional Step Execution
+
+Drone gives the ability to conditionally limit the execution of steps at runtime. The below example limits execution of Slack plugin steps based on branch:
 
 ```diff
 pipeline:
@@ -103,6 +120,8 @@ pipeline:
 +   when:
 +     branch: master
 ```
+
+Please see the step conditions [documentation]({{< ref "usage/config/step-conditions.md" >}}) for more options and details.
 
 # Failure Execution
 
@@ -118,3 +137,5 @@ pipeline:
 +   when:
 +     status: [ success, failure ]
 ```
+
+Please see the step conditions [documentation]({{< ref "usage/config/step-conditions.md" >}}) for more options and details.

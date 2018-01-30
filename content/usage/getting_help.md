@@ -21,6 +21,6 @@ We unfortunately receive a large number of false positive issues. We ask that yo
 
 # IRC channel 
 
-The community provides unofficial IRC channels which are available on Freenode at [#drone.io](https://webchat.freenode.net/?channels=drone.io) or [#drone-ci](https://webchat.freenode.net/?channels=drone-ci).
+A community exists in an unofficial IRC channel on Freenode at [#drone-ci](https://webchat.freenode.net/?channels=drone-ci).
 
-While the community will be happy to discuss any topic related to Drone, remember to create a topic in discourse if you need support. This has the advantage to benefit to everyone and not answer the same questions over and over again.
+While the community is happy to discuss any topic related to Drone, remember to create a topic in [Discourse](https://discourse.drone.io) if you need support. This has the advantage to benefit to everyone and not answer the same questions over and over again.

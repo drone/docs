@@ -9,8 +9,9 @@ url = "api-secret-update"
   parent = "api_secret"
 +++
 
-
-Update a repository secret.
+Updates the specified repository secret.
+Please note this api requires write access to the repository,
+and the request parameter `{secret}` is not the secret's id but secret name.
 
 ```text
 PATCH /api/repos/{owner}/{repo}/secrets/{secret}
@@ -34,6 +35,7 @@ Example Response Body:
 {
   "id": 1,
   "name": "docker_username",
+  "image": null,
   "event": [
     "push",
     "pull_request"

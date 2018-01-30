@@ -8,3 +8,11 @@ url = "api-build-decline"
   identifier = "api-build-decline"
   parent = "api_build"
 +++
+
+Declines a blocked build.
+Please note this api requires write access to the repository,
+and the request parameter `{build}` is not the build id but the build number.
+
+```text
+POST /api/repos/{owner}/{repo}/builds/{build}/decline
+```

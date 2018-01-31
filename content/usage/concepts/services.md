@@ -76,7 +76,7 @@ services:
 
 If you want to start a service container from the pipeline that does not block the pipeline, you can use `detach: true`. This can be useful if you want to test a docker container you have built.
 
-```diff
+```yml
 pipeline:
   build:
     image: docker:latest

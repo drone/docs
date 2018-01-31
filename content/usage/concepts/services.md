@@ -80,14 +80,10 @@ If you want to start a service container from the pipeline that does not block t
 pipeline:
   build:
     image: docker:latest
-    secrets:
-      - docker_username
-      - docker_password
     entrypoint: []
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     commands:
-      - "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
       - "docker build -t example/image:latest -f ./Dockerfile ./"
 
   example_image:

@@ -95,9 +95,9 @@ pipeline:
 +       target: docker_password
 
 secrets:
-  docker_username:
+  username:
     path: secret/docker_username
-  docker_password:
+  password:
     path: secret/docker_password
 ```
 

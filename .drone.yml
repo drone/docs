@@ -20,6 +20,7 @@ pipeline:
     delete: false
     content_type:
       ".svg": image/svg+xml
+      "": text/html; charset=utf-8
     secrets:
       - aws_access_key_id
       - aws_secret_access_key

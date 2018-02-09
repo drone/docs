@@ -52,7 +52,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
-By adding more `drone-agents`, you can scale to multiple builds in parallel. 
+You can add more agents to increase the number of parallel builds.
 
 Drone integrates with multiple version control providers, configured using environment variables. This example demonstrates basic GitHub integration.
 

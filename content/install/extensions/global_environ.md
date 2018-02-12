@@ -10,7 +10,7 @@ url = "configure-global-environment"
 +++
 
 {{% alert enterprise %}}
-This feature is only available with the [Enterprise expansion pack](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
 The enterprise expansion pack provides support for global environment variables, sourced from a yaml file on your server. You should mount the environment file into your container and specify the path to the file in your configuration.

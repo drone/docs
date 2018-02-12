@@ -86,7 +86,6 @@ drone secret add \
 
 Please be careful when exposing secrets to pull requests. If your repository is open source and accepts pull requests your secrets are not safe. A bad actor can submit a malicious pull request that exposes your secrets. The recommended approach to secure secrets is to enable gated builds.
 
-
 # Examples
 
 Create the secret using default settings. The secret will be available to all images in your pipeline, and will be available to all push, tag, and deployment events (not pull request events).

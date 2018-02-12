@@ -24,3 +24,7 @@ Please see [the installation notes]({{<relref "install/extensions/global_secrets
 {{% alert info %}}
 Secrets configured via *global secrets* take precedence over secrets configured in individual repositories.
 {{% /alert %}}
+
+# Usage
+
+Usage notes about [secrets]({{<relref "registries.md">}}) apply for global secrets as well.

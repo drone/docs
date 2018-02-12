@@ -60,3 +60,9 @@ Example registry credentials for an ECR repository:
   aws_access_key_id: a50d28f4dd477bc184fbd10b376de753
   aws_secret_access_key: bc5785d3ece6a9cdefa42eb99b58986f9095ff1c
 ```
+
+# Restricting Access
+
+Currently, global registry credentials do not support any attribute-based usage restriction (repo, images, events).
+
+This is because registry credentials are internal-only to Drone, and unlike secrets, are never exposed to the build.

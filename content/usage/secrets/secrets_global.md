@@ -4,7 +4,7 @@ url: global-secrets
 
 menu:
   usage:
-    weight: 3
+    weight: 4
     identifier: global-secrets
     parent: usage_secrets
 ---

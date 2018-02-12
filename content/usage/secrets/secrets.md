@@ -4,7 +4,7 @@ url: manage-secrets
 
 menu:
   usage:
-    weight: 2
+    weight: 3
     identifier: manage_secrets
     parent: usage_secrets
 ---

@@ -1,10 +1,10 @@
 ---
-title: Global Registries
+title: Global Registry Credentials
 url: global-registries
 
 menu:
   usage:
-    weight: 4
+    weight: 2
     identifier: global-registries
     parent: usage_secrets
 ---

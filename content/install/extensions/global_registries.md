@@ -53,7 +53,7 @@ Example registry credentials file:
 
 The global registry file supports elastic container registries. Temporary authentication credentials are automatically generated and refreshed using the GetAuthorizationToken endpoint. Note that you must provide your aws access key and secret, and configure the appropriate IAM roles.
 
-Example registry credentials for an ecr repository:
+Example registry credentials for an ECR repository:
 
 ```nohighlight
 - address: 012345678910.dkr.ecr.us-east-1.amazonaws.com

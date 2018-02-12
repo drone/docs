@@ -10,7 +10,7 @@ url = "custom-access-policies"
 +++
 
 {{% alert enterprise %}}
-This feature is only available with the [Enterprise expansion pack](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
 {{% alert warn %}}

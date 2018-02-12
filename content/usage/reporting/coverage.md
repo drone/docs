@@ -10,7 +10,7 @@ url = "publish-coverage-reports"
 +++
 
 {{% alert enterprise %}}
-This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
 This feature is not yet available for general use. Check back soon.

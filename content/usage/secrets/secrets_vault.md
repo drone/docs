@@ -10,7 +10,7 @@ menu:
 ---
 
 {{% alert enterprise %}}
-This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
 The enterprise edition supports loading secrets from [vault](https://www.vaultproject.io/). Note that vault credentials must be globally configured by an administrator. Vault secrets are declared in your yaml configuration file and loaded at runtime.

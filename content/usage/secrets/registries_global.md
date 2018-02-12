@@ -28,3 +28,7 @@ Credentials configured via *individual repositories* take precedence over creden
 {{% alert warn %}}
 In versions < `0.8.4`, credentials configured via *global registries* take precedence over credentials configured in individual repositories.
 {{% /alert %}}
+
+# Usage
+
+Usage notes about [registry credentials]({{<relref "registries.md">}}) apply for global registry credentials as well.

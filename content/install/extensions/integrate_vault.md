@@ -50,6 +50,8 @@ Please note that you must provide drone with the root token at this time. We are
 # Amazon IAM
 -->
 
-# Usage
+# Restricting Access
 
-Please see the vault usage [documentation]({{< ref "usage/secrets/secrets_vault.md" >}}) which include details usage instructions for creating and consuming vault secrets in your pipelines.
+Secrets sourced from vault are restricted using key-values associated with the secret.
+
+Please see the vault usage [documentation]({{< ref "usage/secrets/secrets_vault.md" >}}) for detailed usage instructions for creating and consuming vault secrets in your pipelines.

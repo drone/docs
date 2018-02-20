@@ -23,6 +23,8 @@ Each agent is able to process one build by default. If you have 4 agents install
 
 {{% alert %}}
 You can add more agents to increase the number of parallel builds.
+
+You can also adjust the agent's `DRONE_MAX_PROCS=1` environment variable to increase the number of parallel builds for that agent.
 {{% /alert %}}
 
 ```yaml

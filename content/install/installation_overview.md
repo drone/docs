@@ -19,6 +19,12 @@ docker pull drone/drone:{{% version %}}
 
 This section provides basic instructions for installing Drone using [docker-compose](https://docs.docker.com/compose/). The below configuration (save it as `docker-compose.yaml`) can be used to start the Drone server with a single agent. It relies on a number of environment variables that you must set before running `docker-compose up`. The variables are described below.
 
+Each agent is able to process one build by default. If you have 4 agents installed and connected to the Drone server, your system will process 4 builds in parallel.
+
+{{% alert %}}
+You can add more agents to increase the number of parallel builds.
+{{% /alert %}}
+
 ```yaml
 version: '2'
 
@@ -51,8 +57,6 @@ services:
       - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
-
-You can add more agents to increase the number of parallel builds.
 
 Drone integrates with multiple version control providers, configured using environment variables. This example demonstrates basic GitHub integration.
 

@@ -4,12 +4,16 @@ title = "User Admins"
 url = "user-admins"
 
 [menu.install]
-  weight = 3
+  weight = 2
   identifier = "user-admins"
   parent = "install_access"
 +++
 
 You can grant administrative privileges to users by providing an enumerated user list, separated by a comma, using the designated environment variable.
+
+{{% alert %}}
+Admins can perform operations over any repository in Drone.
+{{% /alert %}}
 
 ```diff
 services:
@@ -20,3 +24,35 @@ services:
 ```
 
 Please note that the usernames are case-sensitive and must match the exact values as returned from your version control system (e.g. GitHub).
+
+# Kill Stuck Jobs
+
+Kill jobs that cannot be cancelled:
+
+```
+drone build kill <repo/name> <build>
+```
+
+# Access Privileged Endpoints
+
+View the server's metrics endpoint:
+
+```nohighlight
+<DRONE_HOST>/metrics
+```
+
+View the server's queue endpoint:
+
+```nohighlight
+<DRONE_HOST>/api/info/queue
+```
+
+View the server's pending and running builds endpoint:
+
+```nohighlight
+<DRONE_HOST>/api/builds
+```
+
+# User management
+
+[Approving]({{< ref "install/users/user_access.md">}}) users for closed registrations and [managing]({{< ref "install/users/user_management.md">}}) users.

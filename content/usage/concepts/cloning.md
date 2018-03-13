@@ -49,3 +49,14 @@ clone:
 +   image: plugins/hg
 +   path: bitbucket.org/foo/bar
 ```
+
+# Git Submodules
+
+To use the credentials that cloned the repository to clone it's submodules, update `.gitmodules` to use `https` instead of `git`:
+
+```diff
+[submodule "my-module"]
+	path = my-module
+-	url = git@github.com:octocat/my-module.git
++	url = https://github.com/octocat/my-module.git
+```

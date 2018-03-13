@@ -63,14 +63,18 @@ If you are still unable to connect to the Postgres container, please make sure y
 
 # Working Example
 
-This is a fully functioning example that demonstrates launching the Postgres service and then connecting with the service from the pipeline.
+This is a fully functioning example that demonstrates launching the Postgres service and then connecting with the service from the pipeline. Instead of waiting a fixed amount of time before attempting to query the database (as in the previous example) the pipeline container polls the postgres service every second until it is available.
 
 ```yaml
 pipeline:
   ping:
     image: postgres
     commands:
-      - sleep 10
+      # wait for postgres service to become available
+      - |
+        until psql -U postgres -d test -h database \
+         -c "SELECT 1;" >/dev/null 2>&1; do sleep 1; done
+      # query the database
       - |
         psql -U postgres -d test -h database \
           -c "SELECT * FROM pg_catalog.pg_tables;"

@@ -112,9 +112,15 @@ Drone uses `git+https` to clone repositories, however, Bitbucket Server does not
 
 # Registration
 
-You must register your application with Bitbucket Server in order to generate a consumer key. Navigate to your account settings and choose Applications from the menu, and click Register new application. Now copy & paste the text value from `/etc/bitbucket/key.pub` into the `Public Key` in the incoming link part of the application registration.
+You must register your application with Bitbucket Server in order to generate a consumer key.
 
-Please use http://drone.mycompany.com/authorize as the Authorization callback URL.
+Navigate to your account settings (e.g. http://stash.mycompany.com/admin) and choose "Application Links" from the menu on the left.
+
+Enter the URL of your Drone server (e.g. http://drone.mycompany.com) and click "Create new link". Bitbucket server will warn you that no response was received from the URL you entered. Ignore this and click "Continue".
+
+Give the application a name (e.g. "Drone CI") and click "Continue".
+
+Edit the application you just created. Click on "Incoming Authentication". In the "Consumer Key" field enter the value of your `DRONE_STASH_CONSUMER_KEY` environment variable. In the "Consumer Name" field enter a suitable name, e.g. "Drone CI" (the exact value doesn't really matter). In the "Public Key" field enter the public key that you generated above (either the value of `DRONE_STASH_CONSUMER_RSA_STRING` or the contents of the file `DRONE_STASH_CONSUMER_RSA`). In the "Consumer Callback URL" enter the authorize URL, e.g. `http://drone.mycompany.com/authorize`. Click "Close".
 
 
 # Configuration

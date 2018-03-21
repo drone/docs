@@ -1,8 +1,8 @@
 NAME:
-   drone build list - show build history
+   drone build ls - show build history
 
 USAGE:
-   drone build list [command options] [arguments...]
+   drone build ls [command options] <repo/name>
 
 OPTIONS:
    --format value  format output (default: "\x1b[33mBuild #{{ .Number }} \x1b[0m\nStatus: {{ .Status }}\nEvent: {{ .Event }}\nCommit: {{ .Commit }}\nBranch: {{ .Branch }}\nRef: {{ .Ref }}\nAuthor: {{ .Author }} {{ if .Email }}<{{.Email}}>{{ end }}\nMessage: {{ .Message }}\n")
@@ -10,4 +10,4 @@ OPTIONS:
    --event value   event filter
    --status value  status filter
    --limit value   limit the list size (default: 25)
-   
+

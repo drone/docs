@@ -24,7 +24,7 @@ pipeline:
   build:
     image: docker
     environment:
-      - DOCKER_HOST=tcp://0.0.0.0:2375
+      - DOCKER_HOST=tcp://docker:2375
     commands:
       - docker --tls=false ps
 

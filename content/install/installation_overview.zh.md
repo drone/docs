@@ -53,7 +53,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
@@ -142,7 +142,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-+     - DRONE_SERVER=ws://drone-server:8000/ws/broker
++     - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
@@ -164,7 +164,7 @@ services:
   drone-agent:
     image: drone/drone:{{% version %}}
     environment:
-      - DRONE_SERVER=ws://drone-server:8000/ws/broker
+      - DRONE_SERVER=drone-server:9000
       - DRONE_DEBUG=true
 +     - DRONE_SECRET=${DRONE_SECRET}
 ```

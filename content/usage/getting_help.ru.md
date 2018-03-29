@@ -11,10 +11,10 @@ questions_off = true
   parent = "usage_overview"
 +++
 
-If you are experiencing issues please be sure to read the documentation and search for existing issues and error messages using site search. We monitor [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) for questions and answers.
+Если у вас возникли проблемы, обязательно прочтите документацию и найдите существующие проблемы и сообщения об ошибках, используя поиск по сайту. Мы отслеживаем [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) для вопросов и ответов.
 
-You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to directly interact with the project maintainers and community members.
+Вы также можете публиковать вопросы или комментарии на нашем [форуме сообщества](https://discourse.drone.io). Это отличное место для непосредственного взаимодействия с участниками проекта и членами сообщества.
 
-# Reporting Issues
+# Проблемы с отчетами
 
-We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [community forum](https://discourse.drone.io) before creating github issues.
+К сожалению, мы получаем большое количество ложноположительных вопросов. Мы просим вас обсудить потенциальные проблемы на нашем [форум сообщества](https://discourse.drone.io) перед созданием проблем github.

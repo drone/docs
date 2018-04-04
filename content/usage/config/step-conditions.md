@@ -23,10 +23,7 @@ pipeline:
 ```
 
 {{% alert info %}}
-Please note that during Pull Request builds there are two branches at play: the source branch where the new code is implemented, and the target branch where the code will be merged to. Drone considers the target branch.
-<br/>
-<br/>
-Thus the above example will build on master and every Pull Request that is opened against master. Look at event based conditions bellow to finetune this behavior.
+The step now triggers on master, but also if the target branch of a pull request is `master`. Add an event condition to limit it further to pushes on master only.
 {{% /alert %}}
 
 # Branches

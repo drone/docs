@@ -4,7 +4,7 @@ title = "drone registry ls"
 url = "cli-registry-ls"
 
 [menu.cli]
-  weight = 24
+  weight = 3
   identifier = "cli-registry-ls"
   parent = "cli_registry"
 +++

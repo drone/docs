@@ -4,7 +4,7 @@ title = "drone secret info"
 url = "zh/cli-secret-info"
 
 [menu.cli]
-  weight = 12
+  weight = 2
   identifier = "cli-secret-info-zh"
   parent = "cli_secret"
 +++

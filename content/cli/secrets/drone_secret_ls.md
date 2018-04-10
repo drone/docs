@@ -4,7 +4,7 @@ title = "drone secret ls"
 url = "cli-secret-ls"
 
 [menu.cli]
-  weight = 14
+  weight = 3
   identifier = "cli-secret-ls"
   parent = "cli_secret"
 +++

@@ -4,7 +4,7 @@ title = "drone secret rm"
 url = "cli-secret-rm"
 
 [menu.cli]
-  weight = 13
+  weight = 4
   identifier = "cli-secret-rm"
   parent = "cli_secret"
 +++

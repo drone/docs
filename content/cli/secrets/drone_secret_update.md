@@ -4,7 +4,7 @@ title = "drone secret update"
 url = "cli-secret-update"
 
 [menu.cli]
-  weight = 11
+  weight = 5
   identifier = "cli-secret-update"
   parent = "cli_secret"
 +++

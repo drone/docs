@@ -12,7 +12,7 @@ url = "cli-secret-update"
 This subcommand updates a secret in your repository secret store. Please note this command requires administrative privilege to the repository.
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_update.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_update.out.txt" >}}
 ```
 
 Example usage:

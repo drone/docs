@@ -15,7 +15,7 @@ url = "zh/cli-secret-info"
 
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_info.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_info.out.txt" >}}
 ```
 
 使用示例：

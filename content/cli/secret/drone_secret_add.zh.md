@@ -14,7 +14,7 @@ url = "zh/cli-secret-add"
 这个子命令给仓库添加密文，这个子命令需要登录认证以及对应仓库的管理员权限。
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_add.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_add.out.txt" >}}
 ```
 
 使用示例：

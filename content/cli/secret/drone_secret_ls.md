@@ -12,7 +12,7 @@ url = "cli-secret-ls"
 This subcommand returns a list of secrets for the named repository. Please note this command requires administrative privilege to the repository.
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_ls.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_ls.out.txt" >}}
 ```
 
 Example usage:

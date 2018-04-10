@@ -14,7 +14,7 @@ url = "zh/cli-secret-rm"
 这个子命令用来删除仓库的一个的密文，这个子命令需要登录认证以及对应仓库的管理员权限。
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_rm.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_rm.out.txt" >}}
 ```
 
 使用示例：

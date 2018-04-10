@@ -14,7 +14,7 @@ url = "zh/cli-secret-update"
 这个子命令用来更新仓库的一个密文，这个子命令需要登录认证以及对应仓库的管理员权限。
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_update.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_update.out.txt" >}}
 ```
 
 使用示例：

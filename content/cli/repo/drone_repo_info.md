@@ -4,7 +4,7 @@ title = "drone repo info"
 url = "cli-repository-info"
 
 [menu.cli]
-  weight = 5
+  weight = 3
   identifier = "cli-repository-info"
   parent = "cli_repo"
 +++

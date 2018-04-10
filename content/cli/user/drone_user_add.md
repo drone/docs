@@ -2,10 +2,9 @@
 date = "2000-01-01T00:00:00+00:02"
 title = "drone user add"
 url = "cli-user-add"
-weight = 1
 
 [menu.cli]
-  weight = 40
+  weight = 1
   identifier = "cli-user-add"
   parent = "cli_user"
 +++

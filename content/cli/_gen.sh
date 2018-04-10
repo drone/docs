@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# secrets
-drone secret add --help    > secrets/data/drone_secret_add.out.txt
-drone secret update --help > secrets/data/drone_secret_update.out.txt
-drone secret info --help   > secrets/data/drone_secret_info.out.txt
-drone secret ls --help     > secrets/data/drone_secret_ls.out.txt
-drone secret rm --help     > secrets/data/drone_secret_rm.out.txt
+# secret
+drone secret add --help    > secret/data/drone_secret_add.out.txt
+drone secret update --help > secret/data/drone_secret_update.out.txt
+drone secret info --help   > secret/data/drone_secret_info.out.txt
+drone secret ls --help     > secret/data/drone_secret_ls.out.txt
+drone secret rm --help     > secret/data/drone_secret_rm.out.txt
 
 # registries
 drone registry add --help    > registry/data/drone_registry_add.out.txt

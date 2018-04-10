@@ -45,7 +45,9 @@ services:
 
 # Registration
 
-Register your application with Coding to create your client id and secret. Naviagte to Account(账户)/Applications(应用管理), then click New(添加应用)，and you will see Application Setting(应用设置) page. It is very import the callback URL(回调地址) matches your http(s) scheme and hostname exactly with `/authorize` as the path.
+Register your application with Coding to create your client id and secret.
+Navigate to Account(账户)/Applications(应用管理), then click New(添加应用), and you will see Application Setting(应用设置) page.
+It is very important the callback URL(回调地址) matches your http(s) scheme and hostname exactly with `/authorize` as the path.
 
 <a href="images/coding_oauth.png" target="_blank"><img src="images/coding_oauth.png" alt="coding oauth setup"></a>
 

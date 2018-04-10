@@ -1,15 +1,15 @@
 +++
 date = "2017-04-15T14:39:04+02:00"
-title = "Conditions"
-url = "conditional-steps"
+title = "Step Conditions"
+url = "step-conditions"
 
 [menu.usage]
   weight = 2
-  identifier = "conditions"
+  identifier = "step-conditions"
   parent = "usage_config"
 +++
 
-Drone support defining condition pipeline steps in the `when` block. If all conditions in the `when` block evaluate to true the step is executed, otherwise it is skipped.
+Drone supports defining conditional pipeline steps in the `when` block. If all conditions in the `when` block evaluate to true the step is executed, otherwise it is skipped.
 
 Example conditional execution by branch:
 
@@ -21,6 +21,10 @@ pipeline:
 +   when:
 +     branch: master
 ```
+
+{{% alert info %}}
+The step now triggers on master, but also if the target branch of a pull request is `master`. Add an event condition to limit it further to pushes on master only.
+{{% /alert %}}
 
 # Branches
 

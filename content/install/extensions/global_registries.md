@@ -53,10 +53,16 @@ Example registry credentials file:
 
 The global registry file supports elastic container registries. Temporary authentication credentials are automatically generated and refreshed using the GetAuthorizationToken endpoint. Note that you must provide your aws access key and secret, and configure the appropriate IAM roles.
 
-Example registry credentials for an ecr repository:
+Example registry credentials for an ECR repository:
 
 ```nohighlight
 - address: 012345678910.dkr.ecr.us-east-1.amazonaws.com
   aws_access_key_id: a50d28f4dd477bc184fbd10b376de753
   aws_secret_access_key: bc5785d3ece6a9cdefa42eb99b58986f9095ff1c
 ```
+
+# Restricting Access
+
+Currently, global registry credentials do not support any attribute-based usage restriction (repo, images, events).
+
+This is because registry credentials are internal-only to Drone, and unlike secrets, are never exposed to the build.

@@ -119,4 +119,14 @@
   translation: |
     我们非常乐意帮助您解决遇到的问题。
     您可以先搜索对应文档，查看一些常见的问题。
-    您还可以实时地在 [gitter 频道](https://gitter.im/drone/drone) 和其他开发者一起交流。
+    您还可以地在 [discourse](https://discourse.drone.io/) 和其他开发者一起交流。
+
+#
+# page meta data
+#
+
+- id: page_meta
+  translation: |
+    这个网页有没有错误？
+    请[让我们知道](https://github.com/drone/docs) 或编辑
+    [这个页面](https://github.com/drone/docs/blob/master/content/{{.Path}})。

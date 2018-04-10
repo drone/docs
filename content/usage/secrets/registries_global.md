@@ -1,54 +1,34 @@
 ---
-title: Global Registries
+title: Global Registry Credentials
 url: global-registries
 
 menu:
   usage:
-    weight: 4
+    weight: 2
     identifier: global-registries
     parent: usage_secrets
 ---
 
 {{% alert enterprise %}}
-This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
-The enterprise edition supports global registry credentials, sourced from a yaml file on your server. You should mount the registry credentials file into your container and specify the path to the file in your configuration.
+The enterprise expansion pack provides support for global registry credentials, sourced from a yaml file on your server. You should mount the credentials file into your container and specify the path to the file in your configuration.
 
-```diff
-services:
-  drone-server:
-    image: drone/drone:{{% version %}}
-    ports:
-      - 80:8000
-    volumes:
-      - /var/lib/drone:/var/lib/drone/
-+     - /etc/drone-registry.yml:/etc/drone-registry.yml
-    restart: always
-    environment:
-+     DRONE_GLOBAL_REGISTRY=/etc/drone-registry.yml
-```
+# Configuration
 
-Example registry credentials file:
+Please see [the installation notes]({{<relref "install/extensions/global_registries.md">}}) to configure global registries file and its restrictions.
 
-```nohighlight
-- address: docker.io
-  username: octocat
-  password: correct-horse-batter-staple
-- address: gcr.io
-  username: _json_key
-  password: |
-    {
-      "private_key_id": "...",
-      "private_key": "...",
-      "client_email": "...",
-      "client_id": "...",
-      "type": "..."
-    }
-```
+# Precedence
 
-# Restricting Access
+{{% alert info %}}
+Credentials configured via *individual repositories* take precedence over credentials configured in global registries.
+{{% /alert %}}
 
-Currently, global registry credentials do not support any attribute-based usage restriction (repo, images, events).
+{{% alert warn %}}
+In versions < `0.8.4`, credentials configured via *global registries* take precedence over credentials configured in individual repositories.
+{{% /alert %}}
 
-This is because registry credentials are internal-only to drone, and unlike secrets, are never exposed to the build.
+# Usage
+
+Usage notes about [registry credentials]({{<relref "registries.md">}}) apply for global registry credentials as well.

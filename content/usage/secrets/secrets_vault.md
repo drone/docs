@@ -10,50 +10,14 @@ menu:
 ---
 
 {{% alert enterprise %}}
-This feature is only available in the [Enterprise Edition](https://drone.io/enterprise/)
+This feature is only available in the [Enterprise expansion pack](https://drone.io/enterprise/)
 {{% /alert %}}
 
 The enterprise edition supports loading secrets from [vault](https://www.vaultproject.io/). Note that vault credentials must be globally configured by an administrator. Vault secrets are declared in your yaml configuration file and loaded at runtime.
 
-Example configuration with vault secrets:
+# Usage
 
-```diff
-pipeline:
-  build:
-    image: golang
-    commands:
-      - go test
-      - go build
-  publish:
-    image: plugins/docker
-    repo: octocat/app
-    secrets: [ docker_username, docker_password ]
-
-secrets:
-  docker_username:
-    path: secret/docker_username
-  docker_password:
-    path: secret/docker_password
-```
-
-Secrets are added to vault using the vault command line utility. Secrets can be written to any valid path. See the below example:
-
-```nohighlight
-vault write secret/docker_username value=...
-vault write secret/docker_password value=...
-```
-
-The secrets paths can then be included in your yaml configuration:
-
-```diff
-secrets:
-  docker_username:
-    path: secret/docker_username
-  docker_password:
-    path: secret/docker_password
-```
-
-The vault secrets are passed to your pipeline steps by name. The below example requests the named secrets are passed to the pipeline step:
+Example configuration with vault secrets, passing them to the pipeline by name:
 
 ```diff
 pipeline:
@@ -67,6 +31,23 @@ pipeline:
     repo: octocat/app
 +   secrets: [ docker_username, docker_password ]
 
++secrets:
++  docker_username:
++    path: secret/docker_username
++  docker_password:
++    path: secret/docker_password
+```
+
+Add secrets to any valid path in vault using the vault command line utility:
+
+```nohighlight
+vault write secret/docker_username value=...
+vault write secret/docker_password value=...
+```
+
+Then include the secrets paths in your pipeline configuration:
+
+```diff
 secrets:
   docker_username:
     path: secret/docker_username
@@ -76,7 +57,7 @@ secrets:
 
 # Alternate Names
 
-In some cases the secret names in your vault instance may not match the names expected by the secrets. The secret names can be mapped to the correct values using the below syntax.
+In some cases the secret names in your vault instance may not match the names expected by the secrets. The secret names can be mapped to the correct values:
 
 ```diff
 pipeline:
@@ -95,13 +76,15 @@ pipeline:
 +       target: docker_password
 
 secrets:
-  docker_username:
+- docker_username:
++ username:
     path: secret/docker_username
-  docker_password:
+- docker_password:
++ password:
     path: secret/docker_password
 ```
 
-# Restricting Access
+# Restricting Repos
 
 You can restrict access to vault secrets based on repository name using the `repo` attribute. This is a comma-separated list with glob support.
 

@@ -124,3 +124,13 @@
     Estaremos felices de ayudarte con las preguntas que puedas tener.
     Busca en nuestra documentación o revisa las respuestas a las preguntas más comunes. También
     puedes publicar tus preguntas o comentarios en nuestro [foro de la comunidad](https://discourse.drone.io).
+
+#
+# page meta data
+#
+
+- id: page_meta
+  translation: |
+    ¿Hay algún error en esta página?
+    Por favor, [háganoslo saber](https://github.com/drone/docs) o edite
+    [esta página](https://github.com/drone/docs/blob/master/content/{{.Path}}).

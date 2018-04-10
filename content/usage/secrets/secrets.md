@@ -4,7 +4,7 @@ url: manage-secrets
 
 menu:
   usage:
-    weight: 2
+    weight: 3
     identifier: manage_secrets
     parent: usage_secrets
 ---
@@ -85,7 +85,6 @@ drone secret add \
 ```
 
 Please be careful when exposing secrets to pull requests. If your repository is open source and accepts pull requests your secrets are not safe. A bad actor can submit a malicious pull request that exposes your secrets. The recommended approach to secure secrets is to enable gated builds.
-
 
 # Examples
 

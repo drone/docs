@@ -119,5 +119,15 @@
   translation: |
     We are always happy to help with questions you might have.
     Search our documentation or check out answers to common questions. You
-    can even chat live with other developers in our
-    [gitter channel](https://gitter.im/drone/drone).
+    can also post questions or comments to our
+    [community forum](https://discourse.drone.io).
+
+#
+# page meta data
+#
+
+- id: page_meta
+  translation: |
+    Is there a mistake on this page?
+    Please [let us know](https://github.com/drone/docs) or edit
+    [this page](https://github.com/drone/docs/blob/master/content/{{.Path}}).

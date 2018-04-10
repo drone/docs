@@ -18,3 +18,9 @@ You can also post questions or comments to our [community forum](https://discour
 # Reporting Issues
 
 We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [community forum](https://discourse.drone.io) before creating github issues.
+
+# IRC channel 
+
+A community exists in an unofficial IRC channel on Freenode at [#drone-ci](https://webchat.freenode.net/?channels=drone-ci).
+
+While the community is happy to discuss any topic related to Drone, remember to create a topic in [Discourse](https://discourse.drone.io) if you need support. This has the advantage to benefit to everyone and not answer the same questions over and over again.

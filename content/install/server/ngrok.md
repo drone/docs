@@ -9,7 +9,7 @@ url = "setup-with-ngrok"
   weight = 6
 +++
 
-After installed [ngrok](https://ngrok.com/), open a new console and run:
+After installing [ngrok](https://ngrok.com/), open a new console and run:
 
 ```
 ngrok http 80

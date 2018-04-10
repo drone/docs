@@ -9,7 +9,7 @@ url = "es/configure-ssl"
   weight = 10
 +++
 
-Drone soporta configuración SSL montando certificados en tu contenedor. Nota que también existe soporte para [Let's Encrypt]({{< relref "lets_encrypt.md" >}}) automatizado.
+Drone soporta configuración SSL montando certificados en tu contenedor. Nota que también existe soporte para [Let's Encrypt]({{< relref "lets_encrypt.es.md" >}}) automatizado.
 
 ```diff
 services:

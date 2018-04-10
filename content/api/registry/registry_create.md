@@ -8,3 +8,10 @@ url = "api-registry-add"
   identifier = "api-registry-add"
   parent = "api_registry"
 +++
+
+Adds a registry.
+Please note this api requires write access to the repository.
+
+```text
+POST /api/repos/{owner}/{repo}/registry
+```

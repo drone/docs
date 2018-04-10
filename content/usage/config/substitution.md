@@ -60,6 +60,7 @@ pipeline:
 +   tags: ${DRONE_BRANCH/\//-}
 ```
 
+# String Operations Reference
 
 List of emulated string operations:
 
@@ -76,3 +77,7 @@ OPERATION             | DESC
 `${param##prefix}`    | parameter substitution with prefix removal
 `${param%%suffix}`    | parameter substitution with suffix removal
 `${param/old/new}`    | parameter substitution with find and replace
+
+# Environment Variables Reference
+
+Please see the reference environment [documentation]({{< ref "usage/reference/environment.md" >}}) for the complete list of Drone environment variables.

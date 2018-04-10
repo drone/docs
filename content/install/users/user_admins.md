@@ -25,14 +25,6 @@ services:
 
 Please note that the usernames are case-sensitive and must match the exact values as returned from your version control system (e.g. GitHub).
 
-# Kill Stuck Jobs
-
-Kill jobs that cannot be cancelled:
-
-```
-drone build kill <repo/name> <build>
-```
-
 # Access Privileged Endpoints
 
 View the server's metrics endpoint:

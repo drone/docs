@@ -4,7 +4,7 @@ title = "drone deploy"
 url = "cli-deploy"
 
 [menu.cli]
-  weight = 70
+  weight = 1
   identifier = "cli-deploy"
   parent = "cli_misc"
 +++

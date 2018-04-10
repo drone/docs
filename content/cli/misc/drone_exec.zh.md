@@ -4,7 +4,7 @@ title = "drone exec"
 url = "zh/cli-exec"
 
 [menu.cli]
-  weight = 50
+  weight = 2
   identifier = "cli-exec-zh"
   parent = "cli_misc"
 +++

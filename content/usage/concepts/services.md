@@ -71,3 +71,26 @@ services:
   database:
     image: mysql
 ```
+
+# Detached Services
+
+If you want to start a service container from the pipeline that does not block the pipeline, you can use `detach: true`. This can be useful if you want to test a docker container you have built.
+
+```yml
+pipeline:
+  build:
+    image: docker:latest
+    entrypoint: []
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    commands:
+      - "docker build -t example/image:latest -f ./Dockerfile ./"
+
+  example_image:
+    image: example/image:latest
+    detach: true
+    
+  test: # runs parallel to example_image
+    image: jamrizzi/drone-postman:latest
+    collection: 'https://www.getpostman.com/collections/1d9b360b4c1d263711ff'
+```

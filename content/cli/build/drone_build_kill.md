@@ -4,7 +4,7 @@ title = "drone build kill"
 url = "cli-build-kill"
 
 [menu.cli]
-  weight = 30
+  weight = 4
   identifier = "cli-build-kill"
   parent = "cli_build"
 +++

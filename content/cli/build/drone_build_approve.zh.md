@@ -4,7 +4,7 @@ title = "drone build approve"
 url = "zh/cli-build-approve"
 
 [menu.cli]
-  weight = 28
+  weight = 1
   identifier = "cli-build-approve-zh"
   parent = "cli_build"
 +++

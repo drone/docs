@@ -4,7 +4,7 @@ title = "drone secret rm"
 url = "cli-secret-rm"
 
 [menu.cli]
-  weight = 13
+  weight = 4
   identifier = "cli-secret-rm"
   parent = "cli_secret"
 +++
@@ -12,7 +12,7 @@ url = "cli-secret-rm"
 This subcommand deletes a named repository secret. Please note this command requires administrative privilege to the repository.
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_rm.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_rm.out.txt" >}}
 ```
 
 Example usage:

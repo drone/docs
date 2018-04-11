@@ -4,7 +4,7 @@ title = "drone repo rm"
 url = "cli-repository-remove"
 
 [menu.cli]
-  weight = 9
+  weight = 6
   identifier = "cli-repository-remove"
   parent = "cli_repo"
 +++

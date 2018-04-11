@@ -4,7 +4,7 @@ title = "drone registry update"
 url = "zh/cli-registry-update"
 
 [menu.cli]
-  weight = 21
+  weight = 5
   identifier = "cli-registry-update-zh"
   parent = "cli_registry"
 +++

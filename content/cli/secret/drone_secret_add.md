@@ -4,7 +4,7 @@ title = "drone secret add"
 url = "cli-secret-add"
 
 [menu.cli]
-  weight = 10
+  weight = 1
   identifier = "cli-secret-add"
   parent = "cli_secret"
 +++
@@ -12,7 +12,7 @@ url = "cli-secret-add"
 This subcommand adds a secret to your repository secret store. Please note this command requires administrative privilege to the repository.
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_add.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_add.out.txt" >}}
 ```
 
 Example usage:

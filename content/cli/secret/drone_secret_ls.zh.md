@@ -4,7 +4,7 @@ title = "drone secret ls"
 url = "zh/cli-secret-ls"
 
 [menu.cli]
-  weight = 14
+  weight = 3
   identifier = "cli-secret-ls-zh"
   parent = "cli_secret"
 +++
@@ -14,7 +14,7 @@ url = "zh/cli-secret-ls"
 这个子命令返回对应仓库仓库密文，这个子命令需要登录认证以及对应仓库的管理员权限。
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_ls.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_ls.out.txt" >}}
 ```
 
 使用示例：

@@ -4,7 +4,7 @@ title = "drone secret info"
 url = "zh/cli-secret-info"
 
 [menu.cli]
-  weight = 12
+  weight = 2
   identifier = "cli-secret-info-zh"
   parent = "cli_secret"
 +++
@@ -15,7 +15,7 @@ url = "zh/cli-secret-info"
 
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_info.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_info.out.txt" >}}
 ```
 
 使用示例：

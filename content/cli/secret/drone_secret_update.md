@@ -4,7 +4,7 @@ title = "drone secret update"
 url = "cli-secret-update"
 
 [menu.cli]
-  weight = 11
+  weight = 5
   identifier = "cli-secret-update"
   parent = "cli_secret"
 +++
@@ -12,7 +12,7 @@ url = "cli-secret-update"
 This subcommand updates a secret in your repository secret store. Please note this command requires administrative privilege to the repository.
 
 ```text
-{{< cat "content/cli/secrets/data/drone_secret_update.out.txt" >}}
+{{< cat "content/cli/secret/data/drone_secret_update.out.txt" >}}
 ```
 
 Example usage:

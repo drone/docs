@@ -4,7 +4,7 @@ title = "drone build stop"
 url = "zh/cli-build-stop"
 
 [menu.cli]
-  weight = 23
+  weight = 9
   identifier = "cli-build-stop-zh"
   parent = "cli_build"
 +++

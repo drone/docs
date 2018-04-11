@@ -60,10 +60,12 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
-Drone integrates with multiple version control providers, configured using environment variables. This example demonstrates basic GitHub integration.
+Drone does not have any builtin user management. Instead, authentication is done using OAuth and is delegated to one of multiple version control providers, configured using environment variables. The example above demonstrates basic GitHub integration.
 
 {{% alert %}}
-You must register Drone with GitHub to obtain the client and secret. The authorization callback url must match `<scheme>://<host>/authorize`
+You must [register Drone with GitHub](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/) to obtain the `DRONE_GITHUB_CLIENT` and `DRONE_GITHUB_SECRET` used above. The authorization callback url must match `<scheme>://<host>/authorize`.
+
+You can register Drone as a user or organizational OAuth App.
 {{% /alert %}}
 
 ```diff

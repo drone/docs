@@ -4,7 +4,7 @@ title = "drone build logs"
 url = "cli-build-logs"
 
 [menu.cli]
-  weight = 27
+  weight = 7
   identifier = "cli-build-logs"
   parent = "cli_build"
 +++

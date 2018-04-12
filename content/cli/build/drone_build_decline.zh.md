@@ -4,7 +4,7 @@ title = "drone build decline"
 url = "zh/cli-build-decline"
 
 [menu.cli]
-  weight = 29
+  weight = 2
   identifier = "cli-build-decline-zh"
   parent = "cli_build"
 +++

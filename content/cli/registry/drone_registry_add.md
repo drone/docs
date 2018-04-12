@@ -4,7 +4,7 @@ title = "drone registry add"
 url = "cli-registry-add"
 
 [menu.cli]
-  weight = 20
+  weight = 1
   identifier = "cli-registry-add"
   parent = "cli_registry"
 +++

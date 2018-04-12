@@ -4,7 +4,7 @@ title = "drone build ls"
 url = "zh/cli-build-ls"
 
 [menu.cli]
-  weight = 24
+  weight = 6
   identifier = "cli-build-ls-zh"
   parent = "cli_build"
 +++

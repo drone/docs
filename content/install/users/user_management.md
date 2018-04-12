@@ -4,7 +4,7 @@ title = "User Management"
 url = "user-management"
 
 [menu.install]
-  weight = 2
+  weight = 3
   identifier = "user-management"
   parent = "install_access"
 +++

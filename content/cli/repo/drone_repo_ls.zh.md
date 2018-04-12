@@ -4,7 +4,7 @@ title = "drone repo ls"
 url = "zh/cli-repository-list"
 
 [menu.cli]
-  weight = 8
+  weight = 4
   identifier = "cli-repository-list-zh"
   parent = "cli_repo"
 +++

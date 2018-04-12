@@ -4,7 +4,7 @@ title = "drone build last"
 url = "zh/cli-build-last"
 
 [menu.cli]
-  weight = 25
+  weight = 5
   identifier = "cli-build-last-zh"
   parent = "cli_build"
 +++

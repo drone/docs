@@ -9,21 +9,21 @@ url = "ru/getting-started"
   parent = "usage_overview"
 +++
 
-Welcome to the Drone community. This document briefly explains the process for activating and configuring a continuous delivery pipeline.
+Добро пожаловать в сообщество Drone. В этом документе кратко описывается процесс активации и настройки непрерывного трубопровода.
 
-# Activation
+# активация
 
-To activate your project navigate to your account settings. You will see a list of repositories which can be activated with a simple toggle. When you activate your repository, Drone automatically adds webhooks to your version control system (e.g. GitHub).
+Чтобы активировать свой проект, перейдите к настройкам своей учетной записи. Вы увидите список репозиториев, которые могут быть активированы простым переключением. Когда вы активируете свой репозиторий, Drone автоматически добавляет webhooks в вашу систему управления версиями (например, GitHub).
 
-Webhooks are used to trigger pipeline executions. When you push code to your repository, open a pull request, or create a tag, your version control system will automatically send a webhook to Drone which will in turn trigger pipeline execution.
+Webhooks используются для запуска выполнения конвейера. Когда вы нажимаете код в свой репозиторий, открываете запрос на перенос или создаете тег, ваша система контроля версий автоматически отправляет веб-чек на Drone, который, в свою очередь, запускает выполнение конвейера.
 
-![repository list](/images/drone_repo_list.png)
+![список репозитория](/images/drone_repo_list.png)
 
-# Configuration
+# конфигурация
 
-To configure you pipeline you should place a `.drone.yml` file in the root of your repository. The .drone.yml file is used to define your pipeline steps. It is a superset of the widely used docker-compose file format.
+Чтобы настроить конвейер, вы должны поместить файл `.drone.yml` в корень вашего репозитория. Файл .drone.yml используется для определения шагов вашего трубопровода. Это надмножество широко используемого формата файла docker-compose.
 
-Example pipeline configuration:
+Пример конфигурации конвейера:
 
 ```yaml
 pipeline:
@@ -41,7 +41,7 @@ services:
       - POSTGRES_USER=myapp
 ```
 
-Example pipeline configuration with multiple, serial steps:
+Пример конфигурации конвейера с несколькими последовательными этапами:
 
 ```yaml
 pipeline:
@@ -64,10 +64,10 @@ pipeline:
     username: drone
 ```
 
-# Execution
+# выполнение
 
-To trigger your first pipeline execution you can push code to your repository, open a pull request, or push a tag. Any of these events triggers a webhook from your version control system and execute your pipeline.
+Чтобы запустить первое выполнение конвейера, вы можете нажать код в своем репозитории, открыть запрос на перенос или нажать тег. Любое из этих событий запускает webhook из вашей системы контроля версий и выполняет ваш конвейер.
 
-You can view your pipeline execution in realtime in the user interface.
+Вы можете просмотреть выполнение своего конвейера в реальном времени в пользовательском интерфейсе.
 
-![running build](/images/drone_build_running.png)
+![ходовая сборка](/images/drone_build_running.png)

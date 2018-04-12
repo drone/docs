@@ -2,10 +2,9 @@
 date = "2000-01-01T00:00:00+00:02"
 title = "drone user rm"
 url = "zh/cli-user-rm"
-weight = 3
 
 [menu.cli]
-  weight = 42
+  weight = 4
   identifier = "cli-user-rm-zh"
   parent = "cli_user"
 +++

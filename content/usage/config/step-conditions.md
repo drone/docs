@@ -22,6 +22,10 @@ pipeline:
 +     branch: master
 ```
 
+{{% alert info %}}
+The step now triggers on master, but also if the target branch of a pull request is `master`. Add an event condition to limit it further to pushes on master only.
+{{% /alert %}}
+
 # Branches
 
 Execute a step if the branch is `master` or `develop`:

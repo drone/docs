@@ -1,14 +1,14 @@
 +++
 date = "2000-01-01T00:00:00+00:02"
-title = "drone build list"
-url = "zh/cli-build-list"
+title = "drone build ls"
+url = "zh/cli-build-ls"
 
 [menu.cli]
   weight = 6
-  identifier = "cli-build-list-zh"
+  identifier = "cli-build-ls-zh"
   parent = "cli_build"
 +++
 
 ```text
-{{< cat "content/cli/build/data/drone_build_list.out.txt" >}}
+{{< cat "content/cli/build/data/drone_build_ls.out.txt" >}}
 ```

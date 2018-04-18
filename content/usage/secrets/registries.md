@@ -52,17 +52,7 @@ drone registry add \
   --password <value>
 ```
 
-Example command:
-
-```diff
-drone registry add \
-  --repository octocat/hello-world \
-  --hostname gcr.io \
-  --username <name> \
-  --password <value>
-```
-
-Example commands loads the password from file:
+Example command to load the password from a file:
 
 ```diff
 drone registry add \
@@ -91,3 +81,7 @@ Example registry hostname matching logic:
 * Hostname `docker.io` matches `library/golang`
 * Hostname `docker.io` matches `bradyrydzewski/golang`
 * Hostname `docker.io` matches `bradyrydzewski/golang:latest`
+
+# Registry Support
+
+For specific details on configuring access to Google Container Registry, please view the docs [here](https://cloud.google.com/container-registry/docs/advanced-authentication#using_a_json_key_file).

@@ -23,6 +23,14 @@ Linux arm   | [tarball](https://github.com/drone/drone-cli/releases/download/v0.
 Windows x64 | [tarball](https://github.com/drone/drone-cli/releases/download/v0.8.5/drone_windows_amd64.tar.gz)
 Darwin x64  | [tarball](https://github.com/drone/drone-cli/releases/download/v0.8.5/drone_darwin_amd64.tar.gz)
 
+# Install on Windows
+
+Download and install on Windows using [scoop](http://scoop.sh):
+
+```nohighlight
+scoop install drone
+```
+
 # Install on Linux
 
 Download and install on Linux:

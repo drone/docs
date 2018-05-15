@@ -80,7 +80,7 @@ pipeline:
       - go test
     environment:  
 +     - GO_VERSION=1.4
--     - DATABSE=percona:5.5  
+-     - DATABASE=percona:5.5  
 +     - DATABASE=mysql:5.5
 
 services:

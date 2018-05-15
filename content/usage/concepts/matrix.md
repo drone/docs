@@ -78,10 +78,10 @@ pipeline:
       - go get
       - go build
       - go test
-    environment:  
-+     - GO_VERSION=1.4
--     - DATABASE=percona:5.5  
+    environment:
+      - DATABASE=percona:5.5 <- overridden by matrix variable 
 +     - DATABASE=mysql:5.5
++     - GO_VERSION=1.4  
 
 services:
   database:

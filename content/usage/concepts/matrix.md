@@ -40,7 +40,9 @@ matrix:
 
 # Interpolation
 
-Matrix variables are interpolated in the yaml using the `${VARIABLE}` syntax, before the yaml is parsed. This is an example yaml file before interpolating matrix parameters:
+Matrix variables are interpolated in the yaml using the `${VARIABLE}` syntax, before the yaml is parsed. They are also added to each step's environment, where they will **override any variables of the same names**.
+
+This is an example yaml file before interpolating matrix parameters:
 
 ```yaml
 pipeline:
@@ -76,8 +78,9 @@ pipeline:
       - go get
       - go build
       - go test
-+   environment:
+    environment:  
 +     - GO_VERSION=1.4
+-     - DATABSE=percona:5.5  
 +     - DATABASE=mysql:5.5
 
 services:

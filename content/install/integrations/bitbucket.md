@@ -19,7 +19,7 @@ services:
   drone-server:
     image: drone/drone:{{% version %}}
     ports:
-      - 80:8000
+      - 80:80
       - 9000
     volumes:
       - /var/lib/drone:/var/lib/drone/

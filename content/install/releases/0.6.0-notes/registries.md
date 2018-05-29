@@ -20,7 +20,7 @@ pipeline:
       - go test
 ```
 
-Registry credentials are adding to drone using the command line utility:
+Registry credentials are added to drone using the command line utility:
 
 ```text
 drone registry add \

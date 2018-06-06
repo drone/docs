@@ -9,6 +9,8 @@ url = "cli-build-decline"
   parent = "cli_build"
 +++
 
+Declines a blocked build. Please note this command requires write access to the repository, and the request parameter `{build}` is not the build id but the build number.
+
 ```text
 {{< cat "content/cli/build/data/drone_build_decline.out.txt" >}}
 ```

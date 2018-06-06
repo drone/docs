@@ -9,6 +9,8 @@ url = "cli-build-stop"
   parent = "cli_build"
 +++
 
+Stop the specified build. Please note this command requires administrative privileges and the request parameter `{build}` is not the build id but the build number.
+
 ```text
 {{< cat "content/cli/build/data/drone_build_stop.out.txt" >}}
 ```

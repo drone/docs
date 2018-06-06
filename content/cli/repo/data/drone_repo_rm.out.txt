@@ -2,4 +2,4 @@ NAME:
    drone repo rm - remove a repository
 
 USAGE:
-   drone repo rm [arguments...]
+   drone repo rm <repo/name>

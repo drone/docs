@@ -1,8 +1,8 @@
 NAME:
-   drone registry ls - list regitries
+   drone registry ls - list registries
 
 USAGE:
-   drone registry ls [command options] [arguments...]
+   drone registry ls [command options] [repo/name]
 
 OPTIONS:
    --repository value  repository name (e.g. octocat/hello-world)

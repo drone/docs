@@ -2,7 +2,7 @@ NAME:
    drone registry update - update a registry
 
 USAGE:
-   drone registry update [command options] [arguments...]
+   drone registry update [command options] [repo/name]
 
 OPTIONS:
    --repository value  repository name (e.g. octocat/hello-world)

@@ -2,7 +2,7 @@ NAME:
    drone registry rm - remove a registry
 
 USAGE:
-   drone registry rm [command options] [arguments...]
+   drone registry rm [command options] [repo/name]
 
 OPTIONS:
    --repository value  repository name (e.g. octocat/hello-world)

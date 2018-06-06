@@ -2,7 +2,7 @@ NAME:
    drone deploy - deploy code
 
 USAGE:
-   drone deploy [command options] [arguments...]
+   drone deploy [command options] <repo/name> <build> <environment>
 
 OPTIONS:
    --format value           format output (default: "Number: {{ .Number }}\nStatus: {{ .Status }}\nCommit: {{ .Commit }}\nBranch: {{ .Branch }}\nRef: {{ .Ref }}\nMessage: {{ .Message }}\nAuthor: {{ .Author }}\nTarget: {{ .Deploy }}\n")

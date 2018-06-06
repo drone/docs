@@ -2,4 +2,4 @@ NAME:
    drone build stop - stop a build
 
 USAGE:
-   drone build stop [arguments...]
+   drone build stop <repo/name> [build] [job]

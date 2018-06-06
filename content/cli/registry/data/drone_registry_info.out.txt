@@ -2,7 +2,7 @@ NAME:
    drone registry info - display registry info
 
 USAGE:
-   drone registry info [command options] [arguments...]
+   drone registry info [command options] [repo/name]
 
 OPTIONS:
    --repository value  repository name (e.g. octocat/hello-world)

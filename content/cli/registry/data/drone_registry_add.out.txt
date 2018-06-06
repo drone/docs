@@ -2,7 +2,7 @@ NAME:
    drone registry add - adds a registry
 
 USAGE:
-   drone registry add [command options] [arguments...]
+   drone registry add [command options] [repo/name]
 
 OPTIONS:
    --repository value  repository name (e.g. octocat/hello-world)

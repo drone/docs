@@ -60,3 +60,14 @@ To use the credentials that cloned the repository to clone it's submodules, upda
 -	url = git@github.com:octocat/my-module.git
 +	url = https://github.com/octocat/my-module.git
 ```
+
+To use the ssh git url in `.gitmodules` for users cloning with ssh, and also use the https url in drone, add `submodule_override`:
+
+```diff
+pipeline:
+  clone:
+    image: plugins/git
+    recursive: true
++   submodule_override:
++     my-module: https://github.com/octocat/my-module.git
+```

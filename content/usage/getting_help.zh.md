@@ -16,7 +16,7 @@ questions_off = true
 如果您遇到了问题，您可以先阅读对应的文档，使用站内搜索来搜索已有的问题和错误信息。我们同时还关注着 [stack overflow](http://stackoverflow.com/questions/tagged/drone.io)  上的有关问题和回答。
 
 <!--
-You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to directly interact with the project maintainers and community members.
+You can also post questions or comments to our [community forum](https://www.reddit.com/r/droneci/). This is a great place to directly interact with the project maintainers and community members.
 -->
 
 

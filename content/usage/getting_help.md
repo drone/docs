@@ -13,14 +13,14 @@ questions_off = true
 
 If you are experiencing issues please be sure to read the documentation and search for existing issues and error messages using site search. We monitor [stack overflow](http://stackoverflow.com/questions/tagged/drone.io) for questions and answers.
 
-You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to interact directly with the project maintainers and community members.
+You can also post questions or comments to our [community forum](https://www.reddit.com/r/droneci). This is a great place to interact directly with the project maintainers and community members.  Posts prior to July 1, 2018 can be found at [discourse](https://discourse.drone.io/).
 
 # Reporting Issues
 
-We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [community forum](https://discourse.drone.io) before creating github issues.
+We unfortunately receive a large number of false positive issues. We ask that you discuss potential problems in our [community forum](https://www.reddit.com/r/droneci) before creating github issues.
 
 # IRC channel 
 
 A community exists in an unofficial IRC channel on Freenode at [#drone-ci](https://webchat.freenode.net/?channels=drone-ci).
 
-While the community is happy to discuss any topic related to Drone, remember to create a topic in [Discourse](https://discourse.drone.io) if you need support. This has the advantage to benefit to everyone and not answer the same questions over and over again.
+While the community is happy to discuss any topic related to Drone, remember to create a topic in [/r/droneci](https://www.reddit.com/r/droneci) if you need support. This has the advantage to benefit to everyone and not answer the same questions over and over again.

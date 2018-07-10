@@ -49,7 +49,7 @@ when:
   branch:
     include: [ master, release/* ]
     exclude: [ release/1.0.0, release/1.1.* ]
-```   
+```
 
 # Events
 
@@ -80,6 +80,15 @@ Execute a step for all build events:
 ```diff
 when:
   event: [push, pull_request, tag, deployment]
+```
+
+# Tags
+
+Execute a step if the tag name starts with `release`:
+
+```diff
+when:
+  tag: release*
 ```
 
 # Status
@@ -137,7 +146,7 @@ when:
 
 # Instance
 
-Execute a step only on certain Drone instance:
+Execute a step only on a certain Drone instance:
 
 ```diff
 when:

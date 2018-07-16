@@ -20,9 +20,9 @@ Example Request Body:
 
 ```json
 {
-  "name": "docker_username",
-  "value": "octocat",
-  "event": [
+  "Name": "docker_username",
+  "Value": "octocat",
+  "Event": [
     "push",
     "tags"
   ]

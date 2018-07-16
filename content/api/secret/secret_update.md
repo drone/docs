@@ -21,8 +21,8 @@ Example Request Body:
 
 ```json
 {
-  "value": "octocat",
-  "event": [
+  "Value": "octocat",
+  "Event": [
     "push",
     "pull_request"
   ]

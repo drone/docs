@@ -86,7 +86,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
-Drone mounts a [data volume](https://docs.docker.com/storage/volumes/#create-and-manage-volumes) named "drone-server-data" to persist the sqlite database.
+Drone mounts a [data volume](https://docs.docker.com/storage/volumes/#create-and-manage-volumes) to persist the sqlite database.
 
 ```diff
 services:

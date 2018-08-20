@@ -37,7 +37,7 @@ services:
       - 80:8000
       - 9000
     volumes:
-      - /var/lib/drone:/var/lib/drone/
+      - drone-server-data:/var/lib/drone/
     restart: always
     environment:
       - DRONE_OPEN=true
@@ -58,6 +58,10 @@ services:
     environment:
       - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
+
+volumes:
+  drone-server-data:
+
 ```
 
 Drone does not have any builtin user management. Instead, authentication is done using OAuth and is delegated to one of multiple version control providers, configured using environment variables. The example above demonstrates basic GitHub integration.
@@ -82,7 +86,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 ```
 
-Drone mounts a volume on the host machine to persist the sqlite database.
+Drone mounts a [data volume](https://docs.docker.com/storage/volumes/#create-and-manage-volumes) named "drone-server-data" to persist the sqlite database.
 
 ```diff
 services:
@@ -92,7 +96,7 @@ services:
       - 80:8000
       - 9000
 +   volumes:
-+     - ./drone:/var/lib/drone/
++     - drone-server-data:/var/lib/drone/
     restart: always
 ```
 

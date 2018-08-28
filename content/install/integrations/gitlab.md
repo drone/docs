@@ -74,4 +74,4 @@ DRONE_GITLAB_PRIVATE_MODE=false
 
 You must register your application with GitLab in order to generate a Client and Secret. Navigate to your account settings and choose Applications from the menu, and click New Application.
 
-Please use `http://drone.mycompany.com/authorize` as the Authorization callback URL.
+Please use `http://drone.mycompany.com/authorize` as the Authorization callback URL. Grant `api` scope to the application.

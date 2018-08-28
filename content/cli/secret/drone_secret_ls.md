@@ -18,7 +18,7 @@ This subcommand returns a list of secrets for the named repository. Please note 
 Example usage:
 
 ```text
-$ drone repo ls -repository octocat/hello-world
+$ drone secret ls --repository octocat/hello-world
 
 docker_username
 Events: push, tag, deployment

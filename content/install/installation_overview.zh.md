@@ -45,7 +45,7 @@ services:
       - DRONE_SECRET=${DRONE_SECRET}
 
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     command: agent
     restart: always
     depends_on:
@@ -120,7 +120,7 @@ Drone 代理客户端需要访问宿主 Docker daemon。
 ```diff
 services:
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     command: agent
     restart: always
     depends_on: [ drone-server ]
@@ -135,7 +135,7 @@ Drone 代理服务器需要服务器地址来进行代理客户端和服务器�
 ```diff
 services:
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     command: agent
     restart: always
     depends_on: [ drone-server ]
@@ -162,7 +162,7 @@ services:
       - DRONE_GITHUB_SECRET=${DRONE_GITHUB_SECRET}
 +     - DRONE_SECRET=${DRONE_SECRET}
   drone-agent:
-    image: drone/drone:{{% version %}}
+    image: drone/agent:{{% version %}}
     environment:
       - DRONE_SERVER=drone-server:9000
       - DRONE_DEBUG=true

@@ -79,4 +79,4 @@ Webhooks:Read and Write
 
 # Missing Features
 
-Merge requests are not currently supported. We are interested in patches to include this functionality. If you are interested in contributing to Drone and submitting a patch please [contact us](https://discourse.drone.io).
+Merge requests are not currently supported. We are interested in patches to include this functionality. If you are interested in contributing to Drone and submitting a patch please [contact us](https://www.reddit.com/r/droneci/).

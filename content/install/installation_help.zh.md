@@ -16,7 +16,7 @@ questions_off = true
 如果遇到了安装问题，请先阅读对应文档、搜索对应的问题（GitHub issue）和错误信息。我们关注了  [stack overflow](http://stackoverflow.com/questions/tagged/drone.io)  上的问题和回答。
 
 <!--
-You can also post questions or comments to our [community forum](https://discourse.drone.io). This is a great place to directly interact with the project maintainers and community members.
+You can also post questions or comments to our [community forum](https://www.reddit.com/r/droneci/). This is a great place to directly interact with the project maintainers and community members.
 -->
 
 <!--# Reporting Issues-->

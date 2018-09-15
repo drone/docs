@@ -30,14 +30,38 @@ pipeline:
 
 label:
   - ram=32
-  - cpu=16
+  - cores=16
 ```
 
 For example:
 
 ```
-platform = 'linux/amd64' AND ram >= 32 AND cpu >= 16
+DRONE_FILTER="platform = 'linux/amd64' AND ram >= 32 AND cores >= 16"
 ```
 
 The query expression string is passed to the agent using the `DRONE_FILTER` environment variable. The agent will only process builds when the expression evaluates to true. In the previous example, the agent would only process builds for linux, with user-defined labels specifying 32 GB ram or higher and 16 cores or higher.
 
+## Additional examples
+
+```
+# only if ram is bigger or equal to 32
+ram >= 32
+
+# only execute for drone repository which must be private and is from git VCS
+repo-name == 'drone' AND repo-private == true AND repo-vcs == 'git'
+
+# only execute builds of repositories owned by user-login
+repo-owner == user-login
+
+# unix-like glob every platform starting on linux/
+platform GLOB 'linux/*'
+
+# negation of the previous
+platform NOT GLOB 'linux/*'
+
+# classical regex mapping
+platform REGEXP 'linux/(.+)'
+
+# argument is between 2 (inclusive)
+argument BETWEEN 2 AND 4
+```

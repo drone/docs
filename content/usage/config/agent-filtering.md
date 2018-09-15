@@ -6,7 +6,7 @@ url = "filtering-builds-by-agent"
 [menu.usage]
   weight = 2
   identifier = "filtering-builds-by-agent"
-  parent = "usage_filtering"
+  parent = "usage_config"
 +++
 
 The first step is to define a query used to filter which builds the agent will accept. The query expression is similar to sql. For example:
@@ -41,7 +41,9 @@ DRONE_FILTER="platform = 'linux/amd64' AND ram >= 32 AND cores >= 16"
 
 The query expression string is passed to the agent using the `DRONE_FILTER` environment variable. The agent will only process builds when the expression evaluates to true. In the previous example, the agent would only process builds for linux, with user-defined labels specifying 32 GB ram or higher and 16 cores or higher.
 
-## Additional examples
+# Additional examples
+
+Mostly taken from the expression parser [test suite](https://github.com/drone/expr/blob/master/selector_test.go):
 
 ```
 # only if ram is bigger or equal to 32

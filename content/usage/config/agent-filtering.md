@@ -36,8 +36,10 @@ label:
 For example:
 
 ```
-DRONE_FILTER="platform = 'linux/amd64' AND ram >= 32 AND cores >= 16"
+DRONE_FILTER=platform = 'linux/amd64' AND ram >= 32 AND cores >= 16
 ```
+
+**Caution**: The query expression must not be quoted in double quotes.
 
 The query expression string is passed to the agent using the `DRONE_FILTER` environment variable. The agent will only process builds when the expression evaluates to true. In the previous example, the agent would only process builds for linux, with user-defined labels specifying 32 GB ram or higher and 16 cores or higher.
 

@@ -35,10 +35,10 @@ Darwin x64  | [tarball](https://github.com/drone/drone-cli/releases/)
 
 <!--Download and install on Linux:-->
 
-访问 https://github.com/drone/drone-cli/releases/ 了解最新版本号，可替换 v0.8.3 为最新版本。
+访问 https://github.com/drone/drone-cli/releases/ 了解最新版本号，可替换 v0.8.6 为最新版本。
 
 ```nohighlight
-curl -L https://github.com/drone/drone-cli/releases/download/v0.8.3/drone_linux_amd64.tar.gz | tar zx
+curl -L https://github.com/drone/drone-cli/releases/download/v0.8.6/drone_linux_amd64.tar.gz | tar zx
 sudo install -t /usr/local/bin drone
 ```
 
@@ -48,10 +48,10 @@ sudo install -t /usr/local/bin drone
 
 <!--Download and install on OSX:-->
 
-访问 https://github.com/drone/drone-cli/releases/ 了解最新版本号，可替换 v0.8.3 为最新版本。
+访问 https://github.com/drone/drone-cli/releases/ 了解最新版本号，可替换 v0.8.6 为最新版本。
 
 ```nohighlight
-curl -L https://github.com/drone/drone-cli/releases/download/v0.8.3/drone_darwin_amd64.tar.gz | tar zx
+curl -L https://github.com/drone/drone-cli/releases/download/v0.8.6/drone_darwin_amd64.tar.gz | tar zx
 sudo cp drone /usr/local/bin
 ```
 

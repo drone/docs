@@ -89,6 +89,6 @@ If you continue to experience issues you can engage the community for support. P
 
 * the full yaml configuration file
 * the relevant logs from your build
-* the results of `drone secrets ls <repo>`
+* the results of `drone secret ls <repo>`
 * the results of `drone repo info <repo>`
 * the results of `drone build info <repo> <build_number>`

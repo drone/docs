@@ -2,4 +2,4 @@ NAME:
    drone repo repair - repair repository webhooks
 
 USAGE:
-   drone repo repair [arguments...]
+   drone repo repair <repo/name>

@@ -2,4 +2,4 @@ NAME:
    drone repo chown - assume ownership of a repository
 
 USAGE:
-   drone repo chown [arguments...]
+   drone repo chown <repo/name>

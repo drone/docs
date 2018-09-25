@@ -2,9 +2,8 @@ NAME:
    drone build start - start a build
 
 USAGE:
-   drone build start [command options] {repo} {build}
+   drone build start [command options] <repo/name> [build]
 
 OPTIONS:
-   --fork                   fork the build
    --param value, -p value  custom parameters to be injected into the job environment. Format: KEY=value
    

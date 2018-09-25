@@ -2,4 +2,4 @@ NAME:
    drone build decline - decline a build
 
 USAGE:
-   drone build decline [arguments...]
+   drone build decline <repo/name> <build>

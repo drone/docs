@@ -2,7 +2,7 @@ NAME:
    drone exec - execute a local build
 
 USAGE:
-   drone exec [command options] [arguments...]
+   drone exec [command options] [path/to/.drone.yml]
 
 OPTIONS:
    --local                            build from local directory [$DRONE_LOCAL]
@@ -10,7 +10,7 @@ OPTIONS:
    --volumes value                    build volumes [$DRONE_VOLUMES]
    --network value                    external networks [$DRONE_NETWORKS]
    --privileged value                 privileged plugins (default: "plugins/docker", "plugins/gcr", "plugins/ecr")
-   --workspace-base value             (default: "/pipeline") [$DRONE_WORKSPACE_BASE]
+   --workspace-base value             (default: "/drone") [$DRONE_WORKSPACE_BASE]
    --workspace-path value             (default: "src") [$DRONE_WORKSPACE_PATH]
    --netrc-username value              [$DRONE_NETRC_USERNAME]
    --netrc-password value              [$DRONE_NETRC_PASSWORD]
@@ -55,4 +55,5 @@ OPTIONS:
    --prev-commit-author-avatar value   [$DRONE_PREV_COMMIT_AUTHOR_AVATAR]
    --prev-commit-author-email value    [$DRONE_PREV_COMMIT_AUTHOR_EMAIL]
    --job-number value                 (default: 0) [$DRONE_JOB_NUMBER]
+   --env value, -e value               [$DRONE_ENV]
    

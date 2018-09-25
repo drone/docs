@@ -9,6 +9,8 @@ url = "cli-build-logs"
   parent = "cli_build"
 +++
 
+The command temporarily disabled. See https://github.com/drone/drone-cli/issues/39 .
+
 ```text
 {{< cat "content/cli/build/data/drone_build_logs.out.txt" >}}
 ```

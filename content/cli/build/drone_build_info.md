@@ -9,6 +9,8 @@ url = "cli-build-info"
   parent = "cli_build"
 +++
 
+Show the specified repository build. Please note this command requires read access to the repository and the request parameter `{build}` is not the build id but the build number.
+
 ```text
 {{< cat "content/cli/build/data/drone_build_info.out.txt" >}}
 ```

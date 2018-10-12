@@ -51,6 +51,17 @@ when:
     exclude: [ release/1.0.0, release/1.1.* ]
 ```
 
+# Path Matching
+
+Matching expressions are driven by [path.Match](https://golang.org/pkg/path/#Match) and can be any valid path matching expression:
+
+```diff
+when:
+  branch: release/1.*-beta.[0-9][0-9][0-9]
+```
+
+This would match the branch name `release/1.2.0-beta.001`, for example, but not `release/1.2.0-beta.1`.
+
 # Events
 
 Execute a step if the build event is a `tag`:
@@ -89,6 +100,13 @@ Execute a step if the tag name starts with `release`:
 ```diff
 when:
   tag: release*
+```
+
+You can also reference the `ref` paths:
+
+```diff
+when:
+  ref: refs/tags/release*
 ```
 
 # Status

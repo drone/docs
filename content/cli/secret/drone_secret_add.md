@@ -19,40 +19,40 @@ Example usage:
 
 ```text
 $ drone secret add \
-  -repository octocat/hello-world \
-  -name docker_password \
-  -value ...
+  --repository octocat/hello-world \
+  --name docker_password \
+  --value ...
 ```
 
 Example usage limits the secret to a specific image:
 
 ```diff
 $ drone secret add \
-  -repository octocat/hello-world \
-  -name docker_password \
-+ -image plugins/docker \
-  -value ...
+  --repository octocat/hello-world \
+  --name docker_password \
++ --image plugins/docker \
+  --value ...
 ```
 
 Example usage limits the secret to specific hook events:
 
 ```diff
 $ drone secret add \
-  -repository octocat/hello-world \
-  -name docker_password \
-  -image plugins/docker \
-+ -event push \
-+ -event pull_request \
-+ -event tag \
-+ -event deployment \
-  -value ...
+  --repository octocat/hello-world \
+  --name docker_password \
+  --image plugins/docker \
++ --event push \
++ --event pull_request \
++ --event tag \
++ --event deployment \
+  --value ...
 ```
 
 Example usage adds the secret from a file:
 
 ```diff
 $ drone secret add \
-  -repository octocat/hello-world \
-  -name ssh_key \
-+ -value @/root/.ssh/id_rsa
+  --repository octocat/hello-world \
+  --name ssh_key \
++ --value @/root/.ssh/id_rsa
 ```

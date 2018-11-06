@@ -18,9 +18,9 @@ Note that when properly configured, you should never need to provide drone with 
 The most common root cause for this error message is when your version control server requires authentication to clone __public__ repositories, usually known as private mode. You will need to configure Drone accordingly.
 
 ```nohighlight
-GITHUB_PRIVATE_MODE=true
-GITLAB_PRIVATE_MODE=true
-GOGS_PRIVATE_MODE=true
+DRONE_GITHUB_PRIVATE_MODE=true
+DRONE_GITLAB_PRIVATE_MODE=true
+DRONE_GOGS_PRIVATE_MODE=true
 ```
 
 Note that after making this change you will need to run the below command. This will instruct Drone to treat the repository as if it were private and to require authentication.

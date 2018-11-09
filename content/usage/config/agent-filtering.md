@@ -28,7 +28,7 @@ pipeline:
     image: golang
     commands: go test
 
-label:
+labels:
   - ram=32
   - cores=16
 ```

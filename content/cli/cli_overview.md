@@ -53,5 +53,5 @@ Download and install on OSX using Homebrew:
 
 ```nohighlight
 brew tap drone/drone
-brew install drone
+brew install drone/drone/drone@0.8.6
 ```

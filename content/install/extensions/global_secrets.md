@@ -28,7 +28,7 @@ services:
 +     - /etc/drone-secrets.yml:/etc/drone-secrets.yml
     restart: always
     environment:
-+     DRONE_GLOBAL_SECRETS=/etc/drone-secrets.yml
++     - DRONE_GLOBAL_SECRETS=/etc/drone-secrets.yml
 ```
 
 Example secrets file:

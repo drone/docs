@@ -19,8 +19,8 @@ The workspace can be customized using the workspace block in the Yaml file:
 
 ```diff
 +workspace:
-+  base: /go
-+  path: src/github.com/octocat/hello-world
++  base: /go/src
++  path: github.com/octocat/hello-world
 
 pipeline:
   build:
@@ -34,8 +34,8 @@ The base attribute defines a shared base volume available to all pipeline steps.
 
 ```diff
 workspace:
-+ base: /go
-  path: src/github.com/octocat/hello-world
++ base: /go/src
+  path: github.com/octocat/hello-world
 
 pipeline:
   deps:
@@ -54,16 +54,16 @@ This would be equivalent to the following docker commands:
 ```
 docker volume create my-named-volume
 
-docker run --volume=my-named-volume:/go golang:latest
-docker run --volume=my-named-volume:/go node:latest
+docker run --volume=my-named-volume:/go/src golang:latest
+docker run --volume=my-named-volume:/go/src node:latest
 ```
 
 The path attribute defines the working directory of your build. This is where your code is cloned and will be the default working directory of every step in your build process. The path must be relative and is combined with your base path.
 
 ```diff
 workspace:
-  base: /go
-+ path: src/github.com/octocat/hello-world
+  base: /go/src
++ path: github.com/octocat/hello-world
 ```
 
 ```text

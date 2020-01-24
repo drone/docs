@@ -47,14 +47,27 @@ Deployments are triggered from the command line utility. They are triggered from
 drone deploy <repo> <build> <environment>
 ```
 
+```text
+For drone cli version 1.0 or above
+drone build promote <repo> <build> <environment>
+```
+
 Promote the specified build number to your staging environment:
 
 ```text
 drone deploy octocat/hello-world 24 staging
+```
+```text
+For drone cli version 1.0 or above
+drone build promote octocat/hello-world 24 staging
 ```
 
 Promote the specified build number to your production environment:
 
 ```text
 drone deploy octocat/hello-world 24 production
+```
+```text
+For drone cli version 1.0 or above
+drone build promote octocat/hello-world 24 production
 ```

@@ -12,7 +12,7 @@ url = "api-build-logs"
 Please note this api requires read access to the repository.
 
 ```text
-GET /api/repos/{owner}/{repo}/logs/{log}/{pid}
+GET /api/repos/{owner}/{repo}/builds/{build}/logs/{stage}/{step}
 ```
 
 Example Response Body:

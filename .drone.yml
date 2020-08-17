@@ -6,7 +6,7 @@ steps:
 - name: build
   image: plugins/hugo
   settings:
-    hugo_version: 0.63.2
+    hugo_version: "0.63.2"
     config: config.yaml
 
 - name: publish

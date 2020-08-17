@@ -4,8 +4,9 @@ name: default
 
 steps:
 - name: build
-  image: plugins/hugo:1.0.0
+  image: plugins/hugo
   settings:
+    extended: true
     hugo_version: "0.63.2"
     config: config.yaml
 

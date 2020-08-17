@@ -1,0 +1,41 @@
+$overlay-background: rgba(255, 255, 255, 0.75);
+$overlay-transition-timing-function: linear;
+$overlay-transition-duration: 0.15s;
+
+// the overlay is displayed to emulate a modal overlay when
+// the sidebar is expanded.
+.overlay {
+    opacity: 0;
+
+    background: $overlay-background;
+    transition-timing-function: $overlay-transition-timing-function;
+    transition-duration: $overlay-transition-duration;
+    transition-property: opacity;
+
+    // the overlay is hidden off screen with 0 opacity.
+    // this is required for the opactiy transition to work
+    // properly.
+    position: hidden;
+    top: -1000px;
+    left: -1000px;
+    
+
+    &.open {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 2;
+        display: block;
+        opacity: 0.8;
+    }
+}
+
+// the overlay is only displayed when the sidebar is expanded.
+// the sidebar can only be expanded on small screen sizes.
+@media screen and (min-width: 801px) and (min-device-width: 801px) {
+    .overlay {
+        display: none !important;
+    }
+}

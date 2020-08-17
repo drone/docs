@@ -1,0 +1,142 @@
+---
+date: 2000-01-01T00:00:00+00:00
+title: Substitution
+author: bradrydzewski
+weight: 20
+aliases:
+- /substitution/
+- /usage/variables
+description: |
+  Learn how Drone emulates bash string substitution.
+---
+
+Drone provides the ability to expand, or _substitute_, repository and build metadata to facilitate dynamic pipeline configurations.
+
+* Example commit substitution:
+  ```
+  kind: pipeline
+  type: docker
+  name: default
+
+  steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      tags: ${DRONE_COMMIT}
+      repo: octocat/hello-world
+  ```
+
+* Example tag substitution:
+
+  ```
+  steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      tags: ${DRONE_TAG}
+      repo: octocat/hello-world
+  ```
+
+Please see the environment [Reference]({{< relref "./reference/_index.md" >}}) for a list of parameters that can be used for substitution. _Only parameters in this list can be used for substitution._
+
+# String Operations
+
+Drone provides partial emulation for bash string operations. This can be used to manipulate string values prior to substitution.
+
+* Example variable substitution with substring:
+  ```
+  steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      tags: ${DRONE_COMMIT_SHA:0:8}
+      repo: octocat/hello-world
+  ```
+
+* Example variable substitution strips v prefix from v1.0.0:
+  ```
+  steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      tags: ${DRONE_TAG##v}
+      repo: octocat/hello-world
+  ```
+
+Drone emulates the below string operations. _Drone makes a best-effort to emulate these operations however we do not promise perfect emulation._
+
+
+```
+${parameter^}
+${parameter^^}
+${parameter,}
+${parameter,,}
+${parameter:position}
+${parameter:position:length}
+${parameter#substring}
+${parameter##substring}
+${parameter%substring}
+${parameter%%substring}
+${parameter/substring/replacement}
+${parameter//substring/replacement}
+${parameter/#substring/replacement}
+${parameter/%substring/replacement}
+${#parameter}
+${parameter=default}
+${parameter:=default}
+${parameter:-default}
+```
+
+
+<!-- * `${parameter^}`
+* `${parameter^^}`
+* `${parameter,}`
+* `${parameter,,}`
+* `${parameter:position}`
+* `${parameter:position:length}`
+* `${parameter#substring}`
+* `${parameter##substring}`
+* `${parameter%substring}`
+* `${parameter%%substring}`
+* `${parameter/substring/replacement}`
+* `${parameter//substring/replacement}`
+* `${parameter/#substring/replacement}`
+* `${parameter/%substring/replacement}`
+* `${#parameter}`
+* `${parameter=default}`
+* `${parameter:=default}`
+* `${parameter:-default}` -->
+
+<!--
+OPERATION	        | DESC
+--------------------|---
+`${param}`          | parameter substitution
+`${param,}`         | parameter substitution with lowercase first char
+`${param,,}`        | parameter substitution with lowercase
+`${param^}`         | parameter substitution with uppercase first char
+`${param^^}`        | parameter substitution with uppercase
+`${param:pos}`      | parameter substitution with substring
+`${param:pos:len}`  | parameter substitution with substring and length
+`${param=default}`  | parameter substitution with default
+`${param##prefix}`  | parameter substitution with prefix removal
+`${param%%suffix}`  | parameter substitution with suffix removal
+`${param/old/new}`  | parameter substitution with find and replace
+-->
+
+# Escaping
+
+Parameter expressions are evaluated _before_ the yaml is parsed. If you do not want the system to evaluate an expression it must be escaped.
+
+{{< highlight text "linenos=table,hl_lines=9" >}}
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: build
+  commands:
+  - echo $GOOS
+  - echo $${GOARCH}
+  - go build
+  - go test
+{{< / highlight >}}

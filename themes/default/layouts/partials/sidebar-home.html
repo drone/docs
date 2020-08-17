@@ -1,0 +1,24 @@
+<div class="sidebar">
+    <div class="logo">Docs</div>
+
+    <div class="menu" aria-hidden="true">
+        <button class="close"></button>
+    </div>
+
+    <nav>
+        <ul>
+            <li class="sidebar-item selected"><a href="{{ .URL }}" class="selected">Home</a></li>
+            {{ range .Pages }}
+                {{ $title := or .Params.title_in_sidebar .Title }}
+                {{ $url := .URL }}
+                {{ if eq .Type "redirect" }}
+                    {{ $url = .Params.redirect }}
+                {{ end }}
+                {{ if not .Params.hidden }}
+                    <li class="sidebar-item{{ if .Params.separator }} separator{{ end }}"><a href="{{ $url }}" >{{ $title }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </nav>
+</div>
+

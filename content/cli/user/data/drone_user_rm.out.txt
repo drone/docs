@@ -1,5 +1,0 @@
-NAME:
-   drone user rm - remove a user
-
-USAGE:
-   drone user rm [arguments...]

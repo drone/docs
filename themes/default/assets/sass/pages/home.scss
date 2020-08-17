@@ -1,0 +1,35 @@
+body.home {
+    section header {
+        display: none;
+    }
+
+    h1 {
+        border-top: none;
+        margin-top: $m-0;
+        padding-top: $p-2;
+        font-size: $text-3xl;
+        font-weight: 500;
+    }
+
+    h2 {
+        position: relative;
+        font-size: $text-2xl;
+
+        a {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            font-size: $text-lg;
+        }
+    }
+}
+
+@media screen and
+    (max-width: 900px),
+    (max-device-width: 900px) {
+
+
+    body.home h2 a {
+        display: none;
+    }
+}

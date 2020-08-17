@@ -1,5 +1,0 @@
-NAME:
-   drone build kill - force kill a build
-
-USAGE:
-   drone build kill <repo/name> <build>

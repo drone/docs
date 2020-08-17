@@ -1,0 +1,44 @@
+footer {
+    padding-bottom: $p-16;
+    max-width: 664px;
+}
+
+footer section {
+    border-top: 1px solid $gray-300;
+    margin: $m-5 $m-0 $m-5 $m-0;
+
+    &:first-of-type {
+        margin: $m-16 $m-0 $m-5 $m-0;
+    }
+
+    a, a:visited {
+        text-decoration: none;
+        color: $indigo-600;
+    }
+
+    h2 {
+        color: $gray-100;
+        font: 400 $text-xl Kanit;
+        margin: $m-0 $m-0 $m-5 $m-0 !important;
+        padding: $p-5 $p-0 $p-0 $p-0;
+        color: $gray-900;
+    }
+
+    p {
+        color: $gray-700;
+        padding: $p-0;
+        margin: $m-5 $m-0 $m-0 $m-0;
+        font-size: $text-base;
+        line-height: $leading-normal;
+    }
+
+    ul, ol {
+        padding-left: $p-6;
+        margin-bottom: $m-6;
+    }
+
+    li {
+        list-style-type: disc;
+        line-height: $leading-relaxed;
+    }
+}

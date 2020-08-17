@@ -1,129 +1,31 @@
-baseurl: http://docs.drone.io
-title: Drone Continuous Delivery
-theme: drone
+baseURL: https://docs.drone.io
+languageCode: en-us
+title: Drone CI / CD
+theme: default
 
-copyright: Copyright © 2017 Drone.IO Inc.
+googleAnalytics: "UA-34247933-4"
 
-params:
-  algolia_key: 745aeaa8be75dc0c4de55030703ed3f4
-  algolia_index: drone_io
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
 
-disableRSS: true
-disable404: true
+  tableOfContents:
+    endLevel: 3
+    startLevel: 1
 
-defaultContentLanguage: en
-defaultContentLanguageInSubdir: false
-enableMissingTranslationPlaceholders: false
-
-languages:
-  en:
-    weight: 1
-    languageName: English
-  es:
-    weight: 2
-    languageName: Español
-  pt:
-    weight: 3
-    languageName: Português
-  zh:
-    weight: 4
-    languageName: 中文(简体)
-  zh-tw:
-    weight: 5
-    languageName: 中文(台灣)
-  ru:
-    weight: 6
-    languageName: pусский
-
-menu:
-  install:
-    - identifier: install_overview
-      weight: 101
-    - identifier: install_integrations
-      weight: 102
-    - identifier: install_access
-      weight: 104
-    - identifier: install_server
-      weight: 105
-    - identifier: install_enterprise
-      weight: 106
-    - identifier: install_release
-      weight: 107
-
-  usage:
-    - identifier: usage_overview
-      weight: 201
-    - identifier: usage_concepts
-      weight: 202
-    - identifier: usage_config
-      weight: 203
-    - identifier: usage_secrets
-      weight: 204
-    - identifier: usage_publishing
-      weight: 205
-    - identifier: usage_deployments
-      weight: 206
-    - identifier: usage_notifications
-      weight: 207
-    - identifier: usage_reports
-      weight: 208
-    - identifier: usage_examples
-      weight: 209
-    - identifier: usage_reference
-      weight: 210
-
-  plugin:
-    - identifier: plugin_pipeline
-      weight: 300
-
-  cli:
-    - identifier: cli_overview
-      weight: 501
-    - identifier: cli_user
-      weight: 502
-    - identifier: cli_repo
-      weight: 503
-    - identifier: cli_build
-      weight: 504
-    - identifier: cli_registry
-      weight: 505
-    - identifier: cli_secret
-      weight: 506
-    - identifier: cli_misc
-      weight: 507
-
-  api:
-    - identifier: api_overview
-      weight: 601
-    - identifier: api_users
-      weight: 603
-    - identifier: api_user
-      weight: 602
-    - identifier: api_repo
-      weight: 604
-    - identifier: api_build
-      weight: 605
-    - identifier: api_registry
-      weight: 606
-    - identifier: api_secret
-      weight: 607
-
-  index:
-    - identifier: section_install
-      url: /installation/
-      weight: 101
-    - identifier: section_usage
-      url: /getting-started/
-      weight: 102
-    - identifier: section_plugin_reference
-      url: /plugin-overview/
-      weight: 103
-    - identifier: section_plugin_marketplace
-      url: http://plugins.drone.io
-      weight: 104
-    - identifier: section_cli_reference
-      url: /cli-installation/
-      weight: 105
-    - identifier: section_api_reference
-      url: /api-overview/
-      weight: 106
+pygmentsUseClasses: true
+pygmentsCodefences: true

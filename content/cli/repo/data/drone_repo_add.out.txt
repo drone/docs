@@ -1,5 +1,0 @@
-NAME:
-   drone repo add - add a repository
-
-USAGE:
-   drone repo add [arguments...]

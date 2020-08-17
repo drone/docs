@@ -1,0 +1,186 @@
+// default font settings
+@font-size: 15px;
+@font-sans: 'Roboto', sans-serif; //-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+@font-mono: 'Roboto Mono', Menlo, monospace; //Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+@font-smoothing: auto;
+
+// default color
+@color: #1E375A;
+
+// default background
+@background: #FFFFFF;
+
+@header-height: 56px;
+
+
+html, body {
+    background: @background;
+    color: @color;
+    font-family: @font-sans;
+    font-size: @font-size;
+    width: 100%;
+    height: 100%;
+
+    -webkit-font-smoothing: @font-smoothing;
+}
+
+body {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: @header-height auto;
+    grid-template-areas:
+    "sidebar  header"
+    "sidebar  main";
+
+    .header  { grid-area: header;  }
+    .sidebar { grid-area: sidebar; }
+}
+
+// the main element holds the primary content of the page,
+// including the article content and sidebar.
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto 225px;
+    grid-template-areas: "content outline";
+    max-width: 1000px;
+
+    article { grid-area: content; }
+    aside   { grid-area: outline; }
+}
+
+// on smaller screens the table of contents is hidden due
+// to limited screen space.
+@media only screen and (max-width: 1200px) {
+    main aside {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: "content";
+    }
+}
+
+// if the device size or window size is tablet or below the
+// sidebar is collapsed by default and is positioned absolute
+// when visible. Thus the sidebar is removed from the main
+// grid layout.
+@media screen and
+    (max-width: 800px),
+    (max-device-width: 800px) {
+
+    body {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: @header-height auto;
+        grid-template-areas:
+        "header"
+        "main";
+    }
+
+    main article {
+        max-width: 800px;
+    }
+
+    main article footer,
+    main article header,
+    main article section {
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+}
+
+
+// MOVE ALL BELOW CODE
+
+
+main {
+    display: grid;
+    grid-template-columns: 664px 1fr;
+}
+
+aside {
+    padding-left: 48px;
+    padding-top: 33px;
+    display: block;
+
+    nav {
+        position: sticky;
+        top: 33px;
+    }
+
+
+    header {
+        font-size: 13px;
+        color: #697386;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 8px;
+        user-select: none;
+        padding-top: 3px;
+        
+        font-weight: 500;
+        font-family: Kanit;
+
+
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.75px;
+        font-weight: 500;
+        font-family: Kanit;
+    }
+
+    #TableOfContents {
+
+        a {
+            display: block;
+            padding: 6px 0;
+            // padding-bottom: 4px;
+        }
+
+        ul ul {
+            // padding-top: 4px;
+            padding-left: 12px;
+        }
+
+        a, a:visited {
+            font-size: 14px;
+            color: #697386;
+            line-height: 18px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #1f1a47;
+        }
+    }
+}
+
+article {
+    min-width: 664px;
+    max-width: 664px;
+    box-sizing: border-box;
+
+    header {
+        margin-bottom: 24px;
+
+        h1 {
+            font-size: 32px;
+            color: #1f1a47;
+            font-weight: 500;
+
+            font-weight: 500;
+            font-family: Kanit;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    aside {
+        display: none;
+    }
+}

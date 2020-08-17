@@ -1,5 +1,0 @@
-NAME:
-   drone user add - adds a user
-
-USAGE:
-   drone user add [arguments...]

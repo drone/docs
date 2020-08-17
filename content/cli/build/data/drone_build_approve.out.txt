@@ -1,5 +1,0 @@
-NAME:
-   drone build approve - approve a build
-
-USAGE:
-   drone build approve [arguments...]

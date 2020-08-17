@@ -1,0 +1,10 @@
+<div class="cards">
+{{ range .Page.Pages }}
+<a href="{{ .Permalink }}" class="card">
+    <span class="name">{{ .Title }}</span>
+    {{ if .Description }}
+    <span class="desc">{{ .Description }}</span>
+    {{ end }}
+</a>
+{{ end }}
+</div>

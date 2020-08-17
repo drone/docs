@@ -1,0 +1,5 @@
+{{ $page := .Site.GetPage (.Get 0) }}
+<a href="{{ .Get 0 }}" class="reference">
+    <span class="icon"></span>
+    <span class="name">{{ .Inner }}</span>
+</a>

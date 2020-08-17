@@ -1,0 +1,65 @@
+
+
+.header {
+    border-bottom: 1px solid #EEE;
+
+    input {
+        display: block;
+        box-sizing: border-box;
+        width: calc(100% - 70px);
+        padding: 0px 20px;
+        padding-left: 64px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        line-height: 55px;
+        margin-right: 40px;
+
+        background: url("/icons/search.svg") left center no-repeat;
+        background-size: 14px 14px;
+        background-position: 32px 20px;
+    }
+
+
+}
+
+
+.algolia-autocomplete {
+    width: 100%;
+    
+    #search {
+        // display: none;
+    }
+}
+
+.header input:focus {
+	box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.1);
+	z-index: 99999;
+	width: 100%;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgb(117, 117, 117);
+  font-weight: 300;
+}
+
+.logo {
+    background: url(/logo.svg) no-repeat 24px center;
+    background-size: 27px 27px;
+    height: 56px;
+    margin-bottom: 26px;
+
+    display: flex;
+    align-items: center;
+    padding-left: 64px;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: Kanit;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #1A202C;
+
+    -webkit-font-smoothing: antialiased;
+
+    user-select: none;
+}

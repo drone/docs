@@ -1,0 +1,15 @@
+{{ $title := .Title }}
+{{ if .Params.title_in_header }}
+{{ $title = .Params.title_in_header }}
+{{ end }}
+<section>
+    <header>
+        <h1>{{ $title }}</h1>
+    </header>
+    <article class="content{{ if .Params.steps }} steps{{ end }}">
+        {{ if .Params.inline_toc }}
+        {{.TableOfContents}}
+        {{ end }}
+        {{ .Content }}
+    </article>
+</section>

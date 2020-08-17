@@ -1,0 +1,38 @@
++++
+date = "2000-01-01T00:00:00+00:02"
+title = "Cron Update"
+description = "Endpoint to update a cron task"
++++
+
+Updates the named cron job.
+Please note this api requires write access to the repository.
+
+```
+PATCH /api/repos/{owner}/{repo}/cron/{name}
+```
+
+Example Request Body:
+
+```json {linenos=table}
+{
+  "name": "nightly",
+  "expr": "0 0 1 * * *",
+  "branch": "develop"
+}
+```
+
+Example Response Body:
+
+```json {linenos=table}
+{
+  "id": 1,
+  "repo_id": 42,
+  "name": "nightly",
+  "expr": "0 0 1 * * *",
+  "branch": "develop",
+  "next": 1564120128,
+  "pref": 1564116480,
+  "created": 1564096971,
+  "updated": 1564096971
+}
+```

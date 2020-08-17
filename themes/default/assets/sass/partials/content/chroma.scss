@@ -1,0 +1,108 @@
+
+//
+// chroma
+//
+
+.language-diff,
+.language-patch {
+    .gd {
+        color: #ff4164;
+        background: #f9d6df;
+    }
+    .gi {
+        color: #0d724a;
+        background: #ddf3eb;
+    }
+}
+
+// for prometheus. since there is no metrics highlighter,
+// we hijack the tcl highlighter.
+.language-tcl {
+    .nv, .mi {
+        color: rgb(30, 55, 90);
+    }
+    .c {
+        color: rgb(193, 199, 205);
+    }
+}
+
+.language-handlebars {
+    .cp {
+        background: hsla(0,0%,100%,.1);
+        color: #85d99e; 
+    }
+    .nv {
+        background: hsla(0,0%,100%,.1);
+        color: #85d99e;
+    }
+}
+
+.language-batch {
+    .nv {
+        background: hsla(0,0%,100%,.1);
+        color: #85d99e;
+    }
+}
+
+.language-typescript {
+    .kt {
+        color: #F6B9FF;
+    }
+}
+
+.language-json {
+    .nt {
+        color: #F6B9FF;
+    }
+}
+
+.language-yaml {
+    .k {
+        color: #F6B9FF;
+    }
+}
+
+.language-dockerfile {
+    .k {
+        color: #F6B9FF;
+    }
+}
+
+.language-bash {
+    .cp, .se {
+        color: #718096;
+    }
+    .k {
+        color: #F6B9FF;
+    }
+    .si, .nv {
+        color: #F6B9FF;
+    }
+}
+
+// .language-go {
+//     .cp, .se {
+//         color: #FFF;
+//     }
+//     .k {
+//         color: #FFF;
+//     }
+//     .kc {
+//         color: #F6B9FF;
+//     }
+//     .kd {
+//         color: #FFF;
+//     }
+//     .nx {
+//         color: #F6B9FF;
+//     }
+//     .kn {
+//         color: #F6B9FF;
+//     }
+//     .nf {
+//         color: #FFF;
+//     }
+//     .s {
+//         color: #FFF;
+//     }
+// }

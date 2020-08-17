@@ -1,0 +1,121 @@
+// default font settings
+$font-size: 15px;
+$font-sans: 'Roboto', sans-serif; //-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+$font-mono: 'Roboto Mono', monospace; //Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+$font-title: 'Kanit';
+
+// default color
+$color: $gray-900;
+
+// default background
+$background: $white;
+
+html, body {
+    background: $background;
+    color: $color;
+    font-family: $font-sans;
+    font-size: $font-size;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+  margin-bottom: 48px;
+}
+
+// the main element holds the primary content of the page,
+// including the main article and its table of contents.
+main {
+    box-sizing: border-box;
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 600px auto;
+    grid-template-areas: "content outline";
+    grid-column-gap: 48px;
+    padding: 42px 48px 0px 64px;
+
+
+    section header {
+      grid-area: content;
+      max-width: 600px;
+      margin-bottom: 24px;
+
+      h1 {
+        font-size: 32px;
+        color: $gray-900;
+        font-weight: 500;
+        font-family: Kanit;
+      }
+    }
+
+    aside {
+      grid-area: outline;
+    }
+}
+
+main, footer {
+  margin-left: 250px;
+}
+
+footer {
+  box-sizing: border-box;
+  padding-left: 64px;
+  margin-right: 48px;
+  max-width: 600px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 250px;
+}
+
+// on smaller screens the table of contents is hidden due
+// to limited screen space.
+@media only screen and (max-width: 1200px) {
+    main aside {
+        display: none;
+    }
+
+    main, footer {
+        display: block;
+    }
+}
+
+// if the device size or window size is tablet or below the
+// sidebar is collapsed by default and is positioned absolute
+// when visible. Thus the sidebar is removed from the main
+// grid layout.
+@media screen and
+    (max-width: 800px),
+    (max-device-width: 800px) {
+
+    main, footer {
+      display: block;
+      margin-left: 26px;
+      padding-right: 26px;
+      padding-left: 0px;
+    }
+
+    body > header {
+      display: flex !important;
+    }
+
+    .search {
+      display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

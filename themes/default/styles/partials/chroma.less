@@ -1,0 +1,45 @@
+
+//
+// chroma
+//
+
+.language-diff,
+.language-patch {
+    .gd {
+        color: #ff4164;
+        background: #f9d6df;
+    }
+    .gi {
+        color: #0d724a;
+        background: #ddf3eb;
+    }
+}
+
+// for prometheus. since there is no metrics highlighter,
+// we hijack the tcl highlighter.
+.language-tcl {
+    .nv, .mi {
+        color: rgb(30, 55, 90);
+    }
+    .c {
+        color: rgb(193, 199, 205);
+    }
+}
+
+.language-handlebars {
+    .cp {
+        background: hsla(0,0%,100%,.1);
+        color: #85d99e; 
+    }
+    .nv {
+        background: hsla(0,0%,100%,.1);
+        color: #85d99e;
+    }
+}
+
+.language-batch {
+    .nv {
+        background: hsla(0,0%,100%,.1);
+        color: #85d99e;
+    }
+}

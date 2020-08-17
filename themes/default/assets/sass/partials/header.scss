@@ -1,0 +1,48 @@
+$logo: "/logo.svg";
+$logo-size: 27px;
+
+$menu: "/images/menu.svg";
+$menu-size: 30px;
+
+$header-height: 55px;
+
+@mixin user-select-none {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+body > header {
+    align-items: center;
+    border-bottom: 1px solid $gray-300;
+    box-sizing: border-box;
+    display: none;
+    height: $header-height;
+    padding-left: $p-6;
+    z-index: 1;
+
+    .logo {
+        @include user-select-none;
+
+        background: url($logo) no-repeat center center;
+        background-size: $logo-size $logo-size;
+        display: inline-block;
+        width: $logo-size;
+        height: $logo-size;
+        margin: $m-0 auto;
+    }
+
+    // menu button visible on small screen sizes. used to reveal
+    // the side menu.
+    .menu {
+        @include user-select-none;
+
+        align-items: center;
+        display: inline-block;
+        height: $menu-size;
+        width: $menu-size;
+        background: url($menu) no-repeat center center;
+        background-size: $menu-size;
+    }
+}

@@ -1,9 +1,0 @@
-NAME:
-   drone user info - show user details
-
-USAGE:
-   drone user info [command options] [arguments...]
-
-OPTIONS:
-   --format value  format output (default: "User: {{ .Login }}\nEmail: {{ .Email }}")
-   

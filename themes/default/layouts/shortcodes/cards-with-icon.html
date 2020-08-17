@@ -1,0 +1,11 @@
+<div class="cards cards-with-icons">
+    {{ range .Page.Pages }}
+    <a href="{{ .Permalink }}" class="card">
+        <span class="icon">
+          <img src="{{ .Params.icon }}" />
+        </span>
+        <span class="name">{{ .Title }}</span>
+        <span class="desc">{{ .Description }}</span>
+    </a>
+    {{ end }}
+</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    {{- partial "head.html" . -}}
+    </head>
+    <body>
+        {{- partial "gtm-noscript" . -}}
+        {{- partial "header" . -}}
+        {{- partial "search" . -}}
+        {{- partial "sidebar" . }}
+        {{- partial "main" . }}
+        {{- partial "footer" . }}
+        {{- partial "overlay" . }}
+        {{- partial "scripts" . }}
+    </body>
+</html>

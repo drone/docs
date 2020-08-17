@@ -1,0 +1,6 @@
+@mixin user-select-none {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}

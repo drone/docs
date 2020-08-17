@@ -1,0 +1,427 @@
+$code-background: #F5F7F9;
+$pre-background: #2D3748;
+
+$h1-font-size: 24px;
+$h1-font-weight: 400;
+$h1-border-style: solid;
+$h1-border-width: 1px 0px 0px 0px;
+$h1-border-color: #e3e8ee;
+
+$h2-font-size: 20px;
+$h2-font-weight: 400;
+
+$h3-font-size: 16px;
+$h3-font-weight: 400;
+
+
+// content is the parent element that contains the documentation
+// content generated from the markdown file.
+.content {
+    font-size: 16px;
+    line-height: 24px;
+    overflow: hidden;
+    color: $gray-700;
+    
+    p, h1, h2, h3, ol, ul, img {
+        margin-bottom: 24px;
+    }
+
+    h1 {
+        border-style: $h1-border-style;
+        border-width: $h1-border-width;
+        border-color: $h1-border-color;
+
+        font-family: Kanit;
+        font-size: $h1-font-size;
+        font-weight: $h1-font-weight;
+        padding-top: 20px;
+        margin-top: 40px;
+        line-height: $leading-tight;
+
+        // font-size: 20px;
+        color: $gray-900;
+    }
+
+    h2 {
+        font-family: Kanit;
+        font-size: $h2-font-size;
+        font-weight: $h2-font-weight;
+        line-height: $leading-tight;
+        margin: 32px 0px 24px 0px;
+
+        // font-size: 18px;
+        color: $gray-900;
+    }
+
+    h3 {
+        font-family: Kanit;
+        font-size: $h3-font-size;
+        font-weight: $h3-font-weight;
+        line-height: $leading-tight;
+        margin: 24px 0px;
+
+        // font-size: 16px;
+        color: $gray-900;
+        // font-weight: 500;
+    }
+
+    a, a:visited {
+        color: $indigo-600;
+        text-decoration: none;
+        // outline: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    i, em {
+        font-style: italic;
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+
+    ul code,
+    ol code,
+    p code {
+        background: $code-background;
+        display: inline-block;
+        font-family: $font-mono;
+
+        font-size: 14px;
+        border-radius: 4px;
+        color: #3c4257;
+        font-weight: 400;
+        background: #f7fafc;
+        border: 1px solid #e3e8ee;
+        padding: 0px 3px;
+        box-sizing: border-box;
+        line-height: 18px;
+    }
+
+    &> ol > li > pre > code,
+    &> ul > li > pre > code,
+    &> pre > code,
+    .highlight {
+        background: $pre-background;
+        color: #f5fbff;
+        display: block;
+        font-family: $font-mono;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 19px;
+        border-radius: 3px;
+        border: none;
+        margin-bottom: 24px;
+
+        overflow: hidden;
+        overflow-y: hidden;
+        overflow-x: auto;
+
+        pre, code {
+            background: $pre-background;
+        }
+    }
+
+    &> pre > code {
+        padding: 12px;
+    }
+
+    &> ul > li > pre,
+    &> ol > li > pre {
+        &> code {
+            padding: 12px;
+        }
+    }
+
+    // chrome syntax highlighting.
+    div.chroma {
+        overflow: hidden;
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 12px 0px;
+
+        .lntable {
+            width: 100%;
+        }
+
+        td:last-of-type {
+            width: 100%;
+        }
+
+        code {
+            box-sizing: border-box;
+            // padding-right: 12px;
+            display: block;
+        }
+
+        .hl {
+            display: block;
+            // color: rgb(164, 205, 254);
+            // background: #3c4157;
+            background: #1A202C;
+            // background: #4A5568;
+        }
+
+  
+
+        // line numbers
+        .lnt {
+            box-sizing: border-box;
+            color: #bec5ca;
+            display: block;
+            text-align: right;
+            width: 60px;
+            padding-right: 20px;
+        }
+    }
+
+    ul, ol {
+        padding-left: 24px;
+    }
+
+    li {
+        list-style-type: disc;
+    }
+
+    img {
+        box-sizing: border-box;
+        border: 1px solid $gray-300;
+        border-radius: 4px;
+        margin-bottom: 24px;
+        padding: 1px;
+        max-width: 100%;
+    }
+    
+    &> .alert + table {
+        padding-top: 12px;
+    }
+    &> table + p {
+        padding-top: 12px;
+    }
+
+    &> table {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+
+        thead th {
+            font-weight: 400;
+            font-size: 13px;
+            color: $gray-600;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 0 0 8px 16px;
+        }
+
+        tbody {
+            font-size: 14px;
+            line-height: 20px;
+            vertical-align: top;
+            padding-top: 0;
+            color: $gray-700;
+
+            tr td {
+                border-color: $gray-300;
+                border-style: solid;
+                padding: 16px;
+                border-bottom-width: 1px;
+            }
+
+            tr:nth-child(odd) td {
+                background: $gray-100;
+            }
+
+            tr:first-child>td {
+                border-top-width: 1px;
+            }
+
+            tr td:last-child {
+                border-right-width: 1px;
+            }
+
+            tr td:first-child {
+                border-left-width: 1px;
+            }
+
+            tr:first-child>td:first-child {
+                border-top-left-radius: 4px;
+            }
+
+            tr:first-child>td:last-child {
+                border-top-right-radius: 4px;
+            }
+
+            tr:last-child>td:last-child {
+                border-bottom-right-radius: 4px;
+            }
+
+            tr:last-child>td:first-child {
+                border-bottom-left-radius: 4px;
+            }
+        }
+    }
+
+    dt {
+        font-weight: 600;
+    }
+
+    dd {
+        margin-bottom: 24px;
+    }
+
+    // special styling for variable definitions
+    // inside a list.
+    li dt > code {
+        background: none;
+        border: none;
+        padding: $p-0;
+        font-size: 15px;
+        color: $gray-900;
+        font-weight: 500;
+      }
+}
+
+//
+// blockquote
+//
+
+$blockquote-color: $gray-600;
+$blockquote-border-width: 0px 0px 0px 4px;
+$blockquote-border-color: $gray-200;
+$blockquote-margin: 0px 0px 24px;
+$blockquote-padding: 0px 0px 0px 12px;
+
+.content blockquote {
+    color: $blockquote-color;
+    margin: $blockquote-margin;
+    padding: $blockquote-padding;
+    border-color: $blockquote-border-color;
+    border-width: $blockquote-border-width;
+    border-style: solid;
+
+    &> pre code {
+        color: #1a202c;
+        font-weight: 500;
+        font-family: "Roboto Mono";
+        font-size: 13px;
+        white-space: normal;
+    }
+}
+
+//
+// api and cli links
+//
+
+.content a[href^="/api/"],
+.content a[href^="/cli/"] {
+    position: relative;
+    padding-right: 22px;
+    display: inline-block;
+}
+
+.content a[href^="/api/"]:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 19px;
+    height: 11px;
+    background-image: url(/icons/api.svg);
+    background-repeat: no-repeat;
+    background-size: 19px 11px;
+    bottom: 7px;
+    right: 0px;
+}
+
+.content a[href^="/cli/"]:after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 19px;
+    height: 11px;
+    background-image: url(/icons/cli.svg);
+    background-repeat: no-repeat;
+    background-size: 19px 11px;
+    bottom: 7px;
+    right: 0px;
+}
+
+//
+// unordered lists
+//
+
+.content ul {
+    pre {
+        &> code {
+            padding: 12px;
+        }
+    }
+
+    p ~ pre {
+        margin-top: -15px; // hack
+    }
+}
+
+//
+// ordered list
+//
+
+.content ol {
+    counter-reset: listitem;
+    padding-left: 0px;
+
+    li > :first-child {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    li > * {
+        margin-top: 10px;
+    }
+
+    li {
+        position: relative;
+        list-style: none;
+        margin-left: 32px;
+        margin-bottom: 10px;
+    }
+
+    li:before {
+        counter-increment: listitem;
+        content: counter(listitem);
+        background: $gray-300;
+        color: $gray-600;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 10px;
+        text-align: center;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        border-radius: 10px;
+        position: absolute;
+        left: -30px;
+        top: 2px;
+    }
+}
+
+//
+// prefix headers with step
+//
+
+.content.steps {
+    counter-reset: step;
+    h1:before {
+        counter-increment: step;
+        content: "Step " counters(step, "") ":";
+        color: darken($gray-500, 7.5%);
+        margin-right: 12px;
+    }
+}

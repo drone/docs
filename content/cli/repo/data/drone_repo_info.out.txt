@@ -1,9 +1,0 @@
-NAME:
-   drone repo info - show repository details
-
-USAGE:
-   drone repo info [command options] [arguments...]
-
-OPTIONS:
-   --format value  format output (default: "Owner: {{ .Owner }}\nRepo: {{ .Name }}\nType: {{ .Kind }}\nConfig: {{ .Config }}\nVisibility: {{ .Visibility }}\nPrivate: {{ .IsPrivate }}\nTrusted: {{ .IsTrusted }}\nGated: {{ .IsGated }}\nRemote: {{ .Clone }}\n")
-   

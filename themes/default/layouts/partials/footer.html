@@ -1,0 +1,38 @@
+<footer>
+    {{ $site := . }}
+
+    {{ with .Params.next_steps }}
+    <section>
+        <h2>Next Steps</h2>
+        <ul>
+            {{ range .items }}<li><a href="{{ relref $site .path }}">{{ .name }}</a></li>{{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
+    {{ with .Params.related }}
+    <section>
+        <h2>Further Reading</h2>
+        <ul>
+            {{ range .items }}<li><a href="{{ relref $site .path }}">{{ .name }}</a></li>{{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
+    {{ with .Params.troubleshooting }}
+    <section>
+        <h2>Common Problems</h2>
+        <ul>
+            {{ range . }}<li><a href="{{ relref $site .path }}">{{ .name }}</a></li>{{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
+    <section>
+        <h2>Questions?</h2>
+        <p>We are always happy to help with questions you might have. <a href="javascript:document.querySelector('#search').focus()">Search</a> our documentation or check out answers to common questions. You can also post questions or comments to our community <a href="https://discourse.drone.io/">forum</a> or <a href="https://gitter.im/drone/drone">chatroom</a>.</p>    
+    </section>
+    <section>
+        <p>Is there a mistake on this page? Please <a href="https://github.com/drone/docs">let us know</a> or edit <a href="https://github.com/drone/docs/blob/master/{{ .Page.Path }}">this page</a>.</p>
+    </section>
+</footer>

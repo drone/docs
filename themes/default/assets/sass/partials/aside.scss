@@ -1,0 +1,52 @@
+
+
+aside {
+    display: block;
+
+    nav {
+        position: sticky;
+        top: 30px;
+    }
+
+    header {
+        @include user-select-none;
+
+        color: $gray-700;
+        font-weight: 400;
+        margin-bottom: $m-2;
+        margin-top: $m-2;
+        font-size: $text-sm;
+        text-transform: uppercase;
+        letter-spacing: 0.75px;
+        font-weight: 500;
+        font-family: Kanit;
+      }
+}
+
+aside #TableOfContents {
+    a, a:visited {
+        display: block;
+        padding: $p-1 $p-0;
+        font-size: $text-sm;
+        color: $gray-600;
+        line-height: $leading-snug;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $gray-900;
+    }
+
+    ul ul {
+        padding-left: $p-3;
+    }
+}
+
+// the table-of-contents section is only visible on
+// desktop screens and larger.
+@media (max-width: 1200px) {
+    aside {
+        display: none;
+    }
+}
+

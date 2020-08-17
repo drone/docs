@@ -1,0 +1,90 @@
+@card-background: #FFFFFF;
+@card-border: #E6ECF1;
+@card-border-hover: #5469d4;
+@card-border-radius: 3px;
+@card-box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+
+@card-header-color: #1E375A;
+@card-header-color-hover: #5469d4;
+
+@card-body-color: #9daab6;
+@card-body-font-size: 15px;
+@card-body-font-weight: 400;
+@card-body-line-height: 22px;
+
+// card is a mixin that can be used to render an element as
+// a card with dropshadow, border, etc.
+.card {
+    background: @card-background;
+    border-radius: @card-border-radius;
+    border: 1px solid @card-border;
+    box-shadow: @card-box-shadow;
+    text-decoration: none !important;
+    transition: border-color 0.25s linear;
+}
+
+// cards is a list that stores a grid of cards.
+.content .cards {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 100%;
+    margin-bottom: 24px;
+
+    a, a:active, a:visited {
+        .card();
+
+        display: grid;
+        grid-template-rows: auto;
+        grid-gap: 6px;
+        padding: 16px;
+        user-select: none;
+        margin-top: 0px;
+    }
+
+    a:hover {
+        border-color: @card-border-hover;
+
+        .name {
+            color: @card-header-color-hover;
+        }
+    }
+
+    .name {
+        font-weight: 500;
+        color: @card-header-color;
+    }
+
+    .desc {
+        color: @card-body-color;
+        font-size: @card-body-font-size;
+        font-weight: @card-body-font-weight;
+        line-height: @card-body-line-height;
+    }
+}
+
+// reference to a document in the same site. this is displayed
+// as a card in the contents section.
+.content .reference {
+    .card();
+
+    display: flex;
+    margin: 24px 0px;
+    padding: 16px;
+    user-select: none;
+
+    .name {
+        color: @card-header-color-hover;
+        flex: 1 1 auto;
+        font-size: 16px;
+    }
+
+    .icon {
+        margin-right: 16px;
+        background: url("/icons/arrow-right.svg") no-repeat center center;
+        width: 24px;
+    }
+
+    &:hover {
+        border-color: @card-border-hover;
+    }
+}

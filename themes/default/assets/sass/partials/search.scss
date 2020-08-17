@@ -1,0 +1,56 @@
+$search-height: 55px;
+
+.search {
+    border-bottom: 1px solid $gray-300;
+    height: $search-height;
+    box-sizing: border-box;
+    padding-left: $sidebar-width;
+
+    input {
+        border: none;
+        box-sizing: border-box;
+        display: block;
+        font-size: $text-base;
+        height: $search-height;
+        outline: none;
+        padding: $p-0 $p-5;
+        padding-left: $p-16;
+        width: 100%;
+
+        background: url("/icons/search.svg") left center no-repeat;
+        background-size: 14px 14px;
+        background-position: 32px 20px;
+    }
+
+    input:focus {
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.1);
+        z-index: 99999;
+        width: 100%;
+    }
+}
+
+.algolia-autocomplete {
+    width: 100%;
+    border: none;
+}
+
+@mixin input-placeholder {
+    color: $gray-600;
+    font-weight: 300;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    @include input-placeholder;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    @include input-placeholder;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    @include input-placeholder;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    @include input-placeholder;
+}

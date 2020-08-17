@@ -1,0 +1,35 @@
+.alert,
+.content.alert {
+    background-size: 18px 18px;
+    background-position: 12px 12px;
+    background-repeat: no-repeat;
+    padding: $p-3 $p-3 $p-3 $p-10;
+    border: 1px solid $gray-300;
+    border-radius: 4px;
+    background-color: $gray-100;
+    background-image: url(/icons/info.svg);
+    font-size: $text-sm;
+    line-height: $leading-snug;
+    margin-bottom: $m-6;
+    color: $gray-700;
+
+    &.warn,
+    &.alert-warn {
+        background-image: url(/icons/warn.svg);
+    }
+
+    &.error,
+    &.alert-error {
+        background-image: url(/icons/error.svg);
+    }
+
+    &.important,
+    &.alert-important {
+        background-image: url(/icons/important.svg);
+    }
+
+    &.success,
+    &.alert-success {
+        background-image: url(/icons/check.svg);
+    }
+}

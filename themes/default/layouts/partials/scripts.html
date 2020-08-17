@@ -1,0 +1,28 @@
+<!-- code to expand and collapse the sidebar -->
+<script>
+    function toggle(el) {
+        if (el.classList.contains("open")) {
+            el.classList.remove("open");
+        } else {
+            el.classList.add("open");
+        }
+    };
+    function toggleSidebar(e) {
+        toggle(document.querySelector(".sidebar"));
+        toggle(document.querySelector(".overlay"));
+    }
+    document.querySelector(".overlay").addEventListener("click", toggleSidebar);
+    document.querySelector("body > header .menu").addEventListener("click", toggleSidebar);
+    document.querySelector(".sidebar .close").addEventListener("click", toggleSidebar);
+</script>
+
+<!-- code to load the server index -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript">
+docsearch({
+	apiKey: "745aeaa8be75dc0c4de55030703ed3f4",
+	indexName: "drone_io",
+	inputSelector: '#search',
+	debug: {{ if ne .Site.HomeAbsURL "http://localhost:1313/" }}true{{ else }}false{{ end }}
+});
+</script>

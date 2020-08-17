@@ -1,0 +1,22 @@
+<title>{{ .Title }} | Drone</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="copyright" content="{{ .Site.Copyright }}">
+
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon.png" | relURL }}">
+
+{{- $style := resources.Get "sass/main.scss" | toCSS | fingerprint }}
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,700">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500|Roboto:400,500,700&amp;display=swap">
+<link rel="stylesheet" type="text/css" href="{{ relURL $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" >
+
+{{- if ne .Site.HomeAbsURL "http://localhost:1313/" }}
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P7L3WT2');</script>    
+{{ end }}
+</style>

@@ -20,3 +20,8 @@ steps:
   when:
     event:
     - push
+
+trigger:
+  event:
+  - push
+  - pull_request

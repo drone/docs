@@ -10,17 +10,18 @@ steps:
     hugo_version: "0.63.2"
     config: config.yaml
 
-- name: publish
-  image: lucap/drone-netlify
-  settings:
-    path: ./public
-    site_id:
-      from_secret: netlify_site_id
-    token:
-      from_secret: netlify_token
-  when:
-    event:
-    - push
+# disabled pending fix for https://github.com/lucaperret/drone-netlify/issues/2
+# - name: publish
+#   image: lucap/drone-netlify
+#   settings:
+#     path: ./public
+#     site_id:
+#       from_secret: netlify_site_id
+#     token:
+#       from_secret: netlify_token
+#   when:
+#     event:
+#     - push
 
 trigger:
   event:

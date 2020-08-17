@@ -1,29 +1,22 @@
-pipeline:
-  build:
-    image: golang
-    commands:
-      - mkdir hugo
-      - curl -sL https://github.com/gohugoio/hugo/releases/download/v0.35/hugo_0.35_Linux-64bit.tar.gz | tar xz -C hugo
-      - mv hugo/hugo /usr/local/bin
-      - rm -rf hugo
-      - ls -la
-      - hugo version
-      - hugo
+kind: pipeline
+type: docker
+name: default
 
-  upload:
-    image: plugins/s3-sync:1.1
-    access: public-read
-    region: us-east-1
-    bucket: docs.drone.io
-    source: public/
-    target: /
-    delete: false
-    content_type:
-      ".svg": image/svg+xml
-      "": text/html; charset=utf-8
-    secrets:
-      - aws_access_key_id
-      - aws_secret_access_key
-    when:
-      event: push
-      branch: master
+steps:
+- name: build
+  image: plugins/hugo
+  settings:
+    hugo_version: 0.63.2
+    config: config.yaml
+
+- name: publish
+  image: lucap/drone-netlify
+  settings:
+    path: ./public
+    site_id:
+      from_secret: netlify_site_id
+    token:
+      from_secret: netlify_token
+  when:
+    event:
+    - push

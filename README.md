@@ -6,11 +6,39 @@ To generate the documentation you will need to download and install the [hugo](h
 Generate the documentation:
 
 ```
-hugo
+$ hugo
+
+                   | EN   
+-------------------+------
+  Pages            | 869  
+  Paginator pages  |   0  
+  Non-page files   |   1  
+  Static files     |  43  
+  Processed images |   0  
+  Aliases          | 355  
+  Sitemaps         |   1  
+  Cleaned          |   0  
+
+Total in 926 ms
 ```
 
 Generate the documentation and serve at `localhost:1313`:
 
 ```
-hugo server -b localhost:1313 -w
+$ hugo server -b localhost:1313 -w
+
+                   | EN   
+-------------------+------
+  Pages            | 869  
+  Paginator pages  |   0  
+  Non-page files   |   1  
+  Static files     |  43  
+  Processed images |   0  
+  Aliases          | 355  
+  Sitemaps         |   1  
+  Cleaned          |   0  
+
+Built in 379 ms
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
 ```

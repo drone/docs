@@ -8,7 +8,7 @@ weight: 1
 Optional string. Provides a path to an environment file containing global environment variables that are injected into every pipeline step.
 
 ```
-DRONE_RUNNER_ENVIRON=/path/to/file.env
+DRONE_RUNNER_ENVFILE=/path/to/file.env
 ```
 
 The environment file is a text file that defines environment variables in key value format. Please see the envfile [documentation](https://github.com/joho/godotenv) for more details about the file format.

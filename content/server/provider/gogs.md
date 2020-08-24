@@ -71,3 +71,7 @@ docker run \
 Once your server is up and runner you will need to install runners to execute your build pipelines. See our runner installation documentation for detailed installation instructions. 
 
 {{< link "/runner/overview" "Install Runners" >}}
+
+# Login
+
+You can login to your Drone server by visiting the server address in your browser. You will need to authenticate using your Gogs username and password. _This is required because Gogs does not support oauth._

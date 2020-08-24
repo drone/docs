@@ -32,9 +32,6 @@ Yes. The Enterprise Edition includes a free trial for up to 5000 builds. You can
 # How do I purchase an Enterprise License?
 You can purchase an Enterprise License from our [website](https://drone.io/enterprise).
 
-<!-- # How do I use Drone Enterprise for free?
-The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue. If you qualify for free use you can [install](#how-do-i-remove-the-build-limits) a free version of the Enterprise Edition from source. -->
-
 # What if my company cannot afford an Enterprise License?
 The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue. There are affordable entry-level plans starting at $299 per month.
 
@@ -42,20 +39,20 @@ The Enterprise Edition is free for organizations with under $1 million US dollar
 You can download the Enterprise Edition from Dockerhub by following the [installation instructions]({{< relref "server/overview.md" >}}) described in this documentation.
 
 # Where do I download the Open Source Edition?
-There is no official distribution of the Open Source Edition. You can build the Open Source Edition from source using the oss build tags. 
+There is no official distribution of the Open Source Edition. You can [build](https://github.com/drone/drone/blob/master/BUILDING_OSS) the Open Source Edition from source using the oss build tags. 
 
 ```
 $ go build -tags "oss nolimit" github.com/drone/drone/cmd/drone-server
 ```
 
-# How do I remove the build limits?
-You can build the Enterprise Edition from source without build limits if and only if your organization has under $1 million US dollars in annual gross revenue. You will otherwise need to purchase a commercial license.
+# How do I use the Enterprise Edition for Free?
+You can build the Enterprise Edition from source without build limits if and only if your organization has under $1 million US dollars in annual gross revenue. You will otherwise need to [purchase](https://drone.io/enterprise) a commercial license.
 
 ```
 $ go build -tags "nolimit" github.com/drone/drone/cmd/drone-server
 ```
 
-<!-- <div class="alert alert-warn">This software is protected by US and International copyright law. Unqualified removal of these limits violates the obligations and conditions to your License and is subject to maximum fines of 150,000 USD per infringement.</div> -->
+_If an organization does not qualify for free use, removal of these limits violates the obligations and conditions to your license and is subject to penalty under US Federal and International copyright law. If you are unsure whether or not you qualify for free use you should consult your legal team._
 
 # What is the difference between Open Source and Enterprise?
 

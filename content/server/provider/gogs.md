@@ -35,15 +35,15 @@ $ docker pull drone/drone:1
 
 The Drone server is configured using environment variables. This article references a subset of configuration options, defined below. See [Configuration]({{< relref "../reference/_index.md" >}}) for a complete list of configuration options.
 
-* __DRONE_GOGS_SERVER__
+* `DRONE_GOGS_SERVER`
   : Required string value provides your Gogs server address. For example `https://gogs.company.com`.
-* __DRONE_GIT_ALWAYS_AUTH__
+* `DRONE_GIT_ALWAYS_AUTH`
   : Optional boolean value configures Drone to authenticate when cloning public repositories.
-* __DRONE_RPC_SECRET__
+* `DRONE_RPC_SECRET`
   : Required string value provides the drone shared secret. This is used to authenticate the rpc connection to the server. The server and agent must be provided the same secret value.
-* __DRONE_SERVER_HOST__
+* `DRONE_SERVER_HOST`
   : Required string value provides your external hostname or IP address. If using an IP address you may include the port. For example `drone.company.com`.
-* __DRONE_SERVER_PROTO__
+* `DRONE_SERVER_PROTO`
   : Required string value provides your external protocol scheme. This value should be set to http or https. This field defaults to https if you configure ssl or acme.
 
 # Start the Server

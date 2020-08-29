@@ -118,7 +118,7 @@ The validation extension should respond with one of the following:
 * `200` response code indicating the yaml passed validation
 * `400` response code indicating the yaml failed validation, with a JSON encoded error messaging indicating why validation failed.
 * `498` response code indicating the yaml failed validation and should be skipped.
-* `499` response code indicating the yaml failed validation and should be blocked pending manual approval.
+* `499` response code indicating the yaml failed validation and should be blocked, pending manual approval.
 
 ```
 {

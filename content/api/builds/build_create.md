@@ -35,7 +35,7 @@ Example Response Body:
     "repo_id": 296163,
     "number": 42,
     "status": "pending",
-    "event": "pull_request",
+    "event": "custom",
     "action": "sync",
     "link": "https://github.com/octoat/hello-world/compare/e3320539a4c0...9fc1ad6ebf12",
     "message": "updated README",

@@ -34,7 +34,7 @@ This article explains how to install the Drone server for GitHub. The server is 
 
 ## Create an OAuth Application
 
-Create a GitHub OAuth application. The Consumer Key and Consumer Secret are used to authorize access to GitHub resources.
+[Create a GitHub OAuth application](https://docs.github.com/en/developers/apps/creating-an-oauth-app). The Consumer Key and Consumer Secret are used to authorize access to GitHub resources.
 
 <div class="alert alert-warn">
 The authorization callback URL must match the below format and path, and must use your exact server scheme and host.

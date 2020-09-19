@@ -4,7 +4,7 @@ title: DRONE_REPO_OWNER
 author: bradrydzewski
 ---
 
-Provides the repository namespace for the current running build. The namespace is an alias for the source control management account that owns the repository.
+Provides the repository owner for the current running build. The owner is the source control management account that owns the repository.
 
 ```
 DRONE_REPO_OWNER=octocat

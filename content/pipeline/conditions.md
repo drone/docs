@@ -92,10 +92,6 @@ when:
 
 The event condition limits step execution based on the drone event type. This can be helpful when you want to limit steps based on push, pull request, tag and more.
 
-<div class="alert alert-warn">
-Note that you cannot use branch conditions with tag events. A tag is not associated with the source branch from which it was created.
-</div>
-
 {{< highlight yaml "linenos=table,linenostart=11" >}}
 when:
   event:

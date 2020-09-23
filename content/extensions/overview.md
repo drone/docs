@@ -13,7 +13,7 @@ Here is a list of extension types:
 
 {{< link "/extensions/admission.md" "Admission Extensions" >}}
 {{< link "/extensions/conversion.md" "Conversion Extensions" >}}
-{{< link "/extensions/conversion.md" "Configuration Extensions" >}}
+{{< link "/extensions/configuration.md" "Configuration Extensions" >}}
 {{< link "/extensions/environment" "Environment Extensions" >}}
 {{< link "/extensions/registry" "Registry Extensions" >}}
 {{< link "/extensions/secret.md" "Secret Extensions" >}}

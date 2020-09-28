@@ -84,8 +84,8 @@ $h3-font-weight: 400;
     }
 
 
-    ul code,
-    ol code,
+    ul p > code,
+    ol p > code,
     p code {
         background: $code-background;
         display: inline-block;
@@ -357,13 +357,17 @@ $blockquote-padding: 0px 0px 0px 12px;
 //
 
 .content ul {
-    pre {
+    pre:not(.chroma) {
         &> code {
             padding: 12px;
         }
     }
 
     p ~ pre {
+        margin-top: -15px; // hack
+    }
+
+    p ~ .highlight {
         margin-top: -15px; // hack
     }
 }

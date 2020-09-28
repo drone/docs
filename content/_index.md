@@ -9,7 +9,7 @@ aliases:
 
 # Documentation
 
-Drone is a modern Continuous Integration and Continuous Delivery platform that empowers busy teams to automate their build, test and release workflows. Teams that harness Drone release software more frequently and with fewer bugs.
+__Drone [by Harness](https://harness.io)™__ is a modern Continuous Integration platform that empowers busy teams to automate their build, test and release workflows using a powerful, cloud native pipeline engine.
 
 ## Installation Guides [See All]({{< relref "server/overview.md" >}})
 

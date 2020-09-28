@@ -6,6 +6,7 @@ weight: 11
 aliases:
 - /0.5/custom-plugins-in-bash/
 - /creating-custom-plugins-bash/
+- /plugins/bash
 
 ---
 This provides a brief tutorial for creating a Drone webhook plugin, using simple shell scripting, to make an http requests during the build pipeline. The below example demonstrates how we might configure a webhook plugin in the Yaml file:

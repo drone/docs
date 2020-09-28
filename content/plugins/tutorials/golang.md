@@ -5,6 +5,7 @@ author: bradrydzewski
 weight: 10
 aliases:
 - /creating-custom-plugins-golang/
+- /plugins/golang
 ---
 This guide provides a brief tutorial for creating a webhook plugin, using the Go programming language, to trigger http requests during the build pipeline. The below example demonstrates how we might configure a webhook plugin in the Yaml file:
 

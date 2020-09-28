@@ -6,9 +6,9 @@ weight: 1
 related:
   items:
   - name: Example Go Plugin
-    path: golang.md
+    path: tutorials/golang.md
   - name: Example Bash Plugin
-    path: bash.md
+    path: tutorials/bash.md
 
 aliases:
 - /plugin-overview/

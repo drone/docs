@@ -1,9 +1,13 @@
 <div class="sidebar">
-    <div class="logo">Docs</div>
+    <a class="logo" href="{{ relURL .Site.BaseURL }}" aria-label="Home">Docs</a>
 
     <div class="menu" aria-hidden="true">
         <button class="close"></button>
     </div>
+
+    <!-- <div class="menu" aria-hidden="true">
+        <a class="close" href="{{ relURL .Site.BaseURL }}" aria-label="Home"></a>
+    </div> -->
 
     <nav>
         <a href="/" class="back">Home</a>

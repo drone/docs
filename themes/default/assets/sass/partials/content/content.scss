@@ -66,7 +66,7 @@ $h3-font-weight: 400;
     }
 
     a, a:visited {
-        color: $indigo-600;
+        color: $harness-blue-dark;
         text-decoration: none;
         // outline: none;
 
@@ -86,6 +86,8 @@ $h3-font-weight: 400;
 
     ul p > code,
     ol p > code,
+    ul li > code,
+    ol li > code,
     p code {
         background: $code-background;
         display: inline-block;

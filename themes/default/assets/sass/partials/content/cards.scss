@@ -1,10 +1,10 @@
 $card-border: $gray-300;
-$card-border-hover: $indigo-600;
+$card-border-hover: $harness-blue-dark;
 $card-border-radius: 3px;
 $card-box-shadow: none;
 
 $card-header-color: $gray-900;
-$card-header-color-hover: $indigo-600;
+$card-header-color-hover: $harness-blue-dark;
 
 $card-body-color: $gray-600;
 $card-body-font-size: 15px;
@@ -41,7 +41,7 @@ $card-body-line-height: 22px;
     }
 
     a:hover {
-        border-color: $indigo-600;
+        border-color: $harness-blue-dark;
 
         .name {
             color: $card-header-color-hover;
@@ -105,7 +105,7 @@ $card-body-line-height: 22px;
     }
 
     a:hover {
-        border-color: $indigo-600;
+        border-color: $harness-blue-dark;
         cursor: pointer;
     }
 }
@@ -133,6 +133,6 @@ $card-body-line-height: 22px;
     }
 
     &:hover {
-        border-color: $indigo-600;
+        border-color: $harness-blue-dark;
     }
 }

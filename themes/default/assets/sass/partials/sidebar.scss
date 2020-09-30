@@ -68,12 +68,12 @@ $sidebar-width: 250px;
         text-decoration: none;
 
         &:hover {
-            color: $indigo-600;
+            color: $harness-blue-dark;
         }
     }
 
     &.selected a {
-        color: $indigo-600;
+        color: $harness-blue-dark;
     }
 
     ul {

@@ -5,11 +5,13 @@ author: bradrydzewski
 weight: 1
 aliases:
 - /getting-help/
+- /intro
+- /introduction
 ---
 
 # Documentation
 
-__Drone [by Harness](https://harness.io)™__ is a modern Continuous Integration platform that empowers busy teams to automate their build, test and release workflows using a powerful, cloud native pipeline engine.
+Drone [by Harness](https://harness.io)™ is a modern Continuous Integration platform that empowers busy teams to automate their build, test and release workflows using a powerful, cloud native pipeline engine.
 
 ## Installation Guides [See All]({{< relref "server/overview.md" >}})
 

@@ -97,14 +97,15 @@ get:
 
 # Limiting Access
 
-Secrets are available to all repositories and all build events by default. We strongly recommend that you limit access to secrets by repository and build events. This can be done by adding special properties:
+Secrets are available to all repositories and all build events by default. We strongly recommend that you limit access to secrets by repository, build events and branch. This can be done by adding special properties:
 
 {{< highlight text "linenos=table,hl_lines=4-5" >}}
 $ vault kv put secret/docker \
     username=octocat \
     password=correct-horse-battery-staple \
     x-drone-events=push,tag \
-    x-drone-repos=octocat/*,spaceghost/*
+    x-drone-repos=octocat/*,spaceghost/* \
+    x-drone-branches=master,development
 {{< / highlight >}}
 
 ## Limit By Repository
@@ -159,4 +160,28 @@ $ vault kv put secret/docker \
     password=correct-horse-battery-staple \
     x-drone-events=push,tag \
     x-drone-repos=octocat/*,spaceghost/*
+{{< / highlight >}}
+
+## Limit By Branch
+
+Use the `X-Drone-Branches` key to limit which branch can access your secret. The value is a comma-separate list of branches. If a build matches at least one of the branch, it is granted access to the secret.
+
+Limit access to master and development branches:
+
+{{< highlight text "linenos=table,hl_lines=4" >}}
+$ vault kv put secret/docker \
+    username=octocat \
+    password=correct-horse-battery-staple \
+    x-drone-branches=master,development
+{{< / highlight >}}
+
+You can combine annotations whatever you need to limit by repository, event and branches:
+
+{{< highlight text "linenos=table,hl_lines=4-5" >}}
+$ vault kv put secret/docker \
+    username=octocat \
+    password=correct-horse-battery-staple \
+    x-drone-events=push,tag \
+    x-drone-repos=octocat/*,spaceghost/* \
+    x-drone-branches=master,development
 {{< / highlight >}}

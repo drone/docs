@@ -17,7 +17,7 @@ Please note this feature is disabled on Drone Cloud. This feature is only availa
 </div>
 
 <div class="alert alert-info">
-AWS Secrets integration is provided by an extension and is only available if you system administrator has installed the extension.
+AWS Secrets integration is provided by an extension and is only available if your system administrator has installed the extension.
 </div>
 
 # Creating Secrets

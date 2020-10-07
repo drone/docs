@@ -20,7 +20,7 @@ You can use cron jobs to execute pipelines on time-based schedules. You can crea
 
 * Example creates a cron job named _deploy_ using a pre-defined schedule:
   ```
-  $ drone cron add "octocat/hello-world" "deploy" @nightly
+  $ drone cron add "octocat/hello-world" "deploy" @daily
   ```
 
 <div class="alert alert-no-cloud">

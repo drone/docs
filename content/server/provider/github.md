@@ -32,6 +32,12 @@ This article explains how to install the Drone server for GitHub. The server is 
 
 # Preparation
 
+## Provision an Instance
+
+The Drone server should be installed on a server or virtual machine (using your cloud provider of choice) with standard http and https ports open. The instance must be publicly accessible by domain name or IP address to receive webhooks from GitHub.
+
+_When installing the Drone server on your laptop for testing purposes, we recommend using a service like [ngrok](https://ngrok.com/) to provide your Drone server with a publicly accessible domain name._
+
 ## Create an OAuth Application
 
 [Create a GitHub OAuth application](https://docs.github.com/en/developers/apps/creating-an-oauth-app). The Consumer Key and Consumer Secret are used to authorize access to GitHub resources.

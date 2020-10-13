@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-You can use environment extensions to provide your pipeline steps with custom environment variables.
+You can use environment extensions to provide your pipeline steps with custom environment variables. In addition, this extension can be used to inject default secrets or default plugin parameters into your pipelines _(secrets and plugin parameters are  passed to your pipeline as environment variables)_.
 
 # Configuration
 

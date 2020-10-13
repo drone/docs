@@ -60,7 +60,7 @@ The current implementation calculates the execution time based on UTC as opposed
 
 # Scheduling
 
-The cron scheduler is approximate and executes jobs within a one hour window of the scheduled execution time. This prevents users from creating high frequency jobs and overloading the system, but as a result, means cron scheduling has less accurate timing.
+The cron scheduler is approximate and executes jobs in hourly batches. This means cron jobs can be processed up to one hour after the scheduled execution time, and jobs scheduled with high frequency can only execute once per hour. This prevents users from creating high frequency jobs and overloading the system, but as a result, means cron scheduling has less accurate timing.
 
 You can reduce the one hour window and increase scheduler accuracy by changing the server's cron interval setting.
 

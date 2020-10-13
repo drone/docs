@@ -2,6 +2,7 @@
 date: 2000-01-01T00:00:00+00:00
 title: Overview
 author: bradrydzewski
+toc: true
 weight: 1
 related:
   items:
@@ -79,34 +80,25 @@ Plugins parameters are defined in the settings section of the pipeline step and 
 Plugin parameters can be any primitive type or array of primitive types. Arrays are converted to comma-separate strings.
 
 
-<!-- Plugins parameters are defined in the settings section of your configuration:
+# Plugin Distribution
 
-```yaml  {linenos=table,linenostart=13}
-- name: publish
-  image: plugins/docker
-  settings:
-    username: kevinbacon
-    password: pa55word
-    repo: foo/bar
-    tags:
-    - 1.0.0
-    - 1.0
-```
+Plugins are distributed as Doceker images. You can publish plugins to any Docker registry, private or public, to share plugins internally with your organization, or publicly with the broader developer community.
 
-Plugin parameters are passed to the plugin as environment variables and are prefixed to prevent naming conflicts. Example using the parameters from the previous example:
+# Plugin Registry
 
-```
-docker run \
--e PLUGIN_USERNAME=kevinbacon
--e PLUGIN_PASSWORD=kevinbacon
--e PLUGIN_REPO=foo/bar
--e PLUGIN_TAGS=1.0.0,1.0
-```
+The Drone plugin registry is a listing of Open Source plugins created by the Drone community. Want to add your plugin to the registry? _Send us a [pull request](https://github.com/drone/drone-plugin-index) that adds your plugin to the registry website_.
 
-Plugin parameters can be any primitive type or array of primitive types. Arrays are converted to comma-separate strings. -->
+{{< link-to "http://plugins.drone.io" >}}
+Browse the Plugin Registry
+{{< / link-to >}}
 
+<!-- # Common Questions
 
+## Which plugin should I choose when multiple options exist?
 
+You may encounter plugins in the registry that overlap in functionality (e.g. multiple kubernetes plugins). This is conceptually no different than searching for a packages on npm, and finding multiple npm packages that overlap in functionality. Here are some things to consider when choosing a plugin:
 
-
-
+- Which plugins are the most widely used?
+- Which plugins are the most actively developed?
+- Number of starts, forks, contributors, downloads?
+- Are there major open issues? major bugs? -->

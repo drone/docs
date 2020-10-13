@@ -69,12 +69,6 @@ steps:
   - go test
 {{< / highlight >}}
 
-<!--TODO
-See the Environment article for additional details:
-
-{{< link "environment" >}}
--->
-
 # Conditions
 
 The when section provides the ability to conditionally limit the execution of steps at runtime. The below example limits step execution by branch, however, you can limit execution by event, reference, status and more.

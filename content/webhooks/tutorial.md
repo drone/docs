@@ -76,7 +76,7 @@ The generated project includes a `Dockefile` that you can use to build and publi
    bea26a2221fd8090ea38720fc445eca6
    ```
 
-2. Star the webhook receiver.
+2. Start the webhook receiver.
    ```
    $ docker run \
    -p 3000:3000 \

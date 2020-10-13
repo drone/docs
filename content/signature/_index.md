@@ -16,6 +16,10 @@ You can optionally sign your configuration file to verify authenticity and preve
 
 If a user modifies the configuration and signature verification fails, the pipeline is blocked pending manual approval by an authorized user with write or administrative access to the repository.
 
+<div class="alert">
+Please note that only Yaml files can be signed and verified. The system cannot sign and verify Starlark or Jsonnet files.
+</div>
+
 # Enforcing Signatures
 
 To enforce signature verification you need to enable Protected mode for your repository. Navigate to your repository _Settings_ screen and check the _Protected_ checkbox.
@@ -50,10 +54,9 @@ The contents of each yaml resource, excluding any existing signature resources, 
 
 # Creating Signatures
 
-The signature is created using the Drone command line utility. This command makes an authenticated request to the Drone server, posting your yaml configuration file, to calculate and return the hmac signature.
+The signature is created using the Drone command line utility. This [command]({{< relref "/cli/drone-sign.md" >}}) makes an authenticated request to the Drone server, posting your yaml configuration file, to calculate and return the hmac signature.
 
-Example:
-
+Example command:
 ```
 $ drone sign octocat/hello-world --save
 ```

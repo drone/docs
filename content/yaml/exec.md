@@ -4,7 +4,7 @@ title: Exec Pipeline
 title_in_card: Exec Pipeline Specification
 author: bradrydzewski
 weight: 4
-toc: false
+toc: true
 type: spec
 hidden: true
 

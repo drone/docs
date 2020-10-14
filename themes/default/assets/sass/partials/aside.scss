@@ -50,3 +50,43 @@ aside #TableOfContents {
     }
 }
 
+// adjust the aside for the specification view, which
+// holds the specification table of contents and requires
+// slightly different styling.
+
+.spec {
+    aside code {
+        border-radius: 4px;
+        background: #edf2f7;
+        padding: 0px $p-1;
+        font-family: $font-mono;
+    }
+    aside nav {
+        position: unset;
+        top: unset;
+    }
+    #TableOfContents ul {
+        counter-reset: item;
+        padding-left: 0px !important;
+        margin-bottom: 30px;
+    }
+    #TableOfContents > ul > li {
+        counter-increment: item;
+    }
+    #TableOfContents > ul > li > a:before {
+        content: counters(item, ".") " ";
+        display: inline-block;
+        width: 40px;
+        font-weight: 600;
+        color: #4a5568;
+    }
+    #TableOfContents > ul > li > ul > li {
+        counter-increment: item;
+    }
+    #TableOfContents > ul > li > ul > li > a:before {
+        content: counters(item, ".") " ";
+        display: inline-block;
+        width: 40px;
+    }
+}
+

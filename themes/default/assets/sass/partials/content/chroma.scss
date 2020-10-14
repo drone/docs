@@ -106,3 +106,18 @@
 //         color: #FFF;
 //     }
 // }
+
+
+
+//
+// spec styling
+//
+
+.spec {
+    .language-typescript {
+        .nx, .mi, .kt, .k, .o {
+            color: $harness-blue-dark;
+            font-weight: 500;
+        }
+    }
+}

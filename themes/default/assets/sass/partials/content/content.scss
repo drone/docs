@@ -431,3 +431,45 @@ $blockquote-padding: 0px 0px 0px 12px;
         margin-right: 12px;
     }
 }
+
+
+//
+// content for spec
+//
+
+.spec .content {
+    code {
+        border-radius: 4px;
+        background: $gray-200;
+    }
+
+    a > code {
+        color: $harness-blue-dark;
+    }
+
+    h1 > code,
+    h2 > code,
+    h3 > code,
+    h4 > code {
+        padding: 0px $p-2;
+        font-family: $font-mono;
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 500;
+    }
+
+    .highlight, pre {
+        background: $gray-200;
+    }
+
+    &> div > .chroma {
+        border: 1px solid #e3e8ee;
+        color: $gray-900;
+        font-weight: 400;
+
+        .lnt {
+            color: $gray-500;
+        }
+    }
+}

@@ -68,10 +68,10 @@ aside #TableOfContents {
     #TableOfContents ul {
         counter-reset: item;
         padding-left: 0px !important;
-        margin-bottom: 30px;
     }
     #TableOfContents > ul > li {
         counter-increment: item;
+        margin-bottom: 30px;
     }
     #TableOfContents > ul > li > a:before {
         content: counters(item, ".") " ";

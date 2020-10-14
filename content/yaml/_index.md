@@ -7,6 +7,6 @@ weight: 900
 separator: true
 ---
 
-Here are the specifications in this section:
+This section provides formal specifications for Drone's Yaml configuration file. These specifications are a work-in-progress. Please [send us a pull request](https://github.com/drone/docs) if you are interested in collaborating.
 
 {{< cards >}}

@@ -68,7 +68,7 @@ docker run \
 
 # Install Runners
 
-Once your server is up and runner you will need to install runners to execute your build pipelines. See our runner installation documentation for detailed installation instructions. 
+Once your server is up and running you will need to install runners to execute your build pipelines. See our runner installation documentation for detailed installation instructions. 
 
 {{< link "/runner/overview" "Install Runners" >}}
 

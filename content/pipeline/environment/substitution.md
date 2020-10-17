@@ -140,3 +140,27 @@ steps:
   - go build
   - go test
 {{< / highlight >}}
+
+# Common Problems
+
+Parameter substitution occurs _before_ the yaml is parsed and must produce a valid yaml. If the substitution results in an invalid yaml file you will receive a parsing error:
+
+```
+yaml: unmarshal errors:
+cannot unmarshal !!map into string
+```
+
+These parsing errors can be resolved by quoting the parameter:
+
+{{< highlight text "linenos=table,hl_lines=10" >}}
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: notify
+  image: plugins/slack
+  settings:
+    channel: team
+    message: "${DRONE_COMMIT}"
+{{< / highlight >}}

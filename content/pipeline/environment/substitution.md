@@ -3,6 +3,7 @@ date: 2000-01-01T00:00:00+00:00
 title: Substitution
 author: bradrydzewski
 weight: 20
+toc: true
 aliases:
 - /substitution/
 - /usage/variables
@@ -143,14 +144,14 @@ steps:
 
 # Common Problems
 
-Parameter substitution occurs _before_ the yaml is parsed and must produce a valid yaml. If the substitution results in an invalid yaml file you will receive a parsing error:
+Parameter substitution occurs _before_ the yaml is parsed. If the substitution results in an invalid yaml file you will receive a parsing error:
 
 ```
 yaml: unmarshal errors:
 cannot unmarshal !!map into string
 ```
 
-These parsing errors can be resolved by quoting the parameter:
+This can be resolved by quoting parameters to ensure special / reserved characters are escaped:
 
 {{< highlight text "linenos=table,hl_lines=10" >}}
 kind: pipeline

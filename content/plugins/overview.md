@@ -82,7 +82,7 @@ Plugin parameters can be any primitive type or array of primitive types. Arrays 
 
 # Plugin Distribution
 
-Plugins are distributed as Doceker images. You can publish plugins to any Docker registry, private or public, to share plugins internally with your organization, or publicly with the broader developer community.
+Plugins are distributed as Docker images. You can publish plugins to any Docker registry, private or public, to share plugins internally with your organization, or publicly with the broader developer community.
 
 # Plugin Registry
 

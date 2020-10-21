@@ -14,7 +14,7 @@ Run reaper every 24 hours:
 DRONE_CLEANUP_INTERVAL=24h
 ```
 
-Run reaper every five minutes:
+Run reaper every hour:
 ```
-DRONE_CLEANUP_INTERVAL=5m
+DRONE_CLEANUP_INTERVAL=60m
 ```

@@ -49,6 +49,14 @@ The system counts all enabled repositories. A repository is enabled by clicking 
   SELECT count(*) FROM users
   ```
 
+# How can I see the license expiration date?
+
+Find the repository count using the `/varz` endpoint
+
+```
+{"license": {"kind":"standard", "expire_at": "2020-08-18"}}
+```
+
 # How can I reduce the user count?
 
 You can remove user accounts using the [command line tools]({{< relref "cli/user/drone-user-rm" >}}). _Please note that if you remove a user account, and that user account activated a repository, it will need to be de-activated and then re-activated by another user._

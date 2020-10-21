@@ -14,7 +14,7 @@ You can use a configuration extension to override the process of fetching the co
 
 # Configuration
 
-You can register a validation extension by providing the following configuration parameters to the Drone server:
+You can register a configuration extension by providing the following configuration parameters to the Drone server:
 
 * `DRONE_YAML_ENDPOINT`
   : Provides the endpoint used to make http requests to an extension.

@@ -51,7 +51,7 @@ The system counts all enabled repositories. A repository is enabled by clicking 
 
 # How can I see the license expiration date?
 
-Find the repository count using the `/varz` endpoint
+Find the license expiration date using the `/varz` endpoint
 
 ```
 {"license": {"kind":"standard", "expire_at": "2020-08-18"}}

@@ -22,7 +22,7 @@ $ drone encrypt <repository> <secret>
 ```
 
 ```
-$ drone encrypt secret octocat/hello-world top-secret-password
+$ drone encrypt octocat/hello-world top-secret-password
 hl3v+FODjduX0UpXBHgYzPzVTppQblg51CVgCbgDk4U=
 ```
 

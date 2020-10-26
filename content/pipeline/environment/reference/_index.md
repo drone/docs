@@ -13,6 +13,6 @@ description: |
   Index of all environment variables available to the pipeline.
 ---
 
-Index of environment variables available to your pipeline:
+Index of environment variables available to your pipeline. _Note that these environment variables are automatically injected into your pipeline steps, and are also available for substitution._
 
 {{< children >}}

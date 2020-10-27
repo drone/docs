@@ -23,6 +23,8 @@ interface Resource {
   kind: string;
   type: string;
   name: string;
+  concurrency: Concurrency;
+  depends_on: string[];
 }
 {{< / highlight >}}
 
@@ -38,20 +40,29 @@ Defines the type of resource, used to identify the resource implementation. This
 
 The name of the resource. This value is required and must match `[a-zA-Z0-9_-]`. This value is displayed in the user interface (non-normative) and is used to identify the pipeline (non-normative).
 
+## The `concurrency` attribute
+
+Defines the concurrency limits for the pipeline stage. This attribute is of type [`Concurrency`](#the-concurrency-object) and is optional.
+
+## The `depends_on` attribute
+
+Defines a list of pipeline dependencies, used to defer execution of the pipeline until the named pipelines are in a completed state. This attribute is an array of type `string` and is optional.
+
 # The `Pipeline` object
 
 The [`Pipeline`](#the-pipeline-object) is the top-level object used to represent the ssh pipeline. The [`Pipeline`](#the-pipeline-object) object implements the [`Resource`](#the-resource-interface) interface.
 
 {{< highlight typescript "linenos=table" >}}
 class Pipeline : Resource {
-  kind:     string;
-  type:     string;
-  name:     string
-  server    Server;
-  platform: Platform;
-  clone:    Clone;
-  steps:    Step[];
-  trigger:  Conditions;
+  kind:      string;
+  type:      string;
+  name:      string
+  server     Server;
+  platform:  Platform;
+  workspace: Workspace;
+  clone:     Clone;
+  steps:     Step[];
+  trigger:   Conditions;
 }
 {{< / highlight >}}
 
@@ -70,6 +81,10 @@ The remote server address and authentication credentials. This attribute is of t
 ## The `platform` section
 
 The target operating system and architecture on which the pipeline must execute. This attribute is of type [`Platform`](#the-platform-object) and is recommended. If empty, the default operating system and architecture may be `linux` and `amd64` respectively.
+
+## The `workspace` section
+
+The working directory where the source code is cloned and the default working directory for each pipeline step. This attribute is of type [`Workspace`](#the-workspace-object) and is optional.
 
 ## The `clone` section
 
@@ -171,6 +186,7 @@ class Step {
   commands:    string[];
   environment: [string, string];
   when:        Conditions;
+  depends_on:  string[];
 }
 {{< / highlight >}}
 
@@ -193,6 +209,10 @@ Defines a list of environment variables scoped to the pipeline step. This attrib
 ## The `when` section
 
 The conditions used to determine whether or not the step should be skipped. This attribute is of type [`Conditions`](#the-conditions-object) and is optional.
+
+## The `depends_on` attribute
+
+Defines a list of steps dependencies, used to defer step execution until the named steps are in a completed state. This attribute is of type `string` and is optional.
 
 # The `Conditions` object
 
@@ -274,6 +294,26 @@ The [`Secret`](#the-secret-object) defines the named source of a secret.
 {{< highlight typescript "linenos=table" >}}
 class Secret {
   from_secret: string;
+}
+{{< / highlight >}}
+
+# The `Concurrency` object
+
+The [`Concurrency`](#the-concurrency-object) object defines the concurrency limits for the named pipeline.
+
+{{< highlight typescript "linenos=table" >}}
+class Concurrency {
+  limit: number;
+}
+{{< / highlight >}}
+
+# The `Workspace` object
+
+The [`Workspace`](#the-workspace-object) object defines the path to which the source code is cloned (non-normative) and the default working directory for each pipeline step (non-normative).
+
+{{< highlight typescript "linenos=table" >}}
+class Workspace {
+  path: string;
 }
 {{< / highlight >}}
 

@@ -332,7 +332,7 @@ enum Status {
 The `Pull` enum defines if and when a docker image should be pull from the registry.
 
 {{< highlight typescript "linenos=table" >}}
-enum Failure {
+enum Pull {
   always,
   never,
   if-not-exists,

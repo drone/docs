@@ -44,6 +44,17 @@ Error indicates license file was not properly mounted:
 }
 ```
 
+Error indicates a problem with the license file itself. This can be resolved by ensuring you have the latest version of the Drone server (1.9.2 or higher) or by requesting a new license key. 
+
+```json {linenos=table,linenostart=1,hl_lines=[2]}
+{
+"error": "unexpected end of JSON input",
+"level": "fatal",
+"msg": "main: invalid or expired license",
+"time": "2020-10-29T09:42:19Z"
+}
+```
+
 Error indicates license environment variable was empty and was not properly configured, resulting in a trial license being issued. This will result in _License Expired_ errors if you have exceeded the trial build limit.
 
 ```json {linenos=table,linenostart=1,hl_lines=[4]}

@@ -20,7 +20,7 @@ Jsonnet is intended for projects with complex configurations that benefit from a
 # Usage
 
 <div class="alert">
-In order to use Jsonnet configuration files your system administrator must enable Jsonnet support for your Drone server.
+In order to use Jsonnet configuration files your system administrator must <a href="{{< relref "server/reference/drone-jsonnet-enabled.md" >}}">enable</a> Jsonnet support for your Drone server.
 </div>
 
 You can use Jsonnet for an individual project by creating a `.drone.jsonnet` file in the root of your git repository. Then update your repository configuration file accordingly, from your repository settings screen.
@@ -98,3 +98,13 @@ steps:
   image: alpine
   commands: [ echo hello world ]
 ```
+
+# Common Problems
+
+The below error may indicate that Drone does not recognize your configuration as a jsonnet file.  The most common root cause for this problem is when you forget to [enable jsonnet]({{< relref "server/reference/drone-jsonnet-enabled.md" >}}) in your Drone server settings. 
+
+```
+yaml: line 1: mapping values are not allowed in this context
+```
+
+The second most common root cause for this issue is when you forget to rename your file with a jsonnet extension. Drone assumes configuration files are written in yaml unless you explicitly use the jsonnet file extension.

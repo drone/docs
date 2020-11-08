@@ -6,7 +6,7 @@ aliases:
 - /installation/reference/drone-repository-filter/
 ---
 
-Optional comma-separated list of accounts, used to limit which repositories can be activated within the system. In order to activate a repository, it must be owned by an account in this list.
+Optional comma-separated list of accounts, used to limit which repositories are syncronized between your source control management system and Drone. _Note that this variable must be set before your first login. Setting this variable after having already authenticated and syncronized your account has no effect._
 
 ```
 DRONE_REPOSITORY_FILTER=octocat,spacheghost

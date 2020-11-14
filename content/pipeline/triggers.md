@@ -339,3 +339,50 @@ trigger:
     exclude:
     - nightly
 {{< / highlight >}}
+
+# By Action
+
+The action trigger limits execution based on the action associated with the event that triggered the pipeline.
+
+<div class="alert">
+Action support varies by event and SCM provider.
+</div>
+
+{{< highlight text "linenos=table,linenostart=12" >}}
+trigger:
+  action:
+  - labeled
+{{< / highlight >}}
+
+Execute when a pull request is opened or reopened:
+
+{{< highlight text "linenos=table,linenostart=12" >}}
+trigger:
+  event:
+  - pull_request
+  action:
+  - opened
+  - reopened
+{{< / highlight >}}
+
+Execute on all pull request actions except "synchronize":
+
+{{< highlight text "linenos=table,linenostart=12" >}}
+trigger:
+  event:
+  - pull_request
+  action:
+    exclude:
+    - synchronize
+{{< / highlight >}}
+
+Execute when a non-master branch is deleted:
+
+{{< highlight text "linenos=table,linenostart=12" >}}
+trigger:
+  branch:
+    exclude:
+    - master
+  action:
+  - deleted
+{{< / highlight >}}

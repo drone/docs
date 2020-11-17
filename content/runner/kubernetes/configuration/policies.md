@@ -7,7 +7,7 @@ description: |
   Configure policies to apply pipeline defaults.
 ---
 
-The Drone policy file gives you the ability to define policies that set default pipeline values. For example, this gives you the ability to set default namespace, tolerations and more based on organization, repository and other matching criteria.
+The Drone policy file gives you the ability to define policies that set and enforce pipeline values. For example, this gives you the ability to set namespace, tolerations and more based on organization, repository and other matching criteria.
 
 Example policy file:
 

@@ -38,7 +38,7 @@ Drone provides the ability to expand, or _substitute_, repository and build meta
       repo: octocat/hello-world
   ```
 
-Please see the environment [Reference]({{< relref "./reference/_index.md" >}}) for a list of parameters that can be used for substitution. _Only parameters in this list can be used for substitution._
+Please see the environment [Reference]({{< relref "./reference/_index.md" >}}) for a list of parameters that can be used for substitution. _The majority of parameters in this list can be used for substitution._
 
 # String Operations
 

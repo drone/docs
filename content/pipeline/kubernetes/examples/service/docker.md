@@ -11,8 +11,7 @@ This guide covers configuring continuous integration pipelines for projects that
 
 # Basic Example
 
-In the below example we demonstrate a pipeline that connects to the host machine Docker daemon by mounting a volume. For security reasons, only trusted repositories can mount volumes. Furthermore, mounting the host machine Docker socket is highly insecure, and should only be used in trusted environments.
-Unlike docker pipelines, on kubernetes you cannot mount files or sockets, you need to mount folders
+In the below example we demonstrate a pipeline that connects to the host machine Docker daemon by mounting a volume. For security reasons, only trusted repositories can mount volumes. Furthermore, mounting the host machine Docker socket is highly insecure, and should only be used in trusted environments. _Unlike docker pipelines, on kubernetes you cannot mount files or sockets, you need to mount folders._
 
 ```
 ---

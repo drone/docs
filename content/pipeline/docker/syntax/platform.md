@@ -49,6 +49,10 @@ platform:
 
 If you are running Docker pipelines on windows you must specify the operating system version number.
 
+<div class="alert">
+Please note Windows pipelines are not available on Drone Cloud. This feature is only available when self-hosting
+</div>
+
 Example windows 1809 pipeline:
 
 {{< highlight text "linenos=table,linenostart=5,hl_lines=4" >}}

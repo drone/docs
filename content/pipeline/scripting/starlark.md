@@ -21,7 +21,7 @@ Starlark is intended for projects with complex configurations that benefit from 
 # Usage
 
 <div class="alert">
-In order to use Starlark configuration files your system administrator must <a href="https://github.com/drone/drone-convert-starlark">install</a> the Starlark extension.
+In order to use Starlark configuration files your system administrator must <a href="{{< relref "server/reference/drone-starlark-enabled.md" >}}">enable</a> Starlark support for your Drone server.
 </div>
 
 You can use Starlark for an individual project by creating a `.drone.star` file in the root of your git repository. Then update your repository configuration file accordingly, from your repository settings screen.

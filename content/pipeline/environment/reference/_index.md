@@ -13,6 +13,6 @@ description: |
   Index of all environment variables available to the pipeline.
 ---
 
-Index of environment variables available to your pipeline. _Note that these environment variables are automatically injected into your pipeline steps, and are also available for substitution._
+Index of environment variables available to your pipeline. _Note that these environment variables are automatically injected into your pipeline steps, and most are available for substitution which the exception of step name, step number, as well as parameters that store statuses and timestamps._
 
 {{< children >}}

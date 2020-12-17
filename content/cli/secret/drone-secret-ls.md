@@ -23,5 +23,5 @@ OPTIONS:
 Example usage:
 
 ```
-$ drone repo ls octocat/hello-world
+$ drone secret ls octocat/hello-world
 ```

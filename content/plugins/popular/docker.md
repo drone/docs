@@ -306,7 +306,15 @@ If the registry username and password are invalid you will see the below entry i
 level=fatal msg="Error authenticating: exit status 1"
 ```
 
-If you are using a self-hosted registry with a self-signed certificate, the docker client may have problems verifying the ssl certificate. You can disable ssl verification with the following configuration:
+## Insecure Registry
+
+If the registry is self-hosted and if the registry uses plain http or self-signed certificates, the docker client will be unable to establish a secure connection to the registry. This will cause the docker login to fail with the following error:
+
+```
+level=fatal msg="Error authenticating: exit status 1"
+```
+
+This can be solved with the following plugin configuration:
 
 ```yaml  {linenos=table, hl_lines=["8"]}
 steps:

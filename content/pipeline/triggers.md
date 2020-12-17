@@ -323,7 +323,7 @@ Example include syntax:
 trigger:
   event:
   - cron
-  target:
+  cron:
     include:
     - weekly
     - nightly
@@ -335,7 +335,7 @@ Example exclude syntax:
 trigger:
   event:
   - cron
-  target:
+  cron:
     exclude:
     - nightly
 {{< / highlight >}}

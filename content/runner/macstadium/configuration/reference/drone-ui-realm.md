@@ -8,5 +8,5 @@ weight: 1
 Optional string value. Sets the basic authentication realm used to authenticate and access the web dashboard.
 
 ```
-DRONE_UI_PASSWORD=DroneRealm
+DRONE_UI_REALM=DroneRealm
 ```

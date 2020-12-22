@@ -59,3 +59,12 @@ steps:
   - go build
   - go test
 {{< / highlight >}}
+
+To bind a non-default service account to a pipeline to allow for more fine grained access to resouces.
+
+{{< highlight text "linenos=table" >}}
+---
+kind: pipeline
+type: kubernetes
+service_account_name: builder
+{{< / highlight >}}

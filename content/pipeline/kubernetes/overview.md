@@ -12,6 +12,8 @@ related:
     path: syntax/services.md
   - name: Integrations using Plugins
     path: syntax/plugins.md
+  - name: DRONE_SERVICE_ACCOUNT_DEFAULT
+    path: /runner/kubernetes/configuration/reference/drone-service-account-default.md
 
 description: |
   Overview of Kubernetes pipelines.
@@ -60,7 +62,7 @@ steps:
   - go test
 {{< / highlight >}}
 
-To bind a non-default service account to a pipeline to allow for more fine grained access to resouces.
+To bind a non-default service account to a pipeline and allow for more fine-grained access to resouces, do the following:
 
 {{< highlight text "linenos=table" >}}
 ---

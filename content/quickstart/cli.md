@@ -143,20 +143,31 @@ The command line runner does not have read access to secrets stored in your serv
    steps:
    - name: test
      environment:
-       USERNAME:
-         from_secret: USERNAME
-       PASSWORD:
-         from_secret: PASSWORD
+      USERNAME:
+        from_secret: USERNAME
+      PASSWORD:
+        from_secret: PASSWORD
+      SSH_KEY:
+        from_secret: ssh_key
+      CLOUD_AUTH:
+        from_secret: cloud_auth_json
    ```
-1. Create a simple text file with secrets defined one per line in key value format. _For the purposes of this demo we name the file `secrets.txt`._
+1. Create a simple text file with secrets defined one per line in key value format. _For the purposes of this demo we name the file `.env-drone`._
    ```
+   # The key casing (upper/lower) must match the drone secret case
+   #
+   # Normal key value pairs are unquoted
    USERNAME=root
    PASSWORD=password
+   # Quoting the value will cause the reader to parse escape codes like \n and therefore give you a multiline value.
+   ssh_key="-----BEGIN RSA PRIVATE KEY-----\nREDACTED\n-----END RSA PRIVATE KEY-----"
+   # Unquoted strings are not parsed, so we make this a single line of JSON, to preserve it exactly as it is, with all the escape codes in the 'private_key' field.
+   cloud_auth_json={"type": "READCATED","private_key": "-----BEGIN PRIVATE KEY-----\nREDACTED\n-----END PRIVATE KEY-----\n","client_email": "REDACTED","client_id": "REDACTED"}
    ```
 
 2. Provide your secrets file via command line flags when executing your pipeline.
    ```
-   $ drone exec --secret-file=secrets.txt
+   $ drone exec --secret-file=.env-drone
    ```
 
 _The command line runner uses the [dotenv](https://github.com/joho/godotenv) package to read and parse the secrets file. If you are having problems with the secrets file please consult the official package [documentation](https://github.com/joho/godotenv)._

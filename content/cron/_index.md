@@ -70,5 +70,5 @@ You can reduce the one hour window and increase scheduler accuracy by changing t
 
 The cron scheduler executes all matching pipelines and steps defined in your yaml configuration file. See the pipeline configuration documentation to limit cron execution of pipelines and pipeline steps:
 
-{{< link "/pipeline/triggers.md#by-cron" "Limit Pipeline Execution" >}}
-{{< link "/pipeline/conditions.md#by-cron" "Limit Pipeline Step Execution" >}}
+{{< link "/pipeline/docker/syntax/trigger.md#by-cron" "Limit Pipeline Execution" >}}
+{{< link "/pipeline/docker/syntax/conditions.md#by-cron" "Limit Pipeline Step Execution" >}}

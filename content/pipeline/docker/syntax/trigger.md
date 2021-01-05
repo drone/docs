@@ -86,7 +86,7 @@ trigger:
 
 # By Event
 
-The event trigger limits step execution based on the drone event type. This can be helpful when you want to limit steps based on push, pull request, tag and more.
+The event trigger limits pipeline execution based on the drone event type. This can be helpful when you want to limit pipeline execution based on push, pull request, tag and more.
 
 <div class="alert">
 Note that you cannot use branch triggers with tag events. A tag is not associated with the source branch from which it was created.
@@ -197,7 +197,7 @@ trigger:
 
 <!-- # By Instance
 
-The instance trigger limits step execution based on the Drone instance hostname. This can be useful if you have multiple Drone instances configured for a single repository, sharing the same yaml file, and want to limit steps by instance.
+The instance trigger limits step execution based on the Drone instance hostname. This can be useful if you have multiple Drone instances configured for a single repository, sharing the same yaml file, and want to limit pipeline execution by instance.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -262,7 +262,7 @@ trigger:
   - failure
 {{< / highlight >}}
 
-The following configuration is redundant. The default behavior is for pipeline steps to only execute when the pipeline is in a passing state.
+The following configuration is redundant. The default behavior is a pipeline only executes when the overall build is in a passing state.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:

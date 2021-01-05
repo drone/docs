@@ -7,7 +7,7 @@ steps:
   image: plugins/hugo
   settings:
     extended: true
-    hugo_version: "0.63.2"
+    hugo_version: "0.74.3"
     config: config.yaml
 
 - name: publish

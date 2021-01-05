@@ -67,7 +67,7 @@ The Drone server is configured using environment variables. This article referen
 * __DRONE_GITEA_CLIENT_SECRET__
   : Required string value provides your Gitea oauth Client Secret.
 * __DRONE_GITEA_SERVER__
-  : Require string value provides your Gitea server address. For example `https://gitea.company.com`
+  : Require string value provides your Gitea server address. For example `https://gitea.company.com`, note the `http(s)` otherwise you'll see an error with "unsupported protocol scheme" from Gitea.
 * __DRONE_GIT_ALWAYS_AUTH__
   : Optional boolean value configures Drone to authenticate when cloning public repositories.
 * __DRONE_RPC_SECRET__

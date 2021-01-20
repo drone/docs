@@ -14,9 +14,15 @@ If your repository is private or requires authentication to clone, Drone injects
 
 The clone credentials are injected into to your pipeline environment which means a malicious collaborator could submit a patch (to your pipeline configuration, unit tests, etc) that attempts to expose these credentials during pipeline execution. Drone provides options, described below, to mitigate these risks.
 
+## Limit Clone Credentials
+
+It is considered best practice to configure the Drone runners to only inject the clone credentials into the default clone step. This prevents untrusted code from from being able to access and expose the clone credentials.
+
+{{< link "/runner/docker/configuration/reference/drone-netrc-clone-only" >}}
+
 ## Machine Accounts
 
-It is best practice to create a [machine user](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users) with the exact permissions and access required to clone your repository and its dependencies. Login to Drone using the machine user account and activate your repositories. The machine account credentials will be injected into your pipeline environment, eliminating risk of exposing credentials linked to a user account.
+It is also possible to create a [machine user](https://docs.github.com/en/developers/overview/managing-deploy-keys#machine-users) with the exact permissions and access required to clone your repository and its dependencies. Login to Drone using the machine user account and activate your repositories. The machine account credentials will be injected into your pipeline environment, eliminating risk of exposing credentials linked to a user account.
 
 ## Global Machine Accounts
 

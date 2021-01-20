@@ -5,9 +5,12 @@ author: bradrydzewski
 weight: 1
 ---
 
-Optional boolean value. Configures the runner to only inject the clone credentials into the clone step. _Please note that clone credentials are injected into all pipeline steps by default, but only for private repositories. Clone credentials are never injected into pipelines for public repositories._
+Optional boolean value. Configures the runner to only inject the clone credentials into the clone step.
+
+<div class="alert">
+Please note that Drone injects clone credentials into all pipeline steps if the repository is private or requires authentication to clone; Drone never injects credentials into pipeline steps if the repository is public.
+</div>
 
 ```
 DRONE_NETRC_CLONE_ONLY=true
 ```
-

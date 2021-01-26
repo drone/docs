@@ -60,10 +60,6 @@ steps:
 
 # From Secrets
 
-<div class="alert">
-Pipelines execute directly on the host without isolation. Any process running on the host may be able to intercept your secrets. You should only expose secrets on a trusted server.
-</div>
-
 Drone provides the ability to source environment variables from secrets. In the below example we provide the username and password as environment variables to the step.
 
 {{< highlight text "linenos=table,linenostart=5,hl_lines=8-11" >}}

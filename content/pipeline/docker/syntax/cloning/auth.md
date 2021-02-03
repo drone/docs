@@ -12,7 +12,7 @@ If your repository is private or requires authentication to clone, Drone injects
 
 # Security Consideration
 
-The clone credentials are injected into to your pipeline environment which means a malicious collaborator could submit a patch (to your pipeline configuration, unit tests, etc) that attempts to expose these credentials during pipeline execution. Drone provides options, described below, to mitigate these risks.
+__If your repository is private__ or requires authentication to clone, the clone credentials are injected into to your pipeline environment which means a malicious collaborator could submit a patch (to your pipeline configuration, unit tests, etc) that attempts to expose these credentials during pipeline execution. Drone provides options, described below, to mitigate these risks.
 
 ## Limit Clone Credentials
 

@@ -44,7 +44,7 @@ Repository definition:
 ```typescript  {linenos=table}
 class Repository {
     id: int64;
-    uid: int64;
+    uid: string;
     user_id: int64;
     namespace: string;
     name: string;

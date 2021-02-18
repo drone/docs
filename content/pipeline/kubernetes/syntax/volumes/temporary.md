@@ -37,3 +37,26 @@ volumes:
 - name: cache
   temp: {}
 {{< / highlight >}}
+
+`tmpfs` can be used to speed up pipelines by storing files frequently wrote and read in memory instead of hard drive.
+
+{{< highlight text "linenos=table,hl_lines=15-18" >}}
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: test
+  image: golang
+  volumes:
+  - name: cache
+    path: /cache
+  commands:
+  - go get
+  - go test
+
+volumes:
+- name: cache
+  temp:
+    medium: memory
+{{< / highlight >}}

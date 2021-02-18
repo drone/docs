@@ -14,7 +14,7 @@ This guide covers configuring continuous integration pipelines for Go projects t
 
 # Build and Test
 
-In the below example we demonstrate a pipeline that executes `go test` and `go build` commands. These commands are executed inside the golang Docker container, downloaded at runtime from DockerHub.
+In the below example `.drone.yml` file we demonstrate a pipeline that executes `go test` and `go build` commands. These commands are executed inside the golang Docker container, downloaded at runtime from DockerHub. 
 
 ```
 kind: pipeline

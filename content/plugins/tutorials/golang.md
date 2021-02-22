@@ -81,3 +81,9 @@ $ docker run --rm \
   -e PLUGIN_BODY=hello \
   acme/webhook
 ```
+
+# Plugin templates
+
+To make it easier to create plugins we use templates to make them. We use the tool [Boilr](https://raw.githubusercontent.com/tmrts/boilr) to make the plugin. 
+
+The default plugin template is [here](https://github.com/drone/boilr-plugin) and there is a more complex community version is [here](https://github.com/drone-plugins/boilr-plugin)

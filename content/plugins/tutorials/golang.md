@@ -24,7 +24,7 @@ steps:
       hello world
 ```
 
-Create a Go program that makes an http request using the Yaml configuration parameters, which are passed to the program as environment variables in uppercase, prefixed with PLUGIN_.
+Create a Go program that makes an http request using the Yaml configuration parameters, which are passed to the program as environment variables in uppercase, prefixed with PLUGIN_. Here is more information on [plugin inputs](https://docs.drone.io/plugins/overview/#plugin-inputs).
 
 ```go  {linenos=table}
 package main
@@ -86,4 +86,4 @@ $ docker run --rm \
 
 To make it easier to create plugins we use templates to make them. We use the tool [Boilr](https://raw.githubusercontent.com/tmrts/boilr) to make the plugin. 
 
-The default plugin template is [here](https://github.com/drone/boilr-plugin) and there is a more complex community version is [here](https://github.com/drone-plugins/boilr-plugin)
+The default plugin template is [here](https://github.com/drone/boilr-plugin) and there are more complex community versions available too.

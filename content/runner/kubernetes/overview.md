@@ -34,3 +34,5 @@ Kubernetes pipelines are considered experimental and may not be suitable for pro
 * The command line utility does not support linting, formatting or execution of Kubernetes pipelines.
 
 * The Kubernetes runner must not be restarted while pipelines are running. If you stop or restart the runner while a pipeline is running, it will be stuck in a running state, and the associated Pod must be manually removed.
+
+* If the pipeline Pod is sitting in a pending state, and waiting to be scheduled for an extended period of time, the Pipeline may appear stuck in the user interface. This can be resolved by increasing capacity in your cluster.

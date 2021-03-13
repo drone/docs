@@ -44,7 +44,7 @@ name: default
 
 steps:
 - name: fetch
-  image: alpine/git
+  image: plugins/git
   commands:
   - git fetch --tags
 
@@ -67,7 +67,7 @@ name: default
 
 steps:
 - name: submodules
-  image: alpine/git
+  image: plugins/git
   commands:
   - git submodule update --recursive --remote
 
@@ -92,7 +92,7 @@ clone:
 
 steps:
 - name: clone
-  image: alpine/git
+  image: plugins/git
   commands:
   - git clone https://github.com/octocat/hello-world.git .
   - git checkout $DRONE_COMMIT

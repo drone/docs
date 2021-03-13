@@ -58,18 +58,19 @@ steps:
 
 # The `--recursive` flag
 
-The default clone behavior does not use the `--recursive` flag and does not fetch submodules. If you would like to fetch submodules you should handle this as a step in your pipeline. For example:
+The default clone behavior does not use the `--recursive` flag and does not fetch submodules. If you would like to fetch submodules you should handle this by using a personalised `clone` step. For example:
 
 {{< highlight text "linenos=table,hl_lines=6-9" >}}
 kind: pipeline
 type: docker
 name: default
+clone:
+  disable: true
 
 steps:
-- name: submodules
+- name: clone
   image: plugins/git
-  commands:
-  - git submodule update --recursive --remote
+  recursive: true
 
 - name: build
   image: golang

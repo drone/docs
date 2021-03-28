@@ -24,7 +24,7 @@ description: |
 This article explains how to install the Drone server for Gitea. The server is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone).
 
 <div class="alert alert-danger">
-Please note we strongly recommend installing Drone on a dedicated instance. We do not recommend installing Drone and Gitea on the same instance using docker-compose due to network complications.
+Please note we strongly recommend installing Drone on a dedicated instance. We do not recommend installing Drone and Gitea on the same machine due to network complications, and we definitely do not recommend installing Drone and Gitea on the same machine using docker-compose.
 </div>
 
 # Preparation

@@ -41,7 +41,7 @@ Example Linux arm32 pipeline:
 
 {{< highlight text "linenos=table,linenostart=5,hl_lines=3" >}}
 platform:
-  os: windows
+  os: linux
   arch: arm
 {{< / highlight >}}
 

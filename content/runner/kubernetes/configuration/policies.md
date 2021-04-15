@@ -17,7 +17,7 @@ kind: policy
 name: octocat
 
 match:
-  repos:
+  repo:
   - "octocat/*"
   - "octocat/hello-world"
 
@@ -55,7 +55,7 @@ kind: policy
 name: octocat
 
 match:
-  repos:
+  repo:
   - "octocat/*"
   - "octocat/hello-world"
 
@@ -80,7 +80,7 @@ kind: policy
 name: octocat
 
 match:
-  repos:
+  repo:
   - "octocat/*"
   - "octocat/hello-world"
 
@@ -160,7 +160,7 @@ metadata:
   service_account: drone
 
   match:
-    repos:
+    repo:
     - "octocat/*"
     - "octocat/hello-world"
   ```
@@ -175,7 +175,7 @@ metadata:
     namespace: default
 
   match:
-    repos:
+    repo:
     - "octocat/*"
     - "octocat/hello-world"
   ```

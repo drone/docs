@@ -69,6 +69,7 @@ steps:
 - name: submodules
   image: alpine/git
   commands:
+  - git submodile init
   - git submodule update --recursive --remote
 
 - name: build

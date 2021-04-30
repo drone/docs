@@ -354,7 +354,7 @@ trigger:
   - labeled
 {{< / highlight >}}
 
-Execute when a pull request is opened or reopened:
+Execute when a pull request is opened:
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -362,7 +362,6 @@ trigger:
   - pull_request
   action:
   - opened
-  - reopened
 {{< / highlight >}}
 
 Execute on all pull request actions except "synchronized":

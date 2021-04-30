@@ -359,7 +359,7 @@ trigger:
   - reopened
 {{< / highlight >}}
 
-Execute on all pull request actions except "synchronize":
+Execute on all pull request actions except "synchronized":
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -367,7 +367,7 @@ trigger:
   - pull_request
   action:
     exclude:
-    - synchronize
+    - synchronized
 {{< / highlight >}}
 
 Execute when a non-master branch is deleted:

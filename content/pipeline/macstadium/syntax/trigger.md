@@ -331,14 +331,3 @@ trigger:
     exclude:
     - synchronized
 {{< / highlight >}}
-
-Execute when a non-master branch is deleted:
-
-{{< highlight text "linenos=table,linenostart=12" >}}
-trigger:
-  branch:
-    exclude:
-    - master
-  action:
-  - deleted
-{{< / highlight >}}

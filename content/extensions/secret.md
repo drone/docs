@@ -152,7 +152,10 @@ class Secret {
 Example response:
 
 ```
-{ "password": "correct-horse-battery-staple" }
+{
+  "name": "password",
+  "data": "correct-horse-battery-staple"
+}
 ```
 
 

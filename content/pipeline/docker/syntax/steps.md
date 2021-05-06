@@ -63,7 +63,7 @@ go test
 The above shell script is then executed as the docker entrypoint. The below docker command is an (incomplete) example of how the script is executed:
 
 ```
-docker run --entrypoint=build.sh golang
+docker run --entrypoint=backend.sh golang
 ```
 
 The container exit code is used to determine whether the step is passing or failing. If a command returns a non-zero exit code, the step is marked as failing. The overall pipeline status is also marked as failing, and remaining pipeline steps are skipped (_unless explicitly configured to run on failure_).

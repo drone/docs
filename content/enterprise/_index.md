@@ -18,13 +18,13 @@ Yes
 Yes
 
 # Is Drone Enterprise Free for Startups?
-The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue and less than $5 million in debt or equity funding.
+The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue.
 
 # Is Drone Enterprise Free for Small Businesses?
-The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue and less than $5 million in debt or equity funding.
+The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue.
 
 # Is Drone Enterprise Free for Non-Profits?
-The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue and less than $5 million in debt or equity funding.
+The Enterprise Edition is free for organizations with under $1 million US dollars in annual gross revenue.
 
 # Is Drone Enterprise available for trial?
 Yes. The Enterprise Edition includes a free trial for up to 5000 builds. You can download and use the Enterprise Edition by following the [installation instructions]({{< relref "server/overview.md" >}}) described in this documentation.

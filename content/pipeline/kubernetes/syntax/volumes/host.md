@@ -11,7 +11,7 @@ description: |
 Host mounts allow you to mount an absolute path on the host machine into a pipeline step. This setting is only available to trusted repositories.
 
 <div class="alert alert-warn">
-This setting is only available to trusted repositories, since mounting host machine volumes is a security risk.
+This setting is only available to trusted repositories, since mounting host machine volumes is a security risk. If you absolutely need to mount a volume, you must set `privileged: true` for the step in order for Docker-in-Docker to work as expected.
 </div>
 
 {{< highlight text "linenos=table,hl_lines=8-10 15-18" >}}

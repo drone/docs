@@ -69,8 +69,7 @@ steps:
 - name: submodules
   image: alpine/git
   commands:
-  - git submodule init
-  - git submodule update --recursive --remote
+  - git submodule update --init --recursive
 
 - name: build
   image: golang

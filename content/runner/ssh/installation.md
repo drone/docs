@@ -37,7 +37,7 @@ The ssh runner is configured using environment variables. This article reference
 
 # Installation
 
-The below command creates the a container and start the ssh runner. _Remember to replace the environment variables below with your Drone server details._
+The below command creates a container and starts the ssh runner. _Remember to replace the environment variables below with your Drone server details._
 
 ```
 $ docker run -d \

@@ -11,13 +11,12 @@ description: a list and description of variables available for use
 The following variables are available for use for both starlark & Jsonnet templates:
 
 # Build
+Must be prefixed with 'build.'
 
 Jsonnet example usage:
 ```
 local event = std.extVar("build.event");
 local action = std.extVar("build.action");
-
-please note they must be prefixed with 'build.'
 ```
 
 Starlark example usage:
@@ -26,7 +25,6 @@ Starlark example usage:
  "event": ctx.build.event,
  "action": ctx.build.action
 }
-please note they must be prefixed with 'build.'
 ```
 
 Variable	| Description
@@ -52,14 +50,13 @@ author_avatar | Provides the commit author avatar for the current running build.
 sender	      | Provides the event sender’s login name
 
 # Repo
+Must be prefixed with 'repo.'
 
 Jsonnet example usage:
 ```
 local uid = std.extVar("repo.uid");
 local name = std.extVar("repo.name");
-
-please note they must be prefixed with 'repo.'
-```
+ ```
 
 Starlark example usage:
 ```
@@ -67,7 +64,6 @@ Starlark example usage:
  "uid": ctx.repo.uid,
  "name": ctx.repo.name
 }
-please note they must be prefixed with 'repo.'
 ```
 
 Variable	| Description
@@ -80,11 +76,11 @@ git_http_url | Provides the git+http url that should be used to clone the reposi
 git_ssh_url	 | Provides the git+ssh url that should be used to clone the repository.
 link	     | Provides the repository link for the current running build.
 branch	     | Provides the default repository branch for the current running build.
-config	     |
+config	     | Provides the configuration path for the repository.
 private	     | Provides a boolean flag that indicates whether or not the repository is private or public.
 visibility	 | Provides the repository visibility level for the current running build.
-active	     | Provides a boolean flag that indicates whether or not the repository is active
-trusted	     | Provides a boolean flag that indicates whether or not the repository is trusted
-protected	 | Provides a boolean flag that indicates whether or not the repository is protected
-ignore_forks |
-ignore_pull_requests  |
+active	     | Provides a boolean flag that indicates whether or not the repository is active.
+trusted	     | Provides a boolean flag that indicates whether or not the repository is trusted.
+protected	 | Provides a boolean flag that indicates whether or not the repository is protected.
+ignore_forks | Provides a boolean flag that indicates whether or not to ignore forks.
+ignore_pull_requests  | Provides a boolean flag that indicates whether or not to ignore pull requests.

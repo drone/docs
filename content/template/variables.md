@@ -71,7 +71,7 @@ Variable	| Description
 uid	         | Provides the UUID of the repository.
 name	     | Provides the full repository name for the current running build.
 namespace	 | Provides the repository namespace for the current running build. The namespace is an alias for the source control management account that owns the repository.
-slug	     |
+slug	     | Provides the user or organisation and the repository name
 git_http_url | Provides the git+http url that should be used to clone the repository.
 git_ssh_url	 | Provides the git+ssh url that should be used to clone the repository.
 link	     | Provides the repository link for the current running build.

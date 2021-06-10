@@ -31,24 +31,25 @@ please note they must be prefixed with 'build.'
 
 Variable	| Description
 ------------|------------
-event	      | 
-action	      |
-environment	  |
-link	      |
-branch	      |
-source	      |
-before	      |
-after	      |
-target	      |
-ref	          |
-commit	      |
-title	      |
-message	      |
-source_repo	  |
-author_login  |
-author_email  |
-author_avatar |
-sender	      |
+event	      | Provides the event that triggered the pipeline execution.
+action	      | Provides the action that triggered the pipeline execution. Use this value to differentiate between the pull request being opened vs synchronized.
+environment	  | Provides the target deployment environment for the running build.
+link	      | Provides a link the git commit or object in the source control management system.
+branch	      | Provides the target branch for the push or pull request. This value may be empty for tag events.
+source	      | Provides the source branch for the pull request. This value may be empty for certain source control management providers.
+before	      | Provides the git commit sha before the patch is applied. This may be used in conjunction with the after commit sha to create a diff.
+after	      | Provides the git commit sha after the patch is applied. This may be used in conjunction with the before commit sha to create a diff.
+target	      | Provides the target branch for the push or pull request. This value may be empty for tag events.
+ref	          | Provides the target branch for the push or pull request. This value may be empty for tag events.
+commit	      | Provides the git commit sha after the patch is applied. This may be used in conjunction with the before commit sha to create a diff.
+title	      | Provides the title of the commit. The full first line of the message.
+message	      | Provides the commit message for the current running build.
+source_repo	  | Provides the source repository name of the pull request.
+author_login  | Provides the commit author username for the current running build. This is the username from source control management system (e.g. GitHub username).
+author_name   | Provides the commit author name for the current running build. Note this is a user-defined value and may be empty or inaccurate.
+author_email  | Provides the commit email address for the current running build. Note this is a user-defined value and may be empty or inaccurate.
+author_avatar | Provides the commit author avatar for the current running build. This is the avatar from source control management system (e.g. GitHub).
+sender	      | Provides the event sender’s login name
 
 # Repo
 
@@ -71,19 +72,19 @@ please note they must be prefixed with 'repo.'
 
 Variable	| Description
 ------------|------------
-uid	         | 
-name	     |
-namespace	 |
+uid	         | Provides the UUID of the repository.
+name	     | Provides the full repository name for the current running build.
+namespace	 | Provides the repository namespace for the current running build. The namespace is an alias for the source control management account that owns the repository.
 slug	     |
-git_http_url |
-git_ssh_url	 |
-link	     |
-branch	     |
+git_http_url | Provides the git+http url that should be used to clone the repository.
+git_ssh_url	 | Provides the git+ssh url that should be used to clone the repository.
+link	     | Provides the repository link for the current running build.
+branch	     | Provides the default repository branch for the current running build.
 config	     |
-private	     |
-visibility	 |
-active	     |
-trusted	     |
-protected	 |
+private	     | Provides a boolean flag that indicates whether or not the repository is private or public.
+visibility	 | Provides the repository visibility level for the current running build.
+active	     | Provides a boolean flag that indicates whether or not the repository is active
+trusted	     | Provides a boolean flag that indicates whether or not the repository is trusted
+protected	 | Provides a boolean flag that indicates whether or not the repository is protected
 ignore_forks |
 ignore_pull_requests  |

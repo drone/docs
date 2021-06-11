@@ -10,13 +10,11 @@ aliases:
 
 # _Why use templates?_
 
-Organizations are having difficulty maintaining large amounts of configuration files, especially when those configuration files are very similar across projects. A pain point is needing to change a docker image (for example) and having to update configuration files in hundreds of repositories.
-Configuration templates that can be shared across projects. 
+Large organizations can have difficulty maintaining large numbers of build configuration files. Very often those configuration files are very similar or almost identical across projects. Some changes need to be made across all projects, for example needing to change the version docker image.
 
-This will simplify configuration management at organizations that have 
-large numbers of similar configuration files; it will reduce complexity 
-of yaml files in individual repositories and will simplify management of 
-configuration across repositories.
+To make this simpler Drone has build templates that can be shared across projects. A project can use a template, and provide project specific information to alter the build.
+
+This will simplify configuration management at organizations that have large numbers of similar configuration files; it will reduce complexity of yaml files in individual repositories and will simplify management of configuration across repositories.
 
 Here are the articles in this section:
 

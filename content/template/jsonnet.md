@@ -38,6 +38,8 @@ local commands = std.extVar("input.commands");
   ]
 }
 ```
+Predefined variable list can be found at: https://docs.drone.io/template/variables
+
 Create organization templates using the command line tools:
 ```
 $ drone template add [namespace] [name] [data]

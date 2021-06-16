@@ -26,7 +26,7 @@ You can register a secret extension with your runners by providing the following
   : Provides the endpoint used to make http requests to a secret extension.
 
 * `DRONE_SECRET_PLUGIN_SECRET`
-  : Provides the secret used to authenticate http requests to the extension. This token is shared between the server and extension.
+  : Provides the token used to authenticate http requests to the extension. This token is shared between the server and extension.
 
 <div class="alert">
 Secret extensions are registered with runners as opposed to the central server. This design is intentional. For example, runners in different regions or data centers may have access to different secrets.

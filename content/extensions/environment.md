@@ -19,8 +19,8 @@ You can register an extension with your runners by providing the following confi
 * `DRONE_ENV_PLUGIN_ENDPOINT`
   : Provides the endpoint used to make http requests to the extension.
 
-* `DRONE_ENV_PLUGIN_TOKEN`
-  : Provides the token used to authenticate http requests to the extension. This token is shared between the server and extension.
+* `DRONE_ENV_PLUGIN_SECRET`
+  : Provides the secret used to authenticate http requests to the extension. This token is shared between the server and extension.
 
 # How it Works
 

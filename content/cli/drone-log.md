@@ -1,6 +1,6 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: drone encrypt
+title: drone log
 author: tphoney
 weight: 4
 separator: true
@@ -23,14 +23,24 @@ GLOBAL OPTIONS:
    --help, -h  show help
 ```
 
-Example usage, view a log:
+View a log:
 
 ```
-drone log view octocat/hello-world 1
+drone log view <repo/name> <build> <stage> <step>
 ```
 
-Example usage, purge a log:
+Example usage:
 
 ```
-drone log purge octocat/hello-world
+drone log view octocat/hello-world 19 1 3
+```
+
+Purge a log:
+
+```
+drone log purge <repo/name> <build> <stage> <step>
+```
+
+```
+drone log purge octocat/hello-world 19 1 3
 ```

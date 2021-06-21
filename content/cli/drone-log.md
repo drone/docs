@@ -41,6 +41,8 @@ Purge a log:
 drone log purge <repo/name> <build> <stage> <step>
 ```
 
+Example usage:
+
 ```
 drone log purge octocat/hello-world 19 1 3
 ```

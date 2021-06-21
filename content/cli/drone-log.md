@@ -3,7 +3,6 @@ date: 2000-01-01T00:00:00+00:00
 title: drone log
 author: tphoney
 weight: 4
-separator: true
 ---
 
 The command views or purges logs. 

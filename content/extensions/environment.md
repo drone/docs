@@ -116,7 +116,7 @@ Example response:
 ```json  {linenos=table}
 [
   {
-    "name": "keyb",
+    "name": "keya",
     "data": "valuea",
     "mask": false
   },

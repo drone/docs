@@ -22,6 +22,7 @@ Linux arm64	| [tarball](https://github.com/drone/drone-cli/releases/latest/downl
 Linux arm	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_linux_arm.tar.gz)     | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
 Windows x64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_windows_amd64.tar.gz) | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
 Darwin x64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_darwin_amd64.tar.gz)  | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
+Darwin arm64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_darwin_arm64.tar.gz)  | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
 
 # Install on Linux
 

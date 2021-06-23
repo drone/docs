@@ -28,7 +28,7 @@ Please note we strongly recommend using Gitea with Drone. Gitea has better compa
 The Drone server is distributed as a lightweight Docker image. The image is self-contained and does not have any external dependencies.
 
 ```
-$ docker pull drone/drone:1
+$ docker pull drone/drone:2
 ```
 
 # Configuration
@@ -63,7 +63,7 @@ docker run \
   --restart=always \
   --detach=true \
   --name=drone \
-  drone/drone:1
+  drone/drone:2
 {{< / highlight >}}
 
 # Install Runners

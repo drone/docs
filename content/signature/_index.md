@@ -12,7 +12,7 @@ description: |
   Sign your configuration file to prevent tampering.
 ---
 
-You can optionally sign your configuration file to verify authenticity and prevent tampering. This is useful if your repository is public and you need to prevent unauthorized changes to your configuration.
+You can optionally sign your configuration file to verify authenticity and prevent tampering. This is useful if your repository is public and you need to prevent unauthorized changes to your configuration file from third-party pull requests.
 
 If a user modifies the configuration and signature verification fails, the pipeline is blocked pending manual approval by an authorized user with write or administrative access to the repository.
 

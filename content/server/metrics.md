@@ -16,18 +16,17 @@ Drone publishes and exposes metrics that can be consumed by Prometheus at the st
 
 # Configuration
 
-1. Create a 32-byte random token:
+1. Create a machine user:
 
     ```
-    $ openssl rand -hex 16
-      fe8c402a51e6629aa1f43a4234afee81
+    $ drone user add prometheus --admin --machine
     ```
 
-2. Create a machine user:
+2. Drone will generate a 32-byte authorization token for this user:
 
     ```
-    $ drone user add prometheus --admin --machine \
-        --token=fe8c402a51e6629aa1f43a4234afee81
+    Successfully added user prometheus
+    Generated account token fe8c402a51e6629aa1f43a4234afee81
     ```
 
 3. Configure the prometheus scraper:
@@ -37,11 +36,11 @@ Drone publishes and exposes metrics that can be consumed by Prometheus at the st
         scrape_interval: 60s
 
         scrape_configs:
-        - job_name: 'drone'
+          - job_name: 'drone'
             bearer_token: fe8c402a51e6629aa1f43a4234afee81
 
             static_configs:
-            - targets: ['domain.com']
+              - targets: ['domain.com']
     ```
 
 # Drone Metrics

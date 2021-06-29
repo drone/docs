@@ -11,7 +11,7 @@ If you receive a message indicating “Your License Limit is Exceeded” it mean
 
 # Existing Customers
 
-If you already have a commercial license, this warning message indicates you exceeded your user or repository limits. Please [contact sales](mailto:sales@drone.io) to upgrade your plan and increase your limits accordingly. [Learn more]({{< ref "enterprise/usage" >}}) about how usage limits are calculated and how to remove old or unused accounts. 
+If you already have a commercial license, this warning message indicates you exceeded your user or repository limits. Please [contact support](mailto:support@harness.io) to upgrade your plan and increase your limits accordingly. [Learn more]({{< ref "enterprise/usage" >}}) about how usage limits are calculated and how to remove old or unused accounts. 
 
 # Community Edition
 

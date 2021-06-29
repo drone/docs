@@ -52,7 +52,7 @@ bea26a2221fd8090ea38720fc445eca6
 The Drone server is distributed as a lightweight Docker image. The image is self-contained and does not have any external dependencies.
 
 ```
-$ docker pull drone/drone:1
+$ docker pull drone/drone:2
 ```
 
 # Configuration
@@ -87,7 +87,7 @@ docker run \
   --restart=always \
   --detach=true \
   --name=drone \
-  drone/drone:1
+  drone/drone:2
 {{< / highlight >}}
 
 # Install Runners

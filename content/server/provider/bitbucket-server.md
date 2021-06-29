@@ -102,6 +102,7 @@ bea26a2221fd8090ea38720fc445eca6
 # Download
 
 The Drone server is distributed as a lightweight Docker image. The image is self-contained and does not have any external dependencies.
+The latest tag will ensure the latest version of Drone.
 
 ```
 $ docker pull drone/drone:2

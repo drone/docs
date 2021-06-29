@@ -153,7 +153,7 @@ docker run \
   --restart=always \
   --detach=true \
   --name=drone \
-  drone/drone:latest
+  drone/drone:2
 {{< / highlight >}}
 
 # Install Runners

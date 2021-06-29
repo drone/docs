@@ -53,7 +53,7 @@ The Drone server is distributed as a lightweight Docker image. The image is self
 The latest tag will ensure the latest version of Drone.
 
 ```
-$ docker pull drone/drone:latest
+$ docker pull drone/drone:2
 ```
 
 # Configuration
@@ -88,7 +88,7 @@ docker run \
   --restart=always \
   --detach=true \
   --name=drone \
-  drone/drone:latest
+  drone/drone:2
 {{< / highlight >}}
 
 # Install Runners

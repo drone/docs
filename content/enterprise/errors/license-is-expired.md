@@ -11,7 +11,7 @@ If you receive a message indicating "Your License is Expired" it means your lice
 
 # Paying Customers
 
-License keys are automatically issued and sent to the billing email address associated with your subscription. You should receive a license key when your subscription begins and when your subscription renews. If and you are a paying customer in good standing and you did not receive a license key please [contact support](mailto:sales@drone.io).
+License keys are automatically issued and sent to the billing email address associated with your subscription. You should receive a license key when your subscription begins and when your subscription renews. If and you are a paying customer in good standing and you did not receive a license key please [contact support](mailto:support@harness.io).
 
 # Trial Customers
 

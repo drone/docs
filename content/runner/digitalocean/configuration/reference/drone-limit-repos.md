@@ -9,5 +9,5 @@ draft: true
 Optional comma-separated string value. Configures the runner to only process matching repositories. This provides an extra layer of security and can stop untrusted repositories from executing pipelines with this runner.
 
 ```
-DRONE_LIMIT_EVENTS=octocat/hello-world,spaceghost/*
+DRONE_LIMIT_REPOS=octocat/hello-world,spaceghost/*
 ```

@@ -81,7 +81,7 @@ The Drone server is configured using environment variables. This article referen
 * __DRONE_SERVER_HOST__
   : Required string value provides your external hostname or IP address. If using an IP address you may include the port. For example `drone.company.com`.
 * __DRONE_SERVER_PROTO__
-  : Required string value provides your external protocol scheme. This value should be set to http or https. This field defaults to https if you configure ssl or acme. _This value should be set to `https` if you deploy Drone behind a load balencer or reverse proxy with SSL termination._
+  : Required string value provides your external protocol scheme. This value should be set to http or https. This field defaults to https if you configure ssl or acme. _This value should be set to `https` if you deploy Drone behind a load balancer or reverse proxy with SSL termination._
 
 # Start the Server
 

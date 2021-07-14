@@ -14,23 +14,24 @@ NAME:
    drone secret add - adds a secret
 
 USAGE:
-   drone secret add [command options] [repo/name] [secret] [value]
+   drone secret add [command options] [repo/name]
 
 OPTIONS:
    --repository value            repository name (e.g. octocat/hello-world)
    --name value                  secret name
    --data value                  secret value
    --allow-pull-request          permit read access to pull requests
+   --allow-push-on-pull-request  permit write access to pull requests (e.g. allow docker push)
 ```
 
 Example usage, creates a secret:
 
 ```
-$ drone secret add octocat/hello-world my_token e72e16c7e42f29
+$ drone secret add --name my_token --data e72e16c7e42f29 octocat/hello-world
 ```
 
 Example usage, creates a secret from a file:
 
 ```
-$ drone secret add octocat/hello-world my_token @/path/to/secret.json
+$ drone secret add --name my_token --data @/path/to/secret.json octocat/hello-world
 ```

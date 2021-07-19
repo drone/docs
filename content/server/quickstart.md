@@ -21,11 +21,29 @@ Super quick before you start: Drone is made up of 2 components, the Drone _Serve
 # Drone in the cloud
 
 Pros
-- quick to get started
+- quick to get started and building
 
 Cons
 - not configurable
+- free for OSS
 
+## Pre-requisites
+Log into cloud.drone.io. you will need a github account to proceed, and that account will need to be at least 30 days old.
+
+## Setup
+
+1. Go to https://github.com/drone/drone_trainer
+2. fork the repo into your namespace.
+3. log into cloud.drone.io
+4. click the sync button
+5. click your forked repo and add it. accept the settings
+6. run a build. 
+
+## Further steps 
+
+- edit the build file 
+- use a different build file
+- create a pr
 
 # Local Developer Setup
 
@@ -38,6 +56,9 @@ Cons
 - uses docker only
 - only one runner
 
-pre requisites
+## Pre-requisites
+
+You have a github account, and you have docker desktop installed.
+
 
 steps

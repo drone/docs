@@ -8,9 +8,24 @@ description: |
   Installation quickstart.
 ---
 
-This section of the documentation will help you install and configure Drone quickly. If you want to try Drone without installing you can try our playground <here>. 
+This section of the documentation will help you install and configure Drone quickly. There are 3 different paths you can take
 
-Drone is made up of 2 components, the Drone _Server_ and a _Runners_. The drone server hosts the UI and the DB along with scheduling builds. A runner is a standalone daemon that polls the server for pending pipelines to execute.
+- Try out `Drone in the cloud`, using our servers to try out building and running plugins.
+- Try out `Local Developer Setup`, use docker compose to setup a build server on your system using github as your source control.
+- Try out `Server install`,
+  
+# Overview
+
+Super quick before you start: Drone is made up of 2 components, the Drone _Server_ and one or more _Runners_. The drone server hosts the UI and the DB along with scheduling builds. A runner is a standalone daemon that polls the server for pending pipelines to execute.
+
+# Drone in the cloud
+
+Pros
+- quick to get started
+
+Cons
+- not configurable
+
 
 # Local Developer Setup
 

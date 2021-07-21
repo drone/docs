@@ -46,6 +46,14 @@ You can use openssl to generate a shared secret:
 $ openssl rand -hex 16
 bea26a2221fd8090ea38720fc445eca6
 ```
+## Enabling two-factor authentication?
+
+The following path must be added to the context whitelist:
+```
+'/plugins/servlet/applinks/whoami'
+```
+Example:
+![Whitelist](/screenshots/stash_whitelist.png)
 
 # Download
 
@@ -96,3 +104,5 @@ docker run \
 Once your server is up and running you will need to install runners to execute your build pipelines. See our runner installation documentation for detailed installation instructions. 
 
 {{< link "/runner/overview" "Install Runners" >}}
+
+

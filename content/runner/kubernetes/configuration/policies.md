@@ -26,10 +26,10 @@ metadata:
 
 resources:
   request:
-    cpu: 1
+    cpu: 1000
     memory: 512MiB
   limit:
-    cpu: 4
+    cpu: 4000
     memory: 1GiB
 
 node_selector:
@@ -114,13 +114,13 @@ metadata:
   * `request`
     : The request section defines resource requirements used when the scheduler defines which node to place the pipeline pod on.
     * `cpu`
-      : The cpu attribute defines cpu requirements.
+      : The cpu attribute defines cpu requirements in millicores.
     * `memory`
       : The memory attribute defines memory requirements.
   * `limit`
     : The limit section defines container resource limits applied to each pipeline step.
     * `cpu`
-      : The cpu attribute defines cpu limits.
+      : The cpu attribute defines cpu limits in millicores.
     * `memory`
       : The memory attribute defines memory limits.
 * `service_account`
@@ -191,10 +191,10 @@ metadata:
 
   resources:
     request:
-      cpu: 1
+      cpu: 1000
       memory: 512MiB
     limit:
-      cpu: 4
+      cpu: 4000
       memory: 1GiB
   ```
 

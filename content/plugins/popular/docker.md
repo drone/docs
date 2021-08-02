@@ -351,10 +351,7 @@ steps:
 If docker fails you will see the below entry in your pipeline logs:
 
 ```
-failed to start daemon: Error initializing network controller: error obtaining
-controller instance: failed to create NAT chain DOCKER: iptables failed: iptables
--t nat -N DOCKER: iptables v1.8.3 (legacy): can’t initialize iptables table `nat’:
-Permission denied (you must be root)
+failed to start daemon: Error initializing network controller: error obtaining controller instance: failed to create NAT chain DOCKER: iptables failed: iptables -t nat -N DOCKER: iptables v1.8.3 (legacy): can’t initialize iptables table `nat’: Permission denied (you must be root)
 ```
 
 If docker succeeds you will see the below entry in your pipeline logs:

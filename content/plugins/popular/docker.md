@@ -327,6 +327,30 @@ steps:
     insecure: true
 ```
 
+## Using Volumes
+
+If you attempt to mount a volume into the plugin you will see the below entry in your pipeline logs.  The docker plugin restricts mounting volumes for security reasons.
+
+```
+level=fatal msg="Error authenticating: exit status 1"
+```
+
+This can be resolved by removing mouted volumes or with the following plugin configuration:
+
+```yaml  {linenos=table, hl_lines=["4"]}
+steps:
+- name: docker  
+  image: plugins/docker
+  privileged: true
+  settings:
+    repo: foo/bar
+    username: kevinbacon
+    password: pa55word
+  volumes:
+  - name: temp
+    path: /tmp
+```
+
 ## Docker In Docker Issues
 
 If a docker daemon cannot be started inside the plugin container you will see the below entry in your pipeline logs. _The most common root cause for this issue is security software (selinux, apparmor, etc) preventing nested containerization._

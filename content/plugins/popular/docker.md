@@ -329,13 +329,13 @@ steps:
 
 ## Using Volumes
 
-If you attempt to mount a volume into the plugin you will see the below entry in your pipeline logs.  The docker plugin restricts mounting volumes for security reasons.
+If you attempt to mount a volume into the plugin you will see the below entry in your pipeline logs. _The docker plugin restricts mounting volumes for security reasons._
 
 ```
 level=fatal msg="Error authenticating: exit status 1"
 ```
 
-This can be resolved by removing mouted volumes or with the following plugin configuration:
+This can be resolved by removing mouted volumes or by configuring the plugin step to run in privileged mode:
 
 ```yaml  {linenos=table, hl_lines=["4"]}
 steps:

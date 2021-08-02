@@ -327,7 +327,45 @@ steps:
     insecure: true
 ```
 
+## Docker In Docker Issues
+
+If a docker daemon cannot be started inside the plugin container you will see the below entry in your pipeline logs. _The most common root cause for this issue is security software (selinux, apparmor, etc) preventing nested containerization._
+
+```
+level=fatal msg="Error authenticating: exit status 1"
+```
+
+This can be further triaged with the following plugin configuration:
+
+```yaml  {linenos=table, hl_lines=["8"]}
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: foo/bar
+    username: kevinbacon
+    password: pa55word
+    debug: true
+```
+
+If docker fails you will see the below entry in your pipeline logs:
+
+```
+failed to start daemon: Error initializing network controller: error obtaining
+controller instance: failed to create NAT chain DOCKER: iptables failed: iptables
+-t nat -N DOCKER: iptables v1.8.3 (legacy): can’t initialize iptables table `nat’:
+Permission denied (you must be root)
+```
+
+If docker succeeds you will see the below entry in your pipeline logs:
+
+```
+time=“2021-01-21T14:15:59.634657433Z” level=info msg=“Daemon has completed initialization”
+time=“2021-01-21T14:15:59.661299094Z” level=info msg=“API listen on /var/run/docker.sock”
+```
+
 <!-- ## Insufficient Privileges
 
 ## Incorrect Registry
  -->
+

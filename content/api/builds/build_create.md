@@ -81,3 +81,28 @@ Example Response Body:
     ]
 }
 ```
+
+# Pipeline Configuration
+
+When you trigger a build using the API the resulting build is created with event type `custom`.  If you define conditional pipelines or conditional steps based on event type you may need to update accordingly.
+
+Example pipeline condition includes the custom event type:
+
+```yaml  {linenos=table, hl_lines=["5"]}
+trigger:
+  event:
+  - push
+  - pull_request
+  - custom
+```
+
+
+Example pipeline condition includes the custom event type:
+
+```yaml  {linenos=table, hl_lines=["5"]}
+when:
+  event:
+  - push
+  - pull_request
+  - custom
+```

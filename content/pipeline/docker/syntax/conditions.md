@@ -318,7 +318,7 @@ Example include syntax:
 when:
   event:
   - cron
-  target:
+  cron:
     include:
     - weekly
     - nightly
@@ -330,7 +330,7 @@ Example exclude syntax:
 when:
   event:
   - cron
-  target:
+  cron:
     exclude:
     - nightly
 {{< / highlight >}}

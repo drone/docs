@@ -194,7 +194,7 @@ steps:
 
 The resources section is used to limit CPU and memory resources for an individual pipeline step. See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container) to learn more about managing compute resources.
 
-{{< highlight text "linenos=table,hl_lines=4-10,linenostart=5" >}}
+{{< highlight text "linenos=table,hl_lines=4-7,linenostart=5" >}}
 steps:
 - name: backend
   image: golang

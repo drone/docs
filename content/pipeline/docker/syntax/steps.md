@@ -139,7 +139,7 @@ Use the status condition to override the default runtime behavior and execute st
 
 See the Conditions article for additional details:
 
-{{< link "pipeline/docker/config/conditions" >}}
+{{< link "pipeline/conditions" >}}
 
 # Failure
 

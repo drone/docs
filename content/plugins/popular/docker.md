@@ -335,7 +335,7 @@ If you attempt to mount a volume into the plugin you will see the below entry in
 level=fatal msg="Error authenticating: exit status 1"
 ```
 
-This can be resolved by removing mouted volumes or by configuring the plugin step to run in privileged mode:
+This can be resolved by removing mounted volumes or by configuring the plugin step to run in privileged mode:
 
 ```yaml  {linenos=table, hl_lines=["4"]}
 steps:

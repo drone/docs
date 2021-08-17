@@ -94,13 +94,13 @@ The docker plugins are white-listed to automatically start with privileged mode 
 
 # Problems with Login
 
-If the plugin is uanble to login to the remote docker registry you will see the below entry in your pipeline logs.
+If the plugin is unable to login to the remote docker registry you will see the below entry in your pipeline logs.
 
 ```text  {linenos=table}
 level=fatal msg="Error authenticating: exit status 1"
 ```
 
-If you provided the Docker plugin with registry credentials, such as username and pasword or token, you should see one of the below entries in your pipeline step logs. If you do not see entries in your pipeline logs it means credentials were not provided as expected.
+If you provided the Docker plugin with registry credentials, such as username and password or token, you should see one of the below entries in your pipeline step logs. If you do not see entries in your pipeline logs it means credentials were not provided as expected.
 
 ```text  {linenos=table}
 Detected registry credentials

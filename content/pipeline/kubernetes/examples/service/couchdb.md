@@ -51,7 +51,7 @@ name: default
 
 steps:
 - name: test
-  image: coucdb:2.2
+  image: couchdb:2.2
   commands:
   - sleep 15
   - curl http://localhost:5984

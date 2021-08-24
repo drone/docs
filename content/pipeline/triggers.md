@@ -339,3 +339,38 @@ trigger:
     exclude:
     - nightly
 {{< / highlight >}}
+
+# By Action
+
+The action trigger limits execution based on the action associated with the event that triggered the pipeline.
+
+<div class="alert">
+Action support varies by event and SCM provider.
+</div>
+
+{{< highlight text "linenos=table,linenostart=12" >}}
+trigger:
+  action:
+  - labeled
+{{< / highlight >}}
+
+Execute when a pull request is opened:
+
+{{< highlight text "linenos=table,linenostart=12" >}}
+trigger:
+  event:
+  - pull_request
+  action:
+  - opened
+{{< / highlight >}}
+
+Execute on all pull request actions except "synchronized":
+
+{{< highlight text "linenos=table,linenostart=12" >}}
+trigger:
+  event:
+  - pull_request
+  action:
+    exclude:
+    - synchronized
+{{< / highlight >}}

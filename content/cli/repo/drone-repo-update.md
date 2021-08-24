@@ -16,16 +16,20 @@ NAME:
    drone repo update - update a repository
 
 USAGE:
-   drone repo update [command options] [arguments...]
+   drone repo update [command options] <repo/name>
 
 OPTIONS:
-   --trusted              repository is trusted
-   --protected            repository is protected
-   --timeout value        repository timeout (default: 0s)
-   --visibility value     repository visibility
-   --config value         repository configuration path (e.g. .drone.yml)
-   --build-counter value  repository starting build number (default: 0)
-   --unsafe               validate updating the build-counter is unsafe
+   --trusted                    repository is trusted
+   --protected                  repository is protected
+   --timeout value              repository timeout (default: 0s)
+   --visibility value           repository visibility
+   --ignore-forks               ignore forks
+   --ignore-pull-requests       ignore pull requests
+   --auto-cancel-pull-requests  automatically cancel pending pull request builds
+   --auto-cancel-pushes         automatically cancel pending push builds
+   --config value               repository configuration path (e.g. .drone.yml)
+   --build-counter value        repository starting build number (default: 0)
+   --unsafe                     validate updating the build-counter is unsafe
 ```   
 
 Example command updates the trusted flag:
@@ -56,4 +60,11 @@ Example command updates the current build number
 
 ```
 $ drone repo update octocat/hello-world --build-counter=10 --unsafe
+```
+
+Example command updates the auto cancellation flag:
+
+```
+$ drone repo update octocat/hello-world --auto-cancel-pushes=true
+$ drone repo update octocat/hello-world --auto-cancel-pull-requests=true
 ```

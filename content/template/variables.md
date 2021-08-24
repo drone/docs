@@ -66,6 +66,12 @@ Starlark example usage:
 }
 ```
 
+Yaml example usage:
+```
+Yaml example usage:
+- uid: {{ .repo.uid }}
+```
+
 Variable	| Description
 ------------|------------
 uid	         | Provides the UUID of the repository.

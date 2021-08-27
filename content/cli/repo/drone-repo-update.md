@@ -27,6 +27,7 @@ OPTIONS:
    --ignore-pull-requests       ignore pull requests
    --auto-cancel-pull-requests  automatically cancel pending pull request builds
    --auto-cancel-pushes         automatically cancel pending push builds
+   --auto-cancel-running        automatically cancel running builds if newer commit pushed
    --config value               repository configuration path (e.g. .drone.yml)
    --build-counter value        repository starting build number (default: 0)
    --unsafe                     validate updating the build-counter is unsafe

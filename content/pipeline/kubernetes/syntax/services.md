@@ -92,6 +92,7 @@ services:
       MYSQL_DATABASE: drone_db
       MYSQL_USER: drone
       MYSQL_PASSWORD: drone
+{{< / highlight >}}
 
 There are some example health checks using http requests [here](https://healthchecks.io/docs/bash/).
 

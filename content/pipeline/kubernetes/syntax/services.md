@@ -74,7 +74,7 @@ Using a commandline tool to check if a service is up and running. This is a comm
 
 {{< highlight patch >}}
 kind: pipeline
-type: docker
+type: kubernetes
 name: default
 
 steps:
@@ -94,7 +94,7 @@ services:
       MYSQL_PASSWORD: drone
 {{< / highlight >}}
 
-There are some example health checks using http requests [here](https://healthchecks.io/docs/bash/).
+Here are some example health checks using http requests [here](https://healthchecks.io/docs/bash/). If however you are unable to craft a health check you can implement a sleep (see below).
 
 ### Sleep
 

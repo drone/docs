@@ -22,6 +22,8 @@ steps:
   when:
     event:
     - push
+    branch:
+    - master
 
 trigger:
   event:

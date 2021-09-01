@@ -89,7 +89,37 @@ services:
 
 ## Initialization
 
-It is important to remember that after a container is started, the software running inside the container (e.g. redis) takes time to initialize and begin accepting connections.
+It is important to remember that after a container is started, the software running inside the container (e.g. redis) takes time to initialize and begin accepting connections. There are two ways to handle this add a health check (prefered) or add a sleep.
+
+### Health check
+
+Using a commandline tool to check if a service is up and running. This is a common idiom for webservers and also docker images. Below is an example for Mysql that uses the `mysqladmin` tool to check if the mysql server is running, then runs a sql command. 
+
+{{< highlight patch >}}
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: mysql healthcheck
+    image: mysql:5.7
+    commands:
+      - while ! mysqladmin ping -h mysql-server -u drone -pdrone --silent; do sleep 1; done
+      - mysql -h mysql-server -u drone -pdrone -e "CREATE TABLE IF NOT EXISTS drone_db.pipelines (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(50) NOT NULL);"
+
+services:
+  - name: mysql-server
+    image: mysql:5.7
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_DATABASE: drone_db
+      MYSQL_USER: drone
+      MYSQL_PASSWORD: drone
+{{< / highlight >}}
+
+Here are some example health checks using http requests [here](https://healthchecks.io/docs/bash/). If however you are unable to craft a health check you can implement a sleep (see below).
+
+### Sleep
 
 Be sure to give the service adequate time to initialize before attempting to connect. A naive solution is to use the sleep command.
 

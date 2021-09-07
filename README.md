@@ -25,7 +25,7 @@ Total in 926 ms
 Generate the documentation and serve at `localhost:1313`:
 
 ```
-$ hugo server -b localhost:1313 -w
+$ hugo server -b http://localhost:1313 -w
 
                    | EN   
 -------------------+------
@@ -39,6 +39,6 @@ $ hugo server -b localhost:1313 -w
   Cleaned          |   0  
 
 Built in 379 ms
-Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```

@@ -53,8 +53,8 @@ docker run -d \
   --env=DRONE_RPC_PROTO=https \
   --env=DRONE_RPC_HOST={{DRONE_RPC_HOST}} \
   --env=DRONE_RPC_SECRET={{DRONE_RPC_SECRET}} \
-  --env=DRONE_PUBLIC_KEY_FILE={{/path/in/container/id_rsa.pub}} \
-  --env=DRONE_PRIVATE_KEY_FILE={{/path/in/container/id_rsa}} \
+  --env=DRONE_PUBLIC_KEY_FILE={{PATH_IN_CONTAINER_ID_RSA_PUB}} \
+  --env=DRONE_PRIVATE_KEY_FILE={{PATH_IN_CONTAINER_ID_RSA}} \
   --publish=3000:3000 \
   --restart always \
   --name runner \

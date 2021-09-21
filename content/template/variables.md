@@ -32,6 +32,7 @@ Variable	| Description
 event	      | Provides the event that triggered the pipeline execution.
 action	      | Provides the action that triggered the pipeline execution. Use this value to differentiate between the pull request being opened vs synchronized.
 environment	  | Provides the target deployment environment for the running build.
+number        | Provides the build number for the running build.
 link	      | Provides a link the git commit or object in the source control management system.
 branch	      | Provides the target branch for the push or pull request. This value may be empty for tag events.
 source	      | Provides the source branch for the pull request. This value may be empty for certain source control management providers.

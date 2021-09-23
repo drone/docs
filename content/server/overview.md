@@ -29,9 +29,9 @@ Drone integrates seamlessly with popular _Source Control Management_ providers. 
 
 # Server Upgrades
 
-Drone server upgrades are meant to be simple and safe. You can replace the old Docker image with the new Docker image and Drone will handle everything else (automatic database migrations, etc).
+Drone server upgrades are meant to be simple and safe. Replace the old Docker image with the new Docker image and Drone will handle everything else (automatic database migrations, etc).
 
-If a release includes breaking changes or requires manual upgrade it will be specified in the release notes. _As a general rule we try to maintain strict backward compatibility and avoid breaking changes, even in major releases._
+_If a release includes breaking changes or requires manual upgrade it will be specified in the release notes. As a general rule we try to maintain strict backward compatibility and avoid breaking changes, even in major releases._
 
 ```sh {linenos=table}
 # terminate the drone server

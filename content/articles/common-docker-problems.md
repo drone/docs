@@ -89,7 +89,7 @@ HOME
 
 ## Forks or Mirrors
 
-The docker plugins are white-listed to automatically start with privileged mode enabled.  If you are using a fork or mirror of the image, you need to [add the image](https://docs.drone.io/runner/docker/configuration/reference/drone-runner-privileged-images) to this whitelist.
+The docker plugins are white-listed to automatically start with privileged mode enabled.  If you are using a fork or mirror of the image, you need to add the [image](https://docs.drone.io/runner/docker/configuration/reference/drone-runner-privileged-images) to this whitelist.
 
 
 # Problems with Login

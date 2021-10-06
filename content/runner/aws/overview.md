@@ -9,15 +9,13 @@ weight: 1
 The AWS runner is in Alpha and may not be suitable for production workloads. Furthermore this runner is a community effort and is not subject to support services or service level agreements at this time.
 </div>
 
-The AWS runner is a standalone service that executes pipelines on AWS EC2 instances. The AWS runner is similar to the exec runner in that you can run builds on a linux or Windows system. It also has the advantage of being very similar to the Docker runner, so you can run plugins and use containers.
+The AWS runner executes a build pipeline on a dedicated EC2 instance. The instance is created for each pipeline execution and terminated upon completion.
 
 {{< link "/runner/aws/installation.md" "Install the AWS Runner" >}}
 
 ## When to Use?
 
-The AWS runner is a general purpose runner, optimized for projects that can run tests and compile code on the EC2 instance. Or you want to run containerised steps and drone plugins.
-
-It also supports instance pooling, whereby we provision systems on startup that are ready for an incoming build. This significantly decreases wait time for end users.
+The AWS runner is recommended for pipelines that require privileged access to a full virtual machine, and are unsuitable for execution inside containers. The AWS runner executes pipelines in dedicated, ephemeral virtual machines, and provides secure isolation for un-trusted workloads.
 
 ## When to Avoid?
 

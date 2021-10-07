@@ -39,16 +39,16 @@ The ssh runner is configured using environment variables. This article reference
 
 The below command creates a container and starts the ssh runner. _Remember to replace the environment variables below with your Drone server details._
 
-```
-$ docker run -d \
-  -e DRONE_RPC_PROTO=https \
-  -e DRONE_RPC_HOST=drone.company.com \
-  -e DRONE_RPC_SECRET=super-duper-secret \
-  -p 3000:3000 \
+{{< highlight handlebars "linenos=table" >}}
+docker run --detach \
+  --env=DRONE_RPC_PROTO={{DRONE_RPC_PROTO}} \
+  --env=DRONE_RPC_HOST={{DRONE_RPC_HOST}} \
+  --env=DRONE_RPC_SECRET={{DRONE_RPC_SECRET}} \
+  --publish=3000:3000 \
   --restart always \
   --name runner \
   drone/drone-runner-ssh
-```
+{{< / highlight >}}
 
 # Verification
 

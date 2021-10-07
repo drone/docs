@@ -50,7 +50,7 @@ The below command creates a container and starts the Docker runner. _Remember to
 
 ```
 {{< highlight handlebars "linenos=table" >}}
-$ docker run --detach \
+docker run --detach \
   --volume=//./pipe/docker_engine://./pipe/docker_engine \
   --env=DRONE_RPC_PROTO={{DRONE_RPC_PROTO}} \
   --env=DRONE_RPC_HOST={{DRONE_RPC_HOST}} \
@@ -61,7 +61,7 @@ $ docker run --detach \
   --restart=always \
   --name=runner \
   drone/drone-runner-docker:1
-  {{< / highlight >}}
+{{< / highlight >}}
 ```
 
 # Verification

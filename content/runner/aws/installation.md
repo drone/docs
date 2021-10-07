@@ -125,7 +125,7 @@ docker run -d \
 
 Use the docker logs command to view the logs and verify the runner successfully established a connection with the Drone server.
 
-```BASH
+```
 docker logs runner
 
 level=info msg="daemon: starting the server" addr=":3000"

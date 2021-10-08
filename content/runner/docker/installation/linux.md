@@ -46,7 +46,6 @@ The Docker runner is configured using environment variables. This article refere
 
 The below command creates a container and starts the Docker runner. _Remember to replace the environment variables below with your Drone server details._
 
-```
 {{< highlight handlebars "linenos=table" >}}
 docker run --detach \
   --volume=/var/run/docker.sock:/var/run/docker.sock \
@@ -60,7 +59,6 @@ docker run --detach \
   --name=runner \
   drone/drone-runner-docker:1
 {{< / highlight >}}
-```
 
 # Verification
 

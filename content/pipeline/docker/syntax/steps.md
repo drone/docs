@@ -17,7 +17,7 @@ Pipeline steps are defined as a series of shell commands. The commands are execu
 
 Example configuration:
 
-{{< highlight text "linenos=table" >}}
+{{< highlight yaml "linenos=table" >}}
 kind: pipeline
 type: docker
 name: default
@@ -40,7 +40,7 @@ steps:
 
 The commands are executed inside the root directory of your git repository. The root of your git repository, also called the workspace, is shared by all steps in your pipeline. This allows file artifacts to persist between steps.
 
-{{< highlight text "linenos=table,linenostart=5" >}}
+{{< highlight yaml "linenos=table,linenostart=5" >}}
 steps:
 - name: backend
   image: golang
@@ -51,7 +51,7 @@ steps:
 
 The above commands are converted to a simple shell script. The commands in the above example are roughly converted to the below script:
 
-{{< highlight text "linenos=table" >}}
+{{< highlight bash "linenos=table" >}}
 #!/bin/sh
 set -e
 set -x
@@ -72,7 +72,7 @@ The container exit code is used to determine whether the step is passing or fail
 
 The environment section provides the ability to define environment variables scoped to individual pipeline steps.
 
-{{< highlight text "linenos=table,hl_lines=4-6,linenostart=5" >}}
+{{< highlight yaml "linenos=table,hl_lines=4-6,linenostart=5" >}}
 steps:
 - name: backend
   image: golang
@@ -95,7 +95,7 @@ Plugins are docker containers that encapsulate commands, and can be shared and r
 
 Example Slack plugin:
 
-{{< highlight text "linenos=table,hl_lines=5-9,linenostart=15" >}}
+{{< highlight yaml "linenos=table,hl_lines=5-9,linenostart=15" >}}
 - name: notify
   image: plugins/slack
   settings:
@@ -112,7 +112,7 @@ Plugin Registry
 
 The when section provides the ability to conditionally limit the execution of steps at runtime. The below example limits step execution by branch, however, you can limit execution by event, reference, status and more.
 
-{{< highlight text "linenos=table,hl_lines=7-9,linenostart=5" >}}
+{{< highlight yaml "linenos=table,hl_lines=7-9,linenostart=5" >}}
 steps:
 - name: backend
   image: golang
@@ -126,7 +126,7 @@ steps:
 
 Use the status condition to override the default runtime behavior and execute steps even when the pipeline status is failure:
 
-{{< highlight text "linenos=table,hl_lines=5-9,linenostart=15" >}}
+{{< highlight yaml "linenos=table,hl_lines=5-9,linenostart=15" >}}
 - name: notify
   image: plugins/slack
   settings:
@@ -145,7 +145,7 @@ See the Conditions article for additional details:
 
 The failure attribute lets you customize how the system handles failure of an individual step. This can be useful if you want to allow a step to fail without failing the overall pipeline.
 
-{{< highlight text "linenos=table,hl_lines=4,linenostart=5" >}}
+{{< highlight yaml "linenos=table,hl_lines=4,linenostart=5" >}}
 steps:
 - name: backend
   image: golang
@@ -165,7 +165,7 @@ The target use case for this feature is to start a service or daemon, and then e
 Note that a detached step cannot fail the pipeline. The runner may ignore the exit code.
 </div>
 
-{{< highlight text "linenos=table,hl_lines=4,linenostart=5" >}}
+{{< highlight yaml "linenos=table,hl_lines=4,linenostart=5" >}}
 steps:
 - name: backend
   image: golang
@@ -184,7 +184,7 @@ The privileged attribute runs the container with escalated privileges. This is t
 This setting is only available to trusted repositories. Privileged mode effectively grants the container root access to your host machine. Please use with caution.
 </div>
 
-{{< highlight text "linenos=table,hl_lines=4,linenostart=5" >}}
+{{< highlight yaml "linenos=table,hl_lines=4,linenostart=5" >}}
 steps:
 - name: backend
   image: golang
@@ -193,4 +193,40 @@ steps:
   - go build
   - go test
   - go run main.go -http=:3000
+{{< / highlight >}}
+
+# Shell
+
+The shell attribute runs any commands attributes in that particular shell. It overrides the default shell set for that OS.
+
+The target use case for this feature is when you have to use a container that has an un-common shell setup.
+
+<div class="alert">
+Note that changing the shell of the step can have wide reaching rammifications. Only use this as a last resort
+</div>
+
+## Non-Windows / Posix
+
+By default the docker runner uses `/bin/sh` below we override it to use `/bin/ash`.
+
+{{< highlight yaml "linenos=table,hl_lines=4" >}}
+steps:
+- name: backend
+  image: alpine:3
+  shell: /bin/ash
+  commands:
+  - echo test
+{{< / highlight >}}
+
+## Windows
+
+By default the docker runner uses `powershell` below we override it to use `pwsh`.
+
+{{< highlight yaml "linenos=table,hl_lines=4" >}}
+steps:
+- name: backend
+  image: mcr.microsoft.com/powershell:nanoserver-ltsc2022
+  shell: pwsh
+  commands:
+  - echo test
 {{< / highlight >}}

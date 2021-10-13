@@ -13,7 +13,7 @@ description: |
 The Kubernetes Secret resource secures, stores, and controls access to tokens, passwords, certificates, and other secrets in modern computing. The Kubernetes Secrets [extension]({{< relref "/runner/extensions/kube.md" >}}) provides your pipeline with access to Kubernetes secrets.
 
 <div class="alert alert-info">
-Kubernetes Secrets integration is provided by an extension and is only available if your system administrator has installed this <a href="https://github.com/ps-19/docs/blob/master/content/runner/extensions/kube.md">extension</a>.
+Kubernetes Secrets integration is provided by an extension and is only available if your system administrator has <a href="{{< relref "/runner/extensions/kube.md" >}}">installed</a> the extension.
 </div>
 
 # Creating Secrets

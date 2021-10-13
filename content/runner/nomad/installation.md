@@ -48,18 +48,20 @@ The Nomad runner is configured using environment variables. This article referen
 
 The below command creates a container and starts the Docker runner. _Remember to replace the environment variables below with your Drone server details._
 
-```
-$ docker run -d \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -e DRONE_RPC_PROTO=https \
-  -e DRONE_RPC_HOST=drone.company.com \
-  -e DRONE_RPC_SECRET=super-duper-secret \
-  -e NOMAD_ADDR=http://nomad.company.com:4646 \
-  -e NOMAD_TOKEN=super-secret-token \
-  --restart always \
-  --name runner \
+
+{{< highlight bash "linenos=table,hl_lines=3-7" >}}
+docker run --detach \
+  --volume=/var/run/docker.sock:/var/run/docker.sock \
+  --env=DRONE_RPC_PROTO=https \
+  --env=DRONE_RPC_HOST=drone.company.com \
+  --env=DRONE_RPC_SECRET=super-duper-secret \
+  --env=NOMAD_ADDR=http://nomad.company.com:4646 \
+  --env=NOMAD_TOKEN=super-secret-token \
+  --restart=always \
+  --name=runner \
   drone/drone-runner-nomad:latest
-```
+{{< / highlight >}}
+
 
 # Verification
 

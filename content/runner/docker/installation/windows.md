@@ -48,19 +48,19 @@ The Docker runner is configured using environment variables. This article refere
 
 The below command creates a container and starts the Docker runner. _Remember to replace the environment variables below with your Drone server details._
 
-```
-$ docker run -d \
-  -v //./pipe/docker_engine://./pipe/docker_engine \
-  -e DRONE_RPC_PROTO=https \
-  -e DRONE_RPC_HOST=drone.company.com \
-  -e DRONE_RPC_SECRET=super-duper-secret \
-  -e DRONE_RUNNER_CAPACITY=2 \
-  -e DRONE_RUNNER_NAME=${HOSTNAME} \
-  -p 3000:3000 \
-  --restart always \
-  --name runner \
+{{< highlight bash "linenos=table,hl_lines=3-7" >}}
+docker run --detach \
+  --volume=//./pipe/docker_engine://./pipe/docker_engine \
+  --env=DRONE_RPC_PROTO=https \
+  --env=DRONE_RPC_HOST=drone.company.com \
+  --env=DRONE_RPC_SECRET=super-duper-secret \
+  --env=DRONE_RUNNER_CAPACITY=2 \
+  --env=DRONE_RUNNER_NAME=my-first-runner \
+  --publish=3000:3000 \
+  --restart=always \
+  --name=runner \
   drone/drone-runner-docker:1
-```
+{{< / highlight >}}
 
 # Verification
 

@@ -10,7 +10,7 @@ description: |
   Retrieve sensitive information from Kubernetes secrets.
 ---
 
-The Kubernetes Secret resource secures, stores, and controls access to tokens, passwords, certificates, and other secrets in modern computing. The Kubernetes Secrets [extension]({{< relref "/runner/extensions/kube.md" >}}) provides your pipeline with access to Kubernetes secrets.
+The Kubernetes Secret resource secures, stores, and controls access to tokens, passwords, certificates, and other secrets in modern computing. The Kubernetes Secrets <a href="/content/runner/extensions/kube.md">extension</a> provides your pipeline with access to Kubernetes secrets.
 
 <div class="alert alert-info">
 Kubernetes Secrets integration is provided by an extension and is only available if your system administrator has installed this <a href="/content/runner/extensions/kube.md">extension</a>.
@@ -20,46 +20,33 @@ Kubernetes Secrets integration is provided by an extension and is only available
 
 Create a secret resource using the Kubernetes yaml configuration language, and persist to your cluster using `kubectl`. In the below example we store the Docker username and password.
 
-{{< highlight text "linenos=table,hl_lines=5-6 8" >}}
-apiVersion: v1
-kind: Secret
-type: Opaque
-data:
-  username: YWRtaW4=
-  password: MWYyZDFlMmU2N2Rm
-metadata:
-  name: docker
-{{< / highlight >}}
+|    apiVersion   |    kind         |     type       |        Data:                    |     metadata:      |
+|    :----:       |    :----:       |     :----:     |       :----:                    |     :----:         |
+|     v1          |    Secret       |     Opaque     |   username: **YWRtaW4=**        | name: **docker**   |
+|                 |                 |                | password: **MWYyZDFlMmU2N2Rm**  |                    |
 
 # Accessing Secrets
 
 Once our secrets are stored in Kubernetes, we can update our yaml configuration file to request access to our secrets. First we define a secret resource in our yaml for each external secret. We include the path to the secret, and the name or key of value we want to retrieve:
 
-{{< highlight text "linenos=table,hl_lines=10-21" >}}
----
-kind: pipeline
-name: default
+<div display=flex>
 
-steps:
-- name: build
-  image: alpine
+|    kind         |     name         |                   steps                  |
+|    :----:       |     :----:       |                   :----:                 |
+|    pipeline     |     default      |     name: build <br/> image: alphine     |
 
----
-kind: secret
-name: username
-get:
-  path: docker
-  name: username
 
----
-kind: secret
-name: password
-get:
-  path: docker
-  name: password
-...
-{{< / highlight >}}
+|    kind         |     name         |                   get                     |
+|    :----:       |     :----:       |                   :----:                  |
+|    secret       |     username     |     name: docker <br/> name: username     |
 
+
+|    kind         |     name         |                   get                     |
+|    :----:       |     :----:       |                   :----:                  |
+|    secret       |     password     |     name: docker <br/> name: password     |
+
+</div>
+  
 We can then reference the named secrets in our pipeline:
 
 {{< highlight text "linenos=table,hl_lines=8-11" >}}

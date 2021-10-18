@@ -37,7 +37,7 @@ Drone publishes and exposes metrics that can be consumed by Prometheus at the st
         scrape_interval: 60s
 
         scrape_configs:
-        - job_name: 'drone'
+          - job_name: 'drone'
             bearer_token: fe8c402a51e6629aa1f43a4234afee81
 
             static_configs:

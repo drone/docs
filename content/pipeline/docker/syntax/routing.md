@@ -28,7 +28,7 @@ steps:
   - go build
   - go test
 
-node:
+nodes:
   keyA: valueA
   keyB: valueB
 {{< / highlight >}}

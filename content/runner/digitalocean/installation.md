@@ -46,15 +46,15 @@ The runner is configured using environment variables. This article references th
 
 The below command creates a container and starts the runner. _Remember to replace the environment variables below with your Drone server details._
 
-{{< highlight handlebars "linenos=table" >}}
+{{< highlight bash "linenos=table,hl_lines=4-8" >}}
 docker run -d \
   --volume=/path/on/host/id_rsa:/path/in/container/id_rsa \
   --volume=/path/on/host/id_rsa.pub:/path/in/container/id_rsa.pub \
   --env=DRONE_RPC_PROTO=https \
-  --env=DRONE_RPC_HOST={{DRONE_RPC_HOST}} \
-  --env=DRONE_RPC_SECRET={{DRONE_RPC_SECRET}} \
-  --env=DRONE_PUBLIC_KEY_FILE={{PATH_IN_CONTAINER_ID_RSA_PUB}} \
-  --env=DRONE_PRIVATE_KEY_FILE={{PATH_IN_CONTAINER_ID_RSA}} \
+  --env=DRONE_RPC_HOST=drone.company.com \
+  --env=DRONE_RPC_SECRET=super-duper-secret \
+  --env=DRONE_PUBLIC_KEY_FILE=/path/in/container/id_rsa.pub \
+  --env=DRONE_PRIVATE_KEY_FILE=/path/in/container/id_rsa \
   --publish=3000:3000 \
   --restart always \
   --name runner \

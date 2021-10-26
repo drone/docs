@@ -78,22 +78,22 @@ The Drone server is configured using environment variables. This article referen
 
 The server container can be started with the below command. The container is configured through environment variables. For a full list of configuration parameters, please see the configuration reference.
 
-```handlebars {linenos=table,linenostart=1}
+{{< highlight bash "linenos=table,hl_lines=3-8" >}}
 docker run \
   --volume=/var/lib/drone:/data \
-  --env=DRONE_GITHUB_SERVER={{DRONE_GITHUB_SERVER}} \
-  --env=DRONE_GITHUB_CLIENT_ID={{DRONE_GITHUB_CLIENT_ID}} \
-  --env=DRONE_GITHUB_CLIENT_SECRET={{DRONE_GITHUB_CLIENT_SECRET}} \
-  --env=DRONE_RPC_SECRET={{DRONE_RPC_SECRET}} \
-  --env=DRONE_SERVER_HOST={{DRONE_SERVER_HOST}} \
-  --env=DRONE_SERVER_PROTO={{DRONE_SERVER_PROTO}} \
+  --env=DRONE_GITHUB_SERVER=https://github.com \
+  --env=DRONE_GITHUB_CLIENT_ID=05136e57d80189bef462 \
+  --env=DRONE_GITHUB_CLIENT_SECRET=7c229228a77d2cbddaa61ddc78d45e \
+  --env=DRONE_RPC_SECRET=super-duper-secret \
+  --env=DRONE_SERVER_HOST=drone.company.com \
+  --env=DRONE_SERVER_PROTO=https \
   --publish=80:80 \
   --publish=443:443 \
   --restart=always \
   --detach=true \
   --name=drone \
   drone/drone:2
-```
+{{< / highlight >}}
 
 # Install Runners
 

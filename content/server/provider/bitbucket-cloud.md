@@ -83,7 +83,7 @@ The Drone server is configured using environment variables. This article referen
 
 The server container can be started with the below command. The container is configured through environment variables. _Remember to replace the placeholder values below with the appropriate values._
 
-{{< highlight handlebars "linenos=table,hl_lines=3-7" >}}
+{{< highlight bash "linenos=table,hl_lines=3-7" >}}
 docker run \
   --volume=/var/lib/drone:/data \
   --env=DRONE_BITBUCKET_CLIENT_ID=05136e57d80189bef462 \

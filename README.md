@@ -2,6 +2,7 @@
 
 This repository contains the source for [docs.drone.io](http://docs.drone.io).
 To generate the documentation you will need to download and install the [hugo](https://gohugo.io/overview/installing/) static website engine.
+If you are following the [Windows installation instructions](https://gohugo.io/getting-started/installing/#chocolatey-windows) you will need the extended version.
 
 Generate the documentation:
 

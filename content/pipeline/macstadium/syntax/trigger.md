@@ -304,7 +304,7 @@ The action trigger limits execution based on the action associated with the even
 Action support varies by event and SCM provider.
 </div>
 
-{{< highlight text "linenos=table,linenostart=12" >}}
+{{< highlight yaml "linenos=table,linenostart=12" >}}
 trigger:
   action:
   - labeled
@@ -312,7 +312,7 @@ trigger:
 
 Execute when a pull request is opened:
 
-{{< highlight text "linenos=table,linenostart=12" >}}
+{{< highlight yaml "linenos=table,linenostart=12" >}}
 trigger:
   event:
   - pull_request
@@ -322,7 +322,7 @@ trigger:
 
 Execute on all pull request actions except "synchronized":
 
-{{< highlight text "linenos=table,linenostart=12" >}}
+{{< highlight yaml "linenos=table,linenostart=12" >}}
 trigger:
   event:
   - pull_request

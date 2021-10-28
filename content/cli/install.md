@@ -17,19 +17,19 @@ Download and install the raw binaries by platform:
 
 Platform	| Download | Verify
 ------------|----------|-------
-Linux x64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_linux_amd64.tar.gz)   | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
-Linux arm64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_linux_arm64.tar.gz)   | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
-Linux arm	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_linux_arm.tar.gz)     | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
-Windows x64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_windows_amd64.tar.gz) | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
-Darwin x64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_darwin_amd64.tar.gz)  | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
-Darwin arm64	| [tarball](https://github.com/drone/drone-cli/releases/latest/download/drone_darwin_arm64.tar.gz)  | [checksum](https://github.com/drone/drone-cli/releases/latest/download/drone_checksums.txt)
+Linux x64	| [tarball](https://github.com/harness/drone-cli/releases/latest/download/drone_linux_amd64.tar.gz)   | [checksum](https://github.com/harness/drone-cli/releases/latest/download/drone_checksums.txt)
+Linux arm64	| [tarball](https://github.com/harness/drone-cli/releases/latest/download/drone_linux_arm64.tar.gz)   | [checksum](https://github.com/harness/drone-cli/releases/latest/download/drone_checksums.txt)
+Linux arm	| [tarball](https://github.com/harness/drone-cli/releases/latest/download/drone_linux_arm.tar.gz)     | [checksum](https://github.com/harness/drone-cli/releases/latest/download/drone_checksums.txt)
+Windows x64	| [tarball](https://github.com/harness/drone-cli/releases/latest/download/drone_windows_amd64.tar.gz) | [checksum](https://github.com/harness/drone-cli/releases/latest/download/drone_checksums.txt)
+Darwin x64	| [tarball](https://github.com/harness/drone-cli/releases/latest/download/drone_darwin_amd64.tar.gz)  | [checksum](https://github.com/harness/drone-cli/releases/latest/download/drone_checksums.txt)
+Darwin arm64	| [tarball](https://github.com/harness/drone-cli/releases/latest/download/drone_darwin_arm64.tar.gz)  | [checksum](https://github.com/harness/drone-cli/releases/latest/download/drone_checksums.txt)
 
 # Install on Linux
 
 * Download and install on Linux:
 
-  ```
-  $ curl -L https://github.com/drone/drone-cli/releases/latest/download/drone_linux_amd64.tar.gz | tar zx
+  ```bash
+  $ curl -L https://github.com/harness/drone-cli/releases/latest/download/drone_linux_amd64.tar.gz | tar zx
   $ sudo install -t /usr/local/bin drone
   ```
 
@@ -37,14 +37,14 @@ Darwin arm64	| [tarball](https://github.com/drone/drone-cli/releases/latest/down
 
 * Download and install on OSX:
 
-  ```
-  $ curl -L https://github.com/drone/drone-cli/releases/latest/download/drone_darwin_amd64.tar.gz | tar zx
+  ```bash
+  $ curl -L https://github.com/harness/drone-cli/releases/latest/download/drone_darwin_amd64.tar.gz | tar zx
   $ sudo cp drone /usr/local/bin
   ```
 
 * Or download and install on OSX using Homebrew:
 
-  ```
+  ```bash
   $ brew tap drone/drone
   $ brew install drone
   ```
@@ -53,6 +53,6 @@ Darwin arm64	| [tarball](https://github.com/drone/drone-cli/releases/latest/down
 
 * Download and install on Windows using [scoop](https://scoop.sh/):
 
-  ```
+  ```bash
   $ scoop install drone
   ```

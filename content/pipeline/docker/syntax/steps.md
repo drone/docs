@@ -38,7 +38,7 @@ steps:
 
 # Commands
 
-The commands are executed inside the root directory of your git repository. The root of your git repository, also called the workspace, is shared by all steps in your pipeline. This allows file artifacts to persist between steps.
+The commands are executed inside the root directory of your git repository. The root of your git repository, also called the workspace, is shared by all steps in your pipeline. This allows file artifacts to persist between steps. NB ***"commands" overrides the docker entrypoint***.
 
 {{< highlight text "linenos=table,linenostart=5" >}}
 steps:

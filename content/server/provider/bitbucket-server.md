@@ -135,19 +135,19 @@ The Drone server is configured using environment variables. This article referen
 
 The server container can be started with the below command. The container is configured through environment variables. _Remember to replace the placeholder values below with the appropriate values._
 
-{{< highlight handlebars "linenos=table" >}}
+{{< highlight bash "linenos=table,hl_lines=4-12" >}}
 docker run \
   --volume=/var/lib/drone:/data \
   --volume=/etc/bitbucket/key.pem:/etc/bitbucket/key.pem \
-  --env=DRONE_GIT_PASSWORD={{DRONE_GIT_PASSWORD}} \
-  --env=DRONE_GIT_USERNAME={{DRONE_GIT_USERNAME}} \
+  --env=DRONE_GIT_PASSWORD=7c229228a77d2cbddaa61ddc78d45e \
+  --env=DRONE_GIT_USERNAME=x-oauth-token \
   --env=DRONE_GIT_ALWAYS_AUTH=false \
-  --env=DRONE_STASH_SERVER={{DRONE_STASH_SERVER}} \
+  --env=DRONE_STASH_SERVER=https://bitbucket.company.com \
   --env=DRONE_STASH_CONSUMER_KEY=OauthKey \
   --env=DRONE_STASH_PRIVATE_KEY=/etc/bitbucket/key.pem \
-  --env=DRONE_SERVER_HOST={{DRONE_SERVER_HOST}} \
-  --env=DRONE_SERVER_PROTO={{DRONE_SERVER_PROTO}} \
-  --env=DRONE_RPC_SECRET={{DRONE_RPC_SECRET}} \
+  --env=DRONE_SERVER_HOST=drone.company.com \
+  --env=DRONE_SERVER_PROTO=https \
+  --env=DRONE_RPC_SECRET=super-duper-secret \
   --publish=80:80 \
   --publish=443:443 \
   --restart=always \

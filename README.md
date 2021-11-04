@@ -43,3 +43,9 @@ Built in 379 ms
 Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
+
+**For Windows Users**
+
+We have found issue with `highlight yaml` on Hugo. 
+You will not be able to see any highlight on syntaxes when previewing the docs at http://localhost:1313/ on a Windows machine.
+If run into this issue, you can try running Hugo on [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) to preview the page.

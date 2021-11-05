@@ -46,8 +46,8 @@ Press Ctrl+C to stop
 
 **For Windows Users**
 
-We have found issue with `highlight yaml` on Hugo. 
+We have found an issue with `highlight yaml` on Hugo. 
 <br>
-You will not be able to see any highlight on syntaxes when previewing the docs at http://localhost:1313/ on a Windows machine.
+You will not be able to see any yaml syntax highlighting when previewing the docs at http://localhost:1313/ on a Windows machine.
 <br>
 If run into this issue, you can try running Hugo on [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) to preview the page.

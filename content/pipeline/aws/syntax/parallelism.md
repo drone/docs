@@ -10,7 +10,7 @@ description: |
 
 Pipeline steps are executed sequentially by default. You can optionally describe your build steps as a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph). In the below example we fan-out to execute the first two steps in parallel, and then once complete, we fan-in to execute the final step:
 
-{{<highlight yaml "linenos=table,hl_lines=23-25" >}}
+{{<highlight yaml "linenos=table,hl_lines=26-28" >}}
 kind: pipeline
 type: aws
 name: default

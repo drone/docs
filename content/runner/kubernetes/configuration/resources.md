@@ -77,7 +77,7 @@ type: kubernetes
 
 # resource requests are defined on the pipeline level
 resources:
-  request:
+  requests:
     cpu: 2000
     memory: 2000MiB
 
@@ -88,7 +88,7 @@ steps:
       - echo hello
     resources:
       # resource limits are defined for each step
-      limit:
+      limits:
         cpu: 1000
         memory: 1000MiB
 

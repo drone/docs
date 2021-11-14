@@ -95,14 +95,3 @@ trigger:
   - pull_request
   - custom
 ```
-
-
-Example pipeline condition includes the custom event type:
-
-```yaml  {linenos=table, hl_lines=["5"]}
-when:
-  event:
-  - push
-  - pull_request
-  - custom
-```

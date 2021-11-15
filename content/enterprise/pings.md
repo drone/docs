@@ -27,10 +27,7 @@ Example payload:
 }
 ```
 
-
-# Payload
-
-Below is an itemized list of data included in the payload. This data is required for billing, support, updates, and security purposes.
+Overview of payload attributes:
 
 * `installed_by`
   : email address of the initial site installer (or if deleted, the first active site admin) collected from the user registration screen
@@ -53,10 +50,15 @@ Below is an itemized list of data included in the payload. This data is required
 * `build_count`
   : aggregate count of the number of builds
 
+# Connections
+
+Drone only connects to drone.io for the ping described above. There are no other automatic external connections to drone.io (or any other site on the internet).
+
 # Privacy
 
 Drone collects the email address of the initial site installer (or if deleted, the first active site admin), to know who to contact regarding sales, support, product updates, security updates, and policy updates. The use of this email address is governed by our [privacy policy](https://harness.io/privacy/).
 
-# Connections
 
-Drone only connects to drone.io for the ping described above. There are no other automatic external connections to drone.io (or any other site on the internet).
+# Disable
+
+Drone supports disabling this ping by setting the DRONE_DATADOG_ENABLED environment variable to false.

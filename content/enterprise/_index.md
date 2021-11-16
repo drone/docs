@@ -39,17 +39,17 @@ The Enterprise Edition is free for organizations with under $1 million US dollar
 You can download the Enterprise Edition from Dockerhub by following the [installation instructions]({{< relref "server/overview.md" >}}) described in this documentation.
 
 # Where do I download the Open Source Edition?
-There is no official distribution of the Open Source Edition. You can [build](https://github.com/drone/drone/blob/master/BUILDING_OSS) the Open Source Edition from source using the oss build tags. 
+There is no official distribution of the Open Source Edition. You can [build](https://github.com/harness/drone/blob/master/BUILDING_OSS) the Open Source Edition from source using the oss build tags. 
 
 ```
-$ go build -tags "oss nolimit" github.com/drone/drone/cmd/drone-server
+$ go build -tags "oss nolimit" github.com/harness/drone/cmd/drone-server
 ```
 
 # How do I use the Enterprise Edition for Free?
 You can build the Enterprise Edition from source without build limits if and only if your organization has under $1 million US dollars in annual gross revenue. You will otherwise need to [purchase](https://drone.io/enterprise) a commercial license.
 
 ```
-$ go build -tags "nolimit" github.com/drone/drone/cmd/drone-server
+$ go build -tags "nolimit" github.com/harness/drone/cmd/drone-server
 ```
 
 _If an organization does not qualify for free use, removal of these limits violates the obligations and conditions to your license and is subject to penalty under US Federal and International copyright law. If you are unsure whether or not you qualify for free use you should consult your legal team._

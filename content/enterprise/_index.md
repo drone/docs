@@ -49,7 +49,7 @@ $ go build -tags "oss nolimit" github.com/harness/drone/cmd/drone-server
 You can build the Enterprise Edition from source without build limits if and only if your organization has under $1 million US dollars in annual gross revenue. You will otherwise need to [purchase](https://drone.io/enterprise) a commercial license.
 
 ```
-$ go build -tags "nolimit" github.com/harness/drone/cmd/drone-server
+$ go build -tags "nolimit" github.com/drone/drone/cmd/drone-server
 ```
 
 _If an organization does not qualify for free use, removal of these limits violates the obligations and conditions to your license and is subject to penalty under US Federal and International copyright law. If you are unsure whether or not you qualify for free use you should consult your legal team._

@@ -196,7 +196,7 @@ The name of the step. This value is required and must match [a-zA-Z0-9_-]. This 
 
 ## The `failure` attribute
 
-Defines how the system handles failure. The default value is `always` indicating a failed step always fails the overall pipeline. A value of `ignore` indicates the failure is ignored. This attribute is of enumeration `Failure` and is optional.
+Defines how the system handles failure. The default value is `always` indicating a failed step always fails the overall pipeline. A value of `ignore` indicates the failure is ignored. This attribute is of enumeration [`Failure`](#the-failure-enum) and is optional.
 
 ## The `commands` attribute
 

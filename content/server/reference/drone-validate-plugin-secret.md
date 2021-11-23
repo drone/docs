@@ -7,5 +7,5 @@ author: bradrydzewski
 Shared secret used to create an [http-signature](https://tools.ietf.org/html/draft-cavage-http-signatures). The validation plugin uses the shared secret to verify request authenticity.
 
 ```
-DRONE_VALIDATE__PLUGIN_SECRET=correct-horse-battery-staple
+DRONE_VALIDATE_PLUGIN_SECRET=correct-horse-battery-staple
 ```

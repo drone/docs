@@ -26,6 +26,7 @@ Drone integrates seamlessly with popular _Source Control Management_ providers. 
 {{< link "/server/provider/gitea" >}}
 {{< link "/server/provider/bitbucket-cloud" >}}
 {{< link "/server/provider/bitbucket-server" >}}
+{{< link "/server/provider/gitee" >}}
 
 # Server Upgrades
 

@@ -56,7 +56,7 @@ Drone only connects to drone.io for the ping described above. There are no other
 
 # Privacy
 
-Drone collects the email address of the initial site installer (or if deleted, the first active site admin), to know who to contact regarding sales, support, product updates, security updates, policy updates and license compliance. The use of this email address is governed by our [privacy policy](https://harness.io/privacy/).
+Drone collects the email address of the initial site installer (or if deleted, the first active site admin), to know who to contact regarding sales, support, product updates, security updates, policy updates, and license compliance. The use of this email address is governed by our [privacy policy](https://harness.io/privacy/).
 
 
 # Disable

@@ -101,6 +101,11 @@ When you define multiple _Pipeline_ objects in the same configuration file, pipe
 Please note that Pipelines do not share state. It is not possible for two pipelines to access the same underlying file system or generated files.
 </div>
 
+<div class="alert">
+When running multiple pipelines if any of the sibling pipelines fails further build pipelines will be stopped. 
+This may present different behaviour, depending on the scheduling of sibling pipelines. This will give non-deterministic behaviour. 
+</div>
+
 {{< highlight yaml "linenos=table,hl_lines=35-57" >}}
 kind: pipeline
 type: docker

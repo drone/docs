@@ -51,7 +51,7 @@ trigger:
 
 # By Branch
 
-The branch trigger limits step execution based on the git branch. Please note that the target branch is evaluated for pull requests; and branch names are not available for tag events.
+The branch trigger limits pipeline execution based on the git branch. Please note that the target branch is evaluated for pull requests; and branch names are not available for tag events.
 
 <div class="alert">
 Note that you cannot use branch triggers with tags. A tag is not associated with the source branch from which it was created.
@@ -125,7 +125,7 @@ trigger:
 
 # By Reference
 
-The reference trigger limits step execution based on the git reference name. This can be helpful when you want to glob match branch or tag names.
+The reference trigger limits pipeline execution based on the git reference name. This can be helpful when you want to glob match branch or tag names.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -158,7 +158,7 @@ trigger:
 
 # By Repository
 
-The repository trigger limits step execution based on repository name. This can be useful when Drone is enabled for a repository and its forks, and you want to limit execution accordingly.
+The repository trigger limits pipeline execution based on repository name. This can be useful when Drone is enabled for a repository and its forks, and you want to limit execution accordingly.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -197,7 +197,7 @@ trigger:
 
 <!-- # By Instance
 
-The instance trigger limits step execution based on the Drone instance hostname. This can be useful if you have multiple Drone instances configured for a single repository, sharing the same yaml file, and want to limit pipeline execution by instance.
+The instance trigger limits pipeline execution based on the Drone instance hostname. This can be useful if you have multiple Drone instances configured for a single repository, sharing the same yaml file, and want to limit pipeline execution by instance.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -237,7 +237,7 @@ trigger:
 
 # By Status
 
-The status trigger limits step execution based on the pipeline status. For example, you may want to configure Slack notification only on failure.
+The status trigger limits pipeline execution based on the pipeline status. For example, you may want to configure Slack notification only on failure.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -245,7 +245,7 @@ trigger:
   - failure
 {{< / highlight >}}
 
-Execute a step on failure:
+Execute a pipeline on failure:
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -253,7 +253,7 @@ trigger:
   - failure
 {{< / highlight >}}
 
-Execute a step on success or failure:
+Execute a pipeline on success or failure:
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -272,7 +272,7 @@ trigger:
 
 # By Target
 
-The target trigger limits step execution based on the target deployment environment. This only applies to promotion and rollback events.
+The target trigger limits pipeline execution based on the target deployment environment. This only applies to promotion and rollback events.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:
@@ -301,7 +301,7 @@ trigger:
 
 # By Cron
 
-The cron trigger limits step execution based on the cron name that triggered the pipeline. This only applies to cron events.
+The cron trigger limits pipeline execution based on the cron name that triggered the pipeline. This only applies to cron events.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:

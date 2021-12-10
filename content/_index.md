@@ -13,6 +13,11 @@ aliases:
 
 Drone by [Harness](https://harness.io)™ is a modern Continuous Integration platform that empowers busy teams to automate their build, test and release workflows using a powerful, cloud native pipeline engine.
 
+<div class="alert alert-warn">
+Drone comes in two distributions: the Enterprise Edition and the Community Edition. If you only want to download open source software the <a href="https://github.com/harness/drone/blob/master/BUILDING_OSS">Community Edition</a> is the best option. The <a href="https://github.com/harness/drone/blob/master/BUILDING_OSS">Community Edition</a> does not contain any properitary code. <a href="https://github.com/harness/drone/blob/master/BUILDING_OSS">Learn more</a>.
+</div>
+
+
 ## Installation Guides [See All]({{< relref "server/overview.md" >}})
 
 {{< link "server/provider/github" "GitHub" >}}

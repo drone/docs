@@ -55,7 +55,7 @@ _Plugins are just Docker containers which means you can write plugins in any pro
 
 # Source Code
 
-Plugins automatically have access to the relevant source code and commit for a build, mounted as a volume into the plugin container. The plugin is also started with the current working directory set to the root of the git repository. _The plugin does not need to clone or checkout code, this is handled by Drone._
+Plugins automatically have access to the relevant source code and commit for a build, mounted as a volume into the plugin container. The plugin is also started with the current working directory set to the root of the git repository. _The plugin does not need to clone or checkout code; this is handled by Drone._
 
 # Plugin Inputs
 

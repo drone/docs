@@ -80,6 +80,10 @@ Plugins parameters are defined in the settings section of the pipeline step and 
 Plugin parameters can be any primitive type or array of primitive types. Arrays are converted to comma-separate strings.
 
 
+# Source Code
+
+Plugins automatically have access to the source code and the relevant commit, mounted as a volume into the plugin container.  The plugin is also started with the current working directory set to the root of the git repository.   
+
 # Plugin Distribution
 
 Plugins are distributed as Docker images. You can publish plugins to any Docker registry, private or public, to share plugins internally with your organization, or publicly with the broader developer community.

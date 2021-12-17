@@ -13,14 +13,14 @@ This subcommand disables the named repository. Please note this command requires
 
 ```
 NAME:
-   drone repo disable - remove a repository
+   drone repo rm - remove a repository
 
 USAGE:
-   drone repo disable [arguments...]
+   drone repo rm [arguments...]
 ```
 
 Example usage:
 
 ```
-$ drone repo disable octocat/hello-world
+$ drone repo rm octocat/hello-world
 ```

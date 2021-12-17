@@ -1,6 +1,6 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: drone repo add
+title: drone repo enable
 author: bradrydzewski
 weight: 5
 aliases:

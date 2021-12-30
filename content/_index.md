@@ -21,6 +21,10 @@ Drone by [Harness](https://harness.io)™ is a modern Continuous Integration pla
 {{< link "server/provider/bitbucket-server" "Bitbucket Server" >}}
 {{< link "server/provider/gitea" "Gitea" >}}
 
+<div class="alert alert-info">
+Drone comes in two distributions: the Enterprise Edition and the Community Edition. If you only want to download open source software, the <a href="https://github.com/harness/drone/blob/master/BUILDING_OSS">Community Edition</a> is the best option. The <a href="https://github.com/harness/drone/blob/master/BUILDING_OSS">Community Edition</a> does not contain any properitary code.
+</div>
+
 ## Examples by Programming Language [See All]({{< relref "pipeline/docker/examples/_index.md" >}})
 
 

@@ -52,6 +52,11 @@ steps:
 
 _Plugins are just Docker containers which means you can write plugins in any programming language that runs inside a container. You can even create plugins using simple bash scripting._
 
+
+# Source Code
+
+Plugins automatically have access to the relevant source code and commit for a build, mounted as a volume into the plugin container. The plugin is also started with the current working directory set to the root of the git repository. _The plugin does not need to clone or checkout code; this is handled by Drone._
+
 # Plugin Inputs
 
 Plugins parameters are defined in the settings section of the pipeline step and are passed to the plugin container as environment variables. The environment variables are prefixed to prevent naming conflicts.
@@ -78,7 +83,6 @@ Plugins parameters are defined in the settings section of the pipeline step and 
   ```
 
 Plugin parameters can be any primitive type or array of primitive types. Arrays are converted to comma-separate strings.
-
 
 # Plugin Distribution
 

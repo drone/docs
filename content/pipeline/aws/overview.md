@@ -50,7 +50,7 @@ steps:
 ...
 {{< / highlight >}}
 
-# Windows support
+## Windows support
 
 AWS pipelines support windows EC2 instances as a first class citizen. Syntactically they do not differ to non Windows pipelines, but the underlying infrastructure is different.
 
@@ -70,7 +70,7 @@ steps:
 ...
 {{< / highlight >}}
 
-# Kind and Type
+## Kind and Type
 
 The kind and type attributes define an `aws` pipeline.
 

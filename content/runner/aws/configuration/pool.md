@@ -12,10 +12,11 @@ This sets up the build pools, it allows builds to use a hot AWS instances (you d
 + `.drone_pool.yml` is the default file name.
 + Each pool only has one instance type.
 + There can be multiple pools. Different pipelines can use the same pool
-+ You can specify the size of the pool.
++ You can specify the minimum size of the pool.
 + A pool can only be in one region.
 + Changing the pool configuration will mean removing the existing images and restarting the daemon.
 + If the pool is empty, it will trigger an adhoc instance.
++ For Microsoft windows pools it is important to set platform. As seen in the windows example below.
 
 #### Here are pool settings settings
 
@@ -23,7 +24,7 @@ A pool has:
 
 ```yaml
   name          string
-  max_pool_size int
+  min_pool_size int
   platform      Platform
   account       Account
   instance      Instance
@@ -86,7 +87,7 @@ EG, This `.drone_pool.yml` file configures 2 pools each with a maximum pool size
 
 ```YAML
 name: common
-max_pool_size: 1
+min_pool_size: 1
 
 account:
   region: us-east-2
@@ -102,7 +103,7 @@ instance:
 ---
 
 name: windows 2019
-max_pool_size: 1
+min_pool_size: 1
 
 platform:
  os: windows

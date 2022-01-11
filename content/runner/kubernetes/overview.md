@@ -7,10 +7,6 @@ aliases:
 - /installation/runners/kubernetes/
 ---
 
-<div class="alert">
-The Kubernetes runner is in Beta and may not be suitable for production workloads. Furthermore this runner is a community effort and is not subject to support services or service level agreements at this time.
-</div>
-
 The Kubernetes runner is a standalone service that executes pipelines inside Pods. The Kubernetes runner is very similar to the Docker runner, and should be used when running Drone on Kubernetes.
 
 {{< link "/runner/kubernetes/installation.md" "Install the Kubernetes Runner" >}}
@@ -25,7 +21,7 @@ The Kubernetes runner is poorly suited for projects that cannot run tests or com
 
 The Kubernetes runner is also poorly suited for stateful pipelines that need to store files or folders on the host machine in-between pipeline executions. Kubernetes pipelines are ephemeral and do not mutate the host machine.
 
-# Known Issues / Differences
+# Differences
 
 Kubernetes pipelines are considered experimental and may not be suitable for production use yet. You may experience unexpected differences and behaviors, some of which are detailed below.
 
@@ -33,6 +29,25 @@ Kubernetes pipelines are considered experimental and may not be suitable for pro
 
 * The command line utility does not support linting, formatting or execution of Kubernetes pipelines.
 
-* The Kubernetes runner must not be restarted while pipelines are running. If you stop or restart the runner while a pipeline is running, it will be stuck in a running state, and the associated Pod must be manually removed.
+# Known Issues
 
-* If the pipeline Pod is sitting in a pending state, and waiting to be scheduled for an extended period of time, the Pipeline may appear stuck in the user interface. This can be resolved by increasing capacity in your cluster.
+Below are some issues that can occur when running your pipelines inside Kubernetes. This is due to its inherent behavior. The runner listens for events from Kubernetes and sometimes these events are not sent successfully.  We use the [v0.21.4](https://github.com/kubernetes/client-go/releases/tag/v0.21.4) version of the library, that lines up with the Kubernetes v1.21.4 release. For their support matrix look [here](https://github.com/kubernetes/client-go/#compatibility-matrix).
+
+| Error | Description | Mitigation |
+|------|-------------|-------------|
+| "unknown container:" | An error that is returned when an unregistered container name is provided | Use a registered container name, or check connectivity to your container registry. |
+| "pod is terminated" | An error that is returned when the pod is already terminated. | Check to see if another service has terminated the pod allocate more memory to kubernetes. |
+| "kubernetes has failed: container failed to start" | An error returned placeholder container terminates abnormally. The correct container image failed to load. | Usually happens when image doesn't exist, or check connectivity to your container registry.  |
+| "kubernetes has failed: container failed to start in timely manner:" | An error when a container fails to run after some predefined time. This can be due to any number of network / registry issues. | You can configure the timeout threshold with the setting `DRONE_ENGINE_CONTAINER_START_TIMEOUT` |
+| "aborting due to error" | An error by wait function when some other container in the same pod fails with a "kubernetes has failed" error.| Investigate the issue that caused the original container to fail. |
+| Pods stuck in a running state | The Kubernetes runner looks after the lifecycle of the pods, and must not be restarted while pipelines are running. The runner does not attempt to kill pods on start. | These pods need to be manually removed. |
+
+# Our test setup
+
+We used the following criteria for testing the Kubernetes runner inside of GCR:
+
+| PRs/Day |  Nodes with 4 CPU, 8GB RAM,100GB disk | Nodes with 8 CPU, 16GB RAM, 200GB disk |
+|---------|------------------------------|------------------------------|
+| 100 | 19 - 26  | 11 - 15 |
+| 500 | 87 - 121 | 45 - 62 |
+| 1000 | 172 - 239 | 89 - 123 |

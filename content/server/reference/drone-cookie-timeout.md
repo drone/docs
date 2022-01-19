@@ -6,8 +6,8 @@ aliases:
 - /installation/reference/drone-cookie-timeout/
 ---
 
-Optional duration value. Configures the authentication cookie expiration. This value is optional, with a default value of 72 hours.
+Optional duration value. Configures the authentication cookie expiration. This value is optional, with a default value of 30 days (_720h_).
 
 ```
-DRONE_COOKIE_TIMEOUT=72h
+DRONE_COOKIE_TIMEOUT=720h
 ```

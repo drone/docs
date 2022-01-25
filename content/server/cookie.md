@@ -28,8 +28,8 @@ Drone signs authentication cookies using a secret key that is randomly generated
 
 # Expiration
 
-Drone creates cookies with a default timeout of 30 days. When the cookie expires the user sessions is terminated and the user will be required to login. You can customize the cookie timeout through the environment.
+Drone creates cookies with a default timeout of 30 days (_720h_). When the cookie expires the user sessions is terminated and the user will be required to login. You can customize the cookie timeout through the environment.
 
 ```
-DRONE_COOKIE_TIMEOUT=72h
+DRONE_COOKIE_TIMEOUT=720h
 ```

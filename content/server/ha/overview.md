@@ -9,7 +9,7 @@ description: |
 ---
 
 <div class="alert">
-HA (high availability) for drone is in Beta and may not be suitable for production workloads. Furthermore this is a community effort and is not subject to support services or service level agreements at this time.
+HA (high availability) for drone is in Beta and may not be suitable for production workloads.
 </div>
 
 Drone is a now capable of being a highly available service that is resilient to failures.
@@ -31,7 +31,7 @@ Here we will take a look at a basic configuration for HA and how to configure th
 
 For our first server {DRONE_SERVER_1_HOSTNAME_OR_IP}
 
-```bash
+```bash {linenos=table}
 DRONE_SERVER_HOST={PUBLIC_HOSTNAME_OR_IP}
 DRONE_SERVER_PROTO=https
 DRONE_DATABASE_DRIVER=postgres
@@ -41,7 +41,7 @@ DRONE_REDIS_CONNECTION=redis://{REDIS_HOSTNAME_OR_IP}:6379
 
 For our second server 2 {DRONE_SERVER_2_HOSTNAME_OR_IP}
 
-```bash
+```bash {linenos=table}
 DRONE_SERVER_HOST={PUBLIC_HOSTNAME_OR_IP}
 DRONE_SERVER_PROTO=https
 DRONE_DATABASE_DRIVER=postgres

@@ -17,7 +17,7 @@ You will need to create a directory that contains a `docker-compose.yml` file su
 - DRONE_SERVER_PROXY_HOST is used to set the proxy host for the drone server. eg using ngrok. Explained in greater detail below.
 - DRONE_GITHUB_CLIENT_ID and DRONE_GITHUB_CLIENT_SECRET are used to set the github client id and secret.
 
-```yaml
+```yaml {linenos=table}
 version: "3.8"
 services:
     dronea:
@@ -96,7 +96,7 @@ services:
 
 ## `haproxy.cfg` file
 
-```bash
+```bash {linenos=table}
 defaults
     mode http
     timeout connect 5s
@@ -123,13 +123,13 @@ Follow the guide here `https://dashboard.ngrok.com/get-started/setup`
 
 Run Ngrok against port 8080 it will run in the foreground.
 
-```bash
+```
 ngrok http 8080
 ```
 
 Take note of the forwarding hostname this is your DRONE_SERVER_PROXY_HOST EG
 
-```bash
+```
 Forwarding    http://c834c33asdde.ngrok.io -> http://localhost:8080
 ```
 

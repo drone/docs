@@ -116,7 +116,7 @@ Registry credentials or Docker config not provided. Guest mode enabled.
 
 ## Missing Username and Password
 
-If the registry username and password are missing you will see the below entry in your pipeline logs. Please see our guide to common problems users encounter when using secrets <https://discourse.drone.io/t/problems-with-secrets/3286>.
+If the registry username and password are missing you will see the below entry in your pipeline logs. Please see our guide to common problems users encounter when using secrets <https://community.harness.io/t/problems-with-secrets/10662>.
 
 ```text  {linenos=table}
 level=fatal msg="Error authenticating: exit status 1"

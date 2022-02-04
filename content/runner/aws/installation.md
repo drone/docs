@@ -43,7 +43,7 @@ The AWS runner is configured using environment variables. This article reference
 There are some pieces of setup that need to be performed on the AWS side first.
 
 - Set up an access key and access secret [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the runner.
-- Setup up vpc firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 22. Once complete you will have a security group id, which is needed for configuration of the runner.
+- Setup up vpc firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 9079. Once complete you will have a security group id, which is needed for configuration of the runner.
 - (windows only instance) You need to add the `AdministratorAccess` policy to the IAM role associated with the access key and access secret [IAM](https://console.aws.amazon.com/iamv2/home#/users). You will use the instance profile arn `iam_profile_arn`, in your pipeline.
 
 ## AWS EC2 environment variables
@@ -62,6 +62,8 @@ Set up the runner by using either an environment variables or a `.env` file simi
   : Public key file for the EC2 instances
 - __DRONE_SETTINGS_REUSE_POOL__
   : Reuse existing ec2 instances on restart of the runner.
+- __DRONE_SETTINGS_LITE_ENGINE_PATH__
+  : The web URL for the path containing lite-engine binaries. This can be hosted internally or you can get the binaries from github.
 
 ## Example AWS Runner configuration `.env` file
 
@@ -74,6 +76,7 @@ DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET=XXXXX
 DRONE_SETTINGS_AWS_REGION=us-east-2
 DRONE_SETTINGS_PRIVATE_KEY_FILE=/config/private.key
 DRONE_SETTINGS_PUBLIC_KEY_FILE=/config/public.key
+DRONE_SETTINGS_LITE_ENGINE_PATH=https://github.com/harness/lite-engine/releases/download/v0.0.1.12/
 ```
 
 ## Pool File

@@ -38,15 +38,22 @@ The AWS runner is configured using environment variables. This article reference
 
 ## AWS specific Configuration
 
-## AWS EC2 prerequisites
+### AWS EC2 prerequisites
 
 There are some pieces of setup that need to be performed on the AWS side first.
 
-- Set up an access key and access secret [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the runner.
-- Setup up vpc firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 9079. Once complete you will have a security group id, which is needed for configuration of the runner.
-- (windows only instance) You need to add the `AdministratorAccess` policy to the IAM role associated with the access key and access secret [IAM](https://console.aws.amazon.com/iamv2/home#/users). You will use the instance profile arn `iam_profile_arn`, in your pipeline.
+- Set up an access key `DRONE_SETTINGS_AWS_ACCESS_KEY_ID` and access secret `DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET` [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the runner.
 
-## AWS EC2 environment variables
+  __Alternatively__ use an IAM role to manage pool instances on aws drone runner. To use the IAM role, aws runner needs to run on EC2 instance with IAM role having CRUD permissions on EC2. This will allow the runner to use the instance’s IAM role to get temporary security credentials to make calls to AWS for managing pool & removes requirement of specifying `DRONE_SETTINGS_AWS_ACCESS_KEY_ID` and `DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET`.
+- Setup up vpc firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 9079. Once complete you will have a security group id, which is needed for configuration of the runner.
+- (optional) For debugging purposes, you can amend the security group with the following rules:
+
+  - `SSH TCP 22   0.0.0.0/0` for linux.
+  - `RDP TCP 3389 0.0.0.0/0` for windows.
+
+  This will allow you to remotely connect to the build instances. Once you set `DRONE_SETTINGS_AWS_KEY_PAIR_NAME`.
+
+### AWS EC2 environment variables
 
 Set up the runner by using either an environment variables or a `.env` file similar to other Drone runners. Below is a list of the AWS specific environment variables.
 
@@ -56,16 +63,14 @@ Set up the runner by using either an environment variables or a `.env` file simi
   : AWS access key secret, obtained above.
 - __DRONE_SETTINGS_AWS_REGION__
   : AWS region
-- __DRONE_SETTINGS_PRIVATE_KEY_FILE__
-  : Private key file for the EC2 instances. You can generate a public and private key using [ssh-keygen](https://ssh.com/ssh/keygen)
-- __DRONE_SETTINGS_PUBLIC_KEY_FILE__
-  : Public key file for the EC2 instances
+- __DRONE_SETTINGS_AWS_KEY_PAIR_NAME__
+  : The name of the key pair to use for the build instances. This is optional and used for debugging purposes.
 - __DRONE_SETTINGS_REUSE_POOL__
   : Reuse existing ec2 instances on restart of the runner.
 - __DRONE_SETTINGS_LITE_ENGINE_PATH__
   : The web URL for the path containing lite-engine binaries. This can be hosted internally or you can get the binaries from github.
 
-## Example AWS Runner configuration `.env` file
+### Example AWS Runner configuration `.env` file
 
 ```bash
 DRONE_RPC_HOST=localhost:8080
@@ -74,8 +79,6 @@ DRONE_RPC_SECRET=bea26a2221fd8090ea38720fc445eca6
 DRONE_SETTINGS_AWS_ACCESS_KEY_ID=XXXXXX
 DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET=XXXXX
 DRONE_SETTINGS_AWS_REGION=us-east-2
-DRONE_SETTINGS_PRIVATE_KEY_FILE=/config/private.key
-DRONE_SETTINGS_PUBLIC_KEY_FILE=/config/public.key
 DRONE_SETTINGS_LITE_ENGINE_PATH=https://github.com/harness/lite-engine/releases/download/v0.0.1.12/
 ```
 
@@ -109,8 +112,6 @@ We can use a config folder that contains the necessary configuration files.
 ls  /path/on/host/config/
 .drone_pool.yml
 .env
-private.key
-public.key
 ```
 
 The below command creates a container and starts the runner.

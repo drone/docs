@@ -91,6 +91,16 @@ $ drone-runner-exec service install
 $ drone-runner-exec service start
 ```
 
+If the user is non-root, you may still need to install it as root, but you can
+configure the service to run as your user:
+
+```
+$ sudo drone-runner-exec service install --config=/Users/<user>/.drone-runner-exec/config
+$ sudo defaults write /Library/LaunchDaemons/drone-runner-exec UserName <user>
+$ sudo drone-runner-exec service start
+```
+
+
 # Verification
 
 Inspect the logs and verify the runner successfully established a connection with the Drone server. If the user is root:

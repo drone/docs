@@ -108,3 +108,5 @@ yaml: line 1: mapping values are not allowed in this context
 ```
 
 The second most common root cause for this issue is when you forget to rename your file with a jsonnet extension. Drone assumes configuration files are written in yaml unless you explicitly use the jsonnet file extension.
+
+Also if a repository was already active in Drone before migrating to jsonnet, you should go to repository settings in Drone and change configuration file from `.drone.yml` to `.drone.jsonnet`.

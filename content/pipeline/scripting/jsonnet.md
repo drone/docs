@@ -24,7 +24,7 @@ In order to use Jsonnet configuration files your system administrator must <a hr
 </div>
 
 You can use Jsonnet for an individual project by creating a `.drone.jsonnet` file in the root of your git repository. Then update your repository configuration file accordingly, from your repository settings screen.
-<!-- 
+<!--
 # Structure
 
 The Jsonnet script returns one or many pipeline objects from the script's main method. The pipeline object uses the same structure as a yaml pipeline. In fact, under the covers, the returned object is converted directly to a yaml document.
@@ -101,12 +101,10 @@ steps:
 
 # Common Problems
 
-The below error may indicate that Drone does not recognize your configuration as a jsonnet file.  The most common root cause for this problem is when you forget to [enable jsonnet]({{< relref "server/reference/drone-jsonnet-enabled.md" >}}) in your Drone server settings. 
+The below error may indicate that Drone does not recognize your configuration as a jsonnet file.  The most common root cause for this problem is when you forget to [enable jsonnet]({{< relref "server/reference/drone-jsonnet-enabled.md" >}}) in your Drone server settings.
 
 ```
 yaml: line 1: mapping values are not allowed in this context
 ```
 
-The second most common root cause for this issue is when you forget to rename your file with a jsonnet extension. Drone assumes configuration files are written in yaml unless you explicitly use the jsonnet file extension.
-
-Also if a repository was already active in Drone before migrating to jsonnet, you should go to repository settings in Drone and change configuration file from `.drone.yml` to `.drone.jsonnet`.
+The second most common root cause for this issue is when you forget to rename your file with a jsonnet extension in your repository and in your repository settings screen in Drone (i.e. rename from .drone.yml to .drone.jsonnet). Drone assumes configuration files are written in yaml unless you explicitly use the jsonnet file extension.

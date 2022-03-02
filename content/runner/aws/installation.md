@@ -10,7 +10,7 @@ description: |
 ---
 
 <div class="alert">
-The AWS runner is in Alpha and may not be suitable for production workloads. Furthermore this runner is a community effort and is not subject to support services or service level agreements at this time.
+The AWS runner is in the Release Candidate phase.
 </div>
 
 This article explains how to install the AWS runner on Linux. The AWS runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).

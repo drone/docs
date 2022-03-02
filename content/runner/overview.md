@@ -16,5 +16,5 @@ Drone runners poll the server for workloads to execute. There are different type
 {{< link "/runner/exec/overview.md" "Exec Runner" >}}
 {{< link "/runner/ssh/overview.md" "SSH Runner" >}}
 {{< link "/runner/digitalocean/overview.md" "Digital Ocean Runner" >}}
-{{< link "/runner/aws/overview.md" "AWS Runner 'Alpha'" >}}
+{{< link "/runner/aws/overview.md" "AWS Runner 'RC'" >}}
 {{< link "/runner/macstadium/overview.md" "Macstadium Runner" >}}

@@ -6,7 +6,7 @@ weight: 1
 ---
 
 <div class="alert">
-The AWS runner is in Alpha and may not be suitable for production workloads. Furthermore this runner is a community effort and is not subject to support services or service level agreements at this time.
+The AWS runner is in the Release Candidate phase.
 </div>
 
 The AWS runner executes a build pipeline on a dedicated EC2 instance. The instance is created for each pipeline execution and terminated upon completion.

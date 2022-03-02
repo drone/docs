@@ -6,7 +6,7 @@ weight: 100
 ---
 
 <div class="alert">
-The AWS runner is in Alpha and may not be suitable for production workloads.
+The AWS runner is in the Release Candidate phase.
 </div>
 
 Here are the articles in this section:

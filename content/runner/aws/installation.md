@@ -19,7 +19,7 @@ This article explains how to install the AWS runner on Linux. The AWS runner is 
 
 Install Docker and pull the public image:
 
-```bash
+```
 docker pull drone/drone-runner-aws
 ```
 
@@ -74,7 +74,7 @@ Set up the runner by using either an environment variables or a `.env` file simi
 
 ### Example AWS Runner configuration `.env` file
 
-```bash
+{{< highlight bash "linenos=table" >}}
 DRONE_RPC_HOST=localhost:8080
 DRONE_RPC_PROTO=http
 DRONE_RPC_SECRET=bea26a2221fd8090ea38720fc445eca6
@@ -82,7 +82,7 @@ DRONE_SETTINGS_AWS_ACCESS_KEY_ID=XXXXXX
 DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET=XXXXX
 DRONE_SETTINGS_AWS_REGION=us-east-2
 DRONE_SETTINGS_LITE_ENGINE_PATH=https://github.com/harness/lite-engine/releases/download/v0.0.1.12/
-```
+{{< / highlight >}}
 
 ## Pool File
 
@@ -110,28 +110,28 @@ See [Pool file]({{< relref "configuration/pool.md" >}}) for more detailed inform
 
 We can use a config folder that contains the necessary configuration files.
 
-```bash
+{{< highlight bash "linenos=table" >}}
 ls  /path/on/host/config/
 .drone_pool.yml
 .env
-```
+{{< / highlight >}}
 
 The below command creates a container and starts the runner.
 
-```bash
+{{< highlight bash "linenos=table" >}}
 docker run -d \
   --volume=/path/on/host/config:/config/ \
   --publish=3000:3000 \
   --restart always \
   --name runner \
   drone/drone-runner-aws /config/.env /config/.drone_pool.yml
-```
+{{< / highlight >}}
 
 ## Verification
 
 Use the docker logs command to view the logs and verify the runner successfully established a connection with the Drone server.
 
-```bash
+{{< highlight bash "linenos=table" >}}
 docker logs runner
 
 level=info msg="daemon: starting the server" addr=":3000"
@@ -153,7 +153,7 @@ level=debug msg="provision: Instance responding" adhoc=false ami=ami-0840994b9b4
 level=debug msg="provision: complete" adhoc=false ami=ami-0840994b9b4c03cb1 id=i-08bb839ae0fc19524 ip=18.119.101.233 pool="windows 2019"
 level=info msg="buildPools: created instance windows 2019 i-08bb839ae0fc19524 18.119.101.233"
 level=info msg="daemon: pool created"
-```
+{{< / highlight >}}
 
 ## AWS pipeline syntax
 

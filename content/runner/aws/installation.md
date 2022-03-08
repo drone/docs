@@ -63,7 +63,7 @@ Set up the runner by using either an environment variables or a `.env` file simi
   : AWS access key secret, obtained above.
 - __DRONE_SETTINGS_AWS_REGION__
   : AWS region
-  __DRONE_SETTINGS_AWS_AVAILABILITY_ZONE__
+- __DRONE_SETTINGS_AWS_AVAILABILITY_ZONE__
   : Specify the availability zone for the build instance.
 - __DRONE_SETTINGS_AWS_KEY_PAIR_NAME__
   : The name of the key pair to use for the build instances. This is optional and used for debugging purposes.
@@ -96,7 +96,6 @@ account:
   region: us-east-2
 
 instance:
-# ubuntu 18.04 ohio
   ami: ami-051197ce9cbb023ea
   type: t2.nano
   network:

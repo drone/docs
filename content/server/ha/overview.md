@@ -2,7 +2,7 @@
 date: 2000-01-01T00:00:00+00:00
 title: Overview
 author: tphoney
-weight: 21
+weight: 1
 toc: true
 description: |
   Configure Drone server HA.
@@ -34,6 +34,7 @@ For our first server {DRONE_SERVER_1_HOSTNAME_OR_IP}
 ```bash {linenos=table}
 DRONE_SERVER_HOST={PUBLIC_HOSTNAME_OR_IP}
 DRONE_SERVER_PROTO=https
+DRONE_COOKIE_SECRET={RANDOM_STRING}
 DRONE_DATABASE_DRIVER=postgres
 DRONE_DATABASE_DATASOURCE=postgres://postgres:postgres@{DATABASE_HOSTNAME_OR_IP}:5432/drone?sslmode=disable
 DRONE_REDIS_CONNECTION=redis://{REDIS_HOSTNAME_OR_IP}:6379
@@ -44,6 +45,7 @@ For our second server 2 {DRONE_SERVER_2_HOSTNAME_OR_IP}
 ```bash {linenos=table}
 DRONE_SERVER_HOST={PUBLIC_HOSTNAME_OR_IP}
 DRONE_SERVER_PROTO=https
+DRONE_COOKIE_SECRET={RANDOM_STRING}
 DRONE_DATABASE_DRIVER=postgres
 DRONE_DATABASE_DATASOURCE=postgres://postgres:postgres@{DATABASE_HOSTNAME_OR_IP}:5432/drone?sslmode=disable
 DRONE_REDIS_CONNECTION=redis://{REDIS_HOSTNAME_OR_IP}:6379

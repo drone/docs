@@ -1,6 +1,6 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: Developer Setup
+title: Local Development
 author: tphoney
 weight: 21
 toc: true

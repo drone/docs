@@ -102,6 +102,6 @@ If you want to pull private images from Amazon Elastic Container Registry (ECR) 
 
 # Image Caching Behavior
 
-Kubernetes caches all images that is pulls locally on the node, including private images. Kubernetes does not restrict the use of cached images. An image already in the local cache can be used by any pipeline.
+Kubernetes caches all images that is pulled locally on the node, including private images. Kubernetes does not restrict the use of cached images. An image already in the local cache can be used by any pipeline.
 
 It is therefore possible for a pipeline to pull a private image that is cached by Kubernetes, and for another pipeline to use this image from the cache without having credentials. Keep this in mind when pulling private images in a shared or public environment.

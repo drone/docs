@@ -63,6 +63,16 @@ Drone provides partial emulation for bash string operations. This can be used to
       tags: ${DRONE_TAG##v}
       repo: octocat/hello-world
   ```
+  
+* Example variable substitution replaces ```/``` with ```-```:
+  ```
+  steps:
+  - name: publish
+    image: plugins/docker
+    settings:
+      tags: ${DRONE_BRANCH/\//-}
+      repo: octocat/hello-world
+  ```
 
 Drone emulates the below string operations. _Drone makes a best-effort to emulate these operations however we do not promise perfect emulation._
 

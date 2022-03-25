@@ -29,6 +29,31 @@ steps:
      commands:
         - {{ .input.commands }}
 ```
+Example base template with iteration:
+```
+kind: pipeline
+type: docker
+name: default
+steps:
+    - name: {{ .input.name }}
+     image: {{ .input.image }}
+     commands:
+     {{ range .input.commands }}
+     - {{ . }}
+     {{ end }}
+```
+
+.drone.yml with iteration:
+```
+kind: template
+load: plugin.yaml
+data:
+  name: name
+  image: image
+  commands:
+  - whoami
+  - date
+```
 Predefined variable list can be found at: https://docs.drone.io/template/variables
 
 Create organization templates using the command line tools:

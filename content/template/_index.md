@@ -16,6 +16,8 @@ To make this simpler, Drone has build templates that can be shared across projec
 
 This will simplify configuration management at organizations that have large numbers of similar configuration files; it will reduce the complexity of YAML files in individual repositories and will simplify the management of configuration across repositories.
 
+Templates use Go templating. For advanced usage, please see the [documentation](https://pkg.go.dev/text/template).
+
 Here are the articles in this section:
 
 {{< cards >}}

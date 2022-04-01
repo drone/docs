@@ -25,4 +25,4 @@ If you want a production ready runner or you do not want to run builds off prem.
 
 AWS pipelines are considered experimental and may not be suitable for production use yet. You may experience unexpected differences and behaviors, some of which are detailed below.
 
-* Not all of the syntax from the docker run is supported, we are adding more as we go.
+* Changes between RC4 and latest are documented [here]({{< relref "migration.md" >}}).

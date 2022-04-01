@@ -19,7 +19,7 @@ This article explains how to install the AWS runner on Linux. The AWS runner is 
 
 Install Docker and pull the public image:
 
-```
+``` bash
 docker pull drone/drone-runner-aws
 ```
 
@@ -40,35 +40,27 @@ The AWS runner is configured using environment variables. This article reference
 
 There are some pieces of setup that need to be performed on the AWS side first.
 
-- Set up an access key `DRONE_SETTINGS_AWS_ACCESS_KEY_ID` and access secret `DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET` [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the runner.
+- Set up an access key and access secret, more info here [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the pools.
 
-  __Alternatively__ use an IAM role to manage pool instances on aws drone runner. To use the IAM role, aws runner needs to run on EC2 instance with IAM role having CRUD permissions on EC2. This will allow the runner to use the instance’s IAM role to get temporary security credentials to make calls to AWS for managing pool & removes requirement of specifying `DRONE_SETTINGS_AWS_ACCESS_KEY_ID` and `DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET`.
+  __Alternatively__ use an IAM role to manage pool instances on aws drone runner. To use the IAM role, aws runner needs to run on EC2 instance with IAM role having CRUD permissions on EC2. This will allow the runner to use the instance’s IAM role to get temporary security credentials to make calls to AWS for managing pool & removes requirement of specifying `access_key_id` and `access_key_secret`.
 - Setup up vpc firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 9079. Once complete you will have a security group id, which is needed for configuration of the runner.
 - (optional) For debugging purposes, you can amend the security group with the following rules:
 
   - `SSH TCP 22   0.0.0.0/0` for linux.
   - `RDP TCP 3389 0.0.0.0/0` for windows.
 
-  This will allow you to remotely connect to the build instances. Once you set `DRONE_SETTINGS_AWS_KEY_PAIR_NAME`.
+  This will allow you to remotely connect to the build instances. Once you set `key_pair_name`.
 
-## AWS EC2 environment variables
+## Pool specific environment variables
 
-Set up the runner by using either an environment variables or a `.env` file similar to other Drone runners. Below is a list of the AWS specific environment variables.
+Set up the runner by using either an environment variables or a `.env` file similar to other Drone runners. Below is a list of the specific environment variables that you can override.
 
-- __DRONE_SETTINGS_AWS_ACCESS_KEY_ID__
-  : AWS access key id, obtained above.
-- __DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET__
-  : AWS access key secret, obtained above.
-- __DRONE_SETTINGS_AWS_REGION__
-  : AWS region
-- __DRONE_SETTINGS_AWS_AVAILABILITY_ZONE__
-  : Specify the availability zone for the build instance.
-- __DRONE_SETTINGS_AWS_KEY_PAIR_NAME__
-  : The name of the key pair to use for the build instances. This is optional and used for debugging purposes.
-- __DRONE_SETTINGS_REUSE_POOL__
-  : Reuse existing ec2 instances on restart of the runner.
-- __DRONE_SETTINGS_LITE_ENGINE_PATH__
-  : The web URL for the path containing lite-engine binaries. This can be hosted internally or you can get the binaries from github.
+- __DRONE_REUSE_POOL__
+  : Reuse existing instances on restart of the runner. This is set to `true` by default.
+- __DRONE_LITE_ENGINE_PATH__
+  : The web URL for the path containing lite-engine binaries. This can be hosted internally or you can get the binaries from github. This defaults to a tested version of lite-engine.
+
+  If you are moving from an older version, some change to setup may be required, they are outlined [here]({< relref "version migration" >}}).
 
 ## Example AWS Runner configuration `.env` file
 
@@ -76,29 +68,35 @@ Set up the runner by using either an environment variables or a `.env` file simi
 DRONE_RPC_HOST=localhost:8080
 DRONE_RPC_PROTO=http
 DRONE_RPC_SECRET=bea26a2221fd8090ea38720fc445eca6
-DRONE_SETTINGS_AWS_ACCESS_KEY_ID=XXXXXX
-DRONE_SETTINGS_AWS_ACCESS_KEY_SECRET=XXXXX
-DRONE_SETTINGS_AWS_REGION=us-east-2
-DRONE_SETTINGS_LITE_ENGINE_PATH=https://github.com/harness/lite-engine/releases/download/v0.0.1.12/
+DRONE_REUSE_POOL=false
 {{< / highlight >}}
 
 # Pool File
 
-The AWS runner requires a pool file, this describes the number and type of AWS instances to create in a hot swappable pool. For example:
+The AWS runner requires a pool file `pool.yml`, this describes the number and type of instances to create in a hot swappable pool. For example:
 
 {{< highlight yaml "linenos=table" >}}
-name: common
-min_pool_size: 1
-
-account:
-  region: us-east-2
-
-instance:
-  ami: ami-051197ce9cbb023ea
-  type: t2.nano
-  network:
-    security_groups:
-      - sg-0b8f8f8f8f8f8f8f8
+version: "1"
+instances:
+  - name: ubuntu-aws
+    default: true
+    type: amazon
+    pool: 1    # total number of warm instances in the pool at all times
+    limit: 100  # limit the total number of running servers. If exceeded block or error.
+    platform:
+      os: linux
+      arch: amd64
+    spec:
+      account:
+        region: us-east-2
+        availability_zone: us-east-2c
+        access_key_id: XXXXXXXXXXXXXXXXXXXXX
+        access_key_secret: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      ami: ami-051197ce9cbb023ea
+      size: t2.nano
+      network:
+        security_groups:
+          - XXXXXXXXXXXXXXXX
 {{< / highlight >}}
 
 See [Pool file]({{< relref "configuration/pool.md" >}}) for more detailed information.
@@ -121,7 +119,7 @@ docker run -d \
   --publish=3000:3000 \
   --restart always \
   --name runner \
-  drone/drone-runner-aws /config/.env /config/.drone_pool.yml
+  drone/drone-runner-aws /config/.env /config/pool.yml
 ```
 
 # Verification

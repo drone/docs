@@ -40,10 +40,11 @@ The AWS runner is configured using environment variables. This article reference
 
 There are some pieces of setup that need to be performed on the AWS side first.
 
-- Set up an access key and access secret, more info here [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the pools.
-
-  __Alternatively__ use an IAM role to manage pool instances on aws drone runner. To use the IAM role, aws runner needs to run on EC2 instance with IAM role having CRUD permissions on EC2. This will allow the runner to use the instance’s IAM role to get temporary security credentials to make calls to AWS for managing pool & removes requirement of specifying `access_key_id` and `access_key_secret`.
-- Setup up vpc firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 9079. Once complete you will have a security group id, which is needed for configuration of the runner.
+- Set up an access key and access secret, more info here [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the pools. 
+  - __Alternatively__ use an IAM role to manage pool instances on aws drone runner. To use the IAM role, aws runner needs to run on EC2 instance with IAM role having CRUD permissions on EC2. This will allow the runner to use the instance’s IAM role to get temporary security credentials to make calls to AWS for managing pool & removes requirement of specifying `access_key_id` and `access_key_secret`.
+- By default it will use the default VPC for that user, to set it manually change the pool file [here]({{< relref "configuration/pool.md" >}}).
+- By default it will create the necessary security group. It is named "harness runner".
+  - __Alternatively__ you can specify your own security group and passing its ID to the pool file. Firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 9079. Once complete you will have a security group id, which is needed for configuration of the runner.
 - (optional) For debugging purposes, you can amend the security group with the following rules:
 
   - `SSH TCP 22   0.0.0.0/0` for linux.
@@ -60,7 +61,7 @@ Set up the runner by using either an environment variables or a `.env` file simi
 - __DRONE_LITE_ENGINE_PATH__
   : The web URL for the path containing lite-engine binaries. This can be hosted internally or you can get the binaries from github. This defaults to a tested version of lite-engine.
 
-  If you are moving from an older version, some change to setup may be required, they are outlined [here]({< relref "version migration" >}}).
+  If you are moving from an older version, some change to setup may be required, they are outlined [here]({< relref "migration.md" >}}) .
 
 ## Example AWS Runner configuration `.env` file
 

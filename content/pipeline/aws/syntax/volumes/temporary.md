@@ -12,7 +12,7 @@ Temporary mounts are docker volumes that are created before the pipeline starts 
 
 {{<highlight yaml "linenos=table,hl_lines=8-10 17-19 23-25" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

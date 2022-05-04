@@ -12,7 +12,7 @@ Conditions can be used to limit pipeline step execution at runtime. For example,
 
 {{<highlight yaml "linenos=table,hl_lines=11-14" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

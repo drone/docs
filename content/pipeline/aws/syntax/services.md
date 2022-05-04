@@ -12,7 +12,7 @@ Drone supports launching detached service containers as part of your pipeline. T
 
 {{<highlight yaml "linenos=table,hl_lines=5-7" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -27,7 +27,7 @@ Service containers are reachable at a hostname identical to the container name. 
 
 {{<highlight yaml "linenos=table,hl_lines=9" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -53,7 +53,7 @@ Services can also be defined directly in the pipeline, as detached pipeline step
 {{<highlight yaml "linenos=table,hl_lines=7" >}}
 kind: pipeline
 name: default
-type: aws
+type: vm
 
 pool:
   use: ubuntu
@@ -79,7 +79,7 @@ It is import to remember that you cannot use the `localhost` or `127.0.0.1` addr
 
 {{<highlight yaml "linenos=table,hl_lines=9 12" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -106,7 +106,7 @@ Using a commandline tool to check if a service is up and running. This is a comm
 
 {{< highlight patch >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -137,7 +137,7 @@ Be sure to give the service adequate time to initialize before attempting to con
 
 {{<highlight yaml "linenos=table,hl_lines=9" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

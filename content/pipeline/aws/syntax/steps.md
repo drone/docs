@@ -14,7 +14,7 @@ Example configuration:
 
 {{<highlight yaml "linenos=table" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

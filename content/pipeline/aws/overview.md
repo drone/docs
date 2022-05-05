@@ -32,7 +32,7 @@ Example pipeline configuration:
 {{<highlight yaml "linenos=table" >}}
 ---
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -57,7 +57,7 @@ AWS pipelines support windows EC2 instances as a first class citizen. Syntactica
 {{<highlight yaml "linenos=table" >}}
 ---
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -77,7 +77,7 @@ The kind and type attributes define an `aws` pipeline.
 {{<highlight yaml "linenos=table" >}}
 ---
 kind: pipeline
-type: aws
+type: vm
 {{< / highlight >}}
 
 ## Pool

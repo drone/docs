@@ -13,7 +13,7 @@ Example Slack plugin:
 
 {{<highlight yaml "linenos=table,hl_lines=12-15" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

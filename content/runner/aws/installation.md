@@ -19,7 +19,7 @@ This article explains how to install the AWS runner on Linux. The AWS runner is 
 
 Install Docker and pull the public image:
 
-``` bash
+```
 docker pull drone/drone-runner-aws
 ```
 

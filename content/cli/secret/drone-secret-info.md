@@ -24,5 +24,5 @@ OPTIONS:
 Example usage:
 
 ```
-$ drone secret info octocat/hello-world my_token
+$ drone secret info octocat/hello-world --name my_token
 ```

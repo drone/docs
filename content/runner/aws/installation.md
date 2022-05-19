@@ -13,8 +13,9 @@ description: |
 The AWS runner is in the Release Candidate phase.
 </div>
 
-This article explains how to install the AWS runner on Linux. The AWS runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
-
+This article explains how to install the runner on Linux. The AWS runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
+**By default it will use Amazon EC2, with a max pool size of 2 instances running Ubuntu 18.04, in a pool called `test_pool`.**
+Currently the runner is only supports amazon, but in the future it will support other cloud providers and virtual machines.
 # Download
 
 Install Docker and pull the public image:
@@ -33,101 +34,47 @@ The AWS runner is configured using environment variables. This article reference
   : provides the protocol used to connect to your Drone server. The value must be either http or https.
 - __DRONE_RPC_SECRET__
   : provides the shared secret used to authenticate with your Drone server. This must match the secret defined in your Drone server configuration.
+- __DRONE_MIN_POOL_SIZE__ **(optional)**
+  : provides the minimum size of the pool. The pool will not shrink below this size. The default is 1.
+- __DRONE_MAX_POOL_SIZE__ **(optional)**
+  : provides the maximum size of the pool. The pool will not grow above this size. The default is 2.
 
-# AWS specific Configuration
+## Amazon EC2 prerequisites
 
-## AWS EC2 prerequisites
+By default the runner requires two additional Amazon specific environment variables. For more information look at the amazon specific configuration options for [Amazon]({{< relref "configuration/amazon" >}})
 
-There are some pieces of setup that need to be performed on the AWS side first.
+- __AWS_ACCESS_KEY_ID__
+  : provides the access key id for your AWS account. This must have permissions to create and run EC2 instances.
 
-- Set up an access key and access secret, more info here [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) which is needed for configuration of the pools. 
-  - __Alternatively__ use an IAM role to manage pool instances on aws drone runner. To use the IAM role, aws runner needs to run on EC2 instance with IAM role having CRUD permissions on EC2. This will allow the runner to use the instance’s IAM role to get temporary security credentials to make calls to AWS for managing pool & removes requirement of specifying `access_key_id` and `access_key_secret`.
-- By default it will use the default VPC for that user, to set it manually change the pool file [here]({{< relref "configuration/pool.md" >}}).
-- By default it will create the necessary security group. It is named "harness runner".
-  - __Alternatively__ you can specify your own security group and passing its ID to the pool file. Firewall rules for the build instances [ec2 authorizing-access-to-an-instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) We need allow ingress and egress access to port 9079. Once complete you will have a security group id, which is needed for configuration of the runner.
-- (optional) For debugging purposes, you can amend the security group with the following rules:
+- __AWS_SECRET_ACCESS_KEY__
+  : provides the secret access key for your AWS account. [aws secret](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey).
 
-  - `SSH TCP 22   0.0.0.0/0` for linux.
-  - `RDP TCP 3389 0.0.0.0/0` for windows.
-
-  This will allow you to remotely connect to the build instances. Once you set `key_pair_name`.
-
-## Pool specific environment variables
-
-Set up the runner by using either an environment variables or a `.env` file similar to other Drone runners. Below is a list of the specific environment variables that you can override.
-
-- __DRONE_REUSE_POOL__
-  : Reuse existing instances on restart of the runner. This is set to `true` by default.
-- __DRONE_LITE_ENGINE_PATH__
-  : The web URL for the path containing lite-engine binaries. This can be hosted internally or you can get the binaries from github. This defaults to a tested version of lite-engine.
-
-  If you are moving from an older version, some change to setup may be required, they are outlined [here]({< relref "migration.md" >}}) .
-
-## Example AWS Runner configuration `.env` file
-
-{{< highlight bash "linenos=table" >}}
-DRONE_RPC_HOST=localhost:8080
-DRONE_RPC_PROTO=http
-DRONE_RPC_SECRET=bea26a2221fd8090ea38720fc445eca6
-DRONE_REUSE_POOL=false
-{{< / highlight >}}
-
-# Pool File
-
-The AWS runner requires a pool file `pool.yml`, this describes the number and type of instances to create in a hot swappable pool. For example:
-
-{{< highlight yaml "linenos=table" >}}
-version: "1"
-instances:
-  - name: ubuntu-aws
-    default: true
-    type: amazon
-    pool: 1    # total number of warm instances in the pool at all times
-    limit: 100  # limit the total number of running servers. If exceeded block or error.
-    platform:
-      os: linux
-      arch: amd64
-    spec:
-      account:
-        region: us-east-2
-        availability_zone: us-east-2c
-        access_key_id: XXXXXXXXXXXXXXXXXXXXX
-        access_key_secret: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-      ami: ami-051197ce9cbb023ea
-      size: t2.nano
-      network:
-        security_groups:
-          - XXXXXXXXXXXXXXXX
-{{< / highlight >}}
-
-See [Pool file]({{< relref "configuration/pool.md" >}}) for more detailed information.
+- __AWS_DEFAULT_REGION__ **(optional)**
+  : provides the default region for your AWS account. Defaults to us-east-2.
 
 # Installation
 
-We can use a config folder that contains the necessary configuration files.
-
-```
-ls  /path/on/host/config/
-.drone_pool.yml
-.env
-```
-
-The below command creates a container and starts the runner.
-
-```
-docker run -d \
-  --volume=/path/on/host/config:/config/ \
+{{< highlight bash "linenos=table,hl_lines=3-9" >}}
+docker run --detach \
+--volume=/var/run/docker.sock:/var/run/docker.sock \
+  --env=DRONE_RPC_PROTO=https \
+  --env=DRONE_RPC_HOST=drone.company.com \
+  --env=DRONE_RPC_SECRET=super-duper-secret \
+  --env=DRONE_RUNNER_CAPACITY=2 \
+  --env=DRONE_RUNNER_NAME=my-first-runner \
+  --env=AWS_ACCESS_KEY_ID=your-access-key \
+  --env=AWS_SECRET_ACCESS_KEY=your-access-secret \
   --publish=3000:3000 \
-  --restart always \
-  --name runner \
-  drone/drone-runner-aws /config/.env /config/pool.yml
-```
+  --restart=always \
+  --name=runner \
+  drone/drone-runner-docker:1
+{{< / highlight >}}
 
 # Verification
 
 Use the docker logs command to view the logs and verify the runner successfully established a connection with the Drone server.
 
-```
+```bash
 $ docker logs runner
 
 level=info msg="daemon: starting the server" addr=":3000"
@@ -150,3 +97,13 @@ level=debug msg="provision: complete" adhoc=false ami=ami-0840994b9b4c03cb1 id=i
 level=info msg="buildPools: created instance windows 2019 i-08bb839ae0fc19524 18.119.101.233"
 level=info msg="daemon: pool created"
 ```
+
+If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Setup]({{< relref "configuration/setup" >}}).
+
+# Advanced Configuration
+
+For more information on advanced runner configuration options, see [Reference]({{< relref "configuration/reference" >}}).
+
+For more information on advanced pool configuration options, see [Pool]({{< relref "configuration/pool.md" >}}).
+
+For more information on configuring an Amazon pool, see [Amazon]({{< relref "configuration/amazon" >}}).

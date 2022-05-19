@@ -39,7 +39,7 @@ __Alternatively__ you can specify your own security group and passing its ID to 
 
 Cloud specific configuration.
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
   account          Account   # explained in section below
   ami              string    # ami id
   size             string    # t2.nano, m4.large, etc
@@ -57,7 +57,7 @@ More information on user_data and user_data_path can be found [custom cloud-init
 
 Contains the AWS account configuration.
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
   access_key_id     string   # access key id
   access_key_secret string   # access key secret
   region            string   # aws region
@@ -67,7 +67,7 @@ Contains the AWS account configuration.
 
 Contains AWS block information:
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
   size int      # size in GB
   type string   # gp2, io1, standard
   iops string   # iops for io1
@@ -78,7 +78,7 @@ Contains AWS block information:
 
 Contains AWS network information:
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
   vpc                 int       # vpc id
   vpc_security_groups []string  # vpc security groups
   security_groups     []string  # security group ids, default it will use the security for 'harness runner' 
@@ -97,7 +97,7 @@ Depending on the AMI's you are using, you may need to subscribe to it. We have t
 
 EG, This `pool.yml` file configures 2 pools each with a pool size of 2 and a limit of 4.
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
 version: "1"
 instances:
   - name: ubuntu-aws

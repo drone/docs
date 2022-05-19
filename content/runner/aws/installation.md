@@ -20,7 +20,7 @@ Currently the runner is only supports amazon, but in the future it will support 
 
 Install Docker and pull the public image:
 
-{{< highlight bash "linenos=table,hl_lines=3-9" >}}
+{{< highlight bash "linenos=table" >}}
 docker pull drone/drone-runner-aws
 {{< / highlight >}}
 
@@ -54,7 +54,7 @@ By default the runner requires two additional Amazon specific environment variab
 
 # Installation
 
-{{< highlight bash "linenos=table,hl_lines=3-9" >}}
+{{< highlight bash "linenos=table" >}}
 docker run --detach \
 --volume=/var/run/docker.sock:/var/run/docker.sock \
   --env=DRONE_RPC_PROTO=https \
@@ -74,7 +74,7 @@ docker run --detach \
 
 Use the docker logs command to view the logs and verify the runner successfully established a connection with the Drone server.
 
-{{< highlight bash "linenos=table,hl_lines=3-9" >}}
+{{< highlight bash "linenos=table" >}}
 $ docker logs runner
 
 level=info msg="daemon: starting the server" addr=":3000"

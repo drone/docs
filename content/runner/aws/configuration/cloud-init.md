@@ -75,7 +75,7 @@ instances:
 
  The path to the cloud-init file as a string in the `pool.yml`
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
 version: "1"
 instances:
   - name: test_pool

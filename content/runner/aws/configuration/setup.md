@@ -14,7 +14,7 @@ You can locate the binaries here (if you have not already done so): [releases](h
 
 Testing an amazon configuration:
 
-{{< highlight bash "linenos=table,hl_lines=3-9" >}}
+{{< highlight bash "linenos=table" >}}
 ./drone-runner-aws setup --awsAccessKeyID="your key" --awsAccessKeySecret="your secret"
 INFO[0000] setup: using amazon
 INFO[0000] no pool file provided, creating in memmory pool for amazon

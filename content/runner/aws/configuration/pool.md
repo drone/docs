@@ -27,7 +27,7 @@ The pool file sets up the build pools that instantiates hot instances (builds do
 
 ## Root section
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
   name          string   # name of the pool, used by pipelines to select the pool
   default       bool     # default pool
   type          string   # amazon, google
@@ -41,7 +41,7 @@ The pool file sets up the build pools that instantiates hot instances (builds do
 
 is (this is the same as plaform in other runners) NB windows support is implemented:
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
   os      string
   arch    string
   variant string
@@ -59,7 +59,7 @@ This is where we confiure the cloud provider specific configuration. There are a
 
 Below is an example of using a pool file with the docker command. We can use a config folder that contains the necessary configuration files.
 
-{{< highlight bash "linenos=table,hl_lines=3-9" >}}
+{{< highlight bash "linenos=table" >}}
 ls  /path/on/host/config/
 .drone_pool.yml
 .env
@@ -67,7 +67,7 @@ ls  /path/on/host/config/
 
 The below command creates a container and starts the runner.
 
-{{< highlight bash "linenos=table,hl_lines=3-9" >}}
+{{< highlight bash "linenos=table" >}}
 docker run -d \
   --volume=/path/on/host/config:/config/ \
   --publish=3000:3000 \

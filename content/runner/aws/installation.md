@@ -20,9 +20,9 @@ Currently the runner is only supports amazon, but in the future it will support 
 
 Install Docker and pull the public image:
 
-```
+{{< highlight bash "linenos=table,hl_lines=3-9" >}}
 docker pull drone/drone-runner-aws
-```
+{{< / highlight >}}
 
 # Configuration
 
@@ -74,7 +74,7 @@ docker run --detach \
 
 Use the docker logs command to view the logs and verify the runner successfully established a connection with the Drone server.
 
-```bash
+{{< highlight bash "linenos=table,hl_lines=3-9" >}}
 $ docker logs runner
 
 level=info msg="daemon: starting the server" addr=":3000"
@@ -96,7 +96,8 @@ level=debug msg="provision: Instance responding" adhoc=false ami=ami-0840994b9b4
 level=debug msg="provision: complete" adhoc=false ami=ami-0840994b9b4c03cb1 id=i-08bb839ae0fc19524 ip=18.119.101.233 pool="windows 2019"
 level=info msg="buildPools: created instance windows 2019 i-08bb839ae0fc19524 18.119.101.233"
 level=info msg="daemon: pool created"
-```
+{{< / highlight >}}
+
 
 If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Setup]({{< relref "configuration/setup" >}}).
 

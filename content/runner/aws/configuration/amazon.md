@@ -39,7 +39,7 @@ __Alternatively__ you can specify your own security group and passing its ID to 
 
 Cloud specific configuration.
 
-```yaml
+{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
   account          Account   # explained in section below
   ami              string    # ami id
   size             string    # t2.nano, m4.large, etc
@@ -48,8 +48,8 @@ Cloud specific configuration.
   disk             Disk      # explained in section below
   network          Network   # explained in section below
   user_data        string    # user data to apply to the instance
-  user_data_path   string    # path to user data script 
-```
+  user_data_path   string    # path to user data script
+{{< / highlight >}}
 
 More information on user_data and user_data_path can be found [custom cloud-init]({{< relref "cloud-init.md" >}})
 
@@ -57,33 +57,34 @@ More information on user_data and user_data_path can be found [custom cloud-init
 
 Contains the AWS account configuration.
 
-```yaml
+{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
   access_key_id     string   # access key id
   access_key_secret string   # access key secret
   region            string   # aws region
-```
+{{< / highlight >}}
 
 ## Disk
 
-contains AWS block information:
+Contains AWS block information:
 
-```yaml
+{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
   size int      # size in GB
   type string   # gp2, io1, standard
   iops string   # iops for io1
-```
+{{< / highlight >}}
+
 
 ## Network
 
-contains AWS network information:
+Contains AWS network information:
 
-```yaml
+{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
   vpc                 int       # vpc id
   vpc_security_groups []string  # vpc security groups
   security_groups     []string  # security group ids, default it will use the security for 'harness runner' 
   subnet_id           string    # subnet id
   private_ip          bool      # assign private ip
-```
+{{< / highlight >}}
 
 # Recommended AMIs
 
@@ -96,7 +97,7 @@ Depending on the AMI's you are using, you may need to subscribe to it. We have t
 
 EG, This `pool.yml` file configures 2 pools each with a pool size of 2 and a limit of 4.
 
-```YAML
+{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
 version: "1"
 instances:
   - name: ubuntu-aws
@@ -118,4 +119,4 @@ instances:
       network:
         security_groups:
           - XXXXXXXXXXXXXXXX
-```
+    {{< / highlight >}}

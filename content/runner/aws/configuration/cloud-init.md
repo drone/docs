@@ -22,7 +22,7 @@ There are 2 variables available in the spec section of your pool file:
 
 The contents of the cloud-init file as a string in the `pool.yml`
 
-```yaml
+{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
 version: "1"
 instances:
   - name: test_pool
@@ -69,13 +69,13 @@ instances:
         - 'touch /root/.env'
         - 'touch /tmp/magic_lives_here'
         - '/usr/bin/lite-engine server --env-file /root/.env > /var/log/lite-engine.log 2>&1 &'
-```
+    {{< / highlight >}}
 
 # `user_data_path` field
 
  The path to the cloud-init file as a string in the `pool.yml`
 
-```yaml
+{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
 version: "1"
 instances:
   - name: test_pool
@@ -94,6 +94,7 @@ instances:
       ami: ami-051197ce9cbb023ea
       size: t2.micro
       user_data_path: /tmp/user-data.yml
-```
+    {{< / highlight >}}
+
 
 You can see an example of a custom cloud-init template file [here](https://github.com/drone-runners/drone-runner-aws/blob/master/template/cloud-init).

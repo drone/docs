@@ -9,6 +9,8 @@ description: |
 ---
 # Overview
 
+**By default the runner does not need a pool file. It can use environment variables to set up a simple pool in memory. However if you want a more complex configuration or multiple pools follow the below quide.**
+
 The pool file sets up the build pools that instantiates hot instances (builds do not wait for an instance to spin up). You can have multiple pools, each with a different configuration or that even use different cloud providers.
 
 + `pool.yml` is the default file name.
@@ -52,3 +54,24 @@ This is where we confiure the cloud provider specific configuration. There are a
 
 + [Amazon]({{< relref "amazon.md" >}}) for examples and more information.
 + Google
+
+## Using a pool file
+
+Below is an example of using a pool file with the docker command. We can use a config folder that contains the necessary configuration files.
+
+```
+ls  /path/on/host/config/
+.drone_pool.yml
+.env
+```
+
+The below command creates a container and starts the runner.
+
+```
+docker run -d \
+  --volume=/path/on/host/config:/config/ \
+  --publish=3000:3000 \
+  --restart always \
+  --name runner \
+  drone/drone-runner-aws /config/.env /config/pool.yml
+```

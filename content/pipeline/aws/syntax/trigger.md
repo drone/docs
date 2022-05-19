@@ -14,7 +14,7 @@ Example limits pipeline execution by branch:
 
 {{<highlight yaml "linenos=table,hl_lines=12-14" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

@@ -21,7 +21,7 @@ This setting is only available to trusted repositories, since mounting host mach
 
 {{<highlight yaml "linenos=table,hl_lines=8-10 15-18" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -69,7 +69,7 @@ Temporary mounts are docker volumes that are created before the pipeline stars a
 
 {{<highlight yaml "linenos=table,hl_lines=8-10 17-19 23-25" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

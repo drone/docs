@@ -16,7 +16,7 @@ A pipeline is not routed to a runner unless it matches all runner labels. If the
 
 {{< highlight yaml "linenos=table,hl_lines=12-14" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

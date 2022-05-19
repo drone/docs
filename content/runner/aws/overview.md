@@ -6,7 +6,7 @@ weight: 1
 ---
 
 <div class="alert">
-The AWS runner is in Alpha and may not be suitable for production workloads. Furthermore this runner is a community effort and is not subject to support services or service level agreements at this time.
+The AWS runner is in the Release Candidate phase.
 </div>
 
 The AWS runner executes a build pipeline on a dedicated EC2 instance. The instance is created for each pipeline execution and terminated upon completion.
@@ -25,5 +25,4 @@ If you want a production ready runner or you do not want to run builds off prem.
 
 AWS pipelines are considered experimental and may not be suitable for production use yet. You may experience unexpected differences and behaviors, some of which are detailed below.
 
-* Not all of the syntax from the docker run is supported, we are adding more as we go.
-* We do not support customisation of the cloudinit file that is used to instantiate the instance for now.
+* Changes between RC4 and latest are documented [here]({{< relref "migration.md" >}}).

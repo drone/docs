@@ -10,7 +10,7 @@ description: |
 ---
 
 <div class="alert">
-The AWS runner is in Alpha and is a community effort.  The core Drone team does not provide production support.
+The AWS runner is in the Release Candidate phase.
 </div>
 
 Index of all configuration parameters:

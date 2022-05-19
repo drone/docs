@@ -12,7 +12,7 @@ Pipeline steps are defined as a series of Docker containers. Each step must ther
 
 {{<highlight yaml "linenos=table,hl_lines=7" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

@@ -12,7 +12,7 @@ Pipeline steps are executed sequentially by default. You can optionally describe
 
 {{<highlight yaml "linenos=table,hl_lines=26-28" >}}
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:

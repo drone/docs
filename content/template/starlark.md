@@ -1,12 +1,12 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: Starklark
+title: Starlark
 author: eoinmcafee
 weight: 20
 disable_toc: true
 aliases:
 - /configure/templates/jsonnet/
-description: Store and manage starklark templates per-organization.
+description: Store and manage starlark templates per-organization.
 ---
 Templates can be used by setting the kind to 'template', the name of the base template to load, and a set of freeform template inputs
 in their drone.yml file:

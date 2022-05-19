@@ -28,7 +28,7 @@ Darwin arm64	| [tarball](https://github.com/harness/drone-cli/releases/latest/do
 
 * Download and install on Linux:
 
-  ```bash
+  ```
   $ curl -L https://github.com/harness/drone-cli/releases/latest/download/drone_linux_amd64.tar.gz | tar zx
   $ sudo install -t /usr/local/bin drone
   ```
@@ -37,14 +37,14 @@ Darwin arm64	| [tarball](https://github.com/harness/drone-cli/releases/latest/do
 
 * Download and install on OSX:
 
-  ```bash
+  ```
   $ curl -L https://github.com/harness/drone-cli/releases/latest/download/drone_darwin_amd64.tar.gz | tar zx
   $ sudo cp drone /usr/local/bin
   ```
 
 * Or download and install on OSX using Homebrew:
 
-  ```bash
+  ```
   $ brew tap drone/drone
   $ brew install drone
   ```
@@ -53,6 +53,6 @@ Darwin arm64	| [tarball](https://github.com/harness/drone-cli/releases/latest/do
 
 * Download and install on Windows using [scoop](https://scoop.sh/):
 
-  ```bash
+  ```
   $ scoop install drone
   ```

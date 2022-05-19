@@ -301,7 +301,7 @@ trigger:
 
 # By Cron
 
-The cron trigger limits pipeline execution based on the cron name that triggered the pipeline. This only applies to cron events.
+The cron trigger limits pipeline execution based on the name of the cron job that triggered the pipeline. This only applies to cron events.  _Note that you must [create cron jobs](/cron/) before they can be referenced in your yaml_.
 
 {{< highlight text "linenos=table,linenostart=12" >}}
 trigger:

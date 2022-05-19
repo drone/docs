@@ -4,6 +4,7 @@ title: Kubernetes
 author: bradrydzewski
 weight: 200
 header: true
+hidden: true
 ---
 
 {{< cards >}}

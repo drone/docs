@@ -70,6 +70,8 @@ The Drone server is configured using environment variables. This article referen
   : Required string value provides your external hostname or IP address. If using an IP address you may include the port. For example, `drone.domain.com`
 * __DRONE_SERVER_PROTO__
   : Required string value provides your external protocol scheme. This value should be set to `http` or `https`. This field defaults to https if you configure ssl or acme.
+* __DRONE_USER_FILTER__
+  : Optional comma-separated list of GitLab users or organizations. Registration is limited to users in this list, or users that are members of organizations in this list. _Registration is open to the public if this value is unset._
 
 # Start the Server
 

@@ -167,7 +167,6 @@ class Step {
   failure:     Failure;
   image:       string;
   name:        string;
-  network_mode string;
   privileged   boolean;
   pull:        Pull;
   user         string;
@@ -209,10 +208,6 @@ The name of the Docker image. The image name should include the tag and will def
 ## The `name` attribute
 
 The name of the step. This value is required and must match [a-zA-Z0-9_-]. This value is displayed in the user interface (non-normative) and is used to identify the step (non-normative).
-
-## The `network_mode` attribute
-
-Overrides the default network to which the Docker container is attached. For example `host` or `bridge`. This attribute is of type `string` and is optional.
 
 ## The `privileged` attribute
 

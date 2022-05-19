@@ -18,7 +18,7 @@ description: |
 ---
 
 <div class="alert">
-The AWS runner is in Alpha and may not be suitable for production workloads.
+The AWS runner is in the Release Candidate phase.
 </div>
 
 <div class="alert">
@@ -32,7 +32,7 @@ Example pipeline configuration:
 {{<highlight yaml "linenos=table" >}}
 ---
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -50,14 +50,14 @@ steps:
 ...
 {{< / highlight >}}
 
-# Windows support
+## Windows support
 
 AWS pipelines support windows EC2 instances as a first class citizen. Syntactically they do not differ to non Windows pipelines, but the underlying infrastructure is different.
 
 {{<highlight yaml "linenos=table" >}}
 ---
 kind: pipeline
-type: aws
+type: vm
 name: default
 
 pool:
@@ -70,14 +70,14 @@ steps:
 ...
 {{< / highlight >}}
 
-# Kind and Type
+## Kind and Type
 
 The kind and type attributes define an `aws` pipeline.
 
 {{<highlight yaml "linenos=table" >}}
 ---
 kind: pipeline
-type: aws
+type: vm
 {{< / highlight >}}
 
 ## Pool

@@ -108,4 +108,4 @@ For more information on advanced pool configuration options, see [Pool]({{< relr
 
 For more information on configuring an Amazon pool, see [Amazon]({{< relref "providers/amazon/overview.md" >}}).
 
-For more information on configuring an Amazon pool, see [Google]({{< relref "providers/google/_index.md" >}}).
+For more information on using the provider: [Google]({{< relref "providers/google/_index.md" >}}).

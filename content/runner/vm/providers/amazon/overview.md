@@ -1,6 +1,6 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: Amazon
+title: Overview
 author: tphoney
 weight: 2
 toc: true
@@ -51,7 +51,7 @@ Cloud specific configuration.
   user_data_path   string    # path to user data script
 {{< / highlight >}}
 
-More information on user_data and user_data_path can be found [custom cloud-init]({{< relref "cloud-init.md" >}})
+More information on user_data and user_data_path can be found [custom cloud-init]({{< relref "../../configuration/cloud-init.md" >}})
 
 ## Account
 

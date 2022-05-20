@@ -10,12 +10,11 @@ description: |
 ---
 
 <div class="alert">
-The AWS runner is in the Release Candidate phase.
+The VM runner is in the Release Candidate phase.
 </div>
 
-This article explains how to install the runner on Linux. The AWS runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
-**By default it will use Amazon EC2, with a max pool size of 2 instances running Ubuntu 18.04, in a pool called `test_pool`.**
-Currently the runner is only supports amazon, but in the future it will support other cloud providers and virtual machines.
+This article explains how to install the runner on Linux. The VM runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
+
 # Download
 
 Install Docker and pull the public image:
@@ -26,7 +25,7 @@ docker pull drone/drone-runner-aws
 
 # Configuration
 
-The AWS runner is configured using environment variables. This article references the below configuration options. See [Configuration]({{< relref "configuration/reference" >}}) for a complete list of configuration options.
+The VM runner can be configured using environment variables. This article references the below configuration options. See [Reference]({{< relref "configuration/reference" >}}) for a complete list of configuration options.
 
 - __DRONE_RPC_HOST__
   : provides the hostname (and optional port) of your Drone server. The runner connects to the server at the host address to receive pipelines for execution.
@@ -41,7 +40,7 @@ The AWS runner is configured using environment variables. This article reference
 
 ## Amazon EC2 prerequisites
 
-By default the runner requires two additional Amazon specific environment variables. For more information look at the amazon specific configuration options for [Amazon]({{< relref "configuration/amazon" >}})
+By default the runner requires two additional Amazon specific environment variables. For more information look at the amazon specific configuration options for [Amazon]({{< relref "providers/amazon/setup" >}})
 
 - __AWS_ACCESS_KEY_ID__
   : provides the access key id for your AWS account. This must have permissions to create and run EC2 instances.
@@ -99,7 +98,7 @@ level=info msg="daemon: pool created"
 {{< / highlight >}}
 
 
-If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Setup]({{< relref "configuration/setup" >}}).
+If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Amazon Setup]({{< relref "providers/amazon/setup.md" >}}).
 
 # Advanced Configuration
 
@@ -107,4 +106,6 @@ For more information on advanced runner configuration options, see [Reference]({
 
 For more information on advanced pool configuration options, see [Pool]({{< relref "configuration/pool.md" >}}).
 
-For more information on configuring an Amazon pool, see [Amazon]({{< relref "configuration/amazon" >}}).
+For more information on configuring an Amazon pool, see [Amazon]({{< relref "providers/amazon/overview.md" >}}).
+
+For more information on configuring an Amazon pool, see [Google]({{< relref "providers/google/_index.md" >}}).

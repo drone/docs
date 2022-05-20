@@ -1,6 +1,6 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: Custom cloud-init
+title: Cloud-init
 author: tphoney
 weight: 2
 toc: true
@@ -22,7 +22,7 @@ There are 2 variables available in the spec section of your pool file:
 
 The contents of the cloud-init file as a string in the `pool.yml`
 
-{{< highlight yaml "linenos=table,hl_lines=3-9" >}}
+{{< highlight yaml "linenos=table" >}}
 version: "1"
 instances:
   - name: test_pool

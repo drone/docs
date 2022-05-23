@@ -9,7 +9,7 @@ description: |
 ---
 # Overview
 
-**By default the runner does not need a pool file. It can use environment variables to set up a simple pool in memory. However if you want a more complex configuration or multiple pools follow the below quide.**
+**By default when using AWS the runner does not need a pool file. It can use environment variables to set up a simple pool in memory. However if you want a more complex configuration or multiple pools follow the below quide.**
 
 The pool file sets up the build pools that instantiates hot instances (builds do not wait for an instance to spin up). You can have multiple pools, each with a different configuration or that even use different cloud providers.
 
@@ -50,10 +50,11 @@ is (this is the same as plaform in other runners) NB windows support is implemen
 
 ## Spec
 
-This is where we confiure the cloud provider specific configuration. There are a number of different providers.
+This is where we configure the cloud provider specific configuration. There are a number of different providers.
 
-+ [Amazon]({{< relref "amazon.md" >}}) for examples and more information.
-+ Google
++ [Amazon]({{< relref "../providers/amazon/overview.md" >}})
++ [Google]({{< relref "../providers/google/_index.md" >}})
++ [Anka]({{< relref "../providers/anka/_index.md" >}})
 
 ## Using a pool file
 

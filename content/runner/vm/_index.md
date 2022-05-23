@@ -1,6 +1,6 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: AWS
+title: VM (formally AWS)
 author: tphoney
 weight: 500
 header: true

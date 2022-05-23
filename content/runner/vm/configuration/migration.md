@@ -1,12 +1,12 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: Migration between versions
+title: Migration
 author: tphoney
 weight: 1
 ---
 
 <div class="alert">
-The AWS runner is in the Release Candidate phase.
+The VM runner is in the Release Candidate phase.
 </div>
 
 ## Migrating from RC4 to latest

@@ -89,7 +89,7 @@ pool:
   use: ubuntu-20.04
 {{< / highlight >}}
 
-For more information about configuring pools of machines please consult the [Pool file]({{< relref "../../runner/aws/configuration/pool.md" >}}) documentation.
+For more information about configuring pools of machines please consult the [Pool file]({{< relref "../../runner/vm/configuration/pool.md" >}}) documentation.
 
 ## Steps
 

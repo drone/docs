@@ -1,6 +1,6 @@
 ---
 date: 2000-01-01T00:00:00+00:00
-title: Amazon
+title: Overview
 author: tphoney
 weight: 2
 toc: true
@@ -10,7 +10,10 @@ description: |
 
 # Overview
 
-Amazon specific configuration in a pool file. 
+**By default it will use Amazon EC2, with a max pool size of 2 instances running Ubuntu 18.04, in a pool called `test_pool`.**
+Currently the runner is only supports amazon, but in the future it will support other cloud providers and virtual machines.
+
+Amazon specific configuration in a pool file.
 
 ## Authentication
 
@@ -51,7 +54,7 @@ Cloud specific configuration.
   user_data_path   string    # path to user data script
 {{< / highlight >}}
 
-More information on user_data and user_data_path can be found [custom cloud-init]({{< relref "cloud-init.md" >}})
+More information on user_data and user_data_path can be found [custom cloud-init]({{< relref "../../configuration/cloud-init.md" >}})
 
 ## Account
 

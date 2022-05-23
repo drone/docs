@@ -80,7 +80,7 @@ The Drone server is configured using environment variables. This article referen
 
 # Start the Server
 
-The server container can be started with the below command. The container is configured through environment variables. For a full list of configuration parameters, please see the configuration reference.
+The server container can be started with the below command. The container is configured through environment variables. For a full list of configuration parameters, please see the [configuration reference]({{< relref "../reference/_index.md" >}}).
 
 {{< highlight bash "linenos=table,hl_lines=3-8" >}}
 docker run \

@@ -28,6 +28,10 @@ And credentials will be saved in `/home/$(whoami)/.config/gcloud/application_def
 
 Otherwise, [create service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts), [generate credentials file](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and save it somewhere in the machine where plan to run the vm runner.
 
+# Recommended AMIs
+
++ [Ubuntu 18.04 LTS (Bionic)](https://console.cloud.google.com/marketplace/product/ubuntu-os-cloud/ubuntu-bionic)
+
 # Example Pool File
 
 {{< highlight bash "linenos=table" >}}

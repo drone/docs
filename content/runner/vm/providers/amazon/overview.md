@@ -10,7 +10,10 @@ description: |
 
 # Overview
 
-Amazon specific configuration in a pool file. 
+**By default it will use Amazon EC2, with a max pool size of 2 instances running Ubuntu 18.04, in a pool called `test_pool`.**
+Currently the runner is only supports amazon, but in the future it will support other cloud providers and virtual machines.
+
+Amazon specific configuration in a pool file.
 
 ## Authentication
 

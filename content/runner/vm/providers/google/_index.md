@@ -13,20 +13,20 @@ The Google provider is in the Beta phase.
 Linux instance support only currently
 </div>
 
-The goal of this document is to give you enough technical specifics to configure and run the autoscaler. When properly configured, it will automatically provision and terminate Google Compute Engine instances based on your Drone server’s build volume.
+The goal of this document is to give you enough technical specifics to configure and run google instances. When properly configured, it will automatically provision and terminate Google Compute Engine instances based on your Drone server’s build volume.
 
 # Prerequisites
 
 ## Create Google Credentials file
 
-If you running you autoscaler in a GCP instance then create `application_default_credentials.json` by executing next command in the GCP instance:
+If your vm runner is running in a GCP instance then create `application_default_credentials.json` by executing next command in the GCP instance:
 ```
 gcloud auth application-default login
 ```
 
 And credentials will be saved in `/home/$(whoami)/.config/gcloud/application_default_credentials.json`.
 
-Otherwise, [create service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts), [generate credentials file](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and save it somewhere in the machine where plan to run autoscaler.
+Otherwise, [create service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts), [generate credentials file](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and save it somewhere in the machine where plan to run the vm runner.
 
 # Example Pool File
 

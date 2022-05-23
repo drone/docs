@@ -50,10 +50,11 @@ is (this is the same as plaform in other runners) NB windows support is implemen
 
 ## Spec
 
-This is where we confiure the cloud provider specific configuration. There are a number of different providers.
+This is where we configure the cloud provider specific configuration. There are a number of different providers.
 
-+ Amazon 
-+ Google
++ [Amazon]({{< relref "../providers/amazon/overview.md" >}})
++ [Google]({{< relref "../providers/google/_index.md" >}})
++ [Anka]({{< relref "../providers/anka/_index.md" >}})
 
 ## Using a pool file
 

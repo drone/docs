@@ -17,7 +17,9 @@ This article explains how to install the runner on Linux. The VM runner is packa
 
 ## Providers
 
-This runner provides support for multiple providers, please see the links at the bottom of the page or the section "providers" for their specific setup information
+This runner provides support for multiple providers, please see the links at the bottom of the page or the section "providers" for their specific setup information. 
+
+By default we use the Amazon ec2 provider.
 
 # Download
 
@@ -56,11 +58,7 @@ By default the runner requires two additional Amazon specific environment variab
   : provides the default region for your AWS account. Defaults to us-east-2.
 
 # Installation
-<div class="alert">
-Anka not supported using docker
-</div>
 
-For more information see [Anka]({{< relref "providers/anka/_index.md" >}}).
 {{< highlight bash "linenos=table" >}}
 docker run --detach \
 --volume=/var/run/docker.sock:/var/run/docker.sock \

@@ -9,7 +9,7 @@ weight: 100
 Anka is in the Beta phase.
 </div>
 
-The goal of this document is to give you enough technical specifics to configure and run osx vms. 
+The goal of this document is to give you enough technical specifics to configure and run osx vms.
 When properly configured, it will automatically provision and terminate osx vms based on your Drone server’s build volume.
 
 # Prerequisites
@@ -76,21 +76,55 @@ Please note you can use the run command to execute commands inside of VM from th
 
 If using a paid license version you can then suspend the VM & all the vm's will startup from a suspended state - providing a faster provisioning time
 
+# Installation
+
+Download Binary
+{{< highlight bash "linenos=table" >}}
+curl https://github.com/drone-runners/drone-runner-aws/releases/{{version}}
+{{< / highlight >}}
+
+Install [Tmux](https://github.com/tmux/tmux/wiki)
+{{< highlight bash "linenos=table" >}}
+brew install tmux
+{{< / highlight >}}
+
+Create your env file:
+
+The VM runner can be configured using environment variables. This article references the below configuration options. See [Reference]({{< relref "../../configuration/reference" >}}) for a complete list of configuration options.
+
+- __DRONE_RPC_HOST__
+  : provides the hostname (and optional port) of your Drone server. The runner connects to the server at the host address to receive pipelines for execution.
+- __DRONE_RPC_PROTO__
+  : provides the protocol used to connect to your Drone server. The value must be either http or https.
+- __DRONE_RPC_SECRET__
+  : provides the shared secret used to authenticate with your Drone server. This must match the secret defined in your Drone server configuration.
+- __DRONE_MIN_POOL_SIZE__ **(optional)**
+  : provides the minimum size of the pool. The pool will not shrink below this size. The default is 1.
+- __DRONE_MAX_POOL_SIZE__ **(optional)**
+  : provides the maximum size of the pool. The pool will not grow above this size. The default is 2.
+
+Create pool file:
+
 Example pool file
 {{< highlight yaml "linenos=table" >}}
 version: "1"
 instances:
- - name: osx-anka
-   default: true
-   type: anka   # type of instance.  amazon | gcp | vmfusion | anka
-   pool: 2    # total number of warm instances in the pool at all times
-   limit: 100  # limit the total number of running servers. If exceeded block or error.
-   platform:
-     os: darwin
-     arch: amd64
-   spec:
-     account:
-       username: admin
-       password: admin
-     vm_id: vm-id
+- name: osx-anka
+  default: true
+  type: anka   # type of instance.  amazon | gcp | vmfusion | anka
+  pool: 2    # total number of warm instances in the pool at all times
+  limit: 100  # limit the total number of running servers. If exceeded block or error.
+  platform:
+  os: darwin
+  arch: amd64
+  spec:
+  account:
+  username: admin
+  password: admin
+  vm_id: vm-id
+  {{< / highlight >}}
+
+To start runner and write to external log:
+{{< highlight bash "linenos=table" >}}
+tmux new -d './drone-runner-aws daemon --envfile=.env --pool=pool.yml |& tee runner.log'
 {{< / highlight >}}

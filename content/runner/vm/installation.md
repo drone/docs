@@ -56,7 +56,11 @@ By default the runner requires two additional Amazon specific environment variab
   : provides the default region for your AWS account. Defaults to us-east-2.
 
 # Installation
+<div class="alert">
+Anka not supported using docker
+</div>
 
+For more information see [Anka]({{< relref "providers/anka/_index.md" >}}).
 {{< highlight bash "linenos=table" >}}
 docker run --detach \
 --volume=/var/run/docker.sock:/var/run/docker.sock \

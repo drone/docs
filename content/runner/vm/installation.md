@@ -61,18 +61,17 @@ By default the runner requires two additional Amazon specific environment variab
 
 {{< highlight bash "linenos=table" >}}
 docker run --detach \
---volume=/var/run/docker.sock:/var/run/docker.sock \
   --env=DRONE_RPC_PROTO=https \
   --env=DRONE_RPC_HOST=drone.company.com \
   --env=DRONE_RPC_SECRET=super-duper-secret \
   --env=DRONE_RUNNER_CAPACITY=2 \
   --env=DRONE_RUNNER_NAME=my-first-runner \
   --env=AWS_ACCESS_KEY_ID=your-access-key \
-  --env=AWS_SECRET_ACCESS_KEY=your-access-secret \
+  --env=AWS_ACCESS_KEY_SECRET=your-access-secret \
   --publish=3000:3000 \
   --restart=always \
   --name=runner \
-  drone/drone-runner-aws:1
+  drone/drone-runner-aws
 {{< / highlight >}}
 
 # Verification

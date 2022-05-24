@@ -72,7 +72,7 @@ docker run --detach \
   --publish=3000:3000 \
   --restart=always \
   --name=runner \
-  drone/drone-runner-docker:1
+  drone/drone-runner-aws:1
 {{< / highlight >}}
 
 # Verification

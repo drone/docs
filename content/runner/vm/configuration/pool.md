@@ -52,7 +52,7 @@ is (this is the same as plaform in other runners) NB windows support is implemen
 
 This is where we configure the cloud provider specific configuration. There are a number of different providers.
 
-+ [Amazon]({{< relref "../providers/amazon/overview.md" >}})
++ [Amazon]({{< relref "../providers/amazon/_index.md" >}})
 + [Google]({{< relref "../providers/google/_index.md" >}})
 + [Anka]({{< relref "../providers/anka/_index.md" >}})
 

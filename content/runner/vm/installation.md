@@ -17,7 +17,7 @@ This article explains how to install the runner on Linux. The VM runner is packa
 
 ## Providers
 
-This runner provides support for multiple providers, please see the links at the bottom of the page or the section "providers" for their specific setup information. 
+This runner provides support for multiple providers, please see the links at the bottom of the page or the section "providers" for their specific setup information.
 
 By default we use the Amazon ec2 provider.
 
@@ -46,7 +46,7 @@ The VM runner can be configured using environment variables. This article refere
 
 ## Amazon EC2 prerequisites
 
-By default the runner requires two additional Amazon specific environment variables. For more information look at the amazon specific configuration options for [Amazon]({{< relref "providers/amazon/setup" >}})
+By default the runner requires two additional Amazon specific environment variables. For more information look at the amazon specific configuration options for [Amazon]({{< relref "providers/amazon" >}})
 
 - __AWS_ACCESS_KEY_ID__
   : provides the access key id for your AWS account. This must have permissions to create and run EC2 instances.
@@ -103,7 +103,7 @@ level=info msg="daemon: pool created"
 {{< / highlight >}}
 
 
-If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Amazon Setup]({{< relref "providers/amazon/setup.md" >}}).
+If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Amazon Setup]({{< relref "providers/amazon/" >}}).
 
 # Advanced Configuration
 
@@ -111,7 +111,7 @@ For more information on advanced runner configuration options, see [Reference]({
 
 For more information on advanced pool configuration options, see [Pool]({{< relref "configuration/pool.md" >}}).
 
-For more information on configuring an Amazon pool, see [Amazon]({{< relref "providers/amazon/overview.md" >}}).
+For more information on configuring an Amazon pool, see [Amazon]({{< relref "providers/amazon/" >}}).
 
 For more information on using the provider: [Google]({{< relref "providers/google/_index.md" >}}).
 

@@ -115,13 +115,13 @@ instances:
   pool: 2    # total number of warm instances in the pool at all times
   limit: 100  # limit the total number of running servers. If exceeded block or error.
   platform:
-  os: darwin
-  arch: amd64
+    os: darwin
+    arch: amd64
   spec:
-  account:
-  username: admin
-  password: admin
-  vm_id: vm-id
+    account:
+      username: admin
+      password: admin
+    vm_id: vm-id
   {{< / highlight >}}
 
 To start runner and write to external log:

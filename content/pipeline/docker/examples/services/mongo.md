@@ -29,7 +29,6 @@ steps:
 services:
 - name: mongo
   image: mongo:4
-  command: [ --smallfiles ]
 ```
 
 # Common Problems
@@ -69,7 +68,6 @@ steps:
 services:
 - name: mongo
   image: mongo:4
-  command: [ --smallfiles ]
 ```
 
 Good:
@@ -85,5 +83,4 @@ steps:
 services:
 - name: mongo
   image: mongo:4
-  command: [ --smallfiles ]
 ```

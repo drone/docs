@@ -56,17 +56,17 @@ steps:
 - name: test
   commands:
   - go test
-{{< / highlight >}} 
+{{< / highlight >}}
 
 # From Secrets
 
-Drone provides the ability to source environment variables from secrets. In the below example we provide the username and password as environment variables to the step.
+Drone provides the ability to source environment variables from secrets. In the below example we provide the username and password as environment variables inside of commands.
 
 {{< highlight text "linenos=table,linenostart=5,hl_lines=8-11" >}}
 steps:
 - name: build
   commands:
-  - docker login -u $USERNAME -p $PASSWORD
+  - docker login -u $${USERNAME} -p $${PASSWORD}
   - docker build -t hello-world .
   - docker push hello-world
   environment:

@@ -45,6 +45,7 @@ Please see the environment [Reference]({{< relref "./reference/_index.md" >}}) f
 Drone provides partial emulation for bash string operations. This can be used to manipulate string values prior to substitution.
 
 * Example variable substitution with substring:
+
   ```
   steps:
   - name: publish
@@ -55,6 +56,7 @@ Drone provides partial emulation for bash string operations. This can be used to
   ```
 
 * Example variable substitution strips v prefix from v1.0.0:
+
   ```
   steps:
   - name: publish
@@ -65,6 +67,7 @@ Drone provides partial emulation for bash string operations. This can be used to
   ```
   
 * Example variable substitution replaces ```/``` with ```-```:
+
   ```
   steps:
   - name: publish
@@ -75,7 +78,6 @@ Drone provides partial emulation for bash string operations. This can be used to
   ```
 
 Drone emulates the below string operations. _Drone makes a best-effort to emulate these operations however we do not promise perfect emulation._
-
 
 ```
 ${parameter^}
@@ -97,7 +99,6 @@ ${parameter=default}
 ${parameter:=default}
 ${parameter:-default}
 ```
-
 
 <!-- * `${parameter^}`
 * `${parameter^^}`

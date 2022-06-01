@@ -53,7 +53,7 @@ The Drone community owns the "plugins" namespace in Dockerhub. Plugins in this n
 
 # Secrets
 
-Drone provides the ability to source any configuration parameter from a named secret using the `from_secret` syntax.
+Drone provides the ability to source any value into a setting from a named secret using the `from_secret` syntax.
 
 Example Slack plugin using secrets:
 

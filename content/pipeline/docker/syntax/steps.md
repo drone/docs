@@ -84,10 +84,27 @@ steps:
   - go test
 {{< / highlight >}}
 
-<!-- TODO
-See the Environment article for additional details:
+See [here]({{< relref "../../environment/syntax" >}}) for more information on the environment section.
 
-{{< link "/configuration/environment/overview" >}} -->
+# Secrets in commands
+
+Drone provides the ability to use a secret into the commands section of a pipeline step.
+
+For example inserting the username secret:
+
+{{< highlight text "linenos=table,hl_lines=5" >}}
+steps:
+- name: using secrets
+  image: node
+  commands:
+    - echo "username: $${USERNAME}" >> .env
+    - super secret command
+  environment:
+      USERNAME:
+        from_secret: username
+{{< / highlight >}}
+
+See [here]({{< relref "../../environment/syntax" >}}) for more information on using environment secrets in a command.
 
 # Plugins
 

@@ -46,6 +46,7 @@ is (this is the same as plaform in other runners) NB windows support is implemen
   arch    string
   variant string
   version string
+  os_name string # currently only used for amazon-linux
 {{< / highlight >}}
 
 ## Spec

@@ -92,10 +92,39 @@ Contains AWS network information:
 
 # Recommended AMIs
 
-+ [Windows Server 2019 with containers](https://aws.amazon.com/marketplace/pp/prodview-iehgssex6veoi)
-+ [Ubuntu 20.04](https://aws.amazon.com/marketplace/pp/prodview-iftkyuwv2sjxi?sr=0-2&ref_=beagle&applicationId=AWSMPContessa)
+## [Ubuntu 20.04](https://aws.amazon.com/marketplace/pp/prodview-iftkyuwv2sjxi?sr=0-2&ref_=beagle&applicationId=AWSMPContessa)
 
-Depending on the AMI's you are using, you may need to subscribe to it. We have tested against [Ubuntu 20.04](https://aws.amazon.com/marketplace/pp/prodview-iftkyuwv2sjxi?sr=0-2&ref_=beagle&applicationId=AWSMPContessa) or [Windows 2019 with containers](https://aws.amazon.com/marketplace/pp/prodview-iehgssex6veoi?sr=0-6&ref_=beagle&applicationId=AWSMPContessa).
+This is the default AMI for the runner.
+## [Windows Server 2019 with containers](https://aws.amazon.com/marketplace/pp/prodview-iehgssex6veoi)
+
+ NB: be sure to set the platform to windows
+
+  ```yaml
+version: "1"
+instances:
+- name: ubuntu-aws
+  default: true
+  type: amazon
+  platform:
+    os: windows
+```
+
+## [Amazon Linux 2](https://aws.amazon.com/marketplace/pp/prodview-zc4x2k7vt6rpu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa)
+
+NB: be sure to set the platform to linux, and set os_name to amazon-linux to use this AMI.
+
+```yaml
+version: "1"
+instances:
+- name: ubuntu-aws
+  default: true
+  type: amazon
+  platform:
+    os: linux
+    os_name: amazon-linux
+```
+
+Depending on the AMI's you are using, you may need to subscribe to it. We have tested against Ubuntu 20.04 and Windows 2019 with containers.
 
 # Example pool setup
 

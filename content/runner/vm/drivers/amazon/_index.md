@@ -11,8 +11,7 @@ The Amazon provider is in the Release Candidate phase.
 
 # Overview
 
-**By default it will create a pool with a max size of 2 running Ubuntu 18.04. The pools is called `test_pool`.**
-Currently the runner is only supports amazon, but in the future it will support other cloud providers and virtual machines.
+**By default it will create a pool with a max size of 2 running Ubuntu 18.04. The pools is called `testpool`.**
 
 Amazon specific configuration in a pool file.
 

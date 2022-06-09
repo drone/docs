@@ -11,7 +11,7 @@ description: |
 
 **By default when using AWS the runner does not need a pool file. It can use environment variables to set up a simple pool in memory. However if you want a more complex configuration or multiple pools follow the below quide.**
 
-The pool file sets up the build pools that instantiates hot instances (builds do not wait for an instance to spin up). You can have multiple pools, each with a different configuration or that even use different cloud providers.
+The pool file sets up the build pools that instantiates hot instances (builds do not wait for an instance to spin up). You can have multiple pools, each with a different configuration or that even use different cloud drivers.
 
 + `pool.yml` is the default file name.
 + Each pool only has one instance type.
@@ -27,10 +27,12 @@ The pool file sets up the build pools that instantiates hot instances (builds do
 
 ## Root section
 
+It is recommended when you are naming your pool to use alphanumeric characters and start with a letter. This is to avoid issues with naming on amazon/anka/google.
+
 {{< highlight yaml "linenos=table" >}}
   name          string   # name of the pool, used by pipelines to select the pool
   default       bool     # default pool
-  type          string   # amazon, google
+  type          string   # amazon, anka, google
   pool          int      # total number of warm instances in the pool at all times
   limit         int      # limit the total number of running servers. If exceeded block or error.
   platform      Platform # explained in section below
@@ -51,11 +53,11 @@ is (this is the same as plaform in other runners) NB windows support is implemen
 
 ## Spec
 
-This is where we configure the cloud provider specific configuration. There are a number of different providers.
+This is where we configure the cloud drivers specific configuration. There are a number of different drivers.
 
-+ [Amazon]({{< relref "../providers/amazon/_index.md" >}})
-+ [Google]({{< relref "../providers/google/_index.md" >}})
-+ [Anka]({{< relref "../providers/anka/_index.md" >}})
++ [Amazon]({{< relref "../drivers/amazon/_index.md" >}})
++ [Anka]({{< relref "../drivers/anka/_index.md" >}})
++ [Google]({{< relref "../drivers/google/_index.md" >}})
 
 ## Using a pool file
 

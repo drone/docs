@@ -28,9 +28,17 @@ And credentials will be saved in `/home/$(whoami)/.config/gcloud/application_def
 
 Otherwise, [create service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts), [generate credentials file](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and save it somewhere in the machine where plan to run the vm runner.
 
-# Recommended AMIs
+# Recommended Images
 
-+ [Ubuntu 18.04 LTS (Bionic)](https://console.cloud.google.com/marketplace/product/ubuntu-os-cloud/ubuntu-bionic)
++ [Ubuntu 18.04 LTS (Bionic)](https://console.cloud.google.com/marketplace/product/ubuntu-os-cloud/ubuntu-bionic) 
+
+to find images to use on google compute engine, use the following command:
+
+```bash
+gcloud compute images list
+```
+
+A valid image will look like `projects/{PROJECT}/global/images/{IMAGE}` eg `projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-1804-bionic-v20220131`.
 
 # Example Pool File
 

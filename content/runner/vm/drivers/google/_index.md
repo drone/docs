@@ -62,3 +62,22 @@ instances:
       zone:
         - europe-west1-b
 {{< / highlight >}}
+
+# Running the VM Runner without a poolfile
+
+You can run the vm runner in Google Compute Engine without a pool file, and it will setup a pool of 2 instance running an Ubuntu 20.04 image.
+
+```bash
+docker run --detach \
+  --env=DRONE_RPC_PROTO=https \
+  --env=DRONE_RPC_HOST=drone.company.com \
+  --env=DRONE_RPC_SECRET=super-duper-secret \
+  --env=DRONE_RUNNER_CAPACITY=2 \
+  --env=DRONE_RUNNER_NAME=my-first-runner \
+  --env=GOOGLE_PROJECT_ID=asdasdasd \
+  --volume=/home/user/.config/gcloud/:/root/.config/gcloud/ \
+  --publish=3000:3000 \
+  --restart=always \
+  --name=runner \
+  drone/drone-runner-aws
+```

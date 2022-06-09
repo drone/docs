@@ -25,4 +25,4 @@ The VM runner is in the Release Candidate phase.
 
 ### Build file
 
-- `type: aws` is now `type: vm`, this is to accommodate the new cloud / VM providers.
+- `type: aws` is now `type: vm`, this is to accommodate the new cloud / VM drivers.

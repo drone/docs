@@ -15,11 +15,11 @@ The VM runner is in the Release Candidate phase.
 
 This article explains how to install the runner on Linux. The VM runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
 
-## Providers
+## Drivers
 
-This runner provides support for multiple providers, please see the links at the bottom of the page or the section "providers" for their specific setup information.
+This runner provides support for multiple drivers, please see the links at the bottom of the page or the section "drivers" for their specific setup information.
 
-By default we use the Amazon ec2 provider.
+By default we use the Amazon ec2 driver.
 
 # Download
 
@@ -46,7 +46,7 @@ The VM runner can be configured using environment variables. This article refere
 
 ## Amazon EC2 prerequisites
 
-By default the runner requires two additional Amazon specific environment variables. For more information look at the amazon specific configuration options for [Amazon]({{< relref "providers/amazon" >}})
+By default the runner requires two additional Amazon specific environment variables. For more information look at the amazon specific configuration options for [Amazon]({{< relref "drivers/amazon" >}})
 
 - __AWS_ACCESS_KEY_ID__
   : provides the access key id for your AWS account. This must have permissions to create and run EC2 instances.
@@ -73,6 +73,8 @@ docker run --detach \
   --name=runner \
   drone/drone-runner-aws
 {{< / highlight >}}
+
+This will start 2 Ubuntu instances in the us-east-2 region in a pool called "testpool".
 
 # Verification
 
@@ -102,8 +104,7 @@ level=info msg="buildPools: created instance windows 2019 i-08bb839ae0fc19524 18
 level=info msg="daemon: pool created"
 {{< / highlight >}}
 
-
-If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Amazon Setup]({{< relref "providers/amazon/" >}}).
+If the runner is unable to create an instance in Amazon, we have a setup command to help check the AWS configuration, see [Amazon Setup]({{< relref "drivers/amazon/" >}}).
 
 # Advanced Configuration
 
@@ -111,8 +112,8 @@ For more information on advanced runner configuration options, see [Reference]({
 
 For more information on advanced pool configuration options, see [Pool]({{< relref "configuration/pool.md" >}}).
 
-For more information on configuring an Amazon pool, see [Amazon]({{< relref "providers/amazon/" >}}).
+More information on using the [Amazon driver]({{< relref "drivers/amazon/" >}}).
 
-For more information on using the provider: [Google]({{< relref "providers/google/_index.md" >}}).
+More information on using the [Anka driver]({{< relref "drivers/anka/_index.md" >}}).
 
-For more information on using the provider: [Anka]({{< relref "providers/anka/_index.md" >}}).
+More information on using the [Google driver]({{< relref "drivers/google/_index.md" >}}).

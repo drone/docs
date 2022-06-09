@@ -8,7 +8,7 @@ Create a new template.
 Please note this api requires write access to the repository.
 
 ```
-POST /api/templates/
+POST /api/templates/{namespace}
 ```
 
 Example Request Body:
@@ -16,8 +16,7 @@ Example Request Body:
 ```json {linenos=table}
 {
   "name": "name",
-  "data": "data",
-  "namespace": "namespace"
+  "data": "data"
 }
 ```
 

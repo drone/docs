@@ -20,7 +20,8 @@ The goal of this document is to give you enough technical specifics to configure
 ## Create Google Credentials file
 
 If your vm runner is running in a GCP instance then create `application_default_credentials.json` by executing next command in the GCP instance:
-```
+
+```bash
 gcloud auth application-default login
 ```
 
@@ -30,7 +31,7 @@ Otherwise, [create service account](https://cloud.google.com/iam/docs/creating-m
 
 # Recommended Images
 
-+ [Ubuntu 18.04 LTS (Bionic)](https://console.cloud.google.com/marketplace/product/ubuntu-os-cloud/ubuntu-bionic) 
++ [Ubuntu 18.04 LTS (Bionic)](https://console.cloud.google.com/marketplace/product/ubuntu-os-cloud/ubuntu-bionic)
 
 to find images to use on google compute engine, use the following command:
 

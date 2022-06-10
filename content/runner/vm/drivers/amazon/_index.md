@@ -45,13 +45,15 @@ Cloud specific configuration.
 {{< highlight yaml "linenos=table" >}}
   account          Account   # explained in section below
   ami              string    # ami id
+  disk             Disk      # explained in section below
+  hibernate        bool      # hibernate instance when added to the pool (amazon-linux only)
+  iam_profile_arn  string    # arn of the iam profile to apply to the instance
+  network          Network   # explained in section below
   size             string    # t2.nano, m4.large, etc
   tags             []string  # tags to apply to the instance
-  iam_profile_arn  string    # arn of the iam profile to apply to the instance
-  disk             Disk      # explained in section below
-  network          Network   # explained in section below
   user_data        string    # user data to apply to the instance
   user_data_path   string    # path to user data script
+  vpc              string    # vpc id
 {{< / highlight >}}
 
 More information on user_data and user_data_path can be found [custom cloud-init]({{< relref "../../configuration/cloud-init.md" >}})
@@ -76,15 +78,13 @@ Contains AWS block information:
   iops string   # iops for io1
 {{< / highlight >}}
 
-
 ## Network
 
 Contains AWS network information:
 
 {{< highlight yaml "linenos=table" >}}
-  vpc                 int       # vpc id
   vpc_security_groups []string  # vpc security groups
-  security_groups     []string  # security group ids, default it will use the security for 'harness runner' 
+  security_groups     []string  # security group ids, default it will use the security for 'harness runner'
   subnet_id           string    # subnet id
   private_ip          bool      # assign private ip
 {{< / highlight >}}
@@ -94,6 +94,7 @@ Contains AWS network information:
 ## [Ubuntu 20.04](https://aws.amazon.com/marketplace/pp/prodview-iftkyuwv2sjxi?sr=0-2&ref_=beagle&applicationId=AWSMPContessa)
 
 This is the default AMI for the runner.
+
 ## [Windows Server 2019 with containers](https://aws.amazon.com/marketplace/pp/prodview-iehgssex6veoi)
 
  NB: be sure to set the platform to windows
@@ -110,7 +111,7 @@ instances:
 
 ## [Amazon Linux 2](https://aws.amazon.com/marketplace/pp/prodview-zc4x2k7vt6rpu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa)
 
-NB: be sure to set the platform to linux, and set os_name to amazon-linux to use this AMI.
+NB: be sure to set the platform to linux, and set os_name to amazon-linux to use this AMI. **Hibernate is supported.**
 
 ```yaml
 version: "1"
@@ -121,6 +122,13 @@ instances:
   platform:
     os: linux
     os_name: amazon-linux
+  spec:
+    account:
+        region: us-east-2
+        availability_zone: us-east-2c
+        access_key_id: XXXXXXXXXXXXXXXXXXXXX
+        access_key_secret: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    hibernate: true
 ```
 
 Depending on the AMI's you are using, you may need to subscribe to it. We have tested against Ubuntu 20.04 and Windows 2019 with containers.
@@ -151,4 +159,4 @@ instances:
       network:
         security_groups:
           - XXXXXXXXXXXXXXXX
-    {{< / highlight >}}
+{{< / highlight >}}

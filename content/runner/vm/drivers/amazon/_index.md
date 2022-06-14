@@ -97,7 +97,7 @@ This is the default AMI for the runner.
 
 ## [Windows Server 2019 with containers](https://aws.amazon.com/marketplace/pp/prodview-iehgssex6veoi)
 
- NB: be sure to set the platform to windows
+NB: be sure to set the platform to windows
 
   ```yaml
 version: "1"
@@ -108,6 +108,8 @@ instances:
   platform:
     os: windows
 ```
+
+NB Docker support in windows server 2019 does not use the same docker engine as Windows 10/11 (with WSL2/HyperV). It does not support all of the features of modern Docker on Windows, eg passing through virtualisation directly to the container. There is some more information from AWS [here](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_Windows.html).
 
 ## [Amazon Linux 2](https://aws.amazon.com/marketplace/pp/prodview-zc4x2k7vt6rpu?sr=0-1&ref_=beagle&applicationId=AWSMPContessa)
 

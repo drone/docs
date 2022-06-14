@@ -49,10 +49,16 @@ Activate license
 sudo anka license activate {LICENSE}
 {{< / highlight >}}
 
+Accept the EULA license
+{{< highlight bash "linenos=table" >}}
+sudo anka license accept-eula
+{{< / highlight >}}
+
 Create the VM:
 {{< highlight bash "linenos=table" >}}
 anka --debug  create {{vm-name}} --ram-size 8G --cpu-count 4 --disk-size 50G --app /Applications/Install\ macOS\ Monterey.app
 {{< / highlight >}}
+If you are having issues creating the VM, try disabling your antivirus software. For more guidance follow [Anka's documentation](https://docs.veertu.com/anka/intel/troubleshooting/anka-virtualization/anka-create-stuck-or-failing/)
 
 Run this to get the ID of the VM which has recently been created.
 {{< highlight bash "linenos=table" >}}

@@ -15,5 +15,4 @@ List of all possible values:
 ```
 DRONE_REPO_SCM=git
 DRONE_REPO_SCM=hg
-DRONE_REPO_SCM=svn
 ```

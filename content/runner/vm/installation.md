@@ -116,4 +116,6 @@ More information on using the [Amazon driver]({{< relref "drivers/amazon/" >}}).
 
 More information on using the [Anka driver]({{< relref "drivers/anka/_index.md" >}}).
 
+More information on using the [Digital Ocean driver]({{< relref "drivers/digitalocean/_index.md" >}}).
+
 More information on using the [Google driver]({{< relref "drivers/google/_index.md" >}}).

@@ -27,12 +27,12 @@ The pool file sets up the build pools that instantiates hot instances (builds do
 
 ## Root section
 
-It is recommended when you are naming your pool to use alphanumeric characters and start with a letter. This is to avoid issues with naming on amazon/anka/google.
+It is recommended when you are naming your pool to use alphanumeric characters and start with a letter. This is to avoid issues with naming on amazon/anka/digitalocean/google.
 
 {{< highlight yaml "linenos=table" >}}
   name          string   # name of the pool, used by pipelines to select the pool
   default       bool     # default pool
-  type          string   # amazon, anka, google
+  type          string   # amazon, anka, digitalocean, google
   pool          int      # total number of warm instances in the pool at all times
   limit         int      # limit the total number of running servers. If exceeded block or error.
   platform      Platform # explained in section below
@@ -57,6 +57,7 @@ This is where we configure the cloud drivers specific configuration. There are a
 
 + [Amazon]({{< relref "../drivers/amazon/_index.md" >}})
 + [Anka]({{< relref "../drivers/anka/_index.md" >}})
++ [Digital Ocean]({{< relref "../drivers/digitalocean/_index.md" >}})
 + [Google]({{< relref "../drivers/google/_index.md" >}})
 
 ## Using a pool file

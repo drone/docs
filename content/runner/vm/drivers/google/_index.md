@@ -6,7 +6,7 @@ weight: 100
 ---
 
 <div class="alert">
-The Google provider is in the Beta phase.
+The Google driver is in the Beta phase.
 </div>
 
 <div class="alert">

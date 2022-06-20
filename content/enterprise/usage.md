@@ -73,8 +73,9 @@ You can remove user accounts using the [command line tools]({{< relref "cli/user
 
 # Do inactive users count against usage limits?
 
-The system does not differentiate between active an inactive users. This is because a user may look inactive (may not have recently authenticated) but may still be triggering builds and viewing results outside of the user interface (using command line tools, github status, etc).
+The system does not differentiate between active an inactive users. This is because a user may look inactive (may not have recently authenticated) but may still be triggering builds (opening pull requests, pushing code, etc) and viewing results outside of the user interface (using command line tools, github status, etc).
 
+<!--
 We recognize our usage calculations are naive and could be improved to better reflect actual usage. We are considering adopting an active user formula that matches our competitors:
 
 > An active user is anyone who triggers a build to run on Drone. The following count as an individual user:
@@ -84,6 +85,7 @@ We recognize our usage calculations are naive and could be improved to better re
 > 4. Machine users
 
 The above formula may significantly increase user counts for some customers and reduce user counts for others. If we decide to change our usage formula we will provide 90 days notice to current customers.
+-->
 
 # What happens when I exceed usage limits?
 

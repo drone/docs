@@ -8,11 +8,13 @@ description: |
   Test your vm/cloud configuration.
 ---
 
-This command will help check you get upand running. It will constuct an example pool file `pool.yml` based on what you pass it. It performs more checks than the daemon command.
+This command will help check you get up and running with the runner, it will verify that your credentials can create an instance and that we can run a build on it. It will output an example pool file `pool.yml` based on what you VM credentials you pass it, if you want to create a custom pool file. (It performs more checks than the daemon command)
 
 You can locate the binaries here (if you have not already done so): [releases](https://github.com/drone-runners/drone-runner-aws/releases)
 
-Testing an amazon configuration:
+# Amazon
+
+To use the setup command for amazon you will need to pass through your key and secret. Below is an example of how to use the setup command.
 
 {{< highlight bash "linenos=table" >}}
 ./drone-runner-aws setup --awsAccessKeyID="your key" --awsAccessKeySecret="your secret"
@@ -51,3 +53,87 @@ instances:
   {{< / highlight >}}
 
 For more information about the Amazon configuration options, see [Amazon]({{< relref "amazon" >}})
+
+# Digital Ocean
+
+To use the setup command for Google you will need to pass through your project id. Below is an example of how to use the setup command.
+
+{{< highlight bash "linenos=table" >}}
+./drone-runner-aws setup --digitalOceanPAT XXXXXXXXX
+INFO[0000] setup: using digital ocean
+INFO[0000] no pool file provided
+INFO[0000] in memory pool is using digitalocean
+INFO[0000] digitalocean: creating instance setup-testpool-1655379844  driver=digitalocean hibernate=false image=docker-18-04 pool=testpool
+INFO[0001] digitalocean: instance created setup-testpool-1655379844  driver=digitalocean hibernate=false image=docker-18-04 pool=testpool
+INFO[0003] digitalocean: firewall configured setup-testpool-1655379844  driver=digitalocean hibernate=false image=docker-18-04 pool=testpool
+DEBU[0003] find instance network                         driver=digitalocean hibernate=false image=docker-18-04 name=setup-testpool-1655379844 pool=testpool
+DEBU[0063] find instance network                         driver=digitalocean hibernate=false image=docker-18-04 name=setup-testpool-1655379844 pool=testpool
+INFO[0064] setup: instance logs for 304473745: no logs here
+TRAC[0064] setup: running healthcheck and waiting for an ok response
+TRAC[0129] RetryHealth: health check completed           duration=1m5.3480743s
+TRAC[0129] LE.RetryHealth check complete                 response="&{Version:0.1.0 DockerInstalled:true GitInstalled:true LiteEngineLog:time=\"2022-06-16T11:45:44Z\" level=info msg=\"server listening at port :9079\"\ntime=\"2022-06-16T11:45:44Z\" level=info msg=\"checking git is installed\"\ntime=\"2022-06-16T11:45:44Z\" level=info msg=\"git is installed\"\ntime=\"2022-06-16T11:45:44Z\" level=info msg=\"checking docker is installed\"\nCONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES\ntime=\"2022-06-16T11:45:44Z\" level=info msg=\"docker is installed\"\ntime=\"2022-06-16T11:46:13Z\" level=info msg=\"handler: HandleHealth()\"\ntime=\"2022-06-16T11:46:13Z\" level=info msg=\"checking docker is installed\"\nCONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES\ntime=\"2022-06-16T11:46:13Z\" level=info msg=\"docker is installed\"\ntime=\"2022-06-16T11:46:13Z\" level=info msg=\"checking git is installed\"\ntime=\"2022-06-16T11:46:13Z\" level=info msg=\"git is installed\"\n OK:true}"
+Pool file:
+version: "1"
+instances:
+- name: testpool
+  default: true
+  type: digitalocean
+  pool: 1
+  limit: 2
+  platform:
+    os: linux
+    arch: amd64
+  spec:
+    account:
+      pat: XXXXXXXXX
+
+DEBU[0130] deleting droplet                              driver=amazon id="[304473745]"
+DEBU[0130] droplet deleted                               driver=amazon id="[304473745]"
+TRAC[0130] digitalocean: VM terminated                   driver=amazon id="[304473745]"
+{{< / highlight >}}
+
+For more information about the Amazon configuration options, see [Digital Ocean]({{< relref "../drivers/digitalocean/_index.md" >}})
+
+# Google
+
+To use the setup command for Google you will need to pass through your project id. Below is an example of how to use the setup command.
+
+{{< highlight bash "linenos=table" >}}
+./drone-runner-aws setup --googleProjectID drone-ci-289110
+INFO[0000] setup: using google
+INFO[0000] no pool file provided
+INFO[0000] in memory pool is using google
+DEBU[0000] finding default firewall rules
+DEBU[0000] found default firewall rule
+TRAC[0000] google: creating VM                           cloud=google image=projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-1804-bionic-v20220131 name=setup-testpool-1655380357 pool=testpool size=e2-small zone=northamerica-northeast1-a
+DEBU[0010] instance insert operation completed           cloud=google image=projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-1804-bionic-v20220131 name=setup-testpool-1655380357 pool=testpool size=e2-small zone=northamerica-northeast1-a
+DEBU[0010] google: [provision] VM provisioned            cloud=google fields.time=9.85s image=projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-1804-bionic-v20220131 ip=2360638475713554281 name=setup-testpool-1655380357 pool=testpool size=e2-small zone=northamerica-northeast1-a
+DEBU[0010] google: [provision] complete                  cloud=google fields.time=10.09s image=projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-1804-bionic-v20220131 ip=34.152.16.141 name=setup-testpool-1655380357 pool=testpool size=e2-small zone=northamerica-northeast1-a
+ERRO[0010] setup: unable to get instance logs            error=Unimplemented
+INFO[0010] setup: instance logs for 4546377208440465258:  
+TRAC[0010] setup: running healthcheck and waiting for an ok response
+TRAC[0043] health check failed. Retrying                 error="Get \"https://34.152.16.141:9079/healthz\": dial tcp 34.152.16.141:9079: connect: connection refused" retry_num=0
+TRAC[0143] RetryHealth: health check completed           duration=2m12.159454s
+TRAC[0143] LE.RetryHealth check complete                 response="&{Version:0.1.0 DockerInstalled:true GitInstalled:true LiteEngineLog:time=\"2022-06-16T11:54:58Z\" level=info msg=\"server listening at port :9079\"\ntime=\"2022-06-16T11:54:58Z\" level=info msg=\"checking git is installed\"\ntime=\"2022-06-16T11:54:58Z\" level=info msg=\"git is installed\"\ntime=\"2022-06-16T11:54:58Z\" level=info msg=\"checking docker is installed\"\nCONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES\ntime=\"2022-06-16T11:54:58Z\" level=info msg=\"docker is installed\"\ntime=\"2022-06-16T11:54:59Z\" level=info msg=\"handler: HandleHealth()\"\ntime=\"2022-06-16T11:54:59Z\" level=info msg=\"checking docker is installed\"\nCONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES\ntime=\"2022-06-16T11:54:59Z\" level=info msg=\"docker is installed\"\ntime=\"2022-06-16T11:54:59Z\" level=info msg=\"checking git is installed\"\ntime=\"2022-06-16T11:54:59Z\" level=info msg=\"git is installed\"\n OK:true}"
+Pool file:
+version: "1"
+instances:
+- name: testpool
+  default: true
+  type: google
+  pool: 1
+  limit: 2
+  platform:
+    os: linux
+    arch: amd64
+  spec:
+    account:
+      project_id: drone-ci-289110
+      json_path: ~/.config/gcloud/application_default_credentials.json
+    image: projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-1804-bionic-v20220131
+    machine_type: e2-small
+    zone:
+    - northamerica-northeast1-a
+{{< / highlight >}}
+
+For more information about the Amazon configuration options, see [Google]({{< relref "google" >}})

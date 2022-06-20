@@ -6,7 +6,7 @@ weight: 100
 ---
 
 <div class="alert">
-The Amazon provider is in the Release Candidate phase.
+The Amazon driver is in the Release Candidate phase.
 </div>
 
 # Overview

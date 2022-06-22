@@ -1,11 +1,11 @@
 ---
 date: 2000-01-01T00:00:00+00:00
 title: DRONE_TMATE_ENABLED
-author: bradrydzewski
+author: tphoney
 weight: 1
 ---
 
-Optional boolean value. Enables remote ssh access to your pipeline container using the tmate. Both the hosted service and self-hosted services are supported. This feature is disabled by default. _This feature required version 1.6.1 of the docker runner and higher._
+Optional boolean value. Enables remote ssh access to your pipeline instance using the tmate. Both the hosted service and self-hosted services are supported. This feature is disabled by default. _This feature only works on linux ie where platform's os is set to linux._
 
 ```bash
 DRONE_TMATE_ENABLED=true

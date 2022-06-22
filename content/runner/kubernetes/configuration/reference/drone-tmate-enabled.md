@@ -1,7 +1,7 @@
 ---
 date: 2000-01-01T00:00:00+00:00
 title: DRONE_TMATE_ENABLED
-author: bradrydzewski
+author: tphoney
 weight: 1
 ---
 

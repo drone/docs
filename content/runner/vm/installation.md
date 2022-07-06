@@ -43,6 +43,8 @@ The VM runner can be configured using environment variables. This article refere
   : provides the minimum size of the pool. The pool will not shrink below this size. The default is 1.
 - __DRONE_MAX_POOL_SIZE__ **(optional)**
   : provides the maximum size of the pool. The pool will not grow above this size. The default is 2.
+- __DRONE_ENABLE_AUTO_POOL__ **(optional)**
+  : runner will attempt to match your pipeline to a pool based on its OS information. pool name does not need to be set in pipeline. The default is false.
 
 ## Amazon EC2 prerequisites
 

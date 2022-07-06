@@ -7,7 +7,9 @@ aliases:
 - /runners/ssh
 ---
 
-The SSH runner executes pipeline commands on a static, remote server using the SSH protocol. The pipeline commands are executed directly on the remote server without isolation, using the default shell. This runner is not suitable for un-trusted workloads for security reasons.
+The SSH runner executes pipeline commands on a static, remote server using the SSH protocol. The pipeline commands are executed directly on the remote server without isolation, using the default shell.
+
+This runner is not suitable for un-trusted workloads for security reasons, nor is it recommended for use with public repositories. Do not use this runner if you do not trust your contributors.
 
 {{< link "/runner/ssh/installation.md" "Install the SSH Runner" >}}
 

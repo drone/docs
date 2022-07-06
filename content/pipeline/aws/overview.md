@@ -91,6 +91,8 @@ pool:
 
 For more information about configuring pools of machines please consult the [Pool file]({{< relref "../../runner/vm/configuration/pool.md" >}}) documentation.
 
+**If the runner has `DRONE_ENABLE_AUTO_POOL` set to `true` then the pool will be automatically configured, based on matching Platform attributes in the pipeline and the `pool.yml` file.**
+
 ## Steps
 
 The `steps` section defines a series of shell commands. If any command returns a non-zero exit code, the pipeline fails and exits. Pipeline steps can execute inside containers as the container `Entrypoint`:

@@ -74,9 +74,45 @@ Example webhook request body:
 }
 ```
 
-# Authorization
+# Authorization / HTTP Signature Verification
 
 The http request is signed per the [http signatures](https://tools.ietf.org/html/draft-cavage-http-signatures-10) draft specification use the shared secret. The receiver should use the signature to verify the authenticity and integrity of the webhook.
+
+## Implementation Guide 
+
+When a drone webhook request payload comes in, first inspect the `signature` http request header. This header is used conjunction with other headers for performing signature verification.
+
+```
+Date: "Fri, 15 Jul 2022 18:47:25 GMT"
+Digest: "SHA-256=wyFE2yWKPBpOLHuIVBHf4oD21wY4yINZZzoyR9jB6xo="
+Signature: keyId="hmac-key",algorithm="hmac-sha256",signature="ObOcdsOSyYMy+0DDlg6X1naqPYY0qe59OrHmjv6Hav0=",headers="date digest"
+```
+
+The `Signature` header contains the instructions for how to validate the incoming request. The `headers` field specifies which HTTP headers to use for computing the final signature. 
+
+To perform the computation, header names and values must be concatenated with a newline, then hashed with the specified `algorithm` and `hmac-key` and finally this result must be base 64 encoded. The result is then compared to the `signature` field from the `Signature` header and if the values match the request is considered valid.
+
+Example ruby code:
+
+```ruby
+require  'openssl'
+require 'base64' 
+
+key = "a34999ae0599f579eca8582058b46eee" # generated above with `openssl -rand`
+
+# extracted from Signature header and signature field
+provided_signature = "ObOcdsOSyYMy+0DDlg6X1naqPYY0qe59OrHmjv6Hav0=" 
+
+# concatenate Date and Digest field with a newline
+signature_string = "date: Fri, 15 Jul 2022 18:47:25 GMT\ndigest: SHA-256=wyFE2yWKPBpOLHuIVBHf4oD21wY4yINZZzoyR9jB6xo="
+
+# hash and encode
+digest = OpenSSL::HMAC.digest(OpenSSL::Digest::SHA256.new, key, signature_string)
+computed_signature = Base64.strict_encode64(digest)
+
+# compare computed value with the value provided in the Signature http header
+provided_signature == computed_signature
+```
 
 # Events
 

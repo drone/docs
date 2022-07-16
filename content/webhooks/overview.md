@@ -78,6 +78,13 @@ Example webhook request body:
 
 The http request is signed per the [http signatures](https://tools.ietf.org/html/draft-cavage-http-signatures-10) draft specification use the shared secret. The receiver should use the signature to verify the authenticity and integrity of the webhook.
 
+Libraries for validating the signature:
+
+- <https://github.com/99designs/httpsignatures-go>
+- <https://github.com/99designs/http-signatures-php>
+- <https://github.com/99designs/http-signatures-ruby>
+- <https://github.com/joyent/node-http-signature/>
+
 # Events
 
 The http request includes a header variable to determine he type of event. The following is a list of event types:

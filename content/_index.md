@@ -17,6 +17,7 @@ Drone by [Harness](https://harness.io)™ is a modern Continuous Integration pla
 
 {{< link "server/provider/github" "GitHub" >}}
 {{< link "server/provider/github-enterprise" "GitHub Enterprise" >}}
+{{< link "server/provider/Gitee" "Gitee" >}}
 {{< link "server/provider/bitbucket-cloud" "Bitbucket" >}}
 {{< link "server/provider/bitbucket-server" "Bitbucket Server" >}}
 {{< link "server/provider/gitea" "Gitea" >}}
@@ -26,7 +27,6 @@ Drone comes in two distributions: the Enterprise Edition and the Community Editi
 </div>
 
 ## Examples by Programming Language [See All]({{< relref "pipeline/docker/examples/_index.md" >}})
-
 
 {{< link "pipeline/docker/examples/languages/golang.md" "Go" >}}
 {{< link "pipeline/docker/examples/languages/node.md" "Node" >}}

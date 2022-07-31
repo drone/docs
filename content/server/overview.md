@@ -21,12 +21,12 @@ This section of the documentation will help you install and configure the Drone 
 Drone integrates seamlessly with popular _Source Control Management_ providers. Please choose your provider to get started.
 
 {{< link "/server/provider/github" >}}
+{{< link "/server/provider/gitee" >}}
 {{< link "/server/provider/gitlab" >}}
 {{< link "/server/provider/gogs" >}}
 {{< link "/server/provider/gitea" >}}
 {{< link "/server/provider/bitbucket-cloud" >}}
 {{< link "/server/provider/bitbucket-server" >}}
-{{< link "/server/provider/gitee" >}}
 
 # Server Upgrades
 

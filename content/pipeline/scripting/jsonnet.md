@@ -88,7 +88,7 @@ Here is an example script that returns a pipeline configuration. _Please note th
 You can automatically convert your Jsonnet configuration file to yaml using the command line tools. This can be useful for local testing.
 
 ```
-$ drone jsonnet --stdout
+$ drone jsonnet --format --stdout
 
 kind: pipeline
 name: default

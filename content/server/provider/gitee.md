@@ -23,7 +23,7 @@ This article explains how to install the Drone server for Gitee. The server is p
 
 ## Create an OAuth Application
 
-Create a Gitee OAuth application. The Consumer Key and Consumer Secret are used to authorize access to Gitee resources.
+Create a `Gitee OAuth application`. The `Consumer Key` and `Consumer Secret` are used to authorize access to Gitee resources.
 
 <div class="alert alert-warn">
 The authorization callback URL must match the below format and path, and must use your exact server scheme and host.
@@ -55,9 +55,9 @@ $ docker pull drone/drone:2
 The Drone server is configured using environment variables. This article references a subset of configuration options, defined below. See [Configuration]({{< relref "../reference/_index.md" >}}) for a complete list of configuration options.
 
 * __DRONE_GITEE_CLIENT_ID__
-  : Required string value provides your Gitee oauth Client ID.
+  : Required string value provides your `Gitee OAuth Client ID`.
 * __DRONE_GITEE_CLIENT_SECRET__
-  : Required string value provides your Gitee oauth Client Secret.
+  : Required string value provides your `Gitee OAuth Client Secret`.
 * __DRONE_GITEE_SERVER__
   : Optional url value provides Gitee server address. The default value is the gitee.com server address at `https://gitee.com`.
 * __DRONE_GITEE_API_SERVER__
@@ -91,6 +91,6 @@ docker run \
 
 # Install Runners
 
-Once your server is up and running you will need to install runners to execute your build pipelines. See our runner installation documentation for detailed installation instructions. 
+Once your server is up and running you will need to install runners to execute your build pipelines. See our runner installation documentation for detailed installation instructions.
 
 {{< link "/runner/overview" "Install Runners" >}}

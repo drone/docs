@@ -78,7 +78,7 @@ steps:
   - go test
 {{< / highlight >}}
 
-# retries
+# Retries
 
 By default, the clone step will fail if any of the git commands fail. This can be altered by setting a number of retries. When this is set, the failing command will be rerun the given number of times, and the step will only be marked as failure if none of the tries are successful. For example:
 

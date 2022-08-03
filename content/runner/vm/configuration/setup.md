@@ -54,6 +54,44 @@ instances:
 
 For more information about the Amazon configuration options, see [Amazon]({{< relref "amazon" >}})
 
+# Anka
+
+To use the setup command for Anka you will need to pass through your vm name. Below is an example of how to use the setup command.
+
+{{< highlight bash "linenos=table" >}}
+./drone-runner-aws setup --anka-vm-name master-vm
+INFO[0000] setup: using anka
+INFO[0000] no pool file provided
+DEBU[0003] Not there yet 1/60, error: exit status 2
+DEBU[0007] Not there yet 2/60, error: exit status 2
+DEBU[0011] Not there yet 3/60, error: exit status 2
+DEBU[0013] Not there yet 4/60, error: exit status 2q
+DEBU[0016] got IP 192.168.64.32                          cloud=anka name=setup--5577006791947779410 pool=testpool
+INFO[0017] Running script in VM                          cloud=anka name=setup--5577006791947779410 pool=testpool
+DEBU[0273] anka: [creation] complete                     cloud=anka fields.time=273.27s ip=192.168.64.32 name=setup--5577006791947779410 pool=testpool
+INFO[0273] setup: instance logs for da894645-10c1-460f-886f-df6d65677c52:
+Pool file:
+version: "1"
+instances:
+- name: testpool
+  default: true
+  type: anka
+  pool: 1
+  limit: 2
+  platform:
+    os: darwin
+    arch: amd64
+    spec:
+    account:
+      username: ""
+      password: ""
+    vm_id: master-vm
+    root_directory: ""
+    user_data: ""
+{{< / highlight >}}
+
+For more information about the Anka configuration options, see [Anka]({{< relref "anka" >}})
+
 # Digital Ocean
 
 To use the setup command for digital ocean you will need to pass through your project id. Below is an example of how to use the setup command.
@@ -93,6 +131,10 @@ TRAC[0130] digitalocean: VM terminated                   driver=amazon id="[3044
 {{< / highlight >}}
 
 For more information about the Amazon configuration options, see [Digital Ocean]({{< relref "../drivers/digitalocean/_index.md" >}})
+
+# Azure
+
+To use the setup command for azure you will need to pass through ...
 
 # Google
 
@@ -137,41 +179,3 @@ instances:
 {{< / highlight >}}
 
 For more information about the Amazon configuration options, see [Google]({{< relref "google" >}})
-
-# Anka
-
-To use the setup command for Anka you will need to pass through your vm name. Below is an example of how to use the setup command.
-
-{{< highlight bash "linenos=table" >}}
-./drone-runner-aws setup --anka-vm-name master-vm
-INFO[0000] setup: using anka                            
-INFO[0000] no pool file provided                        
-DEBU[0003] Not there yet 1/60, error: exit status 2     
-DEBU[0007] Not there yet 2/60, error: exit status 2     
-DEBU[0011] Not there yet 3/60, error: exit status 2     
-DEBU[0013] Not there yet 4/60, error: exit status 2     
-DEBU[0016] got IP 192.168.64.32                          cloud=anka name=setup--5577006791947779410 pool=testpool
-INFO[0017] Running script in VM                          cloud=anka name=setup--5577006791947779410 pool=testpool
-DEBU[0273] anka: [creation] complete                     cloud=anka fields.time=273.27s ip=192.168.64.32 name=setup--5577006791947779410 pool=testpool
-INFO[0273] setup: instance logs for da894645-10c1-460f-886f-df6d65677c52:  
-Pool file:
-version: "1"
-instances:
-- name: testpool
-  default: true
-  type: anka
-  pool: 1
-  limit: 2
-  platform:
-    os: darwin
-    arch: amd64
-    spec:
-    account:
-      username: ""
-      password: ""
-    vm_id: master-vm
-    root_directory: ""
-    user_data: ""
-{{< / highlight >}}
-
-For more information about the Anka configuration options, see [Anka]({{< relref "anka" >}})

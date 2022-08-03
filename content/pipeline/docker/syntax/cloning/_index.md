@@ -78,6 +78,27 @@ steps:
   - go test
 {{< / highlight >}}
 
+# Retries
+
+By default, the clone step will fail if any of the git commands fail. This can be altered by setting a number of retries. When this is set, the failing command will be rerun the given number of times, and the step will only be marked as failure if none of the tries are successful. For example:
+
+
+{{< highlight text "linenos=table,hl_lines=5-6" >}}
+kind: pipeline
+type: docker
+name: default
+
+clone:
+  retries: 3
+
+steps:
+- name: build
+  image: golang
+  commands:
+  - go build
+  - go test
+{{< / highlight >}}
+
 # Custom Logic
 
 The default clone behavior can be disabled and custom clone logic implemented, when necessary. In the following example we implement custom clone commands as a pipeline step:

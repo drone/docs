@@ -19,11 +19,11 @@ Azure specific configuration in a pool file.
 
 By default we require client_id, client_secret subscription_id and tenant_id which is needed for create an the instance.
 
-You can create your own client_id and client_secret by going to the Azure portal and creating an application or use an existing one [here](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade). On your application page you can view the client id. Then you can add a new secret.
+You can create an application or use an existing one [here](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade). On your application `Overview` page you can view the client id. Then you can add a new secret under `certificates and secrets`.
 
 Find your tenant_id by going to the Azure portal [here](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade).
 
-Find your subsription_id by going to the Azure portal and selecting your subscription. You will then need to add permissions to your application under IAM. You will need to add the Owner role to your application.
+Find your subsription_id by going to the Azure portal and selecting your subscription [here](https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade). You will then need to add permissions to your application under IAM. You will need to add the Owner role to your application.
 
 # Pool Spec
 

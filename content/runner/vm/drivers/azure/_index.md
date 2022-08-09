@@ -77,7 +77,9 @@ password  string # password
 
 This is the default image for the runner.
 
-## [Windows Server 2019 with containers](https://az-vm-image.info/?cmd=--all+--publisher+microsoft+--sku+server-2019)
+## [Windows Server 2019 with containers](https://az-vm-image.info/?cmd=--all+--publisher+microsoftwindowsserver+--sku+containers)
+
+You must use virtual machines with container support enabled.
 
 NB: be sure to set the platform to windows
 
@@ -90,6 +92,8 @@ instances:
   platform:
     os: windows
 ```
+
+Azure does not support running custom scripts for windows out of the box (linux has cloudinit). We use extensions to do this, this unfortunately adds to the spin up time.
 
 # Example pool setup
 

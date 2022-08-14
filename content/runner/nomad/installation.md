@@ -7,7 +7,7 @@ description: |
   Install the runner using Docker.
 ---
 
-This article explains how to install the Nomad. The Nomad runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-nomad).
+This article explains how to install the Nomad runner. The Nomad runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-nomad).
 # Download
 
 Install Docker and pull the public image:

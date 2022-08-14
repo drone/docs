@@ -13,7 +13,7 @@ description: |
 The VM runner is in the Release Candidate phase.
 </div>
 
-This article explains how to install the runner on Linux. The VM runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
+This article explains how to install the VM runner on Linux. The VM runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
 
 ## Drivers
 

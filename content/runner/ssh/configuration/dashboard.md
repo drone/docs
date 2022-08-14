@@ -11,7 +11,7 @@ aliases:
 - /runners/ssh/dashboard
 ---
 
-The Docker runner features a user interface (web interface) for read only access to recent runtime information and log activity. The user interface simplifies troubleshooting and access to system information.
+The SSH runner features a user interface (web interface) for read only access to recent runtime information and log activity. The user interface simplifies troubleshooting and access to system information.
 
 ![runner dashboard](/screenshots/runner_dashboard.png)
 

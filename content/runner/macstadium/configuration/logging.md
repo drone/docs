@@ -13,7 +13,7 @@ The MacStadium runner writes logs to stdout and stderr. You can access the logs 
 $ docker logs <container name>
 ```
 
-The Docker runner is configured to log runtime events. You can enable debug or trace level logs to get detailed information on the flow through the system.
+The MacStadium runner is configured to log runtime events. You can enable debug or trace level logs to get detailed information on the flow through the system.
 
 ```
 DRONE_DEBUG=true

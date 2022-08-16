@@ -130,7 +130,7 @@ DEBU[0130] droplet deleted                               driver=amazon id="[3044
 TRAC[0130] digitalocean: VM terminated                   driver=amazon id="[304473745]"
 {{< / highlight >}}
 
-For more information about the Amazon configuration options, see [Digital Ocean]({{< relref "../drivers/digitalocean/_index.md" >}})
+For more information about the Digital Ocean configuration options, see [Digital Ocean]({{< relref "../drivers/digitalocean/_index.md" >}})
 
 # Azure
 
@@ -178,4 +178,4 @@ instances:
     - northamerica-northeast1-a
 {{< / highlight >}}
 
-For more information about the Amazon configuration options, see [Google]({{< relref "google" >}})
+For more information about the Google configuration options, see [Google]({{< relref "google" >}})

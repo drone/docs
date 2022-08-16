@@ -13,13 +13,13 @@ description: |
 The VM runner is in the Release Candidate phase.
 </div>
 
-This article explains how to install the runner on Linux. The VM runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
+This article explains how to install the VM runner on Linux. The VM runner is packaged as a minimal Docker image distributed on [DockerHub](https://hub.docker.com/r/drone/drone-runner-aws).
 
 ## Drivers
 
-This runner provides support for multiple drivers, please see the links at the bottom of the page or the section "drivers" for their specific setup information.
+This runner provides support for multiple drivers, please see the links at the bottom of the page or the section [drivers]({{< relref "drivers" >}}) for their specific setup information.
 
-By default we use the Amazon ec2 driver.
+By default we use the [Amazon ec2 driver]({{< relref "drivers/amazon" >}}).
 
 # Download
 

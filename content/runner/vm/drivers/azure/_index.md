@@ -77,6 +77,16 @@ password  string # password
 
 This is the default image for the runner.
 
+```yaml
+       image:
+         username: XXXXXXX
+         password: XXXXXXX
+         publisher: Canonical
+         offer: UbuntuServer
+         sku: 18.04-LTS
+         version: latest
+```
+
 ## [Windows Server 2019 with containers](https://az-vm-image.info/?cmd=--all+--publisher+microsoftwindowsserver+--sku+containers)
 
 You must use virtual machines with container support enabled.
@@ -91,6 +101,24 @@ instances:
   type: azure
   platform:
     os: windows
+  spec:
+    account:
+      client_id: XXXXXXX
+      client_secret: XXXXXXX
+      subscription_id: XXXXXXX
+      tenant_id: XXXXXXX
+    location: eastus2
+    size: Standard_F2s
+    zones: ["1"]
+    tags:
+      tagName: tag
+    image:
+      username: XXXXXXX
+      password: XXXXXXX
+      publisher: MicrosoftWindowsServer
+      offer: WindowsServer
+      sku: 2019-Datacenter-with-Containers
+      version: latest
 ```
 
 Azure does not support running custom scripts for windows out of the box (linux has cloudinit). We use extensions to do this, this unfortunately adds to the spin up time.
@@ -119,15 +147,12 @@ instances:
       tenant_id: XXXXXXXXX
       location: eastus2
       size : Standard_F2s
-      zones:
-        - 1
+      zones: ["1"]
       tags:
         tagName: tag
-      resource_group: group
-      security_group_name: drone-ci-group
       image:
         username: azureuser
-        password: password
+        password: password123!
         publisher: Canonical
         offer: UbuntuServer
         sku: 18.04-LTS

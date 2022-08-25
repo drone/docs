@@ -10,7 +10,7 @@ aliases:
 - /extend/config/jsonnet
 ---
 
-You can use a configuration extension to override the process of fetching the configuration file (e.g. .drone.yml). This can be used to return default or global configurations for projects where none exists. _For other use cases you should consider using a [conversion]({{< relref "conversion.md" >}}) extension_.
+You can use a configuration extension to override the process of fetching the configuration file (e.g. .drone.yml). This can be used to return default or global configurations for projects where none exists, or even generate configurations on-the-fly. _For other use cases you should consider using a [conversion]({{< relref "conversion.md" >}}) extension_.
 
 # Configuration
 

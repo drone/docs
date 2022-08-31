@@ -332,7 +332,8 @@ steps:
 If you attempt to mount a volume into the plugin you will see the below entry in your pipeline logs. _The docker plugin restricts mounting volumes for security reasons._
 
 ```
-level=fatal msg="Error authenticating: exit status 1"
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+exit status 1
 ```
 
 This can be resolved by removing mounted volumes or by configuring the plugin step to run in privileged mode:

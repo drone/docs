@@ -24,7 +24,7 @@ Pipelines are configured by placing a `.drone.yml` file in the root of your git 
 
 Example pipeline configuration:
 
-{{< highlight yaml "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: docker
@@ -44,7 +44,7 @@ steps:
   - npm run test
 
 ...
-{{< / highlight >}}
+```
 
 Drone supports different types of pipelines, each optimized for different use cases and runtime environments:
 
@@ -66,12 +66,12 @@ Pipelines are triggered by webhooks sent from your source control management sys
 # Pipelines
 Drone supports different types of pipeline execution environments, where each type has its own custom yaml specification. The kind and type attributes define the type of pipeline and target execution environment.
 
-{{< highlight text "linenos=table,hl_lines=2-3" >}}
+```yaml {linenos=table, hl_lines=["2-3"] >}}
 ---
 kind: pipeline
 type: docker
 name: default
-{{< / highlight >}}
+```
 
 ## Docker Pipelines
 

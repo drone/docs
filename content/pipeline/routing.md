@@ -15,7 +15,7 @@ The `node` section can be used to route pipelines to specific runners, or groups
 A pipeline is not routed to a runner unless it matches all runner labels. If the pipeline only defines and matches a subset of runner labels it will not be routed to the runner.
 </div>
 
-{{< highlight yaml "linenos=table,hl_lines=12-14" >}}
+```yaml {linenos=table, hl_lines=["12-14"]}
 kind: pipeline
 type: docker
 name: default
@@ -30,13 +30,13 @@ steps:
 node:
   keyA: valueA
   keyB: valueB
-{{< / highlight >}}
+```
 
 # Kubernetes
 
 The `node_selector` section should be used with Kubernetes pipelines to route workloads to specific nodes. Node selection can be used in conjunction with [taints and tolerations]({{< relref "/pipeline/kubernetes/configure/tolerations.md" >}}).
 
-{{< highlight yaml "linenos=table,hl_lines=2 12-14" >}}
+```yaml {linenos=table, hl_lines=["2", "12-14"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -51,4 +51,4 @@ steps:
 node_selector:
   keyA: valueA
   keyB: valueB
-{{< / highlight >}}
+```

@@ -125,11 +125,11 @@ name: frontend
 
 steps:
 
-* name: build
+- name: build
   image: node
   commands:
-  * npm install
-  * npm test
+  - npm install
+  - npm test
 ```
 
 ## Multiple Platforms

@@ -23,7 +23,7 @@ You can create an application or use an existing one [here](https://portal.azure
 
 Find your tenant_id by going to the Azure portal [here](https://portal.azure.com/#view/Microsoft_AAD_IAM/TenantPropertiesBlade).
 
-Find your subsription_id by going to the Azure portal and selecting your subscription [here](https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade). You will then need to add permissions to your application under IAM. You will need to add the Owner role to your application.
+Find your subsription_id by going to the Azure portal and selecting your subscription [here](https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade). You will then need to add permissions to your application under IAM. You will need to add the Owner role to your application. To do this, click on your subscription, then click the  IAM link on the left hand side, then add a new role. Select your application (not user), Assign the owner role, save.
 
 # Pool Spec
 

@@ -18,10 +18,6 @@ The Docker runner is a daemon that executes pipelines steps inside ephemeral Doc
 
 The Docker runner is a general purpose runner, optimized for projects that can run tests and compile code inside stateless containers. If you are new to Drone, you probably want to [get started]({{< relref "installation/_index.md" >}}) with the Docker runner.
 
-<div class="alert alert-warn">
-Do not install the Docker runner on Kubernetes. If you want to run pipelines in your Kubernetes cluster you must install the Kubernetes runner.
-</div>
-
 # When to Avoid?
 
 The Docker runner is poorly suited for projects that cannot run tests or compile code inside containers, including projects that target operating systems or architectures not supported by Docker, such as macOS.

@@ -4,13 +4,15 @@ title: DRONE_WORKSPACE
 author: Sherry3
 ---
 
-Drone automatically creates a temporary volume, known as your workspace, where it clones your repository. The workspace is the current working directory for each step in your pipeline.
+Drone's working directory for a pipeline is known as the `DRONE_WORKSPACE`. This is where it clones your repository. It is the working directory for each step in your pipeline and this folder is shared / persisted throughout the lifecycle of the pipeline.
 
-Because the workspace is a volume, filesystem changes are persisted between pipeline steps. In other words, individual steps can communicate and share state using the workspace filesystem.
+In other words, individual steps can communicate and share state using the  `DRONE_WORKSPACE` directory structure.
 
-It is supported by following pipelines: -
-1. docker
-2. kubernetes
-3. exec
-4. ssh
-5. digitalocean
+It is a physical location for the following runners:
+
+- Exec runner
+- SSH runner
+- Digitalocean runner
+- AWS / VM runner * it is also shared as a mount for docker container steps
+
+NB The `DRONE_WORKSPACE` is a volume for the following Docker runner

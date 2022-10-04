@@ -97,7 +97,7 @@ This is the default AMI for the runner.
 
 ## [Windows Server 2019 with containers](https://aws.amazon.com/marketplace/pp/prodview-iehgssex6veoi)
 
-NB: be sure to set the platform to windows
+NB: be sure to set the **platform to windows** and the ami **must have container support.**
 
   ```yaml
 version: "1"

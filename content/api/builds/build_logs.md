@@ -15,49 +15,34 @@ Example Response Body:
 ```json {linenos=table}
 [
   {
-    "proc": "clone",
     "pos": 0,
-    "out": "+ git init\n"
+    "out": "Initialized empty Git repository in /drone/src/.git/\n",
+    "time": 5
   },
   {
-    "proc": "clone",
     "pos": 1,
-    "out": "Initialized empty Git repository in /drone/src/github.com/octocat/hello-world/.git/\n"
+    "out": "+ git fetch origin +refs/heads/master:\n",
+    "time": 5
   },
   {
-    "proc": "clone",
     "pos": 2,
-    "out": "+ git remote add origin https://github.com/octocat/hello-world.git\n"
+    "out": "From https://github.com/octocat/hello-world.git\n",
+    "time": 5
   },
   {
-    "proc": "clone",
     "pos": 3,
-    "out": "+ git fetch --no-tags origin +refs/heads/master:\n"
+    "out": " * branch            master     -> FETCH_HEAD\n",
+    "time": 5
   },
   {
-    "proc": "clone",
     "pos": 4,
-    "out": "From https://github.com/octocat/hello-world\n"
+    "out": " * [new branch]      master     -> origin/master\n",
+    "time": 5
   },
   {
-    "proc": "clone",
     "pos": 5,
-    "out": " * branch            master     -> FETCH_HEAD\n"
-  },
-  {
-    "proc": "clone",
-    "pos": 6,
-    "out": " * [new branch]      master     -> origin/master\n"
-  },
-  {
-    "proc": "clone",
-    "pos": 7,
-    "out": "+ git reset --hard -q 62126a02ffea3dabd7789e5c5407553490973665\n"
-  },
-  {
-    "proc": "clone",
-    "pos": 8,
-    "out": "+ git submodule update --init --recursive\n"
+    "out": "+ git reset --hard -q 62126a02ffea3dabd7789e5c5407553490973665\n",
+    "time": 6
   }
 ]
 ```

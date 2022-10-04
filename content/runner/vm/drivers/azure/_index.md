@@ -147,7 +147,6 @@ instances:
       tenant_id: XXXXXXXXX
       location: eastus2
       size : Standard_F2s
-      zones: ["1"]
       tags:
         tagName: tag
       image:

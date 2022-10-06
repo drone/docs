@@ -4,6 +4,7 @@ title: Macstadium
 author: bradrydzewski
 weight: 900
 header: true
+hidden: true
 ---
 
 Here are the articles in this section:

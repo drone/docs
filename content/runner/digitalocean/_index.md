@@ -4,6 +4,7 @@ title: Digital Ocean
 author: bradrydzewski
 weight: 600
 header: true
+hidden: true
 ---
 
 Here are the articles in this section:

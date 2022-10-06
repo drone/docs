@@ -4,6 +4,7 @@ title: Nomad
 author: bradrydzewski
 weight: 1000
 header: true
+hidden: true
 ---
 
 Here are the articles in this section:

@@ -28,7 +28,6 @@ After login you are redirected back to your Drone dashboard. _If this is your fi
 
 Next, search for your repository and click the _Enable_ button. Clicking the enable button adds a webhook to your repository to notify Drone every time you push code. _Please note you must have admin privileges to the repository to enable._
 
-
 # Configure your Pipeline
 
 Next, you need to configure a pipeline by creating a `.drone.yml` file to the root of your git repository. In this file we define a series of steps that are executed every time a webhook is received.
@@ -65,12 +64,11 @@ Here is a quick overview of the variables used in this example:
 
 Please see our pipeline [documentation]({{< relref "/pipeline/kubernetes/overview.md" >}}) for a full list of configuration options.
 
-
-
 ## Additional Examples
 
 * You can add multiple steps to your pipeline:
-    ```
+
+    ```yaml
     kind: pipeline
     type: kubernetes
     name: greeting
@@ -87,8 +85,9 @@ Please see our pipeline [documentation]({{< relref "/pipeline/kubernetes/overvie
       - echo bonjour monde
     ```
 
-* You can limit pipeline steps based on branch or webhook event:
-    ```
+* You can conditionally [limit]({{< relref "pipeline/docker/syntax/conditions.md" >}}) pipeline steps to execute based on branch or webhook events:
+
+    ```yaml  {linenos=table, hl_lines=["15-17"]}
     kind: pipeline
     type: kubernetes
     name: greeting
@@ -108,8 +107,9 @@ Please see our pipeline [documentation]({{< relref "/pipeline/kubernetes/overvie
         - develop
     ```
 
-* You can even define multiple pipelines:
-    ```
+* You can even define [multiple pipelines]({{< relref "pipeline/configuration.md#multiple-pipelines" >}}):
+
+    ```yaml {linenos=table, hl_lines=["5-20"]}
     kind: pipeline
     type: kubernetes
     name: en
@@ -132,8 +132,9 @@ Please see our pipeline [documentation]({{< relref "/pipeline/kubernetes/overvie
       - echo bonjour monde
     ```
 
-* You can use any image in any container registry:
-    ```
+* You can use any [image]({{< relref "pipeline/docker/syntax/images.md" >}}) from any container registry:
+
+    ```yaml
     kind: pipeline
     type: kubernetes
     name: default

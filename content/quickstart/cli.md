@@ -16,14 +16,16 @@ You can use the [command line tools]({{< relref "/cli/install" >}}) to run Docke
 
 # Installation
 
-* Install the command line tools on OSX using [Homebrew](https://brew.sh/):
+* Install the command line tools on macOS using [Homebrew](https://brew.sh/):
+
   ```
-  $ brew install drone-cli
+  brew install drone-cli
   ```
 
 * Install the command line tools on Windows using [Scoop](https://scoop.sh/):
+
   ```
-  $ scoop install drone
+  scoop install drone
   ```
 
 # Usage
@@ -31,6 +33,7 @@ You can use the [command line tools]({{< relref "/cli/install" >}}) to run Docke
 The command line runner requires a working Docker installation. Drone executes your pipeline locally on your host machine using your local Docker daemon. _Local execution does not have any communication with the Drone server._
 
 1. Navigate to the root directory of your git repository where your `.drone.yml` file is located. _Here is a basic configuration you can use for testing purposes:_
+
    ```
    kind: pipeline
    type: docker
@@ -45,11 +48,13 @@ The command line runner requires a working Docker installation. Drone executes y
    ```
 
 2. Execute your pipeline from the command line:
+
    ```
-   $ drone exec
+   drone exec
    ```
 
 3. The command streams the pipeline logs to your terminal for analysis. The command returns a non-zero exit code if the pipeline fails.
+
    ```
    $ drone exec
    [test:1] + echo hello
@@ -57,8 +62,6 @@ The command line runner requires a working Docker installation. Drone executes y
    [test:3] + echo world
    [test:4] world
    ```
-
-
 
 <!-- * Example Go configuration:
    ```
@@ -97,6 +100,7 @@ The command line runner mounts your current working directory, using docker volu
 The command line runner runs the _default_ pipeline. If you use a different name for you pipeline, or you define multiple pipelines in your yaml, you can execute a named pipeline using the `--pipeline` flag.
 
 * Example configuration with a pipeline named _test_
+
   ```
   kind: pipeline
   type: docker
@@ -121,11 +125,13 @@ The command line runner runs the _default_ pipeline. If you use a different name
 When running pipelines locally you can limit which pipeline steps are executed and which pipeline steps are skipped.
 
 * Execute only pipeline steps _build_ and _test_
+
    ```
    drone exec --include=build --include=test
    ```
 
 * Execute all pipeline steps except _deploy_
+
    ```
    drone exec --exclude=deploy
    ```
@@ -135,6 +141,7 @@ When running pipelines locally you can limit which pipeline steps are executed a
 The command line runner does not have read access to secrets stored in your server. You can provide secrets to your local pipeline by passing secrets to the command line runner via text file.
 
 1. Example pipeline that requires username and password environment variables, sourced from secrets.
+
    ```
    kind: pipeline
    type: docker
@@ -148,15 +155,18 @@ The command line runner does not have read access to secrets stored in your serv
        PASSWORD:
          from_secret: PASSWORD
    ```
+
 1. Create a simple text file with secrets defined one per line in key value format. _For the purposes of this demo we name the file `secrets.txt`._
+
    ```
    USERNAME=root
    PASSWORD=password
    ```
 
 2. Provide your secrets file via command line flags when executing your pipeline.
+
    ```
-   $ drone exec --secret-file=secrets.txt
+   drone exec --secret-file=secrets.txt
    ```
 
 _The command line runner uses the [dotenv](https://github.com/joho/godotenv) package to read and parse the secrets file. If you are having problems with the secrets file please consult the official package [documentation](https://github.com/joho/godotenv)._
@@ -168,18 +178,21 @@ The command line runner does not communicate with the Drone server and therefore
 You can emulate repository metadata by passing repository and build information to the command line runner using command line flags and environment variables.
 
 * Example command sets the branch:
+
    ```
-   $ drone exec --branch=master
+   drone exec --branch=master
    ```
 
 * Example command sets the build event:
+
    ```
-   $ drone exec --event=pull_request
+   drone exec --event=pull_request
    ```
 
 * Example command set metadata using environment variables:
+
   ```
-  $ DRONE_SYSTEM_HOST=drone.company.com drone exec
+  DRONE_SYSTEM_HOST=drone.company.com drone exec
   ```
 
 # Trusted Mode
@@ -189,7 +202,7 @@ If your pipeline uses configurations that require trusted mode, you can enable t
 * Example command enables trusted mode:
 
   ```
-  $ drone exec --trusted
+  drone exec --trusted
   ```
 
 # Local vs Remote
@@ -200,6 +213,6 @@ The command line runner makes reasonable effort to emulate the server environmen
 
 * The server has access to more data (commit details, repository details, etc). This data needs to be provided to the command line runner to more closely emulate the server environment.
 
-* The server has access to your oauth credentials and uses these credentials to generate a netrc file. These credentials need to be provided to the command line runner to more closely emulate the server environment. 
+* The server has access to your oauth credentials and uses these credentials to generate a netrc file. These credentials need to be provided to the command line runner to more closely emulate the server environment.
 
 * The server has access to repository, organization and encrypted secrets. The command line runner does not have access to secrets or decryption keys stored in the server environment.

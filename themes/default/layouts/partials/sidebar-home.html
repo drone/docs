@@ -7,10 +7,10 @@
 
     <nav>
         <ul>
-            <li class="sidebar-item selected"><a href="{{ .URL }}" class="selected">Home</a></li>
+            <li class="sidebar-item selected"><a href="{{ .Permalink }}" class="selected">Home</a></li>
             {{ range .Pages }}
                 {{ $title := or .Params.title_in_sidebar .Title }}
-                {{ $url := .URL }}
+                {{ $url := .Permalink }}
                 {{ if eq .Type "redirect" }}
                     {{ $url = .Params.redirect }}
                 {{ end }}

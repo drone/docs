@@ -24,9 +24,9 @@
         {{ if .Params.hidden }}
 
         {{ else if .IsPage }}
-            <li class="sidebar-item{{ if eq $selected . }} selected{{ end }}{{ if .Params.separator }} separator{{ end }}"><a href="{{ .URL }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a></li>
+            <li class="sidebar-item{{ if eq $selected . }} selected{{ end }}{{ if .Params.separator }} separator{{ end }}"><a href="{{ .Permalink }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a></li>
         {{ else if and (.IsSection) (.Params.hide_children) }}
-            <li class="sidebar-item{{ if or (eq $selected .) ($selected.IsDescendant .) }} selected{{ end }}{{ if .Params.separator }} separator{{ end }}"><a href="{{ .URL }}" class="{{ if or (eq $selected .) ($selected.IsDescendant .) }} selected{{ end }}">{{ $title }}</a></li>
+            <li class="sidebar-item{{ if or (eq $selected .) ($selected.IsDescendant .) }} selected{{ end }}{{ if .Params.separator }} separator{{ end }}"><a href="{{ .Permalink }}" class="{{ if or (eq $selected .) ($selected.IsDescendant .) }} selected{{ end }}">{{ $title }}</a></li>
         {{ else if .IsSection }}
             <li class="category{{ if .Params.separator }} separator{{ end }}">{{ $title }}</li>
             {{ range .Pages }}
@@ -34,16 +34,16 @@
                 {{ if .Params.hidden }}
                 {{ else if and (.IsSection) (not .Params.hide_children) }}
                 <li class="sidebar-item{{ if eq $selected . }} selected{{ end }}{{ if or (.IsAncestor $selected) ($expand) (eq $selected .) }} expand{{ end }}">
-                    <a href="{{ .URL }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a>
+                    <a href="{{ .Permalink }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a>
                     <ul>
                     {{ range .Pages }}
                         {{ $title := or .Params.title_in_sidebar .Title }}
-                        <li class="sidebar-item{{ if eq $selected . }} selected{{ end }}"><a href="{{ .URL }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a></li>
+                        <li class="sidebar-item{{ if eq $selected . }} selected{{ end }}"><a href="{{ .Permalink }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a></li>
                     {{ end }}
                     </ul>
                 </li>
                 {{ else }}
-                <li class="sidebar-item{{ if eq $selected . }} selected{{ end }}"><a href="{{ .URL }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a></li>
+                <li class="sidebar-item{{ if eq $selected . }} selected{{ end }}"><a href="{{ .Permalink }}" class="{{ if eq $selected . }}selected{{ end }}">{{ $title }}</a></li>
                 {{ end }}
             {{ end }}
         {{ end }}

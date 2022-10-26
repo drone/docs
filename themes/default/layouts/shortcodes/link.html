@@ -1,7 +1,7 @@
 {{ $page := .Site.GetPage (.Get 0) }}
 {{ $title := or (.Get 1) ($page.Title) }}
 
-<a href="{{ $page.URL }}" class="reference">
+<a href="{{ $page.Permalink }}" class="reference">
     <span class="icon"></span>
     <span class="name">{{ $title }}</span>
 </a>

@@ -4,11 +4,11 @@
 
     {{ if and (eq (len .Node.Pages) 0) (eq (len .Node.Sections) 0) }}
     <li{{ if eq $selected .Node }} class="selected active"{{ else if $hide_children }} class="hide_children"{{ else if eq .Node.Params.external true}} class="open-in-new"{{ end }}>
-        <a href="{{ .Node.URL }}" {{ if eq .Node.Params.external true}}target="_blank"{{ end }}>{{ markdownify .Node.Title }}</a>
+        <a href="{{ .Node.Permalink }}" {{ if eq .Node.Params.external true}}target="_blank"{{ end }}>{{ markdownify .Node.Title }}</a>
     </li>
     {{ else if .Node.Params.hide_children }}
     <li{{ if eq $selected .Node }} class="selected active hide_children"{{ else if .Node.IsAncestor $selected }} class="selected active hide_children"{{ else }} class="hide_children"{{ end }}>
-        <a href="{{ .Node.URL }}">{{ markdownify .Node.Title }}</a>
+        <a href="{{ .Node.Permalink }}">{{ markdownify .Node.Title }}</a>
     </li>
     {{ else }}
 
@@ -16,7 +16,7 @@
     <li{{ if eq $selected .Node }} class="selected active"{{end}}>
         <details{{ if or (.Node.IsAncestor $selected) ($expand) }} open{{ end }}>
             <summary>
-                <a href="{{ .Node.URL }}">{{ markdownify .Node.Title }}</a>
+                <a href="{{ .Node.Permalink }}">{{ markdownify .Node.Title }}</a>
             </summary>
             <ul>
             {{ range .Node.Pages }}

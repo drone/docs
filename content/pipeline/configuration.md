@@ -106,7 +106,7 @@ When running multiple pipelines if any of the sibling pipelines fails further bu
 This may present different behaviour, depending on the scheduling of sibling pipelines. This will give non-deterministic behaviour. 
 </div>
 
-{{< highlight yaml "linenos=table,hl_lines=35-57" >}}
+```yaml {linenos=table, hl_lines=["35-57"]}
 kind: pipeline
 type: docker
 name: backend
@@ -124,18 +124,19 @@ type: docker
 name: frontend
 
 steps:
+
 - name: build
   image: node
   commands:
   - npm install
   - npm test
-{{< / highlight >}}
+```
 
 ## Multiple Platforms
 
 One common use case for multiple pipelines is to define and execute pipelines for different platforms. For example, execute one pipeline on x86 and another pipeline on arm.
 
-{{< highlight yaml "linenos=table,hl_lines=5-6 20-21" >}}
+```yaml {linenos=table, hl_lines=["5-6", "20-21"]}
 kind: pipeline
 type: docker
 name: amd64
@@ -164,14 +165,14 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
 
+```
 
 ## Graph Execution
 
 Drone also supports describing your pipelines as a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph). In the below example we fan-out to execute the first two pipelines in parallel, and then once complete, we fan-in to execute the final pipeline.
 
-{{< highlight yaml "linenos=table,hl_lines=35-57" >}}
+```yaml {linenos=table, hl_lines=["35-57"]}
 kind: pipeline
 type: docker
 name: backend
@@ -209,7 +210,7 @@ steps:
 depends_on:
 - backend
 - frontend
-{{< / highlight >}}
+```
 
 # Scripting
 

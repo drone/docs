@@ -6,8 +6,7 @@ aliases:
 - /installation/reference/drone-database-max-connections/
 ---
 
-Optional numeric value. Set the maximum number of open DB connections from Drone. It is set to 0 by default and must be configured _before_ the system is first used.
-
+Optional numeric value. Set the maximum number of open DB connections from Drone. When unset this uses the database driver defaults.
 ```
 DRONE_DATABASE_MAX_CONNECTIONS=45
 ```

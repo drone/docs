@@ -155,6 +155,17 @@ steps:
   - go test
 {{< / highlight >}}
 
+Available options are:
+
+{{< highlight text "linenos=table" >}}
+failure: ""
+failure: "fail"
+failure: "fail-fast"
+failure: "fast"
+failure: "always"
+failure: "ignore"
+{{< / highlight >}}
+
 # Detach
 
 The detach attribute lets execute the pipeline step in the background. The runner starts the step, detaches and runs in the background, and immediately proceeds to the next step.

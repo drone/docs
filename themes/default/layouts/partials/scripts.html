@@ -17,12 +17,13 @@
 </script>
 
 <!-- code to load the server index -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
 <script type="text/javascript">
 docsearch({
-	apiKey: "745aeaa8be75dc0c4de55030703ed3f4",
+    appId: "Y6AVDR12OO",
+	apiKey: "d0044503459aa4a8f32a9e9d6d9a86eb",
 	indexName: "drone_io",
-	inputSelector: '#search',
-	debug: {{ if ne .Site.HomeAbsURL "http://localhost:1313/" }}true{{ else }}false{{ end }}
+	container: '.search',
+    debug: false
 });
 </script>

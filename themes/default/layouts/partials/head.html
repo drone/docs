@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon.png" | relURL }}">
 
 {{- $style := resources.Get "sass/main.scss" | toCSS | fingerprint }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,700">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500|Roboto:400,500,700&amp;display=swap">
 <link rel="stylesheet" type="text/css" href="{{ relURL $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" >

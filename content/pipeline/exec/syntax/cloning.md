@@ -13,7 +13,7 @@ Drone automatically clones your repository before executing your pipeline steps.
 
 The default clone configuration does use the `--depth` flag. You can enforce a clone depth by declaring a `clone` block and adding the `depth` attribute:
 
-{{< highlight text "linenos=table,hl_lines=5-6" >}}
+```yaml {linenos=table, hl_lines=["5-6"]}
 kind: pipeline
 type: exec
 name: default
@@ -26,13 +26,13 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 # The `--tags` flag
 
 The default clone configuration does not use the `--tags` flag. If you would like to fetch tags you should handle this as a step in your pipeline. For example:
 
-{{< highlight text "linenos=table,hl_lines=6-8" >}}
+```yaml {linenos=table, hl_lines=["6-8"]}
 kind: pipeline
 type: exec
 name: default
@@ -46,14 +46,14 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 
 # The `--recursive` flag
 
 The default clone behavior does not use the `--recursive` flag and does not fetch submodules. If you would like to fetch submodules you should handle this as a step in your pipeline. For example:
 
-{{< highlight text "linenos=table,hl_lines=6-8" >}}
+```yaml {linenos=table, hl_lines=["6-8"]}
 kind: pipeline
 type: exec
 name: default
@@ -67,13 +67,13 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 # Custom Logic
 
 The default clone behavior can be disabled and custom clone logic implemented, when necessary. In the following example we implement custom clone commands as a pipeline step:
 
-{{< highlight text "linenos=table,hl_lines=5-6" >}}
+```yaml {linenos=table, hl_lines=["5-6"]}
 kind: pipeline
 type: exec
 name: default
@@ -91,4 +91,4 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```

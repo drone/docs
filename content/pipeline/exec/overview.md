@@ -15,7 +15,7 @@ An `exec` pipeline executes shell commands directly on the host machine without 
 
 Example pipeline configuration:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: exec
@@ -31,29 +31,29 @@ steps:
   - echo hello world
 
 ...
-{{< / highlight >}}
+```
 
 The kind and type attributes define an exec pipeline.
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: exec
-{{< / highlight >}}
+```
 
 The platform section configures the target operating system and architecture, and ensures the pipeline is routed to the appropriate instance:
 
-{{< highlight text "linenos=table,linenostart=6" >}}
+```yaml {linenos=table, linenostart=6}
 platform:
   os: linux
   arch: amd64
-{{< / highlight >}}
+```
 
 The steps section defines a series of shell commands. These commands are executed using the default shell on posix, and powershell on windows. If any command returns a non-zero exit code, the pipeline fails and exits.
 
-{{< highlight text "linenos=table,linenostart=10" >}}
+```yaml {linenos=table, linenostart=10}
 steps:
 - name: greeting
   commands:
   - echo hello world
-{{< / highlight >}}
+```

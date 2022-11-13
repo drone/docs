@@ -13,7 +13,7 @@ description: |
 
 Pipeline steps are defined as a series of Docker containers. Each step must therefore define the Docker image used to create the container.
 
-{{< highlight text "linenos=table,hl_lines=7" >}}
+```yaml {linenos=table, hl_lines=["7"]}
 kind: pipeline
 type: docker
 name: default
@@ -24,7 +24,7 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 Drone supports any valid Docker image from any Docker registry:
 
@@ -46,30 +46,30 @@ If the image is tagged with :latest either explicitly or implicitly, Drone attem
 
 To only pull the image if not found in the local cache:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=3" >}}
+```yaml {linenos=table, linenostart=15, hl_lines=["3"]}
 steps:
 - name: build
   pull: if-not-exists
   image: golang
-{{< / highlight >}}
+```
 
 To always pull the newest version of the image:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=3" >}}
+```yaml {linenos=table, linenostart=15, hl_lines=["3"]}
 steps:
 - name: build
   pull: always
   image: golang:1.12
-{{< / highlight >}}
+```
 
 To never pull the image and always use the image in the local cache:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=3" >}}
+```yaml {linenos=table, linenostart=15, hl_lines=["3"]}
 steps:
 - name: build
   pull: never
   image: golang:1.12
-{{< / highlight >}}
+```
 
 # Pulling Private Images
 
@@ -77,7 +77,7 @@ If the image is private you need to provide Drone with docker credentials, sourc
 
 First create a secret that includes your Docker credentials in the format of a Docker config.json file. This file may provide credentials for multiple registries.
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 {
     "auths": {
         "docker.io": {
@@ -85,11 +85,11 @@ First create a secret that includes your Docker credentials in the format of a D
         }
     }
 }
-{{< / highlight >}}
+```
 
 Next, define which secrets should be used to pull private images using the `image_pull_secrets` attribute:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=8-9" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["8-9"]}
 steps:
 - name: build
   image: registry.internal.company.com/golang:1.12
@@ -99,7 +99,7 @@ steps:
 
 image_pull_secrets:
 - dockerconfig
-{{< / highlight >}}
+```
 
 <div class="alert alert-info">
 If you want to pull private images from Amazon Elastic Container Registry (ECR) you will need to install a registry credential plugin.

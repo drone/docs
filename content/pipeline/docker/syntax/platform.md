@@ -12,7 +12,7 @@ Use the `platform` section to configure the target operating system and architec
 
 Example Linux amd64 pipeline:
 
-{{< highlight yaml "linenos=table,hl_lines=5-7" >}}
+```yaml {linenos=table, hl_lines=["5-7"]}
 kind: pipeline
 type: docker
 name: default
@@ -27,23 +27,23 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 Example Linux arm64 pipeline:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=3" >}}
+```yaml {linenos=table, linenostart=15, hl_lines=["3"]}
 platform:
   os: linux
   arch: arm64
-{{< / highlight >}}
+```
 
 Example Linux arm32 pipeline:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=3" >}}
+```yaml {linenos=table, linenostart=15, hl_lines=["3"]}
 platform:
   os: linux
   arch: arm
-{{< / highlight >}}
+```
 
 # Windows
 
@@ -55,19 +55,19 @@ Please note Windows pipelines are not available on Drone Cloud. This feature is 
 
 Example windows 1809 pipeline:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=4" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["4"]}
 platform:
   os: windows
   arch: amd64
   version: 1809
-{{< / highlight >}}
+```
 
 Example windows 1903 pipeline:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=4" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["4"]}
 platform:
   os: windows
   arch: amd64
   version: 1903
-{{< / highlight >}}
+```
 

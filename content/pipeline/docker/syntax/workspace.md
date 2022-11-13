@@ -22,7 +22,7 @@ Workspace volumes are ephemeral. They are created when the pipeline starts and d
 
 You can customize the workspace directory by defining the `workspace` section in your yaml. Here is a basic example:
 
-{{< highlight text "linenos=table,linenostart=1,hl_lines=5-7" >}}
+```yaml {linenos=table, linenostart=1,hl_lines=["5-7"]}
 kind: pipeline
 type: docker
 name: default
@@ -42,7 +42,7 @@ steps:
   commands:
   - npm install
   - npm run tests
-{{< / highlight >}}
+```
 
 This would be equivalent to the following docker commands:
 

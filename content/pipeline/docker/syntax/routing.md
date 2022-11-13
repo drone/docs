@@ -16,7 +16,7 @@ The `nodes` section can be used to route pipelines to groups of runners with [ma
 A pipeline is not routed to a runner unless it matches all runner labels. If the pipeline only defines and matches a subset of runner labels it will not be routed to the runner.
 </div>
 
-{{< highlight yaml "linenos=table,hl_lines=12-14" >}}
+```yaml {linenos=table, hl_lines=["12-14"]}
 kind: pipeline
 type: docker
 name: default
@@ -31,4 +31,4 @@ steps:
 node:
   keyA: valueA
   keyB: valueB
-{{< / highlight >}}
+```

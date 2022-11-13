@@ -37,6 +37,7 @@ steps:
 The configuration file defines one or many objects in the same file, where each object is a separate yaml document. Pipelines are one kind of object. You can also define [Signature]({{< relref "signature/_index.md" >}}) and [Secret]({{< relref "secret/encrypted.md" >}}) objects.
 
 * Example Pipeline configuration:
+
   ```
   kind: pipeline
   type: docker

@@ -77,8 +77,6 @@ name: default
 
 Docker pipelines execute pipeline commands inside isolated Docker containers. Jump to the Docker pipeline documentation to learn more.
 
-
-
 ## Kubernetes Pipelines
 
 Kubernetes pipelines execute pipeline commands inside pods, where each pipeline step is represented by a container in the pod. Jump to the Kubernetes pipeline documentation to learn more.

@@ -10,7 +10,7 @@ description: |
 
 Pipeline steps are executed sequentially by default. You can optionally describe your build steps as a [directed acyclic graph](https://en.wikipedia.org/wiki/Directed_acyclic_graph). In the below example we fan-out to execute the first two steps in parallel, and then once complete, we fan-in to execute the final step:
 
-{{< highlight yaml "linenos=table,hl_lines=20-22" >}}
+```yaml {linenos=table, hl_lines=["20-22"]}
 kind: pipeline
 type: macstadium
 name: default
@@ -33,7 +33,7 @@ steps:
   depends_on:
   - frontend
   - backend
-{{< / highlight >}}
+```
 
 The above example is quite simple, however, you can use this syntax to create very complex execution flows.
 

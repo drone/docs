@@ -11,7 +11,7 @@ description: |
 
 Use the `settings` section to configure the MacStadium virtual machine. The runner creates the virtual machine and executes pipeline commands on the instance using the ssh protocol.
 
-{{< highlight yaml "linenos=table,hl_lines=5-7" >}}
+```yaml {linenos=table, hl_lines=["5-7"]}
 kind: pipeline
 type: macstadium
 name: default
@@ -25,4 +25,4 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```

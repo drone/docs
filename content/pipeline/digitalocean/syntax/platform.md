@@ -12,7 +12,7 @@ Use the `platform` section to configure the target operating system and architec
 
 Example linux pipeline:
 
-{{< highlight text "linenos=table,hl_lines=8-10" >}}
+```yaml {linenos=table, hl_lines=["8-10"]}
 kind: pipeline
 type: digitalocean
 name: default
@@ -29,11 +29,11 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 Example freebsd pipeline:
 
-{{< highlight text "linenos=table,hl_lines=8-10" >}}
+```yaml {linenos=table, hl_lines=["8-10"]}
 kind: pipeline
 type: digitalocean
 name: default
@@ -50,4 +50,4 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```

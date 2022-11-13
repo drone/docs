@@ -16,7 +16,7 @@ A `digitalocean` pipeline runs shell commands on digitalocean droplets. The drop
 
 Example pipeline configuration:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: digitalocean
@@ -31,21 +31,21 @@ steps:
   - echo hello world
 
 ...
-{{< / highlight >}}
+```
 
 The kind and type attributes define a digitalocean pipeline.
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: digitalocean
-{{< / highlight >}}
+```
 
 The `steps` section defines a series of shell commands. These commands are executed on the remote digital ocean droplet. If any command returns a non-zero exit code, the pipeline fails and exits.
 
-{{< highlight text "linenos=table,linenostart=9" >}}
+```yaml {linenos=table, linenostart=9}
 steps:
 - name: greeting
   commands:
   - echo hello world
-{{< / highlight >}}
+```

@@ -15,7 +15,7 @@ This guide covers configuring continuous integration pipelines for projects that
 
 In the below example we demonstrate a pipeline that launches a MySQL service container. The server will be available at `localhost:3306`.
 
-{{< highlight yaml "linenos=table,hl_lines=11-17" >}}
+```yaml {linenos=table, hl_lines=["11-17"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -33,7 +33,7 @@ services:
   environment:
     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     MYSQL_DATABASE: test
-{{< / highlight >}}
+```
 
 # Database Options
 
@@ -53,14 +53,14 @@ The official MySQL image provides environment variables used at startup
 to create the default username, password, database and more. Please see the
 official image [documentation](https://hub.docker.com/_/mysql/) for more details.
 
-{{< highlight yaml "linenos=table,hl_lines=4-6" >}}
+```yaml {linenos=table, hl_lines=["4-6"]}
 services:
 - name: database
   image: mysql
   environment:
     MYSQL_DATABASE: test
     MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-{{< / highlight >}}
+```
 
 # Common Problems
 
@@ -68,7 +68,7 @@ If you are unable to connect to the MySQL container please make sure you
 are giving MySQL adequate time to initialize and begin accepting
 connections.
 
-{{< highlight yaml "linenos=table,hl_lines=9" >}}
+```yaml {linenos=table, hl_lines=["9"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -79,4 +79,4 @@ steps:
   commands:
   - sleep 15
   - mysql -u root -h database
-{{< / highlight >}}
+```

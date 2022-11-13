@@ -14,7 +14,7 @@ This guide covers configuring continuous integration pipelines for projects that
 
 In the below example we demonstrate a pipeline that launches a Elasticsearch service container. The server will be available at `localhost:9200`.
 
-{{< highlight yaml "linenos=table,hl_lines=18-21" >}}
+```yaml {linenos=table, hl_lines=["18-21"]}
 ---
 kind: pipeline
 type: kubernetes
@@ -37,7 +37,7 @@ services:
   image: elasticsearch:5-alpine
 
 ...
-{{< / highlight >}}
+```
 
 # Common Problems
 
@@ -45,7 +45,7 @@ If you are unable to connect to the Elastic container please make sure you
 are giving the instance adequate time to initialize and begin accepting
 connections.
 
-{{< highlight yaml "linenos=table,hl_lines=10" >}}
+```yaml {linenos=table, hl_lines=["10"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -57,4 +57,4 @@ steps:
   - apk add curl
   - sleep 45
   - curl http://localhost:9200
-{{< / highlight >}}
+```

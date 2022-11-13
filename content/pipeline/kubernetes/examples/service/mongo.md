@@ -38,7 +38,7 @@ If you are unable to connect to the Mongo container please make sure you
 are giving the instance adequate time to initialize and begin accepting
 connections.
 
-{{< highlight yaml "linenos=table,hl_lines=9" >}}
+```yaml {linenos=table, hl_lines=["9"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -49,4 +49,4 @@ steps:
   commands:
   - sleep 5
   - mongo --eval "db.version()"
-{{< / highlight >}}
+```

@@ -32,7 +32,7 @@ The Starlark script returns one or many pipeline objects from the script's main 
 
 Example Starlark script:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 def main(ctx):
   return {
     "kind": "pipeline",
@@ -47,11 +47,11 @@ def main(ctx):
       }
     ]
   }
-{{< / highlight >}}
+```
 
 Equivalent Yaml configuration:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 name: build
@@ -61,13 +61,13 @@ steps:
   image: alpine
   commands:
   - echo hello world
-{{< / highlight >}}
+```
 
 # Example
 
 Here is an example configuration script that returns a pipeline configuration. _Please note the returned pipeline object uses the same structure as a pipeline defined in yaml._
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 def main(ctx):
   return {
     "kind": "pipeline",
@@ -82,11 +82,11 @@ def main(ctx):
       }
     ]
   }
-{{< / highlight >}}
+```
 
 The main function can also return an array. In the below example we create two pipelines, one for amd64 and one for arm.
 
-{{< highlight text "linenos=table,hl_lines=2-5" >}}
+```yaml {linenos=table, hl_lines=["2-5"] >}}
 def main(ctx):
   return [
     step("amd64"),
@@ -107,7 +107,7 @@ def step(arch):
       }
     ]
   }
-{{< / highlight >}}
+```
 
 The above example also demonstrates how we can use functions and scripting to build the configuration without repetition.
 
@@ -115,13 +115,13 @@ The above example also demonstrates how we can use functions and scripting to bu
 
 The main method of the Starlark script accepts a context parameter. The context parameter provides access to repository and build meta-data, which can be used to dynamically build your pipeline configuration.
 
-{{< highlight text "linenos=table,hl_lines=2" >}}
+```yaml {linenos=table, hl_lines=["2"] >}}
 def main(ctx):
   if ctx.build.event == "tag":
     return pipeline_for_release(ctx)
   else:
     return pipeline(ctx)
-{{< / highlight >}}
+```
 
 _Please note that you can still create pipeline objects with `trigger` stanzas and pipeline steps with `when` stanzas._
 

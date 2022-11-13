@@ -12,7 +12,7 @@ Use the `platform` section to configure the target operating system and architec
 
 Example windows pipeline:
 
-{{< highlight text "linenos=table,hl_lines=10-13" >}}
+```yaml {linenos=table, hl_lines=["10-13"]}
 kind: pipeline
 type: ssh
 name: default
@@ -32,7 +32,7 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 # Supported Platforms
 

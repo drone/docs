@@ -12,7 +12,7 @@ Use the `platform` section to configure the target operating system and architec
 
 Example linux arm64 pipeline:
 
-{{< highlight text "linenos=table,hl_lines=5-7" >}}
+```yaml {linenos=table, hl_lines=["5-7"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -27,4 +27,4 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```

@@ -12,7 +12,7 @@ Pipeline steps are defined as a series of shell commands. The commands are execu
 
 Example configuration:
 
-{{<highlight yaml "linenos=table" >}}
+```yaml {linenos=table}
 kind: pipeline
 type: vm
 name: default
@@ -32,31 +32,31 @@ steps:
   commands:
   - npm install
   - npm test
-{{< / highlight >}}
+```
 
 # Commands
 
 The commands are executed inside the root directory of your git repository. The root of your git repository, also called the workspace, is shared by all steps in your pipeline. This allows file artifacts to persist between steps.
 
-{{<highlight yaml "linenos=table,linenostart=5" >}}
+```yaml {linenos=table, linenostart=5}
 steps:
 - name: backend
   image: golang
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 The above commands are converted to a simple shell script. The commands in the above example are roughly converted to the below script:
 
-{{<highlight yaml "linenos=table" >}}
+```yaml {linenos=table}
 #!/bin/sh
 set -e
 set -x
 
 go build
 go test
-{{< / highlight >}}
+```
 
 The above shell script is then executed as the docker entrypoint. The below docker command is an (incomplete) example of how the script is executed:
 
@@ -70,7 +70,7 @@ The container exit code is used to determine whether the step is passing or fail
 
 The environment section provides the ability to define environment variables scoped to individual pipeline steps.
 
-{{<highlight yaml "linenos=table,hl_lines=4-6,linenostart=5" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["4-6"]}
 steps:
 - name: backend
   image: golang
@@ -80,7 +80,7 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 <!-- TODO
 See the Environment article for additional details:
@@ -93,12 +93,12 @@ Plugins are docker containers that encapsulate commands, and can be shared and r
 
 Example Slack plugin:
 
-{{<highlight yaml "linenos=table,hl_lines=5-9,linenostart=15" >}}
+```yaml {linenos=table, linenostart=15, hl_lines=["5-9"]}
 - name: notify
   image: plugins/slack
   settings:
     webhook: https://hooks.slack.com/services/...
-{{< / highlight >}}
+```
 
 The great thing about plugins is they are just Docker containers. This means you can easily encapsulate logic, bundle in a Docker container, and share your plugin with your organization or with the broader community.
 
@@ -110,7 +110,7 @@ Plugin Registry
 
 The when section provides the ability to conditionally limit the execution of steps at runtime. The below example limits step execution by branch, however, you can limit execution by event, reference, status and more.
 
-{{<highlight yaml "linenos=table,hl_lines=7-9,linenostart=5" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["7-9"]}
 steps:
 - name: backend
   image: golang
@@ -120,11 +120,11 @@ steps:
   when:
     branch:
     - master
-{{< / highlight >}}
+```
 
 Use the status condition to override the default runtime behavior and execute steps even when the pipeline status is failure:
 
-{{<highlight yaml "linenos=table,hl_lines=5-9,linenostart=15" >}}
+```yaml {linenos=table, linenostart=15, hl_lines=["5-9"]}
 - name: notify
   image: plugins/slack
   settings:
@@ -133,7 +133,7 @@ Use the status condition to override the default runtime behavior and execute st
     status:
     - failure
     - success
-{{< / highlight >}}
+```
 
 See the Conditions article for additional details:
 
@@ -143,7 +143,7 @@ See the Conditions article for additional details:
 
 The failure attribute lets you customize how the system handles failure of an individual step. This can be useful if you want to allow a step to fail without failing the overall pipeline.
 
-{{<highlight yaml "linenos=table,hl_lines=4,linenostart=5" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["4"]}
 steps:
 - name: backend
   image: golang
@@ -151,7 +151,7 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 # Detach
 
@@ -163,7 +163,7 @@ The target use case for this feature is to start a service or daemon, and then e
 Note that a detached step cannot fail the pipeline. The runner may ignore the exit code.
 </div>
 
-{{<highlight yaml "linenos=table,hl_lines=4,linenostart=5" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["4"]}
 steps:
 - name: backend
   image: golang
@@ -172,7 +172,7 @@ steps:
   - go build
   - go test
   - go run main.go -http=:3000
-{{< / highlight >}}
+```
 
 # Privileged Mode
 
@@ -182,7 +182,7 @@ The privileged attribute runs the container with escalated privileges. This is t
 This setting is only available to trusted repositories. Privileged mode effectively grants the container root access to your host machine. Please use with caution.
 </div>
 
-{{<highlight yaml "linenos=table,hl_lines=4,linenostart=5" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["4"]}
 steps:
 - name: backend
   image: golang
@@ -191,4 +191,4 @@ steps:
   - go build
   - go test
   - go run main.go -http=:3000
-{{< / highlight >}}
+```

@@ -10,7 +10,7 @@ description: |
 
 Use the `server` section to configure the remote ssh server. The runner connects to this server and executes pipeline commands using the ssh protocol.
 
-{{< highlight text "linenos=table,hl_lines=5-9" >}}
+```yaml {linenos=table, hl_lines=["5-9"]}
 kind: pipeline
 type: ssh
 name: default
@@ -25,13 +25,13 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 # Secrets
 
 In the above example we hard-coded the server address and login credentials. For security reasons you should source these values from secrets.
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=1-7" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["1-7"]}
 server:
   host:
     from_secret: host
@@ -45,11 +45,11 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 # SSH Keys
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=7-8" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["7-8"]}
 server:
   host:
     from_secret: host
@@ -57,4 +57,4 @@ server:
     from_secret: username
   ssh_key:
     from_secret: ssh_key
-{{< / highlight >}}
+```

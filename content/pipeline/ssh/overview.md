@@ -11,7 +11,7 @@ An `ssh` pipeline executes shell commands on remote servers using the ssh protoc
 
 Example pipeline configuration:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: ssh
@@ -29,21 +29,21 @@ steps:
   - echo hello world
 
 ...
-{{< / highlight >}}
+```
 
 The kind and type attributes define an ssh pipeline.
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: ssh
-{{< / highlight >}}
+```
 
 The steps section defines a series of shell commands. These commands are executed on the remote server using the ssh protocol. If any command returns a non-zero exit code, the pipeline fails and exits.
 
-{{< highlight text "linenos=table,linenostart=10" >}}
+```yaml {linenos=table, linenostart=10}
 steps:
 - name: greeting
   commands:
   - echo hello world
-{{< / highlight >}}
+```

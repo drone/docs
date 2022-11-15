@@ -31,7 +31,7 @@ The Jsonnet script returns one or many pipeline objects from the script's main m
 
 Example Starlark script:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 def main(ctx):
   return {
     "kind": "pipeline",
@@ -46,11 +46,11 @@ def main(ctx):
       }
     ]
   }
-{{< / highlight >}}
+```
 
 Equivalent Yaml configuartion:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 name: build
@@ -60,13 +60,13 @@ steps:
   image: alpine
   commands:
   - echo hello world
-{{< / highlight >}}
+```
 -->
 # Example
 
 Here is an example script that returns a pipeline configuration. _Please note the returned pipeline object uses the same structure as a pipeline defined in yaml._
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 {
     "kind": "pipeline",
     "type": "docker",
@@ -81,7 +81,7 @@ Here is an example script that returns a pipeline configuration. _Please note th
         }
     ]
 }
-{{< / highlight >}}
+```
 
 # Tooling
 

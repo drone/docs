@@ -12,7 +12,7 @@ The `nodes` section can be used to route pipelines to specific runners, or group
 A pipeline is not routed to a runner unless it matches all runner labels. If the pipeline only defines and matches a subset of runner labels it will not be routed to the runner.
 </div>
 
-{{< highlight yaml "linenos=table,hl_lines=11-13" >}}
+```yaml {linenos=table, hl_lines=["11-13"]}
 kind: pipeline
 type: exec
 name: default
@@ -26,4 +26,4 @@ steps:
 node:
   keyA: valueA
   keyB: valueB
-{{< / highlight >}}
+```

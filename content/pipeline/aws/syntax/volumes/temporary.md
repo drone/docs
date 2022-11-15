@@ -10,7 +10,7 @@ description: |
 
 Temporary mounts are docker volumes that are created before the pipeline starts and destroyed when the pipeline completes. This can be used to share files or folders among pipeline steps.
 
-{{<highlight yaml "linenos=table,hl_lines=8-10 17-19 23-25" >}}
+```yaml {linenos=table, hl_lines=["8-10", "17-19", "23-25"]}
 kind: pipeline
 type: vm
 name: default
@@ -39,4 +39,4 @@ steps:
 volumes:
 - name: cache
   temp: {}
-{{< / highlight >}}
+```

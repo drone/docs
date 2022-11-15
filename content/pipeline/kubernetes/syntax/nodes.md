@@ -10,7 +10,7 @@ description: |
 
 The `node_selector` section can be used to route pipelines to specific Kubernetes nodes, or groups of nodes, that have matching labels. This can be useful when you need to route pipelines to nodes with special configurations or hardware.
 
-{{< highlight text "linenos=table,hl_lines=11-14" >}}
+```yaml {linenos=table, hl_lines=["11-14"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -25,4 +25,4 @@ steps:
 node_selector:
   keyA: valueA
   keyB: valueB
-{{< / highlight >}}
+```

@@ -16,7 +16,7 @@ Learn more about HostAliases
 
 Example configuration:
 
-{{< highlight text "linenos=table,hl_lines=11-15" >}}
+```yaml {linenos=table, hl_lines=["11-15"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -31,4 +31,4 @@ host_aliases:
   - ip: 127.0.0.1
     hostnames:
       - www.baidu.com
-{{< / highlight >}}
+```

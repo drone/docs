@@ -9,7 +9,7 @@ description: |
 
 Use the `metadata` section to provide uniquely identify pipeline resources. Example configuration defines the pipeline namespace:
 
-{{< highlight text "linenos=table,hl_lines=5-6" >}}
+```yaml {linenos=table, hl_lines=["5-6"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -23,12 +23,12 @@ steps:
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 
 Example with annotations:
 
-{{< highlight text "linenos=table,hl_lines=7-9" >}}
+```yaml {linenos=table, hl_lines=["7-9"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -38,11 +38,11 @@ metadata:
   annotations:
     key1: value1
     key2: value2
-{{< / highlight >}}
+```
 
 Example with labels:
 
-{{< highlight text "linenos=table,hl_lines=7-9" >}}
+```yaml {linenos=table, hl_lines=["7-9"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -52,4 +52,4 @@ metadata:
   labels:
     key1: value1
     key2: value2
-{{< / highlight >}}
+```

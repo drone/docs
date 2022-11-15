@@ -10,7 +10,7 @@ description: |
 
 Temporary mounts are docker volumes that are created before the pipeline start and destroyed when the pipeline completes. They can be used to share files or folders among pipeline steps.
 
-{{< highlight text "linenos=table,hl_lines=8-10 17-19 23-25" >}}
+```yaml {linenos=table, hl_lines=["8-10", "17-19", "23-25"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -36,11 +36,11 @@ steps:
 volumes:
 - name: cache
   temp: {}
-{{< / highlight >}}
+```
 
 `tmpfs` can be used to speed up pipelines by storing files frequently wrote and read in memory instead of hard drive.
 
-{{< highlight text "linenos=table,hl_lines=15-18" >}}
+```yaml {linenos=table, hl_lines=["15-18"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -59,4 +59,4 @@ volumes:
 - name: cache
   temp:
     medium: memory
-{{< / highlight >}}
+```

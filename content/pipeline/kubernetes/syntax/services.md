@@ -10,7 +10,7 @@ description: |
 
 Drone supports launching detached service containers as part of your pipeline. The typical use case for services is when your unit tests require a running redis server, for example:
 
-{{< highlight text "linenos=table,hl_lines=5-7" >}}
+```yaml {linenos=table, hl_lines=["5-7"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -18,11 +18,11 @@ name: default
 services:
 - name: cache
   image: redis
-{{< / highlight >}}
+```
 
 Service containers share the same network as your pipeline steps and can be access at the localhost address. In our previous example, the redis container can be accessed from the pipeline at `tcp://127.0.0.1:6379`
 
-{{< highlight text "linenos=table,hl_lines=9" >}}
+```yaml {linenos=table, hl_lines=["9"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -36,7 +36,7 @@ steps:
 services:
 - name: cache
   image: redis
-{{< / highlight >}}
+```
 
 It is important to note the service container exit code is ignored, and a non-zero exit code does not fail the overall pipeline. Drone expects service containers to exit with a non-zero exit code, since they often need to be killed after the pipeline completes.
 
@@ -44,7 +44,7 @@ It is important to note the service container exit code is ignored, and a non-ze
 
 Services can also be defined directly in the pipeline, as detached pipeline steps. This can be useful when you need direct control over when the service is started, relative to other steps in your pipeline.
 
-{{< highlight text "linenos=table,hl_lines=8" >}}
+```yaml {linenos=table, hl_lines=["8"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -58,7 +58,7 @@ steps:
   image: redis
   commands:
   - redis-cli ping
-{{< / highlight >}}
+```
 
 # Common Problems
 

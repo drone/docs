@@ -16,7 +16,7 @@ Learn more about Taints and Tolerations
 
 Example configuration:
 
-{{< highlight text "linenos=table,hl_lines=11-15" >}}
+```yaml {linenos=table, hl_lines=["11-15"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -32,4 +32,4 @@ tolerations:
 - key: example-key
   operator: Exists
   effect: NoSchedule
-{{< / highlight >}}
+```

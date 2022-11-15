@@ -25,7 +25,7 @@ Docker pipelines execute pipeline commands inside ephemeral Docker containers. D
 
 Example pipeline configuration:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: docker
@@ -39,23 +39,23 @@ steps:
   - go test
 
 ...
-{{< / highlight >}}
+```
 
 The kind and type attributes define a Docker pipeline.
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: docker
-{{< / highlight >}}
+```
 
 The `steps` section defines a series of shell commands. These commands are executed inside the Docker container as the `Entrypoint`. If any command returns a non-zero exit code, the pipeline fails and exits.
 
-{{< highlight text "linenos=table,linenostart=6" >}}
+```yaml {linenos=table, linenostart=6}
 steps:
 - name: greeting
   image: golang:1.12
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```

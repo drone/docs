@@ -34,7 +34,7 @@ Please note that you can use any Docker image in your pipeline from any Docker r
 
 If you decide to split your pipeline into multiple steps you need to make sure each step has access to project dependencies. Dependencies are downloaded to `/go` which is outside the shared workspace. Create a named volume to share this directory with all pipeline steps:
 
-{{< highlight yaml "hl_lines=7-9 15-17 21-23" >}}
+```yaml {linenos=table, hl_lines=["7-9", "15-17", "21-23"]}
 kind: pipeline
 name: default
 
@@ -58,7 +58,7 @@ steps:
 volumes:
 - name: deps
   temp: {}
-{{< / highlight >}}
+```
 
 # Test Multiple Versions
 

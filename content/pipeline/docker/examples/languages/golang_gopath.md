@@ -35,7 +35,7 @@ Please note that you can use any Docker image in your pipeline from any Docker r
 
 If you are not using Go modules you will need to override the default project workspace to ensure your code is cloned to the correct location in the `GOPATH`.
 
-{{< highlight yaml "hl_lines=4-6" >}}
+```yaml {linenos=table, hl_lines=["4-6"]}
 kind: pipeline
 name: default
 
@@ -49,13 +49,13 @@ steps:
   commands:
   - go get
   - go test
-{{< / highlight >}}
+```
 
 # Test Multiple Versions
 
 You can use Drone's multi-pipeline feature to concurrently test against multiple versions of Go. This is equivalent to matrix capabilities found in other continuous integration systems.
 
-```
+```yaml {linenos=table}
 ---
 kind: pipeline
 name: go-1-11
@@ -83,7 +83,7 @@ steps:
 
 If you find this syntax too verbose we recommend using jsonnet. If you are unfamiliar with jsonnet please read our guide.
 
-```
+```yaml {linenos=table}
 local Pipeline(name, image) = {
   kind: "pipeline",
   name: name,
@@ -109,7 +109,7 @@ local Pipeline(name, image) = {
 
 You can use Drone's multi-pipeline feature to concurrently test your code on multiple architectures and operating systems.
 
-```
+```yaml {linenos=table}
 ---
 kind: pipeline
 name: test-on-amd64

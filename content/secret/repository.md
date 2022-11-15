@@ -39,6 +39,11 @@ steps:
       from_secret: docker_username
     PASSWORD:
       from_secret: docker_password
+  commands:
+    - echo "You can call the secrets like this examples below."
+    - echo $USERNAME
+    - echo $PASSWORD
+    - echo "In both cases, and for security reasons, you will see asteriks '*******' instead the value under the echo command."
 ```
 
 Source plugin settings from named secrets:
@@ -56,6 +61,11 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
+  commands:
+    - echo "You can call the secrets like this examples below."
+    - echo $USERNAME
+    - echo $PASSWORD
+    - echo "In both cases, and for security reasons, you will see asteriks '*******' instead the value under the echo command."
 {{< / highlight >}}
 
 # Pull Requests

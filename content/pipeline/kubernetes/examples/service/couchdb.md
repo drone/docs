@@ -44,7 +44,7 @@ If you are unable to connect to the CouchDB container please make sure you
 are giving the instance adequate time to initialize and begin accepting
 connections.
 
-{{< highlight yaml "linenos=table,hl_lines=9" >}}
+```yaml {linenos=table, hl_lines=["9"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -55,4 +55,4 @@ steps:
   commands:
   - sleep 15
   - curl http://localhost:5984
-{{< / highlight >}}
+```

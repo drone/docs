@@ -27,7 +27,7 @@ A `kubernetes` pipeline executes pipeline steps as containers inside a Kubernete
 
 Example pipeline configuration:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: kubernetes
@@ -41,32 +41,32 @@ steps:
   - go test
 
 ...
-{{< / highlight >}}
+```
 
 The kind and type attributes define a Kubernetes pipeline.
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: kubernetes
-{{< / highlight >}}
+```
 
 The `steps` section defines a series of shell commands. These commands are executed inside the Docker container as the `Entrypoint`. If any command returns a non-zero exit code, the pipeline fails and exits.
 
-{{< highlight text "linenos=table,linenostart=6" >}}
+```yaml {linenos=table, linenostart=6}
 steps:
 - name: greeting
   image: golang:1.12
   commands:
   - go build
   - go test
-{{< / highlight >}}
+```
 
 To bind a non-default service account to a pipeline and allow for more fine-grained access to resouces, do the following:
 
-{{< highlight text "linenos=table" >}}
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: kubernetes
 service_account_name: builder
-{{< / highlight >}}
+```

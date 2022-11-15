@@ -13,7 +13,7 @@ This guide covers configuring continuous integration pipelines for Go projects t
 
 In the below example we demonstrate a pipeline that executes `go test` and `go build` commands. These commands are executed inside the golang Docker container, downloaded at runtime from DockerHub.
 
-```
+```yaml {linenos=table}
 kind: pipeline
 type: kubernetes
 name: default
@@ -32,7 +32,7 @@ Please note that you can use any Docker image in your pipeline from any Docker r
 
 If you decide to split your pipeline into multiple steps you need to make sure each step has access to project dependencies. Dependencies are downloaded to `/go` which is outside the shared workspace. Create a named volume to share this directory with all pipeline steps:
 
-{{< highlight yaml "hl_lines=8-10 16-18 22-24" >}}
+```yaml {linenos=table, hl_lines=["8-10 16-18 22-24"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -57,13 +57,13 @@ steps:
 volumes:
 - name: deps
   temp: {}
-{{< / highlight >}}
+```
 
 # Test Multiple Versions
 
 You can use Drone's multi-pipeline feature to concurrently test against multiple versions of Go. This is equivalent to matrix capabilities found in other continuous integration systems.
 
-```
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: kubernetes
@@ -93,7 +93,7 @@ steps:
 
 If you find this syntax too verbose we recommend using jsonnet. If you are unfamiliar with jsonnet please read our guide.
 
-```
+```yaml {linenos=table}
 local Pipeline(name, image) = {
   kind: "pipeline",
   type: "kubernetes",
@@ -120,7 +120,7 @@ local Pipeline(name, image) = {
 
 You can use Drone's multi-pipeline feature to concurrently test your code on multiple architectures and operating systems.
 
-```
+```yaml {linenos=table}
 ---
 kind: pipeline
 type: kubernetes

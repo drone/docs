@@ -15,7 +15,7 @@ This guide covers configuring continuous integration pipelines for projects that
 
 In the below example we demonstrate a pipeline that launches a Redis service container. The server can be reached at `localhost:6379`.
 
-{{< highlight yaml "linenos=table,hl_lines=13-16" >}}
+```yaml {linenos=table, hl_lines=["13-16"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -32,7 +32,7 @@ steps:
 services:
 - name: redis
   image: redis
-{{< / highlight >}}
+```
 
 # Common Problems
 
@@ -40,7 +40,7 @@ If you are unable to connect to the Redis container please make sure you
 are giving Redis adequate time to initialize and begin accepting
 connections.
 
-{{< highlight yaml "linenos=table,hl_lines=9" >}}
+```yaml {linenos=table, hl_lines=["9"]}
 kind: pipeline
 type: kubernetes
 name: default
@@ -51,4 +51,4 @@ steps:
   commands:
   - sleep 15
   - redis-cli -h localhost ping
-{{< / highlight >}}
+```

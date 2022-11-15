@@ -138,7 +138,7 @@ OPERATION	        | DESC
 
 Parameter expressions are evaluated _before_ the yaml is parsed. If you do not want the system to evaluate an expression it must be escaped.
 
-{{< highlight text "linenos=table,hl_lines=9" >}}
+```yaml {linenos=table, hl_lines=["9"]}
 kind: pipeline
 type: docker
 name: default
@@ -150,7 +150,7 @@ steps:
   - echo $${GOARCH}
   - go build
   - go test
-{{< / highlight >}}
+```
 
 # Common Problems
 
@@ -163,7 +163,7 @@ cannot unmarshal !!map into string
 
 This can be resolved by quoting parameters to ensure special / reserved characters are escaped:
 
-{{< highlight text "linenos=table,hl_lines=10" >}}
+```yaml {linenos=table, hl_lines=["10"]}
 kind: pipeline
 type: docker
 name: default
@@ -174,4 +174,4 @@ steps:
   settings:
     channel: team
     message: "${DRONE_COMMIT}"
-{{< / highlight >}}
+```

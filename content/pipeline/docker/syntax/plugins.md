@@ -27,7 +27,7 @@ Plugins are docker containers that encapsulate commands, and can be shared and r
 
 Example Slack plugin:
 
-{{< highlight text "linenos=table,hl_lines=12-15" >}}
+```yaml {linenos=table, hl_lines=["12-15"]}
 kind: pipeline
 type: docker
 name: default
@@ -43,7 +43,7 @@ steps:
   image: plugins/slack
   settings:
     webhook: https://hooks.slack.com/services/...
-{{< / highlight >}}
+```
 
 As you can see plugins are just Docker containers. Anyone can encapsulate logic, bundle as a Docker image, and publish to a Docker registry to share with their organization, or with the broader community.
 
@@ -57,7 +57,7 @@ Drone provides the ability to source any configuration parameter from a named se
 
 Example Slack plugin using secrets:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=11-12" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["11-12"]}
 steps:
 - name: build
   image: node
@@ -70,11 +70,11 @@ steps:
   settings:
     webhook:
       from_secret: webhook
-{{< / highlight >}}
+```
 
 Example NPM plugin using secrets:
 
-{{< highlight text "linenos=table,linenostart=5,hl_lines=11-14" >}}
+```yaml {linenos=table, linenostart=5, hl_lines=["11-14"]}
 steps:
 - name: build
   image: node
@@ -89,7 +89,7 @@ steps:
       from_secret: username
     password:
       from_secret: password
-{{< / highlight >}}
+```
 
 # Registry
 

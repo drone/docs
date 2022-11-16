@@ -345,12 +345,6 @@ The action trigger limits execution based on the action associated with the even
 Action support varies by event and SCM provider.
 </div>
 
-```yaml {linenos=table, linenostart=12}
-trigger:
-  action:
-  - labeled
-```
-
 Execute when a pull request is opened:
 
 ```yaml {linenos=table, linenostart=12}

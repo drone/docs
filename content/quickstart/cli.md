@@ -93,7 +93,7 @@ The command line runner requires a working Docker installation. Drone executes y
 
 # Workspace
 
-The command line runner mounts your current working directory, using docker volumes, as the working directory of your pipeline steps. The exposes your code to your pipeline. _The clone step is therefore skipped when running locally._
+The command line runner mounts your current working directory, using docker volumes, as the working directory of your pipeline steps. This exposes your code to your pipeline. _The clone step is therefore skipped when running locally._
 
 # Run Specific Pipelines
 

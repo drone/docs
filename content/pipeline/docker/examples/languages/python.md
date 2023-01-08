@@ -26,7 +26,7 @@ steps:
   - pytest
 ```
 
-Please note that you can use any Docker image in your pipeline from any Docker registry. You can use the official python [images](https://hub.docker.com/r/_/python/), or your can bring your own.
+Please note that you can use any Docker image in your pipeline from any Docker registry. You can use the official python [images](https://hub.docker.com/r/_/python/), or you can bring your own.
 
 ## Test Multiple Versions
 

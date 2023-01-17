@@ -57,8 +57,9 @@ Drone provides the following official libraries for integrating with the remote 
 
 Community libraries:
 
-* [github.com/tinvaan/pydroneio](https://github.com/tinvaan/pydroneio)
-* [github.com/amir1430/drone-dart](https://github.com/amir1430/drone-dart)
+* [github.com/tinvaan/pydroneio](https://github.com/tinvaan/pydroneio) (Python)
+* [github.com/amir1430/drone-dart](https://github.com/amir1430/drone-dart) (Dart)
+* [https://github.com/yahaha-yes/drone-api-java.git](https://github.com/yahaha-yes/drone-api-java.git) (Java)
 
 <!--
 Language | Repository

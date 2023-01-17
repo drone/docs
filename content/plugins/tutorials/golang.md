@@ -30,23 +30,24 @@ Create a Go program that makes an http request using the Yaml configuration para
 package main
 
 import (
-  "net/http"
-  "os"
+	"net/http"
+	"os"
+	"strings"
 )
 
 func main() {
-  body := strings.NewReader(
-    os.GetEnv("PLUGIN_BODY"),
-  )
+	body := strings.NewReader(
+		os.Getenv("PLUGIN_BODY"),
+	)
 
-  req, err := http.NewRequest(
-    os.GetEnv("PLUGIN_METHOD"),
-    os.GetEnv("PLUGIN_URL"),
-    body,
-  )
-  if err != nil {
-    os.Exit(1)
-  }
+	_, err := http.NewRequest(
+		os.Getenv("PLUGIN_METHOD"),
+		os.Getenv("PLUGIN_URL"),
+		body,
+	)
+	if err != nil {
+		os.Exit(1)
+	}
 }
 ```
 

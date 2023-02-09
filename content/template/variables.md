@@ -68,7 +68,6 @@ Starlark example usage:
 
 Yaml example usage:
 ```
-Yaml example usage:
 - uid: {{ .repo.uid }}
 ```
 

@@ -42,7 +42,7 @@ Example Response Body:
 }
 ```
 
-As mentioned above, this endpoint disables but does not delete the repository. Use the `remove` query parameter to delete the repository from the database. _Please note the repository is automatically re-added to the database when you perform your next sync operation._
+As mentioned above, this endpoint disables but does not delete the repository. Use the `remove` query parameter to delete the repository from the database. _Please note the repository may be automatically re-added to the database when you perform your next sync operation, if the repository still exists in your source control management system._
 
 ```
 DELETE /api/repos/{owner}/{repo}?remove=true

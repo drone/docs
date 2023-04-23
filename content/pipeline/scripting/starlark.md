@@ -125,6 +125,56 @@ def main(ctx):
 
 _Please note that you can still create pipeline objects with `trigger` stanzas and pipeline steps with `when` stanzas._
 
+## Context variable
+
+ctx has these attributes.
+
+```
+	"ctx.build": {
+		"event":         starlark.String(v.Event),
+		"action":        starlark.String(v.Action),
+		"cron":          starlark.String(v.Cron),
+		"environment":   starlark.String(v.Deploy),
+		"link":          starlark.String(v.Link),
+		"branch":        starlark.String(v.Target),
+		"source":        starlark.String(v.Source),
+		"before":        starlark.String(v.Before),
+		"after":         starlark.String(v.After),
+		"target":        starlark.String(v.Target),
+		"ref":           starlark.String(v.Ref),
+		"commit":        starlark.String(v.After),
+		"title":         starlark.String(v.Title),
+		"message":       starlark.String(v.Message),
+		"source_repo":   starlark.String(v.Fork),
+		"author_login":  starlark.String(v.Author),
+		"author_name":   starlark.String(v.AuthorName),
+		"author_email":  starlark.String(v.AuthorEmail),
+		"author_avatar": starlark.String(v.AuthorAvatar),
+		"sender":        starlark.String(v.Sender),
+		"debug":         starlark.Bool(v.Debug),
+		"params":        fromMap(v.Params),
+	},
+	"ctx.repo": {
+		"uid":                  starlark.String(v.UID),
+		"name":                 starlark.String(v.Name),
+		"namespace":            starlark.String(v.Namespace),
+		"slug":                 starlark.String(v.Slug),
+		"git_http_url":         starlark.String(v.HTTPURL),
+		"git_ssh_url":          starlark.String(v.SSHURL),
+		"link":                 starlark.String(v.Link),
+		"branch":               starlark.String(v.Branch),
+		"config":               starlark.String(v.Config),
+		"private":              starlark.Bool(v.Private),
+		"visibility":           starlark.String(v.Visibility),
+		"active":               starlark.Bool(v.Active),
+		"trusted":              starlark.Bool(v.Trusted),
+		"protected":            starlark.Bool(v.Protected),
+		"ignore_forks":         starlark.Bool(v.IgnoreForks),
+		"ignore_pull_requests": starlark.Bool(v.IgnorePulls),
+	},
+	"ctx.input": {}
+```
+
 # Tooling
 
 You can automatically convert your Starlark configuration file to yaml using the command line tools. This can be useful for local testing.

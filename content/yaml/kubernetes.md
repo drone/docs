@@ -12,6 +12,8 @@ description: |
 
 This document introduces the data structures that represent the _kubernetes pipeline_. The Kubernetes pipeline is a continuous integration pipeline that executes pipeline steps as containers inside Kubernetes Pods.
 
+<a id="the-resource-interface"></a>
+
 # The `Resource` interface
 
 The [`Resource`](#the-resource-interface) interface is implemented by all top-level objects, including the kubernetes [`Pipeline`](#the-pipeline-object).
@@ -26,25 +28,37 @@ interface Resource {
 }
 {{< / highlight >}}
 
+<a id="the-kind-attribute"></a>
+
 ## The `kind` attribute
 
 Defines the kind of resource, used to identify the resource implementation. This attribute is of type `string` and is required.
+
+<a id="the-type-attribute"></a>
 
 ## The `type` attribute
 
 Defines the type of resource, used to identify the resource implementation. This attribute is of type `string` and is required.
 
+<a id="the-name-attribute"></a>
+
 ## The `name` attribute
 
 The name of the resource. This value is required and must match `[a-zA-Z0-9_-]`. This value is displayed in the user interface (non-normative) and is used to identify the pipeline (non-normative).
+
+<a id="the-concurrency-attribute"></a>
 
 ## The `concurrency` attribute
 
 Defines the concurrency limits for the pipeline stage. This attribute is of type [`Concurrency`](#the-concurrency-object) and is optional.
 
+<a id="the-depends_on-attribute"></a>
+
 ## The `depends_on` attribute
 
 Defines a list of pipeline dependencies, used to defer execution of the pipeline until the named pipelines are in a completed state. This attribute is an array of type `string` and is optional.
+
+<a id="the-pipeline-object"></a>
 
 # The `Pipeline` object
 
@@ -67,41 +81,61 @@ class Pipeline : Resource {
 }
 {{< / highlight >}}
 
+<a id="the-kind-attribute"></a>
+
 ## The `kind` attribute
 
 The kind of resource. This value must be set to `pipeline`.
+
+<a id="the-type-attribute"></a>
 
 ## The `type` attribute
 
 The type of resource. This value must be set to `kubernetes`.
 
+<a id="the-platform-section"></a>
+
 ## The `platform` section
 
 The target operating system and architecture on which the pipeline must execute. This attribute is of type [`Platform`](#the-platform-object) and is recommended. If empty, the default operating system and architecture may be `linux` and `amd64` respectively.
+
+<a id="the-workspace-section"></a>
 
 ## The `workspace` section
 
 The working directory where the source code is cloned and the default working directory for each pipeline step. This attribute is of type [`Workspace`](#the-workspace-object) and is optional.
 
+<a id="the-clone-section"></a>
+
 ## The `clone` section
 
 Defines the pipeline clone behavior and can be used to disable automatic cloning. This attribute is of type [`Clone`](#the-clone-object) and is optional.
+
+<a id="the-steps-section"></a>
 
 ## The `steps` section
 
 Defines the pipeline steps. This attribute is an array of type [`Step`](#the-step-object) and is required. The array must not be empty and the order of the array must be retained.
 
+<a id="the-node-attribute"></a>
+
 ## The `node` attribute
 
 Defines key value pairs used to route the pipeline to a specific runner or group of runners. This attribute is of type `[string, string]` and is optional.
+
+<a id="the-trigger-section"></a>
 
 ## The `trigger` section
 
 The conditions used to determine whether or not the pipeline should be skipped. This attribute is of type [`Conditions`](#the-conditions-object) and is optional.
 
+<a id="the-image_pull_secrets-attribute"></a>
+
 ## The `image_pull_secrets` attribute
 
 The list of secrets used to pull private Docker images; This attribute is an array of type `string` and is optional.
+
+<a id="the-platform-object"></a>
 
 # The `Platform` object
 
@@ -116,21 +150,31 @@ class Platform {
 }
 {{< / highlight >}}
 
+<a id="the-os-attribute"></a>
+
 ## The `os` attribute
 
 Defines the target operating system. The attribute is an enumeration of type `OS` and is recommended. If empty the operating system may default to Linux.
+
+<a id="the-arch-attribute"></a>
 
 ## The `arch` attribute
 
 Defines the target architecture. The attribute is an enumeration of type `Arch` and is recommended. If empty the architecture may default to amd64.
 
+<a id="the-variant-attribute"></a>
+
 ## The `variant` attribute
 
 Defines the architecture variant. This is most commonly used in conjunction with the arm architecture (non-normative) and can be used to differentiate between armv7, armv8, and so on (non-normative).
 
+<a id="the-version-attribute"></a>
+
 ## The `version` attribute
 
 Defines the operating system version. This is most commonly used in conjunction with the windows operating system (non-normative) and can be used to differentiate between 1809, 1903, and so on (non-normative).
+
+<a id="the-clone-object"></a>
 
 # The `Clone` object
 
@@ -143,13 +187,19 @@ class Clone {
 }
 {{< / highlight >}}
 
+<a id="the-depth-attribute"></a>
+
 ## The `depth` attribute
 
 Configures the clone depth. This is an optional `number` value. If empty the full repository may be cloned (non-normative).
 
+<a id="the-disable-attribute"></a>
+
 ## The `disable` attribute
 
 Disables cloning the repository. This is an optional `boolean` value. It can be useful when you need to disable implement your own custom clone logic (non-normative).
+
+<a id="the-step-object"></a>
 
 # The `Step` object
 
@@ -174,58 +224,85 @@ class Step {
 }
 {{< / highlight >}}
 
+<a id="the-commands-attribute"></a>
 
 ## The `commands` attribute
 
 Defines a list of shell commands executed inside the Docker container. The commands are executed using the default container shell (non-normative) as the container `ENTRYPOINT`. This attribute is an array of type `string` and is required.
 
+<a id="the-command-attribute"></a>
+
 ## The `command` attribute
 
 Overrides the image `COMMAND`. This should only be used with service containers and cannot not be used with the `commands` attribute. This attribute is an array of type `[string]` and is optional.
+
+<a id="the-detach-attribute"></a>
 
 ## The `detach` attribute
 
 The detach attribute instructions the system to start the Docker container and then run in the background. This value is of type `boolean` and is optional.
 
+<a id="the-entrypoint-attribute"></a>
+
 ## The `entrypoint` attribute
 
 Overrides the image `ENTRYPOINT`. This should only be used with service containers and cannot not be used with the `commands` attribute. This attribute is an array of type `[string]` and is optional.
+
+<a id="the-environment-attribute"></a>
 
 ## The `environment` attribute
 
 Defines a list of environment variables scoped to the pipeline step. This attribute is of type `[string, string | Secret]` and is optional.
 
+<a id="the-failure-attribute"></a>
+
 ## The `failure` attribute
 
 Defines how the system handles failure. The default value is `always` indicating a failed step always fails the overall pipeline. A value of `ignore` indicates the failure is ignored. This attribute is of enumeration [`Failure`](#the-failure-enum) and is optional.
+
+<a id="the-image-attribute"></a>
 
 ## The `image` attribute
 
 The name of the Docker image. The image name should include the tag and will default to the latest tag if unspecified. This value is of type `string` and is required.
 
+<a id="the-name-attribute"></a>
+
 ## The `name` attribute
 
 The name of the step. This value is required and must match [a-zA-Z0-9_-]. This value is displayed in the user interface (non-normative) and is used to identify the step (non-normative).
+
+<a id="the-privileged-attribute"></a>
 
 ## The `privileged` attribute
 
 Overrides the default Docker security policy and grants the container nearly full access to the host machine. This attribute is of type `boolean` and is optional.
 
+<a id="the-pull-attribute"></a>
+
 ## The `pull` attribute
 
 Defines how and when the system should pull images. This attribute is of enumeration [`Pull`](#the-pull-enum) and is optional.
+
+<a id="the-user-attribute"></a>
 
 ## The `user` attribute
 
 Overrides the default username or uid used when executing the pipeline commands or entrypoint. This attribute is of type `string` and is optional.
 
+<a id="the-when-section"></a>
+
 ## The `when` section
 
 The conditions used to determine whether or not the step should be skipped. This attribute is of type [`Conditions`](#the-conditions-object) and is optional.
 
+<a id="the-depends_on-attribute"></a>
+
 ## The `depends_on` attribute
 
 Defines a list of steps dependencies, used to defer step execution until the named steps are in a completed state. This attribute is of type `string` and is optional.
+
+<a id="the-conditions-object"></a>
 
 # The `Conditions` object
 
@@ -245,41 +322,61 @@ class Conditions {
 }
 {{< / highlight >}}
 
+<a id="the-action-attribute"></a>
+
 ## The `action` attribute
 
 Defines matching criteria based on the build action. The build action is synonymous with a webhook action (non-normative). This attribute is of type [`Constraint`](#the-constraint-object) or an array of type `string` and is optional.
+
+<a id="the-branch-attribute"></a>
 
 ## The `branch` attribute
 
 Defines matching criteria based on the git branch. This attribute is of type [`Constraint`](#the-constraint-object) or an array of type `string` and is optional.
 
+<a id="the-cron-attribute"></a>
+
 ## The `cron` attribute
 
 Defines matching criteria based on the cron job that triggered the build. This attribute is of type [`Constraint`](#the-constraint-object) or an array of type `string` and is optional.
+
+<a id="the-event-attribute"></a>
 
 ## The `event` attribute
 
 Defines matching criteria based on the build event. The build event is synonymous with a webhook event (non-normative). This attribute is of type [`Constraint`](#the-constraint-object) or an array of type [`Event`](#the-event-enum) and is optional.
 
+<a id="the-instance-attribute"></a>
+
 ## The `instance` attribute
 
 Defines matching criteria based on the instance hostname. This attribute is of type [`Constraint`](#the-constraint-object) or an array of type `string` and is optional.
+
+<a id="the-ref-attribute"></a>
 
 ## The `ref` attribute
 
 Defines matching criteria based on the git reference. This attribute is of type [`Constraint`](#the-constraint-object) or an array of type `string` and is optional.
 
+<a id="the-repo-attribute"></a>
+
 ## The `repo` attribute
 
 Defines matching criteria based on the repository name. This attribute is of type [`Constraint`](#the-constraint-object) or an array of type `string` and is optional.
+
+<a id="the-status-attribute"></a>
 
 ## The `status` attribute
 
 Defines matching criteria based on the pipeline status. This attribute is of type [`Constraint`](#the-constraint-object) or an array of type [`Status`](#the-status-enum) and is optional.
 
+<a id="the-target-attribute"></a>
+
 ## The `target` attribute
 
 Defines matching criteria based on the target environment. The target environment is typically defined by a promote or rollback event (non-normative). This attribute is of type [`Constraint`](#the-constraint-object) or an array of type `string` and is optional.
+
+<a id="the-constraint-object"></a>
 
 # The `Constraint` object
 
@@ -292,13 +389,19 @@ class Constraint {
 }
 {{< / highlight >}}
 
+<a id="the-include-attribute"></a>
+
 ## The `include` attribute
 
 List of matching patterns. If no pattern is a match, the parent object is skipped. This attribute is an array of type `string` and is optional.
 
+<a id="the-exclude-attribute"></a>
+
 ## The `exclude` attribute
 
 List of matching patterns. If any pattern is a match, the parent object is skipped. This attribute is an array of type `string` and is optional.
+
+<a id="the-secret-object"></a>
 
 # The `Secret` object
 
@@ -310,6 +413,8 @@ class Secret {
 }
 {{< / highlight >}}
 
+<a id="the-concurrency-object"></a>
+
 # The `Concurrency` object
 
 The [`Concurrency`](#the-concurrency-object) object defines the concurrency limits for the named pipeline.
@@ -319,6 +424,8 @@ class Concurrency {
   limit: number;
 }
 {{< / highlight >}}
+
+<a id="the-workspace-object"></a>
 
 # The `Workspace` object
 
@@ -331,6 +438,8 @@ class Workspace {
 {{< / highlight >}}
 
 # Enums
+
+<a id="the-event-enum"></a>
 
 ## The `Event` enum
 
@@ -347,6 +456,8 @@ enum Event {
 }
 {{< / highlight >}}
 
+<a id="the-status-enum"></a>
+
 ## The `Status` enum
 
 The `Status` enum provides a list of pipeline statuses. The default pipeline state is `success`, even if the pipeline is still running.
@@ -357,6 +468,8 @@ enum Status {
   success,
 }
 {{< / highlight >}}
+
+<a id="the-pull-enum"></a>
 
 ## The `Pull` enum
 
@@ -370,6 +483,8 @@ enum Pull {
 }
 {{< / highlight >}}
 
+<a id="the-failure-enum"></a>
+
 ## The `Failure` enum
 
 The `Failure` enum defines a list of failure behaviors. The value `always` indicates a failure will fail the parent process. The value `ignore` indicates the failure is silently ignored.
@@ -380,6 +495,8 @@ enum Failure {
   ignore,
 }
 {{< / highlight >}}
+
+<a id="the-os-enum"></a>
 
 ## The `OS` enum
 
@@ -397,6 +514,8 @@ enum OS {
   windows,
 }
 {{< / highlight >}}
+
+<a id="the-arch-enum"></a>
 
 ## The `Arch` enum
 

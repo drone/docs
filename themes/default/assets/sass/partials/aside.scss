@@ -67,18 +67,18 @@ aside #TableOfContents {
     }
     #TableOfContents ul {
         counter-reset: item;
-        padding-left: 0px !important;
     }
     #TableOfContents > ul > li {
         counter-increment: item;
         margin-bottom: 30px;
     }
     #TableOfContents > ul > li > a:before {
-        content: counters(item, ".") " ";
+        content: counters(item, ".") ".";
         display: inline-block;
-        width: 40px;
-        font-weight: 600;
-        color: #4a5568;
+        padding-right: 8px;
+        color: $gray-600;
+        line-height: $leading-snug;
+        text-decoration: none;
     }
     #TableOfContents > ul > li > ul > li {
         counter-increment: item;
@@ -86,7 +86,7 @@ aside #TableOfContents {
     #TableOfContents > ul > li > ul > li > a:before {
         content: counters(item, ".") " ";
         display: inline-block;
-        width: 40px;
+        padding-right: 8px;
     }
 }
 

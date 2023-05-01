@@ -5,6 +5,7 @@ title_in_card: Exec Pipeline Specification
 author: bradrydzewski
 weight: 4
 toc: true
+type: spec
 
 description: |
   Exec pipeline specification document.

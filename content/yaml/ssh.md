@@ -5,8 +5,6 @@ title_in_card: SSH Pipeline Specification
 author: bradrydzewski
 weight: 4
 toc: true
-type: spec
-hidden: true
 
 description: |
   SSH pipeline specification document.

@@ -5,8 +5,6 @@ title_in_card: Docker Pipeline Specification
 author: bradrydzewski
 weight: 4
 toc: true
-type: spec
-hidden: true
 
 description: |
   Docker pipeline specification document.

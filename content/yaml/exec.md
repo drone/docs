@@ -18,7 +18,7 @@ This document introduces the data structures that represent the _exec pipeline_.
 
 The [`Resource`](#the-resource-interface) interface is implemented by all top-level objects, including the exec [`Pipeline`](#the-pipeline-object).
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 interface Resource {
   kind: string;
   type: string;
@@ -26,7 +26,7 @@ interface Resource {
   concurrency: Concurrency;
   depends_on: string[];
 }
-{{< / highlight >}}
+```
 
 <a id="the-kind-attribute"></a>
 
@@ -64,7 +64,7 @@ Defines a list of pipeline dependencies, used to defer execution of the pipeline
 
 The [`Pipeline`](#the-pipeline-object) is the top-level object used to represent the exec pipeline. The [`Pipeline`](#the-pipeline-object) object implements the [`Resource`](#the-resource-interface) interface.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Pipeline : Resource {
   kind:      string;
   type:      string;
@@ -75,7 +75,7 @@ class Pipeline : Resource {
   steps:     Step[];
   trigger:   Conditions;
 }
-{{< / highlight >}}
+```
 
 <a id="the-kind-attribute"></a>
 
@@ -125,14 +125,14 @@ The conditions used to determine whether or not the pipeline should be skipped. 
 
 The [`Platform`](#the-platform-object) object defines the target os and architecture for the pipeline and is used to route the pipeline to the correct instance (non-normative).
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Platform {
   os:      OS;
   arch:    Arch;
   variant: string;
   version: string;
 }
-{{< / highlight >}}
+```
 
 <a id="the-os-attribute"></a>
 
@@ -164,12 +164,12 @@ Defines the operating system version. This is most commonly used in conjunction 
 
 The [`Clone`](#the-clone-object) object defines the clone behavior for the pipeline.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Clone {
   depth:   number;
   disable: boolean;
 }
-{{< / highlight >}}
+```
 
 <a id="the-depth-attribute"></a>
 
@@ -189,7 +189,7 @@ Disables cloning the repository. This is an optional `boolean` value. It can be 
 
 The `Step` object defines a pipeline step.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Step {
   name:        string;
   failure:     Failure;
@@ -198,7 +198,7 @@ class Step {
   when:        Conditions;
   depends_on:  string[];
 }
-{{< / highlight >}}
+```
 
 <a id="the-name-attribute"></a>
 
@@ -242,7 +242,7 @@ Defines a list of steps dependencies, used to defer step execution until the nam
 
 The [`Conditions`](#the-conditions-object) object defines a set of conditions. If any condition evaluates to true its parent object is skipped.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Conditions {
   action:   Constraint | string[];
   branch:   Constraint | string[];
@@ -254,7 +254,7 @@ class Conditions {
   status:   Constraint | Status[];
   target:   Constraint | string[];
 }
-{{< / highlight >}}
+```
 
 <a id="the-action-attribute"></a>
 
@@ -316,12 +316,12 @@ Defines matching criteria based on the target environment. The target environmen
 
 The [`Constraint`](#the-constraint-object) object defines pattern matching criteria. If the pattern matching evaluates to false, the parent object is skipped.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Constraint {
   exclude: string[];
   include: string[];
 }
-{{< / highlight >}}
+```
 
 <a id="the-include-attribute"></a>
 
@@ -341,11 +341,11 @@ List of matching patterns. If any pattern is a match, the parent object is skipp
 
 The [`Concurrency`](#the-concurrency-object) object defines the concurrency limits for the named pipeline.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Concurrency {
   limit: number;
 }
-{{< / highlight >}}
+```
 
 <a id="the-workspace-object"></a>
 
@@ -353,11 +353,11 @@ class Concurrency {
 
 The [`Workspace`](#the-workspace-object) object defines the path to which the source code is cloned (non-normative) and the default working directory for each pipeline step (non-normative).
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 class Workspace {
   path: string;
 }
-{{< / highlight >}}
+```
 
 # Enums
 
@@ -367,7 +367,7 @@ class Workspace {
 
 The `Event` enum provides a list of pipeline events. This value represents the event that triggered the pipeline.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 enum Event {
   cron,
   custom,
@@ -377,7 +377,7 @@ enum Event {
   rollback,
   tag,
 }
-{{< / highlight >}}
+```
 
 <a id="the-status-enum"></a>
 
@@ -385,12 +385,12 @@ enum Event {
 
 The `Status` enum provides a list of pipeline statuses. The default pipeline state is `success`, even if the pipeline is still running.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 enum Status {
   failure,
   success,
 }
-{{< / highlight >}}
+```
 
 <a id="the-failure-enum"></a>
 
@@ -398,12 +398,12 @@ enum Status {
 
 The `Failure` enum defines a list of failure behaviors. The value `always` indicates a failure will fail the parent process. The value `ignore` indicates the failure is silently ignored.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 enum Failure {
   always,
   ignore,
 }
-{{< / highlight >}}
+```
 
 <a id="the-os-enum"></a>
 
@@ -411,7 +411,7 @@ enum Failure {
 
 The `OS` enum provides a list of supported operating systems.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 enum OS {
   darwin,
   dragonfly,
@@ -422,7 +422,7 @@ enum OS {
   solaris,
   windows,
 }
-{{< / highlight >}}
+```
 
 <a id="the-arch-enum"></a>
 
@@ -430,11 +430,11 @@ enum OS {
 
 The `Arch` enum provides a list of supported chip architectures.
 
-{{< highlight typescript "linenos=table" >}}
+```typescript {linenos=table}
 enum Arch {
   386,
   amd64,
   arm64,
   arm,
 }
-{{< / highlight >}}
+```

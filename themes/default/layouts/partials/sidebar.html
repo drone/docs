@@ -10,7 +10,8 @@
     </div> -->
 
     <nav>
-        <a href="/" class="back">Home</a>
+        <a href="/" class="back" style="display:inline-block">Home</a>
+        {{- partial "i18n-switch" . -}}
         {{ $expand := .Params.expand }}
         {{ $selected := . }}
         {{ $section := .Site.GetPage "section" .Section }}

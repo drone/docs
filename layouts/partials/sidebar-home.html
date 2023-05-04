@@ -7,7 +7,10 @@
 
     <nav>
         <ul>
-            <li class="sidebar-item selected"><a href="/" class="selected">Home</a></li>
+            <li class="sidebar-item selected">
+                <a href="/" class="selected" style="display: inline-block;">Home</a>
+                {{- partial "i18n-switch" . -}}
+            </li>
             <li class="category separator">Installation</li>
             <li class="sidebar-item"><a href="/server/overview">Server</a></li>
             <li class="sidebar-item"><a href="/runner/overview">Runners</a></li>  

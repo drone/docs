@@ -35,6 +35,8 @@ Create a Gitea OAuth application. The Consumer Key and Consumer Secret are used 
 
 <div class="alert alert-warn">
 The authorization callback URL must match the below format and path, and must use your exact server scheme and host.
+ 
+You must also check "Confidential Client".
 </div>
 
 ![Application Create](/screenshots/gitea_application_create.png)

@@ -9,9 +9,9 @@ aliases:
 - /runners/exec/configure
 ---
 
-<div class="alert">
+<!-- <div class="alert">
 The Exec runner is in Beta and may not be suitable for production workloads.
-</div>
+</div> -->
 
 The Exec runner is a daemon that executes build pipelines directly on the host machine without isolation, using the default shell. This runner is not suitable for un-trusted workloads for security reasons.
 

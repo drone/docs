@@ -8,8 +8,10 @@ draft: true
 
 __Renamed to DRONE_IMAGE_CLONE__
 
-Optional string value. Overrides the Docker image used to clone a repository.
+Optional string value. `DRONE_IMAGE_CLONE` Overrides the Docker image used to clone a repository.
+
+**DO NOT USE DRONE_RUNNER_CLONE_IMAGE**
 
 ```
-DRONE_RUNNER_CLONE_IMAGE=drone/git:1
+DRONE_IMAGE_CLONE=drone/git:1
 ```

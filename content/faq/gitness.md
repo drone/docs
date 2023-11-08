@@ -31,7 +31,7 @@ We will investigate creating a compatibility layer.
 No. We plan to provide a seamless upgrade experience. It should ideally be as simple as upgrading to a new version of Drone.
 
 # When should I upgrade from Drone to Gitness?
-Gitness is currently available in Beta. We recommend upgrading to Gitness once a stable release is published. The requirement for publishing a stable release is full backward compatibility with Drone 2.x and a seamless upgrade experience.
+Gitness is currently available in Beta and should be used for preview purposes only. We will recommend upgrading to Gitness once a stable release is published. The requirement for publishing a stable release is full backward compatibility with Drone 2.x and a seamless upgrade experience.
 
 # Will this impact my existing Drone Enterprise contract?
 No. There will be no impact to the enterprise offering. You will still require an enterprise plan to use enterprise features.

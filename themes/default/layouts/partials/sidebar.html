@@ -15,7 +15,7 @@
         {{ $selected := . }}
         {{ $section := .Site.GetPage "section" .Section }}
 
-        <h1 class="section-header" {{ if $section.Params.icon }}x-style="background-image: url(/icons/{{ $section.Params.icon }})"{{ end }}>{{ or .Params.title_in_sidebar $section.Title }}</h1>
+        <h1 class="section-header" {{ if $section.Params.icon }}x-style="background-image: url(/icons/{{ $section.Params.icon }})"{{ end }}>{{ $section.Title }}</h1>
         <ul>
   
     {{ range $section.Pages }}

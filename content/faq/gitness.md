@@ -21,6 +21,9 @@ No. We plan to support Gitness pipelines for all major code hosting providers, i
 # Will Drone pipelines work with Gitness?
 Yes. We plan to make Gitness fully backward compatible with Drone.
 
+# Will Drone plugins work with Gitness?
+Yes.
+
 # Will Drone extensions work with Gitness?
 Yes. We are planning to continue support for extensions. We are also evaluating native support for popular extensions, such as the [paths changed](https://github.com/meltwater/drone-convert-pathschanged) extension.
 

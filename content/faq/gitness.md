@@ -11,7 +11,7 @@ disable_toc: true
 
 
 # What is the future of Drone?
-We recently announced the next major version of Drone – rebranded as [Gitness](https://gitness.com). With this change we are adding native Source Control Management capabilities, which includes support for essential features like code hosting, pull requests, code reviews and more.
+We recently [announced](https://www.linkedin.com/feed/update/urn:li:activity:7112103002798268416/) the next major version of Drone – rebranded as [Gitness](https://gitness.com). With this change we are adding native Source Control Management capabilities, which includes support for essential features like code hosting, pull requests, code reviews and more.
 
 This is a major evolution of Drone, from Continuous Integration to a full fledged Developer Platform. Learn more at [gitness.com](https://gitness.com).
 

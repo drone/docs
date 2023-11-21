@@ -15,6 +15,9 @@ We recently [announced](https://www.linkedin.com/feed/update/urn:li:activity:711
 
 This is a major evolution of Drone, from Continuous Integration to a full fledged Developer Platform. Learn more at [gitness.com](https://gitness.com).
 
+# Can I still use Drone?
+Yes. Gitness is the next major version of Drone, however, Gitness is still experimental and under active development. You should continue using the latest stable version of Drone for production installations until a stable release of Gitness is available.
+
 # Will I be forced to use Gitness for code hosting?
 No. We plan to support Gitness pipelines for all major code hosting providers, including GitHub, GitLab, Bitbucket, Bitbucket Server, Gitea, Gogs, and Azure Devops.
 

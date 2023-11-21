@@ -34,7 +34,7 @@ Yes. We are planning to continue support for extensions. We are also evaluating 
 We will investigate creating a compatibility layer.
 
 # Will upgrading to Gitness require a complex migration?
-No. We plan to provide a seamless upgrade experience. It should ideally be as simple as upgrading to a new version of Drone.
+No. We plan to provide a seamless upgrade experience. Because Gitness is the next major version of Drone, upgrading to Gitness should be no different than upgrading to a newer version of Drone.
 
 # When should I upgrade from Drone to Gitness?
 Gitness is currently available in Beta and should be used for preview purposes only. We will recommend upgrading to Gitness once a stable release is published. The requirement for publishing a stable release is full backward compatibility with Drone 2.x and a seamless upgrade experience.

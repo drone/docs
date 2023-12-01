@@ -63,8 +63,8 @@ steps:
       from_secret: docker_password
   commands:
     - echo "You can call the secrets like this examples below."
-    - echo $USERNAME
-    - echo $PASSWORD
+    - echo $PLUGIN_USERNAME
+    - echo $PLUGIN_PASSWORD
     - echo "In both cases, and for security reasons, you will see asteriks '*******' instead the value under the echo command."
 {{< / highlight >}}
 

@@ -45,7 +45,7 @@ instances:
         apt:
           sources:
             docker.list:
-              source: deb [arch={{ .Architecture }}] https://download.docker.com/linux/ubuntu $RELEASE stable
+              source: deb [arch={{ .Platform.Arch }}] https://download.docker.com/linux/ubuntu $RELEASE stable
               keyid: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
         packages:
         - wget
@@ -64,7 +64,7 @@ instances:
           encoding: b64
           content: {{ .TLSKey | base64 }}
         runcmd:
-        - 'wget "{{ .LiteEnginePath }}/lite-engine-{{ .Platform }}-{{ .Architecture }}" -O /usr/bin/lite-engine'
+        - 'wget "{{ .LiteEnginePath }}/lite-engine-{{ .Platform.OS }}-{{ .Platform.Arch }}" -O /usr/bin/lite-engine'
         - 'chmod 777 /usr/bin/lite-engine'
         - 'touch /root/.env'
         - 'touch /tmp/magic_lives_here'

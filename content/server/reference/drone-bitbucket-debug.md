@@ -6,7 +6,7 @@ aliases:
 - /installation/reference/drone-bitbucket-debug/
 ---
 
-Optional boolean value. Configures detailed trace logging for the Bitbucket authentication provide. This should be used to troublshoot problems with login when installing Drone server.
+Optional boolean value. Configures detailed trace logging for the Bitbucket authentication provide. This should be used to troubleshoot problems with login when installing Drone server.
 
 ```
 DRONE_BITBUCKET_DEBUG=false

@@ -32,6 +32,6 @@ Drone has built-in support for rendering badges to display your repository build
 
 [Shields](https://shields.io) is a third party service that provides customizable informational images as badges. Shields can be used as an alternative to Drone's built-in badges when more customization is required.
 
-{{< link-to "https://shields.io/category/build" >}}
+{{< link-to "https://shields.io/badges/drone" >}}
 Create Custom Badges
 {{< / link-to >}}

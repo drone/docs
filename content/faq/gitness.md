@@ -11,7 +11,7 @@ disable_toc: true
 
 
 # What is the future of Drone?
-We recently [announced](https://www.linkedin.com/feed/update/urn:li:activity:7112103002798268416/) the next major version of Drone – rebranded as [Harness Open Source](https://developer.harness.io/docs/open-source/). With this change we are adding native Source Control Management capabilities, which includes support for essential features like code hosting, artifact registry, pre-configured development environments, and more.
+We recently [announced](https://www.harness.io/blog/introducing-harness-open-source) the next major version of Drone – rebranded as [Harness Open Source](https://developer.harness.io/docs/open-source/). With this change we are adding native Source Control Management capabilities, which includes support for essential features like code hosting, artifact registry, pre-configured development environments, and more.
 
 This is a major evolution of Drone, from Continuous Integration to a full fledged Developer Platform. Learn more at [Harness Developer Hub](https://developer.harness.io/docs/open-source/).
 

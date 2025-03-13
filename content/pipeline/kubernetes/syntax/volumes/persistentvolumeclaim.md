@@ -8,7 +8,7 @@ description: |
   Mount external volumes in your pipeline.
 ---
 
-PersistentVolumeClaim allow you mount exteral volumes into a pipeline step. 
+PersistentVolumeClaim allow you to mount exteral volumes into a pipeline step. 
 
 ```yaml {linenos=table, hl_lines=["8-10", "15-20"]}
 kind: pipeline

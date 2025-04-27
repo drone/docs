@@ -13,7 +13,7 @@ This guide covers configuring continuous integration pipelines for C# projects. 
 
 # Build and Test
 
-In the below example we demonstrate a pipeline that executes `dotnet publish` and `dotnet test` commands. These commands are executed inside a Docker container, downloaded at runtime from DockerHub.
+In the below example we demonstrate a pipeline that executes `dotnet build` and `dotnet test` commands. These commands are executed inside a Docker container, downloaded at runtime from DockerHub.
 
 ```
 kind: pipeline

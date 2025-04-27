@@ -20,10 +20,21 @@ OPTIONS:
    --param value, -p value  custom parameters to be injected into the job environment.
 ```
 
-Example usage, promotes a build by build number:
+Example usage promotes in the pipeline:
 
 ```
-$ drone build promote octocat/hello-world 42 production
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: node
+  environment:
+    foo: ${foo}
+    baz: ${baz}
+  commands:
+  - npm install
+  - npm test
 ```
 
 Example usage, with custom parameters:

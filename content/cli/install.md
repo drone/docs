@@ -45,8 +45,7 @@ Darwin arm64	| [tarball](https://github.com/harness/drone-cli/releases/latest/do
 * Or download and install on OSX using Homebrew:
 
   ```
-  $ brew tap drone/drone
-  $ brew install drone
+  $ brew install drone-cli
   ```
 
 # Install on Windows

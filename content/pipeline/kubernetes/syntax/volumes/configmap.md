@@ -8,7 +8,7 @@ description: |
   Mount configmap volumes to access kubernetes config maps in your pipeline.
 ---
 
-Config Map volumes allow you to a kubernetes configmap as a volume into a pipeline step. This setting is only available to trusted repositories.
+Config Map volumes allow you to mount a kubernetes configmap as a volume into a pipeline step. This setting is only available to trusted repositories.
 
 <div class="alert alert-warn">
 This setting is only available to trusted repositories, since some kubernetes workloads (incorrectly) may choose to write sensitive date into a configmap - when it really should be written to a secret instead.

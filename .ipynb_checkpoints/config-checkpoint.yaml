@@ -1,0 +1,31 @@
+baseURL: https://docs.drone.io
+languageCode: en-us
+title: Drone CI / CD
+theme: default
+
+googleAnalytics: "UA-34247933-4"
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xHTML: false
+
+  tableOfContents:
+    endLevel: 3
+    startLevel: 1
+
+pygmentsUseClasses: true
+pygmentsCodefences: true
